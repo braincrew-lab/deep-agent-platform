@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunkdeep_agent_platform_manuals||=[]).push([[647],{7121(e,a,r){r.r(a),r.d(a,{default:()=>d});r(6540);var s=r(4164),t=r(7559),u=r(5500),l=r(2831),n=r(5186),c=r(4848);function d(e){return(0,c.jsx)(u.e3,{className:(0,s.A)(t.G.wrapper.docsPages),children:(0,c.jsx)(n.A,{children:(0,l.v)(e.route.routes)})})}}}]);
