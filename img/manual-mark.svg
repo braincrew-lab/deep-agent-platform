@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-labelledby="manualMarkTitle">
+  <title id="manualMarkTitle">솔루션 매뉴얼 마크</title>
+  <path
+    d="M24 10 C19 6 11 6 6 9 V36 C11 33 19 33 24 37 C29 33 37 33 42 36 V9 C37 6 29 6 24 10 Z"
+    fill="#9360FF"
+  />
+  <path d="M24 10 V37" stroke="#FCFCFD" stroke-width="2" stroke-linecap="round" />
+</svg>
