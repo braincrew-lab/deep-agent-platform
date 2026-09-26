@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">Deep Agent Builder 모니터링과 실행 상태 확인 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/monitoring/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Deep Agent Builder 모니터링과 실행 상태 확인 | Deep Platform"><meta data-rh="true" name="description" content="모니터링은 실행이 느린지, 실패했는지, 아직 처리 중인지, 운영자 조치가 필요한지를 구분하는 작업입니다. 이 페이지는 Agent 실행과 평가 실행을 확인할 때 사용할 상태, 관리자 조회 범위, Redis 관측 결과의 해석 순서를 설명합니다. 화면에 표시된 색이나 카드만으로 상태를 확정하지 않고, API가 반환한 상태와 처리 시각을 함께 확인합니다."><meta data-rh="true" property="og:description" content="모니터링은 실행이 느린지, 실패했는지, 아직 처리 중인지, 운영자 조치가 필요한지를 구분하는 작업입니다. 이 페이지는 Agent 실행과 평가 실행을 확인할 때 사용할 상태, 관리자 조회 범위, Redis 관측 결과의 해석 순서를 설명합니다. 화면에 표시된 색이나 카드만으로 상태를 확정하지 않고, API가 반환한 상태와 처리 시각을 함께 확인합니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/monitoring/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/monitoring/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/monitoring/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"모니터링과 실행 상태 확인","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/monitoring"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.bd9c6dd3.css">
-<script src="/deep-agent-platform/assets/js/runtime~main.79d547da.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/runtime~main.5c19bc86.js" defer="defer"></script>
 <script src="/deep-agent-platform/assets/js/main.533b019f.js" defer="defer"></script>
 </head>
 <body>
@@ -78,10 +78,11 @@
 </ul>
 <p>관리자 Redis API 계약의 관측 목록은 위와 같습니다. 다른 운영 시나리오 문서에는 assistants:queue가 함께 언급되므로, 실제 응답의 목록을 기준으로 기록하고 문서의 목록만으로 모든 환경의 queue가 같다고 단정하지 않습니다.</p>
 <p>collector가 없거나 live snapshot을 읽지 못하면 빈 시계열, degraded_states 또는 fallback이 반환될 수 있습니다. 이 응답만으로 Redis 장애를 확정하지 않습니다. connections 조회는 CLIENT LIST 실패를 degraded 상태의 200 응답으로 돌려줄 수 있고, 다른 live snapshot을 읽지 못하면 503 SERVICE_UNAVAILABLE이 될 수 있습니다.</p>
-<p>queue 통계를 볼 때는 queue 이름, consumer group, pending 또는 lag 정보, 수집 시각을 함께 기록합니다. Redis 관측 계약에는 rich worker grid와 실패 job 상위 목록이 없으므로, 해당 화면이나 지표가 있다고 가정해 운영 판단을 확장하지 않습니다.</p>
+<p>queue 통계를 볼 때는 프로토콜별 구분과 queue 이름, pending 또는 lag 정보, 수집 시각을 함께 기록합니다. Redis 관측 계약에는 consumer group별 통계, rich worker grid, 실패 job 상위 목록이 없으므로, 해당 화면이나 지표가 있다고 가정해 운영 판단을 확장하지 않습니다.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="운영-조치와-경계">운영 조치와 경계<a href="#운영-조치와-경계" class="hash-link" aria-label="운영 조치와 경계에 대한 직접 링크" title="운영 조치와 경계에 대한 직접 링크" translate="no">​</a></h2>
-<p>SSE 연결을 정리할 때는 release 요청이 즉시 Redis client나 Stream을 삭제하지 않습니다. 연결 row에 release marker를 남기고 relay가 다음 XREAD 또는 heartbeat 경계에서 종료합니다. 따라서 요청 성공을 즉시 연결 종료나 즉시 복구로 해석하지 않습니다.</p>
+<p>SSE 연결을 정리할 때는 release 요청이 즉시 Redis client나 Stream을 삭제하지 않습니다. 연결 row에 release marker를 남기고 relay가 다음 XREAD 또는 heartbeat 경계에서 종료합니다. 따라서 요청 성공을 즉시 연결 종료나 즉시 복구로 해석하지 않습니다. 목록에 없는 연결 ID가 섞여 있어도 요청 전체가 실패하지 않고, 성공 응답의 실패 항목으로 분리돼 돌아옵니다.</p>
 <p>Counter reconciliation은 release 대기 row를 active 집계에서 제외하고 global 및 type counter를 다시 씁니다. 이 조치는 run이나 session의 durable state, XACK, Stream 삭제를 변경하지 않습니다. Redis 오류가 중간에 발생하면 앞선 marker 또는 counter 변경이 남을 수 있으므로, 503 이후 상태를 다시 조회합니다.</p>
+<p>두 조치 모두 감사 기록을 남깁니다. release는 admin_sse_stream_release_requested, counter reconciliation은 admin_sse_stream_counters_reconciled 이벤트 식별자로 기록되므로, 감사 로그에서 식별자로 검색하면 조치 내역을 추적할 수 있습니다.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="완료-판단과-다음-조치">완료 판단과 다음 조치<a href="#완료-판단과-다음-조치" class="hash-link" aria-label="완료 판단과 다음 조치에 대한 직접 링크" title="완료 판단과 다음 조치에 대한 직접 링크" translate="no">​</a></h2>
 <p>다음 조건을 모두 확인하면 현재 실행의 상태를 기록할 수 있습니다.</p>
 <ol>
@@ -91,6 +92,7 @@
 <li class="">평가라면 처리된 Case 수와 Case별 결과를 확인했습니다.</li>
 <li class="">queue 또는 Redis 관측이 degraded인지 정상인지 구분했습니다.</li>
 <li class="">취소나 운영 조치 뒤에 상태를 다시 조회했습니다.</li>
+<li class="">운영 조치를 했다면 감사 로그에 조치 기록이 남는지 확인했습니다.</li>
 </ol>
 <p>상태가 pending 또는 running에 오래 머물면 queue와 worker 상태를 확인합니다. 결과가 비어 있으면 실행 상태와 export 가능 시점을 먼저 확인합니다. 409 CONFLICT, 429 RATE_LIMITED 또는 503 SERVICE_UNAVAILABLE이 반복되면 요청을 재시도하기 전에 대상 상태, 동시 실행 수, 권한과 Redis 수집 상태를 나눠 확인합니다. 원인이 확인되지 않은 상태에서 threshold를 낮추거나 실패 Case를 제거하지 않습니다.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="다음-문서">다음 문서<a href="#다음-문서" class="hash-link" aria-label="다음 문서에 대한 직접 링크" title="다음 문서에 대한 직접 링크" translate="no">​</a></h2>
