@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">Deep Agent Builder 제품 수명주기 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/product-lifecycle/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Deep Agent Builder 제품 수명주기 | Deep Platform"><meta data-rh="true" name="description" content="Deep Agent Builder에서 에이전트는 생성한 뒤 바로 끝나는 대상이 아닙니다. 구성하고 저장한 뒤 실행으로 확인하고, 필요하면 다시 수정하거나 보관합니다. 이 페이지는 각 단계에서 무엇이 바뀌는지와 다음 단계로 넘어가기 전에 무엇을 확인할지 설명합니다."><meta data-rh="true" property="og:description" content="Deep Agent Builder에서 에이전트는 생성한 뒤 바로 끝나는 대상이 아닙니다. 구성하고 저장한 뒤 실행으로 확인하고, 필요하면 다시 수정하거나 보관합니다. 이 페이지는 각 단계에서 무엇이 바뀌는지와 다음 단계로 넘어가기 전에 무엇을 확인할지 설명합니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/product-lifecycle/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/product-lifecycle/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/product-lifecycle/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"제품 수명주기","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/product-lifecycle"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.496532f8.css">
-<script src="/deep-agent-platform/assets/js/runtime~main.50a90661.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/runtime~main.8d7edc51.js" defer="defer"></script>
 <script src="/deep-agent-platform/assets/js/main.533b019f.js" defer="defer"></script>
 </head>
 <body>
@@ -58,6 +58,13 @@
 <li class="">테스트 실행에서 정상 입력과 정보가 부족한 입력을 각각 보내 결과를 비교합니다.</li>
 </ol>
 <p>초안이 만들어졌다는 사실과 실행 권한이 있다는 사실은 별개입니다. 수정 권한, 모델 사용 권한, 연결된 리소스의 실행 권한이 각각 필요할 수 있습니다. 생성 세션에서 추가 질문이나 승인 요청이 나타나면 값을 확인한 뒤 같은 세션에서 이어서 작업합니다.</p>
+<p>생성 세션이 끝난 뒤에는 다음 세 가지를 따로 확인합니다.</p>
+<ol>
+<li class="">에이전트 목록이나 완료 화면에서 생성된 에이전트가 실제로 식별되는지 확인합니다.</li>
+<li class="">수정 화면을 열어 이름, 지침, 모델과 연결 자원이 의도한 값으로 저장됐는지 확인합니다.</li>
+<li class="">실행 화면에서 테스트 입력을 보내고, 권한 부족이나 연결 자원 오류가 없는지 결과를 확인합니다.</li>
+</ol>
+<p>완료 화면이 보였다는 사실만으로 저장과 실행을 모두 마쳤다고 판단하지 마세요. 목록에 보이지만 수정 화면에서 일부 값이 빠져 있거나, 구성이 저장됐지만 실행 권한이 없어 테스트가 시작되지 않을 수 있습니다.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="수정하고-다시-확인하기">수정하고 다시 확인하기<a href="#수정하고-다시-확인하기" class="hash-link" aria-label="수정하고 다시 확인하기에 대한 직접 링크" title="수정하고 다시 확인하기에 대한 직접 링크" translate="no">​</a></h2>
 <p>반복해서 같은 방식으로 어긋나는 답변이 나오면 개별 요청을 반복하기보다 지침과 연결 자원을 먼저 점검합니다. 수정 화면에서 한 번에 여러 항목을 바꾸지 말고, 원인을 확인하려는 항목부터 하나씩 변경하세요.</p>
 <p>수정 후에는 다음 순서로 확인합니다.</p>
