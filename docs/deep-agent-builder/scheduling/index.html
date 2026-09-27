@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">Deep Agent Builder 스케줄링 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/scheduling/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Deep Agent Builder 스케줄링 | Deep Platform"><meta data-rh="true" name="description" content="에이전트를 정해진 시각에 반복 실행하려면 스케줄을 등록합니다. 이 문서에서는 스케줄을 만들고 바꾼 뒤 다음 실행 시각과 실제 실행 결과를 확인하는 순서를 설명합니다. 제품 화면의 메뉴와 버튼 이름은 배포 환경에 따라 다를 수 있으므로, 화면에서 보이는 문구를 기준으로 진행하세요."><meta data-rh="true" property="og:description" content="에이전트를 정해진 시각에 반복 실행하려면 스케줄을 등록합니다. 이 문서에서는 스케줄을 만들고 바꾼 뒤 다음 실행 시각과 실제 실행 결과를 확인하는 순서를 설명합니다. 제품 화면의 메뉴와 버튼 이름은 배포 환경에 따라 다를 수 있으므로, 화면에서 보이는 문구를 기준으로 진행하세요."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/scheduling/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/scheduling/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/scheduling/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"스케줄링","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/scheduling"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.496532f8.css">
-<script src="/deep-agent-platform/assets/js/runtime~main.f58e09ee.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/runtime~main.33c7b778.js" defer="defer"></script>
 <script src="/deep-agent-platform/assets/js/main.533b019f.js" defer="defer"></script>
 </head>
 <body>
@@ -93,7 +93,35 @@
 <li class="">실행이 끝나지 않은 상태라면 완료로 기록하지 않습니다.</li>
 <li class="">스케줄이 계속 활성 상태인지, 다음 실행 시각이 다시 계산됐는지 확인합니다.</li>
 </ol>
-<p>스케줄 저장 결과는 반복 실행을 예약했다는 뜻이지, 에이전트가 실제로 실행됐다는 뜻은 아닙니다. 실행 기록이 없으면 스케줄 설정, 실행 권한, 실행을 담당하는 환경의 상태를 순서대로 점검합니다.</p>
+<p>스케줄 저장 결과는 반복 실행을 예약했다는 뜻이지, 에이전트가 실제로 실행됐다는 뜻은 아닙니다. 실행 기록이 없으면 스케줄 설정, 실행 권한, 실행을 담당하는 환경의 상태를 순서대로 점검합니다. 같은 요청을 바로 다시 저장하거나 새 스케줄을 만들지 말고, 먼저 기존 항목의 활성화 상태와 다음 실행 시각을 확인하세요.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="저장-예정-실행을-구분하는-기준">저장, 예정, 실행을 구분하는 기준<a href="#저장-예정-실행을-구분하는-기준" class="hash-link" aria-label="저장, 예정, 실행을 구분하는 기준에 대한 직접 링크" title="저장, 예정, 실행을 구분하는 기준에 대한 직접 링크" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>화면에서 확인한 상태</th><th>확인된 사실</th><th>아직 확인되지 않은 것</th></tr></thead><tbody><tr><td>설정이 저장됨</td><td>반복 일정과 실행 메시지가 저장됨</td><td>다음 실행이 실제로 시작됐는지</td></tr><tr><td>다음 실행 시각이 표시됨</td><td>실행 예정 시각이 계산됨</td><td>해당 시각에 실행이 끝났는지</td></tr><tr><td>최근 실행 정보와 실행 기록이 있음</td><td>실제 실행의 상태와 결과를 확인할 수 있음</td><td>이후 반복 실행이 계속되는지</td></tr></tbody></table>
+<p>이 세 상태를 한 단계로 묶어 기록하지 마세요. 특히 저장 직후의 화면만 보고 실행 성공으로 판단하지 말고, 예정 시각 이후 실행 기록과 결과를 확인한 뒤 완료로 기록합니다.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="대표적인-문제와-다음-조치">대표적인 문제와 다음 조치<a href="#대표적인-문제와-다음-조치" class="hash-link" aria-label="대표적인 문제와 다음 조치에 대한 직접 링크" title="대표적인 문제와 다음 조치에 대한 직접 링크" translate="no">​</a></h2>
 
 
@@ -150,6 +178,6 @@
 <li class=""><a class="" href="/deep-agent-platform/docs/deep-agent-builder/threads/">Deep Agent Builder Thread와 첨부파일 보관</a></li>
 <li class=""><a class="" href="/deep-agent-platform/docs/deep-agent-builder/agent-editing/">Deep Agent Builder 에이전트 수정</a></li>
 <li class=""><a class="" href="/deep-agent-platform/docs/deep-agent-builder/troubleshooting/">Deep Agent Builder 문제 해결</a></li>
-</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/deep-agent-platform/docs/deep-agent-builder/favorites-workspaces-downloads/"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">즐겨찾기·Workspace·다운로드</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/deep-agent-platform/docs/deep-agent-builder/use-cases/"><div class="pagination-nav__sublabel">다음</div><div class="pagination-nav__label">활용사례</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#시작하기-전에" class="table-of-contents__link toc-highlight">시작하기 전에</a></li><li><a href="#스케줄에서-확인할-값" class="table-of-contents__link toc-highlight">스케줄에서 확인할 값</a></li><li><a href="#스케줄-만들기" class="table-of-contents__link toc-highlight">스케줄 만들기</a></li><li><a href="#기존-스케줄-바꾸기" class="table-of-contents__link toc-highlight">기존 스케줄 바꾸기</a></li><li><a href="#일시-중지와-삭제" class="table-of-contents__link toc-highlight">일시 중지와 삭제</a></li><li><a href="#실행-결과-확인" class="table-of-contents__link toc-highlight">실행 결과 확인</a></li><li><a href="#대표적인-문제와-다음-조치" class="table-of-contents__link toc-highlight">대표적인 문제와 다음 조치</a></li><li><a href="#완료-기준" class="table-of-contents__link toc-highlight">완료 기준</a></li></ul></div></div></div></div></main></div></div></div></div>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/deep-agent-platform/docs/deep-agent-builder/favorites-workspaces-downloads/"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">즐겨찾기·Workspace·다운로드</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/deep-agent-platform/docs/deep-agent-builder/use-cases/"><div class="pagination-nav__sublabel">다음</div><div class="pagination-nav__label">활용사례</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#시작하기-전에" class="table-of-contents__link toc-highlight">시작하기 전에</a></li><li><a href="#스케줄에서-확인할-값" class="table-of-contents__link toc-highlight">스케줄에서 확인할 값</a></li><li><a href="#스케줄-만들기" class="table-of-contents__link toc-highlight">스케줄 만들기</a></li><li><a href="#기존-스케줄-바꾸기" class="table-of-contents__link toc-highlight">기존 스케줄 바꾸기</a></li><li><a href="#일시-중지와-삭제" class="table-of-contents__link toc-highlight">일시 중지와 삭제</a></li><li><a href="#실행-결과-확인" class="table-of-contents__link toc-highlight">실행 결과 확인</a><ul><li><a href="#저장-예정-실행을-구분하는-기준" class="table-of-contents__link toc-highlight">저장, 예정, 실행을 구분하는 기준</a></li></ul></li><li><a href="#대표적인-문제와-다음-조치" class="table-of-contents__link toc-highlight">대표적인 문제와 다음 조치</a></li><li><a href="#완료-기준" class="table-of-contents__link toc-highlight">완료 기준</a></li></ul></div></div></div></div></main></div></div></div></div>
 </body>
 </html>
