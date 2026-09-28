@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
-<title data-rh="true">에이전트 평가 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/evaluations/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="에이전트 평가 | Deep Platform"><meta data-rh="true" name="description" content="에이전트 평가는 같은 질문과 기준으로 실행 결과를 비교하는 기능입니다. 평가를 시작하려면 먼저 dataset과 case를 준비하고, 결과를 판정할 evaluator를 선택합니다. 실행이 끝나면 run 상태와 결과를 확인하고 대시보드 또는 결과 export로 집계 자료를 검토합니다."><meta data-rh="true" property="og:description" content="에이전트 평가는 같은 질문과 기준으로 실행 결과를 비교하는 기능입니다. 평가를 시작하려면 먼저 dataset과 case를 준비하고, 결과를 판정할 evaluator를 선택합니다. 실행이 끝나면 run 상태와 결과를 확인하고 대시보드 또는 결과 export로 집계 자료를 검토합니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/evaluations/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/evaluations/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/evaluations/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"에이전트 평가","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/evaluations"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.496532f8.css">
-<script src="/deep-agent-platform/assets/js/runtime~main.beb3a146.js" defer="defer"></script>
+<title data-rh="true">에이전트 평가 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/evaluations/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="에이전트 평가 | Deep Platform"><meta data-rh="true" name="description" content="에이전트 평가는 같은 질문과 기준으로 여러 실행 결과를 비교하는 작업입니다. 먼저 평가용 질문과 기대 답변을 준비한 뒤 판정 기준을 정하고, 실행이 끝나면 개별 결과와 전체 집계를 함께 확인합니다."><meta data-rh="true" property="og:description" content="에이전트 평가는 같은 질문과 기준으로 여러 실행 결과를 비교하는 작업입니다. 먼저 평가용 질문과 기대 답변을 준비한 뒤 판정 기준을 정하고, 실행이 끝나면 개별 결과와 전체 집계를 함께 확인합니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/evaluations/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/evaluations/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/evaluations/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"에이전트 평가","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/evaluations"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.496532f8.css">
+<script src="/deep-agent-platform/assets/js/runtime~main.79cd35cb.js" defer="defer"></script>
 <script src="/deep-agent-platform/assets/js/main.533b019f.js" defer="defer"></script>
 </head>
 <body>
@@ -12,9 +12,9 @@
 <symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
 </defs></svg>
 <script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/deep-agent-platform/img/manual-mark.svg"><div role="region" aria-label="본문으로 건너뛰기"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">본문으로 건너뛰기</a></div><nav aria-label="메인" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="사이드바 펼치거나 접기" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/deep-agent-platform/"><div class="navbar__logo"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Deep Platform</b></a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">솔루션</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-flow/">Deep Flow</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/deep-agent-platform/docs/deep-agent-builder/">Deep Agent Builder</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-connector/">Deep Connector</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-docurator/">Deep Docurator</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/brain-parser/">Brain Parser</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work/">Deep Work</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work-gateway/">Deep Work Gateway</a></li></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="어두운 모드와 밝은 모드 전환하기 (현재 system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="searchBar_fdyA"><input type="search" class="searchInput_JE4R" placeholder="매뉴얼 검색" aria-label="매뉴얼 검색" role="combobox" aria-autocomplete="list" aria-expanded="false" value=""><div role="status" aria-live="polite"></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="맨 위로 스크롤하기" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="문서 사이드바" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/"><span class="categoryLinkLabel_W154">소개</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/core-concepts/"><span class="categoryLinkLabel_W154">이해하기</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/getting-started/"><span class="categoryLinkLabel_W154">시작하기</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/agent-creation/"><span class="categoryLinkLabel_W154">만들기</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/workflows/"><span class="categoryLinkLabel_W154">실행과 개선</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/use-cases/"><span class="categoryLinkLabel_W154">활용사례</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/troubleshooting/"><span class="categoryLinkLabel_W154">문제 해결</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/models/"><span class="categoryLinkLabel_W154">구성</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/deep-agent-platform/docs/deep-agent-builder/evaluations/"><span class="categoryLinkLabel_W154">평가와 운영</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/evaluations/"><span class="linkLabel_WmDU">에이전트 평가</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/evaluation-overview/"><span class="linkLabel_WmDU">에이전트 평가 개요</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/evaluation-datasets/"><span class="linkLabel_WmDU">평가 Dataset 만들기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/evaluation-cases/"><span class="linkLabel_WmDU">평가 Case 설계</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/evaluation-evaluators/"><span class="linkLabel_WmDU">Evaluator 구성</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/evaluation-runs/"><span class="linkLabel_WmDU">평가 실행</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/evaluation-results/"><span class="linkLabel_WmDU">평가 결과 읽기와 비교</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/regression-evaluation/"><span class="linkLabel_WmDU">회귀 평가와 개선</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/monitoring/"><span class="linkLabel_WmDU">모니터링과 실행 상태 확인</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/multi-agent-concepts/"><span class="categoryLinkLabel_W154">멀티에이전트</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="탐색 경로"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="홈" class="breadcrumbs__link" href="/deep-agent-platform/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">평가와 운영</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">에이전트 평가</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">이 페이지에서</button></div><div class="theme-doc-markdown markdown"><header><h1>에이전트 평가</h1></header>
-<p>에이전트 평가는 같은 질문과 기준으로 실행 결과를 비교하는 기능입니다. 평가를 시작하려면 먼저 dataset과 case를 준비하고, 결과를 판정할 evaluator를 선택합니다. 실행이 끝나면 run 상태와 결과를 확인하고 대시보드 또는 결과 export로 집계 자료를 검토합니다.</p>
+<p>에이전트 평가는 같은 질문과 기준으로 여러 실행 결과를 비교하는 작업입니다. 먼저 평가용 질문과 기대 답변을 준비한 뒤 판정 기준을 정하고, 실행이 끝나면 개별 결과와 전체 집계를 함께 확인합니다.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="평가에-필요한-자원">평가에 필요한 자원<a href="#평가에-필요한-자원" class="hash-link" aria-label="평가에 필요한 자원에 대한 직접 링크" title="평가에 필요한 자원에 대한 직접 링크" translate="no">​</a></h2>
-<p>평가는 다음 자원을 조합해 진행합니다.</p>
+<p>평가 화면에서 다음 자원을 순서대로 확인합니다.</p>
 
 
 
@@ -48,59 +48,96 @@
 
 
 
-<table><thead><tr><th>자원</th><th>용도</th></tr></thead><tbody><tr><td>Dataset</td><td>평가에 사용할 case의 모음</td></tr><tr><td>Case</td><td>질문과 기대 답변으로 구성된 개별 평가 항목</td></tr><tr><td>Evaluator</td><td>결과를 판정하는 기준</td></tr><tr><td>Run</td><td>dataset과 evaluator를 사용한 평가 실행</td></tr><tr><td>Result</td><td>case별 평가 결과</td></tr><tr><td>Dashboard</td><td>호출자가 소유한 agent 범위의 집계</td></tr></tbody></table>
-<p>Dataset과 evaluator는 사용자 또는 workspace 범위로 관리할 수 있습니다. Evaluator는 preset, workspace, user 범위로 구분되며, 판정 유형은 binary, score, rubric으로 나뉩니다.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="dataset과-case-준비">Dataset과 case 준비<a href="#dataset과-case-준비" class="hash-link" aria-label="Dataset과 case 준비에 대한 직접 링크" title="Dataset과 case 준비에 대한 직접 링크" translate="no">​</a></h2>
-<p>Dataset은 생성, 조회, import, 상세 조회, 삭제를 지원합니다. Dataset 삭제는 삭제 시각을 기록하는 soft delete입니다. 반면 case 삭제는 영구 삭제이며, dataset의 total_cases도 같은 transaction에서 1 감소합니다.</p>
-<p>CSV로 case를 가져올 때 파일 크기는 최대 5 MiB, 행 수는 최대 1,000행입니다. 필수 header는 question과 answer입니다. 입력 파일은 UTF-8 BOM, CP949, Latin-1 순서로 해석됩니다. question은 50,000자, answer는 100,000자까지 입력할 수 있습니다.</p>
-<p>평가에 사용할 질문은 실제 업무에서 확인하려는 입력을 대표해야 합니다. 기대 답변은 비교 기준으로 사용할 내용을 담되, 평가 결과가 곧 업무 적합성이나 배포 승인을 뜻하지는 않습니다.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="evaluator-선택">Evaluator 선택<a href="#evaluator-선택" class="hash-link" aria-label="Evaluator 선택에 대한 직접 링크" title="Evaluator 선택에 대한 직접 링크" translate="no">​</a></h2>
-<p>Evaluator를 만들거나 수정할 때 판정 유형과 범위를 함께 확인합니다. score evaluator는 score_min이 score_max보다 작아야 합니다. 미리 제공되는 preset evaluator는 6개입니다.</p>
-<p>Evaluator를 선택할 때는 평가 목적에 맞는 판정 방식을 사용합니다.</p>
+<table><thead><tr><th>자원</th><th>확인할 내용</th></tr></thead><tbody><tr><td>Dataset</td><td>평가할 질문과 기대 답변의 모음</td></tr><tr><td>Case</td><td>Dataset 안의 개별 질문과 기대 답변</td></tr><tr><td>Evaluator</td><td>에이전트 답변을 판정할 기준</td></tr><tr><td>Run</td><td>Dataset과 Evaluator를 사용한 한 번의 실행</td></tr><tr><td>Result</td><td>Case별 판정 결과</td></tr><tr><td>Dashboard</td><td>여러 실행을 묶어 보는 집계</td></tr></tbody></table>
+<p>Dataset과 Evaluator는 개인용 또는 workspace용으로 관리할 수 있습니다. workspace에 보이는 자원이라도 실행 권한이 항상 같은 것은 아니므로, 실행 화면에서 선택할 수 있는지 확인합니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="dataset과-case-준비하기">Dataset과 Case 준비하기<a href="#dataset과-case-준비하기" class="hash-link" aria-label="Dataset과 Case 준비하기에 대한 직접 링크" title="Dataset과 Case 준비하기에 대한 직접 링크" translate="no">​</a></h2>
+<p>평가할 질문은 실제로 확인하려는 업무 입력을 대표해야 합니다. 기대 답변에는 비교 기준이 될 내용을 적습니다. 평가 결과만으로 업무 적합성이나 배포 승인을 확정하지는 않습니다.</p>
+<p>Dataset을 새로 만들 때는 다음 순서로 진행합니다.</p>
+<ol>
+<li class="">Dataset 만들기 화면에서 이름을 입력합니다. 설명은 필요할 때만 추가합니다.</li>
+<li class="">Case를 직접 입력하거나 제공된 CSV 양식으로 준비합니다. CSV를 사용할 때는 question과 answer 열을 포함합니다.</li>
+<li class="">파일을 올린 뒤 항목 수와 질문·기대 답변이 의도한 순서로 들어갔는지 확인합니다.</li>
+<li class="">저장한 Dataset의 상세 화면을 다시 열어 Case 목록을 확인합니다.</li>
+</ol>
+<p>CSV 파일은 최대 5 MB, 최대 1,000행까지 가져올 수 있습니다. question은 50,000자, answer는 100,000자까지 입력할 수 있습니다. 파일이 거부되면 열 이름, 행 수, 파일 크기와 문자 인코딩을 확인한 뒤 다시 저장합니다.</p>
+<p>Dataset을 삭제하면 목록에서 더 이상 사용할 수 없게 됩니다. Case 삭제는 개별 항목을 영구적으로 제거하므로, 삭제 전에 대상과 항목 수를 확인합니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="evaluator-선택하기">Evaluator 선택하기<a href="#evaluator-선택하기" class="hash-link" aria-label="Evaluator 선택하기에 대한 직접 링크" title="Evaluator 선택하기에 대한 직접 링크" translate="no">​</a></h2>
+<p>Evaluator는 에이전트 답변을 어떤 기준으로 비교할지 정합니다.</p>
 <ul>
-<li class="">binary는 통과와 실패처럼 두 상태를 판정할 때 사용합니다.</li>
-<li class="">score는 점수 범위로 결과를 비교할 때 사용합니다.</li>
-<li class="">rubric은 여러 기준을 나눠 결과를 검토할 때 사용합니다.</li>
+<li class="">binary는 통과와 실패처럼 두 상태로 판정할 때 선택합니다.</li>
+<li class="">score는 점수 범위로 결과를 비교할 때 선택합니다.</li>
+<li class="">rubric은 여러 기준을 나눠 답변을 검토할 때 선택합니다.</li>
 </ul>
-<p>이 목록은 판정 유형의 의미를 설명한 것이며, 각 유형이 어떤 점수 계산을 보장하는지는 해당 evaluator 설정과 결과를 기준으로 확인합니다.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="평가-실행">평가 실행<a href="#평가-실행" class="hash-link" aria-label="평가 실행에 대한 직접 링크" title="평가 실행에 대한 직접 링크" translate="no">​</a></h2>
-<p>평가 실행은 평가 run을 생성한 뒤 worker queue에 작업을 넣는 방식으로 진행됩니다. 새 run은 201 응답으로 생성되며, 이후 조회, 결과 조회, 결과 export, 취소를 수행할 수 있습니다.</p>
-<p>run 상태는 pending에서 running으로 이동한 뒤 success, error, cancelled 또는 timeout으로 끝납니다. 상태 enum에는 drained도 포함되어 있으므로, 화면에 표시되는 상태와 서버가 반환한 실제 상태를 구분해 확인합니다.</p>
-<p>사용자별 동시 실행은 PostgreSQL advisory lock으로 제한합니다. 기본 동시 실행 한도는 2이며, EVALUATION_MAX_CONCURRENT_RUNS로 변경할 수 있습니다. 실행이 이미 terminal 상태라면 취소 요청은 409로 처리됩니다.</p>
-<p>평가 run을 시작할 때는 workspace dataset을 조회할 수 있는 범위와 실행할 수 있는 범위를 따로 봐야 합니다. run 시작은 생성자 기준으로 제한되므로, workspace dataset을 조회할 수 있다는 사실만으로 다른 사용자가 그 run을 시작할 수 있다고 판단하지 않습니다.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="취소와-오류-확인">취소와 오류 확인<a href="#취소와-오류-확인" class="hash-link" aria-label="취소와 오류 확인에 대한 직접 링크" title="취소와 오류 확인에 대한 직접 링크" translate="no">​</a></h2>
-<p>취소 요청이 성공해도 모든 case 처리가 즉시 멈춘다고 단정하지 않습니다. DB에 취소 상태를 기록한 뒤 Redis flag 전달이 실패하면 worker가 남은 case를 계속 처리할 수 있습니다. 취소 후에는 run 상태와 남은 결과를 다시 조회합니다.</p>
-<p>주요 오류 상태는 다음과 같습니다.</p>
-<ul>
-<li class="">400 VALIDATION_ERROR: 입력 검증 실패</li>
-<li class="">403 WBAC_DENIED 또는 ABAC_DENIED: 권한 거부</li>
-<li class="">404 NOT_FOUND: 대상을 찾지 못함</li>
-<li class="">409 CONFLICT: 현재 상태와 요청이 충돌함</li>
-<li class="">413 PAYLOAD_TOO_LARGE: 허용 크기 초과</li>
-<li class="">422: 요청을 처리할 수 없는 상태</li>
-<li class="">429 RATE_LIMITED: 요청 제한 초과</li>
-</ul>
-<p>오류 코드만 보고 재시도 여부를 결정하지 않습니다. 대상 dataset, case, evaluator, run의 상태와 호출자의 권한을 함께 확인해야 합니다.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="결과와-대시보드-확인">결과와 대시보드 확인<a href="#결과와-대시보드-확인" class="hash-link" aria-label="결과와 대시보드 확인에 대한 직접 링크" title="결과와 대시보드 확인에 대한 직접 링크" translate="no">​</a></h2>
-<p>Results에서는 case별 평가 결과를 조회할 수 있고, results export에서는 전체 결과 JSON을 받을 수 있습니다. Dashboard는 호출자가 소유한 agent 범위로 집계합니다. 따라서 대시보드 수치와 개별 결과를 비교할 때는 같은 agent 범위를 사용했는지 먼저 확인합니다.</p>
-<p>결과를 해석할 때는 evaluator 유형, dataset의 case 구성, run 상태를 함께 기록합니다. 일부 case만 처리된 run이나 timeout으로 끝난 run은 성공한 결과만으로 전체 평가를 대표한다고 보지 않습니다.</p>
+<p>새 Evaluator를 만들거나 기존 Evaluator를 수정할 때는 판정 유형과 적용 범위를 함께 확인합니다. score를 선택했다면 최소 점수가 최대 점수보다 작은지 확인합니다. 미리 제공되는 Evaluator를 복사해 사용할 때는 복사본의 범위와 이름을 다시 확인합니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="평가-실행하기">평가 실행하기<a href="#평가-실행하기" class="hash-link" aria-label="평가 실행하기에 대한 직접 링크" title="평가 실행하기에 대한 직접 링크" translate="no">​</a></h2>
+<p>평가를 실행하기 전에 Dataset과 Evaluator가 같은 목적을 대상으로 하는지 확인합니다. 준비가 끝나면 실행 화면에서 Dataset과 Evaluator를 선택하고 실행을 시작합니다.</p>
+<p>실행 중에는 화면에 표시된 진행 상태를 확인합니다. 실행이 끝난 뒤에는 성공 여부만 보지 말고 처리된 Case 수와 결과 목록을 함께 확인합니다. 실행 중인 항목이 있으면 결과 전체를 최종 평가로 해석하지 않습니다.</p>
+<p>동시에 실행할 수 있는 평가 수에는 사용자별 제한이 있습니다. 기본값은 2개입니다. 제한에 걸리면 실행 중인 평가가 끝난 뒤 다시 시도합니다. workspace Dataset을 볼 수 있어도 해당 Dataset으로 평가를 시작할 권한이 없을 수 있으므로, 실행 제어가 보이지 않으면 workspace 관리자에게 권한을 요청합니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="취소와-오류가-발생했을-때">취소와 오류가 발생했을 때<a href="#취소와-오류가-발생했을-때" class="hash-link" aria-label="취소와 오류가 발생했을 때에 대한 직접 링크" title="취소와 오류가 발생했을 때에 대한 직접 링크" translate="no">​</a></h2>
+<p>평가를 취소한 뒤에도 이미 처리 중인 Case가 잠시 결과에 포함될 수 있습니다. 취소를 실행했다면 화면을 새로 확인해 최종 상태와 남은 결과를 함께 봅니다.</p>
+<p>다음 증상이 나타나면 해당 조치를 시도합니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>화면에서 보이는 증상</th><th>확인할 사항과 다음 조치</th></tr></thead><tbody><tr><td>입력을 저장할 수 없음</td><td>필수 값, 열 이름, 파일 크기와 행 수를 확인한 뒤 다시 저장합니다.</td></tr><tr><td>평가를 시작할 수 없음</td><td>선택한 Dataset과 Evaluator의 범위, 실행 권한과 현재 상태를 확인합니다.</td></tr><tr><td>대상이 목록에 보이지 않음</td><td>현재 workspace와 필터를 확인합니다. 계속 보이지 않으면 관리자에게 접근 권한을 요청합니다.</td></tr><tr><td>이미 끝난 평가를 다시 취소하려 함</td><td>최종 상태와 결과를 먼저 확인합니다. 끝난 실행에는 취소를 다시 시도하지 않습니다.</td></tr><tr><td>실행 제한 안내가 표시됨</td><td>현재 실행 중인 평가가 끝난 뒤 다시 시도합니다.</td></tr><tr><td>일부 결과만 표시됨</td><td>실행 상태와 처리된 Case 수를 확인합니다. 전체 결과로 해석하지 않습니다.</td></tr></tbody></table>
+<p>같은 문제가 반복되면 Dataset, Evaluator, 실행 상태와 화면에 표시된 안내를 함께 기록해 관리자에게 문의합니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="결과와-dashboard-확인하기">결과와 Dashboard 확인하기<a href="#결과와-dashboard-확인하기" class="hash-link" aria-label="결과와 Dashboard 확인하기에 대한 직접 링크" title="결과와 Dashboard 확인하기에 대한 직접 링크" translate="no">​</a></h2>
+<p>Results에서는 Case별 판정 결과를 확인하고, 결과 export에서는 전체 결과를 내려받아 보관할 수 있습니다. Dashboard를 볼 때는 집계 대상이 현재 보고 있는 에이전트 범위와 같은지 먼저 확인합니다.</p>
+<p>결과를 해석할 때는 다음 정보를 함께 기록합니다.</p>
+<ol>
+<li class="">어떤 Dataset과 Case를 사용했는지</li>
+<li class="">어떤 Evaluator 유형과 범위를 적용했는지</li>
+<li class="">실행이 끝났는지, 일부 Case가 남아 있는지</li>
+<li class="">개별 Result와 Dashboard 집계가 같은 범위를 가리키는지</li>
+</ol>
+<p>일부 Case만 처리된 실행이나 제한 시간 안에 끝나지 않은 실행은 전체 평가를 대표하지 않습니다. 결과가 좋아도 Dataset, 지침, 모델 또는 연결 도구가 달랐다면 차이가 생긴 원인을 따로 기록합니다.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="권장-실행-순서">권장 실행 순서<a href="#권장-실행-순서" class="hash-link" aria-label="권장 실행 순서에 대한 직접 링크" title="권장 실행 순서에 대한 직접 링크" translate="no">​</a></h2>
 <ol>
-<li class="">평가 목적에 맞는 dataset과 case를 준비합니다.</li>
-<li class="">CSV를 import했다면 필수 header, 파일 크기, 행 수와 문자 인코딩을 확인합니다.</li>
-<li class="">evaluator의 범위, 유형, 점수 범위를 확인합니다.</li>
-<li class="">dataset과 evaluator를 사용해 run을 생성합니다.</li>
-<li class="">pending, running 이후의 terminal 상태를 조회합니다.</li>
-<li class="">개별 results와 전체 결과 export를 확인합니다.</li>
-<li class="">Dashboard 집계 범위와 run 결과의 agent 범위를 비교합니다.</li>
-<li class="">취소 또는 오류가 있었다면 남은 case와 최종 상태를 다시 확인합니다.</li>
+<li class="">평가 목적에 맞는 Dataset과 Case를 준비합니다.</li>
+<li class="">CSV를 사용했다면 열 이름, 파일 크기, 행 수와 문자 인코딩을 확인합니다.</li>
+<li class="">Evaluator의 유형과 적용 범위를 확인합니다.</li>
+<li class="">Dataset과 Evaluator를 선택해 평가를 실행합니다.</li>
+<li class="">실행 상태와 처리된 Case 수를 확인합니다.</li>
+<li class="">개별 Results와 전체 결과 export를 확인합니다.</li>
+<li class="">Dashboard의 집계 범위를 개별 결과의 범위와 비교합니다.</li>
+<li class="">취소 또는 오류가 있었다면 최종 상태와 남은 Case를 다시 확인합니다.</li>
 </ol>
-<p>평가 결과는 설정 변경의 근거로 사용할 수 있지만, 결과 조회가 곧 품질 보증을 의미하지는 않습니다. 비교하려는 모델, 지침, 도구 구성이 달라졌다면 같은 dataset을 사용해도 결과 차이의 원인을 별도로 기록해야 합니다.</p>
+<p>평가 결과는 설정을 비교하는 자료로 사용할 수 있지만, 결과 조회만으로 품질 보증이 끝나는 것은 아닙니다.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="다음-문서">다음 문서<a href="#다음-문서" class="hash-link" aria-label="다음 문서에 대한 직접 링크" title="다음 문서에 대한 직접 링크" translate="no">​</a></h2>
 <ul>
 <li class=""><a class="" href="/deep-agent-platform/docs/deep-agent-builder/models/">모델 구성</a></li>
 <li class=""><a class="" href="/deep-agent-platform/docs/deep-agent-builder/getting-started/">시작하기</a></li>
 <li class=""><a class="" href="/deep-agent-platform/docs/deep-agent-builder/troubleshooting/">문제 해결</a></li>
-</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/deep-agent-platform/docs/deep-agent-builder/secrets-permissions/"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">시크릿과 권한</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/deep-agent-platform/docs/deep-agent-builder/evaluation-overview/"><div class="pagination-nav__sublabel">다음</div><div class="pagination-nav__label">에이전트 평가 개요</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#평가에-필요한-자원" class="table-of-contents__link toc-highlight">평가에 필요한 자원</a></li><li><a href="#dataset과-case-준비" class="table-of-contents__link toc-highlight">Dataset과 case 준비</a></li><li><a href="#evaluator-선택" class="table-of-contents__link toc-highlight">Evaluator 선택</a></li><li><a href="#평가-실행" class="table-of-contents__link toc-highlight">평가 실행</a></li><li><a href="#취소와-오류-확인" class="table-of-contents__link toc-highlight">취소와 오류 확인</a></li><li><a href="#결과와-대시보드-확인" class="table-of-contents__link toc-highlight">결과와 대시보드 확인</a></li><li><a href="#권장-실행-순서" class="table-of-contents__link toc-highlight">권장 실행 순서</a></li><li><a href="#다음-문서" class="table-of-contents__link toc-highlight">다음 문서</a></li></ul></div></div></div></div></main></div></div></div></div>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/deep-agent-platform/docs/deep-agent-builder/secrets-permissions/"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">시크릿과 권한</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/deep-agent-platform/docs/deep-agent-builder/evaluation-overview/"><div class="pagination-nav__sublabel">다음</div><div class="pagination-nav__label">에이전트 평가 개요</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#평가에-필요한-자원" class="table-of-contents__link toc-highlight">평가에 필요한 자원</a></li><li><a href="#dataset과-case-준비하기" class="table-of-contents__link toc-highlight">Dataset과 Case 준비하기</a></li><li><a href="#evaluator-선택하기" class="table-of-contents__link toc-highlight">Evaluator 선택하기</a></li><li><a href="#평가-실행하기" class="table-of-contents__link toc-highlight">평가 실행하기</a></li><li><a href="#취소와-오류가-발생했을-때" class="table-of-contents__link toc-highlight">취소와 오류가 발생했을 때</a></li><li><a href="#결과와-dashboard-확인하기" class="table-of-contents__link toc-highlight">결과와 Dashboard 확인하기</a></li><li><a href="#권장-실행-순서" class="table-of-contents__link toc-highlight">권장 실행 순서</a></li><li><a href="#다음-문서" class="table-of-contents__link toc-highlight">다음 문서</a></li></ul></div></div></div></div></main></div></div></div></div>
 </body>
 </html>
