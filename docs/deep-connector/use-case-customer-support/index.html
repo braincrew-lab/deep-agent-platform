@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="ko" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-deep-connector/use-case-customer-support" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.2">
+<title data-rh="true">Deep Connector 사례: 고객 문의 답변 근거 찾기 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/use-case-customer-support/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Deep Connector 사례: 고객 문의 답변 근거 찾기 | Deep Platform"><meta data-rh="true" name="description" content="브레인크루 고객센터 상담원은 &quot;앱에 E103 오류가 떠요&quot;, &quot;단순 변심인데 반품 배송비는요?&quot; 같은 문의에 FAQ, 처리 기준표, 스캔한 안내문을 뒤져 답합니다. 이 사례에서는 텍스트 문서와 엑셀, 사진·스캔 이미지를 한 컬렉션에 모아, 상담원이 문의 내용을 그대로 넣으면 답변 근거가 나오게 합니다. 처리에 실패한 파일을 바로잡는 과정도 함께 봅니다."><meta data-rh="true" property="og:description" content="브레인크루 고객센터 상담원은 &quot;앱에 E103 오류가 떠요&quot;, &quot;단순 변심인데 반품 배송비는요?&quot; 같은 문의에 FAQ, 처리 기준표, 스캔한 안내문을 뒤져 답합니다. 이 사례에서는 텍스트 문서와 엑셀, 사진·스캔 이미지를 한 컬렉션에 모아, 상담원이 문의 내용을 그대로 넣으면 답변 근거가 나오게 합니다. 처리에 실패한 파일을 바로잡는 과정도 함께 봅니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/use-case-customer-support/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/use-case-customer-support/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/use-case-customer-support/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"사례: 고객 문의 답변 근거 찾기","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/use-case-customer-support"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
+<script src="/deep-agent-platform/assets/js/runtime~main.0da81299.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.836f1a7b.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/deep-agent-platform/img/manual-mark.svg"><div role="region" aria-label="본문으로 건너뛰기"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">본문으로 건너뛰기</a></div><nav aria-label="메인" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="사이드바 펼치거나 접기" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/deep-agent-platform/"><div class="navbar__logo"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Deep Platform</b></a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">솔루션</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-flow/">Deep Flow</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-agent-builder/">Deep Agent Builder</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/deep-agent-platform/docs/deep-connector/">Deep Connector</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-docurator/">Deep Docurator</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/brain-parser/">Brain Parser</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work/">Deep Work</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work-gateway/">Deep Work Gateway</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-admin/">Deep Admin</a></li></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="어두운 모드와 밝은 모드 전환하기 (현재 system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="searchBar_fdyA"><input type="search" class="searchInput_JE4R" placeholder="매뉴얼 검색" aria-label="매뉴얼 검색" role="combobox" aria-autocomplete="list" aria-expanded="false" value=""><div role="status" aria-live="polite"></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="맨 위로 스크롤하기" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="문서 사이드바" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/deep-agent-platform/docs/deep-connector/"><span class="categoryLinkLabel_W154">기타</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/"><span class="linkLabel_WmDU">소개</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/getting-started/"><span class="linkLabel_WmDU">시작하기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/core-features/"><span class="linkLabel_WmDU">메뉴 안내</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/collections/"><span class="linkLabel_WmDU">컬렉션과 폴더</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/upload-documents/"><span class="linkLabel_WmDU">문서 올리기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/documents-and-chunks/"><span class="linkLabel_WmDU">문서와 청크 확인</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/search-and-rag/"><span class="linkLabel_WmDU">검색과 RAG 점검</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/permissions/"><span class="linkLabel_WmDU">권한·공유·접근 요청</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/external-integration/"><span class="linkLabel_WmDU">외부 연동</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/agent-knowledge/"><span class="linkLabel_WmDU">에이전트에서 지식 쓰기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/admin/"><span class="linkLabel_WmDU">관리자 메뉴</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/workflows/"><span class="linkLabel_WmDU">반복 업무</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/use-cases/"><span class="linkLabel_WmDU">활용사례</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/use-case-policy-qa/"><span class="linkLabel_WmDU">사례: 사내 규정 Q&amp;A</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/use-case-product-manual/"><span class="linkLabel_WmDU">사례: 제품 매뉴얼 검색</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/use-case-sales-reference/"><span class="linkLabel_WmDU">사례: 영업 제안서 레퍼런스 찾기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/deep-agent-platform/docs/deep-connector/use-case-customer-support/"><span class="linkLabel_WmDU">사례: 고객 문의 답변 근거 찾기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/use-case-hr-benefits/"><span class="linkLabel_WmDU">사례: 인사·복리후생 안내 봇</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/troubleshooting/"><span class="linkLabel_WmDU">문제 해결</span></a></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="탐색 경로"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="홈" class="breadcrumbs__link" href="/deep-agent-platform/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">기타</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">사례: 고객 문의 답변 근거 찾기</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">이 페이지에서</button></div><div class="theme-doc-markdown markdown"><header><h1>Deep Connector 사례: 고객 문의 답변 근거 찾기</h1></header>
+<p>브레인크루 고객센터 상담원은 &quot;앱에 E103 오류가 떠요&quot;, &quot;단순 변심인데 반품 배송비는요?&quot; 같은 문의에 FAQ, 처리 기준표, 스캔한 안내문을 뒤져 답합니다. 이 사례에서는 텍스트 문서와 엑셀, 사진·스캔 이미지를 한 컬렉션에 모아, 상담원이 문의 내용을 그대로 넣으면 답변 근거가 나오게 합니다. 처리에 실패한 파일을 바로잡는 과정도 함께 봅니다.</p>
+<p><strong>이 페이지에서 할 수 있는 일</strong></p>
+<ul>
+<li class="">Markdown(.md), 엑셀(.xls, .xlsx), 사진(.jpg, .jpeg), 스캔 이미지(.tiff)를 한 컬렉션에 올립니다.</li>
+<li class="">처리에 실패한 파일의 오류를 읽고 형식을 바꿔 다시 올립니다.</li>
+<li class="">문의 문장으로 검색해 FAQ와 스캔 안내문을 함께 근거로 받습니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="목표">목표<a href="#목표" class="hash-link" aria-label="목표에 대한 직접 링크" title="목표에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>항목</th><th>내용</th></tr></thead><tbody><tr><td>누가</td><td>고객센터 상담원(검색), 상담 리더(문서 관리)</td></tr><tr><td>무엇을</td><td>FAQ, 처리 기준표, 오류 화면, 반품 안내문, 보증서를 &quot;고객지원 답변 근거&quot; 컬렉션에 올립니다</td></tr><tr><td>끝났다고 볼 기준</td><td>&quot;단순 변심 반품 배송비&quot;를 물었을 때 6,000원과 14일 기준이 근거와 함께 나오는 것</td></tr><tr><td>걸리는 시간</td><td>25분 정도</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="준비물">준비물<a href="#준비물" class="hash-link" aria-label="준비물에 대한 직접 링크" title="준비물에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>파일</th><th>확장자</th><th>내용</th></tr></thead><tbody><tr><td>자주-묻는-질문.md</td><td>.md</td><td>배송, 교환·반품(14일, 왕복 배송비 6,000원), 오류 코드 E101·E103·E205, A/S</td></tr><tr><td>문의-유형별-처리-기준.xls</td><td>.xls</td><td>문의 유형마다 1차 응대, 처리 기한, 에스컬레이션 대상(예전 엑셀 형식)</td></tr><tr><td>오류-화면-E103.jpg</td><td>.jpg</td><td>앱 오류 화면을 찍은 그림(마이크 연결 오류)</td></tr><tr><td>반품-접수-안내문-스캔.jpeg</td><td>.jpeg</td><td>반품 접수 순서를 적은 안내문 스캔</td></tr><tr><td>품질-보증서-스캔.tiff</td><td>.tiff</td><td>보증 기간 1년과 무상 수리 제외 항목이 적힌 보증서 스캔</td></tr></tbody></table>
+<p>모두 매뉴얼 시연용 가상 자료입니다. 실제 상담 기록이나 고객 개인정보가 담긴 파일은 올리지 마세요.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="단계">단계<a href="#단계" class="hash-link" aria-label="단계에 대한 직접 링크" title="단계에 대한 직접 링크" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-컬렉션-만들고-자료-올리기">1. 컬렉션 만들고 자료 올리기<a href="#1-컬렉션-만들고-자료-올리기" class="hash-link" aria-label="1. 컬렉션 만들고 자료 올리기에 대한 직접 링크" title="1. 컬렉션 만들고 자료 올리기에 대한 직접 링크" translate="no">​</a></h3>
+<ol>
+<li class=""><strong>새 컬렉션</strong>에서 이름 &quot;고객지원 답변 근거&quot;, 설명 &quot;FAQ·문의 유형별 처리 기준·오류 화면·반품 안내문·보증서&quot;로 만듭니다.</li>
+<li class=""><strong>문서 업로드</strong>에서 다섯 파일을 올립니다. 스캔 이미지는 크기가 커서(.tiff 약 2.7 MB) 다른 파일보다 처리가 조금 더 걸립니다.</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-처리-실패한-파일-바로잡기">2. 처리 실패한 파일 바로잡기<a href="#2-처리-실패한-파일-바로잡기" class="hash-link" aria-label="2. 처리 실패한 파일 바로잡기에 대한 직접 링크" title="2. 처리 실패한 파일 바로잡기에 대한 직접 링크" translate="no">​</a></h3>
+<p>이 매뉴얼의 시연 환경에서는 .xls 파일이 처리에 실패했습니다. 문서 목록에서 실패 표시를 보고 원인을 확인합니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="처리 실패한 문서"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/troubleshooting-failed-8503cd4524a9abb97ceee1e87fc76b58.png" target="_blank" rel="noopener"><img width="1478" height="756" src="/deep-agent-platform/assets/images/troubleshooting-failed-8503cd4524a9abb97ceee1e87fc76b58.png" alt="문의 유형별 처리 기준 xls 파일에 실패 표시와 재시도 버튼이 보이는 문서 목록" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">처리 실패한 문서</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>화면에서 볼 것</th></tr></thead><tbody><tr><td>1</td><td>문서 이름</td><td>청크 수가 0인 .xls 파일입니다.</td></tr><tr><td>2</td><td>실패 표시</td><td>누르면 오류 상세 창이 열립니다.</td></tr><tr><td>3</td><td><strong>재시도</strong></td><td>같은 파일로 처리를 다시 시작합니다.</td></tr></tbody></table>
+<p>오류 상세에는 &quot;Unsupported format: .xls — convert to .xlsx and retry&quot;가 나옵니다. 엑셀에서 파일을 열어 .xlsx로 다른 이름으로 저장한 뒤 같은 컬렉션에 다시 올립니다. 위 그림은 .xlsx를 다시 올린 뒤의 목록이라 맨 위에 처리가 끝난 .xlsx가 보입니다. 실패한 .xls 문서는 정리가 끝나면 지웁니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="고객지원 답변 근거 컬렉션의 문서 목록"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/use-case-customer-support-documents-dca057336d8b452fda6d4c20810fd5a0.png" target="_blank" rel="noopener"><img width="1478" height="756" src="/deep-agent-platform/assets/images/use-case-customer-support-documents-dca057336d8b452fda6d4c20810fd5a0.png" alt="다섯 자료와 다시 올린 xlsx 파일이 보이는 문서 목록" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">고객지원 답변 근거 컬렉션의 문서 목록</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>화면에서 볼 것</th></tr></thead><tbody><tr><td>1</td><td>문서 이름</td><td>다시 올린 &quot;문의-유형별-처리-기준.xlsx&quot;가 맨 위에 있습니다.</td></tr><tr><td>2</td><td>청크 수</td><td>스캔 이미지와 사진도 글자를 읽어 청크가 만들어졌습니다. 아직 지우지 않은 실패한 .xls만 0입니다.</td></tr><tr><td>3</td><td><strong>청크</strong> 탭</td><td>스캔본에서 읽은 글자가 원문과 같은지 봅니다.</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-문의-문장으로-찾기">3. 문의 문장으로 찾기<a href="#3-문의-문장으로-찾기" class="hash-link" aria-label="3. 문의 문장으로 찾기에 대한 직접 링크" title="3. 문의 문장으로 찾기에 대한 직접 링크" translate="no">​</a></h3>
+<p><strong>실험</strong> &gt; <strong>검색</strong>에서 <strong>하이브리드 검색</strong>으로 고객이 한 말을 그대로 넣습니다.</p>
+<blockquote>
+<p>프롬프트: 단순 변심으로 반품하면 배송비는 누가 내나요?</p>
+</blockquote>
+<p><span class="manual-shot" role="figure" aria-label="하이브리드 검색 결과"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/use-case-customer-support-search-6ec3a9ef648c8fc5b7bac40c5769c38b.png" target="_blank" rel="noopener"><img width="1478" height="756" src="/deep-agent-platform/assets/images/use-case-customer-support-search-6ec3a9ef648c8fc5b7bac40c5769c38b.png" alt="반품 배송비 질문에 FAQ와 반품 안내문 스캔이 나온 하이브리드 검색 결과" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">하이브리드 검색 결과</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>화면에서 볼 것</th></tr></thead><tbody><tr><td>1</td><td>컬렉션</td><td>&quot;고객지원 답변 근거&quot;입니다.</td></tr><tr><td>2</td><td>검색 방식</td><td><strong>하이브리드 검색</strong>입니다. 적용된 설정에 RRF 전략이 보입니다.</td></tr><tr><td>3</td><td>질문</td><td>고객 문의 그대로입니다.</td></tr><tr><td>4</td><td>결과</td><td>FAQ(.md)가 신뢰도 93%, 반품 안내문 스캔(.jpeg)이 81%, 처리 기준표(.xlsx)가 3위로 나옵니다.</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-답변-초안-받기">4. 답변 초안 받기<a href="#4-답변-초안-받기" class="hash-link" aria-label="4. 답변 초안 받기에 대한 직접 링크" title="4. 답변 초안 받기에 대한 직접 링크" translate="no">​</a></h3>
+<p><strong>RAG 진단</strong>에서 오류 문의에 대한 응대 순서를 묻습니다.</p>
+<blockquote>
+<p>프롬프트: 고객이 앱에 E103 오류가 뜬다고 합니다. 1차 응대와 다음 조치를 알려 주세요.</p>
+</blockquote>
+<p><span class="manual-shot" role="figure" aria-label="고객지원 답변"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/use-case-customer-support-answer-69c8fe5baf3188f2d44a06d1f449ff29.png" target="_blank" rel="noopener"><img width="1478" height="756" src="/deep-agent-platform/assets/images/use-case-customer-support-answer-69c8fe5baf3188f2d44a06d1f449ff29.png" alt="E103 오류 문의에 FAQ와 처리 기준표를 근거로 답한 RAG 진단" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">고객지원 답변</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>화면에서 볼 것</th></tr></thead><tbody><tr><td>1</td><td>컬렉션</td><td>&quot;고객지원 답변 근거&quot;입니다.</td></tr><tr><td>2</td><td>질의</td><td>상담원이 받은 문의입니다.</td></tr><tr><td>3</td><td>답변</td><td>&quot;앱 오류 코드 E103(마이크 연결 오류) 발생 시 1차 응대는 기기 재부팅 안내입니다. 기기를 다시 켠 뒤 문제가 계속되면 A/S 접수를 권장합니다&quot;라고 답하고, 근거로 &quot;자주-묻는-질문.md&quot;와 &quot;문의-유형별-처리-기준.xlsx&quot;를 들었습니다.</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="결과물-예시">결과물 예시<a href="#결과물-예시" class="hash-link" aria-label="결과물 예시에 대한 직접 링크" title="결과물 예시에 대한 직접 링크" translate="no">​</a></h2>
+<p>상담원이 고객에게 보낼 답변 초안입니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>문의</th><th>답변 초안</th><th>근거</th></tr></thead><tbody><tr><td>단순 변심 반품 배송비</td><td>받은 날부터 14일 안에 신청할 수 있고, 단순 변심이면 왕복 배송비 6,000원을 고객님이 부담하십니다.</td><td>자주-묻는-질문.md, 반품-접수-안내문-스캔.jpeg</td></tr><tr><td>앱 E103 오류</td><td>기기를 다시 켠 뒤 시도해 주세요. 계속되면 A/S 접수를 도와드리겠습니다.</td><td>자주-묻는-질문.md, 문의-유형별-처리-기준.xlsx</td></tr><tr><td>보증 기간</td><td>구입일로부터 1년이며, 침수·낙하·임의 분해는 무상 수리에서 제외됩니다.</td><td>품질-보증서-스캔.tiff</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="응용-팁">응용 팁<a href="#응용-팁" class="hash-link" aria-label="응용 팁에 대한 직접 링크" title="응용 팁에 대한 직접 링크" translate="no">​</a></h2>
+<ul>
+<li class="">고객이 보낸 오류 화면 사진과 같은 화면을 컬렉션에 미리 올려 두면, 오류 문구만 입력해도 대응 문서가 함께 나옵니다.</li>
+<li class="">상담원 에이전트를 만들 때 지침에 &quot;근거 문서에 없는 보상이나 예외는 약속하지 않는다&quot;를 넣습니다.</li>
+<li class="">처리 기준표는 자주 바뀌므로 바뀔 때마다 새 버전 업로드로 교체하고, 변경 사유에 바뀐 유형을 적어 둡니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="다음-문서">다음 문서<a href="#다음-문서" class="hash-link" aria-label="다음 문서에 대한 직접 링크" title="다음 문서에 대한 직접 링크" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-connector/use-cases/">활용사례</a> — 다른 사례 보기</li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-connector/troubleshooting/">문제 해결</a> — 처리 실패 대처</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/deep-agent-platform/docs/deep-connector/use-case-sales-reference/"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">사례: 영업 제안서 레퍼런스 찾기</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/deep-agent-platform/docs/deep-connector/use-case-hr-benefits/"><div class="pagination-nav__sublabel">다음</div><div class="pagination-nav__label">사례: 인사·복리후생 안내 봇</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#목표" class="table-of-contents__link toc-highlight">목표</a></li><li><a href="#준비물" class="table-of-contents__link toc-highlight">준비물</a></li><li><a href="#단계" class="table-of-contents__link toc-highlight">단계</a><ul><li><a href="#1-컬렉션-만들고-자료-올리기" class="table-of-contents__link toc-highlight">1. 컬렉션 만들고 자료 올리기</a></li><li><a href="#2-처리-실패한-파일-바로잡기" class="table-of-contents__link toc-highlight">2. 처리 실패한 파일 바로잡기</a></li><li><a href="#3-문의-문장으로-찾기" class="table-of-contents__link toc-highlight">3. 문의 문장으로 찾기</a></li><li><a href="#4-답변-초안-받기" class="table-of-contents__link toc-highlight">4. 답변 초안 받기</a></li></ul></li><li><a href="#결과물-예시" class="table-of-contents__link toc-highlight">결과물 예시</a></li><li><a href="#응용-팁" class="table-of-contents__link toc-highlight">응용 팁</a></li><li><a href="#다음-문서" class="table-of-contents__link toc-highlight">다음 문서</a></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>

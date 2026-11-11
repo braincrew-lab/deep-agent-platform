@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="ko" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-deep-connector/collections" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.2">
+<title data-rh="true">Deep Connector 컬렉션과 폴더 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/collections/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Deep Connector 컬렉션과 폴더 | Deep Platform"><meta data-rh="true" name="description" content="컬렉션은 문서를 묶는 보관함이자 검색 범위이고, 폴더는 컬렉션을 정리하는 분류입니다. 이 페이지는 컬렉션 목록을 읽는 법, 폴더로 정리하는 법, 컬렉션 설정 탭에서 기본 파이프라인과 검색 방식, AI 답변을 정하는 법을 설명합니다."><meta data-rh="true" property="og:description" content="컬렉션은 문서를 묶는 보관함이자 검색 범위이고, 폴더는 컬렉션을 정리하는 분류입니다. 이 페이지는 컬렉션 목록을 읽는 법, 폴더로 정리하는 법, 컬렉션 설정 탭에서 기본 파이프라인과 검색 방식, AI 답변을 정하는 법을 설명합니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/collections/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/collections/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/collections/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"컬렉션과 폴더","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/collections"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
+<script src="/deep-agent-platform/assets/js/runtime~main.0da81299.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.836f1a7b.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/deep-agent-platform/img/manual-mark.svg"><div role="region" aria-label="본문으로 건너뛰기"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">본문으로 건너뛰기</a></div><nav aria-label="메인" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="사이드바 펼치거나 접기" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/deep-agent-platform/"><div class="navbar__logo"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Deep Platform</b></a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">솔루션</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-flow/">Deep Flow</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-agent-builder/">Deep Agent Builder</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/deep-agent-platform/docs/deep-connector/">Deep Connector</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-docurator/">Deep Docurator</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/brain-parser/">Brain Parser</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work/">Deep Work</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work-gateway/">Deep Work Gateway</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-admin/">Deep Admin</a></li></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="어두운 모드와 밝은 모드 전환하기 (현재 system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="searchBar_fdyA"><input type="search" class="searchInput_JE4R" placeholder="매뉴얼 검색" aria-label="매뉴얼 검색" role="combobox" aria-autocomplete="list" aria-expanded="false" value=""><div role="status" aria-live="polite"></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="맨 위로 스크롤하기" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="문서 사이드바" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/deep-agent-platform/docs/deep-connector/"><span class="categoryLinkLabel_W154">기타</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/"><span class="linkLabel_WmDU">소개</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/getting-started/"><span class="linkLabel_WmDU">시작하기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/core-features/"><span class="linkLabel_WmDU">메뉴 안내</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/deep-agent-platform/docs/deep-connector/collections/"><span class="linkLabel_WmDU">컬렉션과 폴더</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/upload-documents/"><span class="linkLabel_WmDU">문서 올리기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/documents-and-chunks/"><span class="linkLabel_WmDU">문서와 청크 확인</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/search-and-rag/"><span class="linkLabel_WmDU">검색과 RAG 점검</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/permissions/"><span class="linkLabel_WmDU">권한·공유·접근 요청</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/external-integration/"><span class="linkLabel_WmDU">외부 연동</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/agent-knowledge/"><span class="linkLabel_WmDU">에이전트에서 지식 쓰기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/admin/"><span class="linkLabel_WmDU">관리자 메뉴</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/workflows/"><span class="linkLabel_WmDU">반복 업무</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/use-cases/"><span class="linkLabel_WmDU">활용사례</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/use-case-policy-qa/"><span class="linkLabel_WmDU">사례: 사내 규정 Q&amp;A</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/use-case-product-manual/"><span class="linkLabel_WmDU">사례: 제품 매뉴얼 검색</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/use-case-sales-reference/"><span class="linkLabel_WmDU">사례: 영업 제안서 레퍼런스 찾기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/use-case-customer-support/"><span class="linkLabel_WmDU">사례: 고객 문의 답변 근거 찾기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/use-case-hr-benefits/"><span class="linkLabel_WmDU">사례: 인사·복리후생 안내 봇</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/troubleshooting/"><span class="linkLabel_WmDU">문제 해결</span></a></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="탐색 경로"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="홈" class="breadcrumbs__link" href="/deep-agent-platform/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">기타</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">컬렉션과 폴더</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">이 페이지에서</button></div><div class="theme-doc-markdown markdown"><header><h1>Deep Connector 컬렉션과 폴더</h1></header>
+<p>컬렉션은 문서를 묶는 보관함이자 검색 범위이고, 폴더는 컬렉션을 정리하는 분류입니다. 이 페이지는 컬렉션 목록을 읽는 법, 폴더로 정리하는 법, 컬렉션 설정 탭에서 기본 파이프라인과 검색 방식, AI 답변을 정하는 법을 설명합니다.</p>
+<p><strong>이 페이지에서 할 수 있는 일</strong></p>
+<ul>
+<li class="">컬렉션 목록의 열과 버튼이 무엇을 뜻하는지 압니다.</li>
+<li class="">폴더를 만들고 컬렉션을 폴더로 옮깁니다.</li>
+<li class="">컬렉션 이름, 설명, 태그, 기본 파이프라인을 고칩니다.</li>
+<li class="">검색 분석기, 사용자 사전, LLM 검색 보강을 설정합니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="컬렉션-목록">컬렉션 목록<a href="#컬렉션-목록" class="hash-link" aria-label="컬렉션 목록에 대한 직접 링크" title="컬렉션 목록에 대한 직접 링크" translate="no">​</a></h2>
+<p>사이드바 <strong>컬렉션</strong>을 누르면 왼쪽에 폴더 트리, 오른쪽에 컬렉션 목록이 나옵니다. 내가 볼 수 있는 컬렉션만 보입니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="컬렉션 목록과 폴더"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/collections-list-512f49c238d1fdf85674daece1a45b13.png" target="_blank" rel="noopener"><img width="1478" height="756" src="/deep-agent-platform/assets/images/collections-list-512f49c238d1fdf85674daece1a45b13.png" alt="폴더 트리, 컬렉션 목록, 행 작업 버튼과 컬렉션 메뉴에 번호를 붙인 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">컬렉션 목록과 폴더</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>새 폴더</strong></td><td>최상위에 새 폴더를 만듭니다.</td><td>부서별로 컬렉션을 나눌 때</td></tr><tr><td>2</td><td><strong>전체</strong></td><td>폴더와 관계없이 내가 볼 수 있는 컬렉션을 모두 보여 줍니다. 옆 숫자는 컬렉션 수입니다.</td><td>어느 폴더에 있는지 모르는 컬렉션을 찾을 때</td></tr><tr><td>3</td><td>폴더</td><td>누르면 그 폴더의 컬렉션만 보입니다. 왼쪽 화살표로 펼치면 안의 컬렉션이 보입니다.</td><td>경영지원 폴더의 컬렉션만 볼 때</td></tr><tr><td>4</td><td>태그</td><td>컬렉션에 붙은 태그로 목록을 좁힙니다.</td><td>&quot;사내규정&quot; 태그가 붙은 컬렉션만 볼 때</td></tr><tr><td>5</td><td><strong>컬렉션 이름 검색</strong></td><td>이름 일부로 목록을 좁힙니다.</td><td>컬렉션이 많을 때</td></tr><tr><td>6</td><td><strong>새 컬렉션</strong></td><td>새 컬렉션 만들기 화면을 엽니다.</td><td>새 주제의 문서를 모을 때</td></tr><tr><td>7</td><td>컬렉션 이름</td><td>이름과 설명입니다. 왼쪽 아이콘은 저장소와 접근 수준을 나타냅니다. 누르면 문서 탭이 열립니다.</td><td>컬렉션 안의 문서를 볼 때</td></tr><tr><td>8</td><td>태그</td><td>컬렉션에 붙은 태그입니다. 여러 개면 첫 태그와 남은 개수(예: +1)가 보입니다. 처리 중이거나 실패한 문서가 있으면 오른쪽 <strong>처리 상태</strong> 열에 건수가 표시되고, 누르면 그 문서만 걸러서 보여 줍니다.</td><td>컬렉션 용도를 구별하거나 실패한 문서를 바로 찾을 때</td></tr><tr><td>9</td><td>공유</td><td>컬렉션의 공유/권한 탭으로 갑니다.</td><td>동료에게 조회 권한을 줄 때</td></tr><tr><td>10</td><td>편집</td><td>컬렉션 설정 탭으로 갑니다.</td><td>설명이나 기본 파이프라인을 고칠 때</td></tr><tr><td>11</td><td>삭제</td><td>컬렉션을 지웁니다. 안의 문서와 청크도 함께 사라집니다.</td><td>연습용 컬렉션을 정리할 때</td></tr><tr><td>12</td><td>컬렉션 메뉴</td><td><strong>폴더로 이동</strong>, <strong>접근 수준 변경</strong>이 있습니다.</td><td>컬렉션을 다른 폴더로 옮기거나 공개 범위를 바꿀 때</td></tr></tbody></table>
+<p>이름, 문서, 청크 열 머리글을 누르면 그 기준으로 정렬합니다. 에이전트가 근거로 쓰는 운영 컬렉션은 삭제하거나 이름을 바꾸기 전에 담당자와 상의하세요.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="폴더-만들기와-정리">폴더 만들기와 정리<a href="#폴더-만들기와-정리" class="hash-link" aria-label="폴더 만들기와 정리에 대한 직접 링크" title="폴더 만들기와 정리에 대한 직접 링크" translate="no">​</a></h2>
+<p>폴더 트리 위 <strong>새 폴더</strong>를 누르면 아래 창이 열립니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="새 폴더 창"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/collections-new-folder-e3bb3b1643d13b897b6187f0fc23419e.png" target="_blank" rel="noopener"><img width="1478" height="756" src="/deep-agent-platform/assets/images/collections-new-folder-e3bb3b1643d13b897b6187f0fc23419e.png" alt="폴더 이름과 설명을 입력한 새 폴더 창" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">새 폴더 창</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>폴더 이름</strong></td><td>트리에 보일 이름입니다.</td><td>&quot;경영지원&quot;처럼 부서나 용도가 드러나는 이름을 붙일 때</td></tr><tr><td>2</td><td><strong>폴더 설명</strong></td><td>폴더 용도입니다. 선택 사항입니다.</td><td>다른 사람이 폴더 용도를 알 수 있게 할 때</td></tr><tr><td>3</td><td><strong>취소</strong></td><td>만들지 않고 닫습니다.</td><td>같은 용도의 폴더가 이미 있을 때</td></tr><tr><td>4</td><td><strong>만들기</strong></td><td>폴더를 만듭니다.</td><td>이름을 다 적었을 때</td></tr></tbody></table>
+<p>폴더에 마우스를 올리면 오른쪽에 폴더 메뉴 버튼이 나옵니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="폴더 메뉴"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/collections-folder-menu-60763b7abb63db0664f6cbc12c70a65f.png" target="_blank" rel="noopener"><img width="1478" height="756" src="/deep-agent-platform/assets/images/collections-folder-menu-60763b7abb63db0664f6cbc12c70a65f.png" alt="폴더 메뉴를 연 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">폴더 메뉴</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>하위 폴더 만들기</strong></td><td>이 폴더 안에 폴더를 만듭니다. 폴더는 3단계까지 만들 수 있습니다.</td><td>경영지원 아래를 &quot;규정&quot;과 &quot;안내&quot;로 나눌 때</td></tr><tr><td>2</td><td><strong>이름 변경</strong></td><td>폴더 이름과 설명을 바꿉니다.</td><td>조직 개편으로 부서 이름이 바뀌었을 때</td></tr><tr><td>3</td><td><strong>이동</strong></td><td>폴더를 다른 폴더 아래로 옮깁니다.</td><td>폴더 구조를 다시 정리할 때</td></tr><tr><td>4</td><td><strong>삭제</strong></td><td>폴더를 지웁니다. 하위 폴더도 함께 지워지고, 안의 컬렉션은 &quot;분류 없음&quot;으로 옮겨집니다. 컬렉션은 지워지지 않습니다.</td><td>쓰지 않는 폴더를 정리할 때</td></tr><tr><td>5</td><td>폴더</td><td>메뉴를 연 폴더입니다.</td><td>어느 폴더의 메뉴인지 확인할 때</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="따라-해-보기-컬렉션을-폴더로-옮기기">따라 해 보기: 컬렉션을 폴더로 옮기기<a href="#따라-해-보기-컬렉션을-폴더로-옮기기" class="hash-link" aria-label="따라 해 보기: 컬렉션을 폴더로 옮기기에 대한 직접 링크" title="따라 해 보기: 컬렉션을 폴더로 옮기기에 대한 직접 링크" translate="no">​</a></h3>
+<ol>
+<li class=""><strong>새 폴더</strong>로 &quot;경영지원&quot; 폴더를 만듭니다.</li>
+<li class="">컬렉션 목록에서 &quot;규정 Q&amp;A&quot; 행 오른쪽 컬렉션 메뉴를 누르고 <strong>폴더로 이동</strong>을 고릅니다.</li>
+<li class=""><strong>이동할 위치</strong>에서 &quot;경영지원&quot;을 고르고 <strong>이동</strong>을 누릅니다.</li>
+<li class="">폴더 트리에서 경영지원 옆 숫자가 1로 바뀌었는지 확인합니다.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="컬렉션-설정-탭">컬렉션 설정 탭<a href="#컬렉션-설정-탭" class="hash-link" aria-label="컬렉션 설정 탭에 대한 직접 링크" title="컬렉션 설정 탭에 대한 직접 링크" translate="no">​</a></h2>
+<p>컬렉션을 열고 <strong>설정</strong> 탭을 누르면 컬렉션의 기본 정보와 검색 방식을 정하는 화면이 나옵니다. 컬렉션을 고칠 권한이 있는 사람에게만 보입니다. 값을 바꾸면 아래에 &quot;변경 사항은 저장을 눌러야 적용됩니다.&quot;와 <strong>저장</strong> 버튼이 나타납니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="컬렉션 설정 탭(기본 정보)"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/collections-settings-basic-7e6fbaf85ef7ba80776d8f2e63c5aadc.png" target="_blank" rel="noopener"><img width="1478" height="756" src="/deep-agent-platform/assets/images/collections-settings-basic-7e6fbaf85ef7ba80776d8f2e63c5aadc.png" alt="컬렉션 이름, 설명, 태그, 메타데이터, 기본 파이프라인에 번호를 붙인 설정 탭 위쪽" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">컬렉션 설정 탭(기본 정보)</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>설정</strong> 탭</td><td>컬렉션 설정 화면입니다.</td><td>컬렉션 정보를 고칠 때</td></tr><tr><td>2</td><td><strong>컬렉션 이름</strong></td><td>이름을 바꿉니다.</td><td>용도가 바뀌어 이름을 정리할 때</td></tr><tr><td>3</td><td><strong>설명</strong></td><td>설명을 바꿉니다. 에이전트가 컬렉션을 고를 때 참고합니다.</td><td>어떤 질문에 쓰는 컬렉션인지 적어 둘 때</td></tr><tr><td>4</td><td>태그</td><td>태그를 적고 Enter를 누르면 추가됩니다. 최대 20개입니다.</td><td>목록에서 태그로 좁혀 볼 수 있게 할 때</td></tr><tr><td>5</td><td><strong>JSON으로 편집</strong></td><td>컬렉션 메타데이터를 JSON 형식으로 직접 고칩니다.</td><td>메타데이터를 한꺼번에 붙여 넣을 때</td></tr><tr><td>6</td><td><strong>필드 추가</strong></td><td>메타데이터 항목을 하나 추가합니다. 새 항목은 문자열로 저장됩니다.</td><td>&quot;관리부서: 경영지원팀&quot;을 붙일 때</td></tr><tr><td>7</td><td><strong>기본 파이프라인</strong></td><td>업로드 때 따로 고르지 않으면 쓰는 처리 방식입니다.</td><td>컬렉션 문서를 같은 방식으로 처리하게 할 때</td></tr><tr><td>8</td><td><strong>저장</strong></td><td>바꾼 내용을 저장합니다.</td><td>변경을 마쳤을 때</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="검색-분석기와-사전">검색 분석기와 사전<a href="#검색-분석기와-사전" class="hash-link" aria-label="검색 분석기와 사전에 대한 직접 링크" title="검색 분석기와 사전에 대한 직접 링크" translate="no">​</a></h3>
+<p>설정 탭 가운데에는 키워드 검색에 쓰는 한국어 분석기와 사전이 있습니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="컬렉션 설정 탭(검색 분석기)"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/collections-settings-search-00e19634e1cd409cea7cc7ef2a99032a.png" target="_blank" rel="noopener"><img width="1478" height="756" src="/deep-agent-platform/assets/images/collections-settings-search-00e19634e1cd409cea7cc7ef2a99032a.png" alt="분석기, 실패 정책, 사용자 사전, 연결된 사전에 번호를 붙인 설정 탭 가운데" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">컬렉션 설정 탭(검색 분석기)</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>기본 파이프라인</strong></td><td>앞 그림과 같은 항목입니다.</td><td>–</td></tr><tr><td>2</td><td>현재 분석기</td><td>지금 쓰이는 분석기 이름(예: KIWI)입니다.</td><td>분석기 설정이 적용됐는지 볼 때</td></tr><tr><td>3</td><td><strong>분석기</strong></td><td><strong>자동 (저장소 권장값)</strong>, <strong>Simple</strong>, <strong>Kiwi</strong>, <strong>Nori</strong> 중에서 고릅니다.</td><td>담당자가 분석기 변경을 안내했을 때</td></tr><tr><td>4</td><td><strong>실패 정책</strong></td><td>분석기를 쓸 수 없을 때 <strong>기본 분석기로 대체</strong>할지 <strong>오류로 처리</strong>할지 정합니다.</td><td>분석기를 바꾼 뒤 동작을 정할 때</td></tr><tr><td>5</td><td><strong>사용자 사전</strong></td><td>분석기가 한 낱말로 봐야 하는 용어를 적습니다. 최대 500개, 용어당 100자입니다.</td><td>&quot;법인카드&quot;가 &quot;법인&quot;과 &quot;카드&quot;로 쪼개져 검색이 어긋날 때</td></tr><tr><td>6</td><td><strong>추가</strong></td><td>적은 용어를 사용자 사전에 넣습니다.</td><td>용어를 다 적었을 때</td></tr><tr><td>7</td><td><strong>연결된 사전</strong></td><td>관리자가 만든 용어 사전을 이 컬렉션에 연결합니다. 최대 8개이며 먼저 나열된 사전이 우선합니다.</td><td>&quot;법카&quot;로 &quot;법인카드&quot;까지 찾게 할 때</td></tr></tbody></table>
+<p>분석기를 바꾼 뒤에는 &quot;분석기 변경을 기존 문서에 반영하려면 재색인이 권장됩니다.&quot;라는 안내가 나옵니다. 기존 문서에도 적용하려면 <a class="" href="/deep-agent-platform/docs/deep-connector/workflows/">반복 업무</a>의 다시 적재를 하세요. 용어 사전을 만드는 방법은 <a class="" href="/deep-agent-platform/docs/deep-connector/admin/">관리자 메뉴</a>에 있습니다.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="llm-검색-보강">LLM 검색 보강<a href="#llm-검색-보강" class="hash-link" aria-label="LLM 검색 보강에 대한 직접 링크" title="LLM 검색 보강에 대한 직접 링크" translate="no">​</a></h3>
+<p>설정 탭 맨 아래에서는 검색 전에 질문을 다듬거나, 검색 결과로 답변 문장을 만드는 기능을 켭니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="컬렉션 설정 탭(LLM 검색 보강)"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/collections-settings-llm-8b6650ad26052ab18c55e2eb07d04521.png" target="_blank" rel="noopener"><img width="1478" height="756" src="/deep-agent-platform/assets/images/collections-settings-llm-8b6650ad26052ab18c55e2eb07d04521.png" alt="커넥션 ID, 질의 재작성, AI 답변 생성, 최대 청크 수에 번호를 붙인 설정 탭 아래쪽" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">컬렉션 설정 탭(LLM 검색 보강)</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>개인정보 안내</td><td>&quot;청크는 저장 시점에 가명화되어 전송됩니다. 다만 사용자가 입력한 질의는 그대로 전송됩니다.&quot;</td><td>질문에 개인정보를 넣지 않도록 확인할 때</td></tr><tr><td>2</td><td><strong>커넥션 ID</strong></td><td>관리자가 만든 LLM 커넥션의 ID를 적습니다. 컬렉션 소유자가 속한 팀스페이스의 커넥션만 쓸 수 있습니다.</td><td>담당자에게 받은 커넥션 ID를 넣을 때</td></tr><tr><td>3</td><td><strong>연결 해제</strong></td><td>커넥션 연결을 지웁니다.</td><td>AI 답변 기능을 끌 때</td></tr><tr><td>4</td><td><strong>조직으로 커넥션 찾기</strong></td><td>조직 ID로 쓸 수 있는 커넥션 목록을 조회합니다. 관리자 권한이 필요할 수 있습니다.</td><td>ID를 모를 때</td></tr><tr><td>5</td><td><strong>질의 재작성 사용</strong></td><td>검색 전에 질문을 검색하기 좋은 문장으로 바꿉니다.</td><td>짧거나 구어체인 질문이 잘 검색되지 않을 때</td></tr><tr><td>6</td><td><strong>AI 답변 생성 사용</strong></td><td>검색 결과로 답변 문장까지 만듭니다.</td><td>Deep Connector 안에서 답변 초안을 보고 싶을 때</td></tr><tr><td>7</td><td><strong>답변에 사용할 최대 청크 수 (1~20)</strong></td><td>답변을 만들 때 참고할 청크 수입니다.</td><td>답이 짧거나 근거가 부족할 때 늘릴 때</td></tr></tbody></table>
+<p>커넥션을 연결하지 않으면 재작성과 답변 옵션을 켤 수 없습니다. 값을 바꾸면 화면 아래에 <strong>저장</strong> 버튼이 나타나므로 눌러서 저장합니다. 다른 팀스페이스의 커넥션 ID를 넣고 저장하면 &quot;컬렉션 정보는 저장됐지만 검색 분석기 설정 저장에 실패했습니다.&quot;가 나옵니다. 이때는 담당자에게 내 팀스페이스용 커넥션 ID를 받으세요. 커넥션 ID는 그림처럼 화면 공유나 캡처에서 가려 두는 것이 좋습니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="다음-문서">다음 문서<a href="#다음-문서" class="hash-link" aria-label="다음 문서에 대한 직접 링크" title="다음 문서에 대한 직접 링크" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-connector/upload-documents/">문서 올리기</a> — 컬렉션에 문서를 넣는 방법</li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-connector/permissions/">권한·공유·접근 요청</a> — 컬렉션을 다른 사람과 함께 쓰는 방법</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/deep-agent-platform/docs/deep-connector/core-features/"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">메뉴 안내</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/deep-agent-platform/docs/deep-connector/upload-documents/"><div class="pagination-nav__sublabel">다음</div><div class="pagination-nav__label">문서 올리기</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#컬렉션-목록" class="table-of-contents__link toc-highlight">컬렉션 목록</a></li><li><a href="#폴더-만들기와-정리" class="table-of-contents__link toc-highlight">폴더 만들기와 정리</a><ul><li><a href="#따라-해-보기-컬렉션을-폴더로-옮기기" class="table-of-contents__link toc-highlight">따라 해 보기: 컬렉션을 폴더로 옮기기</a></li></ul></li><li><a href="#컬렉션-설정-탭" class="table-of-contents__link toc-highlight">컬렉션 설정 탭</a><ul><li><a href="#검색-분석기와-사전" class="table-of-contents__link toc-highlight">검색 분석기와 사전</a></li><li><a href="#llm-검색-보강" class="table-of-contents__link toc-highlight">LLM 검색 보강</a></li></ul></li><li><a href="#다음-문서" class="table-of-contents__link toc-highlight">다음 문서</a></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>

@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="ko" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-deep-connector/admin" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.2">
+<title data-rh="true">Deep Connector 관리자 메뉴 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/admin/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Deep Connector 관리자 메뉴 | Deep Platform"><meta data-rh="true" name="description" content="Deep Connector 관리자로 로그인하면 사이드바 아래쪽에 관리자 묶음이 보입니다. 이 페이지는 AI혁신팀 강혁신 팀장(Deep Connector 관리자)이 자주 쓰는 화면, 곧 대시보드, 적재 현황, 사용자 할당량, 용어 사전, LLM 커넥션을 설명합니다. 일반 사용자에게는 이 메뉴가 보이지 않습니다."><meta data-rh="true" property="og:description" content="Deep Connector 관리자로 로그인하면 사이드바 아래쪽에 관리자 묶음이 보입니다. 이 페이지는 AI혁신팀 강혁신 팀장(Deep Connector 관리자)이 자주 쓰는 화면, 곧 대시보드, 적재 현황, 사용자 할당량, 용어 사전, LLM 커넥션을 설명합니다. 일반 사용자에게는 이 메뉴가 보이지 않습니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/admin/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/admin/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/admin/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"관리자 메뉴","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/admin"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
+<script src="/deep-agent-platform/assets/js/runtime~main.0da81299.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.836f1a7b.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/deep-agent-platform/img/manual-mark.svg"><div role="region" aria-label="본문으로 건너뛰기"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">본문으로 건너뛰기</a></div><nav aria-label="메인" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="사이드바 펼치거나 접기" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/deep-agent-platform/"><div class="navbar__logo"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Deep Platform</b></a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">솔루션</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-flow/">Deep Flow</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-agent-builder/">Deep Agent Builder</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/deep-agent-platform/docs/deep-connector/">Deep Connector</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-docurator/">Deep Docurator</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/brain-parser/">Brain Parser</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work/">Deep Work</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work-gateway/">Deep Work Gateway</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-admin/">Deep Admin</a></li></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="어두운 모드와 밝은 모드 전환하기 (현재 system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="searchBar_fdyA"><input type="search" class="searchInput_JE4R" placeholder="매뉴얼 검색" aria-label="매뉴얼 검색" role="combobox" aria-autocomplete="list" aria-expanded="false" value=""><div role="status" aria-live="polite"></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="맨 위로 스크롤하기" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="문서 사이드바" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/deep-agent-platform/docs/deep-connector/"><span class="categoryLinkLabel_W154">기타</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/"><span class="linkLabel_WmDU">소개</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/getting-started/"><span class="linkLabel_WmDU">시작하기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/core-features/"><span class="linkLabel_WmDU">메뉴 안내</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/collections/"><span class="linkLabel_WmDU">컬렉션과 폴더</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/upload-documents/"><span class="linkLabel_WmDU">문서 올리기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/documents-and-chunks/"><span class="linkLabel_WmDU">문서와 청크 확인</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/search-and-rag/"><span class="linkLabel_WmDU">검색과 RAG 점검</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/permissions/"><span class="linkLabel_WmDU">권한·공유·접근 요청</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/external-integration/"><span class="linkLabel_WmDU">외부 연동</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/agent-knowledge/"><span class="linkLabel_WmDU">에이전트에서 지식 쓰기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/deep-agent-platform/docs/deep-connector/admin/"><span class="linkLabel_WmDU">관리자 메뉴</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/workflows/"><span class="linkLabel_WmDU">반복 업무</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/use-cases/"><span class="linkLabel_WmDU">활용사례</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/use-case-policy-qa/"><span class="linkLabel_WmDU">사례: 사내 규정 Q&amp;A</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/use-case-product-manual/"><span class="linkLabel_WmDU">사례: 제품 매뉴얼 검색</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/use-case-sales-reference/"><span class="linkLabel_WmDU">사례: 영업 제안서 레퍼런스 찾기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/use-case-customer-support/"><span class="linkLabel_WmDU">사례: 고객 문의 답변 근거 찾기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/use-case-hr-benefits/"><span class="linkLabel_WmDU">사례: 인사·복리후생 안내 봇</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/troubleshooting/"><span class="linkLabel_WmDU">문제 해결</span></a></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="탐색 경로"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="홈" class="breadcrumbs__link" href="/deep-agent-platform/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">기타</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">관리자 메뉴</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">이 페이지에서</button></div><div class="theme-doc-markdown markdown"><header><h1>Deep Connector 관리자 메뉴</h1></header>
+<p>Deep Connector 관리자로 로그인하면 사이드바 아래쪽에 <strong>관리자</strong> 묶음이 보입니다. 이 페이지는 AI혁신팀 강혁신 팀장(Deep Connector 관리자)이 자주 쓰는 화면, 곧 대시보드, 적재 현황, 사용자 할당량, 용어 사전, LLM 커넥션을 설명합니다. 일반 사용자에게는 이 메뉴가 보이지 않습니다.</p>
+<p><strong>이 페이지에서 할 수 있는 일</strong></p>
+<ul>
+<li class="">관리자 메뉴 구성을 알고 원하는 화면으로 이동합니다.</li>
+<li class="">대시보드와 적재 현황에서 문서 처리 상황을 봅니다.</li>
+<li class="">사용자와 팀스페이스의 저장공간·업로드 한도를 조정합니다.</li>
+<li class="">용어 사전을 만들고 CSV로 용어를 한꺼번에 넣습니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="관리자-메뉴-구성">관리자 메뉴 구성<a href="#관리자-메뉴-구성" class="hash-link" aria-label="관리자 메뉴 구성에 대한 직접 링크" title="관리자 메뉴 구성에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>묶음</th><th>메뉴</th><th>하는 일</th></tr></thead><tbody><tr><td>–</td><td><strong>대시보드</strong></td><td>전체 문서 수, 저장공간, 할당량 경고, 최근 14일 사용량 추이</td></tr><tr><td>–</td><td><strong>적재 현황</strong></td><td>문서 처리 성공·실패 통계와 문서별 처리 기록</td></tr><tr><td><strong>사용자와 팀스페이스</strong></td><td><strong>사용자</strong></td><td>사용자별 사용량과 할당량</td></tr><tr><td></td><td><strong>팀스페이스</strong></td><td>팀스페이스(부서)별 사용량과 할당량</td></tr><tr><td></td><td>컬렉션 권한</td><td>컬렉션별 접근 권한과 접근 요청 승인(사용하는 인증 방식에 따라 보이지 않을 수 있음)</td></tr><tr><td><strong>검색과 AI</strong></td><td><strong>용어 사전</strong></td><td>동의어·별칭 사전 관리</td></tr><tr><td></td><td><strong>메타데이터 관리</strong>, <strong>컬렉션 태그</strong></td><td>문서 메타데이터 항목과 컬렉션 태그 관리</td></tr><tr><td></td><td><strong>LLM 커넥션</strong></td><td>질의 재작성·AI 답변에 쓸 언어 모델 연결</td></tr><tr><td></td><td><strong>MCP 도구</strong>, <strong>도구 평가</strong></td><td>에이전트에 제공하는 검색 도구 설명과 품질 점검</td></tr><tr><td><strong>시스템</strong></td><td><strong>저장공간</strong>, <strong>감사 로그</strong>, <strong>브랜드 설정</strong>, <strong>시스템 설정</strong></td><td>저장 용량 모니터링, 작업 기록, 화면 로고·색, 원본 링크 유효시간 같은 설정</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="대시보드">대시보드<a href="#대시보드" class="hash-link" aria-label="대시보드에 대한 직접 링크" title="대시보드에 대한 직접 링크" translate="no">​</a></h2>
+<p><span class="manual-shot" role="figure" aria-label="관리자 대시보드"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/admin-dashboard-8abc366b35103fc9b1d039f8bc1bba19.png" target="_blank" rel="noopener"><img width="1478" height="756" src="/deep-agent-platform/assets/images/admin-dashboard-8abc366b35103fc9b1d039f8bc1bba19.png" alt="전체 문서, 저장공간, 할당량 경고, 사용량 추이에 번호를 붙인 관리자 대시보드" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">관리자 대시보드</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>전체 문서</td><td>모든 컬렉션의 문서 수입니다.</td><td>도입 초기 문서가 얼마나 들어왔는지 볼 때</td></tr><tr><td>2</td><td>전체 저장공간</td><td>문서가 차지하는 저장 용량입니다.</td><td>용량 증설 시기를 가늠할 때</td></tr><tr><td>3</td><td>할당량 경고</td><td>한도에 가까워졌거나 넘은 사용자 수입니다.</td><td>업로드가 막힌 사용자를 찾을 때</td></tr><tr><td>4</td><td>사용량 추이</td><td>최근 14일 동안 날마다 업로드·삭제 건수와 늘어난 용량입니다.</td><td>대량 업로드가 있었던 날을 확인할 때</td></tr><tr><td>5</td><td>관리자 메뉴</td><td>대시보드, 적재 현황, 사용자와 팀스페이스, 검색과 AI, 시스템 묶음입니다.</td><td>다른 관리 화면으로 갈 때</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="적재-현황">적재 현황<a href="#적재-현황" class="hash-link" aria-label="적재 현황에 대한 직접 링크" title="적재 현황에 대한 직접 링크" translate="no">​</a></h2>
+<p>모든 컬렉션의 문서 처리 기록을 한 화면에서 봅니다. 실패한 문서를 찾아 원인을 확인하는 데 씁니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="적재 현황"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/admin-ingestion-23aee84635bf25bfa2e953a9798b29ee.png" target="_blank" rel="noopener"><img width="1478" height="756" src="/deep-agent-platform/assets/images/admin-ingestion-23aee84635bf25bfa2e953a9798b29ee.png" alt="기간 선택, 성공·실패 통계, 시각별 추이, 문서별 처리 목록에 번호를 붙인 적재 현황" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">적재 현황</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>문서</strong>·<strong>배치</strong>·<strong>설정</strong></td><td>문서별 기록, 업로드 묶음(배치)별 기록, 처리 설정 탭입니다.</td><td>한 번에 올린 묶음 단위로 볼 때</td></tr><tr><td>2</td><td>기간</td><td>1시간부터 30일, 직접 지정, 기간 무관 중에서 고릅니다.</td><td>어제 밤 처리분만 볼 때</td></tr><tr><td>3</td><td>처리 요약</td><td>적재 실패, 적재 중(그중 멈춤), 완료, 전체 건수와 비율입니다.</td><td>실패율이 오르지 않았는지 볼 때</td></tr><tr><td>4</td><td>시각별 추이</td><td>처리 시작 시각별 건수입니다. 아래 탭에서 실패 사유별, 컬렉션별 실패 상위 10을 봅니다.</td><td>실패가 몰린 시간이나 컬렉션을 찾을 때</td></tr><tr><td>5</td><td>문서 목록</td><td>파일명, 컬렉션, 상태, 요청·시작·완료 시각, 시도 횟수입니다. <strong>필터</strong>와 파일명 검색으로 좁힙니다.</td><td>특정 파일의 처리 과정을 추적할 때</td></tr><tr><td>6</td><td><strong>새로고침</strong></td><td>최신 상태로 다시 불러옵니다.</td><td>처리 중인 문서를 지켜볼 때</td></tr><tr><td>7</td><td><strong>CSV 내보내기</strong></td><td>목록을 CSV 파일로 내려받습니다.</td><td>월간 처리 실적을 보고할 때</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="사용자와-할당량">사용자와 할당량<a href="#사용자와-할당량" class="hash-link" aria-label="사용자와 할당량에 대한 직접 링크" title="사용자와 할당량에 대한 직접 링크" translate="no">​</a></h2>
+<p><strong>사용자와 팀스페이스</strong> &gt; <strong>사용자</strong>에서 사용자별 사용량을 보고 한도를 바꿉니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="사용자 목록"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/admin-users-6a4264a90d8ab8368b88eb2d677eafbe.png" target="_blank" rel="noopener"><img width="1478" height="756" src="/deep-agent-platform/assets/images/admin-users-6a4264a90d8ab8368b88eb2d677eafbe.png" alt="일괄 할당량 설정, 이메일 검색, 사용량, 상세 버튼에 번호를 붙인 사용자 목록" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">사용자 목록</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>일괄 할당량 설정</strong></td><td>여러 사용자의 한도를 한꺼번에 바꿉니다.</td><td>부서 전체의 월간 업로드 한도를 올릴 때</td></tr><tr><td>2</td><td><strong>이메일로 검색</strong></td><td>사용자를 찾습니다.</td><td>문의한 사용자를 찾을 때</td></tr><tr><td>3</td><td>저장공간</td><td>쓴 용량과 한도입니다.</td><td>용량이 찬 사용자를 찾을 때</td></tr><tr><td>4</td><td>월간 업로드</td><td>이번 달 업로드 건수와 한도입니다.</td><td>업로드가 막힌 사용자를 찾을 때</td></tr><tr><td>5</td><td><strong>상세</strong></td><td>사용자 상세와 할당량 설정을 엽니다.</td><td>한 사람의 한도를 바꿀 때</td></tr></tbody></table>
+<p><span class="manual-shot" role="figure" aria-label="사용자 상세와 할당량 설정"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/admin-user-quota-405da5ee3502877ba964cdce353daa5c.png" target="_blank" rel="noopener"><img width="1478" height="756" src="/deep-agent-platform/assets/images/admin-user-quota-405da5ee3502877ba964cdce353daa5c.png" alt="할당량 설정과 현재 사용량이 보이는 사용자 상세" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">사용자 상세와 할당량 설정</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>기본 정보</td><td>이메일, 이름, 마지막 로그인, 상태입니다.</td><td>계정이 활성인지 볼 때</td></tr><tr><td>2</td><td><strong>저장공간 할당량</strong></td><td>이 사용자가 쓸 수 있는 저장 용량입니다.</td><td>큰 파일을 많이 올리는 담당자의 한도를 늘릴 때</td></tr><tr><td>3</td><td><strong>업로드 크기 제한</strong></td><td>파일 하나의 최대 크기입니다.</td><td>대용량 스캔본을 올려야 할 때</td></tr><tr><td>4</td><td><strong>월간 업로드 제한</strong></td><td>한 달에 올릴 수 있는 파일 수입니다. <strong>제한 없음</strong>을 체크하면 한도를 없앱니다.</td><td>도입 초기에 문서를 대량으로 올릴 때</td></tr><tr><td>5</td><td><strong>동시 업로드 제한</strong></td><td>한 번에 처리할 수 있는 업로드 수입니다.</td><td>처리 대기가 길어질 때</td></tr><tr><td>6</td><td><strong>저장</strong></td><td>바꾼 한도를 저장합니다.</td><td>변경을 마쳤을 때</td></tr><tr><td>7</td><td>현재 사용량</td><td>저장공간과 월간 업로드 사용량, 아래에 사용 이력이 이어집니다.</td><td>한도를 얼마나 늘릴지 정할 때</td></tr></tbody></table>
+<p>사용자 한도와 별개로 <strong>팀스페이스</strong> 화면에도 팀 단위 저장공간과 월간 업로드 한도가 있습니다. 둘 중 하나라도 닿으면 업로드가 막히므로, 업로드가 막혔다는 문의를 받으면 두 화면을 모두 확인하세요. 이 매뉴얼을 만들 때 김그루 사원의 월간 업로드가 30건 한도에 닿아 업로드가 막혔고, 사용자 한도를 200건, AI혁신팀 팀스페이스 한도를 300건으로 올려 풀었습니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="용어-사전">용어 사전<a href="#용어-사전" class="hash-link" aria-label="용어 사전에 대한 직접 링크" title="용어 사전에 대한 직접 링크" translate="no">​</a></h2>
+<p><strong>검색과 AI</strong> &gt; <strong>용어 사전</strong>에서 동의어·별칭 사전을 만들고, 컬렉션 설정의 <strong>연결된 사전</strong>에서 컬렉션에 연결합니다. 연결하면 키워드 검색에서 &quot;법카&quot;로 &quot;법인카드&quot;까지 찾습니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="용어 사전 상세"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/admin-lexicons-4298f08f7ce102bb9ee2c8880e0543a8.png" target="_blank" rel="noopener"><img width="1478" height="756" src="/deep-agent-platform/assets/images/admin-lexicons-4298f08f7ce102bb9ee2c8880e0543a8.png" alt="CSV 업로드와 적재 결과, 항목 목록에 번호를 붙인 용어 사전 상세" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">용어 사전 상세</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>파일 선택</strong></td><td>용어를 정리한 CSV나 엑셀 파일을 고릅니다(20 MiB까지).</td><td>용어를 한꺼번에 넣을 때</td></tr><tr><td>2</td><td><strong>양식 내려받기</strong>·<strong>양식 예시 보기</strong></td><td>파일 양식을 받거나 예시를 봅니다. CSV는 canonical(대표어), code, description(설명), aliases(별칭, &quot;|&quot;로 구분) 열을 씁니다.</td><td>처음 파일을 만들 때</td></tr><tr><td>3</td><td><strong>적재 방식</strong></td><td><strong>병합</strong>은 표제어가 같은 항목은 갱신하고, 파일에 없는 기존 항목은 그대로 둡니다. 교체를 고르면 파일 내용으로 바꿉니다.</td><td>기존 사전에 용어를 더할 때</td></tr><tr><td>4</td><td><strong>업로드</strong></td><td>파일을 적재합니다.</td><td>파일을 고른 뒤</td></tr><tr><td>5</td><td>적재 결과</td><td>추가, 갱신, 삭제 건수입니다.</td><td>파일이 제대로 들어갔는지 볼 때</td></tr><tr><td>6</td><td>항목 검색</td><td>대표어, 코드, 별칭, 설명으로 항목을 찾습니다.</td><td>특정 용어가 있는지 볼 때</td></tr><tr><td>7</td><td><strong>항목 추가</strong></td><td>항목을 하나씩 직접 추가합니다.</td><td>용어 한두 개를 더할 때</td></tr><tr><td>8</td><td>항목 목록</td><td>대표어, 코드, 별칭, 설명과 수정·삭제 버튼입니다.</td><td>잘못 들어간 별칭을 고칠 때</td></tr></tbody></table>
+<p>이 예에서는 다음 CSV로 &quot;브레인크루 사내 용어&quot; 사전에 네 항목을 넣었습니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>canonical</th><th>code</th><th>description</th><th>aliases</th></tr></thead><tbody><tr><td>법인카드</td><td>EXP-CARD</td><td>회사 명의로 발급한 업무용 신용카드</td><td>회사카드|법카</td></tr><tr><td>재택근무</td><td>WFH</td><td>회사 밖에서 근무하는 제도</td><td>원격근무|리모트근무|재택</td></tr><tr><td>반반차</td><td>HALF-HALF</td><td>2시간 단위 휴가</td><td>반반휴가</td></tr><tr><td>숙박비</td><td>LODGING</td><td>출장 중 숙박에 드는 비용</td><td>호텔비|숙소비</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="llm-커넥션">LLM 커넥션<a href="#llm-커넥션" class="hash-link" aria-label="LLM 커넥션에 대한 직접 링크" title="LLM 커넥션에 대한 직접 링크" translate="no">​</a></h2>
+<p><strong>검색과 AI</strong> &gt; <strong>LLM 커넥션</strong>에서 질의 재작성과 AI 답변에 쓸 언어 모델 연결을 팀스페이스별로 만듭니다. 만든 커넥션의 ID를 컬렉션 담당자에게 알려 주면, 담당자가 컬렉션 설정의 <strong>LLM 검색 보강</strong>에 넣어 씁니다(<a class="" href="/deep-agent-platform/docs/deep-connector/collections/">컬렉션과 폴더</a> 참고). 컬렉션은 소유자가 속한 팀스페이스의 커넥션만 쓸 수 있으므로, 부서마다 커넥션을 하나씩 만들어 두는 것이 좋습니다. 커넥션 화면에는 API 키 같은 비밀값이 들어가므로 화면을 캡처해 공유하지 마세요.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="다음-문서">다음 문서<a href="#다음-문서" class="hash-link" aria-label="다음 문서에 대한 직접 링크" title="다음 문서에 대한 직접 링크" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-connector/troubleshooting/">문제 해결</a> — 업로드 차단, 처리 실패 문의를 받았을 때</li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-connector/permissions/">권한·공유·접근 요청</a> — 사용자가 하는 공유와 요청</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/deep-agent-platform/docs/deep-connector/agent-knowledge/"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">에이전트에서 지식 쓰기</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/deep-agent-platform/docs/deep-connector/workflows/"><div class="pagination-nav__sublabel">다음</div><div class="pagination-nav__label">반복 업무</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#관리자-메뉴-구성" class="table-of-contents__link toc-highlight">관리자 메뉴 구성</a></li><li><a href="#대시보드" class="table-of-contents__link toc-highlight">대시보드</a></li><li><a href="#적재-현황" class="table-of-contents__link toc-highlight">적재 현황</a></li><li><a href="#사용자와-할당량" class="table-of-contents__link toc-highlight">사용자와 할당량</a></li><li><a href="#용어-사전" class="table-of-contents__link toc-highlight">용어 사전</a></li><li><a href="#llm-커넥션" class="table-of-contents__link toc-highlight">LLM 커넥션</a></li><li><a href="#다음-문서" class="table-of-contents__link toc-highlight">다음 문서</a></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>
