@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="ko" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-deep-agent-builder/data-analysis" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.2">
+<title data-rh="true">데이터 분석 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/data-analysis/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="데이터 분석 | Deep Platform"><meta data-rh="true" name="description" content="이 페이지는 브레인크루 AI혁신팀 김그루 사원이 판매 데이터 분석가에게 브레인크루\2026\판매실적.xlsx 파일을 맡겨 지역별 매출 순위, 제품별 월 추이 차트, 이상치 목록을 받고, 결과를 엑셀 파일로 내려받는 과정을 화면 순서대로 안내합니다. 아래 따라 해 보기의 단계는 모두 김그루 사원이 직접 하는 순서입니다. 에이전트가 낸 숫자를 원본과 대조해 검증하는 방법도 함께 다룹니다."><meta data-rh="true" property="og:description" content="이 페이지는 브레인크루 AI혁신팀 김그루 사원이 판매 데이터 분석가에게 브레인크루\2026\판매실적.xlsx 파일을 맡겨 지역별 매출 순위, 제품별 월 추이 차트, 이상치 목록을 받고, 결과를 엑셀 파일로 내려받는 과정을 화면 순서대로 안내합니다. 아래 따라 해 보기의 단계는 모두 김그루 사원이 직접 하는 순서입니다. 에이전트가 낸 숫자를 원본과 대조해 검증하는 방법도 함께 다룹니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/data-analysis/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/data-analysis/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/data-analysis/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"데이터 분석","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/data-analysis"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
+<script src="/deep-agent-platform/assets/js/runtime~main.a9c96625.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.dd53db47.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/deep-agent-platform/img/manual-mark.svg"><div role="region" aria-label="본문으로 건너뛰기"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">본문으로 건너뛰기</a></div><nav aria-label="메인" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="사이드바 펼치거나 접기" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/deep-agent-platform/"><div class="navbar__logo"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Deep Platform</b></a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">솔루션</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-flow/">Deep Flow</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/deep-agent-platform/docs/deep-agent-builder/">Deep Agent Builder</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-connector/">Deep Connector</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-docurator/">Deep Docurator</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/brain-parser/">Brain Parser</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work/">Deep Work</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work-gateway/">Deep Work Gateway</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-admin/">Deep Admin</a></li></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="어두운 모드와 밝은 모드 전환하기 (현재 system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="searchBar_fdyA"><input type="search" class="searchInput_JE4R" placeholder="매뉴얼 검색" aria-label="매뉴얼 검색" role="combobox" aria-autocomplete="list" aria-expanded="false" value=""><div role="status" aria-live="polite"></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="맨 위로 스크롤하기" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="문서 사이드바" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/"><span class="categoryLinkLabel_W154">소개</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/core-concepts/"><span class="categoryLinkLabel_W154">처음 사용하기</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/first-agent-design/"><span class="categoryLinkLabel_W154">에이전트 만들기</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/deep-agent-platform/docs/deep-agent-builder/threads/"><span class="categoryLinkLabel_W154">업무에 활용하기</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/threads/"><span class="linkLabel_WmDU">대화 화면과 채팅 목록</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/attachments/"><span class="linkLabel_WmDU">첨부파일 지원</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/file-policy/"><span class="linkLabel_WmDU">파일 첨부 정책과 가드레일</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/canvas/"><span class="linkLabel_WmDU">캔버스로 문서·PPT·표 만들기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/document-agent/"><span class="linkLabel_WmDU">PPT·문서 만들기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/data-analysis/"><span class="linkLabel_WmDU">데이터 분석</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/commands-reuse/"><span class="linkLabel_WmDU">커맨드와 재사용</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/favorites-workspaces-downloads/"><span class="linkLabel_WmDU">즐겨찾기·워크스페이스·다운로드</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/scheduling/"><span class="linkLabel_WmDU">스케줄링과 백그라운드 모드</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/rag-agent/"><span class="categoryLinkLabel_W154">지식·도구 연결</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/middleware/"><span class="categoryLinkLabel_W154">보안과 권한</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/community/"><span class="categoryLinkLabel_W154">커뮤니티</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/multi-agent-concepts/"><span class="categoryLinkLabel_W154">멀티에이전트</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/evaluation-overview/"><span class="categoryLinkLabel_W154">평가</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/evaluations/"><span class="categoryLinkLabel_W154">개선과 모니터링</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/use-cases/"><span class="categoryLinkLabel_W154">활용 사례</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/troubleshooting/"><span class="categoryLinkLabel_W154">문제 해결</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="탐색 경로"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="홈" class="breadcrumbs__link" href="/deep-agent-platform/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">업무에 활용하기</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">데이터 분석</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">이 페이지에서</button></div><div class="theme-doc-markdown markdown"><header><h1>데이터 분석</h1></header>
+<p>이 페이지는 브레인크루 AI혁신팀 김그루 사원이 판매 데이터 분석가에게 브레인크루_2026_판매실적.xlsx 파일을 맡겨 지역별 매출 순위, 제품별 월 추이 차트, 이상치 목록을 받고, 결과를 엑셀 파일로 내려받는 과정을 화면 순서대로 안내합니다. 아래 따라 해 보기의 단계는 모두 김그루 사원이 직접 하는 순서입니다. 에이전트가 낸 숫자를 원본과 대조해 검증하는 방법도 함께 다룹니다.</p>
+<p><strong>이 페이지에서 할 수 있는 일</strong></p>
+<ul>
+<li class="">엑셀이나 CSV 파일을 첨부해 질문하고, 에이전트가 실행한 분석 코드와 출력을 직접 확인합니다.</li>
+<li class="">결과 표와 차트를 읽고, 데이터 표를 Excel이나 CSV 파일로 내려받습니다.</li>
+<li class="">여러 분석 결과를 시트 3개짜리 엑셀 파일 하나로 받아 아티팩트 창에서 미리 봅니다.</li>
+<li class="">원본 데이터 200행 전체를 화면에서 넘겨 보고 Word(.doc), PowerPoint(.pptx), HTML(.html), Excel(.xlsx), CSV(.csv) 파일로 내보냅니다.</li>
+<li class="">시트가 두 개인 엑셀 파일에서 목표 시트까지 읽혀 지역별 목표 대비 달성률을 받습니다.</li>
+<li class="">보고에 쓰기 전에 에이전트가 낸 숫자를 원본 파일과 대조해 검증합니다.</li>
+<li class="">달성률이 가장 낮은 지역의 연말 전망을 받아, 남은 두 달에 필요한 매출을 짚습니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="분석-전에-준비할-것">분석 전에 준비할 것<a href="#분석-전에-준비할-것" class="hash-link" aria-label="분석 전에 준비할 것에 대한 직접 링크" title="분석 전에 준비할 것에 대한 직접 링크" translate="no">​</a></h2>
+<p>판매 데이터 분석가는 별도 도구를 연결하지 않아도 됩니다. 데이터 분석과 데이터 시각화 기능은 모든 에이전트에 기본으로 들어 있어서, 파일을 첨부하고 질문하면 에이전트가 직접 분석 코드를 작성해 실행하고 결과를 표와 차트로 보여 줍니다.</p>
+<p>이 페이지의 예시 파일은 브레인크루_2026_판매실적.xlsx(가상 데이터)입니다. 시트가 두 개 있습니다.</p>
+<ul>
+<li class=""><strong>판매내역</strong> 시트: 2026년 1~10월 판매 기록 200행입니다. 열은 월, 지역, 제품, 판매수량, 단가(원), 매출(원), 담당팀 일곱 개입니다. 지역은 서울, 경기, 부산, 대구, 광주 5곳, 제품은 AI 회의록 솔루션, 문서 자동화 패키지, 데이터 분석 구독, 교육 컨설팅 4종입니다.</li>
+<li class=""><strong>목표</strong> 시트: 지역별 연간 목표 매출(원)입니다.</li>
+</ul>
+<p>파일을 준비할 때는 아래를 확인합니다.</p>
+<ul>
+<li class="">첫 행에 열 이름이 있는 엑셀 또는 CSV 파일을 준비합니다. 데이터 분석에 쓸 수 있는 형식은 .xlsx, .xls, .xlsb, .xlsm, .csv입니다.</li>
+<li class="">파일 하나는 50MB를 넘을 수 없습니다. 더 큰 파일은 시트나 기간을 나눠 올립니다.</li>
+<li class="">고객 이름, 연락처처럼 개인을 알아볼 수 있는 열은 지우고 집계에 필요한 열만 남깁니다.</li>
+<li class="">질문에는 무엇을 기준으로 계산할지 적습니다. 예를 들어 달성률을 연간 목표로 나눌지, 경과 기간(10개월)만큼 나눈 목표로 나눌지 밝힙니다.</li>
+</ul>
+<p>판매 데이터 분석가가 아직 없다면 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/agent-creation/">에이전트 만들기</a>의 직접 만들기로 만들고, <strong>지침</strong>에 아래 내용을 넣습니다.</p>
+<blockquote>
+<p>프롬프트: 너는 브레인크루 영업기획 데이터를 분석하는 판매 데이터 분석가다. 첨부한 엑셀·CSV 파일의 숫자는 반드시 코드로 계산한다. 금액은 원 단위에 천 단위 쉼표를 붙이고, 비율은 소수 첫째 자리까지 %로 쓴다. 결과는 표로 먼저 보여 주고, 계산 기준(합계·평균, 기간, 사용한 시트)을 답변 끝에 한 줄로 적는다. 파일에 없는 숫자는 만들지 않는다.</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="파일-첨부와-첫-질문">파일 첨부와 첫 질문<a href="#파일-첨부와-첫-질문" class="hash-link" aria-label="파일 첨부와 첫 질문에 대한 직접 링크" title="파일 첨부와 첫 질문에 대한 직접 링크" translate="no">​</a></h2>
+<p>에이전트 대화 화면에서 엑셀 파일을 첨부하고 질문을 보냅니다. 에이전트는 먼저 파일을 읽어 데이터 구조를 확인하고, 분석 코드를 실행한 뒤 결과 표를 답변에 붙입니다. 답변 위에는 분석 코드를 실행한 <strong>데이터 분석</strong> 기록이, 답변에는 결과를 담은 <strong>데이터 표</strong> 카드가 생깁니다. 카드의 <strong>내보내기</strong>로 <strong>Excel로 내보내기</strong> 또는 <strong>CSV로 내보내기</strong>를 고르면 표를 내려받을 수 있고, <strong>클릭하여 확인하기</strong>를 누르면 아티팩트 창에서 표를 크게 엽니다. 입력란 아래 오른쪽의 <strong>아티팩트</strong> 버튼에는 이 대화에서 모인 표와 파일 개수가 숫자로 붙습니다.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="따라-해-보기">따라 해 보기<a href="#따라-해-보기" class="hash-link" aria-label="따라 해 보기에 대한 직접 링크" title="따라 해 보기에 대한 직접 링크" translate="no">​</a></h3>
+<ol>
+<li class="">
+<p>김그루 사원은 사이드바 <strong>내 에이전트</strong>에서 <strong>판매 데이터 분석가</strong>를 누르고 <strong>이 에이전트와 새 대화</strong>를 누릅니다.</p>
+</li>
+<li class="">
+<p>입력란 아래 오른쪽의 <strong>파일 업로드</strong>(클립 아이콘)를 눌러 브레인크루_2026_판매실적.xlsx를 고릅니다.</p>
+</li>
+<li class="">
+<p>아래 프롬프트를 입력란에 붙여 넣고 <strong>전송</strong>을 누릅니다.</p>
+<blockquote>
+<p>프롬프트: 첨부한 판매실적 파일의 판매내역 시트에서 지역별 매출(원) 합계를 큰 순서로 표로 보여 주세요. 순위, 지역, 매출 합계, 전체 대비 비중(%)을 열로 넣고, 맨 아래에 전체 합계 행을 붙여 주세요.</p>
+</blockquote>
+</li>
+<li class="">
+<p>답변 위쪽에 <strong>데이터 분석</strong> 기록과 <strong>데이터 표</strong> 카드가 나타나면 분석이 실행된 것입니다.</p>
+</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="실행한-코드와-출력-확인">실행한 코드와 출력 확인<a href="#실행한-코드와-출력-확인" class="hash-link" aria-label="실행한 코드와 출력 확인에 대한 직접 링크" title="실행한 코드와 출력 확인에 대한 직접 링크" translate="no">​</a></h2>
+<p>에이전트가 계산한 숫자의 출처는 <strong>데이터 분석</strong> 기록에 남습니다. 기록을 펼치면 실행한 코드와 그 코드가 낸 출력이 그대로 있어, 답변에 적힌 숫자가 어디서 나왔는지 따라가 볼 수 있습니다.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="따라-해-보기-1">따라 해 보기<a href="#따라-해-보기-1" class="hash-link" aria-label="따라 해 보기에 대한 직접 링크" title="따라 해 보기에 대한 직접 링크" translate="no">​</a></h3>
+<ol>
+<li class="">답변 위쪽의 <strong>데이터 분석</strong>을 눌러 펼칩니다.</li>
+<li class="">코드에서 판매내역 시트의 매출(원) 열을 지역별로 더했는지 확인합니다. 판매수량이나 단가(원)를 더했다면 질문과 다른 계산입니다.</li>
+<li class=""><strong>출력 (데이터 분석)</strong> 아래 숫자와 답변 본문 표의 숫자가 같은지 비교합니다.</li>
+</ol>
+<blockquote>
+<p>팁: 한 질문에 <strong>데이터 분석</strong> 기록이 여러 개 생길 수 있습니다. 에이전트가 파일 구조를 먼저 확인하고, 계산을 나눠 실행하기 때문입니다. 마지막 기록의 출력이 답변 표와 맞는지 보면 됩니다.</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="결과-표-읽기">결과 표 읽기<a href="#결과-표-읽기" class="hash-link" aria-label="결과 표 읽기에 대한 직접 링크" title="결과 표 읽기에 대한 직접 링크" translate="no">​</a></h2>
+<p>데이터 분석이 끝나면 에이전트가 데이터 구조와 결과 표를 답변 본문에 정리합니다. 표를 보기 전에 데이터 구조 요약에서 파일이 빠짐없이 읽혔는지 확인합니다.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="따라-해-보기-2">따라 해 보기<a href="#따라-해-보기-2" class="hash-link" aria-label="따라 해 보기에 대한 직접 링크" title="따라 해 보기에 대한 직접 링크" translate="no">​</a></h3>
+<ol>
+<li class="">데이터 구조 요약에서 행 수가 200행, 기간이 2026-01~2026-10인지 확인합니다.</li>
+<li class="">순위 표에서 매출 합계와 비중 열을 읽습니다. 1위 서울 1,307,210,000원(34.9%), 2위 경기 976,570,000원(26.1%), 3위 부산 632,860,000원(16.9%), 4위 대구 469,840,000원(12.5%), 5위 광주 362,240,000원(9.7%)이어야 합니다.</li>
+<li class="">비중을 모두 더하면 100%에 가까운지, 전체 합계가 3,748,720,000원인지 봅니다. 비중은 소수 첫째 자리로 반올림한 값이라, 더한 값이 반올림 때문에 이 예시의 100.1%처럼 100%와 조금 달라질 수 있습니다.</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="결과를-이렇게-확인하세요">결과를 이렇게 확인하세요<a href="#결과를-이렇게-확인하세요" class="hash-link" aria-label="결과를 이렇게 확인하세요에 대한 직접 링크" title="결과를 이렇게 확인하세요에 대한 직접 링크" translate="no">​</a></h3>
+<ul>
+<li class="">데이터 구조 요약이 &quot;200행 × 7열&quot;, 기간 2026-01 ~ 2026-10, 지역 5곳, 결측값 없음인지 봅니다. 하나라도 다르면 파일 일부가 읽히지 않은 것입니다.</li>
+<li class="">표 머리에 단위가 붙었는지 봅니다. 매출은 원, 비중은 %로 적혀 있어야 보고서로 옮길 때 단위를 다시 확인하지 않아도 됩니다.</li>
+<li class=""><strong>데이터 표</strong> 카드 맨 왼쪽의 0, 1, 2 같은 숫자는 계산 과정의 행 번호이며 순위가 아닐 수 있습니다. 순위는 <strong>순위</strong> 열에서 읽습니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="차트-만들기">차트 만들기<a href="#차트-만들기" class="hash-link" aria-label="차트 만들기에 대한 직접 링크" title="차트 만들기에 대한 직접 링크" translate="no">​</a></h2>
+<p>표만으로 흐름이 잘 보이지 않으면 차트를 요청합니다. 에이전트가 차트 그리기 코드를 실행해 그림을 답변에 넣고, 같은 숫자를 표로도 정리해 줍니다. 답변 위에는 차트를 그린 <strong>데이터 시각화</strong> 기록과 그 결과인 <strong>출력 (데이터 시각화)</strong> 기록이 남고, 누르면 펼쳐집니다.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="따라-해-보기-3">따라 해 보기<a href="#따라-해-보기-3" class="hash-link" aria-label="따라 해 보기에 대한 직접 링크" title="따라 해 보기에 대한 직접 링크" translate="no">​</a></h3>
+<ol>
+<li class="">
+<p>같은 대화에서 아래 프롬프트를 입력란에 붙여 넣고 <strong>전송</strong>을 누릅니다.</p>
+<blockquote>
+<p>프롬프트: 제품별 월별 매출(원) 합계를 표로 만들고, 추이를 선 차트로 그려 주세요. 월 전체 매출이 다른 달보다 뚜렷하게 많은 달이 있으면, 나머지 달 평균과 비교해 몇 % 많은지 함께 적어 주세요.</p>
+</blockquote>
+</li>
+<li class="">
+<p>차트가 나타나면 범례에서 제품 색을 확인하고, 매출이 튀는 달을 찾습니다.</p>
+</li>
+<li class="">
+<p>월별 표에서 3월과 9월 숫자가 차트의 꼭짓점과 같은지 봅니다. 네 제품 모두 3월과 9월에 솟아오르고, 월 전체 매출은 3월 459,270,000원, 9월 448,760,000원으로 나머지 8개월 평균 355,086,250원보다 각각 29.3%, 26.4% 많아야 합니다. 교육 컨설팅은 3월 159,600,000원, 9월 149,100,000원입니다.</p>
+</li>
+</ol>
+<blockquote>
+<p>팁: 차트의 점 하나하나는 아래 월별 표의 숫자와 같아야 합니다. 보고서에는 차트와 함께 표 숫자를 적어 두면 읽는 사람이 다시 확인할 수 있습니다.</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="이상치-찾기">이상치 찾기<a href="#이상치-찾기" class="hash-link" aria-label="이상치 찾기에 대한 직접 링크" title="이상치 찾기에 대한 직접 링크" translate="no">​</a></h2>
+<p>원본에 입력 실수나 특이한 판매가 섞여 있으면 평균과 추이가 흔들립니다. 판정 기준을 정해 이상치를 찾아 달라고 하면, 에이전트가 기준값과 해당 행을 표로 보여 줍니다.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="따라-해-보기-4">따라 해 보기<a href="#따라-해-보기-4" class="hash-link" aria-label="따라 해 보기에 대한 직접 링크" title="따라 해 보기에 대한 직접 링크" translate="no">​</a></h3>
+<ol>
+<li class="">
+<p>아래 프롬프트를 입력란에 붙여 넣고 <strong>전송</strong>을 누릅니다.</p>
+<blockquote>
+<p>프롬프트: 판매내역 시트의 매출(원)에서 이상치를 찾아 주세요. 사분위수 범위(IQR) 1.5배 기준으로 판정하고, 판정 기준값과 해당 행을 표로 보여 주세요.</p>
+</blockquote>
+</li>
+<li class="">
+<p>판정 기준 표에서 상한과 하한을 확인합니다. 매출(원)의 1사분위수는 10,382,500원, 3사분위수는 25,242,500원, 사분위수 범위(IQR)는 14,860,000원입니다. 하한은 1사분위수에서 IQR의 1.5배를 뺀 -11,907,500원으로 0보다 작아서 하한 아래에 있는 행은 없고, 상한은 3사분위수에 IQR의 1.5배를 더한 47,532,500원입니다.</p>
+</li>
+<li class="">
+<p>이상치 목록의 월, 지역, 제품으로 원본 파일을 걸러 같은 행이 있는지 확인합니다. 200행 중 2행이 상한을 넘었고, 둘 다 서울의 교육 컨설팅입니다(2026-03 58,800,000원, 2026-09 52,500,000원).</p>
+</li>
+</ol>
+<blockquote>
+<p>팁: 이상치는 틀린 값이라는 뜻이 아닙니다. 이 예시의 2행은 단가가 가장 높은 교육 컨설팅(2,100,000원)이 매출이 가장 큰 서울에서 성수기에 많이 팔린 결과로, 실제 영업 결과일 수 있습니다. 지우거나 고치기 전에 담당팀(영업1팀)에 값이 맞는지 확인하세요. 사분위수 계산 방식에 따라 기준값이 조금 달라질 수 있으니 코드도 함께 봅니다.</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="결과-파일-내려받기">결과 파일 내려받기<a href="#결과-파일-내려받기" class="hash-link" aria-label="결과 파일 내려받기에 대한 직접 링크" title="결과 파일 내려받기에 대한 직접 링크" translate="no">​</a></h2>
+<p>여러 번에 나눠 받은 분석 결과는 엑셀 파일 하나로 모아 달라고 요청합니다. 에이전트가 시트를 나눠 파일을 만들고, 답변에 다운로드 링크를 붙입니다.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="따라-해-보기-5">따라 해 보기<a href="#따라-해-보기-5" class="hash-link" aria-label="따라 해 보기에 대한 직접 링크" title="따라 해 보기에 대한 직접 링크" translate="no">​</a></h3>
+<ol>
+<li class="">
+<p>아래 프롬프트를 입력란에 붙여 넣고 <strong>전송</strong>을 누릅니다.</p>
+<blockquote>
+<p>프롬프트: 지금까지 만든 지역별 매출 순위, 제품별 월별 추이, 이상치 목록을 시트 3개짜리 엑셀 파일로 만들어 내려받을 수 있게 해 주세요.</p>
+</blockquote>
+</li>
+<li class="">
+<p>시트 구성 표에서 시트 3개와 행 수를 확인합니다. 지역별 순위는 5행(전체 합계 행을 넣었다면 6행), 제품별 월별 추이는 제품 4행 또는 월 10행, 이상치 목록은 2행이어야 합니다.</p>
+</li>
+<li class="">
+<p>다운로드 링크를 눌러 파일을 저장합니다.</p>
+</li>
+</ol>
+<p>파일 이름과 시트 이름은 요청할 때마다 조금씩 달라질 수 있습니다. 이때도 시트 수와 행 수가 맞는지만 확인하면 됩니다. 에이전트가 만든 파일은 일정 기간이 지나면 내려받을 수 없게 되므로, 필요한 파일은 바로 저장해 둡니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="아티팩트-창">아티팩트 창<a href="#아티팩트-창" class="hash-link" aria-label="아티팩트 창에 대한 직접 링크" title="아티팩트 창에 대한 직접 링크" translate="no">​</a></h2>
+<p>입력란 아래 오른쪽의 <strong>아티팩트</strong>를 누르면 이 대화에서 만들어진 데이터 표와 파일이 한 창에 모입니다. 엑셀 파일은 내려받기 전에 여기서 시트별로 미리 봅니다. 왼쪽 목록에서 항목을 고르면 오른쪽에 내용이 보입니다. <strong>미리보기</strong>와 <strong>코드</strong>로 보기 방식을 바꾸고, 파일은 <strong>다운로드</strong>로 받거나 <strong>인쇄</strong>로 출력합니다. <strong>더보기</strong>를 누르면 파일 이름, 형식, 크기를 담은 <strong>문서 속성</strong>이 보입니다. 엑셀 파일은 아래쪽 시트 탭으로 시트를 바꿔 봅니다.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="따라-해-보기-6">따라 해 보기<a href="#따라-해-보기-6" class="hash-link" aria-label="따라 해 보기에 대한 직접 링크" title="따라 해 보기에 대한 직접 링크" translate="no">​</a></h3>
+<ol>
+<li class="">입력란 아래 오른쪽의 <strong>아티팩트</strong>를 누릅니다.</li>
+<li class="">왼쪽 목록에서 <strong>판매실적_분석_요약.xlsx</strong>를 누릅니다.</li>
+<li class="">아래쪽 시트 탭을 눌러 세 시트를 차례로 확인합니다.</li>
+<li class="">지역별 순위 시트의 숫자가 앞의 답변 표(서울 1,307,210,000원부터 광주 362,240,000원까지)와 같은지 봅니다.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="전체-데이터-보기와-내보내기">전체 데이터 보기와 내보내기<a href="#전체-데이터-보기와-내보내기" class="hash-link" aria-label="전체 데이터 보기와 내보내기에 대한 직접 링크" title="전체 데이터 보기와 내보내기에 대한 직접 링크" translate="no">​</a></h2>
+<p>데이터 표 카드는 처음에 일부 행만 보여 줍니다. 아티팩트 창에서 <strong>전체 데이터 보기</strong>로 바꾸면 전체 데이터를 다시 불러와 페이지 단위로 넘겨 볼 수 있고, 원하는 형식으로 내보낼 수도 있습니다. 전체 행·열 수(이 예시는 200 × 7)가 함께 표시되고, 처음·이전·다음·마지막 페이지 버튼으로 넘깁니다. <strong>간단하게 보기</strong>를 누르면 일부 행만 보는 화면으로 돌아갑니다. <strong>내보내기</strong>를 누르면 <strong>Word로 내보내기</strong>, <strong>PPTX로 내보내기</strong>, <strong>HTML 다운로드</strong>, <strong>Excel로 내보내기</strong>, <strong>CSV로 내보내기</strong> 중에서 고를 수 있습니다.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="따라-해-보기-7">따라 해 보기<a href="#따라-해-보기-7" class="hash-link" aria-label="따라 해 보기에 대한 직접 링크" title="따라 해 보기에 대한 직접 링크" translate="no">​</a></h3>
+<ol>
+<li class="">아티팩트 창 왼쪽 목록에서 원본 행을 담은 <strong>데이터 표</strong>를 누릅니다.</li>
+<li class=""><strong>전체 데이터 보기</strong>를 누르고 표 크기가 200 × 7인지 확인합니다.</li>
+<li class="">왼쪽 아래 <strong>내보내기</strong>를 누르고 <strong>Excel로 내보내기</strong>를 고릅니다.</li>
+</ol>
+<blockquote>
+<p>팁: 시간이 지나 원본 데이터가 남아 있지 않으면 &quot;원본 데이터가 더 이상 남아 있지 않아 불러올 수 없습니다. 에이전트에게 표를 다시 만들어 달라고 요청해 주세요.&quot;가 표시됩니다. 같은 대화에서 표를 다시 만들어 달라고 요청하세요. 아티팩트 내보내기는 PDF 형식을 지원하지 않습니다.</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="엑셀-파일-첨부와-두-번째-시트-읽기">엑셀 파일 첨부와 두 번째 시트 읽기<a href="#엑셀-파일-첨부와-두-번째-시트-읽기" class="hash-link" aria-label="엑셀 파일 첨부와 두 번째 시트 읽기에 대한 직접 링크" title="엑셀 파일 첨부와 두 번째 시트 읽기에 대한 직접 링크" translate="no">​</a></h2>
+<p>엑셀 파일에 시트가 여러 개 있으면 질문에 시트 이름을 적어 함께 쓰도록 요청합니다. 여기서는 새 대화에서 같은 파일을 다시 올려 <strong>목표</strong> 시트의 연간 목표와 판매내역을 비교합니다. 첨부할 수 있는 형식과 업로드 상태 표시는 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/attachments/">첨부파일 지원</a>에, 용량과 차단 규칙은 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/file-policy/">파일 첨부 정책과 가드레일</a>에 있습니다.</p>
+<p>엑셀 파일을 보내면 에이전트가 먼저 <strong>데이터 테이블 미리보기</strong>로 시트 내용을 읽은 뒤 분석을 실행합니다.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="따라-해-보기-8">따라 해 보기<a href="#따라-해-보기-8" class="hash-link" aria-label="따라 해 보기에 대한 직접 링크" title="따라 해 보기에 대한 직접 링크" translate="no">​</a></h3>
+<ol>
+<li class="">
+<p>사이드바의 <strong>이 에이전트와 새 대화</strong>를 누릅니다.</p>
+</li>
+<li class="">
+<p><strong>파일 업로드</strong>를 눌러 브레인크루_2026_판매실적.xlsx를 고릅니다.</p>
+</li>
+<li class="">
+<p>아래 프롬프트를 입력란에 붙여 넣고 <strong>전송</strong>을 누릅니다.</p>
+<blockquote>
+<p>프롬프트: 첨부한 파일의 판매내역 시트와 목표 시트를 함께 써서 지역별 목표 대비 달성률을 계산해 주세요. 1~10월 매출 합계를 연간 목표 매출로 나눈 달성률과, 연간 목표를 10/12로 줄인 경과 목표 대비 달성률을 둘 다 표로 보여 주세요.</p>
+</blockquote>
+</li>
+<li class="">
+<p>결과 표에서 지역별 달성률을 확인합니다. 연간 목표 기준으로는 경기 69.8%, 서울 68.8%, 대구 67.1%, 부산 66.6%, 광주 64.7%, 전체 68.0%이고, 경과 목표(10/12) 기준으로는 경기 83.7%, 서울 82.6%, 대구 80.5%, 부산 79.9%, 광주 77.6%입니다. 답변 위에 에이전트가 엑셀 파일을 읽은 <strong>데이터 테이블 미리보기</strong> 기록이 있으면 펼쳐 판매내역과 목표 두 시트를 모두 읽었는지 봅니다.</p>
+</li>
+</ol>
+<blockquote>
+<p>팁: 매출 1위는 서울이지만 달성률 1위는 경기입니다. 순위는 무엇을 기준으로 냈는지에 따라 달라지므로, 보고서에는 기준(매출 합계인지 달성률인지, 연간 목표인지 경과 목표인지)을 꼭 함께 적습니다.</p>
+</blockquote>
+<p>결과 표의 열 이름이 질문과 정확히 일치하지 않을 수 있습니다. 열 이름이 애매하면 같은 대화에서 아래처럼 다시 물어 확인하세요.</p>
+<blockquote>
+<p>프롬프트: 이 표의 달성률 열은 어떤 목표 값으로 나눈 것인가요?</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="분석-결과-검증하기">분석 결과 검증하기<a href="#분석-결과-검증하기" class="hash-link" aria-label="분석 결과 검증하기에 대한 직접 링크" title="분석 결과 검증하기에 대한 직접 링크" translate="no">​</a></h2>
+<p>에이전트는 코드를 실행해 계산하므로 산수 실수는 드물지만, 질문을 다르게 이해하거나 일부 행을 빼고 계산할 수 있습니다. 보고에 쓰기 전에 아래 순서로 원본 숫자와 대조하세요. 오른쪽 열은 예시 파일로 직접 계산한 값입니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>확인할 것</th><th>확인 방법</th><th>이 페이지 예시에서 맞아야 하는 값</th></tr></thead><tbody><tr><td>파일이 빠짐없이 읽혔는가</td><td>답변의 데이터 구조 요약과 <strong>전체 데이터 보기</strong>의 표 크기를 원본 파일 행 수와 비교합니다.</td><td>판매내역 200행 × 7열, 2026-01~2026-10, 지역 5곳, 제품 4종, 결측값 없음</td></tr><tr><td>전체 합계가 맞는가</td><td>원본 매출(원) 열 전체를 더합니다.</td><td>3,748,720,000원</td></tr><tr><td>숫자 하나를 직접 다시 계산했는가</td><td>원본 파일을 엑셀에서 열고 지역 열에 필터를 걸어 한 지역만 더합니다.</td><td>서울 1,307,210,000원, 광주 362,240,000원</td></tr><tr><td>월별 합계가 맞는가</td><td>원본에서 한 달만 걸러 매출(원)을 더합니다.</td><td>2026-03 459,270,000원, 2026-09 448,760,000원</td></tr><tr><td>제품별 합계가 맞는가</td><td>제품 열에 필터를 걸어 매출(원)을 더합니다.</td><td>교육 컨설팅 1,213,800,000원, 데이터 분석 구독 1,076,750,000원, 문서 자동화 패키지 755,000,000원, AI 회의록 솔루션 703,170,000원</td></tr><tr><td>달성률 기준이 질문과 같은가</td><td><strong>데이터 분석</strong>을 펼쳐 목표 시트의 어떤 값으로 나눴는지 봅니다.</td><td>서울 1,307,210,000원 ÷ 1,900,000,000원 = 68.8%, 전체 3,748,720,000원 ÷ 5,510,000,000원 = 68.0%</td></tr><tr><td>이상치가 원본에 실제로 있는가</td><td>이상치 목록의 월, 지역, 제품으로 원본 행을 찾고 기준값과 비교합니다.</td><td>2026-03 서울 교육 컨설팅 28개 × 2,100,000원 = 58,800,000원 &gt; 상한 47,532,500원</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="따라-해-보기-9">따라 해 보기<a href="#따라-해-보기-9" class="hash-link" aria-label="따라 해 보기에 대한 직접 링크" title="따라 해 보기에 대한 직접 링크" translate="no">​</a></h3>
+<ol>
+<li class="">
+<p>원본 파일을 엑셀에서 열고 판매내역 시트의 지역 열에 필터를 걸어 서울만 남깁니다.</p>
+</li>
+<li class="">
+<p>매출(원) 열 합계가 1,307,210,000인지 확인합니다.</p>
+</li>
+<li class="">
+<p>목표 시트에서 서울의 연간 목표 매출 1,900,000,000으로 나눠 68.8%가 나오는지 봅니다.</p>
+</li>
+<li class="">
+<p>숫자가 다르면 같은 대화에서 아래 프롬프트를 보내 어느 행이 빠졌는지 찾습니다.</p>
+<blockquote>
+<p>프롬프트: 서울 매출 합계 계산에 쓴 행을 모두 보여 주세요.</p>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p>팁: 대화 화면 아래에는 &quot;AI 생성 콘텐츠와 답변은 정확하지 않을 수 있습니다.&quot;라는 안내가 항상 표시됩니다. 지역 평가나 임원 보고처럼 결과가 사람에게 영향을 주는 자료에는 숫자를 하나 이상 원본에서 직접 다시 계산해 확인하세요.</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="한-단계-더-연말-달성-전망-받아-보기">한 단계 더: 연말 달성 전망 받아 보기<a href="#한-단계-더-연말-달성-전망-받아-보기" class="hash-link" aria-label="한 단계 더: 연말 달성 전망 받아 보기에 대한 직접 링크" title="한 단계 더: 연말 달성 전망 받아 보기에 대한 직접 링크" translate="no">​</a></h2>
+<p>달성률을 받은 뒤에는 &quot;올해 목표를 채울 수 있는가&quot;를 묻게 됩니다. 같은 대화에서 지금까지의 월평균으로 11~12월을 채웠을 때의 연말 전망과, 목표를 채우려면 남은 두 달에 얼마가 필요한지 물어봅니다.</p>
+<blockquote>
+<p>프롬프트: 1<del>10월 월평균 매출이 11</del>12월에도 이어진다고 가정해 지역별 연말 예상 매출과 연간 목표 대비 예상 달성률을 표로 보여 주세요. 연간 목표를 채우려면 남은 두 달 동안 월마다 얼마가 필요한지, 그 금액이 지금 월평균의 몇 배인지도 함께 적어 주세요. 금액은 원, 비율은 %, 배수는 배로 단위를 붙여 주세요.</p>
+</blockquote>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="결과를-이렇게-확인하세요-1">결과를 이렇게 확인하세요<a href="#결과를-이렇게-확인하세요-1" class="hash-link" aria-label="결과를 이렇게 확인하세요에 대한 직접 링크" title="결과를 이렇게 확인하세요에 대한 직접 링크" translate="no">​</a></h3>
+<ul>
+<li class="">연말 예상 매출은 1~10월 합계에 월평균 × 2를 더한 값이어야 합니다. 광주는 362,240,000 + 36,224,000 × 2 = 434,688,000원입니다.</li>
+<li class="">예상 달성률은 앞에서 받은 경과 목표(10/12) 기준 달성률과 같아야 합니다. 월평균을 그대로 이어 가는 가정이라 두 계산이 같은 값이 됩니다(광주 77.6%).</li>
+<li class="">남은 두 달 필요 배수가 가장 큰 지역부터 광주 2.73배, 부산 2.51배, 대구 2.45배, 서울 2.27배, 경기 2.17배인지 봅니다.</li>
+<li class="">에이전트는 원인을 단정하지 않고 가정으로만 적어야 합니다. 광주의 제품별 매출 비중(교육 컨설팅 31.9%, 데이터 분석 구독 30.3%, 문서 자동화 패키지 19.0%, AI 회의록 솔루션 18.8%)은 전체 비중과 비슷해서, 특정 제품 문제라기보다 지역 전체 규모의 문제로 읽힙니다. 원인은 영업3팀 의견을 받아 씁니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="분석-결과를-문서로-이어-가기">분석 결과를 문서로 이어 가기<a href="#분석-결과를-문서로-이어-가기" class="hash-link" aria-label="분석 결과를 문서로 이어 가기에 대한 직접 링크" title="분석 결과를 문서로 이어 가기에 대한 직접 링크" translate="no">​</a></h2>
+<p>분석이 끝난 숫자를 보고용 PPT나 문서로 옮길 때는 문서작성 에이전트를 씁니다. 판매 데이터 분석가에게 받은 엑셀 파일을 제안서 PPT 작성기 같은 문서작성 에이전트에 올려 요청하면, 결과물이 대화 화면 오른쪽 캔버스에 열립니다. 만드는 순서는 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/canvas/">캔버스로 문서·PPT·표 만들기</a>와 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/document-agent/">PPT·문서 만들기</a>에 있고, 같은 파일로 처음부터 끝까지 진행한 예시는 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/case-sales-excel/">사례: 엑셀 판매 데이터 분석</a>에 있습니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="다음-문서">다음 문서<a href="#다음-문서" class="hash-link" aria-label="다음 문서에 대한 직접 링크" title="다음 문서에 대한 직접 링크" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-agent-builder/case-sales-excel/">사례: 엑셀 판매 데이터 분석</a> — 같은 판매실적 파일로 보고용 결과물까지 만드는 전체 흐름</li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-agent-builder/commands-reuse/">커맨드와 재사용</a> — 매달 보내는 분석 요청을 커맨드로 저장해 입력창에서 / 로 불러 쓰는 방법</li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-agent-builder/attachments/">첨부파일 지원</a> — 첨부할 수 있는 파일 형식과 업로드 상태 표시</li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-agent-builder/favorites-workspaces-downloads/">즐겨찾기·워크스페이스·다운로드</a> — 에이전트가 만든 파일을 내려받는 위치 모음</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/deep-agent-platform/docs/deep-agent-builder/document-agent/"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">PPT·문서 만들기</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/deep-agent-platform/docs/deep-agent-builder/commands-reuse/"><div class="pagination-nav__sublabel">다음</div><div class="pagination-nav__label">커맨드와 재사용</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#분석-전에-준비할-것" class="table-of-contents__link toc-highlight">분석 전에 준비할 것</a></li><li><a href="#파일-첨부와-첫-질문" class="table-of-contents__link toc-highlight">파일 첨부와 첫 질문</a><ul><li><a href="#따라-해-보기" class="table-of-contents__link toc-highlight">따라 해 보기</a></li></ul></li><li><a href="#실행한-코드와-출력-확인" class="table-of-contents__link toc-highlight">실행한 코드와 출력 확인</a><ul><li><a href="#따라-해-보기-1" class="table-of-contents__link toc-highlight">따라 해 보기</a></li></ul></li><li><a href="#결과-표-읽기" class="table-of-contents__link toc-highlight">결과 표 읽기</a><ul><li><a href="#따라-해-보기-2" class="table-of-contents__link toc-highlight">따라 해 보기</a></li><li><a href="#결과를-이렇게-확인하세요" class="table-of-contents__link toc-highlight">결과를 이렇게 확인하세요</a></li></ul></li><li><a href="#차트-만들기" class="table-of-contents__link toc-highlight">차트 만들기</a><ul><li><a href="#따라-해-보기-3" class="table-of-contents__link toc-highlight">따라 해 보기</a></li></ul></li><li><a href="#이상치-찾기" class="table-of-contents__link toc-highlight">이상치 찾기</a><ul><li><a href="#따라-해-보기-4" class="table-of-contents__link toc-highlight">따라 해 보기</a></li></ul></li><li><a href="#결과-파일-내려받기" class="table-of-contents__link toc-highlight">결과 파일 내려받기</a><ul><li><a href="#따라-해-보기-5" class="table-of-contents__link toc-highlight">따라 해 보기</a></li></ul></li><li><a href="#아티팩트-창" class="table-of-contents__link toc-highlight">아티팩트 창</a><ul><li><a href="#따라-해-보기-6" class="table-of-contents__link toc-highlight">따라 해 보기</a></li></ul></li><li><a href="#전체-데이터-보기와-내보내기" class="table-of-contents__link toc-highlight">전체 데이터 보기와 내보내기</a><ul><li><a href="#따라-해-보기-7" class="table-of-contents__link toc-highlight">따라 해 보기</a></li></ul></li><li><a href="#엑셀-파일-첨부와-두-번째-시트-읽기" class="table-of-contents__link toc-highlight">엑셀 파일 첨부와 두 번째 시트 읽기</a><ul><li><a href="#따라-해-보기-8" class="table-of-contents__link toc-highlight">따라 해 보기</a></li></ul></li><li><a href="#분석-결과-검증하기" class="table-of-contents__link toc-highlight">분석 결과 검증하기</a><ul><li><a href="#따라-해-보기-9" class="table-of-contents__link toc-highlight">따라 해 보기</a></li></ul></li><li><a href="#한-단계-더-연말-달성-전망-받아-보기" class="table-of-contents__link toc-highlight">한 단계 더: 연말 달성 전망 받아 보기</a><ul><li><a href="#결과를-이렇게-확인하세요-1" class="table-of-contents__link toc-highlight">결과를 이렇게 확인하세요</a></li></ul></li><li><a href="#분석-결과를-문서로-이어-가기" class="table-of-contents__link toc-highlight">분석 결과를 문서로 이어 가기</a></li><li><a href="#다음-문서" class="table-of-contents__link toc-highlight">다음 문서</a></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>

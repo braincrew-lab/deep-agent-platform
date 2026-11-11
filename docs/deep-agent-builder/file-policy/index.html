@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="ko" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-deep-agent-builder/file-policy" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.2">
+<title data-rh="true">파일 첨부 정책과 가드레일 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/file-policy/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="파일 첨부 정책과 가드레일 | Deep Platform"><meta data-rh="true" name="description" content="Deep Agent Builder에서 파일을 올리는 곳은 채팅만이 아닙니다. 에이전트 편집 화면의 파일 탭과 스킬 탭, 새 에이전트 만들기, 에이전트 가져오기, 라운지 게시글, 에셋 화면의 스킬 업로드, 평가 데이터셋에도 파일을 올리며, 곳마다 받는 확장자와 크기 한도가 조금씩 다릅니다. 이 페이지는 그 규칙을 표로 모으고, 파일이 거부될 때의 사유와 안내 문구, 조직의 가드레일 정책이 요청을 막았을 때 화면에 나타나는 모습을 정리합니다. 화면을 따라 하는 방법은 각 기능 페이지에 있고, 여기서는 &quot;이 파일을 여기에 올릴 수 있는가&quot;를 빠르게 확인할 때 씁니다."><meta data-rh="true" property="og:description" content="Deep Agent Builder에서 파일을 올리는 곳은 채팅만이 아닙니다. 에이전트 편집 화면의 파일 탭과 스킬 탭, 새 에이전트 만들기, 에이전트 가져오기, 라운지 게시글, 에셋 화면의 스킬 업로드, 평가 데이터셋에도 파일을 올리며, 곳마다 받는 확장자와 크기 한도가 조금씩 다릅니다. 이 페이지는 그 규칙을 표로 모으고, 파일이 거부될 때의 사유와 안내 문구, 조직의 가드레일 정책이 요청을 막았을 때 화면에 나타나는 모습을 정리합니다. 화면을 따라 하는 방법은 각 기능 페이지에 있고, 여기서는 &quot;이 파일을 여기에 올릴 수 있는가&quot;를 빠르게 확인할 때 씁니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/file-policy/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/file-policy/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/file-policy/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"파일 첨부 정책과 가드레일","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/file-policy"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
+<script src="/deep-agent-platform/assets/js/runtime~main.a9c96625.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.dd53db47.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/deep-agent-platform/img/manual-mark.svg"><div role="region" aria-label="본문으로 건너뛰기"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">본문으로 건너뛰기</a></div><nav aria-label="메인" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="사이드바 펼치거나 접기" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/deep-agent-platform/"><div class="navbar__logo"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Deep Platform</b></a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">솔루션</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-flow/">Deep Flow</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/deep-agent-platform/docs/deep-agent-builder/">Deep Agent Builder</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-connector/">Deep Connector</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-docurator/">Deep Docurator</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/brain-parser/">Brain Parser</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work/">Deep Work</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work-gateway/">Deep Work Gateway</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-admin/">Deep Admin</a></li></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="어두운 모드와 밝은 모드 전환하기 (현재 system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="searchBar_fdyA"><input type="search" class="searchInput_JE4R" placeholder="매뉴얼 검색" aria-label="매뉴얼 검색" role="combobox" aria-autocomplete="list" aria-expanded="false" value=""><div role="status" aria-live="polite"></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="맨 위로 스크롤하기" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="문서 사이드바" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/"><span class="categoryLinkLabel_W154">소개</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/core-concepts/"><span class="categoryLinkLabel_W154">처음 사용하기</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/first-agent-design/"><span class="categoryLinkLabel_W154">에이전트 만들기</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/deep-agent-platform/docs/deep-agent-builder/threads/"><span class="categoryLinkLabel_W154">업무에 활용하기</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/threads/"><span class="linkLabel_WmDU">대화 화면과 채팅 목록</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/attachments/"><span class="linkLabel_WmDU">첨부파일 지원</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/file-policy/"><span class="linkLabel_WmDU">파일 첨부 정책과 가드레일</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/canvas/"><span class="linkLabel_WmDU">캔버스로 문서·PPT·표 만들기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/document-agent/"><span class="linkLabel_WmDU">PPT·문서 만들기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/data-analysis/"><span class="linkLabel_WmDU">데이터 분석</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/commands-reuse/"><span class="linkLabel_WmDU">커맨드와 재사용</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/favorites-workspaces-downloads/"><span class="linkLabel_WmDU">즐겨찾기·워크스페이스·다운로드</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/scheduling/"><span class="linkLabel_WmDU">스케줄링과 백그라운드 모드</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/rag-agent/"><span class="categoryLinkLabel_W154">지식·도구 연결</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/middleware/"><span class="categoryLinkLabel_W154">보안과 권한</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/community/"><span class="categoryLinkLabel_W154">커뮤니티</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/multi-agent-concepts/"><span class="categoryLinkLabel_W154">멀티에이전트</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/evaluation-overview/"><span class="categoryLinkLabel_W154">평가</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/evaluations/"><span class="categoryLinkLabel_W154">개선과 모니터링</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/use-cases/"><span class="categoryLinkLabel_W154">활용 사례</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/troubleshooting/"><span class="categoryLinkLabel_W154">문제 해결</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="탐색 경로"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="홈" class="breadcrumbs__link" href="/deep-agent-platform/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">업무에 활용하기</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">파일 첨부 정책과 가드레일</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">이 페이지에서</button></div><div class="theme-doc-markdown markdown"><header><h1>파일 첨부 정책과 가드레일</h1></header>
+<p>Deep Agent Builder에서 파일을 올리는 곳은 채팅만이 아닙니다. 에이전트 편집 화면의 <strong>파일</strong> 탭과 <strong>스킬</strong> 탭, 새 에이전트 만들기, 에이전트 가져오기, 라운지 게시글, <strong>에셋</strong> 화면의 스킬 업로드, 평가 데이터셋에도 파일을 올리며, 곳마다 받는 확장자와 크기 한도가 조금씩 다릅니다. 이 페이지는 그 규칙을 표로 모으고, 파일이 거부될 때의 사유와 안내 문구, 조직의 가드레일 정책이 요청을 막았을 때 화면에 나타나는 모습을 정리합니다. 화면을 따라 하는 방법은 각 기능 페이지에 있고, 여기서는 &quot;이 파일을 여기에 올릴 수 있는가&quot;를 빠르게 확인할 때 씁니다.</p>
+<p><strong>이 페이지에서 할 수 있는 일</strong></p>
+<ul>
+<li class="">업로드 위치별로 받는 확장자, 파일 한 개의 크기 한도, 개수 한도를 확인합니다.</li>
+<li class="">받지 않는 형식과, 형식이 맞아도 거부되는 경우(내용 불일치, 암호·DRM, 빈 파일)를 확인합니다.</li>
+<li class="">올린 파일이 언제 만료되는지 확인합니다.</li>
+<li class="">가드레일 정책이 요청을 막았을 때 화면에 무엇이 나오고 무엇을 하면 되는지 확인합니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="채팅-첨부-한도">채팅 첨부 한도<a href="#채팅-첨부-한도" class="hash-link" aria-label="채팅 첨부 한도에 대한 직접 링크" title="채팅 첨부 한도에 대한 직접 링크" translate="no">​</a></h2>
+<p>채팅 입력란 아래 오른쪽의 <strong>파일 업로드</strong>로 붙이는 파일의 규칙입니다. 에이전트 편집 화면 <strong>파일</strong> 탭도 같은 확장자와 크기 한도를 따릅니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>종류</th><th>확장자</th><th>파일 한 개 한도</th></tr></thead><tbody><tr><td>PDF</td><td>.pdf</td><td>20MB</td></tr><tr><td>이미지</td><td>.jpg, .jpeg, .png, .gif, .webp</td><td>20MB</td></tr><tr><td>마크다운·텍스트</td><td>.md, .markdown, .txt</td><td>10MB</td></tr><tr><td>엑셀·표</td><td>.xlsx, .xls, .xlsb, .xlsm, .csv</td><td>50MB</td></tr><tr><td>Word</td><td>.docx</td><td>20MB</td></tr><tr><td>PowerPoint</td><td>.pptx, .ppt</td><td>50MB</td></tr><tr><td>한글</td><td>.hwp, .hwpx</td><td>20MB</td></tr><tr><td>웹 문서</td><td>.html, .htm</td><td>10MB</td></tr></tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>항목</th><th>한도</th></tr></thead><tbody><tr><td>메시지 한 번에 붙이는 파일 수</td><td>10개</td></tr><tr><td>에이전트 <strong>파일</strong> 탭에 올려 두는 파일 수</td><td>에이전트 하나에 50개</td></tr><tr><td>파일 한 개의 최대 크기(업로드 제한)</td><td>50MB(모든 업로드 위치 공통)</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="업로드-위치별-정책">업로드 위치별 정책<a href="#업로드-위치별-정책" class="hash-link" aria-label="업로드 위치별 정책에 대한 직접 링크" title="업로드 위치별 정책에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>업로드 위치</th><th>받는 확장자</th><th>파일 한 개</th><th>개수·합계 한도</th><th>자세한 화면</th></tr></thead><tbody><tr><td>채팅 첨부</td><td>위 채팅 첨부 표의 확장자 전부</td><td>종류별 10MB, 20MB, 50MB</td><td>메시지 한 번에 10개</td><td><a class="" href="/deep-agent-platform/docs/deep-agent-builder/attachments/">첨부파일 지원</a></td></tr><tr><td>에이전트 편집 화면 <strong>파일</strong> 탭</td><td>채팅 첨부와 같음</td><td>채팅 첨부와 같음</td><td>에이전트 하나에 50개</td><td><a class="" href="/deep-agent-platform/docs/deep-agent-builder/attachments/">첨부파일 지원</a></td></tr><tr><td><strong>새 에이전트</strong>의 제작 요청 첨부</td><td>.pdf, .jpg, .jpeg, .png, .gif, .webp, .md, .markdown, .txt, .docx, .pptx, .ppt, .hwp, .hwpx, .html, .htm</td><td>채팅 첨부와 같음</td><td>한 번에 10개, 합계 50MB</td><td><a class="" href="/deep-agent-platform/docs/deep-agent-builder/agent-creation/">에이전트 만들기</a></td></tr><tr><td>만들기 도중 확인 질문에 답할 때</td><td>.jpg, .jpeg, .png, .gif, .webp</td><td>20MB</td><td>한 번에 10개</td><td><a class="" href="/deep-agent-platform/docs/deep-agent-builder/agent-creation/">에이전트 만들기</a></td></tr><tr><td>라운지 게시글 첨부파일</td><td>.pdf, .docx, .hwp, .hwpx, .txt, .md, .xlsx, .csv, .pptx, .jpg, .jpeg, .png, .gif, .webp</td><td>20MB</td><td>화면에 정한 개수 한도 없음</td><td><a class="" href="/deep-agent-platform/docs/deep-agent-builder/community/">커뮤니티</a></td></tr><tr><td>라운지 본문·댓글 이미지</td><td>.jpg, .jpeg, .png, .gif, .webp</td><td>10MB</td><td>화면에 정한 개수 한도 없음</td><td><a class="" href="/deep-agent-platform/docs/deep-agent-builder/community/">커뮤니티</a></td></tr><tr><td>라운지 유즈케이스 대표 이미지</td><td>.jpg, .jpeg, .png</td><td>10MB</td><td>게시글 하나에 1장</td><td><a class="" href="/deep-agent-platform/docs/deep-agent-builder/community/">커뮤니티</a></td></tr><tr><td>사이드바의 <strong>에셋설정</strong>을 눌러 여는 <strong>에셋</strong> 화면 <strong>스킬</strong> 탭의 <strong>스킬 업로드</strong></td><td>.md 또는 .zip</td><td>.zip 50MB</td><td>.md는 한 번에 30개까지, .zip은 1개. .md와 .zip은 섞어 올리지 않음</td><td><a class="" href="/deep-agent-platform/docs/deep-agent-builder/custom-skills/">스킬 만들기와 업로드</a></td></tr><tr><td>에이전트 편집 화면 <strong>스킬</strong> 탭 <strong>문서 작성 스킬</strong>의 <strong>ZIP 업로드</strong></td><td>.zip</td><td>50MB</td><td>1개</td><td><a class="" href="/deep-agent-platform/docs/deep-agent-builder/document-agent/">PPT·문서 만들기</a></td></tr><tr><td><strong>에이전트 가져오기</strong></td><td>.zip</td><td>50MB(창에는 &quot;최대 200MB&quot;라고 보임)</td><td>1개</td><td><a class="" href="/deep-agent-platform/docs/deep-agent-builder/agent-export-import/">에이전트 가져오기와 내보내기</a></td></tr><tr><td>평가 데이터셋</td><td>.csv</td><td>5MB</td><td>데이터셋 하나에 파일 1개, 1,000행까지</td><td><a class="" href="/deep-agent-platform/docs/deep-agent-builder/evaluation-datasets/">평가 데이터셋 만들기</a></td></tr></tbody></table>
+<p>표를 읽을 때 알아 둘 점은 다음과 같습니다.</p>
+<ul>
+<li class="">새 에이전트 만들기의 제작 요청에는 엑셀·표 파일(.xlsx, .xls, .xlsb, .xlsm, .csv)을 붙일 수 없습니다. 표 자료는 에이전트를 만든 뒤 채팅이나 <strong>파일</strong> 탭에 올립니다.</li>
+<li class="">만들기 도중 확인 질문에 이미지가 아닌 파일을 붙여 보내면 &quot;이미지 첨부만 지원합니다.&quot;가 나오고 전송되지 않습니다.</li>
+<li class="">라운지 게시글 첨부에서 받지 않는 형식을 고르면 &quot;첨부할 수 없는 파일 형식입니다. 이미지나 문서 파일만 올릴 수 있습니다&quot;가, 20MB를 넘으면 &quot;파일은 20MB 이하여야 합니다&quot;가 나옵니다. 본문 이미지는 &quot;JPEG, PNG, GIF, WebP 이미지만 허용됩니다&quot;, &quot;이미지는 10MB 이하여야 합니다&quot;로 안내됩니다.</li>
+<li class=""><strong>에이전트 가져오기</strong> 창에는 &quot;최대 200MB&quot;라고 보이지만, 실제로 올릴 수 있는 크기는 50MB까지입니다.</li>
+<li class="">평가 데이터셋 CSV에는 question, answer 열이 있어야 합니다. 열이 없으면 &quot;CSV 헤더에 question, answer 열이 있어야 합니다.&quot;, 5MB를 넘으면 &quot;파일이 최대 업로드 크기를 초과했습니다.&quot;, 1,000행을 넘으면 &quot;CSV는 최대 1000행까지 업로드할 수 있습니다.&quot;가 나옵니다.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="스킬-zip-안에-넣을-수-있는-파일">스킬 ZIP 안에 넣을 수 있는 파일<a href="#스킬-zip-안에-넣을-수-있는-파일" class="hash-link" aria-label="스킬 ZIP 안에 넣을 수 있는 파일에 대한 직접 링크" title="스킬 ZIP 안에 넣을 수 있는 파일에 대한 직접 링크" translate="no">​</a></h3>
+<p>스킬 ZIP은 최상위 또는 하나뿐인 최상위 폴더 안에 SKILL.md가 있어야 하고, 안에 든 파일은 모두 다음 확장자여야 합니다. 하나라도 다른 확장자가 있으면 ZIP 전체가 거부되고 &quot;허용되지 않은 확장자의 파일이 포함되어 있어 업로드할 수 없습니다: 파일 이름.&quot;과 함께 &quot;허용 확장자: …&quot;가 안내됩니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>구분</th><th>확장자</th></tr></thead><tbody><tr><td>텍스트</td><td>.md, .txt, .json, .yaml, .yml, .csv, .py, .sh, .js, .ts, .html, .xml, .toml</td></tr><tr><td>문서·이미지</td><td>.docx, .pptx, .xlsx, .pdf, .png, .jpg, .jpeg, .gif</td></tr></tbody></table>
+<p>.svg 파일은 넣을 수 없습니다. 화면에서 바로 열어 고칠 수 있는 텍스트 파일은 한 개에 256KB까지입니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="받지-않는-형식">받지 않는 형식<a href="#받지-않는-형식" class="hash-link" aria-label="받지 않는 형식에 대한 직접 링크" title="받지 않는 형식에 대한 직접 링크" translate="no">​</a></h2>
+<p>채팅 첨부, 에이전트 편집 화면 <strong>파일</strong> 탭, <strong>새 에이전트</strong>의 제작 요청 첨부는 앞의 표에 없는 확장자를 모두 받지 않습니다. 자주 문의가 오는 형식과 바꾸는 방법은 다음과 같습니다. 이 가운데 압축 파일(.zip)만 다른 업로드 위치 세 곳에서 받고, 나머지 형식은 어느 업로드 위치에서도 받지 않습니다. 받지 않는 형식은 같은 내용을 받는 형식으로 다시 저장해 올립니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>형식</th><th>바꾸는 방법</th></tr></thead><tbody><tr><td>옛 Word 문서(.doc)</td><td>Word에서 .docx로 다시 저장합니다.</td></tr><tr><td>.tiff, .bmp 이미지</td><td>.png나 .jpg로 바꿉니다.</td></tr><tr><td>.xhtml 웹 문서</td><td>브라우저에서 .html로 저장하거나 PDF로 인쇄합니다.</td></tr><tr><td>AsciiDoc, LaTeX 원고</td><td>.md나 PDF로 바꿉니다.</td></tr><tr><td>HWP 3.0 같은 옛 한글 문서</td><td>한글에서 HWP 5.x 이상이나 .hwpx로 다시 저장합니다.</td></tr><tr><td>압축 파일(.zip)</td><td>채팅, 에이전트 편집 화면 <strong>파일</strong> 탭, 새 에이전트 제작 요청에는 올릴 수 없습니다. 풀어서 필요한 파일만 올립니다. .zip은 <strong>에셋</strong> 화면 <strong>스킬</strong> 탭의 <strong>스킬 업로드</strong>, 에이전트 편집 화면 <strong>스킬</strong> 탭 <strong>문서 작성 스킬</strong>의 <strong>ZIP 업로드</strong>, <strong>에이전트 가져오기</strong> 세 곳에서만 받습니다.</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="형식이-맞아도-거부되는-경우">형식이 맞아도 거부되는 경우<a href="#형식이-맞아도-거부되는-경우" class="hash-link" aria-label="형식이 맞아도 거부되는 경우에 대한 직접 링크" title="형식이 맞아도 거부되는 경우에 대한 직접 링크" translate="no">​</a></h2>
+<p>확장자가 표에 있어도 내용을 확인하는 단계에서 거부될 수 있습니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>경우</th><th>화면 안내</th><th>할 일</th></tr></thead><tbody><tr><td>업로드 제한 초과</td><td>&quot;파일 크기가 업로드 제한(50MB)을 초과합니다.&quot;</td><td>파일을 나누거나 필요한 쪽·시트만 저장해 50MB 아래로 줄입니다.</td></tr><tr><td>종류별 한도 초과</td><td>&quot;PDF 파일 크기가 제한(20MB)을 초과합니다. 현재 크기: …&quot;처럼 종류와 한도, 현재 크기</td><td>종류별 한도 아래로 줄입니다.</td></tr><tr><td>빈 파일</td><td>&quot;빈 파일은 업로드할 수 없습니다.&quot;</td><td>원본을 다시 저장해 내용이 들어 있는지 확인합니다.</td></tr><tr><td>확장자와 내용 불일치</td><td>&quot;파일 확장자와 실제 파일 형식이 일치하지 않습니다.&quot;</td><td>이름만 바꾼 파일이 아닌지 확인하고, 원본 프로그램에서 그 형식으로 다시 저장합니다.</td></tr><tr><td>암호·권한 보호(DRM)</td><td>&quot;암호나 권한 보호(DRM)가 걸린 문서는 업로드할 수 없습니다. 보호를 해제한 뒤 다시 올려 주세요.&quot;</td><td>암호나 DRM을 해제한 사본을 올립니다. 해제 권한이 없으면 문서 담당자에게 요청합니다.</td></tr><tr><td>받지 않는 형식</td><td>&quot;지원하지 않는 파일 형식입니다&quot;</td><td>위 &quot;받지 않는 형식&quot; 표대로 바꿉니다.</td></tr></tbody></table>
+<p>김그루 사원이 이미 대화가 있는 채팅에, 텍스트 메모의 확장자만 .pdf로 바꾼 파일을 붙이면 &quot;파일 확장자와 실제 파일 형식이 일치하지 않습니다.&quot;처럼 파일 이름과 거부 사유가 알림으로 나오고, 그 파일은 올라가지 않습니다. 원본 프로그램에서 그 형식으로 다시 저장한 파일을 붙여 다시 보냅니다.</p>
+<p>채팅에서는 올라간 뒤 문서 처리 단계에서도 실패할 수 있습니다. 처리 한도 초과, 암호 보호, 처리 시간 초과, 변환 실패 같은 사유가 파일 칩 아래에 표시되며, 사유별 안내는 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/attachments/">첨부파일 지원</a>의 &quot;처리에 실패한 파일&quot;에 있습니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="만료">만료<a href="#만료" class="hash-link" aria-label="만료에 대한 직접 링크" title="만료에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>대상</th><th>보관</th><th>만료되면</th></tr></thead><tbody><tr><td>채팅에 붙인 파일</td><td>올린 지 7일</td><td>파일이 지워지고 대화의 첨부 칩에 <strong>만료됨</strong>이 붙습니다. &quot;업로드가 만료되어 파일을 더 이상 열 수 없습니다. 다시 업로드해 주세요.&quot;</td></tr><tr><td>에이전트 편집 화면 <strong>파일</strong> 탭에 올린 파일</td><td>직접 지울 때까지</td><td>만료되지 않습니다.</td></tr><tr><td>아티팩트 창의 <strong>다운로드 파일</strong>(에이전트가 만든 파일)</td><td>정해진 내려받기 기간 동안</td><td>&quot;기간이 만료되어 다운로드 받을 수 없습니다.&quot;가 나옵니다. 에이전트에게 파일을 다시 만들어 달라고 요청합니다.</td></tr></tbody></table>
+<p>같은 자료를 오래 두고 써야 한다면 채팅마다 올리지 말고 <strong>파일</strong> 탭에 올려 둡니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="가드레일-정책이-요청을-막았을-때">가드레일 정책이 요청을 막았을 때<a href="#가드레일-정책이-요청을-막았을-때" class="hash-link" aria-label="가드레일 정책이 요청을 막았을 때에 대한 직접 링크" title="가드레일 정책이 요청을 막았을 때에 대한 직접 링크" translate="no">​</a></h2>
+<p>조직에 따라 관리자가 AI 게이트웨이나 가드레일 서비스로 대화 정책을 걸어 둘 수 있습니다. 정책이 질문이나 답변을 막으면, 에이전트 답변 자리에 정책이 정한 문장이 그대로 표시됩니다. 이 문장은 화면이 만든 고정 문구가 아니라 각 조직의 정책이 정한 것이어서, 조직마다 표현이 다릅니다. 막힌 안내도 대화 기록에 남으므로 채팅을 다시 열어도 같은 자리에 보입니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>확인할 것</th><th>내용</th></tr></thead><tbody><tr><td>어디에 보이나</td><td>막힌 질문 바로 아래, 에이전트 답변 말풍선 자리</td></tr><tr><td>무엇이 보이나</td><td>조직 정책이 정한 안내 문장(조직마다 다름)</td></tr><tr><td>무엇이 막히나</td><td>조직 정책이 정한 기준에 걸린 질문이나 답변. 어떤 내용이 막히는지는 조직마다 다르므로, 기준이 궁금하면 조직의 관리자에게 확인합니다.</td></tr><tr><td>정책 운영</td><td>조직의 관리자가 정합니다. 정책을 쓰지 않는 조직에서는 이런 안내가 나오지 않습니다.</td></tr></tbody></table>
+<p>막혔을 때는 다음 순서로 확인합니다.</p>
+<ol>
+<li class="">안내 문장에 사유가 적혀 있으면 그 사유부터 확인합니다.</li>
+<li class="">질문이나 붙인 파일에 개인정보, 고객 정보, 사내 비밀처럼 정책에 걸릴 만한 내용이 없는지 확인하고, 있으면 지우거나 가린 뒤 다시 보냅니다.</li>
+<li class="">같은 질문이 계속 막히면 시각, 에이전트 이름, 안내 문장을 적어 관리자에게 문의합니다. 답변 아래 토큰 배지를 눌러 <strong>토큰 사용량 상세</strong>의 <strong>추적 정보</strong>를 함께 전달하면 관리자가 해당 요청을 찾기 쉽습니다.</li>
+</ol>
+<p>에이전트에 직접 개인정보 보호 규칙을 거는 방법은 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/middleware/">미들웨어와 개인정보 보호</a>에서 설명합니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="정리">정리<a href="#정리" class="hash-link" aria-label="정리에 대한 직접 링크" title="정리에 대한 직접 링크" translate="no">​</a></h2>
+<ul>
+<li class="">채팅과 <strong>파일</strong> 탭은 .pdf, .jpg, .jpeg, .png, .gif, .webp, .md, .markdown, .txt, .xlsx, .xls, .xlsb, .xlsm, .csv, .docx, .pptx, .ppt, .hwp, .hwpx, .html, .htm을 받습니다. 파일 한 개는 어느 업로드 위치에서든 50MB까지입니다.</li>
+<li class="">.doc, .tiff, .bmp, .xhtml, AsciiDoc, LaTeX는 어디에도 올릴 수 없습니다. .zip은 스킬 업로드, 문서 작성 스킬의 <strong>ZIP 업로드</strong>, <strong>에이전트 가져오기</strong>에서만 받습니다.</li>
+<li class="">빈 파일, 확장자와 내용이 다른 파일, 암호·DRM이 걸린 파일은 거부됩니다.</li>
+<li class="">채팅에 붙인 파일은 7일 뒤 만료되고, <strong>파일</strong> 탭 파일은 만료되지 않습니다.</li>
+<li class="">가드레일 정책이 막으면 조직 정책의 안내 문장이 답변 자리에 나옵니다. 내용을 고쳐 다시 보내고, 계속되면 관리자에게 문의합니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="다음-문서">다음 문서<a href="#다음-문서" class="hash-link" aria-label="다음 문서에 대한 직접 링크" title="다음 문서에 대한 직접 링크" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-agent-builder/attachments/">첨부파일 지원</a> — 채팅에 파일을 붙이는 방법과 업로드 상태</li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-agent-builder/middleware/">미들웨어와 개인정보 보호</a> — 개인정보를 가리거나 막는 미들웨어 설정</li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-agent-builder/troubleshooting/">문제 해결</a> — 파일이 첨부되지 않을 때 원인별 할 일</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/deep-agent-platform/docs/deep-agent-builder/attachments/"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">첨부파일 지원</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/deep-agent-platform/docs/deep-agent-builder/canvas/"><div class="pagination-nav__sublabel">다음</div><div class="pagination-nav__label">캔버스로 문서·PPT·표 만들기</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#채팅-첨부-한도" class="table-of-contents__link toc-highlight">채팅 첨부 한도</a></li><li><a href="#업로드-위치별-정책" class="table-of-contents__link toc-highlight">업로드 위치별 정책</a><ul><li><a href="#스킬-zip-안에-넣을-수-있는-파일" class="table-of-contents__link toc-highlight">스킬 ZIP 안에 넣을 수 있는 파일</a></li></ul></li><li><a href="#받지-않는-형식" class="table-of-contents__link toc-highlight">받지 않는 형식</a></li><li><a href="#형식이-맞아도-거부되는-경우" class="table-of-contents__link toc-highlight">형식이 맞아도 거부되는 경우</a></li><li><a href="#만료" class="table-of-contents__link toc-highlight">만료</a></li><li><a href="#가드레일-정책이-요청을-막았을-때" class="table-of-contents__link toc-highlight">가드레일 정책이 요청을 막았을 때</a></li><li><a href="#정리" class="table-of-contents__link toc-highlight">정리</a></li><li><a href="#다음-문서" class="table-of-contents__link toc-highlight">다음 문서</a></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>

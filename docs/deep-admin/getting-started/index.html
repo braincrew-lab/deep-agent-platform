@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="ko" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-deep-admin/getting-started" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.2">
+<title data-rh="true">Deep Admin 시작하기 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-admin/getting-started/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Deep Admin 시작하기 | Deep Platform"><meta data-rh="true" name="description" content="이 페이지는 플랫폼 관리자가 Deep Admin에 처음 로그인해 대시보드를 읽고, 사이드바에서 필요한 메뉴를 찾는 방법을 안내합니다. 예시는 브레인크루 AI혁신팀의 플랫폼 관리자 강혁신 팀장 계정입니다."><meta data-rh="true" property="og:description" content="이 페이지는 플랫폼 관리자가 Deep Admin에 처음 로그인해 대시보드를 읽고, 사이드바에서 필요한 메뉴를 찾는 방법을 안내합니다. 예시는 브레인크루 AI혁신팀의 플랫폼 관리자 강혁신 팀장 계정입니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-admin/getting-started/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-admin/getting-started/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-admin/getting-started/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"시작하기","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-admin/getting-started"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
+<script src="/deep-agent-platform/assets/js/runtime~main.a9c96625.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.dd53db47.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/deep-agent-platform/img/manual-mark.svg"><div role="region" aria-label="본문으로 건너뛰기"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">본문으로 건너뛰기</a></div><nav aria-label="메인" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="사이드바 펼치거나 접기" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/deep-agent-platform/"><div class="navbar__logo"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Deep Platform</b></a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">솔루션</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-flow/">Deep Flow</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-agent-builder/">Deep Agent Builder</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-connector/">Deep Connector</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-docurator/">Deep Docurator</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/brain-parser/">Brain Parser</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work/">Deep Work</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work-gateway/">Deep Work Gateway</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/deep-agent-platform/docs/deep-admin/">Deep Admin</a></li></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="어두운 모드와 밝은 모드 전환하기 (현재 system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="searchBar_fdyA"><input type="search" class="searchInput_JE4R" placeholder="매뉴얼 검색" aria-label="매뉴얼 검색" role="combobox" aria-autocomplete="list" aria-expanded="false" value=""><div role="status" aria-live="polite"></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="맨 위로 스크롤하기" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="문서 사이드바" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-admin/"><span class="categoryLinkLabel_W154">소개</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/deep-agent-platform/docs/deep-admin/getting-started/"><span class="categoryLinkLabel_W154">시작하기</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/deep-agent-platform/docs/deep-admin/getting-started/"><span class="linkLabel_WmDU">시작하기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-admin/core-features/"><span class="linkLabel_WmDU">메뉴 안내</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-admin/users-workspaces/"><span class="categoryLinkLabel_W154">사용자와 권한</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-admin/token-usage/"><span class="categoryLinkLabel_W154">사용량과 비용</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-admin/resources/"><span class="categoryLinkLabel_W154">에이전트와 리소스</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-admin/monitoring-audit/"><span class="categoryLinkLabel_W154">운영과 감사</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-admin/use-cases/"><span class="categoryLinkLabel_W154">활용사례</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-admin/troubleshooting/"><span class="categoryLinkLabel_W154">문제 해결</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="탐색 경로"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="홈" class="breadcrumbs__link" href="/deep-agent-platform/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">시작하기</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">시작하기</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">이 페이지에서</button></div><div class="theme-doc-markdown markdown"><header><h1>Deep Admin 시작하기</h1></header>
+<p>이 페이지는 플랫폼 관리자가 Deep Admin에 처음 로그인해 대시보드를 읽고, 사이드바에서 필요한 메뉴를 찾는 방법을 안내합니다. 예시는 브레인크루 AI혁신팀의 플랫폼 관리자 강혁신 팀장 계정입니다.</p>
+<p><strong>이 페이지에서 할 수 있는 일</strong></p>
+<ul>
+<li class="">관리자 계정으로 Deep Admin에 로그인합니다.</li>
+<li class="">사이드바 메뉴 묶음과 관리 화면 선택을 보고, 지금 할 일이 어느 메뉴에 있는지 찾습니다.</li>
+<li class="">대시보드의 네 탭에서 사용자 수, 에이전트 실행, 토큰 사용량, 오류율을 확인합니다.</li>
+<li class="">사용자 메뉴에서 설정을 열거나 로그아웃합니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="준비할-것">준비할 것<a href="#준비할-것" class="hash-link" aria-label="준비할 것에 대한 직접 링크" title="준비할 것에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>항목</th><th>내용</th></tr></thead><tbody><tr><td>계정</td><td>관리자 권한이 있는 권한 그룹(예: 관리자)에 배정된 계정. 일반 직원 계정으로는 들어올 수 없습니다.</td></tr><tr><td>브라우저</td><td>최신 Chrome 또는 Edge. 표가 넓은 화면이 많아 가로 1,400픽셀 이상의 창을 권장합니다.</td></tr><tr><td>주소</td><td>플랫폼 운영 담당이 알려 준 Deep Admin 주소</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="로그인">로그인<a href="#로그인" class="hash-link" aria-label="로그인에 대한 직접 링크" title="로그인에 대한 직접 링크" translate="no">​</a></h2>
+<p>Deep Admin 주소로 접속하면 로그인 화면으로 이동합니다. Deep Agent Builder와 같은 로그인 화면을 쓰므로, 이미 Deep Agent Builder에 로그인해 있다면 바로 대시보드가 열립니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="로그인 화면"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/getting-started-login-f2f27f69beca8f9905f77dfb9a47295f.png" target="_blank" rel="noopener"><img width="1440" height="900" src="/deep-agent-platform/assets/images/getting-started-login-f2f27f69beca8f9905f77dfb9a47295f.png" alt="로그인 화면. 이메일과 비밀번호 입력란, 로그인 버튼에 번호가 붙어 있다" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">로그인 화면</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>이메일 입력란</td><td>관리자 계정의 이메일을 입력합니다.</td><td>처음 Deep Admin에 접속할 때</td></tr><tr><td>2</td><td>비밀번호 입력란</td><td>비밀번호를 입력합니다.</td><td>이메일 다음 칸에 비밀번호를 적을 때</td></tr><tr><td>3</td><td>로그인 버튼</td><td>입력한 계정으로 로그인합니다. 성공하면 Deep Admin 대시보드가 열립니다.</td><td>두 칸을 모두 채웠을 때</td></tr></tbody></table>
+<p>로그인했는데 &quot;접근 권한이 없습니다&quot;와 &quot;관리자 접근 권한이 필요합니다.&quot;가 보이면, 그 계정에 관리자 권한이 없는 것입니다. <strong>로그아웃</strong>을 누르고 관리자 계정으로 다시 로그인하거나, 다른 관리자에게 권한 그룹 배정을 요청합니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="관리자 권한이 없는 계정의 안내 화면"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/getting-started-no-access-cb7357abffcc81ec2b967f6da8b03169.png" target="_blank" rel="noopener"><img width="1440" height="900" src="/deep-agent-platform/assets/images/getting-started-no-access-cb7357abffcc81ec2b967f6da8b03169.png" alt="영업팀 일반 직원 계정으로 들어왔을 때의 안내 화면. 안내 문구와 로그아웃 버튼에 번호가 붙어 있다" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">관리자 권한이 없는 계정의 안내 화면</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>화면에 보이는 내용</th><th>이런 때 확인하세요</th></tr></thead><tbody><tr><td>1</td><td>안내 문구</td><td>403, &quot;접근 권한이 없습니다&quot;, &quot;관리자 접근 권한이 필요합니다.&quot;(그림에서 권한 이름은 흐리게 처리)</td><td>일반 직원 계정으로 들어온 것은 아닌지 볼 때</td></tr><tr><td>2</td><td><strong>로그아웃</strong></td><td>지금 계정에서 나가 로그인 화면으로 돌아갑니다.</td><td>관리자 계정으로 바꿔 들어갈 때</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="따라-해-보기">따라 해 보기<a href="#따라-해-보기" class="hash-link" aria-label="따라 해 보기에 대한 직접 링크" title="따라 해 보기에 대한 직접 링크" translate="no">​</a></h3>
+<ol>
+<li class="">Deep Admin 주소를 엽니다.</li>
+<li class="">관리자 계정의 이메일과 비밀번호를 입력하고 로그인합니다.</li>
+<li class="">왼쪽 위에 &quot;Admin&quot;과 &quot;Agent Builder&quot;가 보이는 화면이 열리는지 확인합니다.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="화면-구성-사이드바와-관리-화면-선택">화면 구성: 사이드바와 관리 화면 선택<a href="#화면-구성-사이드바와-관리-화면-선택" class="hash-link" aria-label="화면 구성: 사이드바와 관리 화면 선택에 대한 직접 링크" title="화면 구성: 사이드바와 관리 화면 선택에 대한 직접 링크" translate="no">​</a></h2>
+<p>로그인하면 왼쪽에 사이드바, 오른쪽에 선택한 메뉴의 화면이 열립니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="Deep Admin 기본 화면 구성"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/getting-started-layout-f6a639617caf2d93b703a7d1efd839df.png" target="_blank" rel="noopener"><img width="1440" height="900" src="/deep-agent-platform/assets/images/getting-started-layout-f6a639617caf2d93b703a7d1efd839df.png" alt="Deep Admin 기본 화면. 관리 화면 선택, 사이드바 접기, 메뉴 묶음, 사용자 영역, 테마 변경에 번호가 붙어 있다" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">Deep Admin 기본 화면 구성</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>관리 화면 선택(Admin, Agent Builder)</td><td>관리할 제품을 Agent Builder, Deep Connector, Deep Work 중에서 고릅니다. 지금 화면의 제품 이름이 &quot;Admin&quot; 아래에 보입니다.</td><td>Deep Connector 문서 적재 현황이나 Deep Work 사용량을 보러 갈 때</td></tr><tr><td>2</td><td><strong>사이드바 접기</strong></td><td>사이드바를 아이콘만 남기고 접거나 다시 폅니다.</td><td>열이 많은 표를 넓게 볼 때</td></tr><tr><td>3</td><td>메뉴 묶음</td><td>운영 현황, 사용자·승인, 접근 권한, 워크스페이스, 에이전트, 리소스, 툴박스 레지스트리, 시크릿·키 순서로 메뉴가 묶여 있습니다. 권한이 없는 메뉴는 보이지 않습니다.</td><td>다른 관리 화면으로 옮겨 갈 때</td></tr><tr><td>4</td><td>사용자 영역</td><td>로그인한 관리자 이름과 &quot;슈퍼유저&quot; 또는 &quot;관리자&quot; 표시가 보입니다. 누르면 사용자 메뉴가 열립니다.</td><td>설정을 열거나 로그아웃할 때</td></tr><tr><td>5</td><td><strong>테마 변경</strong></td><td>화면을 라이트, 다크, 시스템 설정 중 하나로 바꿉니다.</td><td>어두운 화면이 편할 때</td></tr></tbody></table>
+<p>관리 화면 선택을 누르면 관리할 수 있는 제품 목록이 열립니다. 지금 보고 있는 제품에는 체크 표시가 붙고, 관리 권한이 없는 제품은 목록에 나오지 않습니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="관리 화면 선택 목록"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/getting-started-switcher-b3bd7687e36c733652658fde88194c3d.png" target="_blank" rel="noopener"><img width="1440" height="900" src="/deep-agent-platform/assets/images/getting-started-switcher-b3bd7687e36c733652658fde88194c3d.png" alt="관리 화면 선택 목록. DeepAgentBuilder, DeepConnector, DeepWork 항목에 번호가 붙어 있다" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">관리 화면 선택 목록</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>DeepAgentBuilder</td><td>에이전트, 사용자, 권한, 리소스, 사용량을 관리하는 기본 관리 화면입니다.</td><td>대부분의 관리 업무</td></tr><tr><td>2</td><td>DeepConnector</td><td>문서 적재 현황, 사전, 용어사전, 개인정보 보관 등 Deep Connector 관리 메뉴로 바뀝니다.</td><td>문서 적재 실패를 확인할 때</td></tr><tr><td>3</td><td>DeepWork</td><td>Deep Work 사용자, 모델, 사용량, 실행 정책 관리 메뉴로 바뀝니다.</td><td>Deep Work 사용자 한도를 볼 때</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="대시보드-운영-요약">대시보드: 운영 요약<a href="#대시보드-운영-요약" class="hash-link" aria-label="대시보드: 운영 요약에 대한 직접 링크" title="대시보드: 운영 요약에 대한 직접 링크" translate="no">​</a></h2>
+<p>사이드바 <strong>운영 현황</strong> &gt; <strong>대시보드</strong>를 누르면 &quot;Deep Agent Builder 관리 대시보드&quot;가 열립니다. 월요일 아침에 지난주 사용량을 훑거나, 월말에 회사 전체 토큰 사용량을 볼 때 먼저 여는 화면입니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="대시보드 운영 요약 탭"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/getting-started-dashboard-bdfcaf8957abdeb0310d738a67892baf.png" target="_blank" rel="noopener"><img width="1440" height="900" src="/deep-agent-platform/assets/images/getting-started-dashboard-bdfcaf8957abdeb0310d738a67892baf.png" alt="대시보드 운영 요약 탭. 워크스페이스 선택, 탭, 조회 기간, 규모 지표, 토큰 지표, 빠른 작업, 실행 추이에 번호가 붙어 있다" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">대시보드 운영 요약 탭</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>워크스페이스 선택</td><td>숫자를 볼 범위를 고릅니다. 기본값은 <strong>전체 워크스페이스</strong>입니다.</td><td>회사 전체 사용량을 볼 때</td></tr><tr><td>2</td><td>탭(<strong>운영 요약</strong>, <strong>사용자 통계</strong>, <strong>에이전트 통계</strong>, <strong>시스템</strong>)</td><td>대시보드의 네 가지 보기를 바꿉니다.</td><td>사용량, 사용자, 에이전트 실행, 오류율을 차례로 점검할 때</td></tr><tr><td>3</td><td>조회 기간과 기간 단축 버튼(<strong>오늘</strong>, <strong>7일</strong>, <strong>30일</strong>, <strong>전체</strong>)</td><td>시작일과 종료일을 고르거나 자주 쓰는 기간을 한 번에 지정합니다.</td><td>주간 회의 전에 최근 7일을 볼 때</td></tr><tr><td>4</td><td>규모 지표</td><td><strong>전체 사용자</strong>, <strong>전체 에이전트</strong>, <strong>신규 에이전트 (기간 내)</strong>, <strong>워크스페이스 수</strong>를 보여 줍니다.</td><td>교육 뒤 에이전트가 얼마나 늘었는지 볼 때</td></tr><tr><td>5</td><td>토큰 지표</td><td><strong>총 토큰</strong>(아래에 실행 횟수), <strong>입력 토큰</strong>, <strong>출력 토큰</strong>을 보여 줍니다.</td><td>월간 모델 사용량을 보고서에 옮길 때</td></tr><tr><td>6</td><td><strong>빠른 작업</strong></td><td><strong>전체 실행 로그</strong>와 <strong>시스템 모니터링</strong> 화면으로 바로 갑니다.</td><td>숫자가 평소와 달라 실행 기록을 바로 보고 싶을 때</td></tr><tr><td>7</td><td><strong>실행 추이</strong></td><td>기간 안의 에이전트 실행 횟수를 전체, 성공, 오류로 나눠 그래프로 보여 줍니다.</td><td>특정 날짜에 실행이나 오류가 몰렸는지 볼 때</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="따라-해-보기-1">따라 해 보기<a href="#따라-해-보기-1" class="hash-link" aria-label="따라 해 보기에 대한 직접 링크" title="따라 해 보기에 대한 직접 링크" translate="no">​</a></h3>
+<ol>
+<li class="">대시보드에서 <strong>7일</strong>을 누릅니다.</li>
+<li class=""><strong>총 토큰</strong>과 그 아래 실행 횟수를 확인합니다.</li>
+<li class=""><strong>실행 추이</strong>에서 오류가 몰린 날이 있으면 <strong>전체 실행 로그</strong>를 눌러 그날 실행 기록을 엽니다.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="대시보드-사용자-통계에이전트-통계시스템-탭">대시보드: 사용자 통계·에이전트 통계·시스템 탭<a href="#대시보드-사용자-통계에이전트-통계시스템-탭" class="hash-link" aria-label="대시보드: 사용자 통계·에이전트 통계·시스템 탭에 대한 직접 링크" title="대시보드: 사용자 통계·에이전트 통계·시스템 탭에 대한 직접 링크" translate="no">​</a></h2>
+<p>나머지 세 탭은 같은 조회 기간을 씁니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>탭</th><th>보여 주는 내용</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td><strong>사용자 통계</strong></td><td>실행 횟수가 많은 사용자 목록(팀명, 이름, 사번, 실행 횟수, 오류 횟수)과 <strong>전체 통계 보기</strong> 링크</td><td>많이 쓰는 직원과 오류가 잦은 직원을 찾을 때</td></tr><tr><td><strong>에이전트 통계</strong></td><td>최근 1시간·24시간·7일·30일 실행 수, 성공과 에러 건수, 최근 에이전트 생성 에러, 최근 실행 기록 10건</td><td>최근 실행이 정상인지 빠르게 볼 때</td></tr><tr><td><strong>시스템</strong></td><td>1시간·24시간·조회 기간의 오류율, 중간값과 상위 1% 응답 시간, 에러 유형별 건수</td><td>응답이 느려졌다는 문의를 받았을 때</td></tr></tbody></table>
+<p><span class="manual-shot" role="figure" aria-label="대시보드 에이전트 통계 탭"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/getting-started-dashboard-agents-f130b70223d77c266e5ce1ede9ee0d2a.png" target="_blank" rel="noopener"><img width="1440" height="900" src="/deep-agent-platform/assets/images/getting-started-dashboard-agents-f130b70223d77c266e5ce1ede9ee0d2a.png" alt="대시보드 에이전트 통계 탭. 기간별 실행 수, 실행 현황, 최근 실행 기록에 번호가 붙어 있다" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">대시보드 에이전트 통계 탭</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>화면에 보이는 내용</th><th>이런 때 확인하세요</th></tr></thead><tbody><tr><td>1</td><td>기간별 실행 수</td><td>최근 1시간, 24시간, 7일, 30일 동안의 실행 횟수</td><td>오늘 사용량이 평소와 비슷한지 볼 때</td></tr><tr><td>2</td><td>실행 현황</td><td>전체 실행 가운데 성공과 에러 건수</td><td>에러 비율이 늘었는지 볼 때</td></tr><tr><td>3</td><td><strong>최근 실행 기록</strong></td><td>에이전트 ID, 에이전트명, 사용자, 워크스페이스, 상태, 작업 유형(실시간, 백그라운드, 스케줄 등), 실행 시간, 소요 시간</td><td>방금 직원이 실행한 기록을 찾을 때</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="사용자-메뉴와-설정">사용자 메뉴와 설정<a href="#사용자-메뉴와-설정" class="hash-link" aria-label="사용자 메뉴와 설정에 대한 직접 링크" title="사용자 메뉴와 설정에 대한 직접 링크" translate="no">​</a></h2>
+<p>사이드바 맨 아래 사용자 영역을 누르면 <strong>설정</strong>과 <strong>로그아웃</strong>이 나옵니다. <strong>설정</strong>에서는 로그인한 계정의 이름, 이메일, 권한(슈퍼유저 또는 관리자)을 확인하고 화면 테마를 고릅니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="사이드바 사용자 메뉴"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/getting-started-user-menu-10c7240c539ad1cf71f4e5ba982c91fa.png" target="_blank" rel="noopener"><img width="1440" height="900" src="/deep-agent-platform/assets/images/getting-started-user-menu-10c7240c539ad1cf71f4e5ba982c91fa.png" alt="사용자 메뉴. 설정과 로그아웃에 번호가 붙어 있다" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">사이드바 사용자 메뉴</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>설정</strong></td><td>프로필(이름, 사번, 이메일, 권한)과 테마를 봅니다.</td><td>지금 어떤 계정으로 들어와 있는지 확인할 때</td></tr><tr><td>2</td><td><strong>로그아웃</strong></td><td>Deep Admin에서 나갑니다.</td><td>자리를 비우거나 계정을 바꿀 때</td></tr></tbody></table>
+<blockquote>
+<p>팁: Deep Admin과 Deep Agent Builder는 같은 로그인을 씁니다. 같은 브라우저에서 직원 계정으로 Deep Agent Builder에 로그인하면 Deep Admin도 그 계정으로 바뀝니다. 직원 화면을 확인할 때는 다른 브라우저나 시크릿 창을 쓰세요.</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="다음-문서">다음 문서<a href="#다음-문서" class="hash-link" aria-label="다음 문서에 대한 직접 링크" title="다음 문서에 대한 직접 링크" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-admin/core-features/">메뉴 안내</a> — 모든 메뉴의 쓰임</li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-admin/users-workspaces/">사용자와 워크스페이스</a> — 신규 입사자 찾기와 역할 배정</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/deep-agent-platform/docs/deep-admin/"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">소개</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/deep-agent-platform/docs/deep-admin/core-features/"><div class="pagination-nav__sublabel">다음</div><div class="pagination-nav__label">메뉴 안내</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#준비할-것" class="table-of-contents__link toc-highlight">준비할 것</a></li><li><a href="#로그인" class="table-of-contents__link toc-highlight">로그인</a><ul><li><a href="#따라-해-보기" class="table-of-contents__link toc-highlight">따라 해 보기</a></li></ul></li><li><a href="#화면-구성-사이드바와-관리-화면-선택" class="table-of-contents__link toc-highlight">화면 구성: 사이드바와 관리 화면 선택</a></li><li><a href="#대시보드-운영-요약" class="table-of-contents__link toc-highlight">대시보드: 운영 요약</a><ul><li><a href="#따라-해-보기-1" class="table-of-contents__link toc-highlight">따라 해 보기</a></li></ul></li><li><a href="#대시보드-사용자-통계에이전트-통계시스템-탭" class="table-of-contents__link toc-highlight">대시보드: 사용자 통계·에이전트 통계·시스템 탭</a></li><li><a href="#사용자-메뉴와-설정" class="table-of-contents__link toc-highlight">사용자 메뉴와 설정</a></li><li><a href="#다음-문서" class="table-of-contents__link toc-highlight">다음 문서</a></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>

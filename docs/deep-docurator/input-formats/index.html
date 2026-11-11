@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="ko" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-deep-docurator/input-formats" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.2">
+<title data-rh="true">Deep Docurator 입력 노드와 지원 파일 형식 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/input-formats/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Deep Docurator 입력 노드와 지원 파일 형식 | Deep Platform"><meta data-rh="true" name="description" content="입력 노드는 플로우가 처리할 파일을 받는 첫 단계입니다. 이 페이지는 입력 노드에 넣을 수 있는 파일 형식 20가지와 용량 한도, 형식마다 결과가 어떻게 다른지, 파일을 바꾸거나 지울 때 알아 둘 점을 정리합니다."><meta data-rh="true" property="og:description" content="입력 노드는 플로우가 처리할 파일을 받는 첫 단계입니다. 이 페이지는 입력 노드에 넣을 수 있는 파일 형식 20가지와 용량 한도, 형식마다 결과가 어떻게 다른지, 파일을 바꾸거나 지울 때 알아 둘 점을 정리합니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/input-formats/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/input-formats/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/input-formats/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"입력 노드와 지원 파일 형식","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/input-formats"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
+<script src="/deep-agent-platform/assets/js/runtime~main.a9c96625.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.dd53db47.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/deep-agent-platform/img/manual-mark.svg"><div role="region" aria-label="본문으로 건너뛰기"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">본문으로 건너뛰기</a></div><nav aria-label="메인" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="사이드바 펼치거나 접기" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/deep-agent-platform/"><div class="navbar__logo"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Deep Platform</b></a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">솔루션</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-flow/">Deep Flow</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-agent-builder/">Deep Agent Builder</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-connector/">Deep Connector</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/deep-agent-platform/docs/deep-docurator/">Deep Docurator</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/brain-parser/">Brain Parser</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work/">Deep Work</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work-gateway/">Deep Work Gateway</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-admin/">Deep Admin</a></li></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="어두운 모드와 밝은 모드 전환하기 (현재 system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="searchBar_fdyA"><input type="search" class="searchInput_JE4R" placeholder="매뉴얼 검색" aria-label="매뉴얼 검색" role="combobox" aria-autocomplete="list" aria-expanded="false" value=""><div role="status" aria-live="polite"></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="맨 위로 스크롤하기" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="문서 사이드바" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/"><span class="categoryLinkLabel_W154">소개</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/getting-started/"><span class="categoryLinkLabel_W154">시작하기</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/deep-agent-platform/docs/deep-docurator/core-features/"><span class="categoryLinkLabel_W154">기능 안내</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/core-features/"><span class="linkLabel_WmDU">메뉴 안내</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/input-formats/"><span class="linkLabel_WmDU">입력 노드와 지원 파일 형식</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/node-guide/"><span class="linkLabel_WmDU">노드 안내</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/chunk-strategies/"><span class="linkLabel_WmDU">청킹 전략과 옵션</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/presets/"><span class="linkLabel_WmDU">프리셋과 템플릿 플로우</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/results-export/"><span class="linkLabel_WmDU">결과 확인과 내보내기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/agent-chat/"><span class="linkLabel_WmDU">에이전트로 플로우 만들기</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/workflows/"><span class="categoryLinkLabel_W154">반복 업무</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/use-cases/"><span class="categoryLinkLabel_W154">활용사례</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/troubleshooting/"><span class="categoryLinkLabel_W154">문제 해결</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="탐색 경로"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="홈" class="breadcrumbs__link" href="/deep-agent-platform/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">기능 안내</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">입력 노드와 지원 파일 형식</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">이 페이지에서</button></div><div class="theme-doc-markdown markdown"><header><h1>Deep Docurator 입력 노드와 지원 파일 형식</h1></header>
+<p>입력 노드는 플로우가 처리할 파일을 받는 첫 단계입니다. 이 페이지는 입력 노드에 넣을 수 있는 파일 형식 20가지와 용량 한도, 형식마다 결과가 어떻게 다른지, 파일을 바꾸거나 지울 때 알아 둘 점을 정리합니다.</p>
+<p><strong>이 페이지에서 할 수 있는 일</strong></p>
+<ul>
+<li class="">입력 노드에 넣을 수 있는 확장자 전체와 최대 용량을 확인합니다.</li>
+<li class="">형식에 따라 노드에 표시되는 문서 유형과 미리보기가 어떻게 다른지 압니다.</li>
+<li class="">한 번에 파일 한 개만 처리된다는 점과 파일을 바꾸는 방법을 익힙니다.</li>
+<li class="">받지 않는 형식을 가진 문서를 어떻게 바꿔 넣을지 정합니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="지원하는-확장자-전체">지원하는 확장자 전체<a href="#지원하는-확장자-전체" class="hash-link" aria-label="지원하는 확장자 전체에 대한 직접 링크" title="지원하는 확장자 전체에 대한 직접 링크" translate="no">​</a></h2>
+<p>입력 노드, 파일 선택 창, 편집기 에이전트의 문서 첨부는 모두 같은 20가지 확장자를 받습니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>분류</th><th>확장자</th><th>주로 쓰는 문서</th></tr></thead><tbody><tr><td>PDF</td><td>pdf</td><td>보고서, 계약서, 규정, 스캔 문서</td></tr><tr><td>워드</td><td>doc, docx</td><td>계약서 초안, 회의록, 제안서</td></tr><tr><td>한글</td><td>hwp, hwpx</td><td>공문, 사내 규정, 기안문</td></tr><tr><td>발표 자료</td><td>pptx</td><td>보고 발표 자료, 교육 자료</td></tr><tr><td>엑셀</td><td>xlsx, xls</td><td>견적서, 판매 실적, 예산표</td></tr><tr><td>텍스트</td><td>txt, csv, md</td><td>회의 메모, 내보낸 표 데이터, 마크다운 문서</td></tr><tr><td>웹 문서</td><td>html, htm</td><td>저장한 웹 페이지, 사내 공지</td></tr><tr><td>이미지</td><td>png, jpg, jpeg, tiff, tif, bmp, webp</td><td>영수증 사진, 스캔한 서류, 화면 캡처</td></tr></tbody></table>
+<p>xls 파일은 파일 선택 창에서 고를 수 있지만 파싱 단계에서 처리되지 않고, xlsx로 바꿔 다시 시도하라는 영문 오류가 납니다. 엑셀에서 다른 이름으로 저장을 눌러 xlsx 형식으로 저장한 뒤 넣으세요.</p>
+<p>위 목록에 없는 형식은 받지 않습니다. 자주 만나는 경우는 다음과 같이 바꿔 넣습니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>가진 파일</th><th>바꾸는 방법</th></tr></thead><tbody><tr><td>ppt(파워포인트 97-2003)</td><td>파워포인트에서 pptx로 다시 저장합니다.</td></tr><tr><td>xlsm, xlsb(매크로·바이너리 엑셀)</td><td>엑셀에서 xlsx로 다시 저장합니다. 매크로는 처리에 쓰이지 않습니다.</td></tr><tr><td>json, xml</td><td>내용을 표로 볼 수 있으면 csv로, 글이면 txt나 md로 저장합니다.</td></tr><tr><td>zip(여러 문서 묶음)</td><td>압축을 풀어 문서를 한 개씩 넣습니다.</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="용량-한도">용량 한도<a href="#용량-한도" class="hash-link" aria-label="용량 한도에 대한 직접 링크" title="용량 한도에 대한 직접 링크" translate="no">​</a></h2>
+<p>파일 한 개의 최대 크기는 500MB입니다. 입력 노드의 파일 영역에 최대 500MB라고 표시되며, 넘는 파일을 고르면 &quot;파일 크기가 500MB를 초과합니다.&quot;라는 안내가 나오고 파일이 올라가지 않습니다. 실행할 때에도 같은 한도를 다시 확인합니다.</p>
+<p>운영 담당자가 서버의 최대 업로드 파일 크기를 바꿔 둔 경우 실제 한도가 다를 수 있습니다. 큰 파일이 실행 단계에서 거부되면 <a class="" href="/deep-agent-platform/docs/deep-docurator/troubleshooting/">문제 해결</a>의 용량 항목을 확인하세요. 용량보다 페이지 수가 처리 시간에 더 큰 영향을 줍니다. 수백 쪽짜리 문서는 연습할 때 필요한 장만 따로 저장해 넣으면 결과를 확인하기 쉽습니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="형식마다-다른-점">형식마다 다른 점<a href="#형식마다-다른-점" class="hash-link" aria-label="형식마다 다른 점에 대한 직접 링크" title="형식마다 다른 점에 대한 직접 링크" translate="no">​</a></h2>
+<p>파일 형식에 따라 문서를 읽는 방식과 화면에 보이는 미리보기가 다릅니다. 같은 내용이라도 형식이 바뀌면 블록 구성이 달라질 수 있으니, 처음 쓰는 형식은 결과를 한 번 읽어 확인합니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>형식</th><th>읽는 방식</th><th>입력 노드의 문서 유형</th><th>노드 안 미리보기</th></tr></thead><tbody><tr><td>pdf</td><td>문서 분석기로 글자, 표, 이미지 위치를 읽습니다.</td><td>문서</td><td>PDF가 그대로 보입니다.</td></tr><tr><td>doc, docx, hwp, hwpx, html, htm</td><td>문서 분석기로 제목, 본문, 표를 읽습니다.</td><td>문서</td><td>파일 이름과 형식·용량만 보입니다.</td></tr><tr><td>pptx</td><td>문서 분석기로 슬라이드별 내용을 읽습니다.</td><td>슬라이드</td><td>파일 이름과 형식·용량만 보입니다.</td></tr><tr><td>png, jpg, jpeg, tiff, tif, bmp, webp</td><td>문서 분석기가 이미지 속 글자와 표를 읽습니다.</td><td>문서</td><td>이미지가 보입니다. 브라우저가 그리지 못하는 tiff, tif는 보이지 않을 수 있습니다.</td></tr><tr><td>xlsx</td><td>엑셀 시트를 표로 읽습니다.</td><td>엑셀</td><td>파일 이름과 형식·용량만 보입니다.</td></tr><tr><td>csv, txt</td><td>글자를 그대로 읽습니다.</td><td>엑셀(csv), 문서(txt)</td><td>파일 이름과 형식·용량만 보입니다.</td></tr><tr><td>md</td><td>마크다운 제목 구조를 살려 읽습니다.</td><td>문서</td><td>파일 이름과 형식·용량만 보입니다.</td></tr></tbody></table>
+<p>입력 노드에 보이는 문서 유형은 안내용 표시입니다. 문서 유형이 엑셀이라고 해서 청킹 전략이 자동으로 바뀌지는 않습니다. 표 파일을 행 단위로 나누려면 청킹 노드에서 표용 전략을 직접 고릅니다. 자세한 내용은 <a class="" href="/deep-agent-platform/docs/deep-docurator/chunk-strategies/">청킹 전략과 옵션</a>에 있습니다.</p>
+<p>파싱 결과의 원본 문서 보기와 청크 결과 미리보기에서 원본 위치를 강조하는 기능은 PDF에서만 동작합니다. PDF가 아닌 파일은 &quot;원본 PDF 를 표시할 수 없습니다.&quot;가 보이므로, 원본 파일을 따로 열어 두고 대조하세요.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="파일-넣기-바꾸기-지우기">파일 넣기, 바꾸기, 지우기<a href="#파일-넣기-바꾸기-지우기" class="hash-link" aria-label="파일 넣기, 바꾸기, 지우기에 대한 직접 링크" title="파일 넣기, 바꾸기, 지우기에 대한 직접 링크" translate="no">​</a></h2>
+<p>입력 노드를 누르면 오른쪽에 작업 사이드바가 열립니다. <strong>옵션 &amp; 미리보기</strong> 탭의 파일 영역에서 파일을 넣습니다.</p>
+<ol>
+<li class="">캔버스에서 입력 노드를 누릅니다.</li>
+<li class=""><strong>옵션 &amp; 미리보기</strong> 탭을 엽니다.</li>
+<li class="">&quot;파일을 드롭하거나 클릭&quot;이라고 적힌 영역에 파일을 끌어 놓거나, 영역을 눌러 파일을 고릅니다.</li>
+<li class=""><strong>입력 파일</strong>에 형식과 용량(예: PDF / 4 KB)이 보이는지 확인합니다.</li>
+<li class="">캔버스의 입력 노드에도 파일 이름과 용량이 보이는지 확인합니다.</li>
+</ol>
+<p>입력 노드 하나에는 파일 한 개만 들어갑니다. 다른 파일을 넣으면 앞의 파일을 대신하며, 이때 &quot;새 업로드로 이전 Input 파일 연결을 교체했습니다.&quot;라는 안내가 나올 수 있습니다. 파일을 빼려면 파일 영역의 파일 제거 버튼을 누릅니다.</p>
+<p>여러 문서를 같은 기준으로 처리하려면 문서마다 플로우를 따로 만들거나, 한 플로우에서 파일을 바꿔 가며 다시 실행합니다. 같은 구성을 여러 플로우에 쓰는 방법은 <a class="" href="/deep-agent-platform/docs/deep-docurator/presets/">프리셋과 템플릿 플로우</a>와 <a class="" href="/deep-agent-platform/docs/deep-docurator/workflows/">반복 업무</a>에 있습니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="출력-스레드와-입력값">출력 스레드와 입력값<a href="#출력-스레드와-입력값" class="hash-link" aria-label="출력 스레드와 입력값에 대한 직접 링크" title="출력 스레드와 입력값에 대한 직접 링크" translate="no">​</a></h2>
+<p>입력 노드의 <strong>옵션 &amp; 미리보기</strong> 탭 파일 영역 아래 **출력 스레드 (코드가 쓰는 것)**에서는 파일 말고도 이름 붙인 값을 선언할 수 있습니다. 출력 스레드는 뒤에 오는 커스텀 노드의 코드가 읽는 값이고, 값은 이름 옆의 입력값 (JSON) 칸에 적습니다. 일반적인 문서 정리 작업에서는 이 값을 바꾸지 않아도 됩니다. 커스텀 노드에서 쓸 기준값(예: 부서 이름)을 넘길 때만 사용합니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="형식을-고르는-요령">형식을 고르는 요령<a href="#형식을-고르는-요령" class="hash-link" aria-label="형식을 고르는 요령에 대한 직접 링크" title="형식을 고르는 요령에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>상황</th><th>추천</th></tr></thead><tbody><tr><td>같은 문서가 hwp와 pdf로 모두 있음</td><td>원본 대조가 쉬운 pdf를 먼저 넣고, 결과가 다르면 hwp로도 비교합니다.</td></tr><tr><td>표가 중심인 자료</td><td>엑셀 원본(xlsx)이나 csv를 넣고 표용 청킹 전략을 고릅니다.</td></tr><tr><td>영수증·서류를 휴대폰으로 찍음</td><td>글자가 잘 보이게 바로 찍은 jpg나 png를 넣고, 파싱 결과에서 숫자를 원본과 대조합니다.</td></tr><tr><td>발표 자료</td><td>pptx를 넣으면 슬라이드 단위로 내용을 읽습니다. 그림 속 글자는 결과에서 한 번 더 확인합니다.</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="다음-문서">다음 문서<a href="#다음-문서" class="hash-link" aria-label="다음 문서에 대한 직접 링크" title="다음 문서에 대한 직접 링크" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-docurator/node-guide/">노드 안내</a> — 입력 다음에 놓을 수 있는 노드 전체</li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-docurator/chunk-strategies/">청킹 전략과 옵션</a> — 문서용·표용 청킹 전략과 옵션</li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-docurator/troubleshooting/">문제 해결</a> — 파일이 올라가지 않거나 형식 오류가 날 때</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/deep-agent-platform/docs/deep-docurator/core-features/"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">메뉴 안내</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/deep-agent-platform/docs/deep-docurator/node-guide/"><div class="pagination-nav__sublabel">다음</div><div class="pagination-nav__label">노드 안내</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#지원하는-확장자-전체" class="table-of-contents__link toc-highlight">지원하는 확장자 전체</a></li><li><a href="#용량-한도" class="table-of-contents__link toc-highlight">용량 한도</a></li><li><a href="#형식마다-다른-점" class="table-of-contents__link toc-highlight">형식마다 다른 점</a></li><li><a href="#파일-넣기-바꾸기-지우기" class="table-of-contents__link toc-highlight">파일 넣기, 바꾸기, 지우기</a></li><li><a href="#출력-스레드와-입력값" class="table-of-contents__link toc-highlight">출력 스레드와 입력값</a></li><li><a href="#형식을-고르는-요령" class="table-of-contents__link toc-highlight">형식을 고르는 요령</a></li><li><a href="#다음-문서" class="table-of-contents__link toc-highlight">다음 문서</a></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>

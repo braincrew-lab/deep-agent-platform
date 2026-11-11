@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="ko" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-deep-agent-builder/case-survey-analysis" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.2">
+<title data-rh="true">사례: 설문 결과 분석 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/case-survey-analysis/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="사례: 설문 결과 분석 | Deep Platform"><meta data-rh="true" name="description" content="이 페이지는 브레인크루 AI혁신팀 김그루 사원이 &quot;설문 결과 분석가&quot;에게 사내교육 만족도 설문 CSV를 맡겨 과정별 평균, NPS, 부서별 차이, 자유의견 주제 분류, 차트, 개선안을 차례로 받는 과정을 보여 줍니다. 에이전트가 코드를 실행해 계산하므로, 답변의 숫자를 아래 기준값과 대조해 검증하는 방법도 함께 다룹니다."><meta data-rh="true" property="og:description" content="이 페이지는 브레인크루 AI혁신팀 김그루 사원이 &quot;설문 결과 분석가&quot;에게 사내교육 만족도 설문 CSV를 맡겨 과정별 평균, NPS, 부서별 차이, 자유의견 주제 분류, 차트, 개선안을 차례로 받는 과정을 보여 줍니다. 에이전트가 코드를 실행해 계산하므로, 답변의 숫자를 아래 기준값과 대조해 검증하는 방법도 함께 다룹니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/case-survey-analysis/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/case-survey-analysis/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/case-survey-analysis/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"사례: 설문 결과 분석","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/case-survey-analysis"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
+<script src="/deep-agent-platform/assets/js/runtime~main.a9c96625.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.dd53db47.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/deep-agent-platform/img/manual-mark.svg"><div role="region" aria-label="본문으로 건너뛰기"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">본문으로 건너뛰기</a></div><nav aria-label="메인" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="사이드바 펼치거나 접기" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/deep-agent-platform/"><div class="navbar__logo"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Deep Platform</b></a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">솔루션</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-flow/">Deep Flow</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/deep-agent-platform/docs/deep-agent-builder/">Deep Agent Builder</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-connector/">Deep Connector</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-docurator/">Deep Docurator</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/brain-parser/">Brain Parser</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work/">Deep Work</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work-gateway/">Deep Work Gateway</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-admin/">Deep Admin</a></li></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="어두운 모드와 밝은 모드 전환하기 (현재 system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="searchBar_fdyA"><input type="search" class="searchInput_JE4R" placeholder="매뉴얼 검색" aria-label="매뉴얼 검색" role="combobox" aria-autocomplete="list" aria-expanded="false" value=""><div role="status" aria-live="polite"></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="맨 위로 스크롤하기" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="문서 사이드바" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/"><span class="categoryLinkLabel_W154">소개</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/core-concepts/"><span class="categoryLinkLabel_W154">처음 사용하기</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/first-agent-design/"><span class="categoryLinkLabel_W154">에이전트 만들기</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/threads/"><span class="categoryLinkLabel_W154">업무에 활용하기</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/rag-agent/"><span class="categoryLinkLabel_W154">지식·도구 연결</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/middleware/"><span class="categoryLinkLabel_W154">보안과 권한</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/community/"><span class="categoryLinkLabel_W154">커뮤니티</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/multi-agent-concepts/"><span class="categoryLinkLabel_W154">멀티에이전트</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/evaluation-overview/"><span class="categoryLinkLabel_W154">평가</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/evaluations/"><span class="categoryLinkLabel_W154">개선과 모니터링</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/deep-agent-platform/docs/deep-agent-builder/use-cases/"><span class="categoryLinkLabel_W154">활용 사례</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/use-cases/"><span class="linkLabel_WmDU">활용 사례 모음</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/case-ppt-generation/"><span class="linkLabel_WmDU">사례: PPT 생성 에이전트</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/case-sales-excel/"><span class="linkLabel_WmDU">사례: 엑셀 판매 데이터 분석</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/case-weekly-report/"><span class="linkLabel_WmDU">사례: 주간 업무 보고서 작성</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/case-meeting-minutes/"><span class="linkLabel_WmDU">사례: 회의록 요약과 액션 아이템</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/case-email-draft/"><span class="linkLabel_WmDU">사례: 이메일 초안 작성</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/case-market-research/"><span class="linkLabel_WmDU">사례: 시장 조사 리포트</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/case-contract-review/"><span class="linkLabel_WmDU">사례: 계약서 검토 도우미</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/case-training-material/"><span class="linkLabel_WmDU">사례: 교육 자료 만들기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/case-survey-analysis/"><span class="linkLabel_WmDU">사례: 설문 결과 분석</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/workflows/"><span class="linkLabel_WmDU">반복 업무</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/troubleshooting/"><span class="categoryLinkLabel_W154">문제 해결</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="탐색 경로"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="홈" class="breadcrumbs__link" href="/deep-agent-platform/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">활용 사례</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">사례: 설문 결과 분석</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">이 페이지에서</button></div><div class="theme-doc-markdown markdown"><header><h1>사례: 설문 결과 분석</h1></header>
+<p>이 페이지는 브레인크루 AI혁신팀 김그루 사원이 &quot;설문 결과 분석가&quot;에게 사내교육 만족도 설문 CSV를 맡겨 과정별 평균, NPS, 부서별 차이, 자유의견 주제 분류, 차트, 개선안을 차례로 받는 과정을 보여 줍니다. 에이전트가 코드를 실행해 계산하므로, 답변의 숫자를 아래 기준값과 대조해 검증하는 방법도 함께 다룹니다.</p>
+<p><strong>이 페이지에서 할 수 있는 일</strong></p>
+<ul>
+<li class="">설문 결과 분석가를 만들고 CSV 파일을 첨부해 질문합니다.</li>
+<li class="">과정별 4개 문항 평균과 추천의향 기반 NPS를 받습니다.</li>
+<li class="">부서별 차이를 보고, 표본이 작은 집단을 해석할 때 주의할 점을 확인합니다.</li>
+<li class="">자유의견을 주제별로 분류하고 차트와 개선안을 받습니다.</li>
+<li class="">결과 표를 Excel이나 CSV로 내보냅니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="목표">목표<a href="#목표" class="hash-link" aria-label="목표에 대한 직접 링크" title="목표에 대한 직접 링크" translate="no">​</a></h2>
+<ul>
+<li class="">교육과정 3개의 문항별 평균 표와 NPS 표</li>
+<li class="">부서 6곳의 평균과 NPS 비교 표</li>
+<li class="">자유의견 7개 유형의 건수 표와 과정별 분포</li>
+<li class="">과정별 NPS 막대 차트 1개</li>
+<li class="">다음 회차를 위한 과정별 개선안</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="준비물">준비물<a href="#준비물" class="hash-link" aria-label="준비물에 대한 직접 링크" title="준비물에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>항목</th><th>내용</th></tr></thead><tbody><tr><td>예시 파일</td><td>브레인크루_사내교육_만족도설문.csv (가상 자료. 응답 120명, 열 10개: 응답번호, 부서, 직급, 교육과정, 전반만족도(1-5), 내용유익성(1-5), 강사만족도(1-5), 업무적용도(1-5), 추천의향(0-10), 자유의견)</td></tr><tr><td>표 데이터로 첨부할 수 있는 파일</td><td>.xlsx, .xls, .xlsb, .xlsm, .csv (파일 1개당 최대 50MB)</td></tr><tr><td>그 밖에 대화에 첨부할 수 있는 파일</td><td>.pdf, .jpg, .jpeg, .png, .gif, .webp, .md, .markdown, .txt, .docx, .pptx, .ppt, .hwp, .hwpx, .html, .htm (한 번에 최대 10개. 파일 1개당 .md, .markdown, .txt, .html, .htm은 10MB, .pdf, 이미지, .docx, .hwp, .hwpx는 20MB, .pptx, .ppt는 50MB까지)</td></tr><tr><td>에이전트 모드</td><td><strong>일반 에이전트</strong> (첨부한 표 데이터를 코드로 분석합니다)</td></tr><tr><td>권한</td><td>새 에이전트를 만들 수 있는 권한</td></tr></tbody></table>
+<p>설문 파일에 이름, 이메일, 연락처처럼 응답자를 알아볼 수 있는 열이 있으면 지운 뒤 올립니다. 예시 파일에는 이런 열이 없습니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="에이전트-만들기">에이전트 만들기<a href="#에이전트-만들기" class="hash-link" aria-label="에이전트 만들기에 대한 직접 링크" title="에이전트 만들기에 대한 직접 링크" translate="no">​</a></h2>
+<p>사이드바의 <strong>새 에이전트</strong>를 눌러 대화로 에이전트를 만드는 첫 화면을 열고, 입력란에 설문 결과 분석가가 할 일을 적어 보냅니다.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="따라-해-보기">따라 해 보기<a href="#따라-해-보기" class="hash-link" aria-label="따라 해 보기에 대한 직접 링크" title="따라 해 보기에 대한 직접 링크" translate="no">​</a></h3>
+<ol>
+<li class="">
+<p>사이드바의 <strong>새 에이전트</strong>를 누르고 아래 요청을 보냅니다.</p>
+<blockquote>
+<p>프롬프트: 설문 결과 분석가를 만들어 주세요. 설문 결과 CSV나 엑셀 파일을 첨부하면 코드를 실행해 집단별 평균, NPS(추천의향 9<del>10점은 추천, 7</del>8점은 중립, 0~6점은 비추천, NPS는 추천 비율에서 비추천 비율을 뺀 값), 집단 간 차이를 계산하고, 자유의견을 주제별로 분류해 표와 차트로 보여 주는 에이전트입니다. 모든 표에 응답 수(n)를 함께 적고, 응답이 30명 미만인 집단은 해석에 주의하라고 알려 주세요. 원인은 단정하지 말고 가설로 적어 주세요.</p>
+</blockquote>
+</li>
+<li class="">
+<p>확인 질문에 답하고 <strong>전체 제출</strong>을 누른 뒤 <strong>바로 이용하기</strong>를 누릅니다.</p>
+</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="단계별-실행">단계별 실행<a href="#단계별-실행" class="hash-link" aria-label="단계별 실행에 대한 직접 링크" title="단계별 실행에 대한 직접 링크" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1단계-파일-첨부와-과정별-평균">1단계: 파일 첨부와 과정별 평균<a href="#1단계-파일-첨부와-과정별-평균" class="hash-link" aria-label="1단계: 파일 첨부와 과정별 평균에 대한 직접 링크" title="1단계: 파일 첨부와 과정별 평균에 대한 직접 링크" translate="no">​</a></h3>
+<p>설문 CSV를 첨부하고 파일 구조와 교육과정별 문항 평균을 먼저 받습니다.</p>
+<p><strong>따라 해 보기</strong></p>
+<ol>
+<li class="">
+<p>사이드바에서 <strong>설문 결과 분석가</strong>를 누르고 <strong>이 에이전트와 새 대화</strong>를 누릅니다.</p>
+</li>
+<li class="">
+<p>입력란 아래 오른쪽의 <strong>파일 업로드</strong>로 브레인크루_사내교육_만족도설문.csv를 첨부합니다.</p>
+</li>
+<li class="">
+<p>아래 프롬프트를 보냅니다.</p>
+<blockquote>
+<p>프롬프트: 첨부한 설문 파일의 구조(행 수, 열, 결측값)를 먼저 알려 주고, 교육과정별 응답 수와 전반만족도, 내용유익성, 강사만족도, 업무적용도, 추천의향 평균을 소수 둘째 자리까지 표로 보여 주세요. 4개 문항의 평균도 한 열로 붙여 주세요.</p>
+</blockquote>
+</li>
+<li class="">
+<p>답변 위 <strong>데이터 분석</strong>을 펼쳐 출력 숫자와 답변 표가 같은지 봅니다.</p>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2단계-nps">2단계: NPS<a href="#2단계-nps" class="hash-link" aria-label="2단계: NPS에 대한 직접 링크" title="2단계: NPS에 대한 직접 링크" translate="no">​</a></h3>
+<p>같은 대화에서 추천의향 점수로 과정별 NPS를 계산합니다.</p>
+<p><strong>따라 해 보기</strong></p>
+<ol>
+<li class="">
+<p>같은 대화에서 아래 프롬프트를 보냅니다.</p>
+<blockquote>
+<p>프롬프트: 추천의향(0-10)으로 과정별 NPS를 계산해 주세요. 9<del>10점은 추천, 7</del>8점은 중립, 0~6점은 비추천입니다. 과정별 추천·중립·비추천 인원, 비율, NPS를 표로 만들고 전체 행도 넣어 주세요.</p>
+</blockquote>
+</li>
+<li class="">
+<p>과정별 인원을 더하면 응답 수와 같은지 확인합니다.</p>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3단계-부서별-차이">3단계: 부서별 차이<a href="#3단계-부서별-차이" class="hash-link" aria-label="3단계: 부서별 차이에 대한 직접 링크" title="3단계: 부서별 차이에 대한 직접 링크" translate="no">​</a></h3>
+<p>부서별로 평균과 NPS를 비교하고, 부서 차이가 수강 과정 구성 때문인지 함께 봅니다.</p>
+<p><strong>따라 해 보기</strong></p>
+<ol>
+<li class="">
+<p>아래 프롬프트를 보냅니다.</p>
+<blockquote>
+<p>프롬프트: 부서별 응답 수, 4개 문항 평균, 전반만족도 평균, NPS를 표로 비교해 주세요. 부서마다 어느 과정을 몇 명이 들었는지도 함께 보여 주고, 부서 차이가 수강 과정 구성 때문일 수 있는지 설명해 주세요.</p>
+</blockquote>
+</li>
+<li class="">
+<p>부서별 응답 수가 모두 30명 미만이라는 주의 문구가 있는지 확인합니다.</p>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="4단계-자유의견-주제-분류">4단계: 자유의견 주제 분류<a href="#4단계-자유의견-주제-분류" class="hash-link" aria-label="4단계: 자유의견 주제 분류에 대한 직접 링크" title="4단계: 자유의견 주제 분류에 대한 직접 링크" translate="no">​</a></h3>
+<p>자유의견을 주제별로 묶어 건수와 과정별 분포를 받습니다.</p>
+<p><strong>따라 해 보기</strong></p>
+<ol>
+<li class="">
+<p>아래 프롬프트를 보냅니다.</p>
+<blockquote>
+<p>프롬프트: 자유의견을 주제별로 분류해 주세요. 주제마다 건수와 대표 의견을 적고, 과정별로 어떤 주제가 많은지 표로 보여 주세요. 빈 의견은 무응답으로 따로 세어 주세요.</p>
+</blockquote>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="5단계-차트">5단계: 차트<a href="#5단계-차트" class="hash-link" aria-label="5단계: 차트에 대한 직접 링크" title="5단계: 차트에 대한 직접 링크" translate="no">​</a></h3>
+<p>과정별 NPS를 막대 차트로 그리고 이미지 파일로 받습니다.</p>
+<p><strong>따라 해 보기</strong></p>
+<ol>
+<li class="">
+<p>아래 프롬프트를 보냅니다.</p>
+<blockquote>
+<p>프롬프트: 과정별 NPS를 막대 차트로 그려 주세요. 막대 위에 값을 표시하고, 0 기준선을 넣어 주세요. 차트는 이미지 파일(.png)로도 저장해 내려받을 수 있게 해 주세요.</p>
+</blockquote>
+</li>
+<li class="">
+<p>차트의 막대 값이 2단계 NPS 표와 같은지 확인합니다.</p>
+</li>
+<li class="">
+<p>답변에 붙은 이미지 파일의 <strong>다운로드</strong>를 눌러 저장합니다.</p>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="6단계-개선안과-결과-내보내기">6단계: 개선안과 결과 내보내기<a href="#6단계-개선안과-결과-내보내기" class="hash-link" aria-label="6단계: 개선안과 결과 내보내기에 대한 직접 링크" title="6단계: 개선안과 결과 내보내기에 대한 직접 링크" translate="no">​</a></h3>
+<p>지금까지의 숫자를 근거로 과정별 개선안을 받고, 결과 표를 엑셀 파일로 내보냅니다.</p>
+<p><strong>따라 해 보기</strong></p>
+<ol>
+<li class="">
+<p>아래 프롬프트를 보냅니다.</p>
+<blockquote>
+<p>프롬프트: 지금까지 결과를 근거로 과정별 개선안을 3개씩 제안해 주세요. 각 개선안에는 근거가 된 숫자(평균, NPS, 의견 건수)를 함께 적어 주세요.</p>
+</blockquote>
+</li>
+<li class="">
+<p>입력란 아래 오른쪽의 <strong>아티팩트</strong>를 눌러 결과 표를 고르고 <strong>내보내기</strong>에서 <strong>Excel로 내보내기</strong>를 누릅니다.</p>
+</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="결과물-예시">결과물 예시<a href="#결과물-예시" class="hash-link" aria-label="결과물 예시에 대한 직접 링크" title="결과물 예시에 대한 직접 링크" translate="no">​</a></h2>
+<p>아래 값은 예시 CSV를 직접 계산한 기준값입니다. 에이전트 답변이 이 값과 같은지 대조합니다. 평균은 소수 셋째 자리에서 반올림해 둘째 자리까지, NPS는 소수 둘째 자리에서 반올림해 첫째 자리까지 적었습니다. 반올림은 5 이상을 올리는 방식입니다. 예를 들어 생성형 AI 기초의 4개 문항 평균은 4.185이므로 4.19, 전체 추천의향 평균은 7.925이므로 7.93입니다.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="파일-구조">파일 구조<a href="#파일-구조" class="hash-link" aria-label="파일 구조에 대한 직접 링크" title="파일 구조에 대한 직접 링크" translate="no">​</a></h3>
+<p>120행 × 10열, 결측값은 자유의견 열의 빈칸 25건뿐입니다.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="과정별-평균">과정별 평균<a href="#과정별-평균" class="hash-link" aria-label="과정별 평균에 대한 직접 링크" title="과정별 평균에 대한 직접 링크" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>교육과정</th><th>응답 수</th><th>전반만족도</th><th>내용유익성</th><th>강사만족도</th><th>업무적용도</th><th>4개 문항 평균</th><th>추천의향 평균</th></tr></thead><tbody><tr><td>생성형 AI 기초</td><td>50</td><td>4.22</td><td>4.30</td><td>4.14</td><td>4.08</td><td>4.19</td><td>8.08</td></tr><tr><td>데이터 분석 실무</td><td>38</td><td>3.61</td><td>3.79</td><td>3.66</td><td>3.71</td><td>3.69</td><td>7.08</td></tr><tr><td>에이전트 만들기 실습</td><td>32</td><td>4.28</td><td>4.38</td><td>4.22</td><td>4.22</td><td>4.27</td><td>8.69</td></tr><tr><td>전체</td><td>120</td><td>4.04</td><td>4.16</td><td>4.01</td><td>4.00</td><td>4.05</td><td>7.93</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="nps">NPS<a href="#nps" class="hash-link" aria-label="NPS에 대한 직접 링크" title="NPS에 대한 직접 링크" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>교육과정</th><th>추천(9~10)</th><th>중립(7~8)</th><th>비추천(0~6)</th><th>NPS</th></tr></thead><tbody><tr><td>생성형 AI 기초</td><td>21</td><td>23</td><td>6</td><td>30.0</td></tr><tr><td>데이터 분석 실무</td><td>10</td><td>11</td><td>17</td><td>-18.4</td></tr><tr><td>에이전트 만들기 실습</td><td>19</td><td>11</td><td>2</td><td>53.1</td></tr><tr><td>전체</td><td>50</td><td>45</td><td>25</td><td>20.8</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="부서별-차이">부서별 차이<a href="#부서별-차이" class="hash-link" aria-label="부서별 차이에 대한 직접 링크" title="부서별 차이에 대한 직접 링크" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>부서</th><th>응답 수</th><th>4개 문항 평균</th><th>전반만족도</th><th>추천/중립/비추천</th><th>NPS</th></tr></thead><tbody><tr><td>AI혁신팀</td><td>18</td><td>4.06</td><td>4.17</td><td>7/6/5</td><td>11.1</td></tr><tr><td>개발팀</td><td>23</td><td>4.01</td><td>4.00</td><td>7/9/7</td><td>0.0</td></tr><tr><td>경영지원팀</td><td>21</td><td>3.87</td><td>3.67</td><td>12/6/3</td><td>42.9</td></tr><tr><td>마케팅팀</td><td>18</td><td>4.21</td><td>4.56</td><td>5/9/4</td><td>5.6</td></tr><tr><td>영업1팀</td><td>22</td><td>4.15</td><td>4.05</td><td>14/6/2</td><td>54.5</td></tr><tr><td>영업2팀</td><td>18</td><td>4.04</td><td>3.89</td><td>5/9/4</td><td>5.6</td></tr></tbody></table>
+<p>부서마다 들은 과정 구성이 다릅니다. 예를 들어 영업2팀은 18명 중 12명이 생성형 AI 기초를, AI혁신팀은 18명 중 8명이 데이터 분석 실무를 들었습니다. 마케팅팀은 전반만족도가 가장 높지만(4.56) NPS는 낮고(5.6), 경영지원팀은 전반만족도가 가장 낮지만(3.67) NPS는 높습니다(42.9). 만족도와 추천 의향이 다르게 움직이므로 두 지표를 함께 보고해야 합니다.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="자유의견">자유의견<a href="#자유의견" class="hash-link" aria-label="자유의견에 대한 직접 링크" title="자유의견에 대한 직접 링크" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>주제</th><th>의견</th><th>건수</th><th>많이 나온 과정</th></tr></thead><tbody><tr><td>긍정 평가</td><td>업무에 바로 쓸 수 있는 예제가 좋았습니다.</td><td>18</td><td>생성형 AI 기초 9, 에이전트 만들기 실습 7</td></tr><tr><td>긍정 평가</td><td>강사님 설명이 명확했습니다.</td><td>13</td><td>생성형 AI 기초 7</td></tr><tr><td>난이도</td><td>난이도가 조금 높았습니다.</td><td>15</td><td>세 과정 각 5</td></tr><tr><td>실습 시간</td><td>실습 시간이 더 길었으면 좋겠습니다.</td><td>14</td><td>생성형 AI 기초 6</td></tr><tr><td>후속 과정</td><td>후속 심화 과정을 열어 주세요.</td><td>13</td><td>데이터 분석 실무 6</td></tr><tr><td>수강 방식</td><td>온라인으로도 들을 수 있으면 좋겠습니다.</td><td>12</td><td>데이터 분석 실무 5, 생성형 AI 기초 5</td></tr><tr><td>사전 자료</td><td>자료를 미리 받고 싶습니다.</td><td>10</td><td>데이터 분석 실무 7</td></tr><tr><td>무응답</td><td>(빈칸)</td><td>25</td><td>생성형 AI 기초 13</td></tr></tbody></table>
+<p>의견을 적은 응답은 95건입니다. 에이전트가 주제 이름을 다르게 붙여도 건수가 위와 같으면 같은 분류입니다.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="결과를-이렇게-확인하세요">결과를 이렇게 확인하세요<a href="#결과를-이렇게-확인하세요" class="hash-link" aria-label="결과를 이렇게 확인하세요에 대한 직접 링크" title="결과를 이렇게 확인하세요에 대한 직접 링크" translate="no">​</a></h3>
+<ul>
+<li class="">데이터 분석 실무만 NPS가 음수(-18.4)이고 비추천이 17명으로 추천(10명)보다 많습니다. 이 과정에서 &quot;자료를 미리 받고 싶습니다&quot;가 7건으로 가장 많은 의견입니다. 개선안에 사전 자료 배포가 들어갔는지 봅니다.</li>
+<li class="">NPS 계산에서 7~8점을 추천으로 넣으면 값이 크게 달라집니다. <strong>데이터 분석</strong>의 코드에서 기준을 확인합니다.</li>
+<li class="">답변의 평균이 기준값과 0.01만 다르면 반올림 방식 차이일 수 있습니다. 예를 들어 생성형 AI 기초의 4개 문항 평균이 4.18, 전체 추천의향 평균이 7.92로 나오면 끝자리 5를 버린 결과입니다. &quot;소수 셋째 자리에서 반올림해 5 이상은 올려 주세요&quot;라고 다시 요청합니다.</li>
+<li class="">부서별 응답 수가 모두 30명 미만입니다. 부서 순위를 그대로 성과 평가에 쓰지 않습니다.</li>
+<li class="">개선안의 원인 설명은 가설입니다. 운영 담당자와 강사 의견을 함께 받아 확정합니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="응용-팁">응용 팁<a href="#응용-팁" class="hash-link" aria-label="응용 팁에 대한 직접 링크" title="응용 팁에 대한 직접 링크" translate="no">​</a></h2>
+<ul>
+<li class="">다음 회차 설문도 같은 열 이름으로 받으면 같은 프롬프트를 그대로 쓸 수 있습니다. 1~6단계 요청을 커맨드로 저장해 두세요. <a class="" href="/deep-agent-platform/docs/deep-agent-builder/commands-reuse/">커맨드와 재사용</a>을 보세요.</li>
+<li class="">개선안을 다음 회차 교육 자료에 반영하려면 교육 자료 제작 도우미에 개선안을 넘깁니다. <a class="" href="/deep-agent-platform/docs/deep-agent-builder/case-training-material/">사례: 교육 자료 만들기</a>를 참고하세요.</li>
+<li class="">차트와 표를 보고용 슬라이드로 만들려면 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/case-ppt-generation/">사례: PPT 생성 에이전트</a>를 보세요.</li>
+<li class="">숫자 검증과 차트, 내보내기의 자세한 화면은 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/data-analysis/">데이터 분석</a>에 있습니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="함께-보기">함께 보기<a href="#함께-보기" class="hash-link" aria-label="함께 보기에 대한 직접 링크" title="함께 보기에 대한 직접 링크" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-agent-builder/use-cases/">활용 사례 모음</a> — 다른 업무 사례 목록</li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-agent-builder/data-analysis/">데이터 분석</a> — 코드 실행 기록, 차트, 아티팩트 내보내기</li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-agent-builder/case-sales-excel/">사례: 엑셀 판매 데이터 분석</a> — 같은 방식으로 판매 데이터를 분석하는 사례</li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-agent-builder/workflows/">반복 업무</a> — 교육 운영처럼 여러 에이전트를 이어 쓰는 업무 흐름</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/deep-agent-platform/docs/deep-agent-builder/case-training-material/"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">사례: 교육 자료 만들기</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/deep-agent-platform/docs/deep-agent-builder/workflows/"><div class="pagination-nav__sublabel">다음</div><div class="pagination-nav__label">반복 업무</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#목표" class="table-of-contents__link toc-highlight">목표</a></li><li><a href="#준비물" class="table-of-contents__link toc-highlight">준비물</a></li><li><a href="#에이전트-만들기" class="table-of-contents__link toc-highlight">에이전트 만들기</a><ul><li><a href="#따라-해-보기" class="table-of-contents__link toc-highlight">따라 해 보기</a></li></ul></li><li><a href="#단계별-실행" class="table-of-contents__link toc-highlight">단계별 실행</a><ul><li><a href="#1단계-파일-첨부와-과정별-평균" class="table-of-contents__link toc-highlight">1단계: 파일 첨부와 과정별 평균</a></li><li><a href="#2단계-nps" class="table-of-contents__link toc-highlight">2단계: NPS</a></li><li><a href="#3단계-부서별-차이" class="table-of-contents__link toc-highlight">3단계: 부서별 차이</a></li><li><a href="#4단계-자유의견-주제-분류" class="table-of-contents__link toc-highlight">4단계: 자유의견 주제 분류</a></li><li><a href="#5단계-차트" class="table-of-contents__link toc-highlight">5단계: 차트</a></li><li><a href="#6단계-개선안과-결과-내보내기" class="table-of-contents__link toc-highlight">6단계: 개선안과 결과 내보내기</a></li></ul></li><li><a href="#결과물-예시" class="table-of-contents__link toc-highlight">결과물 예시</a><ul><li><a href="#파일-구조" class="table-of-contents__link toc-highlight">파일 구조</a></li><li><a href="#과정별-평균" class="table-of-contents__link toc-highlight">과정별 평균</a></li><li><a href="#nps" class="table-of-contents__link toc-highlight">NPS</a></li><li><a href="#부서별-차이" class="table-of-contents__link toc-highlight">부서별 차이</a></li><li><a href="#자유의견" class="table-of-contents__link toc-highlight">자유의견</a></li><li><a href="#결과를-이렇게-확인하세요" class="table-of-contents__link toc-highlight">결과를 이렇게 확인하세요</a></li></ul></li><li><a href="#응용-팁" class="table-of-contents__link toc-highlight">응용 팁</a></li><li><a href="#함께-보기" class="table-of-contents__link toc-highlight">함께 보기</a></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>

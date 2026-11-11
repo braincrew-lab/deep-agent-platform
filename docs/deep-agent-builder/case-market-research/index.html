@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="ko" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-deep-agent-builder/case-market-research" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.2">
+<title data-rh="true">사례: 시장 조사 리포트 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/case-market-research/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="사례: 시장 조사 리포트 | Deep Platform"><meta data-rh="true" name="description" content="이 페이지는 브레인크루 AI혁신팀 김그루 사원이 &quot;시장 조사 리서처&quot; 에이전트를 만들어, 사내 시장 메모를 바탕으로 경쟁 도구 비교표와 시사점 보고서를 받고 Word 파일로 내려받는 과정을 화면 순서대로 보여 줍니다. 웹 검색 도구가 없는 환경에서도 끝까지 따라 할 수 있고, 웹 검색 도구가 있으면 어디에 붙이는지도 함께 안내합니다."><meta data-rh="true" property="og:description" content="이 페이지는 브레인크루 AI혁신팀 김그루 사원이 &quot;시장 조사 리서처&quot; 에이전트를 만들어, 사내 시장 메모를 바탕으로 경쟁 도구 비교표와 시사점 보고서를 받고 Word 파일로 내려받는 과정을 화면 순서대로 보여 줍니다. 웹 검색 도구가 없는 환경에서도 끝까지 따라 할 수 있고, 웹 검색 도구가 있으면 어디에 붙이는지도 함께 안내합니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/case-market-research/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/case-market-research/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/case-market-research/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"사례: 시장 조사 리포트","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/case-market-research"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
+<script src="/deep-agent-platform/assets/js/runtime~main.a9c96625.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.dd53db47.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/deep-agent-platform/img/manual-mark.svg"><div role="region" aria-label="본문으로 건너뛰기"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">본문으로 건너뛰기</a></div><nav aria-label="메인" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="사이드바 펼치거나 접기" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/deep-agent-platform/"><div class="navbar__logo"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Deep Platform</b></a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">솔루션</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-flow/">Deep Flow</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/deep-agent-platform/docs/deep-agent-builder/">Deep Agent Builder</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-connector/">Deep Connector</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-docurator/">Deep Docurator</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/brain-parser/">Brain Parser</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work/">Deep Work</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work-gateway/">Deep Work Gateway</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-admin/">Deep Admin</a></li></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="어두운 모드와 밝은 모드 전환하기 (현재 system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="searchBar_fdyA"><input type="search" class="searchInput_JE4R" placeholder="매뉴얼 검색" aria-label="매뉴얼 검색" role="combobox" aria-autocomplete="list" aria-expanded="false" value=""><div role="status" aria-live="polite"></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="맨 위로 스크롤하기" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="문서 사이드바" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/"><span class="categoryLinkLabel_W154">소개</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/core-concepts/"><span class="categoryLinkLabel_W154">처음 사용하기</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/first-agent-design/"><span class="categoryLinkLabel_W154">에이전트 만들기</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/threads/"><span class="categoryLinkLabel_W154">업무에 활용하기</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/rag-agent/"><span class="categoryLinkLabel_W154">지식·도구 연결</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/middleware/"><span class="categoryLinkLabel_W154">보안과 권한</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/community/"><span class="categoryLinkLabel_W154">커뮤니티</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/multi-agent-concepts/"><span class="categoryLinkLabel_W154">멀티에이전트</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/evaluation-overview/"><span class="categoryLinkLabel_W154">평가</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/evaluations/"><span class="categoryLinkLabel_W154">개선과 모니터링</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/deep-agent-platform/docs/deep-agent-builder/use-cases/"><span class="categoryLinkLabel_W154">활용 사례</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/use-cases/"><span class="linkLabel_WmDU">활용 사례 모음</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/case-ppt-generation/"><span class="linkLabel_WmDU">사례: PPT 생성 에이전트</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/case-sales-excel/"><span class="linkLabel_WmDU">사례: 엑셀 판매 데이터 분석</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/case-weekly-report/"><span class="linkLabel_WmDU">사례: 주간 업무 보고서 작성</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/case-meeting-minutes/"><span class="linkLabel_WmDU">사례: 회의록 요약과 액션 아이템</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/case-email-draft/"><span class="linkLabel_WmDU">사례: 이메일 초안 작성</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/case-market-research/"><span class="linkLabel_WmDU">사례: 시장 조사 리포트</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/case-contract-review/"><span class="linkLabel_WmDU">사례: 계약서 검토 도우미</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/case-training-material/"><span class="linkLabel_WmDU">사례: 교육 자료 만들기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/case-survey-analysis/"><span class="linkLabel_WmDU">사례: 설문 결과 분석</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/workflows/"><span class="linkLabel_WmDU">반복 업무</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/troubleshooting/"><span class="categoryLinkLabel_W154">문제 해결</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="탐색 경로"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="홈" class="breadcrumbs__link" href="/deep-agent-platform/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">활용 사례</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">사례: 시장 조사 리포트</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">이 페이지에서</button></div><div class="theme-doc-markdown markdown"><header><h1>사례: 시장 조사 리포트</h1></header>
+<p>이 페이지는 브레인크루 AI혁신팀 김그루 사원이 &quot;시장 조사 리서처&quot; 에이전트를 만들어, 사내 시장 메모를 바탕으로 경쟁 도구 비교표와 시사점 보고서를 받고 Word 파일로 내려받는 과정을 화면 순서대로 보여 줍니다. 웹 검색 도구가 없는 환경에서도 끝까지 따라 할 수 있고, 웹 검색 도구가 있으면 어디에 붙이는지도 함께 안내합니다.</p>
+<p><strong>이 페이지에서 할 수 있는 일</strong></p>
+<ul>
+<li class="">대화로 시장 조사 리서처 에이전트를 만듭니다.</li>
+<li class="">시장 메모 파일을 첨부해 경쟁 도구 4종의 비교표를 받습니다.</li>
+<li class="">고객 인터뷰 결과와 비교표를 묶어 시사점 보고서를 받습니다.</li>
+<li class="">보고서를 Word 파일로 내려받습니다.</li>
+<li class="">답변의 숫자가 원본 메모와 같은지 확인합니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="목표">목표<a href="#목표" class="hash-link" aria-label="목표에 대한 직접 링크" title="목표에 대한 직접 링크" translate="no">​</a></h2>
+<ul>
+<li class="">경쟁 도구 A, B, C, D를 가격, 강점, 약점, 도입 조건으로 나눈 비교표 1개</li>
+<li class="">고객 인터뷰 순위와 비교표를 연결한 시사점 3가지와 다음 행동 제안</li>
+<li class="">팀장 보고에 바로 붙일 수 있는 Word 보고서 1개</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="준비물">준비물<a href="#준비물" class="hash-link" aria-label="준비물에 대한 직접 링크" title="준비물에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>항목</th><th>내용</th></tr></thead><tbody><tr><td>예시 파일</td><td>브레인크루_AI업무도구_시장메모.md (가상 자료. 경쟁 도구 4종과 고객 인터뷰 12개사 요약)</td></tr><tr><td>대화에 첨부할 수 있는 파일</td><td>.pdf, .jpg, .jpeg, .png, .gif, .webp, .md, .markdown, .txt, .xlsx, .xls, .xlsb, .xlsm, .csv, .docx, .pptx, .ppt, .hwp, .hwpx, .html, .htm (한 번에 최대 10개, 파일 1개당 최대 50MB. 마크다운·텍스트·HTML은 10MB, PDF·이미지·Word·한글 문서는 20MB까지)</td></tr><tr><td>에이전트 모드</td><td><strong>일반 에이전트</strong></td></tr><tr><td>도구</td><td>기본 구성으로 충분합니다. 도구함의 <strong>도구 추가</strong> 창에 웹 검색 도구가 있으면 붙여서 최신 공개 정보를 함께 찾게 할 수 있습니다.</td></tr><tr><td>권한</td><td>새 에이전트를 만들 수 있는 권한. 권한이 없으면 <strong>새 에이전트</strong>가 눌리지 않습니다.</td></tr></tbody></table>
+<p>예시 파일의 마크다운(.md) 형식은 대화 첨부와 에이전트 만들기 첨부 모두에서 받습니다. 회사 내부 시장 자료가 PDF나 Word로 되어 있어도 위 목록의 형식이면 같은 방법으로 쓸 수 있습니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="에이전트-만들기">에이전트 만들기<a href="#에이전트-만들기" class="hash-link" aria-label="에이전트 만들기에 대한 직접 링크" title="에이전트 만들기에 대한 직접 링크" translate="no">​</a></h2>
+<p>사이드바의 <strong>새 에이전트</strong>를 누르면 &quot;생성하려는 에이전트에 대해 알려주세요&quot; 화면이 열립니다. 입력란에 맡길 일을 적어 보내면 에이전트 만들기 도우미가 질문을 이어 가며 도구, 모델, 지침을 정리합니다.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="따라-해-보기">따라 해 보기<a href="#따라-해-보기" class="hash-link" aria-label="따라 해 보기에 대한 직접 링크" title="따라 해 보기에 대한 직접 링크" translate="no">​</a></h3>
+<ol>
+<li class="">
+<p>사이드바의 <strong>새 에이전트</strong>를 누릅니다.</p>
+</li>
+<li class="">
+<p>입력란에 아래 요청을 붙여 넣고 보냅니다.</p>
+<blockquote>
+<p>프롬프트: 시장 조사 리서처를 만들어 주세요. 내가 첨부한 시장 메모와 인터뷰 자료를 읽고 경쟁 제품 비교표(제품, 가격, 강점, 약점, 도입 조건)와 시사점 보고서를 써 주는 에이전트입니다. 자료에 없는 가격이나 수치는 지어내지 말고 &quot;자료에 없음&quot;으로 적고, 출처가 첨부 자료인지 웹 검색인지 표마다 밝혀 주세요. 보고서는 한국어로, 요약 3줄, 비교표, 시사점 3가지, 다음 행동 순서로 써 주세요.</p>
+</blockquote>
+</li>
+<li class="">
+<p>도우미가 확인 질문을 띄우면 답을 고르고 <strong>전체 제출</strong>을 누릅니다. 웹 검색 도구를 추천받으면 쓸지 정해 답합니다.</p>
+</li>
+<li class="">
+<p>완료 카드가 나오면 <strong>바로 이용하기</strong>를 누릅니다. 에이전트 이름이 &quot;시장 조사 리서처&quot;가 아니면 에이전트 편집 화면 위쪽 이름 칸에서 고친 뒤 헤더의 <strong>저장</strong>을 누릅니다.</p>
+</li>
+</ol>
+<blockquote>
+<p>팁: 도우미가 묻는 질문은 요청 내용에 따라 달라집니다. 이 페이지에서 예로 든 질문이 나오지 않아도 같은 기준(자료에 없는 숫자 금지, 출처 표시)으로 답하면 됩니다.</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="웹-검색-도구-붙이기있을-때만">웹 검색 도구 붙이기(있을 때만)<a href="#웹-검색-도구-붙이기있을-때만" class="hash-link" aria-label="웹 검색 도구 붙이기(있을 때만)에 대한 직접 링크" title="웹 검색 도구 붙이기(있을 때만)에 대한 직접 링크" translate="no">​</a></h2>
+<p>웹 검색 도구는 회사 환경에 등록되어 있을 때만 보입니다. 없으면 이 절을 건너뛰고 첨부 자료만으로 진행합니다. 도구는 에이전트 편집 화면 가운데 편집 영역의 <strong>도구함</strong>에서 붙입니다. 붙인 도구는 헤더의 <strong>저장</strong>을 누르지 않아도 바로 대화와 <strong>테스트</strong> 탭에 쓰입니다.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="따라-해-보기-1">따라 해 보기<a href="#따라-해-보기-1" class="hash-link" aria-label="따라 해 보기에 대한 직접 링크" title="따라 해 보기에 대한 직접 링크" translate="no">​</a></h3>
+<ol>
+<li class="">사이드바에서 <strong>시장 조사 리서처</strong>를 누르고 <strong>에이전트 설정</strong>을 누릅니다.</li>
+<li class="">가운데 편집 영역의 <strong>도구함</strong>에서 <strong>+ 도구</strong>를 눌러 <strong>도구 추가</strong> 창을 엽니다.</li>
+<li class="">목록에 웹 검색 도구가 있으면 고르고 <strong>도구 추가</strong>를 누릅니다. 없으면 창을 닫습니다.</li>
+<li class="">오른쪽 <strong>테스트</strong> 탭에서 &quot;오늘 날짜 기준으로 찾을 수 있는 공개 정보만 알려 주세요&quot;처럼 짧게 시험해 봅니다.</li>
+</ol>
+<blockquote>
+<p>팁: 목록에 없는 도구는 직접 만들 수 없을 수 있습니다. 필요하면 관리자에게 웹 검색 도구 등록을 요청하세요. 도구 구성은 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/tools-and-skills/">도구와 스킬 구성</a>에 있습니다.</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="단계별-실행">단계별 실행<a href="#단계별-실행" class="hash-link" aria-label="단계별 실행에 대한 직접 링크" title="단계별 실행에 대한 직접 링크" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1단계-메모-첨부와-경쟁-비교표">1단계: 메모 첨부와 경쟁 비교표<a href="#1단계-메모-첨부와-경쟁-비교표" class="hash-link" aria-label="1단계: 메모 첨부와 경쟁 비교표에 대한 직접 링크" title="1단계: 메모 첨부와 경쟁 비교표에 대한 직접 링크" translate="no">​</a></h3>
+<p>시장 조사 리서처와 새 대화를 열고 시장 메모를 첨부해 경쟁 도구 4종의 비교표를 받습니다.</p>
+<p><strong>따라 해 보기</strong></p>
+<ol>
+<li class="">
+<p>사이드바에서 <strong>시장 조사 리서처</strong>를 누르고 <strong>이 에이전트와 새 대화</strong>를 누릅니다.</p>
+</li>
+<li class="">
+<p>입력란 아래 오른쪽의 <strong>파일 업로드</strong>를 눌러 브레인크루_AI업무도구_시장메모.md를 고릅니다. 파일 칩의 처리 표시가 끝날 때까지 기다립니다.</p>
+</li>
+<li class="">
+<p>아래 프롬프트를 붙여 넣고 <strong>전송</strong>을 누릅니다.</p>
+<blockquote>
+<p>프롬프트: 첨부한 시장 메모로 경쟁 도구 A, B, C, D 비교표를 만들어 주세요. 열은 제품, 유형, 가격, 강점, 약점·제약, 도입 조건, 출처로 하고, 메모에 없는 값은 &quot;자료에 없음&quot;으로 적어 주세요.</p>
+</blockquote>
+</li>
+<li class="">
+<p>답변 위쪽의 <strong>첨부 읽기</strong> 기록을 펼쳐 메모를 읽었는지 보고, 답변의 비교표가 제품, 유형, 가격, 강점, 약점·제약, 도입 조건, 출처 열로 되어 있는지 확인합니다.</p>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2단계-시사점-보고서">2단계: 시사점 보고서<a href="#2단계-시사점-보고서" class="hash-link" aria-label="2단계: 시사점 보고서에 대한 직접 링크" title="2단계: 시사점 보고서에 대한 직접 링크" translate="no">​</a></h3>
+<p>같은 대화에서 비교표와 메모의 고객 인터뷰 결과를 묶어 시사점 보고서를 받습니다.</p>
+<p><strong>따라 해 보기</strong></p>
+<ol>
+<li class="">
+<p>같은 대화에서 아래 프롬프트를 보냅니다.</p>
+<blockquote>
+<p>프롬프트: 방금 만든 비교표와 메모의 고객 인터뷰(12개사) 결과를 연결해 시사점 보고서를 써 주세요. 요약 3줄, 고객 니즈 순위 표(응답 기업 수와 비율), 경쟁 도구가 채우지 못한 빈틈, 브레인크루가 취할 시사점 3가지, 다음 행동 순서로 써 주세요. 근거가 메모의 어느 줄인지도 괄호로 밝혀 주세요.</p>
+</blockquote>
+</li>
+<li class="">
+<p>고객 니즈 표의 비율과 시사점의 근거 표시를 확인합니다.</p>
+</li>
+<li class="">
+<p>웹 검색 도구를 붙였다면 추가로 &quot;각 도구의 공개 가격이 메모와 다른지 웹에서 확인하고 출처를 함께 적어 주세요&quot;라고 요청합니다. 웹에서 찾은 내용은 출처 열에 웹 검색으로 표시되어야 합니다.</p>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3단계-word-파일로-내려받기">3단계: Word 파일로 내려받기<a href="#3단계-word-파일로-내려받기" class="hash-link" aria-label="3단계: Word 파일로 내려받기에 대한 직접 링크" title="3단계: Word 파일로 내려받기에 대한 직접 링크" translate="no">​</a></h3>
+<p>보고서 답변을 Word 파일로 받는 방법은 세 가지입니다. 일반 에이전트에서는 에이전트에게 파일을 만들어 달라고 요청하는 방법이 가장 간단합니다.</p>
+<p><strong>따라 해 보기</strong></p>
+<ol>
+<li class="">
+<p>같은 대화에서 아래 프롬프트를 보냅니다.</p>
+<blockquote>
+<p>프롬프트: 1단계 비교표와 2단계 시사점 보고서를 Word 파일(.docx) 하나로 만들어 주세요. 파일 이름은 브레인크루_AI업무도구_시장조사.docx로 하고, 요약 3줄, 비교표, 고객 니즈 표, 시사점, 다음 행동 순서로 넣어 주세요.</p>
+</blockquote>
+</li>
+<li class="">
+<p>답변에 붙은 파일의 <strong>다운로드</strong>를 눌러 저장합니다. 같은 파일은 입력란 아래 오른쪽의 <strong>아티팩트</strong>를 눌러 여는 창에도 모입니다.</p>
+</li>
+<li class="">
+<p>내려받은 파일을 열어 표가 깨지지 않았는지 확인합니다.</p>
+</li>
+</ol>
+<p>답변의 표가 <strong>아티팩트</strong>로 만들어졌다면 <strong>아티팩트</strong> 창에서 <strong>미리보기</strong>로 내용을 확인한 뒤 <strong>내보내기</strong> &gt; <strong>Word로 내보내기</strong>로 .doc 파일을 받을 수도 있습니다. 아티팩트 내보내기 형식은 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/document-agent/">PPT·문서 만들기</a>에 정리되어 있습니다.</p>
+<blockquote>
+<p>팁: 세 번째 방법은 문서작성 에이전트입니다. 보고서를 캔버스에서 쪽 단위로 미리 보며 받고 싶으면 에이전트 편집 화면의 <strong>설정</strong> 탭에서 <strong>에이전트 모드</strong>를 <strong>문서작성 에이전트</strong>로 바꾼 뒤 보고서를 다시 요청합니다. 결과가 오른쪽 <strong>문서 캔버스</strong>에 열리고, <strong>내보내기</strong>에서 <strong>원본 다운로드</strong>, <strong>DOCX 형식으로 내보내기</strong>, <strong>PDF 형식으로 내보내기</strong>를 고를 수 있습니다. 캔버스 사용법은 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/canvas/">캔버스로 문서·PPT·표 만들기</a>에 있습니다.</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="결과물-예시">결과물 예시<a href="#결과물-예시" class="hash-link" aria-label="결과물 예시에 대한 직접 링크" title="결과물 예시에 대한 직접 링크" translate="no">​</a></h2>
+<p>예시 메모로 받은 결과에서 아래 값이 맞는지 확인합니다. 값은 원본 메모에서 직접 셀 수 있습니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>확인할 것</th><th>원본 메모 기준 값</th></tr></thead><tbody><tr><td>비교 대상 수</td><td>4종(A, B, C, D)</td></tr><tr><td>A의 가격과 약점</td><td>월 1인 1.5만 원, 사내 지식 연결 미지원</td></tr><tr><td>B의 가격과 약점</td><td>월 1인 3만 원, 평가 기능 없음</td></tr><tr><td>C의 가격과 강점</td><td>월 1인 4만 원, 엑셀 연동 강점</td></tr><tr><td>D의 가격과 도입 조건</td><td>월 단가는 메모에 없음(연간 계약만), 구축 기간 3개월</td></tr><tr><td>고객 니즈 1위</td><td>사내 문서 근거 답변, 12개사 중 9개사(75%)</td></tr><tr><td>고객 니즈 2위</td><td>보고서 자동 작성, 12개사 중 7개사(약 58%)</td></tr><tr><td>고객 니즈 3위</td><td>권한 관리, 12개사 중 6개사(50%)</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="결과를-이렇게-확인하세요">결과를 이렇게 확인하세요<a href="#결과를-이렇게-확인하세요" class="hash-link" aria-label="결과를 이렇게 확인하세요에 대한 직접 링크" title="결과를 이렇게 확인하세요에 대한 직접 링크" translate="no">​</a></h3>
+<ul>
+<li class="">D의 월 가격이 숫자로 적혀 있으면 지어낸 값입니다. &quot;자료에 없음&quot;으로 고쳐 달라고 요청합니다.</li>
+<li class="">비율의 분모가 12개사인지 봅니다. 응답 기업 수를 더한 22(9 + 7 + 6)로 나누면 틀린 계산입니다. 한 회사가 여러 기능을 골랐기 때문입니다.</li>
+<li class="">시사점이 메모의 빈틈과 이어지는지 봅니다. 예를 들어 1위 니즈인 사내 문서 근거 답변을 A가 지원하지 않는다는 점, B에 평가 기능이 없다는 점이 근거로 쓰였는지 확인합니다.</li>
+<li class="">메모는 가상 자료이고 인터뷰 표본이 12개사뿐입니다. 보고서에 &quot;표본이 작다&quot;는 한계가 적혀 있는지 봅니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="응용-팁">응용 팁<a href="#응용-팁" class="hash-link" aria-label="응용 팁에 대한 직접 링크" title="응용 팁에 대한 직접 링크" translate="no">​</a></h2>
+<ul>
+<li class="">조사 주제가 바뀌면 메모 파일만 바꿔 같은 프롬프트를 씁니다. 자주 쓰는 요청은 커맨드로 저장해 두면 / 를 눌러 바로 보낼 수 있습니다. 방법은 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/commands-reuse/">커맨드와 재사용</a>에 있습니다.</li>
+<li class="">대화를 시작할 때마다 같은 첫 질문을 쓴다면 챗 오프너로 등록합니다. <a class="" href="/deep-agent-platform/docs/deep-agent-builder/chat-opener/">챗 오프너</a>를 참고하세요.</li>
+<li class="">보고서를 발표 자료로 바꾸려면 이 대화의 비교표를 복사해 제안서 PPT 작성기에 넘깁니다. <a class="" href="/deep-agent-platform/docs/deep-agent-builder/case-ppt-generation/">사례: PPT 생성 에이전트</a>를 보세요.</li>
+<li class="">웹 검색 결과는 회사 밖 정보입니다. 보고에 쓰기 전에 출처를 직접 열어 확인합니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="함께-보기">함께 보기<a href="#함께-보기" class="hash-link" aria-label="함께 보기에 대한 직접 링크" title="함께 보기에 대한 직접 링크" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-agent-builder/use-cases/">활용 사례 모음</a> — 다른 업무 사례 목록</li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-agent-builder/agent-creation/">에이전트 만들기</a> — 에이전트 만들기 대화의 단계와 확인 질문</li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-agent-builder/attachments/">첨부파일 지원</a> — 첨부 형식과 처리 상태 보기</li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-agent-builder/tools-and-skills/">도구와 스킬 구성</a> — 도구함에 도구를 붙이고 시험하는 방법</li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-agent-builder/canvas/">캔버스로 문서·PPT·표 만들기</a> — 문서작성 에이전트의 결과물 보기와 내보내기</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/deep-agent-platform/docs/deep-agent-builder/case-email-draft/"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">사례: 이메일 초안 작성</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/deep-agent-platform/docs/deep-agent-builder/case-contract-review/"><div class="pagination-nav__sublabel">다음</div><div class="pagination-nav__label">사례: 계약서 검토 도우미</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#목표" class="table-of-contents__link toc-highlight">목표</a></li><li><a href="#준비물" class="table-of-contents__link toc-highlight">준비물</a></li><li><a href="#에이전트-만들기" class="table-of-contents__link toc-highlight">에이전트 만들기</a><ul><li><a href="#따라-해-보기" class="table-of-contents__link toc-highlight">따라 해 보기</a></li></ul></li><li><a href="#웹-검색-도구-붙이기있을-때만" class="table-of-contents__link toc-highlight">웹 검색 도구 붙이기(있을 때만)</a><ul><li><a href="#따라-해-보기-1" class="table-of-contents__link toc-highlight">따라 해 보기</a></li></ul></li><li><a href="#단계별-실행" class="table-of-contents__link toc-highlight">단계별 실행</a><ul><li><a href="#1단계-메모-첨부와-경쟁-비교표" class="table-of-contents__link toc-highlight">1단계: 메모 첨부와 경쟁 비교표</a></li><li><a href="#2단계-시사점-보고서" class="table-of-contents__link toc-highlight">2단계: 시사점 보고서</a></li><li><a href="#3단계-word-파일로-내려받기" class="table-of-contents__link toc-highlight">3단계: Word 파일로 내려받기</a></li></ul></li><li><a href="#결과물-예시" class="table-of-contents__link toc-highlight">결과물 예시</a><ul><li><a href="#결과를-이렇게-확인하세요" class="table-of-contents__link toc-highlight">결과를 이렇게 확인하세요</a></li></ul></li><li><a href="#응용-팁" class="table-of-contents__link toc-highlight">응용 팁</a></li><li><a href="#함께-보기" class="table-of-contents__link toc-highlight">함께 보기</a></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>

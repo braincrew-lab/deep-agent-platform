@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="ko" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-deep-docurator/chunk-strategies" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.2">
+<title data-rh="true">Deep Docurator 청킹 전략과 옵션 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/chunk-strategies/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Deep Docurator 청킹 전략과 옵션 | Deep Platform"><meta data-rh="true" name="description" content="청킹 노드는 파싱 결과를 검색과 답변에 쓰기 좋은 크기의 조각으로 나눕니다. 같은 문서라도 전략과 크기에 따라 조각의 경계가 달라지고, 그 경계가 에이전트가 찾는 근거의 모양을 정합니다. 이 페이지는 청킹 노드의 전략 14가지와 자주 바꾸는 옵션, 전략을 고르는 기준을 설명합니다."><meta data-rh="true" property="og:description" content="청킹 노드는 파싱 결과를 검색과 답변에 쓰기 좋은 크기의 조각으로 나눕니다. 같은 문서라도 전략과 크기에 따라 조각의 경계가 달라지고, 그 경계가 에이전트가 찾는 근거의 모양을 정합니다. 이 페이지는 청킹 노드의 전략 14가지와 자주 바꾸는 옵션, 전략을 고르는 기준을 설명합니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/chunk-strategies/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/chunk-strategies/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/chunk-strategies/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"청킹 전략과 옵션","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/chunk-strategies"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
+<script src="/deep-agent-platform/assets/js/runtime~main.a9c96625.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.dd53db47.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/deep-agent-platform/img/manual-mark.svg"><div role="region" aria-label="본문으로 건너뛰기"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">본문으로 건너뛰기</a></div><nav aria-label="메인" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="사이드바 펼치거나 접기" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/deep-agent-platform/"><div class="navbar__logo"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Deep Platform</b></a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">솔루션</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-flow/">Deep Flow</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-agent-builder/">Deep Agent Builder</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-connector/">Deep Connector</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/deep-agent-platform/docs/deep-docurator/">Deep Docurator</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/brain-parser/">Brain Parser</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work/">Deep Work</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work-gateway/">Deep Work Gateway</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-admin/">Deep Admin</a></li></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="어두운 모드와 밝은 모드 전환하기 (현재 system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="searchBar_fdyA"><input type="search" class="searchInput_JE4R" placeholder="매뉴얼 검색" aria-label="매뉴얼 검색" role="combobox" aria-autocomplete="list" aria-expanded="false" value=""><div role="status" aria-live="polite"></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="맨 위로 스크롤하기" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="문서 사이드바" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/"><span class="categoryLinkLabel_W154">소개</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/getting-started/"><span class="categoryLinkLabel_W154">시작하기</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/deep-agent-platform/docs/deep-docurator/core-features/"><span class="categoryLinkLabel_W154">기능 안내</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/core-features/"><span class="linkLabel_WmDU">메뉴 안내</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/input-formats/"><span class="linkLabel_WmDU">입력 노드와 지원 파일 형식</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/node-guide/"><span class="linkLabel_WmDU">노드 안내</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/chunk-strategies/"><span class="linkLabel_WmDU">청킹 전략과 옵션</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/presets/"><span class="linkLabel_WmDU">프리셋과 템플릿 플로우</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/results-export/"><span class="linkLabel_WmDU">결과 확인과 내보내기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/agent-chat/"><span class="linkLabel_WmDU">에이전트로 플로우 만들기</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/workflows/"><span class="categoryLinkLabel_W154">반복 업무</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/use-cases/"><span class="categoryLinkLabel_W154">활용사례</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/troubleshooting/"><span class="categoryLinkLabel_W154">문제 해결</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="탐색 경로"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="홈" class="breadcrumbs__link" href="/deep-agent-platform/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">기능 안내</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">청킹 전략과 옵션</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">이 페이지에서</button></div><div class="theme-doc-markdown markdown"><header><h1>Deep Docurator 청킹 전략과 옵션</h1></header>
+<p>청킹 노드는 파싱 결과를 검색과 답변에 쓰기 좋은 크기의 조각으로 나눕니다. 같은 문서라도 전략과 크기에 따라 조각의 경계가 달라지고, 그 경계가 에이전트가 찾는 근거의 모양을 정합니다. 이 페이지는 청킹 노드의 전략 14가지와 자주 바꾸는 옵션, 전략을 고르는 기준을 설명합니다.</p>
+<p><strong>이 페이지에서 할 수 있는 일</strong></p>
+<ul>
+<li class="">문서용 전략 9가지와 표용 전략 5가지의 차이를 압니다.</li>
+<li class="">최대 청크 길이, 최대 목표 겹침, 최소 청크 크기 같은 옵션을 바꿔 결과를 비교합니다.</li>
+<li class="">문서 종류에 맞는 전략을 고르는 기준을 익힙니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="옵션을-여는-곳">옵션을 여는 곳<a href="#옵션을-여는-곳" class="hash-link" aria-label="옵션을 여는 곳에 대한 직접 링크" title="옵션을 여는 곳에 대한 직접 링크" translate="no">​</a></h2>
+<p>캔버스에서 청킹 노드를 누르고 작업 사이드바의 <strong>설정</strong> 탭을 엽니다. <strong>처리 옵션</strong>에서 <strong>전략</strong>을 고르고, 고른 전략의 세부 옵션은 아래 <strong>고급 설정</strong>을 눌러 펼치면 나타납니다. 전략을 바꾸면 보이는 옵션도 바뀌므로, 바꾼 뒤에는 고급 설정의 값을 다시 확인하고 실행합니다.</p>
+<p><strong>전략</strong> 위에는 입력 파일의 <strong>문서 유형</strong>(문서, 슬라이드, 엑셀)이 표시됩니다. 이 표시는 안내용이며, 전략 목록을 좁히거나 바꾸지 않습니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="문서용-전략">문서용 전략<a href="#문서용-전략" class="hash-link" aria-label="문서용 전략에 대한 직접 링크" title="문서용 전략에 대한 직접 링크" translate="no">​</a></h2>
+<p>보고서, 계약서, 회의록처럼 글이 중심인 문서에 씁니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>전략</th><th>나누는 방식</th><th>이런 문서에</th></tr></thead><tbody><tr><td>범용 (구조 + 토큰 예산)</td><td>제목 구조를 따르면서 청크당 토큰 수를 맞춥니다.</td><td>구조와 길이가 섞인 일반 문서</td></tr><tr><td>재귀 (마크다운 인식)</td><td>제목 → 빈 줄 → 줄바꿈 → 공백 순서로 큰 단위부터 잘라 크기를 맞춥니다. 처음 값입니다.</td><td>대부분의 문서, 첫 시도</td></tr><tr><td>고정 크기 (문자 기준)</td><td>정한 글자 수마다 자릅니다.</td><td>구조가 없는 긴 텍스트, 비교 기준용</td></tr><tr><td>LLM (고급, 모델 호출)</td><td>모델이 내용을 읽고 의미 단위로 나눕니다. 프롬프트로 기준을 줄 수 있습니다.</td><td>구조가 불규칙한 문서, 회의록</td></tr><tr><td>의미 기반</td><td>문장 간 의미 거리가 크게 바뀌는 곳에서 자릅니다.</td><td>주제가 자주 바뀌는 글</td></tr><tr><td>페이지</td><td>페이지 단위로 자릅니다.</td><td>쪽마다 독립된 내용인 서식, 발표 자료</td></tr><tr><td>마크다운</td><td>마크다운 제목 깊이에 따라 자릅니다.</td><td>md 문서, 제목이 뚜렷한 문서</td></tr><tr><td>블록 (파서 경계)</td><td>파싱이 만든 블록 경계를 그대로 씁니다.</td><td>파싱 결과를 그대로 보고 싶을 때</td></tr><tr><td>문장</td><td>정한 문장 수마다 자릅니다.</td><td>짧은 안내문, FAQ</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="표용-전략">표용 전략<a href="#표용-전략" class="hash-link" aria-label="표용 전략에 대한 직접 링크" title="표용 전략에 대한 직접 링크" translate="no">​</a></h2>
+<p>견적서, 판매 실적, 영수증 내역처럼 행과 열이 중심인 자료에 씁니다. 엑셀과 csv에 맞춘 전략이며, 파일 형식과 상관없이 목록에는 늘 보입니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>전략</th><th>나누는 방식</th><th>이런 표에</th></tr></thead><tbody><tr><td>라벨 행 (권장)</td><td>행마다 &quot;열 이름: 값&quot; 형태로 풀어 씁니다.</td><td>품목별·건별로 찾아야 하는 표</td></tr><tr><td>일반 행 + 헤더</td><td>여러 행을 묶고 머리글을 반복해 붙입니다.</td><td>행이 많은 큰 표</td></tr><tr><td>구조 인식</td><td>엑셀 시트의 표 영역 구분점을 따라 자르고 표 주변 설명을 함께 붙입니다. 표 구조 정보가 없는 파일에서는 실패합니다.</td><td>제목, 합계, 표가 섞인 엑셀 서식</td></tr><tr><td>열 기준</td><td>기준 열과 나머지 열을 한 열씩 짝지어 열 단위로 묶습니다. 기준 열은 0부터 셉니다.</td><td>항목별로 값을 모아 볼 표</td></tr><tr><td>고정 N행</td><td>정한 행 수마다 자릅니다.</td><td>형식이 단순한 목록</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="자주-바꾸는-옵션">자주 바꾸는 옵션<a href="#자주-바꾸는-옵션" class="hash-link" aria-label="자주 바꾸는 옵션에 대한 직접 링크" title="자주 바꾸는 옵션에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>옵션</th><th>쓰는 전략</th><th>뜻</th><th>처음 값</th></tr></thead><tbody><tr><td>최대 청크 길이 (글자)</td><td>재귀, 고정 크기, 문장, 마크다운, 의미 기반, 블록, LLM</td><td>청크 하나가 넘지 않을 글자 수입니다. 넘는 부분은 글자 단위로 더 나눕니다.</td><td>1000</td></tr><tr><td>최대 목표 겹침 (글자 수)</td><td>재귀, 의미 기반</td><td>이웃한 청크가 겹쳐 담을 글자 수의 상한입니다. 구분자 경계를 지키므로 실제 겹침은 더 적거나 없을 수 있습니다.</td><td>200</td></tr><tr><td>겹침 (글자 수)</td><td>고정 크기</td><td>이웃한 청크가 겹치는 글자 수입니다. 입력한 값 그대로 씁니다.</td><td>200</td></tr><tr><td>최소 청크 크기 (글자)</td><td>범용을 뺀 모든 전략</td><td>이보다 짧은 청크를 이웃과 합칩니다. 0이면 쓰지 않습니다.</td><td>0</td></tr><tr><td>구분자 우선순위</td><td>재귀</td><td>자를 때 먼저 볼 구분자 순서입니다. 제목 6부터 제목 1, 코드 펜스, 빈 줄, 줄바꿈, 공백 순입니다.</td><td>기본 순서</td></tr><tr><td>청크당 최대 토큰 수</td><td>범용</td><td>청크 하나가 넘지 않을 토큰 수입니다.</td><td>512</td></tr><tr><td>프롬프트</td><td>LLM</td><td>나누는 기준을 문장으로 적습니다. 예: 안건별로 나누고 결정 사항은 따로 두세요.</td><td>비어 있음</td></tr><tr><td>분할 기준</td><td>의미 기반</td><td>백분위, 표준편차, 사분위, 기울기 중에서 고릅니다.</td><td>백분위</td></tr><tr><td>헤더 깊이</td><td>마크다운</td><td>몇 단계 제목까지 자를지 정합니다.</td><td>3</td></tr><tr><td>최대 문장 수</td><td>문장</td><td>청크 하나에 넣을 문장 수입니다.</td><td>3</td></tr><tr><td>청크당 최대 페이지 수</td><td>페이지</td><td>청크 하나에 넣을 페이지 수입니다.</td><td>1</td></tr><tr><td>최대 데이터 행 수</td><td>표용 전략</td><td>청크 하나에 넣을 데이터 행 수입니다.</td><td>50</td></tr><tr><td>최대 청크 길이 (글자)</td><td>표용 전략, 페이지</td><td>청크 하나가 넘지 않을 글자 수입니다.</td><td>표용 1500, 페이지 1000</td></tr><tr><td>큰 행·셀 처리</td><td>표용 전략</td><td>한 행이나 셀이 최대 길이를 넘을 때 보존하고 경고, 요청 실패, 필드 경계 분할 중 하나를 고릅니다.</td><td>보존하고 경고</td></tr><tr><td>원본 헤더 반복</td><td>일반 행 + 헤더 등</td><td>청크마다 표 머리글을 다시 붙입니다.</td><td>켜짐</td></tr><tr><td>표 설명 메타데이터 생성</td><td>라벨 행, 일반 행 + 헤더</td><td>모델이 표 설명을 써서 메타데이터에만 기록합니다. 요약 청크를 따로 만들지는 않습니다.</td><td>꺼짐</td></tr></tbody></table>
+<p>숫자 칸에 정수가 아닌 값이나 범위를 벗어난 값을 넣으면 &quot;정수를 입력하세요.&quot; 또는 허용 범위 안내가 표시됩니다. 겹침이 청크 길이보다 크거나 같으면 겹침이 청크 크기보다 작아야 한다는 안내가 표시되고, 값은 자동으로 고쳐지지 않습니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="전략을-고르는-기준">전략을 고르는 기준<a href="#전략을-고르는-기준" class="hash-link" aria-label="전략을 고르는 기준에 대한 직접 링크" title="전략을 고르는 기준에 대한 직접 링크" translate="no">​</a></h2>
+<ol>
+<li class="">처음에는 재귀 (마크다운 인식), 최대 청크 길이 1000, 최대 목표 겹침 200으로 실행해 기준 결과를 만듭니다.</li>
+<li class="">표가 중심인 엑셀·csv라면 라벨 행 (권장)으로 바꿔 행이 한 청크씩 풀려 나오는지 봅니다.</li>
+<li class="">조항·장 구조가 뚜렷한 문서라면 마크다운이나 범용으로 바꿔 제목 단위로 끊기는지 비교합니다.</li>
+<li class="">구조가 불규칙한 회의 메모라면 LLM 전략에 프롬프트로 기준을 적어 비교합니다.</li>
+<li class="">비교할 때에는 값 하나만 바꾸고, 청크 수보다 청크 본문을 읽어 조건이 끊기지 않았는지 봅니다.</li>
+</ol>
+<p>여러 전략을 한 번에 비교하고 싶다면 내장 프리셋 Select 파이프라인 (기본)을 씁니다. 재귀, 의미 기반, 마크다운, LLM 네 전략으로 각각 나눈 뒤 평가 노드가 점수를 매기고, 전략 선택 노드가 점수가 가장 높은 결과를 고릅니다. 점수는 표본 평가이므로 결과 본문도 함께 읽어 확인하세요.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="따라-해-보기">따라 해 보기<a href="#따라-해-보기" class="hash-link" aria-label="따라 해 보기에 대한 직접 링크" title="따라 해 보기에 대한 직접 링크" translate="no">​</a></h2>
+<ol>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-docurator/getting-started/">시작하기</a>에서 만든 플로우를 엽니다.</li>
+<li class="">청킹 노드를 누르고 <strong>설정</strong> 탭에서 <strong>고급 설정</strong>을 펼친 뒤 **최대 청크 길이 (글자)**를 1000에서 500으로 바꿉니다.</li>
+<li class=""><strong>파이프라인 실행</strong>을 누르고 청킹 노드의 청크 수가 어떻게 바뀌는지 봅니다.</li>
+<li class="">청크 본문을 앞뒤로 읽어 문장이 중간에 잘리지 않았는지 확인합니다.</li>
+<li class="">비교가 끝나면 값을 1000으로 되돌리거나, 더 나은 값을 <a class="" href="/deep-agent-platform/docs/deep-docurator/presets/">프리셋</a>으로 저장합니다.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="다음-문서">다음 문서<a href="#다음-문서" class="hash-link" aria-label="다음 문서에 대한 직접 링크" title="다음 문서에 대한 직접 링크" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-docurator/results-export/">결과 확인과 내보내기</a> — 청크 결과를 읽고 원본과 대조하는 방법</li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-docurator/workflows/">반복 업무</a> — 설정을 하나씩 바꿔 비교하는 순서</li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-docurator/use-cases/">활용사례</a> — 안내문의 조건을 보존하며 나누는 연습</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/deep-agent-platform/docs/deep-docurator/node-guide/"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">노드 안내</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/deep-agent-platform/docs/deep-docurator/presets/"><div class="pagination-nav__sublabel">다음</div><div class="pagination-nav__label">프리셋과 템플릿 플로우</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#옵션을-여는-곳" class="table-of-contents__link toc-highlight">옵션을 여는 곳</a></li><li><a href="#문서용-전략" class="table-of-contents__link toc-highlight">문서용 전략</a></li><li><a href="#표용-전략" class="table-of-contents__link toc-highlight">표용 전략</a></li><li><a href="#자주-바꾸는-옵션" class="table-of-contents__link toc-highlight">자주 바꾸는 옵션</a></li><li><a href="#전략을-고르는-기준" class="table-of-contents__link toc-highlight">전략을 고르는 기준</a></li><li><a href="#따라-해-보기" class="table-of-contents__link toc-highlight">따라 해 보기</a></li><li><a href="#다음-문서" class="table-of-contents__link toc-highlight">다음 문서</a></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>
