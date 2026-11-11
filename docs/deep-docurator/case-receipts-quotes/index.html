@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-deep-docurator/case-receipts-quotes" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.2">
+<title data-rh="true">Deep Docurator 사례: 영수증·견적서 표 정리 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/case-receipts-quotes/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Deep Docurator 사례: 영수증·견적서 표 정리 | Deep Platform"><meta data-rh="true" name="description" content="김그루 사원은 11월 법인카드 사용 내역과 사무 환경 개선 견적서를 정리해야 합니다. 에이전트가 &quot;가상식당에서 쓴 회의비가 얼마였지?&quot;처럼 건별로 찾을 수 있도록, 표를 행 하나씩 풀어 청크로 만들고 사용처와 금액을 메타데이터로 붙입니다. 영수증 사진에서 금액을 읽는 방법도 함께 봅니다."><meta data-rh="true" property="og:description" content="김그루 사원은 11월 법인카드 사용 내역과 사무 환경 개선 견적서를 정리해야 합니다. 에이전트가 &quot;가상식당에서 쓴 회의비가 얼마였지?&quot;처럼 건별로 찾을 수 있도록, 표를 행 하나씩 풀어 청크로 만들고 사용처와 금액을 메타데이터로 붙입니다. 영수증 사진에서 금액을 읽는 방법도 함께 봅니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/case-receipts-quotes/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/case-receipts-quotes/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/case-receipts-quotes/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"사례: 영수증·견적서 표 정리","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/case-receipts-quotes"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
+<script src="/deep-agent-platform/assets/js/runtime~main.37e9242b.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.89735666.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/deep-agent-platform/img/manual-mark.svg"><div role="region" aria-label="본문으로 건너뛰기"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">본문으로 건너뛰기</a></div><nav aria-label="메인" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="사이드바 펼치거나 접기" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/deep-agent-platform/"><div class="navbar__logo"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Deep Platform</b></a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">솔루션</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-flow/">Deep Flow</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-agent-builder/">Deep Agent Builder</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-connector/">Deep Connector</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/deep-agent-platform/docs/deep-docurator/">Deep Docurator</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/brain-parser/">Brain Parser</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work/">Deep Work</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work-gateway/">Deep Work Gateway</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-admin/">Deep Admin</a></li></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="어두운 모드와 밝은 모드 전환하기 (현재 system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="searchBar_fdyA"><input type="search" class="searchInput_JE4R" placeholder="매뉴얼 검색" aria-label="매뉴얼 검색" role="combobox" aria-autocomplete="list" aria-expanded="false" value=""><div role="status" aria-live="polite"></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="맨 위로 스크롤하기" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="문서 사이드바" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/"><span class="categoryLinkLabel_W154">소개</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/getting-started/"><span class="categoryLinkLabel_W154">시작하기</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/core-features/"><span class="categoryLinkLabel_W154">기능 안내</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/workflows/"><span class="categoryLinkLabel_W154">반복 업무</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/deep-agent-platform/docs/deep-docurator/use-cases/"><span class="categoryLinkLabel_W154">활용사례</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/use-cases/"><span class="linkLabel_WmDU">활용사례</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/case-contract-clauses/"><span class="linkLabel_WmDU">사례: 계약서 핵심 조항 추출</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/case-receipts-quotes/"><span class="linkLabel_WmDU">사례: 영수증·견적서 표 정리</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/case-report-summary/"><span class="linkLabel_WmDU">사례: 보고서 요약본 만들기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/case-meeting-minutes/"><span class="linkLabel_WmDU">사례: 회의록 표준 양식으로 정리</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/case-document-compare/"><span class="linkLabel_WmDU">사례: 여러 문서 비교표 만들기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/case-privacy-masking/"><span class="linkLabel_WmDU">사례: 고객 문의 기록 개인정보 가리기</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/troubleshooting/"><span class="categoryLinkLabel_W154">문제 해결</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="탐색 경로"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="홈" class="breadcrumbs__link" href="/deep-agent-platform/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">활용사례</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">사례: 영수증·견적서 표 정리</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">이 페이지에서</button></div><div class="theme-doc-markdown markdown"><header><h1>Deep Docurator 사례: 영수증·견적서 표 정리</h1></header>
+<p>김그루 사원은 11월 법인카드 사용 내역과 사무 환경 개선 견적서를 정리해야 합니다. 에이전트가 &quot;가상식당에서 쓴 회의비가 얼마였지?&quot;처럼 건별로 찾을 수 있도록, 표를 행 하나씩 풀어 청크로 만들고 사용처와 금액을 메타데이터로 붙입니다. 영수증 사진에서 금액을 읽는 방법도 함께 봅니다.</p>
+<p><strong>이 페이지에서 할 수 있는 일</strong></p>
+<ul>
+<li class="">표 파일(csv, xlsx)을 표용 전략 라벨 행 (권장)으로 행 단위 청크로 나눕니다.</li>
+<li class="">메타데이터로 사용처·금액을 건별로 뽑습니다.</li>
+<li class="">영수증 사진(png, jpg)을 파싱해 금액과 품목이 읽혔는지 확인합니다.</li>
+<li class="">표 머리글이 여러 줄인 엑셀 서식에서 생기는 문제와 해결법을 압니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="목표">목표<a href="#목표" class="hash-link" aria-label="목표에 대한 직접 링크" title="목표에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>항목</th><th>내용</th></tr></thead><tbody><tr><td>하고 싶은 일</td><td>사용 내역과 견적 품목을 건별로 찾을 수 있게 정리</td></tr><tr><td>결과물</td><td>행 하나당 청크 하나, 청크마다 사용처·금액 값</td></tr><tr><td>노드 조합</td><td>입력 → 파싱 → 청킹(라벨 행 (권장)) → 메타데이터. 영수증 사진은 입력 → 파싱</td></tr><tr><td>걸리는 시간</td><td>실행 1분 안팎, 검토 10분</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="준비물">준비물<a href="#준비물" class="hash-link" aria-label="준비물에 대한 직접 링크" title="준비물에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>파일</th><th>내용</th><th>형식</th></tr></thead><tbody><tr><td>영수증내역-2026-11.csv</td><td>사용일, 사용처, 분류, 금액(원), 사용자, 메모 열과 5건의 사용 내역</td><td>csv</td></tr><tr><td>견적서-사무환경개선.xlsx</td><td>위쪽에 제목·견적일, 아래에 품목·규격·수량·단가·금액 표와 합계·부가세·총액</td><td>xlsx</td></tr><tr><td>영수증-가상식당-1110.png</td><td>휴대폰으로 찍은 것과 같은 영수증 이미지. 품목 3개와 합계 112,000원</td><td>png(같은 내용의 jpg도 가능)</td></tr></tbody></table>
+<p>표 파일은 xlsx, csv를 넣습니다. xls는 처리되지 않으므로 xlsx로 다시 저장합니다. 이미지는 png, jpg, jpeg, tiff, tif, bmp, webp를 넣을 수 있습니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1단계-사용-내역을-행-단위로-나누기">1단계. 사용 내역을 행 단위로 나누기<a href="#1단계-사용-내역을-행-단위로-나누기" class="hash-link" aria-label="1단계. 사용 내역을 행 단위로 나누기에 대한 직접 링크" title="1단계. 사용 내역을 행 단위로 나누기에 대한 직접 링크" translate="no">​</a></h2>
+<ol>
+<li class="">&quot;내장: 기본 파이프라인 (단일)&quot; 프리셋으로 새 플로우를 만듭니다. 이름 예: 11월 법인카드 사용 내역 정리.</li>
+<li class="">입력 노드에 영수증내역-2026-11.csv를 넣습니다.</li>
+<li class="">청킹 노드의 <strong>설정</strong> 탭에서 <strong>전략</strong>을 라벨 행 (권장)으로 바꿉니다.</li>
+<li class=""><strong>고급 설정</strong>을 펼치고 <strong>최대 데이터 행 수</strong>를 50에서 1로 바꿉니다. 행 하나가 청크 하나가 됩니다.</li>
+<li class="">메타데이터 노드의 <strong>고급 설정</strong>에서 기본 필드 title, category를 줄 오른쪽 ✕(제거)로 지우고, summary 설명을 &quot;사용 내역을 한국어 한 문장으로 요약&quot;, keywords 설명을 &quot;한국어 키워드&quot;로 바꿉니다. 이어서 <strong>필드 추가</strong>로 사용처(행의 사용처를 원문 그대로), 금액(행의 금액(원) 숫자만), 분류(사무용품, 회의비, 교통비, 도서구입 중 하나) 필드를 만듭니다. 결과 화면의 목록은 필드를 여섯 개까지만 보여 주므로 필요 없는 필드는 지웁니다.</li>
+<li class=""><strong>파이프라인 실행</strong>을 누릅니다.</li>
+</ol>
+<p>라벨 행 (권장)은 행마다 &quot;사용일: 20261103 사용처: 가상문구 분류: 사무용품 금액원: 48000&quot;처럼 열 이름과 값을 짝지어 풀어 씁니다. 그래서 청크 하나만 읽어도 어떤 값인지 알 수 있습니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="건별로 나눈 사용 내역과 메타데이터"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/case-receipts-metadata-582a0c99332805a4e570c679bd7c4e14.png" target="_blank" rel="noopener"><img width="1992" height="1240" src="/deep-agent-platform/assets/images/case-receipts-metadata-582a0c99332805a4e570c679bd7c4e14.png" alt="라벨 행 전략으로 5 청크가 된 청킹 노드와 건별 사용처·금액이 보이는 메타데이터 결과" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">건별로 나눈 사용 내역과 메타데이터</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>화면에 보이는 내용</th><th>확인할 것</th></tr></thead><tbody><tr><td>1</td><td>청킹 노드</td><td>라벨 행 (권장), 5 청크, 경고 (5)</td><td>사용 내역 5건이 5 청크가 됐는지. 경고는 csv에 원본 좌표가 없다는 안내입니다.</td></tr><tr><td>2</td><td>청크 칸</td><td>다섯 칸 가운데 1번째를 고른 상태</td><td>칸을 차례로 눌러 건별 값을 봅니다</td></tr><tr><td>3</td><td>사용처</td><td>가상문구</td><td>원본 첫 행의 사용처와 같은지</td></tr><tr><td>4</td><td>금액</td><td>48000</td><td>원본 첫 행의 금액과 같은지</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="결과물-예시">결과물 예시<a href="#결과물-예시" class="hash-link" aria-label="결과물 예시에 대한 직접 링크" title="결과물 예시에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>청크</th><th>사용처</th><th>금액</th><th>분류</th><th>요약(모델이 쓴 문장)</th></tr></thead><tbody><tr><td>1</td><td>가상문구</td><td>48000</td><td>사무용품</td><td>포스트잇, 화이트보드 마커 등 사무용품 구매</td></tr><tr><td>2</td><td>가상카페</td><td>36500</td><td>회의비</td><td>AI혁신팀 주간 회의를 위한 음료 구매</td></tr><tr><td>3</td><td>가상택시</td><td>18200</td><td>교통비</td><td>고객 미팅 이동을 위한 택시 이용</td></tr><tr><td>4</td><td>가상도서</td><td>64000</td><td>도서구입</td><td>데이터 분석 도서 2권 구입</td></tr><tr><td>5</td><td>가상식당</td><td>112000</td><td>회의비</td><td>협력사 킥오프 점심 회의 비용</td></tr></tbody></table>
+<p>summary 설명을 처음 값(Summary)으로 두었을 때는 요약과 키워드가 영어로 나왔습니다. 한국어 결과가 필요하면 설명에 &quot;한국어&quot;를 적습니다.</p>
+<p>합계는 메타데이터에 따로 나오지 않습니다. 합계가 필요하면 원본 표에서 계산하거나, 이 플로우를 Deep Connector에 보낸 뒤 에이전트에게 계산을 맡깁니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2단계-영수증-사진에서-금액-읽기">2단계. 영수증 사진에서 금액 읽기<a href="#2단계-영수증-사진에서-금액-읽기" class="hash-link" aria-label="2단계. 영수증 사진에서 금액 읽기에 대한 직접 링크" title="2단계. 영수증 사진에서 금액 읽기에 대한 직접 링크" translate="no">​</a></h2>
+<ol>
+<li class="">&quot;내장: 파싱만&quot; 프리셋으로 새 플로우를 만듭니다. 이름 예: 영수증 사진 금액 읽기.</li>
+<li class="">입력 노드에 영수증-가상식당-1110.png를 넣고 실행합니다. 예시는 20초 안팎에 끝났습니다.</li>
+<li class="">파싱 노드의 <strong>옵션 &amp; 미리보기</strong> 탭에서 <strong>Parse 결과</strong>를 읽습니다.</li>
+</ol>
+<p><span class="manual-shot" role="figure" aria-label="영수증 사진의 파싱 결과"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/case-receipts-image-d74189154175598ce7bd388c134705d5.png" target="_blank" rel="noopener"><img width="2080" height="1508" src="/deep-agent-platform/assets/images/case-receipts-image-d74189154175598ce7bd388c134705d5.png" alt="영수증 이미지를 파싱해 사용처, 품목 표, 합계 금액이 블록으로 나온 결과" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">영수증 사진의 파싱 결과</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>화면에 보이는 내용</th><th>확인할 것</th></tr></thead><tbody><tr><td>1</td><td>입력 노드</td><td>영수증-가상식당-1110.png, 38 KB</td><td>사진 파일이 맞는지</td></tr><tr><td>2</td><td>텍스트 블록</td><td>가상식당, 사업자번호, 2026-11-10 12:48</td><td>사용처와 날짜가 읽혔는지</td></tr><tr><td>3</td><td>표 블록</td><td>점심 정식 x6 90,000 / 음료 x6 18,000 / 디저트 x2 4,000. <strong>펼치기</strong>로 전체를 봅니다.</td><td>품목별 금액이 사진과 같은지</td></tr><tr><td>4</td><td>텍스트 블록</td><td>112,000원</td><td>합계가 사진과 같은지</td></tr></tbody></table>
+<p>사진 속 숫자는 읽는 과정에서 &quot;90, 000&quot;처럼 쉼표 뒤에 빈칸이 생길 수 있습니다. 금액은 늘 사진과 한 번 더 대조합니다. 흐리거나 기울어진 사진은 숫자를 잘못 읽을 수 있으니 바로 찍어 다시 넣습니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3단계-엑셀-견적서에서-주의할-점">3단계. 엑셀 견적서에서 주의할 점<a href="#3단계-엑셀-견적서에서-주의할-점" class="hash-link" aria-label="3단계. 엑셀 견적서에서 주의할 점에 대한 직접 링크" title="3단계. 엑셀 견적서에서 주의할 점에 대한 직접 링크" translate="no">​</a></h2>
+<p>견적서-사무환경개선.xlsx처럼 표 위에 제목과 견적일 줄이 있는 서식을 라벨 행 (권장)으로 나누면, 첫 줄(제목)을 머리글로 읽어 &quot;col1, col2&quot; 같은 이름이 붙습니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="머리글이 맞지 않은 견적서 청크"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/case-receipts-header-issue-c0da3399dc1974dcd735e339840f39dc.png" target="_blank" rel="noopener"><img width="1312" height="660" src="/deep-agent-platform/assets/images/case-receipts-header-issue-c0da3399dc1974dcd735e339840f39dc.png" alt="제목 줄이 머리글로 읽혀 col1, col2 이름이 붙은 견적서 청크" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">머리글이 맞지 않은 견적서 청크</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>화면에 보이는 내용</th><th>확인할 것</th></tr></thead><tbody><tr><td>1</td><td>청크 본문</td><td>&quot;(가상) 견적서 — 브레인크루 AI혁신팀 사무 환경 개선: 견적일 | col1: 2026-11-05 | col2: 유효기간 | col3: 30일 | col4:&quot;</td><td>열 이름이 품목, 규격, 수량 대신 col1, col2로 나왔는지</td></tr></tbody></table>
+<p>청크 결과 위의 경고는 엑셀에는 원본 위치 정보가 없다는 안내이며 결과에는 영향이 없습니다.</p>
+<p>이럴 때는 엑셀에서 표 위의 제목·견적일 줄을 지우고 첫 줄이 품목, 규격, 수량, 단가(원), 금액(원)이 되도록 다시 저장해 넣습니다. 또는 제목·합계가 섞인 서식에 맞춘 구조 인식 전략으로 바꿔 비교합니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="검토-기준">검토 기준<a href="#검토-기준" class="hash-link" aria-label="검토 기준에 대한 직접 링크" title="검토 기준에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>확인 질문</th><th>검토 방법</th></tr></thead><tbody><tr><td>행 수와 청크 수가 같나요?</td><td>사용 내역 5건이면 5 청크인지 봅니다.</td></tr><tr><td>열 이름이 맞나요?</td><td>청크 본문에 col1, col2 대신 실제 열 이름이 보이는지 봅니다.</td></tr><tr><td>금액이 같나요?</td><td>메타데이터 금액과 원본 행의 금액을 대조합니다.</td></tr><tr><td>합계·부가세 행이 섞였나요?</td><td>견적서라면 합계 행이 품목처럼 취급되지 않았는지 봅니다.</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="응용-팁">응용 팁<a href="#응용-팁" class="hash-link" aria-label="응용 팁에 대한 직접 링크" title="응용 팁에 대한 직접 링크" translate="no">​</a></h2>
+<ul>
+<li class="">행이 수백 개인 판매 실적표는 최대 데이터 행 수를 10~20으로 두어 청크 수를 줄이고, <strong>원본 헤더 반복</strong>을 켜 둔 일반 행 + 헤더 전략과 비교합니다.</li>
+<li class="">분류 필드에 <strong>허용 값</strong>(사무용품, 회의비, 교통비, 도서구입)을 넣으면 값 표현이 통일되어 검색 필터로 쓸 수 있습니다.</li>
+<li class="">여러 장의 영수증 사진은 입력 노드가 파일 한 개만 받으므로 한 장씩 처리하거나, 사용 내역을 csv로 정리한 뒤 1단계 방식으로 처리합니다.</li>
+<li class="">검토를 마친 구성은 &quot;사용 내역 라벨 행 정리&quot;처럼 이름을 붙여 프리셋으로 저장합니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="다음-문서">다음 문서<a href="#다음-문서" class="hash-link" aria-label="다음 문서에 대한 직접 링크" title="다음 문서에 대한 직접 링크" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-docurator/case-report-summary/">보고서 요약본 만들기</a> — 장별 요약을 뽑는 사례</li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-docurator/chunk-strategies/">청킹 전략과 옵션</a> — 표용 전략 다섯 가지</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/deep-agent-platform/docs/deep-docurator/case-contract-clauses/"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">사례: 계약서 핵심 조항 추출</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/deep-agent-platform/docs/deep-docurator/case-report-summary/"><div class="pagination-nav__sublabel">다음</div><div class="pagination-nav__label">사례: 보고서 요약본 만들기</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#목표" class="table-of-contents__link toc-highlight">목표</a></li><li><a href="#준비물" class="table-of-contents__link toc-highlight">준비물</a></li><li><a href="#1단계-사용-내역을-행-단위로-나누기" class="table-of-contents__link toc-highlight">1단계. 사용 내역을 행 단위로 나누기</a></li><li><a href="#결과물-예시" class="table-of-contents__link toc-highlight">결과물 예시</a></li><li><a href="#2단계-영수증-사진에서-금액-읽기" class="table-of-contents__link toc-highlight">2단계. 영수증 사진에서 금액 읽기</a></li><li><a href="#3단계-엑셀-견적서에서-주의할-점" class="table-of-contents__link toc-highlight">3단계. 엑셀 견적서에서 주의할 점</a></li><li><a href="#검토-기준" class="table-of-contents__link toc-highlight">검토 기준</a></li><li><a href="#응용-팁" class="table-of-contents__link toc-highlight">응용 팁</a></li><li><a href="#다음-문서" class="table-of-contents__link toc-highlight">다음 문서</a></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>

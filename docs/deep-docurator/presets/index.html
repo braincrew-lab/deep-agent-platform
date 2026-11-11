@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">Deep Docurator 프리셋과 템플릿 플로우 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/presets/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Deep Docurator 프리셋과 템플릿 플로우 | Deep Platform"><meta data-rh="true" name="description" content="프리셋은 자주 쓰는 노드 구성을 이름 붙여 저장해 둔 것입니다. 한 번 검토를 마친 구성을 프리셋으로 남겨 두면, 다음 문서에서는 노드를 다시 놓지 않고 같은 기준으로 바로 시작할 수 있습니다. 이 페이지는 내장 프리셋 5가지, 내 프리셋을 저장하고 쓰는 법, YAML 파일로 주고받는 법, 템플릿 플로우를 설명합니다."><meta data-rh="true" property="og:description" content="프리셋은 자주 쓰는 노드 구성을 이름 붙여 저장해 둔 것입니다. 한 번 검토를 마친 구성을 프리셋으로 남겨 두면, 다음 문서에서는 노드를 다시 놓지 않고 같은 기준으로 바로 시작할 수 있습니다. 이 페이지는 내장 프리셋 5가지, 내 프리셋을 저장하고 쓰는 법, YAML 파일로 주고받는 법, 템플릿 플로우를 설명합니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/presets/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/presets/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/presets/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"프리셋과 템플릿 플로우","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/presets"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
-<script src="/deep-agent-platform/assets/js/runtime~main.3cbeb1c1.js" defer="defer"></script>
-<script src="/deep-agent-platform/assets/js/main.781f3454.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/runtime~main.37e9242b.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.89735666.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -79,20 +79,63 @@
 
 
 
-<table><thead><tr><th>위치</th><th>방법</th><th>미리보기</th></tr></thead><tbody><tr><td>새 플로우 만들기</td><td><strong>시작점</strong>에서 <strong>프리셋</strong>을 누르고 프리셋 선택 상자에서 고릅니다. 내장 프리셋은 &quot;내장:&quot;, 내가 저장한 것은 &quot;내 프리셋:&quot;이 앞에 붙습니다.</td><td><strong>프리셋 미리보기</strong>에 노드 순서와 노드 수가 보입니다.</td></tr><tr><td>편집기의 노드 추가 패널</td><td>패널 아래 <strong>프리셋</strong> 영역의 프리셋 선택 상자에서 고르고 <strong>캔버스에 적용</strong>을 누릅니다. 내가 저장한 것은 커스텀 아래에 있습니다.</td><td>적용 전에 구성을 확인합니다.</td></tr></tbody></table>
+<table><thead><tr><th>위치</th><th>방법</th><th>미리보기</th></tr></thead><tbody><tr><td>새 플로우 만들기</td><td><strong>시작점</strong>에서 <strong>프리셋</strong>을 누르고 프리셋 선택 상자에서 고릅니다. 내장 프리셋은 &quot;내장:&quot;, 내가 저장한 것은 &quot;내 프리셋:&quot;이 앞에 붙습니다.</td><td><strong>프리셋 미리보기</strong>에 노드 순서와 노드 수가 보입니다.</td></tr><tr><td>편집기의 노드 추가 패널</td><td>패널 아래 <strong>프리셋</strong> 영역의 프리셋 선택 상자에서 고르고 <strong>캔버스에 적용</strong>을 누릅니다. 내가 저장한 것은 커스텀 아래에 있습니다.</td><td>내장 프리셋은 <strong>프리셋 미리보기</strong>로 구성을 보여 줍니다. 내 프리셋은 미리보기가 없습니다.</td></tr></tbody></table>
 <p>편집 중인 캔버스에 프리셋을 적용하면 &quot;현재 캔버스의 내용이 대체됩니다.&quot;라는 확인이 나옵니다. 지금 캔버스의 노드와 결과를 남기고 싶다면 새 플로우를 만들어 그곳에 적용하세요.</p>
 <p>프리셋은 노드와 옵션만 담습니다. 입력 노드의 파일은 따라오지 않으므로, 프리셋으로 만든 플로우에서는 파일을 새로 넣고 실행합니다.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="내-프리셋으로-저장하기">내 프리셋으로 저장하기<a href="#내-프리셋으로-저장하기" class="hash-link" aria-label="내 프리셋으로 저장하기에 대한 직접 링크" title="내 프리셋으로 저장하기에 대한 직접 링크" translate="no">​</a></h2>
 <ol>
 <li class="">결과 검토를 마친 플로우를 엽니다.</li>
 <li class="">편집기 위쪽 <strong>프리셋으로 저장</strong>을 누릅니다.</li>
-<li class="">대화상자에 &quot;현재 파이프라인을 이름과 함께 저장합니다.&quot;라는 안내가 보이면 이름을 입력합니다. 이름 없이 저장하면 &quot;이름을 입력해주세요.&quot;가 표시됩니다.</li>
+<li class="">대화상자에 &quot;현재 파이프라인을 이름과 함께 저장합니다.&quot;라는 안내가 보이면 이름을 입력합니다. 이름이 비어 있으면 <strong>저장</strong>이 눌리지 않고, 빈 칸에서 Enter를 누르면 &quot;이름을 입력해주세요.&quot;가 표시됩니다.</li>
 <li class=""><strong>저장</strong>을 누릅니다.</li>
 <li class="">노드 추가 패널의 프리셋 선택 상자 커스텀 아래, 새 플로우 만들기의 &quot;내 프리셋:&quot;, 설정 화면의 프리셋 카드에 저장한 이름이 보이는지 확인합니다.</li>
 </ol>
+<p><span class="manual-shot" role="figure" aria-label="프리셋으로 저장 대화상자"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/presets-save-dialog-cedc820503ce585aef5ba3be7f63cd62.png" target="_blank" rel="noopener"><img width="1200" height="640" src="/deep-agent-platform/assets/images/presets-save-dialog-cedc820503ce585aef5ba3be7f63cd62.png" alt="이름 입력란에 보고서 기본 청킹 v1을 적은 프리셋으로 저장 대화상자" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">프리셋으로 저장 대화상자</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>이름 입력란</td><td>프리셋 이름을 입력합니다. 비어 있을 때는 &quot;파이프라인 이름&quot;이 흐리게 보입니다.</td><td>문서 종류와 기준을 이름에 담을 때</td></tr><tr><td>2</td><td><strong>저장</strong></td><td>지금 플로우의 노드 구성을 프리셋으로 저장합니다.</td><td>결과 검토를 마친 구성을 남길 때</td></tr></tbody></table>
+<p>화면에 번호를 붙이지 않은 그 밖의 메뉴는 다음과 같습니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td><strong>취소</strong></td><td>저장하지 않고 닫습니다.</td><td>아직 검토가 끝나지 않았을 때</td></tr></tbody></table>
 <p>이름에는 문서 종류와 기준을 함께 담으면 나중에 고르기 쉽습니다. 예: 계약서 조항 추출 v1, 견적서 라벨 행 정리.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="설정-화면에서-관리하기">설정 화면에서 관리하기<a href="#설정-화면에서-관리하기" class="hash-link" aria-label="설정 화면에서 관리하기에 대한 직접 링크" title="설정 화면에서 관리하기에 대한 직접 링크" translate="no">​</a></h2>
-<p>사이드바 아래 <strong>설정</strong>을 누르면 프리셋 화면이 열립니다. 화면 제목 아래에 &quot;컴포넌트와 파이프라인 프리셋을 관리하고 YAML로 가져오거나 내보냅니다.&quot;가 보입니다.</p>
+<p>사이드바 아래 <strong>설정</strong>을 누르면 프리셋 화면이 열립니다. 화면 제목 아래에 &quot;컴포넌트와 파이프라인 프리셋을 관리하고 YAML로 가져오거나 내보냅니다.&quot;가 보입니다. 아래 화면은 <a class="" href="/deep-agent-platform/docs/deep-docurator/getting-started/">시작하기</a>의 보고서 플로우를 &quot;보고서 기본 청킹 v1&quot;로 저장한 뒤의 모습입니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="설정 화면의 프리셋 목록"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/presets-settings-83241e23f76ed7320b72200b0c1e97c5.png" target="_blank" rel="noopener"><img width="1520" height="760" src="/deep-agent-platform/assets/images/presets-settings-83241e23f76ed7320b72200b0c1e97c5.png" alt="프리셋 카드와 YAML 내보내기·가져오기 버튼이 보이는 설정 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">설정 화면의 프리셋 목록</span></span></p>
 
 
 
@@ -128,6 +171,8 @@
 
 
 
+<table><thead><tr><th>번호</th><th>메뉴</th><th>하는 일</th><th>이런 때</th></tr></thead><tbody><tr><td>1</td><td>분류 버튼(전체, 파싱, 청킹, 메타데이터, 파이프라인)</td><td>프리셋을 종류별로 좁혀 봅니다.</td><td>파이프라인 프리셋만 보고 싶을 때</td></tr><tr><td>2</td><td><strong>새 프리셋</strong></td><td>파싱, 청킹, 메타데이터 중 한 노드의 옵션 묶음을 프리셋으로 만듭니다.</td><td>청킹 옵션만 따로 저장해 둘 때</td></tr><tr><td>3</td><td><strong>YAML 내보내기</strong></td><td>지금 분류에 보이는 프리셋을 하나씩 YAML 파일로 내려받습니다.</td><td>다른 담당자에게 구성을 전달할 때</td></tr><tr><td>4</td><td><strong>YAML 가져오기</strong></td><td>YAML 파일(yaml, yml)을 골라 프리셋으로 등록합니다.</td><td>받은 구성 파일을 쓸 때</td></tr></tbody></table>
+<p>화면에 번호를 붙이지 않은 그 밖의 메뉴는 다음과 같습니다.</p>
 
 
 
@@ -138,7 +183,23 @@
 
 
 
-<table><thead><tr><th>메뉴</th><th>하는 일</th><th>이런 때</th></tr></thead><tbody><tr><td>분류 버튼(전체, 파싱, 청킹, 메타데이터, 파이프라인)</td><td>프리셋을 종류별로 좁혀 봅니다.</td><td>파이프라인 프리셋만 보고 싶을 때</td></tr><tr><td><strong>새 프리셋</strong></td><td>파싱, 청킹, 메타데이터 중 한 노드의 옵션 묶음을 프리셋으로 만듭니다.</td><td>청킹 옵션만 따로 저장해 둘 때</td></tr><tr><td><strong>편집</strong></td><td>파싱·청킹·메타데이터 프리셋의 이름, 설명, 옵션을 고칩니다. <strong>프리셋으로 저장</strong>으로 만든 파이프라인 프리셋은 편집할 수 없으므로, 고칠 때에는 플로우에서 다시 저장합니다.</td><td>이름에 버전을 붙일 때</td></tr><tr><td><strong>삭제</strong></td><td>프리셋을 지웁니다. &quot;이 프리셋을 삭제하시겠습니까?&quot;를 확인합니다.</td><td>쓰지 않는 프리셋을 정리할 때</td></tr><tr><td><strong>YAML 내보내기</strong></td><td>지금 분류에 보이는 프리셋을 하나씩 YAML 파일로 내려받습니다.</td><td>다른 담당자에게 구성을 전달할 때</td></tr><tr><td><strong>YAML 가져오기</strong></td><td>YAML 파일(yaml, yml)을 골라 프리셋으로 등록합니다.</td><td>받은 구성 파일을 쓸 때</td></tr><tr><td><strong>운영 설정 (관리자)</strong></td><td>실행, LLM, 파싱, 청킹 등 운영 값을 바꾸는 관리자 화면으로 갑니다. 관리자가 아니면 들어가도 &quot;관리자만 운영 설정을 조회하고 수정할 수 있습니다.&quot;가 표시됩니다.</td><td>관리자가 서버 기본값을 바꿀 때</td></tr></tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>메뉴</th><th>하는 일</th><th>이런 때</th></tr></thead><tbody><tr><td><strong>운영 설정 (관리자)</strong></td><td>실행, LLM, 파싱, 청킹 등 운영 값을 바꾸는 관리자 화면으로 갑니다. 관리자가 아니면 들어가도 &quot;관리자만 운영 설정을 조회하고 수정할 수 있습니다.&quot;가 표시됩니다.</td><td>관리자가 서버 기본값을 바꿀 때</td></tr><tr><td>프리셋 카드</td><td>프리셋 이름, 종류(pipeline), 노드 순서(input → parse → chunk)가 보입니다. 파싱·청킹·메타데이터 프리셋 카드에는 <strong>편집</strong>이 함께 보입니다.</td><td>저장한 구성이 맞는지 확인할 때</td></tr><tr><td><strong>삭제</strong></td><td>프리셋을 지웁니다. &quot;이 프리셋을 삭제하시겠습니까?&quot;를 확인합니다.</td><td>쓰지 않는 프리셋을 정리할 때</td></tr></tbody></table>
+<p><strong>편집</strong>은 파싱·청킹·메타데이터 프리셋의 이름, 설명, 옵션을 고칩니다. <strong>프리셋으로 저장</strong>으로 만든 파이프라인 프리셋은 편집할 수 없으므로, 고칠 때에는 플로우에서 다시 저장합니다.</p>
 <p>YAML 파일에는 API 키가 들어 있지 않습니다. 가져온 뒤 모델 연결이 필요한 노드는 운영 담당자가 설정한 값으로 실행됩니다. 가져오기에 성공하면 API 키를 별도로 설정하라는 안내가 나오는데, 이 화면에는 키를 넣는 곳이 없으므로 모델 연결에 문제가 있을 때만 운영 담당자에게 문의합니다. 가져오기에 실패하면 &quot;가져오기 실패:&quot; 뒤에 이유가 표시됩니다.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="템플릿-플로우">템플릿 플로우<a href="#템플릿-플로우" class="hash-link" aria-label="템플릿 플로우에 대한 직접 링크" title="템플릿 플로우에 대한 직접 링크" translate="no">​</a></h2>
 <p>템플릿 플로우는 모두가 복사해 쓸 수 있도록 공유된 플로우입니다. 새 플로우 만들기의 <strong>시작점</strong>에서 <strong>템플릿 플로우</strong>를 고르면 공유된 템플릿 수가 보이고, 고른 템플릿의 노드와 옵션을 그대로 복사해 새 플로우를 만듭니다. 원래 템플릿은 바뀌지 않습니다.</p>

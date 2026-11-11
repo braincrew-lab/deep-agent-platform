@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="ko" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-deep-docurator/case-contract-clauses" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.2">
+<title data-rh="true">Deep Docurator 사례: 계약서 핵심 조항 추출 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/case-contract-clauses/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Deep Docurator 사례: 계약서 핵심 조항 추출 | Deep Platform"><meta data-rh="true" name="description" content="브레인크루 AI혁신팀 김그루 사원은 협력사와 맺을 교육 콘텐츠 제작 용역계약서를 검토해야 합니다. 계약서 전체를 처음부터 읽기 전에, 조항마다 계약 금액·지급 조건·기한이 무엇인지 먼저 뽑아 보고 싶습니다. 이 사례는 입력 → 파싱 → 청킹 → 메타데이터 플로우로 조항별 핵심 값을 정리하는 방법을 보여 줍니다."><meta data-rh="true" property="og:description" content="브레인크루 AI혁신팀 김그루 사원은 협력사와 맺을 교육 콘텐츠 제작 용역계약서를 검토해야 합니다. 계약서 전체를 처음부터 읽기 전에, 조항마다 계약 금액·지급 조건·기한이 무엇인지 먼저 뽑아 보고 싶습니다. 이 사례는 입력 → 파싱 → 청킹 → 메타데이터 플로우로 조항별 핵심 값을 정리하는 방법을 보여 줍니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/case-contract-clauses/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/case-contract-clauses/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/case-contract-clauses/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"사례: 계약서 핵심 조항 추출","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/case-contract-clauses"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
+<script src="/deep-agent-platform/assets/js/runtime~main.37e9242b.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.89735666.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/deep-agent-platform/img/manual-mark.svg"><div role="region" aria-label="본문으로 건너뛰기"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">본문으로 건너뛰기</a></div><nav aria-label="메인" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="사이드바 펼치거나 접기" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/deep-agent-platform/"><div class="navbar__logo"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Deep Platform</b></a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">솔루션</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-flow/">Deep Flow</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-agent-builder/">Deep Agent Builder</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-connector/">Deep Connector</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/deep-agent-platform/docs/deep-docurator/">Deep Docurator</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/brain-parser/">Brain Parser</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work/">Deep Work</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work-gateway/">Deep Work Gateway</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-admin/">Deep Admin</a></li></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="어두운 모드와 밝은 모드 전환하기 (현재 system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="searchBar_fdyA"><input type="search" class="searchInput_JE4R" placeholder="매뉴얼 검색" aria-label="매뉴얼 검색" role="combobox" aria-autocomplete="list" aria-expanded="false" value=""><div role="status" aria-live="polite"></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="맨 위로 스크롤하기" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="문서 사이드바" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/"><span class="categoryLinkLabel_W154">소개</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/getting-started/"><span class="categoryLinkLabel_W154">시작하기</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/core-features/"><span class="categoryLinkLabel_W154">기능 안내</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/workflows/"><span class="categoryLinkLabel_W154">반복 업무</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/deep-agent-platform/docs/deep-docurator/use-cases/"><span class="categoryLinkLabel_W154">활용사례</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/use-cases/"><span class="linkLabel_WmDU">활용사례</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/case-contract-clauses/"><span class="linkLabel_WmDU">사례: 계약서 핵심 조항 추출</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/case-receipts-quotes/"><span class="linkLabel_WmDU">사례: 영수증·견적서 표 정리</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/case-report-summary/"><span class="linkLabel_WmDU">사례: 보고서 요약본 만들기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/case-meeting-minutes/"><span class="linkLabel_WmDU">사례: 회의록 표준 양식으로 정리</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/case-document-compare/"><span class="linkLabel_WmDU">사례: 여러 문서 비교표 만들기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/case-privacy-masking/"><span class="linkLabel_WmDU">사례: 고객 문의 기록 개인정보 가리기</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/troubleshooting/"><span class="categoryLinkLabel_W154">문제 해결</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="탐색 경로"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="홈" class="breadcrumbs__link" href="/deep-agent-platform/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">활용사례</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">사례: 계약서 핵심 조항 추출</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">이 페이지에서</button></div><div class="theme-doc-markdown markdown"><header><h1>Deep Docurator 사례: 계약서 핵심 조항 추출</h1></header>
+<p>브레인크루 AI혁신팀 김그루 사원은 협력사와 맺을 교육 콘텐츠 제작 용역계약서를 검토해야 합니다. 계약서 전체를 처음부터 읽기 전에, 조항마다 계약 금액·지급 조건·기한이 무엇인지 먼저 뽑아 보고 싶습니다. 이 사례는 입력 → 파싱 → 청킹 → 메타데이터 플로우로 조항별 핵심 값을 정리하는 방법을 보여 줍니다.</p>
+<p><strong>이 페이지에서 할 수 있는 일</strong></p>
+<ul>
+<li class="">내장 프리셋 기본 파이프라인 (단일)으로 계약서용 플로우를 만듭니다.</li>
+<li class="">청크를 조항 단위에 가깝게 나누도록 최대 청크 길이를 줄입니다.</li>
+<li class="">메타데이터 노드에 조항유형, 금액, 기한 필드를 더해 조항별 값을 뽑습니다.</li>
+<li class="">뽑은 값을 원문과 대조하는 기준을 익힙니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="목표">목표<a href="#목표" class="hash-link" aria-label="목표에 대한 직접 링크" title="목표에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>항목</th><th>내용</th></tr></thead><tbody><tr><td>하고 싶은 일</td><td>계약서에서 조항별 금액·지급 조건·기한을 빠르게 확인</td></tr><tr><td>결과물</td><td>청크(조항 묶음)마다 붙은 조항유형, 금액, 기한 값</td></tr><tr><td>노드 조합</td><td>입력 → 파싱 → 청킹 → 메타데이터</td></tr><tr><td>걸리는 시간</td><td>실행 1~2분, 검토 10분</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="준비물">준비물<a href="#준비물" class="hash-link" aria-label="준비물에 대한 직접 링크" title="준비물에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>항목</th><th>내용</th></tr></thead><tbody><tr><td>예시 파일</td><td>용역계약서-교육콘텐츠-제작.docx(37 KB, 제1조~제9조)</td></tr><tr><td>같은 내용의 다른 형식</td><td>용역계약서-교육콘텐츠-제작.pdf. pdf로 넣으면 원본 문서 보기에서 조항 위치를 함께 볼 수 있습니다.</td></tr><tr><td>넣을 수 있는 형식</td><td>pdf, doc, docx, hwp, hwpx, md, txt, html, htm, pptx, xlsx, csv, png, jpg, jpeg, tiff, tif, bmp, webp</td></tr><tr><td>예시 계약서 내용</td><td>제1조 목적, 제2조 계약 기간, 제3조 계약 금액과 지급 조건(4,800만원, 선금 30%, 잔금 70%), 제4조 납품과 검수, 제5조 지체상금, 제6조 비밀 유지, 제7조 지식재산권, 제8조 계약 해지, 제9조 분쟁 해결</td></tr></tbody></table>
+<p>예시 계약서의 회사명, 금액, 일정은 모두 가상입니다. 실제 계약서로 시험할 때는 상대방 정보와 금액을 지운 사본을 씁니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1단계-플로우-만들고-계약서-넣기">1단계. 플로우 만들고 계약서 넣기<a href="#1단계-플로우-만들고-계약서-넣기" class="hash-link" aria-label="1단계. 플로우 만들고 계약서 넣기에 대한 직접 링크" title="1단계. 플로우 만들고 계약서 넣기에 대한 직접 링크" translate="no">​</a></h2>
+<ol>
+<li class="">사이드바 최근 플로우 줄에 마우스를 올리면 보이는 + 버튼을 누릅니다.</li>
+<li class=""><strong>이름</strong>에 &quot;교육 콘텐츠 용역계약서 조항 추출&quot;을 입력합니다.</li>
+<li class="">시작점에서 <strong>프리셋</strong>을 고르고 &quot;내장: 기본 파이프라인 (단일)&quot;을 고릅니다. <strong>프리셋 미리보기</strong>에 입력 → 파싱 → 청킹 → 메타데이터, 노드 4개가 보입니다.</li>
+<li class=""><strong>플로우 만들기</strong>를 누릅니다.</li>
+<li class="">입력 노드를 누르고 <strong>옵션 &amp; 미리보기</strong> 탭에서 계약서 파일을 올립니다. <strong>입력 파일</strong>에 DOCX / 37 KB가 보이는지 확인합니다.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2단계-조항-단위로-나누기">2단계. 조항 단위로 나누기<a href="#2단계-조항-단위로-나누기" class="hash-link" aria-label="2단계. 조항 단위로 나누기에 대한 직접 링크" title="2단계. 조항 단위로 나누기에 대한 직접 링크" translate="no">​</a></h2>
+<p>조항 하나하나가 짧은 계약서는 처음 값(최대 청크 길이 1000)으로 나누면 여러 조항이 한 청크에 섞입니다. 조항별 값을 뽑으려면 청크를 작게 만듭니다.</p>
+<ol>
+<li class="">청킹 노드를 누르고 <strong>설정</strong> 탭에서 <strong>고급 설정</strong>을 펼칩니다.</li>
+<li class="">**최대 청크 길이 (글자)**를 400으로, **최대 목표 겹침 (글자 수)**을 50으로 바꿉니다.</li>
+</ol>
+<p><span class="manual-shot" role="figure" aria-label="계약서 플로우 구성"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/case-contract-setup-e882e321aa615159135611bea9861edc.png" target="_blank" rel="noopener"><img width="2112" height="660" src="/deep-agent-platform/assets/images/case-contract-setup-e882e321aa615159135611bea9861edc.png" alt="입력 노드에 계약서, 청킹 노드에 400·50, 메타데이터 노드에 필드 목록이 보이는 편집기" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">계약서 플로우 구성</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>화면에 보이는 내용</th><th>확인할 것</th></tr></thead><tbody><tr><td>1</td><td>입력 노드</td><td>용역계약서-교육콘텐츠-제작.docx, 37 KB</td><td>계약서 파일이 맞는지</td></tr><tr><td>2</td><td>청킹 노드</td><td>재귀 (마크다운 인식), 청크 크기 400, 청크 겹침 50(설정 탭의 최대 청크 길이·최대 목표 겹침)</td><td>바꾼 값이 노드에 반영됐는지</td></tr><tr><td>3</td><td>메타데이터 노드</td><td>필드 목록: title, summary, keywords, 조항유형, 금액, 기한</td><td>3단계에서 더한 필드가 보이는지</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3단계-뽑을-항목-정하기">3단계. 뽑을 항목 정하기<a href="#3단계-뽑을-항목-정하기" class="hash-link" aria-label="3단계. 뽑을 항목 정하기에 대한 직접 링크" title="3단계. 뽑을 항목 정하기에 대한 직접 링크" translate="no">​</a></h2>
+<ol>
+<li class="">메타데이터 노드를 누르고 <strong>설정</strong> 탭에서 <strong>고급 설정</strong>을 펼칩니다.</li>
+<li class=""><strong>추출 필드</strong> 아래 처음 들어 있는 필드 가운데 category는 이 사례에 필요 없으므로 지웁니다.</li>
+<li class=""><strong>필드 추가</strong>를 눌러 아래 세 필드를 만듭니다. 타입은 모두 문자열입니다.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>필드 이름</th><th>설명(모델이 읽는 기준)</th></tr></thead><tbody><tr><td>조항유형</td><td>조항의 종류. 목적, 계약기간, 금액·지급, 납품·검수, 지체상금, 비밀유지, 지식재산권, 해지, 분쟁 중 하나</td></tr><tr><td>금액</td><td>조항에 나온 금액과 비율을 원문 그대로. 없으면 비움</td></tr><tr><td>기한</td><td>조항에 나온 날짜·기간·기한을 원문 그대로. 없으면 비움</td></tr></tbody></table>
+<p><span class="manual-shot" role="figure" aria-label="메타데이터 추출 필드 설정"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/case-contract-fields-9b90b12855a3c03154d012251f4f31a7.png" target="_blank" rel="noopener"><img width="1312" height="1508" src="/deep-agent-platform/assets/images/case-contract-fields-9b90b12855a3c03154d012251f4f31a7.png" alt="추출 필드에 조항유형, 금액, 기한을 더한 메타데이터 노드 설정 탭" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">메타데이터 추출 필드 설정</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>화면에 보이는 내용</th><th>확인할 것</th></tr></thead><tbody><tr><td>1</td><td>조항유형 필드 이름</td><td>조항유형. 옆에 타입(문자열), 아래 줄에 설명과 허용 값(자유값)이 있습니다.</td><td>값의 표현을 통일하고 싶으면 허용 값에 목록을 넣습니다</td></tr><tr><td>2</td><td>금액 필드 이름</td><td>금액. 설명에 &quot;원문 그대로&quot;와 &quot;없으면 비움&quot;을 적었습니다.</td><td>모델이 값을 지어내지 않도록 기준을 적습니다</td></tr><tr><td>3</td><td>기한 필드 이름</td><td>기한. 설명은 날짜·기간·기한을 원문 그대로 적게 합니다.</td><td>설명이 구체적인지 봅니다</td></tr><tr><td>4</td><td><strong>필드 추가</strong></td><td>새 필드 줄을 만듭니다.</td><td>뽑을 항목을 더할 때</td></tr></tbody></table>
+<p>필드 목록은 <strong>설정</strong> 탭의 <strong>고급 설정</strong>을 펼쳐야 보입니다. 필요 없는 필드는 줄 오른쪽 ✕(제거)로 지웁니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4단계-실행하고-결과-읽기">4단계. 실행하고 결과 읽기<a href="#4단계-실행하고-결과-읽기" class="hash-link" aria-label="4단계. 실행하고 결과 읽기에 대한 직접 링크" title="4단계. 실행하고 결과 읽기에 대한 직접 링크" translate="no">​</a></h2>
+<ol>
+<li class="">위쪽 <strong>파이프라인 실행</strong>을 누릅니다. 예시에서는 파싱 21 블록 / 1 페이지, 청킹 4 청크(평균 271 자), 메타데이터 4/4 보강까지 1~2분 걸렸습니다.</li>
+<li class="">메타데이터 노드를 누르고 <strong>옵션 &amp; 미리보기</strong> 탭을 엽니다.</li>
+<li class="">필드별 채움 현황과 청크별 값을 읽습니다.</li>
+</ol>
+<p><span class="manual-shot" role="figure" aria-label="조항별로 뽑은 메타데이터"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/case-contract-metadata-b6cf7151c4e7eb6948f2888924c73e58.png" target="_blank" rel="noopener"><img width="1312" height="1200" src="/deep-agent-platform/assets/images/case-contract-metadata-b6cf7151c4e7eb6948f2888924c73e58.png" alt="필드별 채움 현황과 2번 청크의 조항유형·금액·기한 값이 보이는 메타데이터 결과" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">조항별로 뽑은 메타데이터</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>화면에 보이는 내용</th><th>확인할 것</th></tr></thead><tbody><tr><td>1</td><td>청크 칸</td><td>네 칸 가운데 2번째를 고른 상태</td><td>칸을 차례로 눌러 청크마다 값을 봅니다</td></tr><tr><td>2</td><td>조항유형</td><td>금액·지급</td><td>2번 청크가 제3조인지</td></tr><tr><td>3</td><td>금액</td><td>4,800만원, 1,440만원, 3,360만원</td><td>원문 제3조와 숫자가 같은지</td></tr><tr><td>4</td><td>기한</td><td>계약 체결 후 14일 이내, 최종 검수 완료 후 30일 이내</td><td>원문의 지급 기한과 같은지</td></tr></tbody></table>
+<p>결과 화면 위쪽에는 필드별 채움 현황(예: 조항유형 4/4, 금액 1/4, 기한 3/4)이 보이고, 청크 칸을 누르면 그 청크의 값 전체가 보입니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="결과물-예시">결과물 예시<a href="#결과물-예시" class="hash-link" aria-label="결과물 예시에 대한 직접 링크" title="결과물 예시에 대한 직접 링크" translate="no">​</a></h2>
+<p>예시 실행에서 뽑힌 값을 조항별로 옮겨 적으면 다음과 같습니다. 화면에는 표로 모아 내려받는 메뉴가 없으므로, 필요한 값은 메타데이터 결과에서 확인해 옮겨 적습니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>청크</th><th>첫 조항 제목</th><th>조항유형</th><th>금액</th><th>기한</th></tr></thead><tbody><tr><td>1</td><td>계약서 제목과 제1조·제2조</td><td>목적</td><td>(비움)</td><td>2026년 12월 1일부터 2027년 3월 31일까지</td></tr><tr><td>2</td><td>제3조 (계약 금액과 지급 조건)</td><td>금액·지급</td><td>4,800만원, 1,440만원, 3,360만원</td><td>계약 체결 후 14일 이내, 최종 검수 완료 후 30일 이내</td></tr><tr><td>3</td><td>제6조 (비밀 유지)</td><td>비밀유지</td><td>(비움)</td><td>계약 종료 후 3년간</td></tr><tr><td>4</td><td>제9조 (분쟁 해결)</td><td>분쟁</td><td>(비움)</td><td>(비움)</td></tr></tbody></table>
+<p>청크 하나에 여러 조항이 들어가면 값은 그 청크의 대표 조항 기준으로 하나만 붙습니다. 예시의 2번 청크에는 제3조~제5조가 함께 들어 있어, 제5조 지체상금(1일 0.1%, 최대 10%)은 금액 필드에 따로 나오지 않았습니다. 조항마다 값을 빠짐없이 받으려면 최대 청크 길이를 더 줄이거나, 청크 본문을 함께 읽어 보완합니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="검토-기준">검토 기준<a href="#검토-기준" class="hash-link" aria-label="검토 기준에 대한 직접 링크" title="검토 기준에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>확인 질문</th><th>검토 방법</th></tr></thead><tbody><tr><td>금액이 원문과 같은가요?</td><td>메타데이터의 금액을 원문 제3조와 한 글자씩 대조합니다.</td></tr><tr><td>비율이 빠지지 않았나요?</td><td>예시 실행에서는 금액만 뽑히고 30%, 70% 같은 비율은 빠지기도 했습니다. 비율이 필요하면 금액 필드 설명에 &quot;비율도 함께&quot;를 적습니다.</td></tr><tr><td>비어 있는 값이 맞게 비었나요?</td><td>금액이 빈 청크의 본문에 실제로 금액이 없는지 봅니다.</td></tr><tr><td>빠진 조항이 없나요?</td><td>청크 본문을 앞뒤로 넘기며 제1조부터 제9조까지 모두 있는지 봅니다.</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="응용-팁">응용 팁<a href="#응용-팁" class="hash-link" aria-label="응용 팁에 대한 직접 링크" title="응용 팁에 대한 직접 링크" translate="no">​</a></h2>
+<ul>
+<li class="">조항유형을 검색 필터로 쓰려면 <strong>허용 값</strong>에 고를 값 목록을 넣습니다. 허용 값이 없으면 자유 값이 되어 필터에 쓰이지 않습니다.</li>
+<li class="">조항 제목이 &quot;제N조&quot; 형식으로 일정하면 목차 노드를 파싱 다음에 넣고 <strong>목차 구조 예시</strong>에 &quot;L1 계약서 제목&quot;, &quot;L2 제N조 조항 제목&quot;을 한 줄에 하나씩을 적어 비교해 봅니다.</li>
+<li class="">상대방 이름이나 연락처가 들어 있는 계약서는 청킹 다음에 PII 노드를 넣어 가린 뒤 메타데이터를 뽑습니다.</li>
+<li class="">검토를 마친 구성은 <strong>프리셋으로 저장</strong>해 &quot;계약서 조항 추출 v1&quot;처럼 이름을 붙여 다음 계약서에도 씁니다.</li>
+<li class="">docx처럼 PDF가 아닌 파일은 청킹 노드에 원본 좌표가 없다는 경고가 붙을 수 있습니다. 결과에는 영향이 없으며, 원본 위치 강조만 쓸 수 없습니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="다음-문서">다음 문서<a href="#다음-문서" class="hash-link" aria-label="다음 문서에 대한 직접 링크" title="다음 문서에 대한 직접 링크" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-docurator/case-receipts-quotes/">영수증·견적서 표 정리</a> — 표를 행 단위로 나누는 사례</li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-docurator/node-guide/">노드 안내</a> — 메타데이터 노드의 옵션</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/deep-agent-platform/docs/deep-docurator/use-cases/"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">활용사례</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/deep-agent-platform/docs/deep-docurator/case-receipts-quotes/"><div class="pagination-nav__sublabel">다음</div><div class="pagination-nav__label">사례: 영수증·견적서 표 정리</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#목표" class="table-of-contents__link toc-highlight">목표</a></li><li><a href="#준비물" class="table-of-contents__link toc-highlight">준비물</a></li><li><a href="#1단계-플로우-만들고-계약서-넣기" class="table-of-contents__link toc-highlight">1단계. 플로우 만들고 계약서 넣기</a></li><li><a href="#2단계-조항-단위로-나누기" class="table-of-contents__link toc-highlight">2단계. 조항 단위로 나누기</a></li><li><a href="#3단계-뽑을-항목-정하기" class="table-of-contents__link toc-highlight">3단계. 뽑을 항목 정하기</a></li><li><a href="#4단계-실행하고-결과-읽기" class="table-of-contents__link toc-highlight">4단계. 실행하고 결과 읽기</a></li><li><a href="#결과물-예시" class="table-of-contents__link toc-highlight">결과물 예시</a></li><li><a href="#검토-기준" class="table-of-contents__link toc-highlight">검토 기준</a></li><li><a href="#응용-팁" class="table-of-contents__link toc-highlight">응용 팁</a></li><li><a href="#다음-문서" class="table-of-contents__link toc-highlight">다음 문서</a></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>

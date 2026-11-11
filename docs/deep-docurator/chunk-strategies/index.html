@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">Deep Docurator 청킹 전략과 옵션 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/chunk-strategies/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Deep Docurator 청킹 전략과 옵션 | Deep Platform"><meta data-rh="true" name="description" content="청킹 노드는 파싱 결과를 검색과 답변에 쓰기 좋은 크기의 조각으로 나눕니다. 같은 문서라도 전략과 크기에 따라 조각의 경계가 달라지고, 그 경계가 에이전트가 찾는 근거의 모양을 정합니다. 이 페이지는 청킹 노드의 전략 14가지와 자주 바꾸는 옵션, 전략을 고르는 기준을 설명합니다."><meta data-rh="true" property="og:description" content="청킹 노드는 파싱 결과를 검색과 답변에 쓰기 좋은 크기의 조각으로 나눕니다. 같은 문서라도 전략과 크기에 따라 조각의 경계가 달라지고, 그 경계가 에이전트가 찾는 근거의 모양을 정합니다. 이 페이지는 청킹 노드의 전략 14가지와 자주 바꾸는 옵션, 전략을 고르는 기준을 설명합니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/chunk-strategies/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/chunk-strategies/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/chunk-strategies/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"청킹 전략과 옵션","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/chunk-strategies"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
-<script src="/deep-agent-platform/assets/js/runtime~main.3cbeb1c1.js" defer="defer"></script>
-<script src="/deep-agent-platform/assets/js/main.781f3454.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/runtime~main.37e9242b.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.89735666.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -21,7 +21,66 @@
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="옵션을-여는-곳">옵션을 여는 곳<a href="#옵션을-여는-곳" class="hash-link" aria-label="옵션을 여는 곳에 대한 직접 링크" title="옵션을 여는 곳에 대한 직접 링크" translate="no">​</a></h2>
 <p>캔버스에서 청킹 노드를 누르고 작업 사이드바의 <strong>설정</strong> 탭을 엽니다. <strong>처리 옵션</strong>에서 <strong>전략</strong>을 고르고, 고른 전략의 세부 옵션은 아래 <strong>고급 설정</strong>을 눌러 펼치면 나타납니다. 전략을 바꾸면 보이는 옵션도 바뀌므로, 바꾼 뒤에는 고급 설정의 값을 다시 확인하고 실행합니다.</p>
-<p><strong>전략</strong> 위에는 입력 파일의 <strong>문서 유형</strong>(문서, 슬라이드, 엑셀)이 표시됩니다. 이 표시는 안내용이며, 전략 목록을 좁히거나 바꾸지 않습니다.</p>
+<p><strong>전략</strong> 위에는 입력 파일의 <strong>문서 유형</strong>(Document, Slide, Excel)이 표시됩니다. 이 표시는 안내용이며, 전략 목록을 좁히거나 바꾸지 않습니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="청킹 노드의 처리 옵션"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/chunk-strategies-options-3eefad40352f3f7abd53fef53fc740c4.png" target="_blank" rel="noopener"><img width="1312" height="1200" src="/deep-agent-platform/assets/images/chunk-strategies-options-3eefad40352f3f7abd53fef53fc740c4.png" alt="전략, 고급 설정, 최대 청크 길이, 최소 청크 크기, 최대 목표 겹침, 구분자 우선순위가 보이는 청킹 노드 설정 탭" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">청킹 노드의 처리 옵션</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>전략</strong></td><td>나누는 방식을 고릅니다. 처음 값은 재귀 (마크다운 인식)입니다.</td><td>문서 종류에 맞는 방식으로 바꿀 때</td></tr><tr><td>2</td><td><strong>고급 설정</strong></td><td>고른 전략의 세부 옵션을 펼치거나 접습니다.</td><td>크기와 겹침을 바꿀 때</td></tr><tr><td>3</td><td><strong>최대 청크 길이 (글자)</strong></td><td>청크 하나가 넘지 않을 글자 수입니다.</td><td>청크를 더 잘게 또는 크게 나눌 때</td></tr><tr><td>4</td><td><strong>최대 목표 겹침 (글자 수)</strong></td><td>이웃한 청크가 겹쳐 담을 글자 수의 상한입니다.</td><td>문장이 경계에서 잘릴 때</td></tr></tbody></table>
+<p>화면에 번호를 붙이지 않은 그 밖의 메뉴는 다음과 같습니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td><strong>최소 청크 크기 (글자)</strong></td><td>이보다 짧은 청크를 이웃과 합칩니다. 0이면 쓰지 않습니다.</td><td>제목만 있는 짧은 청크가 많을 때</td></tr><tr><td><strong>구분자 우선순위</strong></td><td>자를 때 먼저 볼 구분자 순서입니다. 화살표로 순서를 바꾸고 ×로 뺍니다.</td><td>특별한 안내가 있을 때만 바꿉니다</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="문서용-전략">문서용 전략<a href="#문서용-전략" class="hash-link" aria-label="문서용 전략에 대한 직접 링크" title="문서용 전략에 대한 직접 링크" translate="no">​</a></h2>
 <p>보고서, 계약서, 회의록처럼 글이 중심인 문서에 씁니다.</p>
 
@@ -241,7 +300,7 @@
 <ol>
 <li class=""><a class="" href="/deep-agent-platform/docs/deep-docurator/getting-started/">시작하기</a>에서 만든 플로우를 엽니다.</li>
 <li class="">청킹 노드를 누르고 <strong>설정</strong> 탭에서 <strong>고급 설정</strong>을 펼친 뒤 **최대 청크 길이 (글자)**를 1000에서 500으로 바꿉니다.</li>
-<li class=""><strong>파이프라인 실행</strong>을 누르고 청킹 노드의 청크 수가 어떻게 바뀌는지 봅니다.</li>
+<li class="">▶(<strong>파이프라인 실행</strong>) 버튼을 누르고 청킹 노드의 청크 수가 어떻게 바뀌는지 봅니다.</li>
 <li class="">청크 본문을 앞뒤로 읽어 문장이 중간에 잘리지 않았는지 확인합니다.</li>
 <li class="">비교가 끝나면 값을 1000으로 되돌리거나, 더 나은 값을 <a class="" href="/deep-agent-platform/docs/deep-docurator/presets/">프리셋</a>으로 저장합니다.</li>
 </ol>

@@ -3,30 +3,226 @@
 <head>
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
-<title data-rh="true">Deep Docurator 시작하기 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/getting-started/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Deep Docurator 시작하기 | Deep Platform"><meta data-rh="true" name="description" content="첫 목표와 준비물"><meta data-rh="true" property="og:description" content="첫 목표와 준비물"><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/getting-started/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/getting-started/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/getting-started/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"시작하기","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/getting-started"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
-<script src="/deep-agent-platform/assets/js/runtime~main.3cbeb1c1.js" defer="defer"></script>
-<script src="/deep-agent-platform/assets/js/main.781f3454.js" defer="defer"></script>
+<title data-rh="true">Deep Docurator 시작하기 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/getting-started/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Deep Docurator 시작하기 | Deep Platform"><meta data-rh="true" name="description" content="이 페이지는 보고서 PDF 한 개를 Deep Docurator에 넣고, 파싱 결과와 청크 결과를 읽는 데까지 화면 순서대로 안내합니다. 예시는 브레인크루 AI혁신팀 김그루 사원이 만든 가상 보고서 &quot;보고서-3분기-AI활용현황.pdf&quot;(1쪽)입니다. 따라 하는 데 10분 정도 걸립니다."><meta data-rh="true" property="og:description" content="이 페이지는 보고서 PDF 한 개를 Deep Docurator에 넣고, 파싱 결과와 청크 결과를 읽는 데까지 화면 순서대로 안내합니다. 예시는 브레인크루 AI혁신팀 김그루 사원이 만든 가상 보고서 &quot;보고서-3분기-AI활용현황.pdf&quot;(1쪽)입니다. 따라 하는 데 10분 정도 걸립니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/getting-started/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/getting-started/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/getting-started/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"시작하기","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/getting-started"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
+<script src="/deep-agent-platform/assets/js/runtime~main.37e9242b.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.89735666.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
 <symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
 </defs></svg>
 <script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/deep-agent-platform/img/manual-mark.svg"><div role="region" aria-label="본문으로 건너뛰기"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">본문으로 건너뛰기</a></div><nav aria-label="메인" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="사이드바 펼치거나 접기" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/deep-agent-platform/"><div class="navbar__logo"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Deep Platform</b></a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">솔루션</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-flow/">Deep Flow</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-agent-builder/">Deep Agent Builder</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-connector/">Deep Connector</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/deep-agent-platform/docs/deep-docurator/">Deep Docurator</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/brain-parser/">Brain Parser</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work/">Deep Work</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work-gateway/">Deep Work Gateway</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-admin/">Deep Admin</a></li></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="어두운 모드와 밝은 모드 전환하기 (현재 system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="searchBar_fdyA"><input type="search" class="searchInput_JE4R" placeholder="매뉴얼 검색" aria-label="매뉴얼 검색" role="combobox" aria-autocomplete="list" aria-expanded="false" value=""><div role="status" aria-live="polite"></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="맨 위로 스크롤하기" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="문서 사이드바" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/"><span class="categoryLinkLabel_W154">소개</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/deep-agent-platform/docs/deep-docurator/getting-started/"><span class="categoryLinkLabel_W154">시작하기</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/getting-started/"><span class="linkLabel_WmDU">시작하기</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/core-features/"><span class="categoryLinkLabel_W154">기능 안내</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/workflows/"><span class="categoryLinkLabel_W154">반복 업무</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/use-cases/"><span class="categoryLinkLabel_W154">활용사례</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/troubleshooting/"><span class="categoryLinkLabel_W154">문제 해결</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="탐색 경로"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="홈" class="breadcrumbs__link" href="/deep-agent-platform/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">시작하기</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">시작하기</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">이 페이지에서</button></div><div class="theme-doc-markdown markdown"><header><h1>Deep Docurator 시작하기</h1></header>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="첫-목표와-준비물">첫 목표와 준비물<a href="#첫-목표와-준비물" class="hash-link" aria-label="첫 목표와 준비물에 대한 직접 링크" title="첫 목표와 준비물에 대한 직접 링크" translate="no">​</a></h2>
-<p>한 페이지 PDF를 입력 → 파싱 → 청킹으로 처리하고, 만들어진 청크에서 예약과 취소 조건을 읽는 과정입니다. 문서 작성 도구로 제목을 회의실 안내로 정하고 “예약은 이용 전날까지 신청합니다. 취소는 이용 시작 두 시간 전까지 신청합니다.”를 넣어 PDF로 준비하세요. 실제 업무 규정이 아닌 연습 자료입니다.</p>
-<p>파싱 서비스를 사용할 수 있는 계정 설정을 준비합니다. 설정 담당자가 따로 있다면 시작 전에 확인하세요. 본문의 청크 크기와 겹침은 연습용 값이며, 모든 문서에 최적인 값이라는 뜻은 아닙니다.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-빈-파이프라인에-노드-놓기">1. 빈 파이프라인에 노드 놓기<a href="#1-빈-파이프라인에-노드-놓기" class="hash-link" aria-label="1. 빈 파이프라인에 노드 놓기에 대한 직접 링크" title="1. 빈 파이프라인에 노드 놓기에 대한 직접 링크" translate="no">​</a></h2>
+<p>이 페이지는 보고서 PDF 한 개를 Deep Docurator에 넣고, 파싱 결과와 청크 결과를 읽는 데까지 화면 순서대로 안내합니다. 예시는 브레인크루 AI혁신팀 김그루 사원이 만든 가상 보고서 &quot;보고서-3분기-AI활용현황.pdf&quot;(1쪽)입니다. 따라 하는 데 10분 정도 걸립니다.</p>
+<p><strong>이 페이지에서 할 수 있는 일</strong></p>
+<ul>
+<li class="">첫 화면과 왼쪽 사이드바 메뉴를 구별합니다.</li>
+<li class="">내장 프리셋 파싱 &amp; 청킹으로 입력 → 파싱 → 청킹 플로우를 만듭니다.</li>
+<li class="">입력 노드에 PDF를 넣고 파이프라인을 실행합니다.</li>
+<li class="">파싱 결과에서 원문이 빠짐없이 읽혔는지, 청크 결과에서 내용이 끊기지 않았는지 확인합니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="준비물">준비물<a href="#준비물" class="hash-link" aria-label="준비물에 대한 직접 링크" title="준비물에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>항목</th><th>내용</th></tr></thead><tbody><tr><td>계정</td><td>Deep Docurator에 로그인할 수 있는 계정</td></tr><tr><td>연습 파일</td><td>글자로 작성한 1~3쪽 PDF 한 개. 예시는 요약, 부서별 사용 현황 표, 성과, 문제점, 4분기 계획 다섯 절로 된 보고서입니다.</td></tr><tr><td>다른 형식</td><td>pdf 대신 doc, docx, hwp, hwpx, pptx, xlsx, csv, txt, md, html, htm, png, jpg, jpeg, tiff, tif, bmp, webp도 넣을 수 있습니다. 처음에는 원본 대조가 쉬운 pdf를 권합니다.</td></tr></tbody></table>
+<p>실제 고객 정보나 영업 비밀이 들어 있는 문서는 연습에 쓰지 않습니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-첫-화면-살펴보기">1. 첫 화면 살펴보기<a href="#1-첫-화면-살펴보기" class="hash-link" aria-label="1. 첫 화면 살펴보기에 대한 직접 링크" title="1. 첫 화면 살펴보기에 대한 직접 링크" translate="no">​</a></h2>
+<p>Deep Docurator 주소로 접속해 로그인하면 지식 그래프 화면이 열립니다. 왼쪽 사이드바에서 플로우를 만들고 여는 것이 모든 작업의 출발점입니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="지식 그래프 첫 화면"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/getting-started-home-d3841b041fc5407ef53e7c85cc350491.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/getting-started-home-d3841b041fc5407ef53e7c85cc350491.png" alt="번호로 표시한 Deep Docurator 첫 화면과 사이드바" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">지식 그래프 첫 화면</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>검색</strong></td><td>플로우와 작업으로 바로 이동하는 검색 창을 엽니다. 키보드로는 ⌘K입니다.</td><td>지난주에 만든 플로우를 이름으로 열 때</td></tr><tr><td>2</td><td><strong>플로우</strong></td><td>플로우 목록을 엽니다. 오른쪽 숫자는 템플릿을 뺀 플로우 개수입니다.</td><td>모든 플로우를 훑어볼 때</td></tr><tr><td>3</td><td>새 파이프라인(+)</td><td>새 플로우 만들기 화면을 엽니다. 최근 플로우 줄에 마우스를 올리면 보입니다.</td><td>새 문서용 처리 흐름을 만들 때</td></tr><tr><td>4</td><td><strong>설정</strong></td><td>프리셋을 관리하는 설정 화면을 엽니다.</td><td>저장한 프리셋을 정리하거나 내보낼 때</td></tr></tbody></table>
+<p>화면에 번호를 붙이지 않은 그 밖의 메뉴는 다음과 같습니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>사이드바 접기</td><td>왼쪽 사이드바를 접어 작업 공간을 넓힙니다.</td><td>노드가 많은 플로우를 넓게 볼 때</td></tr><tr><td><strong>지식 그래프</strong></td><td>지금 보고 있는 첫 화면으로 돌아옵니다.</td><td>다른 화면에서 첫 화면으로 돌아올 때</td></tr><tr><td>최근 플로우 접기</td><td>아래 최근 플로우 목록을 접거나 펼칩니다.</td><td>사이드바를 짧게 정리할 때</td></tr><tr><td>최근 플로우 항목</td><td>최근에 고친 플로우 이름과 수정 시각입니다. 누르면 편집기가 열립니다.</td><td>어제 작업하던 플로우를 이어서 열 때</td></tr><tr><td><strong>모든 플로우 보기</strong></td><td>플로우 목록 화면으로 이동합니다.</td><td>최근 목록에 없는 플로우를 찾을 때</td></tr><tr><td>언어 전환(<strong>한국어</strong>)</td><td>화면 언어를 영어로 바꿉니다. 다시 누르면 한국어로 돌아옵니다.</td><td>영문 화면으로 볼 때</td></tr><tr><td><strong>저장된 파이프라인</strong></td><td>내가 저장한 파이프라인 프리셋이 보입니다. 처음에는 &quot;저장된 파이프라인이 없습니다.&quot;가 보입니다.</td><td>저장한 구성을 확인할 때</td></tr><tr><td><strong>최근 업데이트</strong></td><td>제품 버전별 변경 내용이 날짜와 함께 보입니다.</td><td>어떤 기능이 추가됐는지 볼 때</td></tr></tbody></table>
+<p>가운데 그래프는 문서 처리 경험을 쌓아 보여 주는 보기 전용 화면입니다. 이 매뉴얼은 플로우 화면을 중심으로 설명합니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-새-플로우-만들기">2. 새 플로우 만들기<a href="#2-새-플로우-만들기" class="hash-link" aria-label="2. 새 플로우 만들기에 대한 직접 링크" title="2. 새 플로우 만들기에 대한 직접 링크" translate="no">​</a></h2>
+<p>사이드바 최근 플로우 줄의 + 버튼이나 플로우 목록의 <strong>새로 만들기</strong>를 누르면 새 플로우 만들기 화면이 열립니다. 처음에는 내장 프리셋 파싱 &amp; 청킹으로 시작하세요. 입력·파싱·청킹 세 노드가 이미 연결된 상태로 편집기가 열립니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="새 플로우 만들기 화면"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/getting-started-new-flow-98a414ac72ec11726c517aaac2b1adec.png" target="_blank" rel="noopener"><img width="2080" height="1120" src="/deep-agent-platform/assets/images/getting-started-new-flow-98a414ac72ec11726c517aaac2b1adec.png" alt="이름, 설명, 시작점, 프리셋 미리보기가 보이는 새 플로우 만들기 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">새 플로우 만들기 화면</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>이름</strong></td><td>플로우 이름을 입력합니다. 필수이며 최대 120자입니다.</td><td>문서 종류와 처리 내용을 이름에 담을 때</td></tr><tr><td>2</td><td><strong>프리셋</strong></td><td>미리 구성된 노드 묶음으로 시작합니다. 내장 프리셋 수와 내 프리셋 수가 보입니다.</td><td>처음 플로우를 만들거나 저장한 구성을 쓸 때</td></tr><tr><td>3</td><td>프리셋 선택 상자</td><td>쓸 프리셋을 고릅니다. 내장 프리셋은 &quot;내장:&quot;이 앞에 붙습니다.</td><td>필요한 단계만 있는 구성을 고를 때</td></tr><tr><td>4</td><td><strong>플로우 만들기</strong></td><td>입력한 내용으로 플로우를 만들고 편집기를 엽니다.</td><td>이름과 시작점을 다 정했을 때</td></tr></tbody></table>
+<p>화면에 번호를 붙이지 않은 그 밖의 메뉴는 다음과 같습니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td><strong>설명</strong></td><td>플로우의 용도를 한 줄로 적습니다. 선택 항목입니다.</td><td>결과를 어디에 쓸지 메모할 때</td></tr><tr><td><strong>빈 캔버스</strong></td><td>노드 없이 시작합니다.</td><td>노드를 하나씩 직접 놓고 싶을 때</td></tr><tr><td><strong>템플릿 플로우</strong></td><td>공유된 템플릿 플로우를 복사해 시작합니다.</td><td>공유 템플릿이 있을 때</td></tr><tr><td><strong>프리셋 미리보기</strong></td><td>고른 프리셋의 노드 순서와 노드 수를 보여 줍니다.</td><td>만들기 전에 어떤 노드가 들어오는지 확인할 때</td></tr><tr><td><strong>취소</strong></td><td>만들지 않고 이전 화면으로 돌아갑니다.</td><td>이름을 다시 정하고 싶을 때</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="따라-해-보기">따라 해 보기<a href="#따라-해-보기" class="hash-link" aria-label="따라 해 보기에 대한 직접 링크" title="따라 해 보기에 대한 직접 링크" translate="no">​</a></h3>
 <ol>
-<li class="">플로우 목록 상단의 새로 만들기를 누릅니다. 이름을 입력하고 시작점을 빈 캔버스로 둔 뒤 플로우 만들기를 누르면 편집기가 열립니다.</li>
-<li class="">왼쪽 컴포넌트 패널에서 입력, 파싱, 청킹을 하나씩 작업 공간으로 끌어 놓습니다. 패널이 닫혀 있으면 컴포넌트 열기를 사용합니다.</li>
-<li class="">입력을 왼쪽, 파싱을 가운데, 청킹을 오른쪽에 배치합니다.</li>
-<li class="">입력 노드 오른쪽 연결점에서 파싱 노드 왼쪽 연결점으로 끌어 연결합니다. 이어서 파싱 오른쪽에서 청킹 왼쪽으로 연결합니다.</li>
-<li class="">연결선이 두 개이며 입력 → 파싱 → 청킹의 순서가 이어지는지 확인합니다.</li>
+<li class=""><strong>이름</strong>에 &quot;3분기 AI 활용 현황 보고서 파싱·청킹&quot;을 입력합니다. 위 그림의 이름은 다른 이름을 적은 예시입니다.</li>
+<li class=""><strong>설명</strong>에 &quot;보고서 PDF를 읽어 장별 청크로 나누고 지식 검색에 쓰는 처리 흐름&quot;을 입력합니다.</li>
+<li class="">시작점에서 <strong>프리셋</strong>을 누르고, 프리셋 선택 상자에서 &quot;내장: 파싱 &amp; 청킹&quot;을 고릅니다.</li>
+<li class=""><strong>프리셋 미리보기</strong>에 입력 → 파싱 → 청킹, 노드 3개가 보이는지 확인합니다.</li>
+<li class=""><strong>플로우 만들기</strong>를 누릅니다.</li>
 </ol>
-<p>이 과정에서 시맨틱 태그나 평가 노드는 추가하지 않아도 됩니다. 먼저 세 노드만으로 원하는 결과를 확인하세요.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-파일과-분할-조건-입력하기">2. 파일과 분할 조건 입력하기<a href="#2-파일과-분할-조건-입력하기" class="hash-link" aria-label="2. 파일과 분할 조건 입력하기에 대한 직접 링크" title="2. 파일과 분할 조건 입력하기에 대한 직접 링크" translate="no">​</a></h2>
-<p>입력 노드를 열어 파일 선택 영역을 클릭하거나 파일을 끌어 놓습니다. 준비한 PDF의 이름과 용량이 표시되는지 확인하세요. 파일이 지정되지 않은 채로 다음 단계에 넘어가지 않습니다.</p>
-<p>파싱 노드에서는 프로바이더가 사용할 서비스로 설정되어 있는지 확인합니다. 청킹 노드를 열고 옵션에서 다음 값을 확인하거나 입력합니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-입력-노드에-파일-넣기">3. 입력 노드에 파일 넣기<a href="#3-입력-노드에-파일-넣기" class="hash-link" aria-label="3. 입력 노드에 파일 넣기에 대한 직접 링크" title="3. 입력 노드에 파일 넣기에 대한 직접 링크" translate="no">​</a></h2>
+<p>편집기가 열리면 입력 노드를 눌러 오른쪽 작업 사이드바를 엽니다. 여기서 처리할 파일을 지정합니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="입력 노드 작업 사이드바"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/getting-started-input-node-312cfdaf3b301044c67fcd77fbe9bc26.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/getting-started-input-node-312cfdaf3b301044c67fcd77fbe9bc26.png" alt="입력 노드를 선택하고 보고서 PDF를 올린 작업 사이드바" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">입력 노드 작업 사이드바</span></span></p>
 
 
 
@@ -57,17 +253,200 @@
 
 
 
-<table><thead><tr><th>항목</th><th>연습 값</th><th>선택 이유</th></tr></thead><tbody><tr><td>전략</td><td>재귀 (마크다운 인식)</td><td>기본 분할 흐름을 먼저 확인</td></tr><tr><td>청크 크기</td><td>1000</td><td>짧은 문서로 시작해 결과를 읽기 쉽게 비교</td></tr><tr><td>청크 겹침</td><td>200</td><td>인접 조각 사이에 일부 내용을 겹쳐 담는 설정 확인</td></tr><tr><td>이미지 주석</td><td>끔</td><td>글로만 만든 연습 문서에 필요한 범위부터 확인</td></tr></tbody></table>
-<p>설정값을 바꾼 뒤 노드와 연결선이 유지되는지 봅니다. 작은 문서가 청크 하나로 나뉘어도 오류는 아닙니다. 특정 개수보다 본문 보존 여부를 확인합니다.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-실행하고-단계별-결과-확인하기">3. 실행하고 단계별 결과 확인하기<a href="#3-실행하고-단계별-결과-확인하기" class="hash-link" aria-label="3. 실행하고 단계별 결과 확인하기에 대한 직접 링크" title="3. 실행하고 단계별 결과 확인하기에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>입력 노드</td><td>캔버스의 입력 노드입니다. 파일을 넣으면 파일 이름과 용량이 보입니다.</td><td>어떤 파일을 처리하는지 확인할 때</td></tr><tr><td>2</td><td><strong>옵션 &amp; 미리보기</strong> 탭</td><td>파일 올리기 영역과 올린 파일 미리보기를 봅니다.</td><td>파일을 넣거나 바꿀 때</td></tr><tr><td>3</td><td>파일 영역</td><td>파일을 끌어 놓거나 눌러서 고릅니다. 최대 500MB입니다. 올린 파일은 이름과 파일 제거 버튼이 보입니다.</td><td>처리할 파일을 지정할 때</td></tr><tr><td>4</td><td><strong>입력 파일</strong></td><td>올린 파일의 형식과 용량(예: PDF / 4 KB)과 미리보기가 보입니다.</td><td>맞는 파일을 올렸는지 실행 전에 확인할 때</td></tr></tbody></table>
+<p>화면에 번호를 붙이지 않은 그 밖의 메뉴는 다음과 같습니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td><strong>설정</strong> 탭</td><td>노드의 처리 옵션을 봅니다.</td><td>다른 노드의 옵션을 바꿀 때</td></tr><tr><td><strong>출력 스레드</strong> 탭</td><td>이 노드가 다음 노드로 넘기는 값을 봅니다.</td><td>넘어가는 값을 확인할 때</td></tr><tr><td><strong>YAML</strong> 탭</td><td>노드 설정을 YAML 형식으로 봅니다.</td><td>설정을 그대로 전달해 문의할 때</td></tr><tr><td><strong>노드 삭제</strong></td><td>선택한 노드를 캔버스에서 지웁니다.</td><td>잘못 추가한 노드를 없앨 때</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="따라-해-보기-1">따라 해 보기<a href="#따라-해-보기-1" class="hash-link" aria-label="따라 해 보기에 대한 직접 링크" title="따라 해 보기에 대한 직접 링크" translate="no">​</a></h3>
 <ol>
-<li class="">상단의 파이프라인 실행을 누릅니다. 실행 실패가 표시되면 하단 상태 영역의 오류 문구를 읽고, 파싱 서비스 설정이 준비되지 않았다는 내용이면 담당자가 제공한 값으로 준비한 뒤 다시 실행합니다.</li>
-<li class="">노드의 진행 상태를 확인합니다. 실행 실패나 오류가 나타나면 반복 클릭하지 말고 오류가 발생한 노드와 메시지를 읽습니다.</li>
-<li class="">실행이 끝나면 파싱 노드를 열어 원본의 예약·취소 문장이 추출되었는지 확인합니다.</li>
-<li class="">청킹 노드를 열어 청크 결과와 본문을 확인합니다. 청크 결과 미리보기에서는 생성된 청크를 선택해 내용을 읽습니다. PDF 원본 대조가 제공되면 원문도 함께 봅니다.</li>
+<li class="">캔버스에서 입력 노드를 누릅니다.</li>
+<li class=""><strong>옵션 &amp; 미리보기</strong> 탭을 누릅니다.</li>
+<li class="">파일 영역을 눌러 &quot;보고서-3분기-AI활용현황.pdf&quot;를 고릅니다.</li>
+<li class=""><strong>입력 파일</strong>에 PDF / 4 KB가 보이는지 확인합니다.</li>
+<li class="">화면 위쪽 파란 ▶ 버튼(<strong>파이프라인 실행</strong>)을 누릅니다.</li>
+<li class="">세 노드 아래에 차례로 완료가 표시될 때까지 기다립니다. 예시 문서는 1분 안팎이 걸렸습니다.</li>
 </ol>
-<p>성공 기준은 청크 결과가 존재하고 “이용 시작 두 시간 전까지”라는 조건을 원본과 대조할 수 있는 것입니다. 모든 노드의 완료 표시만으로 내용의 정확성을 판정하지 마세요.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="다음-작업으로-이어가기">다음 작업으로 이어가기<a href="#다음-작업으로-이어가기" class="hash-link" aria-label="다음 작업으로 이어가기에 대한 직접 링크" title="다음 작업으로 이어가기에 대한 직접 링크" translate="no">​</a></h2>
-<p>내용은 보이는데 조건이 서로 다른 조각으로 갈라졌다면 <a class="" href="/deep-agent-platform/docs/deep-docurator/workflows/">반복 업무</a>에서 분할 조건을 비교하세요. 각 메뉴와 옵션의 역할은 <a class="" href="/deep-agent-platform/docs/deep-docurator/core-features/">주요 기능</a>에 있습니다. 파일이나 결과가 보이지 않으면 <a class="" href="/deep-agent-platform/docs/deep-docurator/troubleshooting/">문제 해결</a>을 따라 입력부터 점검합니다.</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/deep-agent-platform/docs/deep-docurator/"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">소개</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/deep-agent-platform/docs/deep-docurator/core-features/"><div class="pagination-nav__sublabel">다음</div><div class="pagination-nav__label">메뉴 안내</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#첫-목표와-준비물" class="table-of-contents__link toc-highlight">첫 목표와 준비물</a></li><li><a href="#1-빈-파이프라인에-노드-놓기" class="table-of-contents__link toc-highlight">1. 빈 파이프라인에 노드 놓기</a></li><li><a href="#2-파일과-분할-조건-입력하기" class="table-of-contents__link toc-highlight">2. 파일과 분할 조건 입력하기</a></li><li><a href="#3-실행하고-단계별-결과-확인하기" class="table-of-contents__link toc-highlight">3. 실행하고 단계별 결과 확인하기</a></li><li><a href="#다음-작업으로-이어가기" class="table-of-contents__link toc-highlight">다음 작업으로 이어가기</a></li></ul></div></div></div></div></main></div></div></div></div>
+<p>입력 노드에 파일이 없는 상태로 실행하면 실행 실패가 표시됩니다. 자세한 내용은 <a class="" href="/deep-agent-platform/docs/deep-docurator/troubleshooting/">문제 해결</a>에 있습니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-파싱-결과-확인하기">4. 파싱 결과 확인하기<a href="#4-파싱-결과-확인하기" class="hash-link" aria-label="4. 파싱 결과 확인하기에 대한 직접 링크" title="4. 파싱 결과 확인하기에 대한 직접 링크" translate="no">​</a></h2>
+<p>실행이 끝나면 파싱 노드에 블록 수와 페이지 수가 표시됩니다. 청크를 보기 전에 파싱 결과에서 원문이 제대로 읽혔는지 먼저 확인합니다. 여기서 빠진 문장은 청킹 설정을 바꿔도 되살아나지 않습니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="파싱 결과 화면"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/getting-started-parse-result-5e615c0fc98068ea4fbd4941dac2cdb5.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/getting-started-parse-result-5e615c0fc98068ea4fbd4941dac2cdb5.png" alt="파싱 노드의 블록 목록이 보이는 작업 사이드바" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">파싱 결과 화면</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>파싱 노드</td><td>블록 수와 페이지 수, 첫 블록 내용, 프로바이더(Brain Parser)가 보입니다. 예시는 12 블록 / 1 페이지입니다.</td><td>원본 쪽수만큼 읽혔는지 숫자로 먼저 볼 때</td></tr><tr><td>2</td><td><strong>Parse 결과</strong></td><td>블록 목록을 봅니다. 옆 숫자는 블록 수입니다.</td><td>제목, 본문, 표가 블록으로 나왔는지 볼 때</td></tr><tr><td>3</td><td><strong>원본 문서</strong></td><td>원본 PDF를 보는 화면으로 바꿉니다.</td><td>블록 내용을 원본과 나란히 대조할 때</td></tr><tr><td>4</td><td>블록</td><td>블록 종류, 쪽 번호, 본문이 보입니다. 마우스를 올리면 원본 문서 보기에서 해당 위치가 강조됩니다.</td><td>숫자와 문장이 정확히 읽혔는지 볼 때</td></tr></tbody></table>
+<p>화면에 번호를 붙이지 않은 그 밖의 메뉴는 다음과 같습니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td><strong>옵션 &amp; 미리보기</strong> 탭</td><td>파싱 결과와 원본 문서를 봅니다.</td><td>파싱 노드를 눌러 결과를 읽을 때</td></tr><tr><td>블록 요약</td><td>블록 수와 원본 위치 정보 수(12 블록 · bbox 12개)가 보입니다.</td><td>모든 블록에 원본 위치가 붙었는지 볼 때</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="따라-해-보기-2">따라 해 보기<a href="#따라-해-보기-2" class="hash-link" aria-label="따라 해 보기에 대한 직접 링크" title="따라 해 보기에 대한 직접 링크" translate="no">​</a></h3>
+<ol>
+<li class="">캔버스에서 파싱 노드를 누르고 <strong>옵션 &amp; 미리보기</strong> 탭을 엽니다.</li>
+<li class=""><strong>Parse 결과</strong>에서 &quot;2. 부서별 사용 현황&quot; 아래 표 블록을 찾습니다.</li>
+<li class="">영업본부 행에 131명, +42%가 보이는지 원본 PDF와 대조합니다.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-청크-결과-확인하기">5. 청크 결과 확인하기<a href="#5-청크-결과-확인하기" class="hash-link" aria-label="5. 청크 결과 확인하기에 대한 직접 링크" title="5. 청크 결과 확인하기에 대한 직접 링크" translate="no">​</a></h2>
+<p>청킹 노드는 파싱 결과를 정한 크기로 나눈 청크를 보여 줍니다. 지식 검색은 이 청크 단위로 근거를 찾으므로, 함께 읽혀야 할 내용이 같은 청크에 들어 있는지 확인합니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="청크 결과 화면"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/getting-started-chunk-result-6ac064a175cf7ac1616c28620fb3e1c7.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/getting-started-chunk-result-6ac064a175cf7ac1616c28620fb3e1c7.png" alt="청크 번호 칸과 선택한 청크 본문이 보이는 청킹 노드 작업 사이드바" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">청크 결과 화면</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>청킹 노드</td><td>전략, 청크 크기, 청크 겹침, 만든 청크 수가 보입니다.</td><td>어떤 기준으로 몇 조각이 나왔는지 볼 때</td></tr><tr><td>2</td><td><strong>청크 결과</strong></td><td>청크 수와 평균 글자 수(1 청크 / 평균 895 자)가 보입니다.</td><td>청크가 너무 잘거나 크게 묶이지 않았는지 볼 때</td></tr><tr><td>3</td><td>청크 칸</td><td>청크마다 칸 하나가 있습니다. 마우스를 올리면 번호와 글자 수가 보이고, 누르면 아래에 본문이 열립니다.</td><td>원하는 청크를 바로 골라 읽을 때</td></tr><tr><td>4</td><td>청크 정보</td><td>원본 파일 이름과 글자 수(895 자)가 보입니다.</td><td>이 조각이 어느 문서에서 나왔는지 볼 때</td></tr></tbody></table>
+<p>화면에 번호를 붙이지 않은 그 밖의 메뉴는 다음과 같습니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>이전 청크</td><td>앞 번호 청크로 이동합니다.</td><td>내용이 앞 청크에서 이어지는지 볼 때</td></tr><tr><td>다음 청크</td><td>다음 번호 청크로 이동합니다.</td><td>청크를 순서대로 읽을 때</td></tr><tr><td>청크 본문</td><td>청크에 담긴 글 전체입니다. 아래로 내리면 이어지는 내용이 보입니다.</td><td>필요한 내용이 같은 조각에 있는지 볼 때</td></tr></tbody></table>
+<p>예시 보고서는 1쪽이라 최대 청크 길이 1000자 안에 모두 들어가 청크 1개가 나왔습니다. 문서가 짧으면 청크가 하나여도 정상입니다. 장마다 따로 나누고 싶다면 <a class="" href="/deep-agent-platform/docs/deep-docurator/chunk-strategies/">청킹 전략과 옵션</a>에서 최대 청크 길이를 줄여 비교합니다.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="따라-해-보기-3">따라 해 보기<a href="#따라-해-보기-3" class="hash-link" aria-label="따라 해 보기에 대한 직접 링크" title="따라 해 보기에 대한 직접 링크" translate="no">​</a></h3>
+<ol>
+<li class="">캔버스에서 청킹 노드를 누르고 <strong>옵션 &amp; 미리보기</strong> 탭을 엽니다.</li>
+<li class="">청크 칸의 첫 번째 칸을 누릅니다.</li>
+<li class="">청크 본문을 아래로 내리며 요약, 부서별 사용 현황 표, 성과, 문제점, 4분기 계획이 순서대로 들어 있는지 확인합니다.</li>
+</ol>
+<p>노드에 완료가 보여도 내용이 맞다는 뜻은 아닙니다. 보고에 쓰일 숫자는 청크 본문과 원본 PDF를 직접 대조하세요.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="다음-문서">다음 문서<a href="#다음-문서" class="hash-link" aria-label="다음 문서에 대한 직접 링크" title="다음 문서에 대한 직접 링크" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-docurator/core-features/">메뉴 안내</a> — 플로우 목록, 편집기, 검색 창의 메뉴</li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-docurator/chunk-strategies/">청킹 전략과 옵션</a> — 최대 청크 길이를 바꿔 결과 비교하기</li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-docurator/use-cases/">활용사례</a> — 업무 문서를 정리하는 사례</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/deep-agent-platform/docs/deep-docurator/"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">소개</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/deep-agent-platform/docs/deep-docurator/core-features/"><div class="pagination-nav__sublabel">다음</div><div class="pagination-nav__label">메뉴 안내</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#준비물" class="table-of-contents__link toc-highlight">준비물</a></li><li><a href="#1-첫-화면-살펴보기" class="table-of-contents__link toc-highlight">1. 첫 화면 살펴보기</a></li><li><a href="#2-새-플로우-만들기" class="table-of-contents__link toc-highlight">2. 새 플로우 만들기</a><ul><li><a href="#따라-해-보기" class="table-of-contents__link toc-highlight">따라 해 보기</a></li></ul></li><li><a href="#3-입력-노드에-파일-넣기" class="table-of-contents__link toc-highlight">3. 입력 노드에 파일 넣기</a><ul><li><a href="#따라-해-보기-1" class="table-of-contents__link toc-highlight">따라 해 보기</a></li></ul></li><li><a href="#4-파싱-결과-확인하기" class="table-of-contents__link toc-highlight">4. 파싱 결과 확인하기</a><ul><li><a href="#따라-해-보기-2" class="table-of-contents__link toc-highlight">따라 해 보기</a></li></ul></li><li><a href="#5-청크-결과-확인하기" class="table-of-contents__link toc-highlight">5. 청크 결과 확인하기</a><ul><li><a href="#따라-해-보기-3" class="table-of-contents__link toc-highlight">따라 해 보기</a></li></ul></li><li><a href="#다음-문서" class="table-of-contents__link toc-highlight">다음 문서</a></li></ul></div></div></div></div></main></div></div></div></div>
 </body>
 </html>

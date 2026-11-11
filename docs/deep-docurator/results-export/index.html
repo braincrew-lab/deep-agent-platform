@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">Deep Docurator 결과 확인과 내보내기 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/results-export/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Deep Docurator 결과 확인과 내보내기 | Deep Platform"><meta data-rh="true" name="description" content="플로우를 실행하면 노드마다 결과가 남습니다. 이 페이지는 파싱 결과, 청크 결과, 메타데이터 결과를 읽는 곳과 원본과 대조하는 방법, 그리고 검토를 마친 플로우를 Deep Connector로 보내 실제 지식으로 쓰는 방법을 설명합니다."><meta data-rh="true" property="og:description" content="플로우를 실행하면 노드마다 결과가 남습니다. 이 페이지는 파싱 결과, 청크 결과, 메타데이터 결과를 읽는 곳과 원본과 대조하는 방법, 그리고 검토를 마친 플로우를 Deep Connector로 보내 실제 지식으로 쓰는 방법을 설명합니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/results-export/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/results-export/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/results-export/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"결과 확인과 내보내기","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/results-export"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
-<script src="/deep-agent-platform/assets/js/runtime~main.3cbeb1c1.js" defer="defer"></script>
-<script src="/deep-agent-platform/assets/js/main.781f3454.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/runtime~main.37e9242b.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.89735666.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -62,7 +62,7 @@
 
 
 
-<table><thead><tr><th>결과</th><th>여는 곳</th><th>보이는 내용</th></tr></thead><tbody><tr><td>파싱 결과</td><td>파싱 노드 → <strong>옵션 &amp; 미리보기</strong> 탭 → <strong>Parse 결과</strong></td><td>블록 수와 블록 목록. 블록마다 종류(제목, 텍스트, 표, 목록, 이미지, 캡션, 차트, 기타), 쪽 번호, 본문</td></tr><tr><td>원본 문서</td><td>파싱 노드 → <strong>옵션 &amp; 미리보기</strong> 탭 → <strong>원본 문서</strong></td><td>원본 PDF. 블록에 마우스를 올리거나 누르면 해당 위치가 강조됩니다.</td></tr><tr><td>청크 결과</td><td>청킹 노드 → <strong>옵션 &amp; 미리보기</strong> 탭</td><td>청크 수와 평균 글자 수, 청크 칸, 고른 청크의 번호·원본 파일 이름·글자 수·본문</td></tr><tr><td>청크 결과 미리보기</td><td>캔버스 왼쪽 아래 도구의 돋보기 버튼</td><td>청크 목록과 원본 PDF를 나란히 봅니다. 청크에 마우스를 올리면 PDF 영역이 보이고, 누르면 해당 페이지로 이동합니다.</td></tr><tr><td>메타데이터 결과</td><td>메타데이터 노드 → <strong>옵션 &amp; 미리보기</strong> 탭</td><td>청크마다 뽑은 필드 값</td></tr><tr><td>노드 설정</td><td>노드 → <strong>YAML</strong> 탭</td><td>노드의 옵션과 상태를 YAML과 JSON으로 보여 줍니다. 보기 전용입니다.</td></tr></tbody></table>
+<table><thead><tr><th>결과</th><th>여는 곳</th><th>보이는 내용</th></tr></thead><tbody><tr><td>파싱 결과</td><td>파싱 노드 → <strong>옵션 &amp; 미리보기</strong> 탭 → <strong>Parse 결과</strong></td><td>블록 수와 블록 목록. 블록마다 종류(제목, 텍스트, 표, 목록, 이미지, 캡션, 차트, 기타), 쪽 번호, 본문</td></tr><tr><td>원본 문서</td><td>파싱 노드 → <strong>옵션 &amp; 미리보기</strong> 탭 → <strong>원본 문서</strong></td><td>원본 PDF. <strong>Parse 결과</strong>에서 블록을 누른 뒤 <strong>원본 문서</strong>로 바꾸면 해당 위치가 강조됩니다.</td></tr><tr><td>청크 결과</td><td>청킹 노드 → <strong>옵션 &amp; 미리보기</strong> 탭</td><td>청크 수와 평균 글자 수, 청크 칸, 고른 청크의 번호·원본 파일 이름·글자 수·본문</td></tr><tr><td>청크 결과 미리보기</td><td>캔버스 왼쪽 아래 도구의 돋보기 버튼</td><td>청크 목록과 원본 PDF를 나란히 봅니다. 청크에 마우스를 올리면 PDF 영역이 보이고, 누르면 해당 페이지로 이동합니다.</td></tr><tr><td>메타데이터 결과</td><td>메타데이터 노드 → <strong>옵션 &amp; 미리보기</strong> 탭</td><td>청크마다 뽑은 필드 값</td></tr><tr><td>노드 설정</td><td>노드 → <strong>YAML</strong> 탭</td><td>노드의 옵션과 상태를 YAML과 JSON으로 보여 줍니다. 보기 전용입니다.</td></tr></tbody></table>
 <p>실행 전에는 파싱 결과 자리에 &quot;파싱 결과가 아직 없습니다.&quot;가, 청크 결과 미리보기 버튼에는 &quot;청크 결과 미리보기 (실행 후 사용 가능)&quot;이 보입니다. 실행이 끝나면 노드 아래 상태가 완료로 바뀌고 결과를 열 수 있습니다.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="읽는-순서">읽는 순서<a href="#읽는-순서" class="hash-link" aria-label="읽는 순서에 대한 직접 링크" title="읽는 순서에 대한 직접 링크" translate="no">​</a></h2>
 <ol>
@@ -76,6 +76,59 @@
 <p>원본 위치 강조는 PDF에서만 동작합니다. PDF가 아닌 파일은 &quot;원본 PDF 를 표시할 수 없습니다.&quot;가 보이므로, 원본 파일을 따로 열어 블록·청크 본문과 대조합니다.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="deep-connector로-보내기">Deep Connector로 보내기<a href="#deep-connector로-보내기" class="hash-link" aria-label="Deep Connector로 보내기에 대한 직접 링크" title="Deep Connector로 보내기에 대한 직접 링크" translate="no">​</a></h2>
 <p>검토를 마친 플로우는 Deep Connector에 문서를 올릴 때 처리 파이프라인으로 고를 수 있습니다. 이것이 Deep Docurator 결과를 실제 지식 검색과 에이전트 답변에 쓰는 기본 방법입니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="파이프라인 설정 대화상자"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/results-export-pipeline-settings-016cf0e0051911f5355c85d383726bc3.png" target="_blank" rel="noopener"><img width="1200" height="940" src="/deep-agent-platform/assets/images/results-export-pipeline-settings-016cf0e0051911f5355c85d383726bc3.png" alt="이름, 설명, 켜진 DeepConnect 배포 스위치가 보이는 파이프라인 설정 대화상자" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">파이프라인 설정 대화상자</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>이름</strong></td><td>플로우 이름입니다. Deep Connector의 파이프라인 목록에 이 이름이 보입니다.</td><td>업무 기준에 맞게 이름을 고칠 때</td></tr><tr><td>2</td><td><strong>DeepConnect 배포</strong></td><td>켜면 저장할 때 Deep Connector 쪽 파이프라인 목록에 공개됩니다. 켜면 &quot;외부 /pipelines 에 노출 — 저장 시 적용&quot;이 보이고, 저장한 뒤에는 &quot;외부 /pipelines 에 노출&quot;과 함께 공개 이름이 보입니다(화면에서는 흐림 처리).</td><td>검토를 마친 플로우를 공개할 때</td></tr><tr><td>3</td><td><strong>저장</strong></td><td>바꾼 내용을 저장합니다. 배포 스위치도 저장할 때 적용됩니다.</td><td>이름·설명·배포 여부를 확정할 때</td></tr></tbody></table>
+<p>화면에 번호를 붙이지 않은 그 밖의 메뉴는 다음과 같습니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td><strong>설명</strong></td><td>플로우 설명입니다.</td><td>어떤 문서에 쓰는지 적어 둘 때</td></tr><tr><td><strong>취소</strong></td><td>저장하지 않고 닫습니다.</td><td>설정을 잘못 건드렸을 때</td></tr></tbody></table>
 <ol>
 <li class="">편집기 위쪽 톱니바퀴 <strong>파이프라인 설정</strong>을 누릅니다.</li>
 <li class=""><strong>이름</strong>과 <strong>설명</strong>을 확인합니다. Deep Connector의 파이프라인 목록에는 이 이름이 보이므로 문서 종류와 기준을 이름에 담습니다.</li>
