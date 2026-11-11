@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">미들웨어와 개인정보 보호 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/middleware/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="미들웨어와 개인정보 보호 | Deep Platform"><meta data-rh="true" name="description" content="미들웨어는 에이전트가 질문을 받고 답을 내보내는 흐름 중간에 끼워 두는 처리 규칙입니다. 이 페이지는 에이전트 편집 화면의 미들웨어 칸에서 미들웨어를 붙이고 빼는 방법, 기본 제공 미들웨어 11종의 쓰임새, 그리고 가장 많이 쓰는 개인정보 보호 미들웨어의 설정 항목을 화면 순서대로 설명합니다. 사례로는 브레인크루 AI혁신팀 김그루 사원이 계약서 검토 도우미에 계약서 초안과 담당자 연락처를 붙여 넣었을 때 전화번호와 이메일이 어떻게 가려지는지 보여 드립니다."><meta data-rh="true" property="og:description" content="미들웨어는 에이전트가 질문을 받고 답을 내보내는 흐름 중간에 끼워 두는 처리 규칙입니다. 이 페이지는 에이전트 편집 화면의 미들웨어 칸에서 미들웨어를 붙이고 빼는 방법, 기본 제공 미들웨어 11종의 쓰임새, 그리고 가장 많이 쓰는 개인정보 보호 미들웨어의 설정 항목을 화면 순서대로 설명합니다. 사례로는 브레인크루 AI혁신팀 김그루 사원이 계약서 검토 도우미에 계약서 초안과 담당자 연락처를 붙여 넣었을 때 전화번호와 이메일이 어떻게 가려지는지 보여 드립니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/middleware/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/middleware/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/middleware/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"미들웨어와 개인정보 보호","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/middleware"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
-<script src="/deep-agent-platform/assets/js/runtime~main.0da81299.js" defer="defer"></script>
-<script src="/deep-agent-platform/assets/js/main.836f1a7b.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/runtime~main.3cbeb1c1.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.781f3454.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -58,12 +58,111 @@
 <p>미들웨어를 붙였다고 에이전트가 새로운 외부 시스템에 접근하지는 않습니다. 외부 호출은 도구가 맡습니다. 도구와 스킬은 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/tools-and-skills/">도구와 스킬 구성</a>에서 설명합니다.</p>
 <p>미들웨어와 별개로, 회사가 정한 보안 정책(가드레일)이 대화를 막을 때도 있습니다. 이때는 정책이 정한 안내 문구가 답변 말풍선에 그대로 표시됩니다. 미들웨어 설정으로는 이 정책을 끄거나 바꿀 수 없습니다. 자세한 내용은 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/file-policy/">파일 첨부 정책과 가드레일</a>을 참고하세요.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="에이전트-편집-화면의-미들웨어-칸">에이전트 편집 화면의 미들웨어 칸<a href="#에이전트-편집-화면의-미들웨어-칸" class="hash-link" aria-label="에이전트 편집 화면의 미들웨어 칸에 대한 직접 링크" title="에이전트 편집 화면의 미들웨어 칸에 대한 직접 링크" translate="no">​</a></h2>
-<p>미들웨어는 에이전트마다 따로 붙입니다. 사이드바에서 에이전트를 고르고 <strong>에이전트 설정</strong>을 누르면 에이전트 편집 화면이 열립니다. 가운데 편집 영역의 <strong>폼</strong> 보기 아래쪽에 <strong>도구함</strong>, <strong>지식함</strong>과 나란히 <strong>미들웨어</strong> 칸이 있습니다. 칸 제목을 누르면 칸이 접히거나 펼쳐지고, 제목 줄의 <strong>+ 미들웨어</strong>를 누르면 <strong>미들웨어 추가</strong> 창이 열립니다. 칸 안에는 이 에이전트에 붙은 미들웨어 이름이 나오고, 아무것도 없으면 &quot;추가된 미들웨어가 없습니다&quot;가 보입니다. 이름 옆 톱니바퀴(<strong>미들웨어 설정</strong>)를 누르면 &quot;미들웨어 설정: 개인정보 보호&quot;처럼 그 미들웨어의 설정 창이 열리고, 휴지통(<strong>삭제</strong>)을 누르면 이 에이전트에서 빠지며 &quot;미들웨어가 에이전트에서 제거되었습니다&quot; 알림이 뜹니다.</p>
+<p>미들웨어는 에이전트마다 따로 붙입니다. 사이드바에서 에이전트를 고르고 <strong>에이전트 설정</strong>을 누르면 에이전트 편집 화면이 열립니다. 가운데 편집 영역의 <strong>폼</strong> 보기 아래쪽에 <strong>도구함</strong>, <strong>지식함</strong>과 나란히 <strong>미들웨어</strong> 칸이 있습니다. 칸 제목을 누르면 칸이 접히거나 펼쳐지며, <strong>도구함</strong>, <strong>지식함</strong> 제목도 같은 방식으로 접힙니다. 지침을 넓게 보며 고칠 때 아래 칸을 잠시 접어 두면 편합니다. 제목 줄의 <strong>+ 미들웨어</strong>를 누르면 <strong>미들웨어 추가</strong> 창이 열립니다. 칸 안에는 이 에이전트에 붙은 미들웨어 이름이 나오고, 아무것도 없으면 &quot;추가된 미들웨어가 없습니다&quot;가 보입니다. 이름 옆 톱니바퀴(<strong>미들웨어 설정</strong>)를 누르면 &quot;미들웨어 설정: 개인정보 보호&quot;처럼 그 미들웨어의 설정 창이 열리고, 휴지통(<strong>삭제</strong>)을 누르면 이 에이전트에서 빠지며 &quot;미들웨어가 에이전트에서 제거되었습니다&quot; 알림이 뜹니다. 그림은 개인정보 보호를 붙인 계약서 검토 도우미의 에이전트 편집 화면입니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="에이전트 편집 화면의 미들웨어 칸"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/middleware-box-2c753088aba859b0cb77d720e7d755cd.png" target="_blank" rel="noopener"><img width="1556" height="560" src="/deep-agent-platform/assets/images/middleware-box-2c753088aba859b0cb77d720e7d755cd.png" alt="계약서 검토 도우미 에이전트 편집 화면의 미들웨어 칸에서 미들웨어 추가 버튼, 연결된 개인정보 보호, 미들웨어 설정, 삭제 버튼에 번호를 붙인 그림" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">에이전트 편집 화면의 미들웨어 칸</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>+ 미들웨어</strong></td><td><strong>미들웨어 추가</strong> 창을 엽니다.</td><td>계약서 검토 도우미처럼 연락처가 섞인 문서를 다루는 에이전트에 개인정보 보호를 붙일 때</td></tr><tr><td>2</td><td>연결된 미들웨어</td><td>이 에이전트에 붙은 미들웨어 이름입니다. 아무것도 없으면 &quot;추가된 미들웨어가 없습니다&quot;가 보입니다.</td><td>동료가 만든 에이전트를 넘겨받아 어떤 처리가 걸려 있는지 확인할 때</td></tr><tr><td>3</td><td><strong>미들웨어 설정</strong>(톱니바퀴)</td><td>&quot;미들웨어 설정: 개인정보 보호&quot;처럼 그 미들웨어의 설정 창을 엽니다.</td><td>가릴 항목이나 처리 방식을 바꿀 때</td></tr><tr><td>4</td><td><strong>삭제</strong>(휴지통)</td><td>이 에이전트에서 미들웨어를 뺍니다. 빼면 &quot;미들웨어가 에이전트에서 제거되었습니다&quot; 알림이 뜹니다.</td><td>더는 그 처리가 필요 없을 때</td></tr></tbody></table>
 <p>미들웨어를 붙이거나 빼거나 설정을 저장하면 그 자리에서 바로 반영되어, 대화와 <strong>테스트</strong> 탭에서 곧바로 적용됩니다. 이름·설명·지침과 달리 헤더의 <strong>저장</strong>을 누르지 않아도 됩니다. 헤더의 <strong>버전 안내</strong>에도 &quot;도구, 모델, 오프너 등 고급 설정은 변경하는 즉시 저장됩니다&quot;라고 적혀 있습니다. 다만 이 변경은 현재 버전의 저장본에는 아직 기록되지 않아, 헤더 <strong>저장</strong> 옆에 &quot;저장되지 않은 변경이 있습니다&quot;가 보입니다. 헤더 <strong>저장</strong>을 누르면 현재 버전에 기록되며, 워크스페이스 등록을 요청하기 전에는 꼭 눌러 둡니다. 되돌릴 지점이 필요하면 바꾸기 전에 <strong>새 버전으로 저장</strong>을 해 둡니다. 버전은 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/agent-editing/">에이전트 수정</a>에서 설명합니다.</p>
 <p>미들웨어 이름 옆에 노란 방패 표시가 보이면 그 미들웨어를 쓸 권한이 없다는 뜻입니다. 표시에 마우스를 올리면 &quot;사용 권한이 없습니다. 관리자에게 문의하세요.&quot;가 나옵니다. 권한 문구는 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/secrets-permissions/">시크릿과 권한</a>에 모아 두었습니다.</p>
 <p>대화 화면에서도 붙은 미들웨어를 확인할 수 있습니다. 입력란 아래 왼쪽의 <strong>미들웨어</strong> 버튼을 누르면 연결된 미들웨어 이름이 나오고, 없으면 &quot;추가된 미들웨어가 없습니다&quot;가 보입니다. 여기서는 보기만 하고 바꿀 수는 없습니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="대화 화면에서 연결된 미들웨어 확인"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/middleware-chat-dropdown-4498f87a691b2bf69c983fdff881dd37.png" target="_blank" rel="noopener"><img width="1600" height="560" src="/deep-agent-platform/assets/images/middleware-chat-dropdown-4498f87a691b2bf69c983fdff881dd37.png" alt="대화 화면 입력창의 미들웨어 버튼을 눌러 연결된 개인정보 보호가 보이는 모습" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">대화 화면에서 연결된 미들웨어 확인</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>미들웨어</strong> 버튼</td><td>이 에이전트에 붙은 미들웨어 목록을 펼칩니다.</td><td>대화를 시작하기 전에 개인정보 보호가 걸려 있는지 확인할 때</td></tr><tr><td>2</td><td>연결된 미들웨어 목록</td><td>붙은 미들웨어 이름이 나옵니다. 없으면 &quot;추가된 미들웨어가 없습니다&quot;가 보입니다.</td><td>에이전트 편집 화면을 열지 않고 빠르게 확인할 때</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="미들웨어-추가-창">미들웨어 추가 창<a href="#미들웨어-추가-창" class="hash-link" aria-label="미들웨어 추가 창에 대한 직접 링크" title="미들웨어 추가 창에 대한 직접 링크" translate="no">​</a></h2>
-<p><strong>+ 미들웨어</strong>를 누르면 <strong>미들웨어 추가</strong> 창이 열립니다. 왼쪽은 목록, 오른쪽은 상세 정보입니다. 이미 이 에이전트에 붙은 미들웨어는 목록에 나오지 않습니다. 위쪽 <strong>미들웨어 검색...</strong> 칸에 이름이나 설명의 일부를 적으면 목록이 좁혀집니다. 목록에서 하나를 누르면 오른쪽에 이름, 유형, 전체 설명이 나오고, 창 아래 <strong>미들웨어 추가</strong>를 누르면 이 에이전트에 붙으며 &quot;미들웨어가 에이전트에 추가되었습니다&quot; 알림이 뜹니다. 쓸 권한이 없는 항목은 흐리게 보이고 방패 표시가 붙습니다. 붙이지 않고 나가려면 오른쪽 위 닫기(X)를 누릅니다.</p>
+<p><strong>+ 미들웨어</strong>를 누르면 <strong>미들웨어 추가</strong> 창이 열립니다. 왼쪽은 목록, 오른쪽은 상세 정보입니다. 이미 이 에이전트에 붙은 미들웨어는 목록에 나오지 않습니다. 위쪽 <strong>미들웨어 검색...</strong> 칸에 이름이나 설명의 일부를 적으면 목록이 좁혀집니다. 목록의 각 항목에는 이름 옆에 유형 표시(기본 제공 미들웨어는 &quot;built-in&quot;)와 한 줄 설명이 나옵니다. 목록에서 하나를 누르면 오른쪽에 이름, 유형, 전체 설명이 나오고, 창 아래 <strong>미들웨어 추가</strong>를 누르면 이 에이전트에 붙으며 &quot;미들웨어가 에이전트에 추가되었습니다&quot; 알림이 뜹니다. 쓸 권한이 없는 항목은 흐리게 보이고 방패 표시가 붙습니다. 붙이지 않고 나가려면 오른쪽 위 닫기(X)를 누릅니다. 그림은 개인정보 보호를 이미 붙인 계약서 검토 도우미에서 &quot;도구&quot;로 검색하고 <strong>도구 재시도</strong>를 고른 모습입니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="미들웨어 추가 창"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/middleware-add-dialog-ecd04b27d0cc78d0a6c7fc5341c39f43.png" target="_blank" rel="noopener"><img width="1992" height="1332" src="/deep-agent-platform/assets/images/middleware-add-dialog-ecd04b27d0cc78d0a6c7fc5341c39f43.png" alt="미들웨어 추가 창에서 검색란, 목록의 도구 재시도 항목, 상세 정보의 이름과 유형, 미들웨어 추가 버튼에 번호를 붙인 그림" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">미들웨어 추가 창</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>미들웨어 검색...</strong></td><td>이름과 설명으로 목록을 좁힙니다. 맞는 것이 없으면 &quot;검색 결과가 없습니다&quot;가 보입니다.</td><td>&quot;재시도&quot;처럼 이름 일부만 기억날 때</td></tr><tr><td>2</td><td>목록 항목</td><td>이름, 유형 표시(built-in), 한 줄 설명이 나옵니다. 쓸 권한이 없는 항목은 흐리게 보이고 방패 표시가 붙습니다.</td><td>설명을 훑어보고 업무에 맞는 것을 고를 때</td></tr><tr><td>3</td><td>상세 정보</td><td>목록에서 하나를 누르면 오른쪽에 이름, 유형, 그 아래 전체 설명이 나옵니다. 고르기 전에는 &quot;미들웨어를 선택하면 상세 정보를 볼 수 있습니다&quot;가 보입니다.</td><td>목록 설명이 잘려 끝까지 읽어야 할 때</td></tr><tr><td>4</td><td><strong>미들웨어 추가</strong></td><td>고른 미들웨어를 이 에이전트에 붙입니다. 붙이면 &quot;미들웨어가 에이전트에 추가되었습니다&quot; 알림이 뜨고 에이전트 편집 화면의 미들웨어 칸에 이름이 생깁니다.</td><td>설명을 읽고 붙이기로 정했을 때</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="기본-제공-미들웨어">기본 제공 미들웨어<a href="#기본-제공-미들웨어" class="hash-link" aria-label="기본 제공 미들웨어에 대한 직접 링크" title="기본 제공 미들웨어에 대한 직접 링크" translate="no">​</a></h3>
 <p>기본 제공 미들웨어는 다음 11종입니다. 설명은 화면 문구를 줄인 것입니다. 기본값은 설정 창을 처음 열었을 때의 값입니다.</p>
 
@@ -199,9 +298,153 @@
 
 
 <table><thead><tr><th>묶음</th><th>항목</th><th>가린 뒤 모습(화면 예시)</th></tr></thead><tbody><tr><td>고유식별정보</td><td>주민등록번호, 외국인등록번호, 여권번호, 운전면허번호</td><td>주민등록번호(생년월일 6자리-뒤 7자리) → [주민등록번호_1]</td></tr><tr><td>금융정보</td><td>카드번호, 계좌번호, 보험증권번호</td><td>계좌 110-123-456789 → 계좌 [계좌번호_1]</td></tr><tr><td>연락처</td><td>전화번호, 이메일</td><td>010-1234-5678 → [전화번호_1]</td></tr><tr><td>사업자</td><td>사업자등록번호, 법인등록번호</td><td>사업자 123-45-67890 → 사업자 [사업자등록번호_1]</td></tr><tr><td>인적사항</td><td>이름, 주소, 생년월일, 건강보험증번호, 차량번호</td><td>성명: 홍길동 → 성명: [이름_1]</td></tr><tr><td>기술 식별자</td><td>IP 주소, MAC 주소, URL</td><td>00:1A:2B:3C:4D:5E → [MAC주소_1]</td></tr></tbody></table>
+<p><span class="manual-shot" role="figure" aria-label="보호할 개인정보 종류 — 안내 문구부터 연락처까지"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/middleware-pii-categories-a6550e0a254ac994a72cd7a7151158a0.png" target="_blank" rel="noopener"><img width="1472" height="1468" src="/deep-agent-platform/assets/images/middleware-pii-categories-a6550e0a254ac994a72cd7a7151158a0.png" alt="개인정보 보호 설정 창 위쪽에서 안내 문구, 고유식별정보, 금융정보, 연락처 묶음에 번호를 붙인 그림" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">보호할 개인정보 종류 — 안내 문구부터 연락처까지</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>안내 문구</td><td>이 미들웨어가 하는 일과, 켜면 사용자 메모리가 쌓이지 않는다는 점을 알려 줍니다.</td><td>사용자별 메모리로 말투를 익히던 에이전트에 붙이기 전에 검토할 때</td></tr><tr><td>2</td><td><strong>고유식별정보</strong></td><td>주민등록번호, 외국인등록번호, 여권번호, 운전면허번호를 고릅니다.</td><td>신분증 정보가 섞인 서류를 다룰 때</td></tr><tr><td>3</td><td><strong>금융정보</strong></td><td>카드번호, 계좌번호, 보험증권번호를 고릅니다. 아래에 &quot;앞뒤 문맥 없이 적힌 계좌번호는 탐지하지 못합니다.&quot;라는 안내가 있습니다.</td><td>견적서나 계약서에 입금 계좌가 적혀 있을 때</td></tr><tr><td>4</td><td><strong>연락처</strong></td><td>전화번호, 이메일을 고릅니다. 처음에는 선택되어 있지 않습니다.</td><td>계약서 끝의 담당자 연락처를 가려야 할 때</td></tr></tbody></table>
+<p>창 안을 아래로 내리면 나머지 묶음이 나옵니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="보호할 개인정보 종류 — 사업자부터 기술 식별자까지"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/middleware-pii-categories-2-bd19e608ce772785c00bed1ac2d83619.png" target="_blank" rel="noopener"><img width="1472" height="1468" src="/deep-agent-platform/assets/images/middleware-pii-categories-2-bd19e608ce772785c00bed1ac2d83619.png" alt="개인정보 보호 설정 창 가운데에서 사업자, 인적사항, 기술 식별자 묶음과 주소 항목의 예시 물음표에 번호를 붙인 그림" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">보호할 개인정보 종류 — 사업자부터 기술 식별자까지</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>사업자</strong></td><td>사업자등록번호, 법인등록번호를 고릅니다.</td><td>거래처 사업자 정보가 적힌 문서를 다룰 때</td></tr><tr><td>2</td><td><strong>인적사항</strong></td><td>이름, 주소, 생년월일, 건강보험증번호, 차량번호를 고릅니다. &quot;이름과 주소는 제한적으로만 탐지합니다. 더 정확하게 찾으려면 AI 추가 탐지를 켜세요.&quot;라는 안내가 있습니다.</td><td>문서에 사람 이름과 주소가 그대로 적혀 있을 때</td></tr><tr><td>3</td><td><strong>기술 식별자</strong></td><td>IP 주소, MAC 주소, URL을 고릅니다.</td><td>시스템 접속 기록이나 오류 로그를 붙여 넣을 때</td></tr><tr><td>4</td><td>예시 물음표</td><td>항목 옆 물음표에 마우스를 올리면 가린 뒤의 모습이 예시로 나옵니다. 그림은 <strong>주소</strong>의 예시입니다.</td><td>결과가 어떤 모양일지 미리 볼 때</td></tr></tbody></table>
 <p>선택하지 않은 항목이 하나라도 있는 묶음 아래에는 &quot;이 값은 보호되지 않습니다. 선택하지 않은 항목은 처리 없이 그대로 전달됩니다.&quot;라는 경고가 붙습니다. 항목을 하나도 고르지 않으면 &quot;보호할 항목을 하나 이상 선택하세요. 선택하지 않으면 저장할 수 없습니다.&quot;가 나오고 저장되지 않습니다.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="처리-방식과-적용-지점">처리 방식과 적용 지점<a href="#처리-방식과-적용-지점" class="hash-link" aria-label="처리 방식과 적용 지점에 대한 직접 링크" title="처리 방식과 적용 지점에 대한 직접 링크" translate="no">​</a></h3>
 <p>창을 아래로 내리면 처리 방식, 적용 지점, AI 추가 탐지, 고급 옵션이 나옵니다. <strong>처리 방식</strong>에서는 찾은 값을 바꿀 방법을 <strong>가리기</strong>, <strong>마스킹</strong>, <strong>해시</strong>, <strong>차단</strong> 중에서 고르며 처음 값은 가리기입니다. 고르면 바로 아래 예시 문구가 그 방식의 결과로 바뀝니다. <strong>적용 지점</strong>에는 스위치 세 개가 있고 처음에는 모두 켜져 있습니다. <strong>사용자 입력</strong>은 내가 보낸 메시지의 개인정보를 모델에 넘기기 전에, <strong>모델 응답</strong>은 모델이 쓴 답변을 나에게 보여 주기 전에, <strong>도구 결과</strong>는 도구가 돌려준 결과나 첨부 파일에서 읽은 내용을 대화에 넣기 전에 처리합니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="처리 방식과 적용 지점"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/middleware-pii-handling-bc1af441723dcc773b354f4a1708d190.png" target="_blank" rel="noopener"><img width="1472" height="1468" src="/deep-agent-platform/assets/images/middleware-pii-handling-bc1af441723dcc773b354f4a1708d190.png" alt="개인정보 보호 설정 창에서 처리 방식, 예시 문구, 사용자 입력, 모델 응답에 번호를 붙인 그림" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">처리 방식과 적용 지점</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>처리 방식</strong></td><td>찾은 값을 어떻게 바꿀지 <strong>가리기</strong>, <strong>마스킹</strong>, <strong>해시</strong>, <strong>차단</strong> 중에서 고릅니다. 처음 값은 가리기입니다. 옆 물음표에는 네 방식의 예시가 한꺼번에 나옵니다.</td><td>값을 완전히 가릴지, 끝자리만 남길지 정할 때</td></tr><tr><td>2</td><td>예시 문구</td><td>고른 방식의 결과를 &quot;예시: [주민등록번호_1]&quot;처럼 보여 줍니다. 차단을 고르면 &quot;차단은 값을 바꾸지 않고 실행을 멈춥니다.&quot;가 나옵니다.</td><td>고른 방식이 맞는지 다시 확인할 때</td></tr><tr><td>3</td><td><strong>사용자 입력</strong></td><td>사용자가 보낸 메시지의 개인정보를 모델에 넘기기 전에 처리합니다. 끄면 &quot;이 값은 보호되지 않습니다. 사용자 입력의 개인정보가 처리 없이 모델에 전달됩니다.&quot;라는 경고가 붙습니다.</td><td>문서 원문을 그대로 붙여 넣는 업무일 때(보통 켜 둡니다)</td></tr><tr><td>4</td><td><strong>모델 응답</strong></td><td>모델이 쓴 답변을 사용자에게 보여 주기 전에 처리합니다.</td><td>답변에 연락처가 다시 나오지 않게 할 때</td></tr></tbody></table>
+<p>조금 더 내리면 세 번째 적용 지점과 AI 추가 탐지, 고급 옵션이 나옵니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="도구 결과, AI 추가 탐지, 고급 옵션"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/middleware-pii-handling-2-309321822994f918686f2c1c55be80ad.png" target="_blank" rel="noopener"><img width="1472" height="1468" src="/deep-agent-platform/assets/images/middleware-pii-handling-2-309321822994f918686f2c1c55be80ad.png" alt="개인정보 보호 설정 창에서 도구 결과, AI 추가 탐지, 고급 옵션에 번호를 붙인 그림" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">도구 결과, AI 추가 탐지, 고급 옵션</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>도구 결과</strong></td><td>도구가 돌려준 결과나 첨부 파일에서 읽은 내용이 대화에 들어가기 전에 처리합니다.</td><td>첨부한 계약서 파일에 적힌 계좌번호를 가릴 때</td></tr><tr><td>2</td><td><strong>AI 추가 탐지</strong></td><td>정해진 형식으로 찾기 어려운 이름, 주소, 건강 정보, 문맥상 식별 정보를 모델로 한 번 더 찾습니다. 처음에 꺼져 있습니다. &quot;건강 정보는 AI 추가 탐지를 켠 경우에만 찾을 수 있습니다.&quot;라는 안내가 있습니다.</td><td>문장 속에 이름과 주소가 섞여 있는 자유 서술형 문서를 다룰 때</td></tr><tr><td>3</td><td><strong>고급 옵션</strong></td><td><strong>카테고리별 처리 방식</strong>, <strong>탐지 엄격도</strong>, <strong>탐지 제외 값</strong>, <strong>도구 호출 인자 검사</strong>, <strong>AI 추가 탐지 종류</strong>, <strong>AI 탐지 제한 시간(초)</strong>, <strong>감사 로그 기록</strong>을 펼칩니다.</td><td>기본 설정으로 부족할 때</td></tr></tbody></table>
 <p>네 가지 처리 방식을 화면 예시(전화번호 010-1234-5678)로 비교하면 다음과 같습니다.</p>
 
 
@@ -243,9 +486,84 @@
 <p><strong>탐지 제외 값</strong>은 개인정보 형식이지만 가리면 안 되는 값을 적어 두는 칸입니다. 여기에 적은 값은 탐지에서 빠져 원래 모습 그대로 모델과 답변에 전달됩니다. 칸을 누르면 목록이 열리고, 그 아래쪽 입력란(Add custom value…)에 값을 적고 Enter를 누르면 칸에 값이 하나 추가됩니다. 잘못 넣은 값은 값 옆 X를 눌러 뺍니다. 전화번호, 이메일, URL, IP 주소, MAC 주소, 사업자등록번호, 법인등록번호 형식의 값만 제외할 수 있고, 주민등록번호나 이름처럼 사람을 가리키는 값은 적어도 제외되지 않습니다. 적은 값과 글자가 정확히 같을 때만 제외하며 패턴은 받지 않습니다. 예를 들어 02-1234-5678을 적었다면 하이픈 없이 적힌 0212345678은 다른 값으로 보고 그대로 처리합니다. 회사 대표번호나 문의용 공용 이메일처럼 답변에 꼭 남아야 하는 공개된 값에 씁니다.</p>
 <p><strong>도구 호출 인자 검사</strong>는 처음에 켜져 있습니다. 실행할 도구를 조회하지 못하거나, 모델이 도구에 넘길 값에 [전화번호_1] 같은 자리표시자를 그대로 넣었으면 도구를 실행하지 않고 거부합니다. 끄면 &quot;이 값은 보호되지 않습니다. 모델이 도구 호출 인자에 넣은 개인정보 자리표시자를 검사하지 않습니다.&quot;라는 경고가 붙습니다. <strong>AI 추가 탐지 종류</strong>는 AI 추가 탐지를 켰을 때 모델로 더 찾을 종류로, 이름, 주소, 건강 정보, 문맥상 식별 정보가 처음부터 들어 있습니다. **AI 탐지 제한 시간(초)**은 모델 추가 탐지를 기다리는 최대 시간으로 1초부터 120초까지 정하며 처음 값은 30초입니다. 이 시간 안에 탐지가 끝나지 않으면 실행이 멈춥니다.</p>
 <p><strong>감사 로그 기록</strong>은 처음에 켜져 있습니다. 켜 두면 답변 하나가 끝날 때마다 이 에이전트가 어떤 종류의 개인정보를 몇 건 처리했는지를 감사 기록으로 남깁니다. 기록에는 &quot;전화번호 2건, 주민등록번호 1건&quot;처럼 종류와 건수만 남고 개인정보 원문은 남지 않습니다. 끄면 이 기록만 남지 않고, 개인정보를 찾아 처리하는 동작은 그대로입니다. 회사가 개인정보 처리 이력을 보관해야 한다면 켜 둡니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="고급 옵션 — 카테고리별 처리 방식부터 탐지 제외 값까지"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/middleware-pii-advanced-1-c696ab7052320b6ab8383fe96e750e10.png" target="_blank" rel="noopener"><img width="1472" height="1468" src="/deep-agent-platform/assets/images/middleware-pii-advanced-1-c696ab7052320b6ab8383fe96e750e10.png" alt="고급 옵션을 펼쳐 카테고리별 처리 방식의 항목 선택 칸, 탐지 엄격도, 탐지 누락 안내, 탐지 제외 값에 번호를 붙인 그림" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">고급 옵션 — 카테고리별 처리 방식부터 탐지 제외 값까지</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>카테고리별 처리 방식</strong></td><td>선택한 항목마다 처리 방식 선택 칸이 하나씩 있습니다. 그림은 <strong>계좌번호</strong>의 칸입니다. 처음에는 모두 &quot;기본 처리 방식 따름&quot;입니다.</td><td>기본은 가리기로 두고 전화번호만 마스킹하고 싶을 때</td></tr><tr><td>2</td><td><strong>탐지 엄격도</strong></td><td><strong>균형</strong>과 <strong>엄격</strong> 중에서 고릅니다. 균형은 형식이 맞으면 탐지하고, 엄격은 카드번호, 사업자등록번호, 법인등록번호를 검증식까지 통과한 값만 탐지합니다. 처음에는 균형입니다.</td><td>주문번호처럼 다른 숫자가 카드번호로 잘못 가려지는 일이 잦을 때</td></tr><tr><td>3</td><td>탐지 누락 안내</td><td>&quot;탐지가 누락될 수 있습니다. 다음 표현은 지원하지 않습니다.&quot;와 함께 base64 같은 인코딩으로 바꾼 값, 한글로 풀어 쓴 숫자, 줄바꿈으로 끊긴 값, 여러 메시지·표 칸·필드에 나뉜 값을 알려 줍니다.</td><td>붙여 넣은 전화번호가 두 줄로 끊기지 않았는지 확인할 때</td></tr><tr><td>4</td><td><strong>탐지 제외 값</strong></td><td>가리지 않을 값을 정확히 적습니다. 전화번호, 이메일, URL, IP, MAC 주소, 사업자등록번호, 법인등록번호 형식의 값만 받으며 패턴은 받지 않습니다.</td><td>답변에 꼭 들어가야 하는 회사 대표번호가 가려질 때</td></tr></tbody></table>
+<p><span class="manual-shot" role="figure" aria-label="고급 옵션 — 도구 호출 인자 검사부터 감사 로그 기록까지"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/middleware-pii-advanced-2-c5d24daf65c6543a1bd5e067d7a507a6.png" target="_blank" rel="noopener"><img width="1472" height="1468" src="/deep-agent-platform/assets/images/middleware-pii-advanced-2-c5d24daf65c6543a1bd5e067d7a507a6.png" alt="고급 옵션 아래쪽에서 도구 호출 인자 검사, AI 추가 탐지 종류, AI 탐지 제한 시간, 감사 로그 기록에 번호를 붙인 그림" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">고급 옵션 — 도구 호출 인자 검사부터 감사 로그 기록까지</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>도구 호출 인자 검사</strong></td><td>실행할 도구를 조회하지 못하거나 도구 인자에 [이름] 같은 자리표시자가 그대로 들어 있으면 도구를 실행하지 않고 거부합니다. 처음에 켜져 있습니다.</td><td>가려진 값으로 도구가 엉뚱한 대상을 조회하는 일을 막을 때(보통 켜 둡니다)</td></tr><tr><td>2</td><td><strong>AI 추가 탐지 종류</strong></td><td>AI 추가 탐지를 켰을 때 모델로 더 찾을 종류입니다. 이름, 주소, 건강 정보, 문맥상 식별 정보가 들어 있습니다.</td><td>주소는 빼고 이름만 찾고 싶을 때</td></tr><tr><td>3</td><td><strong>AI 탐지 제한 시간(초)</strong></td><td>모델 추가 탐지를 기다리는 최대 시간입니다. 1초에서 120초 사이로 정하며 처음 값은 30초입니다. 이 시간 안에 끝나지 않으면 실행을 멈춥니다.</td><td>긴 문서를 넣었을 때 대기 시간을 조정할 때</td></tr><tr><td>4</td><td><strong>감사 로그 기록</strong></td><td>탐지 결과를 감사 기록으로 남깁니다. &quot;전화번호 2건, 주민등록번호 1건&quot;처럼 종류와 건수만 남기고 원문은 남기지 않습니다. 처음에 켜져 있습니다.</td><td>개인정보 처리 이력을 남겨야 할 때(보통 켜 둡니다)</td></tr></tbody></table>
+<p>창 맨 아래의 <strong>취소</strong>는 바꾼 내용을 저장하지 않고 창을 닫고, <strong>저장</strong>은 설정을 저장하고 창을 닫습니다. 저장한 설정은 이 에이전트의 다음 대화부터 적용됩니다.</p>
 <p>감사 기록은 관리자가 보는 운영 기록에 남고, 이 설정 창이나 대화 화면에서는 볼 수 없습니다. 기록 확인이 필요하면 관리자에게 문의하세요.</p>
 <blockquote>
-<p>팁: 설정 창 위쪽에 &quot;이 리소스의 설정을 수정할 권한이 없습니다.&quot;가 보이면 읽기 전용으로 열린 것입니다. 이때는 값을 바꿀 수 없으니 관리자에게 권한을 요청합니다.</p>
+<p>팁: 설정 창 위쪽에 &quot;이 리소스의 설정을 수정할 권한이 없습니다.&quot;와 &quot;수정 권한이 없어 읽기 전용으로 표시됩니다.&quot;가 보이면 읽기 전용으로 열린 것입니다. 이때는 선택 상자, 처리 방식, <strong>저장</strong>이 모두 흐리게 바뀌어 값을 바꿀 수 없습니다. 미들웨어를 붙이고 빼는 것은 할 수 있어도 설정 변경은 권한이 있는 사용자만 할 수 있으니, 바꿀 값을 정리해 관리자에게 권한을 요청합니다.</p>
 </blockquote>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="사례-계약서-속-담당자-연락처-가리기">사례: 계약서 속 담당자 연락처 가리기<a href="#사례-계약서-속-담당자-연락처-가리기" class="hash-link" aria-label="사례: 계약서 속 담당자 연락처 가리기에 대한 직접 링크" title="사례: 계약서 속 담당자 연락처 가리기에 대한 직접 링크" translate="no">​</a></h2>
 <p>김그루 사원은 한빛데이터와 맺을 데이터 분석 구독 계약서 초안을 <strong>계약서 검토 도우미</strong>로 검토하려 합니다. 계약서 끝에는 양쪽 담당자의 휴대전화와 이메일, 회사 대표번호를 적어 두었습니다. 담당자 개인 연락처는 모델에 넘기지 않고, 회사 대표번호는 답변에 그대로 남기려고 합니다.</p>
@@ -267,6 +585,68 @@
 <li class=""><strong>탐지 제외 값</strong> 칸을 누르고, 열린 목록 아래쪽 입력란(Add custom value…)에 02-1234-5678을 하이픈까지 그대로 적은 뒤 Enter를 누릅니다. 칸에 02-1234-5678이 추가되었는지 확인합니다.</li>
 <li class="">창 맨 아래 <strong>저장</strong>을 누릅니다. 창이 닫히면 설정이 저장된 것입니다. 헤더의 <strong>저장</strong>은 누르지 않아도 다음 대화부터 바로 적용됩니다.</li>
 </ol>
+<p><span class="manual-shot" role="figure" aria-label="연락처 선택과 처리 방식 마스킹"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/middleware-contract-settings-e6782440584c02456ea9861eb9402dcc.png" target="_blank" rel="noopener"><img width="1472" height="1468" src="/deep-agent-platform/assets/images/middleware-contract-settings-e6782440584c02456ea9861eb9402dcc.png" alt="계약서 검토 도우미의 개인정보 보호 설정 창에서 연락처 묶음의 전화번호와 이메일, 처리 방식 마스킹과 예시 문구에 번호를 붙인 그림" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">연락처 선택과 처리 방식 마스킹</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>전화번호</strong></td><td><strong>연락처</strong> 묶음에서 선택합니다.</td><td>담당자 휴대전화가 적힌 문서를 다룰 때</td></tr><tr><td>2</td><td><strong>이메일</strong></td><td>같은 묶음에서 선택합니다. 둘 다 선택하면 묶음 아래 경고가 사라집니다.</td><td>담당자 메일 주소가 적힌 문서를 다룰 때</td></tr><tr><td>3</td><td><strong>처리 방식</strong></td><td><strong>마스킹</strong>을 고릅니다.</td><td>전화번호 끝자리로 담당자를 구분하려고 할 때</td></tr><tr><td>4</td><td>예시 문구</td><td>마스킹을 고르면 &quot;예시: 123456-*******&quot;로 바뀝니다.</td><td>고른 방식이 맞게 들어갔는지 확인할 때</td></tr></tbody></table>
+<p><span class="manual-shot" role="figure" aria-label="탐지 제외 값에 대표번호 추가"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/middleware-contract-allowlist-66b7b066f9258a5c126011e1776406e7.png" target="_blank" rel="noopener"><img width="1472" height="1468" src="/deep-agent-platform/assets/images/middleware-contract-allowlist-66b7b066f9258a5c126011e1776406e7.png" alt="고급 옵션의 탐지 제외 값에 회사 대표번호가 추가되고 저장 버튼이 보이는 모습" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">탐지 제외 값에 대표번호 추가</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>탐지 제외 값</strong></td><td>고급 옵션을 펼쳐 회사 대표번호 02-1234-5678을 적고 Enter를 누르면 칸에 값이 추가됩니다.</td><td>공개된 대표번호는 답변에 그대로 남겨야 할 때</td></tr><tr><td>2</td><td><strong>저장</strong></td><td>설정을 저장하고 창을 닫습니다. 따로 알림은 뜨지 않으며, 창을 다시 열면 고른 값이 그대로 남아 있습니다.</td><td>고르기를 마쳤을 때</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2단계-계약서와-연락처를-보내기">2단계: 계약서와 연락처를 보내기<a href="#2단계-계약서와-연락처를-보내기" class="hash-link" aria-label="2단계: 계약서와 연락처를 보내기에 대한 직접 링크" title="2단계: 계약서와 연락처를 보내기에 대한 직접 링크" translate="no">​</a></h3>
 <ol>
 <li class="">
@@ -290,12 +670,50 @@
 </blockquote>
 </li>
 </ol>
+<p><span class="manual-shot" role="figure" aria-label="마스킹이 적용된 계약서 검토 대화"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/middleware-contract-chat-3fecf9e93278b3887b15bbacbf4e2656.png" target="_blank" rel="noopener"><img width="1472" height="836" src="/deep-agent-platform/assets/images/middleware-contract-chat-3fecf9e93278b3887b15bbacbf4e2656.png" alt="계약서 검토 도우미 대화에서 보낸 메시지의 전화번호가 끝 네 자리만 남고 이메일이 마스킹 표시로 바뀌었으며 대표번호는 그대로 남은 모습" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">마스킹이 적용된 계약서 검토 대화</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>김그루 휴대전화</td><td>내 질문 말풍선에서도 *<strong>-</strong>**-5678로 바뀌어 보입니다. 끝 네 자리만 남습니다.</td><td>전화번호가 마스킹되는지 확인할 때</td></tr><tr><td>2</td><td>이메일</td><td>[마스킹:이메일]로 바뀌었습니다. 이메일은 남길 숫자가 없어 통째로 가려집니다.</td><td>이메일이 모델에 넘어가지 않았는지 확인할 때</td></tr><tr><td>3</td><td>한빛데이터 담당자 휴대전화</td><td>*<strong>-</strong>**-6789로 바뀌었습니다.</td><td>두 담당자를 끝자리로 구분할 수 있는지 볼 때</td></tr><tr><td>4</td><td>대표번호</td><td>탐지 제외 값에 넣은 02-1234-5678은 그대로 남았습니다.</td><td>공개 번호가 답변에 필요한 그대로 나오는지 확인할 때</td></tr></tbody></table>
+<p>말풍선 아래에는 불리한 조항을 조항 번호, 문제점, 수정 제안 열로 정리한 검토 표가 이어집니다. 이 예에서는 제2조(자동 연장), 제3조(서비스 수준), 제4조(일방 구독료 조정), 제5조(비밀유지 기간), 제6조(손해배상 한도 1개월), 제7조(결과물 권리 을 귀속), 제8조(해지 사유), 제9조(을 관할 법원)가 나왔습니다.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="결과를-이렇게-확인하세요">결과를 이렇게 확인하세요<a href="#결과를-이렇게-확인하세요" class="hash-link" aria-label="결과를 이렇게 확인하세요에 대한 직접 링크" title="결과를 이렇게 확인하세요에 대한 직접 링크" translate="no">​</a></h3>
 <ul>
-<li class="">내 질문 말풍선과 답변 모두에서 휴대전화 두 개가 끝 네 자리만 남았는지 봅니다. 모델은 원래 번호를 보지 못하므로 답변에도 원래 번호가 나올 수 없습니다.</li>
+<li class="">내 질문 말풍선과 답변 모두에서 휴대전화 두 개가 끝 네 자리만 남았는지 봅니다. 모델은 원래 번호를 보지 못하므로 답변에도 원래 번호가 나올 수 없습니다. 답변에서는 별표가 굵은 글씨 표시로 처리되어 &quot;*--5678&quot;처럼 짧게 보일 수 있지만, 원래 번호가 드러난 것은 아닙니다.</li>
 <li class="">이메일이 [마스킹:이메일]로 표시되는지 봅니다.</li>
 <li class="">대표번호 02-1234-5678이 그대로 남았는지 봅니다. 가려졌다면 1단계 7번에서 <strong>탐지 제외 값</strong>에 적은 값과 하이픈 위치까지 똑같은지, 1단계 8번에서 <strong>저장</strong>을 눌렀는지 확인합니다.</li>
-<li class="">검토 표의 조항 번호를 원문과 대조합니다. 조항 해석은 에이전트의 제안이므로 최종 판단은 계약 담당자가 합니다.</li>
+<li class="">검토 표의 조항 번호를 원문과 대조합니다. 조항 해석은 에이전트의 제안이므로 최종 판단은 계약 담당자가 합니다. 이 예에서는 답변 끝에 &quot;최종 판단은 법무 담당 부서 검토를 받아야 합니다.&quot;가 붙었습니다.</li>
 </ul>
 <blockquote>
 <p>팁: 시험에는 010-1234-5678처럼 누가 봐도 가상인 값만 씁니다. 실제 직원이나 거래처 연락처로 설정을 시험하지 않습니다.</p>

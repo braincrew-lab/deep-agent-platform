@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">사례: 교육 자료 만들기 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/case-training-material/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="사례: 교육 자료 만들기 | Deep Platform"><meta data-rh="true" name="description" content="이 페이지는 브레인크루 AI혁신팀 김그루 사원이 사내 교육 &quot;에이전트 만들기 실습&quot;에 쓸 교육 슬라이드, 실습 워크시트, 퀴즈를 &quot;교육 자료 제작 도우미&quot; 하나로 만드는 과정을 보여 줍니다. 이 에이전트는 문서작성 에이전트 모드로 동작해, 만든 파일이 대화 오른쪽 문서 캔버스에 바로 열립니다."><meta data-rh="true" property="og:description" content="이 페이지는 브레인크루 AI혁신팀 김그루 사원이 사내 교육 &quot;에이전트 만들기 실습&quot;에 쓸 교육 슬라이드, 실습 워크시트, 퀴즈를 &quot;교육 자료 제작 도우미&quot; 하나로 만드는 과정을 보여 줍니다. 이 에이전트는 문서작성 에이전트 모드로 동작해, 만든 파일이 대화 오른쪽 문서 캔버스에 바로 열립니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/case-training-material/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/case-training-material/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/case-training-material/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"사례: 교육 자료 만들기","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/case-training-material"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
-<script src="/deep-agent-platform/assets/js/runtime~main.0da81299.js" defer="defer"></script>
-<script src="/deep-agent-platform/assets/js/main.836f1a7b.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/runtime~main.3cbeb1c1.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.781f3454.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -56,9 +56,9 @@
 
 
 
-<table><thead><tr><th>항목</th><th>내용</th></tr></thead><tbody><tr><td>예시 파일</td><td>필요 없습니다. 과정 이름, 대상, 목차를 프롬프트에 적습니다.</td></tr><tr><td>함께 첨부할 수 있는 파일</td><td>기존 교안이나 사내 양식을 참고로 붙일 수 있습니다. 대화 첨부 형식: .pdf, .jpg, .jpeg, .png, .gif, .webp, .md, .markdown, .txt, .xlsx, .xls, .xlsb, .xlsm, .csv, .docx, .pptx, .ppt, .hwp, .hwpx, .html, .htm (한 번에 최대 10개. 파일 1개당 .md, .markdown, .txt, .html, .htm은 10MB, .pdf, 이미지, .docx, .hwp, .hwpx는 20MB, .xlsx, .xls, .xlsb, .xlsm, .csv, .pptx, .ppt는 50MB까지)</td></tr><tr><td>에이전트 모드</td><td><strong>문서작성 에이전트</strong> (모든 대화를 문서 작성 모드로 실행하고, 결과를 문서 캔버스에 게시합니다)</td></tr><tr><td>도구</td><td>따로 붙일 도구는 없습니다. 문서작성 에이전트에는 Office 파일을 만드는 문서 도구가 들어 있습니다. Word는 <strong>Word 문서 생성</strong>, <strong>Word 제목 추가</strong>, <strong>Word 문단 추가</strong>, <strong>Word 표 추가</strong>, <strong>Word 이미지 추가</strong>, <strong>Word 텍스트 바꾸기</strong>, PowerPoint는 <strong>PowerPoint 문서 생성</strong>, <strong>슬라이드 추가</strong>, <strong>슬라이드 이미지 추가</strong>, <strong>슬라이드 텍스트 채우기</strong>, <strong>슬라이드 복제</strong>, <strong>슬라이드 삭제</strong>, Excel은 <strong>Excel 문서 생성</strong>, <strong>Excel 시트 추가</strong>, <strong>Excel 셀 작성</strong>, <strong>Excel 범위 읽기</strong>, <strong>Excel 수식 재계산</strong>입니다. 완성한 파일은 <strong>문서 구조 확인</strong>으로 점검하고 <strong>문서를 캔버스에 게시</strong>와 <strong>문서 내보내기</strong>로 전달합니다. 실행 기록에는 이 이름으로 보입니다.</td></tr><tr><td>권한</td><td>새 에이전트를 만들 수 있는 권한, 캔버스 내보내기를 쓰려면 이 에이전트를 보고 실행할 수 있는 권한</td></tr></tbody></table>
+<table><thead><tr><th>항목</th><th>내용</th></tr></thead><tbody><tr><td>예시 파일</td><td>필요 없습니다. 과정 이름, 대상, 목차를 프롬프트에 적습니다.</td></tr><tr><td>함께 첨부할 수 있는 파일</td><td>기존 교안이나 사내 양식을 참고로 붙일 수 있습니다. 대화 첨부 형식: .pdf, .jpg, .jpeg, .png, .gif, .webp, .md, .markdown, .txt, .xlsx, .xls, .xlsb, .xlsm, .csv, .docx, .pptx, .ppt, .hwp, .hwpx, .html, .htm (한 번에 최대 10개. 파일 1개당 .md, .markdown, .txt, .html, .htm은 10MB, .pdf, 이미지, .docx, .hwp, .hwpx는 20MB, .xlsx, .xls, .xlsb, .xlsm, .csv, .pptx, .ppt는 50MB까지)</td></tr><tr><td>에이전트 모드</td><td><strong>문서작성 에이전트</strong> (모든 대화를 문서 작성 모드로 실행하고, 결과를 문서 캔버스에 게시합니다)</td></tr><tr><td>도구</td><td>따로 붙일 도구는 없습니다. 문서작성 에이전트가 내장 문서 도구로 파일을 만듭니다. 이 예시의 실행 기록에는 슬라이드를 만들 때 <strong>스킬 목록</strong>, <strong>스킬 불러오기</strong>, 코드 실행, <strong>문서 구조 확인</strong>, 워크시트를 만들 때 <strong>Word 제목 추가</strong>, <strong>Word 문단 추가</strong>, <strong>Word 표 추가</strong>, 퀴즈를 만들 때 <strong>Excel 문서 생성</strong>, <strong>Excel 셀 작성</strong>, 슬라이드를 고칠 때 <strong>캔버스 파일 가져오기</strong>, <strong>슬라이드 텍스트 채우기</strong>가 보였고, 매번 마지막에 <strong>문서를 캔버스에 게시</strong>와 <strong>문서 내보내기</strong>가 이어졌습니다. 거치는 단계는 요청마다 다를 수 있습니다.</td></tr><tr><td>권한</td><td>새 에이전트를 만들 수 있는 권한, 캔버스 내보내기를 쓰려면 이 에이전트를 보고 실행할 수 있는 권한</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="에이전트-만들기">에이전트 만들기<a href="#에이전트-만들기" class="hash-link" aria-label="에이전트 만들기에 대한 직접 링크" title="에이전트 만들기에 대한 직접 링크" translate="no">​</a></h2>
-<p>사이드바의 <strong>새 에이전트</strong>를 눌러 대화로 에이전트를 만드는 첫 화면을 열고, 입력란에 교육 자료 제작 도우미가 할 일을 적어 보냅니다.</p>
+<p>사이드바의 <strong>새 에이전트</strong>를 눌러 대화로 에이전트를 만드는 첫 화면을 열고, 입력란에 교육 자료 제작 도우미가 할 일을 적어 보냅니다. 요청 입력부터 확인 질문, 추천 승인, <strong>바로 이용하기</strong>까지의 화면과 순서는 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/agent-creation/">에이전트 만들기</a>의 &quot;대화로 만들기&quot;에서 그림과 함께 설명합니다. 이 절에서는 교육 자료 제작 도우미에 넣을 요청 문장과 답한 내용만 적습니다.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="따라-해-보기">따라 해 보기<a href="#따라-해-보기" class="hash-link" aria-label="따라 해 보기에 대한 직접 링크" title="따라 해 보기에 대한 직접 링크" translate="no">​</a></h3>
 <ol>
 <li class="">
@@ -68,23 +68,99 @@
 </blockquote>
 </li>
 <li class="">
-<p>확인 질문에 답하고 <strong>전체 제출</strong>을 누른 뒤, 완료 카드의 <strong>바로 이용하기</strong>를 누릅니다.</p>
+<p>확인 질문 세 개(자료 형식, 받는 방법, 지킬 조건)에 보기를 골라 질문마다 <strong>제출</strong>을 누르고, **전체 제출 (3/3)**을 누릅니다. 이어서 이름을 묻는 질문에는 <strong>교육 자료 제작 도우미</strong>를 고르고 <strong>제출</strong>합니다.</p>
+</li>
+<li class="">
+<p>도구, 동작 방식, 스킬, 함께 일할 도우미 에이전트 추천 카드가 차례로 나오면 내용을 보고 <strong>승인</strong>을 누릅니다. 바꾸고 싶으면 <strong>수정 요청</strong>을 누릅니다.</p>
+</li>
+<li class="">
+<p>9단계까지 끝나 완료 요약이 나오면 <strong>바로 이용하기</strong>를 누릅니다.</p>
 </li>
 </ol>
+<p>이 예시에서는 추천 도구와 스킬이 없었고, 동작 방식으로 오류가 나면 한 번 더 시도하는 설정 1개, 함께 일할 도우미 에이전트로 주간 업무 보고서 도우미와 설문 결과 분석가 2개가 골라졌습니다. 추천 내용은 요청 문장과 내 에이전트 목록에 따라 달라집니다. 만들기 대화가 고른 에이전트 모드는 <strong>일반 에이전트</strong>이므로 다음 단계에서 바꿉니다.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="에이전트-모드를-문서작성-에이전트로-바꾸기">에이전트 모드를 문서작성 에이전트로 바꾸기<a href="#에이전트-모드를-문서작성-에이전트로-바꾸기" class="hash-link" aria-label="에이전트 모드를 문서작성 에이전트로 바꾸기에 대한 직접 링크" title="에이전트 모드를 문서작성 에이전트로 바꾸기에 대한 직접 링크" translate="no">​</a></h2>
-<p>결과물을 문서 캔버스로 받으려면 에이전트 모드를 <strong>문서작성 에이전트</strong>로 바꿉니다. 에이전트 편집 화면 오른쪽의 <strong>설정</strong> 탭에서 바꾸며, 고르는 즉시 적용되어 &quot;에이전트 모드가 저장되었습니다&quot;가 표시됩니다.</p>
+<p>결과물을 문서 캔버스로 받으려면 에이전트 모드를 <strong>문서작성 에이전트</strong>로 바꿉니다. 에이전트 편집 화면 오른쪽의 <strong>설정</strong> 탭에서 바꾸며, 고르는 즉시 적용되어 &quot;에이전트 모드가 저장되었습니다&quot;가 표시됩니다. 이미 <strong>문서작성 에이전트</strong>가 선택되어 있으면 그대로 둡니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="에이전트 모드 선택"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/case-training-material-mode-26d35efd9b41d2f5e110a29079077d3f.png" target="_blank" rel="noopener"><img width="1472" height="600" src="/deep-agent-platform/assets/images/case-training-material-mode-26d35efd9b41d2f5e110a29079077d3f.png" alt="교육 자료 제작 도우미 에이전트 편집 화면의 설정 탭에서 에이전트 모드를 고르는 모습" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">에이전트 모드 선택</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>설정</strong></td><td>에이전트 편집 화면 오른쪽의 실행 설정 탭입니다.</td><td>에이전트 모드나 최대 처리 단계 수를 바꿀 때</td></tr><tr><td>2</td><td><strong>에이전트 모드</strong></td><td><strong>일반 에이전트</strong>와 <strong>문서작성 에이전트</strong> 중에서 고르는 카드입니다. 전환하는 즉시 저장됩니다.</td><td>결과물을 문서 캔버스로 받고 싶을 때</td></tr><tr><td>3</td><td><strong>문서작성 에이전트</strong></td><td>모든 대화를 문서 작성 모드로 실행합니다. 고르면 &quot;에이전트 모드가 저장되었습니다&quot;가 표시됩니다.</td><td>슬라이드, Word, Excel 파일을 만들 때</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="따라-해-보기-1">따라 해 보기<a href="#따라-해-보기-1" class="hash-link" aria-label="따라 해 보기에 대한 직접 링크" title="따라 해 보기에 대한 직접 링크" translate="no">​</a></h3>
 <ol>
-<li class="">사이드바에서 <strong>교육 자료 제작 도우미</strong>를 누르고 <strong>에이전트 설정</strong>을 누릅니다.</li>
+<li class="">사이드바에서 <strong>교육 자료 제작 도우미</strong>를 누르고 왼쪽 메뉴의 <strong>에이전트 설정</strong>을 누릅니다.</li>
 <li class="">오른쪽 탭에서 <strong>설정</strong>을 누릅니다.</li>
-<li class=""><strong>에이전트 모드</strong>에서 <strong>문서작성 에이전트</strong>를 고릅니다. 헤더의 <strong>저장</strong>을 누르지 않아도 바로 적용됩니다.</li>
+<li class=""><strong>에이전트 모드</strong>에서 <strong>문서작성 에이전트</strong>를 고릅니다. 모드는 바로 적용되지만, 화면 위쪽에 &quot;저장되지 않은 변경이 있습니다&quot;가 보이면 헤더의 <strong>저장</strong>을 눌러 &quot;저장되었습니다&quot;를 확인합니다.</li>
 </ol>
 <blockquote>
-<p>팁: 슬라이드 여러 장과 문서 세 개를 한 번에 만들면 처리 단계가 많아집니다. 답변이 &quot;작업 한계에 도달했습니다&quot;로 중간에 멈추면 같은 <strong>설정</strong> 탭의 <strong>Recursion Limit</strong> 카드에서 <strong>최대 처리 단계 수</strong>(기본값 500)를 올리고 탭 위쪽의 <strong>저장</strong>을 누릅니다. 값을 올리면 긴 작업이 멈추기 전까지 더 많은 단계를 진행하므로 처리 시간과 비용이 늘 수 있습니다.</p>
+<p>팁: 슬라이드 여러 장과 문서 세 개를 한 번에 만들면 처리 단계가 많아집니다. 답변이 &quot;작업 한계에 도달했습니다&quot;로 중간에 멈추면 같은 <strong>설정</strong> 탭의 <strong>Recursion Limit</strong> 카드에서 <strong>최대 처리 단계 수</strong>(기본값 500, 범위 1~1000)를 올리고 탭 위쪽의 <strong>저장</strong>을 누릅니다. 값을 올리면 긴 작업이 멈추기 전까지 더 많은 단계를 진행하므로 처리 시간과 비용이 늘 수 있습니다. 이 예시의 세 요청은 기본값 500으로 멈추지 않고 끝났습니다.</p>
 </blockquote>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="단계별-실행">단계별 실행<a href="#단계별-실행" class="hash-link" aria-label="단계별 실행에 대한 직접 링크" title="단계별 실행에 대한 직접 링크" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1단계-교육-슬라이드">1단계: 교육 슬라이드<a href="#1단계-교육-슬라이드" class="hash-link" aria-label="1단계: 교육 슬라이드에 대한 직접 링크" title="1단계: 교육 슬라이드에 대한 직접 링크" translate="no">​</a></h3>
-<p>교육 자료 제작 도우미와 새 대화를 열고 교육 슬라이드 8장을 요청합니다. 만든 슬라이드는 대화 오른쪽 문서 캔버스에 열립니다.</p>
+<p>교육 자료 제작 도우미와 새 대화를 열고 교육 슬라이드 8장을 요청합니다. 에이전트는 작업 목록을 세운 뒤 슬라이드를 만들고, 완성한 파일을 대화 오른쪽 문서 캔버스에 게시합니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="교육 슬라이드와 문서 캔버스"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/case-training-material-slides-e57725391284b74dc2498b04a5cc8181.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/case-training-material-slides-e57725391284b74dc2498b04a5cc8181.png" alt="문서 캔버스에 교육 슬라이드가 열린 대화 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">교육 슬라이드와 문서 캔버스</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>결과물 카드</td><td>만든 파일의 이름과 종류(<strong>프레젠테이션</strong>)를 보여 줍니다. <strong>캔버스에서 열기</strong>를 누르면 오른쪽 캔버스에 열립니다.</td><td>다른 결과물을 보다가 슬라이드로 돌아올 때</td></tr><tr><td>2</td><td>파일 이름과 상태</td><td>캔버스에 열린 파일 이름과 상태를 보여 줍니다. <strong>준비됨</strong>이면 작성이 끝난 것입니다.</td><td>슬라이드가 다 만들어졌는지 확인할 때</td></tr><tr><td>3</td><td>페이지 이동</td><td>이전·다음 버튼과 현재 위치(1 / 8)입니다. 왼쪽 썸네일을 눌러도 그 장으로 갑니다.</td><td>8장을 차례로 확인할 때</td></tr><tr><td>4</td><td><strong>넓게보기</strong></td><td>캔버스를 넓게 펼칩니다. 다시 누르면 <strong>나란히보기</strong>로 돌아갑니다.</td><td>슬라이드 글자를 크게 볼 때</td></tr></tbody></table>
+<p>캔버스 왼쪽 위 <strong>캔버스 접기</strong>를 누르면 캔버스를 닫고 대화만 봅니다. 오른쪽 <strong>캔버스 열기</strong>로 다시 엽니다.</p>
 <p><strong>따라 해 보기</strong></p>
 <ol>
 <li class="">
@@ -97,14 +173,47 @@
 </blockquote>
 </li>
 <li class="">
-<p>답변이 진행되는 동안 캔버스 상태가 <strong>작성 중…</strong> 에서 <strong>준비됨</strong>으로 바뀌는지 봅니다.</p>
+<p>답변이 끝나면 대화에 결과물 카드가 붙고, 캔버스 위쪽에 파일 이름과 <strong>준비됨</strong>이 표시됩니다.</p>
 </li>
 <li class="">
 <p>썸네일로 8장을 넘겨 보며 순서와 화면 이름이 맞는지 확인합니다.</p>
 </li>
 </ol>
+<p>이 예시에서 받은 슬라이드는 1장 표지, 2장 오늘의 목표, 3장 &quot;01 에이전트란 무엇인가&quot;(구간 표지), 4장 대화로 에이전트 만들기 순서, 5장 좋은 요청 문장 쓰는 법, 6장 &quot;02 실습 1: 주간 업무 보고서 도우미 만들기&quot;(구간 표지), 7장 실습 2: 테스트 탭으로 시험하고 고치기, 8장 정리와 다음 과정이었습니다. 4장에는 새 에이전트, 바로 이용하기, 이 에이전트와 새 대화, 에이전트 설정, 테스트가 순서대로 들어갔습니다.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2단계-실습-워크시트word">2단계: 실습 워크시트(Word)<a href="#2단계-실습-워크시트word" class="hash-link" aria-label="2단계: 실습 워크시트(Word)에 대한 직접 링크" title="2단계: 실습 워크시트(Word)에 대한 직접 링크" translate="no">​</a></h3>
 <p>같은 대화에서 실습 워크시트를 Word 문서로 요청하고 캔버스에서 확인합니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="실습 워크시트"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/case-training-material-worksheet-311768c2edc814981c1b8c4a8ddf93a0.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/case-training-material-worksheet-311768c2edc814981c1b8c4a8ddf93a0.png" alt="문서 캔버스에 실습 워크시트 Word 문서가 열린 모습" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">실습 워크시트</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>결과물 카드</td><td>종류가 <strong>문서</strong>인 카드입니다.</td><td>슬라이드와 워크시트를 번갈아 볼 때</td></tr><tr><td>2</td><td>문서 미리보기</td><td>Word 문서를 쪽 단위로 보여 줍니다.</td><td>빈칸과 표, 체크리스트가 들어갔는지 볼 때</td></tr><tr><td>3</td><td><strong>페이지 전체 맞춤</strong></td><td>한 쪽 전체가 캔버스에 들어오게 배율을 맞춥니다.</td><td>한 쪽 전체 배치를 볼 때</td></tr></tbody></table>
+<p>배율 조절 줄에는 축소(−), 배율, 확대(+), <strong>너비에 맞춤</strong>도 있습니다.</p>
 <p><strong>따라 해 보기</strong></p>
 <ol>
 <li class="">
@@ -114,11 +223,43 @@
 </blockquote>
 </li>
 <li class="">
-<p>캔버스에 문서가 열리면 빈칸과 표, 체크리스트를 확인합니다.</p>
+<p>캔버스에 문서가 열리면 <strong>페이지 전체 맞춤</strong>을 눌러 한 쪽 전체를 보고, 빈칸과 표, 체크리스트를 확인합니다.</p>
 </li>
 </ol>
+<p>이 예시의 워크시트는 한 쪽짜리였습니다. 실습 1에는 &quot;내가 만들 에이전트가 하는 일&quot;과 요청 문장을 적는 밑줄 빈칸, 실습 2에는 테스트 질문과 결과 및 수정 사항을 적는 표(질문 칸에 &quot;예) 보고서 초안 작성해 주세요&quot; 같은 예시 3개), 마지막에는 &quot;에이전트 역할이 명확하게 정의되었는가?&quot; 등 확인 사항 5개와 체크 칸이 들어갔습니다.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3단계-퀴즈excel">3단계: 퀴즈(Excel)<a href="#3단계-퀴즈excel" class="hash-link" aria-label="3단계: 퀴즈(Excel)에 대한 직접 링크" title="3단계: 퀴즈(Excel)에 대한 직접 링크" translate="no">​</a></h3>
-<p>퀴즈 문항은 사실과 다르면 안 되므로 정답이 될 사실을 프롬프트에 직접 적습니다.</p>
+<p>퀴즈 문항은 사실과 다르면 안 되므로 정답이 될 사실을 프롬프트에 직접 적습니다. 스프레드시트는 캔버스에서 <strong>읽기 전용</strong> 시트로 열리고, 시트 이름 탭은 시트 아래쪽에 있습니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="퀴즈 시트"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/case-training-material-quiz-538d4369215bf84eeb10a17d5756b8ad.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/case-training-material-quiz-538d4369215bf84eeb10a17d5756b8ad.png" alt="문서 캔버스 시트 보기에서 퀴즈 문항 셀을 고른 모습" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">퀴즈 시트</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>결과물 카드</td><td>종류가 <strong>스프레드시트</strong>인 카드입니다.</td><td>퀴즈 파일을 열 때</td></tr><tr><td>2</td><td><strong>선택한 셀</strong></td><td>고른 셀의 주소(예: B2)입니다. 오른쪽 칸에 그 셀의 값이 표시됩니다.</td><td>어느 문항을 보고 있는지 확인할 때</td></tr><tr><td>3</td><td><strong>값 복사</strong></td><td>선택한 셀의 값을 복사합니다.</td><td>문항 문장을 다른 곳에 옮길 때</td></tr></tbody></table>
 <p><strong>따라 해 보기</strong></p>
 <ol>
 <li class="">
@@ -128,18 +269,50 @@
 </blockquote>
 </li>
 <li class="">
-<p>시트 탭을 눌러 &quot;문항&quot;과 &quot;정답&quot; 시트를 모두 확인합니다.</p>
+<p>시트 아래쪽 탭에서 &quot;문항&quot;과 &quot;정답&quot;을 눌러 두 시트를 모두 확인합니다.</p>
 </li>
 </ol>
+<p>이 예시에서 &quot;문항&quot; 시트는 번호, 문항, 보기1~보기4 열, &quot;정답&quot; 시트는 번호, 정답, 해설 열로 만들어졌고, 정답은 차례로 5자, 10개, 12개, 문서작성 에이전트, 500이었습니다.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="4단계-고칠-부분을-골라-수정-요청">4단계: 고칠 부분을 골라 수정 요청<a href="#4단계-고칠-부분을-골라-수정-요청" class="hash-link" aria-label="4단계: 고칠 부분을 골라 수정 요청에 대한 직접 링크" title="4단계: 고칠 부분을 골라 수정 요청에 대한 직접 링크" translate="no">​</a></h3>
-<p>캔버스에서는 문서를 직접 고칠 수 없습니다. 대신 고칠 요소를 골라 다음 메시지에 붙이면 에이전트가 그 부분을 고칩니다.</p>
+<p>캔버스에서는 문서를 직접 고칠 수 없습니다. 대신 고칠 요소를 골라 다음 메시지에 붙이면 에이전트가 그 부분을 고칩니다. <strong>문서 요소 선택</strong>을 누르면 &quot;요소를 선택하여 메시지에 첨부하세요.&quot;가 표시되고, 슬라이드 위에 고를 수 있는 글상자가 나타납니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="문서 요소 선택"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/case-training-material-select-3fff8fa740adfa87d45698d464b91863.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/case-training-material-select-3fff8fa740adfa87d45698d464b91863.png" alt="문서 요소 선택으로 슬라이드의 제목을 골라 수정을 요청하는 모습" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">문서 요소 선택</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>문서 요소 선택</strong></td><td>캔버스에서 요소를 고를 수 있게 합니다. 고른 요소는 다음 메시지에 첨부됩니다.</td><td>특정 슬라이드나 문단만 고치고 싶을 때</td></tr><tr><td>2</td><td>선택한 요소</td><td>고른 글상자가 테두리로 강조됩니다.</td><td>고칠 곳을 정확히 짚을 때</td></tr><tr><td>3</td><td>선택한 요소 목록</td><td>입력창 위에 &quot;Slide 6 · TextBox 3&quot;처럼 붙은 선택 목록입니다. 오른쪽 X(<strong>선택 삭제</strong>)로 뺄 수 있습니다.</td><td>잘못 고른 요소를 뺄 때</td></tr></tbody></table>
 <p><strong>따라 해 보기</strong></p>
 <ol>
 <li class="">
-<p>결과물 카드에서 슬라이드 파일의 <strong>캔버스에서 열기</strong>를 누릅니다.</p>
+<p>결과물 카드에서 슬라이드 파일의 <strong>캔버스에서 열기</strong>를 누르고, 썸네일에서 6번째 장을 누릅니다.</p>
 </li>
 <li class="">
-<p><strong>문서 요소 선택</strong>을 누르고, 여섯 번째 장(실습 1 주간 업무 보고서 도우미 만들기)의 제목을 누릅니다.</p>
+<p><strong>문서 요소 선택</strong>을 누르고, 6번째 장(실습 1: 주간 업무 보고서 도우미 만들기)의 제목을 누릅니다.</p>
 </li>
 <li class="">
 <p>아래 프롬프트를 보냅니다.</p>
@@ -148,19 +321,54 @@
 </blockquote>
 </li>
 <li class="">
-<p>새 버전이 캔버스에 열리면 바뀐 부분을 확인합니다.</p>
+<p>실행 기록에 <strong>캔버스 파일 가져오기</strong>, <strong>문서 구조 확인</strong>, <strong>슬라이드 텍스트 채우기</strong>, <strong>문서를 캔버스에 게시</strong>가 지나간 뒤 캔버스의 6번째 장이 바뀌었는지 확인합니다.</p>
 </li>
 </ol>
-<blockquote>
-<p>팁: 요소를 고른 뒤 문서가 새 버전으로 바뀌면 선택 목록에 <strong>이전 버전</strong>이 표시됩니다. &quot;선택한 문서가 변경되었습니다. 이전 선택을 삭제하고 요소를 다시 선택해 주세요.&quot; 안내대로 선택을 지우고 다시 고릅니다.</p>
-</blockquote>
+<p>이 예시에서는 6번째 장 제목이 &quot;실습 1: 주간 업무 보고서 도우미 만들기(15분)&quot;으로 바뀌고, 그 아래에 &quot;준비물: 노트북 또는 메모 가능한 기기&quot; 한 줄이 추가되었습니다. 다른 장은 그대로였습니다. 보낸 뒤에는 입력창 위 선택 목록이 비워집니다.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="5단계-내려받기">5단계: 내려받기<a href="#5단계-내려받기" class="hash-link" aria-label="5단계: 내려받기에 대한 직접 링크" title="5단계: 내려받기에 대한 직접 링크" translate="no">​</a></h3>
 <p>캔버스에 연 파일은 캔버스 위쪽의 <strong>내보내기</strong>에서 원본이나 다른 형식으로 내려받습니다. 파일 종류마다 고를 수 있는 항목이 다릅니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="캔버스 내보내기 메뉴"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/case-training-material-export-ad3a29623b38bdcaa1fb4b8327778305.png" target="_blank" rel="noopener"><img width="1412" height="660" src="/deep-agent-platform/assets/images/case-training-material-export-ad3a29623b38bdcaa1fb4b8327778305.png" alt="문서 캔버스의 내보내기 메뉴를 연 모습" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">캔버스 내보내기 메뉴</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>내보내기</strong></td><td>캔버스에 열린 파일의 내려받기 메뉴를 엽니다.</td><td>결과물을 내 PC에 저장할 때</td></tr><tr><td>2</td><td><strong>원본 다운로드</strong></td><td>만든 파일을 그대로 내려받습니다.</td><td>강의 중 고쳐 쓸 PowerPoint 원본이 필요할 때</td></tr><tr><td>3</td><td><strong>PPTX 형식으로 내보내기</strong></td><td>PowerPoint 파일로 바꿔 내려받습니다.</td><td>PowerPoint 파일이 꼭 필요한 곳에 보낼 때</td></tr><tr><td>4</td><td><strong>PDF 형식으로 내보내기</strong></td><td>PDF로 바꿔 내려받습니다. 슬라이드와 Word 문서에서 보입니다.</td><td>수강생에게 미리 나눠 줄 자료를 만들 때</td></tr></tbody></table>
 <p><strong>따라 해 보기</strong></p>
 <ol>
 <li class="">슬라이드 파일을 캔버스에 연 상태에서 <strong>내보내기</strong>를 누릅니다.</li>
-<li class=""><strong>원본 다운로드</strong>로 PowerPoint 파일을, <strong>PDF 형식으로 내보내기</strong>로 배포용 PDF를 받습니다.</li>
-<li class="">워크시트와 퀴즈도 같은 방법으로 받습니다. 퀴즈(Excel)에는 PDF 항목이 없고 원본이나 XLSX로만 받습니다.</li>
+<li class=""><strong>원본 다운로드</strong>로 PowerPoint 파일을, <strong>PDF 형식으로 내보내기</strong>로 배포용 PDF를 받습니다. 이 예시에서는 &quot;브레인크루_에이전트_실습_슬라이드.pdf&quot;가 8쪽짜리 PDF로 바로 내려받아졌습니다.</li>
+<li class="">워크시트와 퀴즈도 같은 방법으로 받습니다. 퀴즈(Excel)에는 PDF 항목이 없고 <strong>원본 다운로드</strong>나 <strong>XLSX 형식으로 내보내기</strong>로만 받습니다.</li>
 </ol>
 
 
@@ -206,10 +414,12 @@
 
 
 
-<table><thead><tr><th>결과물</th><th>확인할 것</th></tr></thead><tbody><tr><td>교육 슬라이드</td><td>8장인지, 순서가 프롬프트와 같은지, 화면 이름(새 에이전트, 바로 이용하기, 이 에이전트와 새 대화, 에이전트 설정, 테스트)이 그대로 쓰였는지</td></tr><tr><td>실습 워크시트</td><td>실습 1 빈칸, 실습 2 표(테스트 질문 3행), 체크리스트 5개가 있는지</td></tr><tr><td>퀴즈</td><td>&quot;문항&quot;과 &quot;정답&quot; 두 시트, 5문항인지. 정답이 5자, 10개, 12개, 문서작성 에이전트, 500과 맞는지</td></tr></tbody></table>
+<table><thead><tr><th>결과물</th><th>확인할 것</th></tr></thead><tbody><tr><td>교육 슬라이드</td><td>8장인지, 순서가 프롬프트와 같은지, 화면 이름(새 에이전트, 바로 이용하기, 이 에이전트와 새 대화, 에이전트 설정, 테스트)이 그대로 쓰였는지, 요청하지 않은 내용이 들어가지 않았는지</td></tr><tr><td>실습 워크시트</td><td>실습 1 빈칸, 실습 2 표(테스트 질문 3행), 체크리스트 5개가 있는지</td></tr><tr><td>퀴즈</td><td>&quot;문항&quot;과 &quot;정답&quot; 두 시트, 5문항인지. 정답이 5자, 10개, 12개, 문서작성 에이전트, 500과 맞는지</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="결과를-이렇게-확인하세요">결과를 이렇게 확인하세요<a href="#결과를-이렇게-확인하세요" class="hash-link" aria-label="결과를 이렇게 확인하세요에 대한 직접 링크" title="결과를 이렇게 확인하세요에 대한 직접 링크" translate="no">​</a></h3>
 <ul>
 <li class="">퀴즈의 정답 숫자가 프롬프트에 적은 사실과 다르면 바로 고쳐 달라고 요청합니다. 교육 자료의 숫자는 화면에서 한 번 더 확인합니다.</li>
+<li class="">요청하지 않은 내용이 들어갈 수 있습니다. 이 예시에서는 슬라이드 표지에 프롬프트에 없던 날짜(&quot;2024년 6월&quot;)가 들어갔습니다. 이런 부분은 <strong>문서 요소 선택</strong>으로 골라 지우거나 바르게 고쳐 달라고 요청합니다.</li>
+<li class="">요청 한 번에 같은 내용의 결과물 카드가 두 개(예: &quot;브레인크루_에이전트_실습_슬라이드.pptx&quot;와 &quot;presentation_bkc_agent.pptx&quot;) 붙을 수 있고, 캔버스 탭에도 둘 다 열립니다. 이 예시에서는 한글 이름 파일을 기준으로 확인하고 고쳤습니다.</li>
 <li class="">캔버스 미리보기가 열리지 않고 &quot;미리보기를 사용할 수 없습니다. 원본 파일을 다운로드해 주세요.&quot;가 보이면 <strong>원본 다운로드</strong>로 받아 PC에서 엽니다.</li>
 <li class="">슬라이드 글꼴이나 색은 회사 양식과 다를 수 있습니다. 회사 양식이 있으면 .pptx 양식 파일을 첨부하고 &quot;이 양식으로 만들어 주세요&quot;라고 요청합니다.</li>
 </ul>

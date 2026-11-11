@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">멀티에이전트 개념 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/multi-agent-concepts/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="멀티에이전트 개념 | Deep Platform"><meta data-rh="true" name="description" content="멀티에이전트는 에이전트 하나가 모든 일을 혼자 하지 않고, 이미 만들어 둔 다른 에이전트에게 일을 나눠 맡기는 구성입니다. 이 페이지는 브레인크루 AI혁신팀 김그루 사원이 만든 &quot;업무 총괄 비서&quot;를 예로 들어 멀티에이전트가 무엇인지, 화면 어디에서 확인하는지, 언제 쓰면 좋은지 설명합니다."><meta data-rh="true" property="og:description" content="멀티에이전트는 에이전트 하나가 모든 일을 혼자 하지 않고, 이미 만들어 둔 다른 에이전트에게 일을 나눠 맡기는 구성입니다. 이 페이지는 브레인크루 AI혁신팀 김그루 사원이 만든 &quot;업무 총괄 비서&quot;를 예로 들어 멀티에이전트가 무엇인지, 화면 어디에서 확인하는지, 언제 쓰면 좋은지 설명합니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/multi-agent-concepts/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/multi-agent-concepts/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/multi-agent-concepts/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"멀티에이전트 개념","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/multi-agent-concepts"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
-<script src="/deep-agent-platform/assets/js/runtime~main.0da81299.js" defer="defer"></script>
-<script src="/deep-agent-platform/assets/js/main.836f1a7b.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/runtime~main.3cbeb1c1.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.781f3454.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -89,7 +89,45 @@
 <table><thead><tr><th>방법</th><th>어디서 하나요</th><th>누가 담당을 고르나요</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>서브에이전트 직접 연결</td><td>에이전트 편집 화면의 <strong>서브에이전트</strong> 칸</td><td>내가 정한 담당 안에서 총괄 에이전트가 고릅니다.</td><td>매주 같은 순서로 반복하는 업무를 정해진 담당에게 맡길 때</td></tr><tr><td>대화로 만들기의 서브에이전트 추천</td><td>새 에이전트를 대화로 만들 때 나오는 <strong>서브에이전트 추천</strong> 카드</td><td>만들기 도우미가 내 에이전트 가운데 후보를 추천하고, 내가 <strong>승인</strong>합니다.</td><td>새 에이전트를 만들면서 이미 있는 에이전트를 담당으로 붙이고 싶을 때</td></tr><tr><td>SUPER AI 에이전트</td><td>사이드바 <strong>더 보기</strong> 메뉴의 <strong>SUPER AI 에이전트</strong></td><td>SUPER AI 에이전트가 내가 쓸 수 있는 에이전트 가운데 요청에 맞는 에이전트를 골라 맡깁니다.</td><td>어느 에이전트에 물어야 할지 모를 때, 담당을 미리 정하지 않고 바로 맡기고 싶을 때</td></tr></tbody></table>
 <p>직접 연결하는 방법은 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/subagent-assignment/">서브에이전트 할당하기</a>, 실행 중 화면은 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/multi-agent-flow/">멀티에이전트 실행 흐름</a>에서 설명합니다.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="에이전트-편집-화면에서-서브에이전트-확인하기">에이전트 편집 화면에서 서브에이전트 확인하기<a href="#에이전트-편집-화면에서-서브에이전트-확인하기" class="hash-link" aria-label="에이전트 편집 화면에서 서브에이전트 확인하기에 대한 직접 링크" title="에이전트 편집 화면에서 서브에이전트 확인하기에 대한 직접 링크" translate="no">​</a></h2>
-<p>서브에이전트는 총괄 에이전트의 에이전트 편집 화면에서 붙이고 확인합니다. 사이드바에서 에이전트를 연 뒤 <strong>에이전트 설정</strong>을 누르면 에이전트 편집 화면이 열립니다. 가운데 편집 영역의 <strong>폼</strong> 보기에서 <strong>지침</strong> 바로 아래, <strong>모델 설정</strong> 위에 <strong>서브에이전트</strong> 칸이 있습니다. 이 칸에는 연결된 서브에이전트 이름이 두 개까지 모두 보이고, 세 개부터는 앞의 두 이름 뒤에 &quot;+1&quot;처럼 나머지 개수가 붙습니다. 하나도 없으면 &quot;서브에이전트가 없습니다&quot;로 표시됩니다. 칸 오른쪽의 톱니바퀴 버튼(<strong>서브에이전트 관리</strong>)을 누르면 서브에이전트를 추가하거나 빼는 창이 열립니다. 편집 영역 위쪽의 <strong>비주얼</strong>을 누르면 같은 구성이 총괄 에이전트 상자와 <strong>서브 에이전트</strong> 상자를 선으로 이은 그림으로 바뀌므로, 담당 구성을 한눈에 보거나 팀장에게 구조를 설명할 때 씁니다.</p>
+<p>서브에이전트는 총괄 에이전트의 에이전트 편집 화면에서 붙이고 확인합니다. 사이드바에서 에이전트를 연 뒤 <strong>에이전트 설정</strong>을 누르면 에이전트 편집 화면이 열립니다. 가운데 편집 영역의 <strong>폼</strong> 보기에서 <strong>지침</strong> 바로 아래, <strong>모델</strong> 위에 <strong>서브에이전트</strong> 칸이 있습니다. 이 칸에는 연결된 서브에이전트 이름이 두 개까지 모두 보이고, 세 개부터는 앞의 두 이름 뒤에 &quot;+1&quot;처럼 나머지 개수가 붙습니다. 하나도 없으면 &quot;서브에이전트가 없습니다&quot;로 표시됩니다. 칸 오른쪽의 톱니바퀴 버튼(<strong>서브에이전트 관리</strong>)을 누르면 서브에이전트를 추가하거나 빼는 창이 열립니다. 편집 영역 위쪽의 <strong>비주얼</strong>을 누르면 같은 구성이 총괄 에이전트 상자와 <strong>서브 에이전트</strong> 상자를 선으로 이은 그림으로 바뀌므로, 담당 구성을 한눈에 보거나 팀장에게 구조를 설명할 때 씁니다.</p>
+<p>그림은 서브에이전트 세 개를 붙인 업무 총괄 비서의 에이전트 편집 화면입니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="에이전트 편집 화면의 서브에이전트 칸"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/multi-agent-concepts-edit-subagents-189f452d6cf6658c08c0818eb8800374.png" target="_blank" rel="noopener"><img width="1400" height="1040" src="/deep-agent-platform/assets/images/multi-agent-concepts-edit-subagents-189f452d6cf6658c08c0818eb8800374.png" alt="업무 총괄 비서의 에이전트 편집 화면 폼 보기. 지침 아래 서브에이전트 칸에 회의록 요약 도우미, 주간 업무 보고서 도우미 +1이 보이고, 폼과 비주얼 전환, 서브에이전트 이름, 서브에이전트 관리 버튼에 번호가 붙어 있다" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">에이전트 편집 화면의 서브에이전트 칸</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>폼</strong></td><td>가운데 편집 영역을 입력 양식으로 보여 줍니다. <strong>서브에이전트</strong> 칸은 <strong>지침</strong> 바로 아래, <strong>모델</strong> 위에 있습니다.</td><td>서브에이전트 이름을 글자로 확인할 때</td></tr><tr><td>2</td><td><strong>비주얼</strong></td><td>같은 설정을 연결 그림으로 보여 줍니다. 총괄 에이전트와 <strong>서브 에이전트</strong> 상자가 선으로 이어집니다.</td><td>담당 구성을 한눈에 보거나 팀장에게 구조를 설명할 때</td></tr><tr><td>3</td><td><strong>서브에이전트</strong> 칸</td><td>연결된 서브에이전트 이름입니다. 두 개까지는 이름을 모두 보여 주고, 세 개부터는 앞의 두 이름 뒤에 &quot;+1&quot;처럼 나머지 개수를 붙입니다. 그림은 &quot;회의록 요약 도우미, 주간 업무 보고서 도우미 +1&quot;입니다. 하나도 없으면 &quot;서브에이전트가 없습니다&quot;로 표시됩니다.</td><td>지금 누구에게 일을 나눠 맡기고 있는지 확인할 때</td></tr><tr><td>4</td><td><strong>서브에이전트 관리</strong></td><td>톱니바퀴 버튼입니다. 서브에이전트를 추가하거나 빼는 창을 엽니다.</td><td>담당 에이전트를 새로 붙이거나 뺄 때</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="따라-해-보기">따라 해 보기<a href="#따라-해-보기" class="hash-link" aria-label="따라 해 보기에 대한 직접 링크" title="따라 해 보기에 대한 직접 링크" translate="no">​</a></h3>
 <ol>
 <li class="">사이드바 <strong>내 에이전트</strong> 목록에서 <strong>업무 총괄 비서</strong>를 누릅니다.</li>
@@ -98,10 +136,60 @@
 <li class=""><strong>비주얼</strong>을 눌러 같은 구성이 그림으로 어떻게 보이는지 확인한 뒤 <strong>폼</strong>으로 돌아옵니다.</li>
 </ol>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="대화-화면에서-서브에이전트-확인하기">대화 화면에서 서브에이전트 확인하기<a href="#대화-화면에서-서브에이전트-확인하기" class="hash-link" aria-label="대화 화면에서 서브에이전트 확인하기에 대한 직접 링크" title="대화 화면에서 서브에이전트 확인하기에 대한 직접 링크" translate="no">​</a></h2>
-<p>대화 화면의 입력란 아래 왼쪽에는 <strong>도구</strong>, <strong>서브에이전트</strong>, <strong>미들웨어</strong>, <strong>스킬</strong> 버튼이 있습니다. 사람 모양 아이콘의 <strong>서브에이전트</strong> 버튼을 누르면 이 에이전트에 붙어 있는 서브에이전트 이름이 펼쳐집니다. 워크스페이스 에이전트를 붙였다면 이름 옆에 <strong>워크스페이스</strong> 표시가, 지금 실행할 수 없는 에이전트라면 <strong>실행 불가</strong> 표시가 붙습니다. 여기서는 목록을 보기만 하고, 추가나 삭제는 에이전트 편집 화면에서 합니다.</p>
+<p>대화 화면의 입력란 아래 왼쪽에는 <strong>도구</strong>, <strong>서브에이전트</strong>, <strong>미들웨어</strong>, <strong>스킬</strong> 버튼이 아이콘으로 있습니다. 사람 모양 아이콘의 <strong>서브에이전트</strong> 버튼을 누르면 위쪽에 &quot;서브에이전트&quot;라는 이름표가 뜨고, 아래로 이 에이전트에 붙어 있는 서브에이전트 이름이 펼쳐집니다. 워크스페이스 에이전트를 붙였다면 이름 옆에 <strong>워크스페이스</strong> 표시가, 지금 실행할 수 없는 에이전트라면 <strong>실행 불가</strong> 표시가 붙습니다. 여기서는 목록을 보기만 하고, 추가나 삭제는 에이전트 편집 화면에서 합니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="대화 화면의 서브에이전트 목록"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/multi-agent-concepts-chat-subagents-055db054dd0c89d3921addf00eb4f9a8.png" target="_blank" rel="noopener"><img width="2000" height="700" src="/deep-agent-platform/assets/images/multi-agent-concepts-chat-subagents-055db054dd0c89d3921addf00eb4f9a8.png" alt="업무 총괄 비서의 대화 화면에서 서브에이전트 버튼을 눌러 회의록 요약 도우미, 주간 업무 보고서 도우미, 판매 데이터 분석가를 펼친 모습" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">대화 화면의 서브에이전트 목록</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>서브에이전트</strong></td><td>사람 모양 아이콘 버튼입니다. 누르면 &quot;서브에이전트&quot; 이름표와 함께 연결된 서브에이전트 목록을 펼칩니다.</td><td>질문을 보내기 전에 담당이 모두 붙어 있는지 확인할 때</td></tr><tr><td>2</td><td>서브에이전트 목록</td><td>연결된 서브에이전트 이름입니다. 워크스페이스 에이전트를 붙였다면 이름 옆에 <strong>워크스페이스</strong> 표시가, 지금 실행할 수 없는 에이전트라면 <strong>실행 불가</strong> 표시가 붙습니다.</td><td>동료가 만든 총괄 에이전트에 어떤 담당이 있는지 처음 살펴볼 때</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="super-ai-에이전트">SUPER AI 에이전트<a href="#super-ai-에이전트" class="hash-link" aria-label="SUPER AI 에이전트에 대한 직접 링크" title="SUPER AI 에이전트에 대한 직접 링크" translate="no">​</a></h2>
 <p>SUPER AI 에이전트는 담당을 미리 정해 두지 않아도, 요청을 읽고 내가 쓸 수 있는 에이전트 가운데 알맞은 에이전트를 골라 일을 맡기는 에이전트입니다. 모든 에이전트에 일을 자동으로 나눠 주는 창구라고 생각하면 됩니다. 사이드바 위쪽 <strong>더 보기</strong> 메뉴에서 엽니다. 에이전트 대화 화면 안에서는 사이드바 위쪽이 <strong>뒤로</strong>, <strong>이 에이전트와 새 대화</strong>, <strong>에이전트 설정</strong>으로 바뀌므로, <strong>뒤로</strong>를 눌러 처음 사이드바로 돌아온 뒤 엽니다.</p>
-<p>SUPER AI 에이전트는 인사나 간단한 질문에는 직접 답하고, 요청이 어떤 에이전트의 이름, 설명, 도구, 자료와 맞으면 그 에이전트에게 맡깁니다. 맡길 때는 어느 에이전트를 왜 골랐는지 짧게 밝힙니다. 맡길 만한 에이전트가 없으면 그 업무용 에이전트를 만들 수 있다고 안내합니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="더 보기 메뉴의 SUPER AI 에이전트"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/multi-agent-concepts-super-agent-7657695db44b9316512877f28f55a6b6.png" target="_blank" rel="noopener"><img width="1240" height="800" src="/deep-agent-platform/assets/images/multi-agent-concepts-super-agent-7657695db44b9316512877f28f55a6b6.png" alt="사이드바 더 보기 메뉴를 펼쳐 유틸리티, 작업, 평가, SUPER AI 에이전트 항목이 보이는 모습. 더 보기와 SUPER AI 에이전트에 번호가 붙어 있다" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">더 보기 메뉴의 SUPER AI 에이전트</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>더 보기</strong></td><td>사이드바 위쪽 <strong>새 에이전트</strong>, <strong>에이전트 템플릿</strong> 아래에 있습니다. 누르면 오른쪽에 <strong>유틸리티</strong>, <strong>작업</strong>, <strong>평가</strong>, <strong>SUPER AI 에이전트</strong>가 펼쳐집니다.</td><td>자주 쓰지 않는 메뉴를 찾을 때</td></tr><tr><td>2</td><td><strong>SUPER AI 에이전트</strong></td><td>SUPER AI 에이전트 대화 화면을 엽니다. 처음 누르면 내 계정에 SUPER AI 에이전트가 만들어진 뒤 열립니다. 화면 위쪽에는 &quot;SUPER AI Agent&quot;라는 이름과 &quot;Auto-routing meta agent for all your agents&quot;라는 설명이 보입니다.</td><td>어느 에이전트에 맡겨야 할지 모르는 요청을 보낼 때</td></tr></tbody></table>
+<p>SUPER AI 에이전트는 인사나 간단한 질문에는 직접 답하고, 요청이 어떤 에이전트의 이름, 설명, 도구, 자료와 맞으면 그 에이전트에게 맡깁니다. 맡긴 기록은 대화 화면에 <strong>에이전트에 위임</strong> 상자로 남고, 답변 첫머리에 &quot;회의록 요약 도우미에게 맡겨 아래와 같이 정리했습니다.&quot;처럼 어느 에이전트에게 맡겼는지 밝힙니다. 맡길 만한 에이전트가 없으면 그 업무용 에이전트를 만들 수 있다고 안내합니다.</p>
 <p>SUPER AI 에이전트는 일반 에이전트 목록에 나오지 않고, 다른 에이전트의 서브에이전트로 붙일 수도 없습니다. 만드는 데 실패하면 &quot;SUPER AI 에이전트 생성에 실패했습니다&quot; 알림이 나옵니다.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="따라-해-보기-1">따라 해 보기<a href="#따라-해-보기-1" class="hash-link" aria-label="따라 해 보기에 대한 직접 링크" title="따라 해 보기에 대한 직접 링크" translate="no">​</a></h3>
 <ol>

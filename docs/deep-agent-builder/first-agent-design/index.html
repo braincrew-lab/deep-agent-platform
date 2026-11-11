@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">첫 에이전트 설계하기 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/first-agent-design/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="첫 에이전트 설계하기 | Deep Platform"><meta data-rh="true" name="description" content="에이전트를 만들기 전에 무엇을 맡길지, 무엇을 넣으면 무엇을 돌려받을지, 무엇을 하면 안 되는지를 먼저 적어 두면 만든 뒤에 고칠 일이 줄어듭니다. 이 페이지는 브레인크루 AI혁신팀 김그루 사원이 매주 쓰는 주간 업무 보고서를 예로 들어, 첫 에이전트 &quot;주간 업무 보고서 도우미&quot;의 목표, 입력, 출력 형식, 필요한 도구, 시험 질문을 정하고 그 내용을 에이전트 편집 화면의 어느 칸에 넣는지 보여 드립니다."><meta data-rh="true" property="og:description" content="에이전트를 만들기 전에 무엇을 맡길지, 무엇을 넣으면 무엇을 돌려받을지, 무엇을 하면 안 되는지를 먼저 적어 두면 만든 뒤에 고칠 일이 줄어듭니다. 이 페이지는 브레인크루 AI혁신팀 김그루 사원이 매주 쓰는 주간 업무 보고서를 예로 들어, 첫 에이전트 &quot;주간 업무 보고서 도우미&quot;의 목표, 입력, 출력 형식, 필요한 도구, 시험 질문을 정하고 그 내용을 에이전트 편집 화면의 어느 칸에 넣는지 보여 드립니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/first-agent-design/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/first-agent-design/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/first-agent-design/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"첫 에이전트 설계하기","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/first-agent-design"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
-<script src="/deep-agent-platform/assets/js/runtime~main.0da81299.js" defer="defer"></script>
-<script src="/deep-agent-platform/assets/js/main.836f1a7b.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/runtime~main.3cbeb1c1.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.781f3454.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -215,7 +215,83 @@
 
 <table><thead><tr><th>번호</th><th>종류</th><th>시험 질문</th><th>확인할 점</th></tr></thead><tbody><tr><td>1</td><td>정상 요청</td><td>이번 주 주간 업무 보고서 초안을 작성해 주세요.</td><td>여섯 부분이 순서대로 있는지, 문의 7건·참석 24명·이상치 3건 같은 수치가 메모 그대로인지</td></tr><tr><td>2</td><td>자료가 부족한 요청</td><td>이번 주 매출 실적도 보고서에 넣어 주세요.</td><td>메모에 없는 매출 수치를 만들지 않고 [확인 필요]로 표시하는지</td></tr><tr><td>3</td><td>형식을 바꾸는 요청</td><td>팀장님께 메신저로 보낼 3줄 요약만 따로 써 주세요.</td><td>지침의 기본 형식 대신 요청한 3줄로 답하는지</td></tr><tr><td>4</td><td>범위 밖 요청</td><td>경영지원팀 확대 일정을 확정해서 공지문으로 써 주세요.</td><td>메모에 없는 일정을 확정하지 않고 확인이 필요하다고 안내하는지</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="설계를-폼-보기-화면에-옮기기">설계를 폼 보기 화면에 옮기기<a href="#설계를-폼-보기-화면에-옮기기" class="hash-link" aria-label="설계를 폼 보기 화면에 옮기기에 대한 직접 링크" title="설계를 폼 보기 화면에 옮기기에 대한 직접 링크" translate="no">​</a></h2>
-<p>설계표를 다 썼으면 에이전트 편집 화면의 <strong>폼</strong> 보기에 옮겨 적습니다. 에이전트 대화 화면에서 왼쪽 사이드바의 <strong>에이전트 설정</strong>을 누르면 이 화면이 열립니다. 위쪽 헤더에는 목록과 대화 화면에 보이는 에이전트 이름(최대 50자)과 설명(최대 255자)이 있고, 가운데 편집 영역 위쪽의 <strong>폼</strong> / <strong>비주얼</strong>로 보기 방식을 바꿉니다. <strong>폼</strong> 보기에는 역할, 입력, 출력 형식, 금지 사항을 적는 <strong>지침</strong> 입력란(<strong>에디터 확장</strong>을 누르면 큰 창으로 열림), 일을 나눠 맡길 에이전트를 잇는 <strong>서브에이전트</strong>, 모델과 파라미터를 확인하는 <strong>모델 설정</strong>, 그리고 <strong>도구함</strong>, <strong>지식함</strong>, <strong>미들웨어</strong> 칸이 있습니다. 첫 에이전트에서는 서브에이전트를 비워 두고, 도구함·지식함·미들웨어는 설계표에 적은 항목이 있을 때만 채웁니다.</p>
+<p>설계표를 다 썼으면 에이전트 편집 화면의 <strong>폼</strong> 보기에 옮겨 적습니다. 에이전트 대화 화면에서 왼쪽 사이드바의 <strong>에이전트 설정</strong>을 누르면 이 화면이 열립니다. 위쪽 헤더에는 목록과 대화 화면에 보이는 에이전트 이름(최대 50자)과 설명(최대 255자)이 있고, 가운데 편집 영역 위쪽의 <strong>폼</strong> / <strong>비주얼</strong>로 보기 방식을 바꿉니다. <strong>폼</strong> 보기에는 역할, 입력, 출력 형식, 금지 사항을 적는 <strong>지침</strong> 입력란(<strong>에디터 확장</strong>을 누르면 큰 창으로 열림), 일을 나눠 맡길 에이전트를 잇는 <strong>서브에이전트</strong>, 지금 쓰는 모델 이름이 보이는 <strong>모델</strong> 칸(오른쪽 톱니바퀴 <strong>모델 설정</strong>을 누르면 모델과 파라미터를 바꾸는 창이 열림), 그리고 <strong>도구함</strong>, <strong>지식함</strong>, <strong>미들웨어</strong> 칸이 있습니다. 첫 에이전트에서는 서브에이전트를 비워 두고, 도구함·지식함·미들웨어는 설계표에 적은 항목이 있을 때만 채웁니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="에이전트 편집 화면의 폼 보기 1"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/first-agent-design-form-a8e00917de9c584e80d15583ad1b5fca.png" target="_blank" rel="noopener"><img width="1280" height="860" src="/deep-agent-platform/assets/images/first-agent-design-form-a8e00917de9c584e80d15583ad1b5fca.png" alt="주간 업무 보고서 도우미의 에이전트 편집 화면의 폼 보기 위쪽에서 이름, 설명, 폼·비주얼 전환, 지침 입력란에 번호를 붙인 그림" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">에이전트 편집 화면의 폼 보기 1</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>에이전트 이름</td><td>목록과 대화 화면에 보이는 이름입니다. 최대 50자입니다.</td><td>설계표의 목표를 짧은 업무 이름으로 줄일 때. 예: &quot;주간 업무 보고서 도우미&quot;</td></tr><tr><td>2</td><td>에이전트 설명</td><td>대화 화면 첫머리에 보이는 설명입니다. 최대 255자입니다.</td><td>동료가 이름만 보고 헷갈리지 않도록 무엇을 넣으면 무엇이 나오는지 적을 때</td></tr><tr><td>3</td><td><strong>폼</strong> / <strong>비주얼</strong></td><td>설정을 입력란 형태(폼) 또는 연결 그림(비주얼)으로 바꿔 봅니다.</td><td>지침을 직접 쓸 때는 폼, 연결 상태를 훑어볼 때는 비주얼</td></tr><tr><td>4</td><td><strong>지침</strong> 입력란</td><td>에이전트가 모든 대화에서 따를 역할, 입력, 출력 형식, 금지 사항을 적습니다.</td><td>설계표의 입력·출력 구성·표기 규칙·금지 사항을 문장으로 옮길 때</td></tr></tbody></table>
+<p>지침 입력란 오른쪽 위의 <strong>에디터 확장</strong>을 누르면 지침을 큰 편집 창으로 엽니다. 작업 순서가 여러 단계인 긴 지침을 쓸 때 씁니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="에이전트 편집 화면의 폼 보기 2"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/first-agent-design-form-2-21dafb7f8802ff0e895b3fa466101892.png" target="_blank" rel="noopener"><img width="1280" height="660" src="/deep-agent-platform/assets/images/first-agent-design-form-2-21dafb7f8802ff0e895b3fa466101892.png" alt="주간 업무 보고서 도우미의 에이전트 편집 화면의 폼 보기 아래쪽에서 서브에이전트 관리, 모델 설정, 도구 추가, 지식 추가 버튼에 번호를 붙인 그림" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">에이전트 편집 화면의 폼 보기 2</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>서브에이전트 관리</strong></td><td><strong>서브에이전트</strong> 칸 오른쪽 톱니바퀴입니다. 이 에이전트가 일을 나눠 맡길 다른 에이전트를 연결합니다.</td><td>첫 에이전트에서는 비워 둡니다. 업무가 커지면 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/subagent-assignment/">서브에이전트 할당하기</a>를 참고하세요</td></tr><tr><td>2</td><td><strong>모델 설정</strong></td><td><strong>모델</strong> 칸 오른쪽 톱니바퀴입니다. <strong>모델</strong> 칸에 이 에이전트가 쓰는 모델 이름이 보이고, 이 버튼을 누르면 모델과 파라미터를 바꾸는 창이 열립니다.</td><td>기본으로 정해진 모델을 확인할 때. <a class="" href="/deep-agent-platform/docs/deep-agent-builder/models/">모델 구성</a> 참고</td></tr><tr><td>3</td><td><strong>도구함</strong> / <strong>+ 도구</strong></td><td>에이전트가 실행할 도구를 추가합니다.</td><td>설계표의 도구 칸에 적은 도구가 있을 때만</td></tr><tr><td>4</td><td><strong>지식함</strong> / <strong>+ 지식</strong></td><td>에이전트가 근거로 찾아볼 지식을 추가합니다.</td><td>설계표의 지식 칸에 적은 컬렉션이 있을 때만</td></tr></tbody></table>
+<p>오른쪽 끝 <strong>미들웨어</strong> 칸의 <strong>+ 미들웨어</strong>는 개인정보 보호 같은 안전장치를 붙입니다. 설계표의 미들웨어 칸에 적은 항목이 있을 때만 씁니다.</p>
 <p>설계표의 항목은 대부분 이름, 설명, 지침 세 칸에 들어갑니다. 이름, 설명, 지침을 바꾸면 헤더의 <strong>저장</strong>이 눌리는 상태로 바뀌고, <strong>저장</strong>을 눌러야 현재 버전에 저장됩니다. 저장하기 전의 지침은 대화와 <strong>테스트</strong> 탭에 쓰이지 않습니다. 도구, 모델, 지식, 미들웨어는 바꾸는 즉시 대화와 <strong>테스트</strong>에 반영되며, 현재 버전에 기록하려면 헤더에 &quot;저장되지 않은 변경이 있습니다&quot;가 보일 때 <strong>저장</strong>을 누릅니다. 저장 방식의 차이는 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/agent-editing/">에이전트 수정</a>에서 자세히 설명합니다.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="따라-해-보기">따라 해 보기<a href="#따라-해-보기" class="hash-link" aria-label="따라 해 보기에 대한 직접 링크" title="따라 해 보기에 대한 직접 링크" translate="no">​</a></h3>
 <ol>
@@ -226,9 +302,121 @@
 <li class="">창을 닫고 헤더의 <strong>저장</strong>을 누릅니다.</li>
 </ol>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="비주얼-보기로-연결-확인하기">비주얼 보기로 연결 확인하기<a href="#비주얼-보기로-연결-확인하기" class="hash-link" aria-label="비주얼 보기로 연결 확인하기에 대한 직접 링크" title="비주얼 보기로 연결 확인하기에 대한 직접 링크" translate="no">​</a></h2>
-<p>폼 보기에서 설정을 마쳤으면 <strong>비주얼</strong>을 눌러 에이전트에 무엇이 붙었는지 연결 상태를 확인합니다. 가운데 <strong>에이전트</strong> 상자(이름, 설명, 지침 앞부분)를 중심으로 <strong>모델</strong>, <strong>도구</strong>, <strong>스킬</strong>, <strong>지식</strong>, <strong>서브 에이전트</strong>, <strong>미들웨어</strong> 상자가 이어집니다. 설계표에 &quot;해당 없음&quot;이라고 적은 항목은 비주얼 보기에서도 비어 있어야 합니다. 첫 버전이라면 <strong>도구</strong> 상자에 &quot;도구가 설정되지 않았습니다&quot;가 보이고 <strong>서브 에이전트</strong> 상자가 비어 있는 것이 정상입니다. 상자를 끌어 옮기다 배치가 흐트러지면 <strong>기본 레이아웃</strong>을 누릅니다.</p>
+<p>폼 보기에서 설정을 마쳤으면 <strong>비주얼</strong>을 눌러 에이전트에 무엇이 붙었는지 연결 상태를 확인합니다. <strong>에이전트</strong> 상자(이름, 설명, 지침 앞부분)를 중심으로 <strong>모델</strong>, <strong>도구</strong>, <strong>스킬</strong>, <strong>지식</strong>, <strong>서브 에이전트</strong>, <strong>미들웨어</strong> 상자가 선으로 이어집니다. 설계표에 &quot;해당 없음&quot;이라고 적은 항목은 비주얼 보기에서도 비어 있어야 합니다. 첫 버전이라면 <strong>도구</strong> 상자에 &quot;도구가 설정되지 않았습니다&quot;, <strong>서브 에이전트</strong> 상자에 &quot;No sub-agents&quot;, <strong>미들웨어</strong> 상자에 &quot;미들웨어 없음&quot;이 보이는 것이 정상입니다. 상자를 끌어 옮기다 배치가 흐트러지면 <strong>기본 레이아웃</strong>을 누릅니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="에이전트 편집 화면의 비주얼 보기 1"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/first-agent-design-visual-d85968671268c54c0af2e8c35b664d0c.png" target="_blank" rel="noopener"><img width="1550" height="1416" src="/deep-agent-platform/assets/images/first-agent-design-visual-d85968671268c54c0af2e8c35b664d0c.png" alt="주간 업무 보고서 도우미의 비주얼 보기 위쪽에서 에이전트, 스킬, 도구, 지식 상자에 번호를 붙인 그림" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">에이전트 편집 화면의 비주얼 보기 1</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>에이전트</strong></td><td>이름, 설명, 지침 앞부분을 보여 줍니다.</td><td>지침 첫 문장이 설계표의 목표와 맞는지 훑어볼 때</td></tr><tr><td>2</td><td><strong>스킬</strong></td><td>붙인 스킬 목록과 <strong>스킬 추가</strong> 버튼입니다.</td><td>회사 문체 스킬을 붙인 뒤 연결됐는지 볼 때</td></tr><tr><td>3</td><td><strong>도구</strong></td><td>붙인 도구 목록과 <strong>도구 추가</strong> 버튼입니다. 비어 있으면 &quot;도구가 설정되지 않았습니다&quot;가 보입니다.</td><td>첫 버전에서 도구가 비어 있는지 확인할 때</td></tr><tr><td>4</td><td><strong>지식</strong></td><td>붙인 지식 목록과 <strong>지식 추가</strong> 버튼입니다.</td><td>보고서 기준 문서를 연결했는지 볼 때</td></tr></tbody></table>
+<p><span class="manual-shot" role="figure" aria-label="에이전트 편집 화면의 비주얼 보기 2"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/first-agent-design-visual-2-05a8bb89c18b2c14487bac5f17638ad9.png" target="_blank" rel="noopener"><img width="1550" height="1416" src="/deep-agent-platform/assets/images/first-agent-design-visual-2-05a8bb89c18b2c14487bac5f17638ad9.png" alt="주간 업무 보고서 도우미의 비주얼 보기 아래쪽에서 모델, 서브 에이전트, 미들웨어 상자와 기본 레이아웃 버튼에 번호를 붙인 그림" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">에이전트 편집 화면의 비주얼 보기 2</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>모델</strong></td><td>연결된 모델입니다.</td><td>어떤 모델로 답하는지 확인할 때</td></tr><tr><td>2</td><td><strong>서브 에이전트</strong></td><td>일을 나눠 맡길 에이전트 목록과 <strong>서브에이전트 추가</strong> 버튼입니다. 비어 있으면 &quot;No sub-agents&quot;가 보입니다.</td><td>첫 에이전트에서는 비어 있는 것이 정상입니다</td></tr><tr><td>3</td><td><strong>미들웨어</strong></td><td>붙인 미들웨어 목록과 <strong>미들웨어 추가</strong> 버튼입니다. 비어 있으면 &quot;미들웨어 없음&quot;이 보입니다.</td><td>안전장치가 필요한 업무에서 빠지지 않았는지 볼 때</td></tr><tr><td>4</td><td><strong>기본 레이아웃</strong></td><td>상자 배치를 처음 모양으로 되돌립니다.</td><td>상자를 끌어 옮기다 배치가 흐트러졌을 때</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="시험-질문으로-설계-검증하기">시험 질문으로 설계 검증하기<a href="#시험-질문으로-설계-검증하기" class="hash-link" aria-label="시험 질문으로 설계 검증하기에 대한 직접 링크" title="시험 질문으로 설계 검증하기에 대한 직접 링크" translate="no">​</a></h2>
 <p>설정을 마쳤으면 오른쪽 <strong>테스트</strong> 탭에서 미리 정한 시험 질문을 보냅니다. 테스트 탭은 에이전트 편집 화면을 벗어나지 않고 에이전트와 시험 대화를 하는 곳입니다. 테스트 탭은 저장된 지침으로 답하므로, 지침을 고쳤다면 먼저 헤더의 <strong>저장</strong>을 누릅니다. 시험 질문마다 <strong>새 대화</strong>(마우스를 올리면 &quot;새 테스트 스레드&quot;)로 새 시험 대화를 열면 앞 대화가 섞이지 않습니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="테스트 탭에서 시험 질문 보내기"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/first-agent-design-test-e253dfb8617127b453ef4efdb304214c.png" target="_blank" rel="noopener"><img width="1200" height="1520" src="/deep-agent-platform/assets/images/first-agent-design-test-e253dfb8617127b453ef4efdb304214c.png" alt="주간 업무 보고서 도우미의 에이전트 편집 화면의 테스트 탭에서 테스트 탭, 첨부한 메모 파일, 보낸 1번 시험 질문, 답변 첫 줄에 번호를 붙인 그림" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">테스트 탭에서 시험 질문 보내기</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>테스트</strong></td><td>시험 대화 탭을 엽니다.</td><td>지침을 쓰거나 고친 직후 결과를 확인할 때</td></tr><tr><td>2</td><td>첨부한 메모 파일</td><td>보낸 질문에 붙은 김그루_주간업무메모_1106.md입니다.</td><td>시험 질문에 입력 자료를 함께 줬는지 확인할 때</td></tr><tr><td>3</td><td>보낸 시험 질문</td><td>내가 보낸 1번 시험 질문입니다.</td><td>어떤 질문으로 시험했는지 기록할 때</td></tr><tr><td>4</td><td>답변 첫 줄</td><td>에이전트가 만든 보고서 초안의 첫 줄로, 메모의 기간과 업무 항목 수를 확인합니다. 그 아래로 제목과 보고서 본문이 이어집니다.</td><td>설계표의 출력 구성과 금지 사항이 지켜졌는지 확인할 때</td></tr></tbody></table>
+<p>탭 오른쪽 위의 <strong>새 대화</strong>(마우스를 올리면 &quot;새 테스트 스레드&quot;)는 시험 대화를 새로 시작합니다. 시험 질문마다 눌러 앞 대화가 섞이지 않게 합니다.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="따라-해-보기-1">따라 해 보기<a href="#따라-해-보기-1" class="hash-link" aria-label="따라 해 보기에 대한 직접 링크" title="따라 해 보기에 대한 직접 링크" translate="no">​</a></h3>
 <ol>
 <li class="">
@@ -244,10 +432,10 @@
 </blockquote>
 </li>
 <li class="">
-<p>답변에 제목, 핵심 성과 3줄, 업무별 진행 표, 이슈와 조치, 다음 주 계획, 확인 필요가 모두 있는지 봅니다. 문의 7건, 참석 24명, 이상치 3건이 메모와 같은 숫자로 들어갔는지 봅니다.</p>
+<p>답변 첫 줄에 메모의 기간과 업무 항목 수(예: &quot;기간: 11/2<del>11/6, 업무 6건&quot;)가 나오고, 이어서 제목 &quot;AI혁신팀 주간 업무 보고 (11/2</del>11/6)&quot;, 핵심 성과 3줄, 업무별 진행 표, 이슈와 조치, 다음 주 계획, 확인 필요가 모두 있는지 봅니다. 문의 7건, 참석 24명, 이상치 3건이 메모와 같은 숫자로 들어갔는지, 메모에 수치가 없는 업무가 &quot;[확인 필요: 건수]&quot;처럼 표시됐는지 봅니다.</p>
 </li>
 <li class="">
-<p><strong>새 대화</strong>를 누르고 메모 파일을 다시 첨부한 뒤 2번부터 4번 시험 질문을 차례로 보냅니다. 질문마다 위 표의 확인할 점을 체크합니다.</p>
+<p><strong>새 대화</strong>를 누르고 메모 파일을 다시 첨부한 뒤 2번 시험 질문을 보냅니다. 3번과 4번 시험 질문도 같은 방법으로, 질문마다 <strong>새 대화</strong>를 눌러 메모 파일을 다시 첨부하고 보냅니다. 질문마다 위 표의 확인할 점을 체크합니다. 김그루 사원이 시험했을 때는 2번 질문에 매출 실적을 &quot;[확인 필요: 이번 주 매출 실적]&quot;으로 표시했고, 3번 질문에는 세 줄 요약만 답했습니다. 4번 질문에는 공지문 첫머리에 &quot;확정되었습니다&quot;라고 쓰면서 날짜는 &quot;[확인 필요: 확대 일자]&quot;로 비워 두었습니다. 이렇게 일부만 지켜진 항목은 6번처럼 지침을 보완합니다.</p>
 </li>
 <li class="">
 <p>지켜지지 않은 항목이 있으면 지침을 고쳐 헤더의 <strong>저장</strong>을 누르거나 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/fix-agent/">Fix 에이전트</a>에 고쳐 달라고 요청한 뒤, 같은 질문을 새 대화에서 다시 보냅니다.</p>

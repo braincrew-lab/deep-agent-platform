@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">평가기 구성 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/evaluation-evaluators/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="평가기 구성 | Deep Platform"><meta data-rh="true" name="description" content="평가기는 에이전트 답변을 채점하는 기준입니다. 평가기마다 채점 모델에 보내는 프롬프트와 채점 방식(통과/실패 또는 점수)이 정해져 있습니다. 이 페이지는 평가기 탭의 기본 평가기가 각각 무엇을 보는지, 그리고 이메일 초안 도우미에 맞춘 사용자 평가기 &quot;이메일 형식 점검&quot;을 만드는 방법을 설명합니다."><meta data-rh="true" property="og:description" content="평가기는 에이전트 답변을 채점하는 기준입니다. 평가기마다 채점 모델에 보내는 프롬프트와 채점 방식(통과/실패 또는 점수)이 정해져 있습니다. 이 페이지는 평가기 탭의 기본 평가기가 각각 무엇을 보는지, 그리고 이메일 초안 도우미에 맞춘 사용자 평가기 &quot;이메일 형식 점검&quot;을 만드는 방법을 설명합니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/evaluation-evaluators/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/evaluation-evaluators/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/evaluation-evaluators/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"평가기 구성","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/evaluation-evaluators"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
-<script src="/deep-agent-platform/assets/js/runtime~main.0da81299.js" defer="defer"></script>
-<script src="/deep-agent-platform/assets/js/main.836f1a7b.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/runtime~main.3cbeb1c1.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.781f3454.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -20,7 +20,45 @@
 <li class="">프롬프트 템플릿을 직접 써서 사용자 평가기를 만들고, 고치고, 지웁니다.</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="평가기-탭">평가기 탭<a href="#평가기-탭" class="hash-link" aria-label="평가기 탭에 대한 직접 링크" title="평가기 탭에 대한 직접 링크" translate="no">​</a></h2>
-<p><strong>평가</strong> 화면의 <strong>평가기</strong> 탭을 엽니다. 위쪽에 <strong>기본 평가기</strong>, 아래쪽에 <strong>사용자 평가기</strong>가 카드로 나옵니다. 카드 아래 배지는 채점 방식입니다. <strong>통과/실패</strong>는 통과(1)와 실패(0)로, <strong>0-5</strong>처럼 숫자 범위가 적힌 것은 그 범위의 점수로 채점합니다.</p>
+<p><strong>평가</strong> 화면의 <strong>평가기</strong> 탭을 엽니다. 위쪽에 <strong>기본 평가기</strong>, 아래쪽에 <strong>사용자 평가기</strong>가 카드로 나옵니다. 카드 아래 배지는 채점 방식입니다. <strong>통과/실패</strong>는 통과(1)와 실패(0)로, <strong>0-5</strong>처럼 숫자 범위가 적힌 것은 그 범위의 점수로 채점합니다. <strong>평가기 생성</strong> 왼쪽의 <strong>데이터 새로고침</strong>(둥근 화살표)은 다른 탭에서 만든 평가기가 아직 보이지 않을 때 목록을 다시 불러옵니다.</p>
+<p><strong>기본 평가기</strong>는 처음부터 제공되는 평가기입니다. 카드를 누르면 그 평가기를 복사해 새 평가기를 만드는 창이 열립니다. 기본 평가기 자체는 고치거나 지울 수 없습니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="평가기 탭"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/evaluation-evaluators-list-301c0e1cbe03c1337650933df35614d5.png" target="_blank" rel="noopener"><img width="2022" height="1160" src="/deep-agent-platform/assets/images/evaluation-evaluators-list-301c0e1cbe03c1337650933df35614d5.png" alt="평가기 탭의 기본 평가기와 사용자 평가기" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">평가기 탭</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>평가기 생성</strong></td><td>새 사용자 평가기를 만드는 창을 엽니다.</td><td>업무에 맞는 채점 기준을 직접 정할 때</td></tr><tr><td>2</td><td>채점 방식 배지</td><td><strong>통과/실패</strong>, 또는 <strong>0-5</strong>처럼 적힌 점수 범위입니다.</td><td>결과가 통과율로 나올지 점수로 나올지 미리 볼 때</td></tr><tr><td>3</td><td>사용자 평가기 카드</td><td>내가 만든 평가기입니다. 카드를 누르면 고치는 창이 열립니다. 하나도 없으면 &quot;사용 가능한 평가기가 없습니다.&quot;와 <strong>평가기 생성</strong> 버튼이 보입니다.</td><td>만든 평가기를 고칠 때</td></tr><tr><td>4</td><td><strong>삭제</strong>(휴지통)</td><td>카드에 마우스를 올리면 오른쪽 위에 나타납니다. 누르면 삭제 확인 창이 열립니다.</td><td>더 쓰지 않는 평가기를 지울 때</td></tr></tbody></table>
 <p>워크스페이스에 참여하지 않은 계정은 <strong>평가기 생성</strong> 자리에 &quot;평가기를 생성하거나 저장하려면 워크스페이스에 참여하세요.&quot;가 보이고, 기본 평가기 카드를 누르면 읽기 전용 &quot;평가기 상세&quot; 창이 열립니다.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="기본-평가기가-보는-것">기본 평가기가 보는 것<a href="#기본-평가기가-보는-것" class="hash-link" aria-label="기본 평가기가 보는 것에 대한 직접 링크" title="기본 평가기가 보는 것에 대한 직접 링크" translate="no">​</a></h2>
 <p>기본 평가기는 여섯 가지입니다. 채점 모델은 채점 사유를 질문과 같은 언어로 적으므로, 한국어 질문이면 결과 화면의 채점 사유도 한국어로 나옵니다.</p>
@@ -75,8 +113,114 @@
 <p>평가기 생성 창의 <strong>빠른 삽입</strong>에는 위 여섯 가지와 함께 <strong>충실도: 검색 문맥 (Faithfulness)</strong> 프롬프트가 있습니다. 이 프롬프트는 참조 답변 대신 에이전트가 도구로 찾아 본 결과(검색 문맥)를 근거로, 답변의 사실이 그 결과에서 뒷받침되는지 채점합니다. 지식을 찾아 답하는 에이전트용 사용자 평가기를 만들 때 바탕으로 씁니다.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="기본-평가기-복사하기">기본 평가기 복사하기<a href="#기본-평가기-복사하기" class="hash-link" aria-label="기본 평가기 복사하기에 대한 직접 링크" title="기본 평가기 복사하기에 대한 직접 링크" translate="no">​</a></h2>
 <p>기본 평가기 카드를 누르면 &quot;복사해서 새 평가기 만들기&quot; 창이 열립니다. 창 설명은 &quot;이 기본 평가기를 복사하여 수정합니다.&quot;이고, 이름에는 &quot;(복사본)&quot;이 붙어 있습니다. 기본 평가기의 프롬프트는 영어로 되어 있어, 프롬프트 칸 위에 &quot;채점 모델에 보내는 영어 프롬프트입니다. 번역하면 채점 결과가 달라질 수 있어 원문을 유지합니다.&quot;라는 안내가 보입니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="기본 평가기 복사"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/evaluation-evaluators-preset-copy-bd7cf702a0b79b3312de950e2d41d3f4.png" target="_blank" rel="noopener"><img width="1920" height="1532" src="/deep-agent-platform/assets/images/evaluation-evaluators-preset-copy-bd7cf702a0b79b3312de950e2d41d3f4.png" alt="전문성 평가기를 복사하는 창" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">기본 평가기 복사</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>이름</strong></td><td>새 평가기 이름입니다. 처음에는 &quot;전문성 (Professional) (복사본)&quot;처럼 채워져 있고 255자까지 고칠 수 있습니다.</td><td>원래 평가기와 구분되는 이름을 붙일 때</td></tr><tr><td>2</td><td><strong>평가 유형</strong></td><td>원래 평가기의 채점 방식이 그대로 들어 있습니다. 바로 아래 <strong>점수 범위</strong>(그림에서는 0과 5)도 원래 값입니다.</td><td>0~5점 대신 다른 범위를 쓰고 싶을 때</td></tr><tr><td>3</td><td>영어 프롬프트 안내</td><td>프롬프트가 영어로 되어 있는 이유입니다. 그 아래 <strong>프롬프트 템플릿</strong> 칸에 원래 평가기의 프롬프트가 들어 있고, 고친 뒤 저장하면 사용자 평가기로 만들어집니다.</td><td>프롬프트를 번역할지 판단할 때</td></tr><tr><td>4</td><td><strong>저장</strong></td><td>사용자 평가기로 저장합니다.</td><td>고친 기준을 쓰기로 했을 때</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="사용자-평가기-만들기">사용자 평가기 만들기<a href="#사용자-평가기-만들기" class="hash-link" aria-label="사용자 평가기 만들기에 대한 직접 링크" title="사용자 평가기 만들기에 대한 직접 링크" translate="no">​</a></h2>
-<p><strong>평가기 생성</strong>을 누르면 &quot;평가기 생성&quot; 창이 열립니다. 창 설명은 &quot;사용자 정의 프롬프트 템플릿으로 새 평가기를 생성합니다.&quot;입니다. 왼쪽에서 이름과 채점 방식을, 오른쪽에서 프롬프트를 정합니다.</p>
+<p><strong>평가기 생성</strong>을 누르면 &quot;평가기 생성&quot; 창이 열립니다. 창 설명은 &quot;사용자 정의 프롬프트 템플릿으로 새 평가기를 생성합니다.&quot;입니다. 왼쪽에서 이름과 채점 방식을, 오른쪽에서 프롬프트를 정합니다. 칸이 많아 같은 창을 두 장으로 나눠 보여 줍니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="평가기 생성 창: 이름과 평가 유형"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/evaluation-evaluators-create-8355c4ed09acef164a65a4a57f2054d1.png" target="_blank" rel="noopener"><img width="1920" height="1560" src="/deep-agent-platform/assets/images/evaluation-evaluators-create-8355c4ed09acef164a65a4a57f2054d1.png" alt="이메일 형식 점검 평가기를 입력한 평가기 생성 창의 왼쪽 칸" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">평가기 생성 창: 이름과 평가 유형</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>이름</strong></td><td>평가기 이름입니다. 꼭 입력해야 하고 255자까지 넣을 수 있습니다. 같은 이름의 평가기가 이미 있으면 &quot;같은 이름의 평가기가 이미 존재합니다.&quot;가 나옵니다.</td><td>무엇을 채점하는지 이름만 보고 알 수 있게 할 때</td></tr><tr><td>2</td><td><strong>설명</strong> (선택)</td><td>카드에 보일 설명입니다.</td><td>다른 사람이 언제 쓰면 되는지 남길 때</td></tr><tr><td>3</td><td><strong>평가 유형</strong></td><td><strong>통과/실패</strong> 또는 **점수 (범위)**를 고릅니다. **점수 (범위)**를 고르면 아래에 <strong>점수 범위</strong>(<strong>최소</strong>, <strong>최대</strong>)가 나타납니다. 최소는 0 이상, 최대는 100 이하, 폭은 2 이상이어야 하고, 어기면 &quot;점수 범위는 0 이상에서 시작하고 폭이 2 이상이며 100 이하로 끝나야 합니다.&quot;가 나옵니다.</td><td>기준을 모두 지켰는지만 볼지(통과/실패), 사내 점검표처럼 1~5점으로 정도를 볼지(점수) 정할 때</td></tr><tr><td>4</td><td><strong>템플릿 변수 가이드</strong></td><td>누르면 프롬프트에 쓸 수 있는 변수가 펼쳐집니다. {question}은 평가 질문, {reference_answer}는 참조 답변, {agent_answer}는 에이전트의 생성 답변입니다.</td><td>질문과 답변이 들어갈 자리를 표시할 때</td></tr></tbody></table>
+<p><span class="manual-shot" role="figure" aria-label="평가기 생성 창: 프롬프트"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/evaluation-evaluators-create-2-3f4d1b068c8d82375e248272dc366220.png" target="_blank" rel="noopener"><img width="1920" height="1560" src="/deep-agent-platform/assets/images/evaluation-evaluators-create-2-3f4d1b068c8d82375e248272dc366220.png" alt="이메일 형식 점검 평가기를 입력한 평가기 생성 창의 프롬프트 칸" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">평가기 생성 창: 프롬프트</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>빠른 삽입</strong></td><td>기본 평가기 프롬프트를 프롬프트 칸에 채워 넣습니다. 누르면 평가 유형과 점수 범위도 그 평가기 값으로 바뀝니다.</td><td>기본 프롬프트를 바탕으로 조금만 고칠 때</td></tr><tr><td>2</td><td><strong>프롬프트 템플릿</strong></td><td>채점 모델에 보내는 프롬프트입니다. 꼭 입력해야 하고 {agent_answer}가 들어가야 합니다. 빠지면 &quot;프롬프트 템플릿에 {agent_answer}가 포함되어야 합니다.&quot;가 나옵니다.</td><td>채점 기준을 우리 업무 말로 적을 때</td></tr><tr><td>3</td><td><strong>저장</strong></td><td>평가기를 만듭니다. &quot;평가기를 만들었습니다.&quot; 안내가 뜨고 <strong>사용자 평가기</strong>에 카드가 생깁니다.</td><td>입력을 마쳤을 때</td></tr></tbody></table>
+<p><strong>저장</strong> 왼쪽의 <strong>취소</strong>는 저장하지 않고 창을 닫습니다.</p>
 <p>프롬프트 끝에는 채점 결과를 JSON으로만 답하게 하는 줄을 넣습니다. 프롬프트 칸이 비어 있을 때 보이는 예시처럼 score와 reasoning 두 값을 받으면, score는 채점 결과로, reasoning은 결과 화면의 채점 사유로 나옵니다.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="따라-해-보기">따라 해 보기<a href="#따라-해-보기" class="hash-link" aria-label="따라 해 보기에 대한 직접 링크" title="따라 해 보기에 대한 직접 링크" translate="no">​</a></h3>
 <p>이메일 초안 도우미가 쓴 메일이 &quot;제목 줄, 인사와 맺음말, 요청한 사실&quot; 세 가지를 모두 갖췄는지 통과/실패로 보는 평가기를 만듭니다.</p>

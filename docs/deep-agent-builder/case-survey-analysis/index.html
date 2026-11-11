@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">사례: 설문 결과 분석 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/case-survey-analysis/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="사례: 설문 결과 분석 | Deep Platform"><meta data-rh="true" name="description" content="이 페이지는 브레인크루 AI혁신팀 김그루 사원이 &quot;설문 결과 분석가&quot;에게 사내교육 만족도 설문 CSV를 맡겨 과정별 평균, NPS, 부서별 차이, 자유의견 주제 분류, 차트, 개선안을 차례로 받는 과정을 보여 줍니다. 에이전트가 코드를 실행해 계산하므로, 답변의 숫자를 아래 기준값과 대조해 검증하는 방법도 함께 다룹니다."><meta data-rh="true" property="og:description" content="이 페이지는 브레인크루 AI혁신팀 김그루 사원이 &quot;설문 결과 분석가&quot;에게 사내교육 만족도 설문 CSV를 맡겨 과정별 평균, NPS, 부서별 차이, 자유의견 주제 분류, 차트, 개선안을 차례로 받는 과정을 보여 줍니다. 에이전트가 코드를 실행해 계산하므로, 답변의 숫자를 아래 기준값과 대조해 검증하는 방법도 함께 다룹니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/case-survey-analysis/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/case-survey-analysis/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/case-survey-analysis/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"사례: 설문 결과 분석","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/case-survey-analysis"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
-<script src="/deep-agent-platform/assets/js/runtime~main.0da81299.js" defer="defer"></script>
-<script src="/deep-agent-platform/assets/js/main.836f1a7b.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/runtime~main.3cbeb1c1.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.781f3454.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -63,7 +63,7 @@
 <p>설문 파일에 이름, 이메일, 연락처처럼 응답자를 알아볼 수 있는 열이 있으면 지운 뒤 올립니다. 예시 파일에는 이런 열이 없습니다.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="에이전트-만들기">에이전트 만들기<a href="#에이전트-만들기" class="hash-link" aria-label="에이전트 만들기에 대한 직접 링크" title="에이전트 만들기에 대한 직접 링크" translate="no">​</a></h2>
 <p>사이드바의 <strong>새 에이전트</strong>를 눌러 대화로 에이전트를 만드는 첫 화면을 열고, 입력란에 설문 결과 분석가가 할 일을 적어 보냅니다.</p>
-<p><span class="manual-shot" role="figure" aria-label="설문 결과 분석가 만들기 요청"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/case-survey-analysis-create-4ceb317755fc6bb50be3726d5e929984.png" target="_blank" rel="noopener"><img width="2880" height="1800" src="/deep-agent-platform/assets/images/case-survey-analysis-create-4ceb317755fc6bb50be3726d5e929984.png" alt="새 에이전트 화면에 설문 결과 분석가 요청을 입력한 모습" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">설문 결과 분석가 만들기 요청</span></span></p>
+<p><span class="manual-shot" role="figure" aria-label="설문 결과 분석가 만들기 요청"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/case-survey-analysis-create-ed919cfee5415da67e63a7c5ee2a70ca.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/case-survey-analysis-create-ed919cfee5415da67e63a7c5ee2a70ca.png" alt="새 에이전트 화면에 설문 결과 분석가 요청을 입력한 모습" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">설문 결과 분석가 만들기 요청</span></span></p>
 
 
 
@@ -115,7 +115,7 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="단계별-실행">단계별 실행<a href="#단계별-실행" class="hash-link" aria-label="단계별 실행에 대한 직접 링크" title="단계별 실행에 대한 직접 링크" translate="no">​</a></h2>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1단계-파일-첨부와-과정별-평균">1단계: 파일 첨부와 과정별 평균<a href="#1단계-파일-첨부와-과정별-평균" class="hash-link" aria-label="1단계: 파일 첨부와 과정별 평균에 대한 직접 링크" title="1단계: 파일 첨부와 과정별 평균에 대한 직접 링크" translate="no">​</a></h3>
 <p>설문 CSV를 첨부하고 파일 구조와 교육과정별 문항 평균을 먼저 받습니다.</p>
-<p><span class="manual-shot" role="figure" aria-label="과정별 평균"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/case-survey-analysis-average-dac725664fa5397dfca1c3c68b90bf45.png" target="_blank" rel="noopener"><img width="2880" height="1800" src="/deep-agent-platform/assets/images/case-survey-analysis-average-dac725664fa5397dfca1c3c68b90bf45.png" alt="설문 CSV를 첨부해 파일 구조와 과정별 평균을 받은 대화 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">과정별 평균</span></span></p>
+<p><span class="manual-shot" role="figure" aria-label="과정별 평균의 코드 실행 기록"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/case-survey-analysis-average-669d1183964c987a21e9dc68f7acd269.png" target="_blank" rel="noopener"><img width="1992" height="660" src="/deep-agent-platform/assets/images/case-survey-analysis-average-669d1183964c987a21e9dc68f7acd269.png" alt="설문 CSV를 첨부해 받은 답변 위의 데이터 분석 기록과 데이터 표, 표 오른쪽 위 버튼에 번호를 붙인 그림" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">과정별 평균의 코드 실행 기록</span></span></p>
 
 
 
@@ -151,13 +151,33 @@
 
 
 
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>데이터 분석</strong></td><td>에이전트가 계산 코드를 실행한 기록입니다. 오른쪽에 걸린 시간이 보이고, 누르면 코드가 펼쳐집니다.</td><td>평균을 어떻게 냈는지 확인할 때</td></tr><tr><td>2</td><td><strong>데이터 표</strong></td><td>코드 실행 결과로 나온 표입니다. 답변 본문 표와 같은 숫자인지 대조합니다.</td><td>계산 결과를 그대로 확인할 때</td></tr><tr><td>3</td><td>내려받기</td><td>데이터 표 오른쪽 위 첫 번째 버튼으로 표를 내려받습니다.</td><td>표를 따로 저장할 때</td></tr><tr><td>4</td><td>크게 보기</td><td>데이터 표 오른쪽 위 두 번째 버튼으로 표를 크게 엽니다.</td><td>표를 넓게 볼 때</td></tr></tbody></table>
+<p>기록 아래로 답변 본문이 이어집니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="과정별 평균 답변과 아티팩트 버튼"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/case-survey-analysis-average-2-e438a608d5b532479524c3a723741ce1.png" target="_blank" rel="noopener"><img width="1992" height="1472" src="/deep-agent-platform/assets/images/case-survey-analysis-average-2-e438a608d5b532479524c3a723741ce1.png" alt="답변 첫 부분의 데이터 구조 제목과 입력란 아래 아티팩트 버튼에 번호를 붙인 그림" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">과정별 평균 답변과 아티팩트 버튼</span></span></p>
 
 
 
 
 
 
-<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>데이터 분석</strong></td><td>에이전트가 계산 코드를 실행한 기록입니다. 오른쪽에 걸린 시간이 보이고, 누르면 코드가 펼쳐집니다.</td><td>평균을 어떻게 냈는지 확인할 때</td></tr><tr><td>2</td><td><strong>데이터 표</strong></td><td>코드 실행 결과로 나온 표입니다. 답변 본문 표와 같은 숫자인지 대조합니다.</td><td>계산 결과를 그대로 확인할 때</td></tr><tr><td>3</td><td>내려받기, 크게 보기</td><td>데이터 표 오른쪽 위 버튼으로 표를 내려받거나 크게 엽니다.</td><td>표를 넓게 보거나 따로 저장할 때</td></tr><tr><td>4</td><td>데이터 구조</td><td>답변 첫 부분의 행 수, 열 목록, 결측값 요약입니다.</td><td>파일이 제대로 읽혔는지 볼 때</td></tr><tr><td>5</td><td><strong>아티팩트</strong></td><td>이 대화에서 만든 데이터 표를 모아 보는 창을 엽니다. 버튼 위 숫자는 모인 표 개수입니다.</td><td>결과 표를 내보낼 때</td></tr></tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>데이터 구조</td><td>답변 첫 부분의 행 수, 열 목록, 결측값 요약입니다.</td><td>파일이 제대로 읽혔는지 볼 때</td></tr><tr><td>2</td><td><strong>아티팩트</strong></td><td>이 대화에서 만든 데이터 표를 모아 보는 창을 엽니다. 버튼 위 숫자는 모인 표 개수입니다.</td><td>결과 표를 내보낼 때</td></tr></tbody></table>
 <p><strong>따라 해 보기</strong></p>
 <ol>
 <li class="">
@@ -178,7 +198,7 @@
 </ol>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2단계-nps">2단계: NPS<a href="#2단계-nps" class="hash-link" aria-label="2단계: NPS에 대한 직접 링크" title="2단계: NPS에 대한 직접 링크" translate="no">​</a></h3>
 <p>같은 대화에서 추천의향 점수로 과정별 NPS를 계산합니다.</p>
-<p><span class="manual-shot" role="figure" aria-label="과정별 NPS"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/case-survey-analysis-nps-6d0b2b026d68f7e859f42b50835ca4a8.png" target="_blank" rel="noopener"><img width="2880" height="1800" src="/deep-agent-platform/assets/images/case-survey-analysis-nps-6d0b2b026d68f7e859f42b50835ca4a8.png" alt="과정별 추천, 중립, 비추천 인원과 NPS를 정리한 답변" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">과정별 NPS</span></span></p>
+<p><span class="manual-shot" role="figure" aria-label="과정별 NPS"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/case-survey-analysis-nps-c0a9bef3bade590fda9e8845ed59d7a9.png" target="_blank" rel="noopener"><img width="1992" height="880" src="/deep-agent-platform/assets/images/case-survey-analysis-nps-c0a9bef3bade590fda9e8845ed59d7a9.png" alt="과정별 추천, 중립, 비추천 인원과 NPS를 정리한 답변" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">과정별 NPS</span></span></p>
 
 
 
@@ -214,7 +234,7 @@
 
 
 
-<table><thead><tr><th>번호</th><th>영역</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>계산 방법</td><td>NPS를 어떤 순서로 계산하고 반올림했는지 적은 문장입니다.</td><td>반올림 방식이 기준과 같은지 확인할 때</td></tr><tr><td>2</td><td>NPS 표</td><td>과정별 응답 수(n), 추천·중립·비추천 인원과 비율, NPS입니다.</td><td>과정 간 추천 의향을 비교할 때</td></tr><tr><td>3</td><td>전체 행</td><td>120명 전체의 NPS입니다.</td><td>보고서 첫 줄에 쓸 대표 숫자를 고를 때</td></tr><tr><td>4</td><td>산식</td><td>NPS를 추천 비율에서 비추천 비율을 빼서 냈다는 설명입니다.</td><td>회사 정의와 같은지 확인할 때</td></tr></tbody></table>
+<table><thead><tr><th>번호</th><th>영역</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>계산 방법</td><td>NPS를 어떤 순서로 계산하고 반올림했는지 적은 문장입니다.</td><td>반올림 방식이 기준과 같은지 확인할 때</td></tr><tr><td>2</td><td>NPS 표 열 이름</td><td>표의 열 순서입니다. 과정별 응답 수(n), 추천·중립·비추천 인원과 비율, NPS가 차례로 나옵니다.</td><td>과정 간 추천 의향을 비교할 때</td></tr><tr><td>3</td><td>전체 행</td><td>120명 전체의 NPS입니다.</td><td>보고서 첫 줄에 쓸 대표 숫자를 고를 때</td></tr><tr><td>4</td><td>산식</td><td>NPS를 추천 비율에서 비추천 비율을 빼서 냈다는 설명입니다.</td><td>회사 정의와 같은지 확인할 때</td></tr></tbody></table>
 <p><strong>따라 해 보기</strong></p>
 <ol>
 <li class="">
@@ -229,7 +249,7 @@
 </ol>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3단계-부서별-차이">3단계: 부서별 차이<a href="#3단계-부서별-차이" class="hash-link" aria-label="3단계: 부서별 차이에 대한 직접 링크" title="3단계: 부서별 차이에 대한 직접 링크" translate="no">​</a></h3>
 <p>부서별로 평균과 NPS를 비교하고, 부서 차이가 수강 과정 구성 때문인지 함께 봅니다.</p>
-<p><span class="manual-shot" role="figure" aria-label="부서별 차이"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/case-survey-analysis-department-a484f049232800e158268f58cc2fb49a.png" target="_blank" rel="noopener"><img width="2880" height="1800" src="/deep-agent-platform/assets/images/case-survey-analysis-department-a484f049232800e158268f58cc2fb49a.png" alt="부서별 평균과 NPS, 과정별 수강 인원을 비교하고 표본 크기 주의를 적은 답변" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">부서별 차이</span></span></p>
+<p><span class="manual-shot" role="figure" aria-label="부서별 차이"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/case-survey-analysis-department-5cfc0b5a26e01d2d336667f14aafc472.png" target="_blank" rel="noopener"><img width="1992" height="1236" src="/deep-agent-platform/assets/images/case-survey-analysis-department-5cfc0b5a26e01d2d336667f14aafc472.png" alt="부서별 평균과 NPS, 부서 내 과정별 인원을 비교하고 표본 크기 주의를 적은 답변" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">부서별 차이</span></span></p>
 
 
 
@@ -265,7 +285,7 @@
 
 
 
-<table><thead><tr><th>번호</th><th>영역</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>부서별 표</td><td>부서마다 응답 수(n), 4개 문항 평균, 전반만족도 평균, NPS입니다.</td><td>부서 간 차이를 볼 때</td></tr><tr><td>2</td><td>부서 내 과정별 인원</td><td>부서마다 어느 과정을 몇 명이 들었는지입니다.</td><td>부서 차이가 과정 차이 때문인지 볼 때</td></tr><tr><td>3</td><td>주의 문구</td><td>모든 부서의 응답 수가 30명 미만이라 해석에 주의하라는 안내입니다.</td><td>부서 평가에 숫자를 쓰기 전에</td></tr><tr><td>4</td><td>해석(가설)</td><td>부서 차이가 수강 과정 구성 때문일 수 있다는 가설입니다.</td><td>원인을 단정하지 않고 보고할 때</td></tr></tbody></table>
+<table><thead><tr><th>번호</th><th>영역</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>부서 열</td><td>부서별 표의 한 행이 한 부서입니다. 행마다 응답 수(n), 4개 문항 평균, 전반만족도 평균, NPS가 이어집니다.</td><td>부서 간 차이를 볼 때</td></tr><tr><td>2</td><td>부서 내 과정별 인원</td><td>부서마다 어느 과정을 몇 명이 들었는지입니다.</td><td>부서 차이가 과정 차이 때문인지 볼 때</td></tr><tr><td>3</td><td>주의 문구</td><td>모든 부서의 응답 수가 30명 미만이라 해석에 주의하라는 안내입니다.</td><td>부서 평가에 숫자를 쓰기 전에</td></tr><tr><td>4</td><td>해석(가설)</td><td>부서 차이가 수강 과정 구성 때문일 수 있다는 가설입니다.</td><td>원인을 단정하지 않고 보고할 때</td></tr></tbody></table>
 <p><strong>따라 해 보기</strong></p>
 <ol>
 <li class="">
@@ -280,7 +300,7 @@
 </ol>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="4단계-자유의견-주제-분류">4단계: 자유의견 주제 분류<a href="#4단계-자유의견-주제-분류" class="hash-link" aria-label="4단계: 자유의견 주제 분류에 대한 직접 링크" title="4단계: 자유의견 주제 분류에 대한 직접 링크" translate="no">​</a></h3>
 <p>자유의견을 주제별로 묶어 건수와 과정별 분포를 받습니다.</p>
-<p><span class="manual-shot" role="figure" aria-label="자유의견 주제 분류"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/case-survey-analysis-comments-a6eee23b42a018417b043a7de3b283fb.png" target="_blank" rel="noopener"><img width="2880" height="1800" src="/deep-agent-platform/assets/images/case-survey-analysis-comments-a6eee23b42a018417b043a7de3b283fb.png" alt="자유의견 주제별 건수를 과정별로 나누고 무응답과 합계 검증 열을 붙인 답변" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">자유의견 주제 분류</span></span></p>
+<p><span class="manual-shot" role="figure" aria-label="자유의견 주제 분류"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/case-survey-analysis-comments-2ee42501ea7ac6016259a8d750468388.png" target="_blank" rel="noopener"><img width="1992" height="1120" src="/deep-agent-platform/assets/images/case-survey-analysis-comments-2ee42501ea7ac6016259a8d750468388.png" alt="자유의견 주제별 건수를 과정별로 나누고 무응답과 합계 검증 열을 붙인 답변" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">자유의견 주제 분류</span></span></p>
 
 
 
@@ -316,13 +336,8 @@
 
 
 
-
-
-
-
-
-
-<table><thead><tr><th>번호</th><th>영역</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>데이터 분석</strong></td><td>의견을 세고 묶은 코드 실행 기록입니다.</td><td>어떻게 분류했는지 확인할 때</td></tr><tr><td>2</td><td><strong>데이터 표</strong></td><td>코드가 낸 과정별 주제 건수입니다.</td><td>답변 표와 숫자를 대조할 때</td></tr><tr><td>3</td><td>과정별 분포 표</td><td>과정마다 주제별 의견 건수입니다.</td><td>과정별 개선 과제를 정할 때</td></tr><tr><td>4</td><td>무응답</td><td>과정마다 의견을 적지 않은 응답 수입니다. 합하면 25건입니다.</td><td>의견 비율의 분모를 확인할 때</td></tr><tr><td>5</td><td>총합, 응답수와일치</td><td>한 행의 합이 그 과정의 응답 수와 같은지 검증한 열입니다.</td><td>빠진 응답이 없는지 확인할 때</td></tr></tbody></table>
+<table><thead><tr><th>번호</th><th>영역</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>데이터 분석</strong></td><td>의견을 세고 묶은 코드 실행 기록입니다.</td><td>어떻게 분류했는지 확인할 때</td></tr><tr><td>2</td><td><strong>데이터 표</strong></td><td>코드가 낸 과정별 주제 건수입니다.</td><td>답변 표와 숫자를 대조할 때</td></tr><tr><td>3</td><td>무응답</td><td>과정마다 의견을 적지 않은 응답 수입니다. 합하면 25건입니다.</td><td>의견 비율의 분모를 확인할 때</td></tr><tr><td>4</td><td>응답수와일치</td><td>바로 왼쪽 총합 열(한 행의 합)이 그 과정의 응답 수와 같은지 검증한 열입니다.</td><td>빠진 응답이 없는지 확인할 때</td></tr></tbody></table>
+<p>표의 한 행은 한 과정이고, 주제 열마다 그 과정에서 나온 의견 건수가 들어 있습니다. 과정별 개선 과제를 정할 때 이 분포를 봅니다.</p>
 <p><strong>따라 해 보기</strong></p>
 <ol>
 <li class="">
@@ -346,7 +361,7 @@
 </ol>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="5단계-차트">5단계: 차트<a href="#5단계-차트" class="hash-link" aria-label="5단계: 차트에 대한 직접 링크" title="5단계: 차트에 대한 직접 링크" translate="no">​</a></h3>
 <p>과정별 NPS를 막대 차트로 그리고 이미지 파일로 받습니다.</p>
-<p><span class="manual-shot" role="figure" aria-label="과정별 NPS 차트"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/case-survey-analysis-chart-ae48d20df41de8417a102b8f469fc807.png" target="_blank" rel="noopener"><img width="2880" height="1800" src="/deep-agent-platform/assets/images/case-survey-analysis-chart-ae48d20df41de8417a102b8f469fc807.png" alt="과정별 NPS 막대 차트와 이미지 파일 내려받기 링크가 붙은 답변" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">과정별 NPS 차트</span></span></p>
+<p><span class="manual-shot" role="figure" aria-label="과정별 NPS 차트"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/case-survey-analysis-chart-a77fc0b31702ca252b851c693d14c780.png" target="_blank" rel="noopener"><img width="1992" height="1168" src="/deep-agent-platform/assets/images/case-survey-analysis-chart-a77fc0b31702ca252b851c693d14c780.png" alt="과정별 NPS 막대 차트를 그린 데이터 시각화 기록과 차트에 번호를 붙인 그림" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">과정별 NPS 차트</span></span></p>
 
 
 
@@ -370,13 +385,27 @@
 
 
 
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>데이터 시각화</strong></td><td>차트를 그린 코드 실행 기록입니다. 바로 아래 **출력 (데이터 시각화) (1 figure)**에 그림 한 개가 나왔다는 표시가 붙습니다.</td><td>차트에 쓴 값을 확인할 때</td></tr><tr><td>2</td><td>차트</td><td>과정별 NPS 막대 차트입니다. 막대 위에 값, 0 위치에 점선 기준선이 보입니다.</td><td>보고서에 붙일 그림이 필요할 때</td></tr></tbody></table>
+<p>차트를 이미지 파일로 저장해 달라고 요청하면 답변 끝에 다운로드 링크가 붙습니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="차트 이미지 다운로드 링크"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/case-survey-analysis-chart-2-abde3ea2578a78930cd5165e53062471.png" target="_blank" rel="noopener"><img width="1992" height="930" src="/deep-agent-platform/assets/images/case-survey-analysis-chart-2-abde3ea2578a78930cd5165e53062471.png" alt="답변 끝의 nps_bar.png 다운로드 링크에 번호를 붙인 그림" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">차트 이미지 다운로드 링크</span></span></p>
 
 
 
 
 
 
-<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>데이터 시각화</strong></td><td>차트를 그린 코드 실행 기록입니다. 바로 아래 **출력 (데이터 시각화) (1 figure)**에 그림 한 개가 나왔다는 표시가 붙습니다.</td><td>차트에 쓴 값을 확인할 때</td></tr><tr><td>2</td><td>차트</td><td>과정별 NPS 막대 차트입니다. 막대 위에 값, 0 위치에 점선 기준선이 보입니다.</td><td>보고서에 붙일 그림이 필요할 때</td></tr><tr><td>3</td><td>다운로드 링크</td><td>차트를 이미지 파일(.png)로 저장해 달라고 요청하면 답변에 &quot;nps_bar.png 다운로드&quot; 같은 링크가 붙습니다. 누르면 내 PC에 저장됩니다.</td><td>발표 자료에 차트를 넣을 때</td></tr></tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>다운로드 링크</td><td>차트를 이미지 파일(.png)로 저장해 달라고 요청하면 답변에 &quot;nps_bar.png 다운로드&quot; 같은 링크가 붙습니다. 누르면 내 PC에 저장됩니다.</td><td>발표 자료에 차트를 넣을 때</td></tr></tbody></table>
 <p>이 사례에서는 첫 실행이 코드 오류로 멈추자 에이전트가 스스로 코드를 고쳐 <strong>데이터 시각화</strong>를 한 번 더 실행했습니다. 기록이 두 줄이면 마지막 줄이 차트를 만든 실행입니다.</p>
 <p><strong>따라 해 보기</strong></p>
 <ol>
@@ -395,7 +424,7 @@
 </ol>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="6단계-개선안과-결과-내보내기">6단계: 개선안과 결과 내보내기<a href="#6단계-개선안과-결과-내보내기" class="hash-link" aria-label="6단계: 개선안과 결과 내보내기에 대한 직접 링크" title="6단계: 개선안과 결과 내보내기에 대한 직접 링크" translate="no">​</a></h3>
 <p>지금까지의 숫자를 근거로 과정별 개선안을 받고, 결과 표를 Excel 파일과 CSV 파일로 내보냅니다.</p>
-<p><span class="manual-shot" role="figure" aria-label="아티팩트 창과 내보내기"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/case-survey-analysis-export-290162e62622e905be268da3fed2b51a.png" target="_blank" rel="noopener"><img width="2880" height="1800" src="/deep-agent-platform/assets/images/case-survey-analysis-export-290162e62622e905be268da3fed2b51a.png" alt="아티팩트 창에서 데이터 표 목록 가운데 하나를 고르고 내보내기 버튼에 번호를 붙인 그림" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">아티팩트 창과 내보내기</span></span></p>
+<p><span class="manual-shot" role="figure" aria-label="아티팩트 창과 내보내기"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/case-survey-analysis-export-285756c3328aa1a95303d4bdffe7663a.png" target="_blank" rel="noopener"><img width="2345" height="1159" src="/deep-agent-platform/assets/images/case-survey-analysis-export-285756c3328aa1a95303d4bdffe7663a.png" alt="아티팩트 창에서 데이터 표 하나를 고르고 내보내기 메뉴의 Excel로 내보내기와 CSV로 내보내기에 번호를 붙인 그림" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">아티팩트 창과 내보내기</span></span></p>
 
 
 
@@ -419,7 +448,19 @@
 
 
 
-<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>데이터 표 목록</td><td>이 대화에서 만든 데이터 표입니다. 표마다 행과 열 수가 보이고, 고르면 오른쪽에 <strong>미리보기</strong>가 열립니다.</td><td>내보낼 표를 고를 때</td></tr><tr><td>2</td><td><strong>내보내기</strong></td><td>고른 표를 저장할 형식을 고르는 메뉴를 엽니다. 메뉴에는 <strong>Word로 내보내기</strong>, <strong>PPTX로 내보내기</strong>, <strong>HTML 다운로드</strong>, <strong>Excel로 내보내기</strong>, <strong>CSV로 내보내기</strong>가 있습니다.</td><td>결과 표를 엑셀이나 다른 프로그램에서 다시 쓸 때</td></tr></tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>데이터 표 목록</td><td>이 대화에서 만든 데이터 표입니다. 표마다 행과 열 수가 보이고, 고르면 오른쪽에 <strong>미리보기</strong>가 열립니다.</td><td>내보낼 표를 고를 때</td></tr><tr><td>2</td><td><strong>내보내기</strong></td><td>고른 표를 저장할 형식을 고르는 메뉴를 엽니다. 메뉴에는 <strong>Word로 내보내기</strong>, <strong>PPTX로 내보내기</strong>, <strong>HTML 다운로드</strong>, <strong>Excel로 내보내기</strong>, <strong>CSV로 내보내기</strong>가 있습니다.</td><td>결과 표를 엑셀이나 다른 프로그램에서 다시 쓸 때</td></tr><tr><td>3</td><td><strong>Excel로 내보내기</strong></td><td>고른 표를 Excel 파일로 저장합니다.</td><td>엑셀에서 표를 다시 다듬을 때</td></tr><tr><td>4</td><td><strong>CSV로 내보내기</strong></td><td>고른 표를 CSV 파일로 저장합니다.</td><td>다른 프로그램에 바로 불러올 때</td></tr></tbody></table>
 <p>개선안 답변은 과정마다 근거 숫자와 가설을 함께 적었습니다. 예를 들어 데이터 분석 실무에는 &quot;난이도 조정 및 후속 심화 프로그램 마련(근거: 난이도/심화 의견 11건, 4개 문항 평균 3.69, NPS -18.4)&quot;, &quot;자료 및 사전 안내 강화(근거: 자료/사전 안내 요청 7건)&quot;가 들어갔습니다.</p>
 <p><strong>따라 해 보기</strong></p>
 <ol>

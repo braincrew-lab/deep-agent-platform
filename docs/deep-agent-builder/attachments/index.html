@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">첨부파일 지원 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/attachments/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="첨부파일 지원 | Deep Platform"><meta data-rh="true" name="description" content="질문에 파일을 붙이면 에이전트가 그 파일을 읽고 답합니다. 회의록을 올려 요약을 받거나, 판매 실적 엑셀을 올려 분석을 맡기거나, 계약서 초안을 올려 검토 포인트를 받을 수 있습니다. 이 페이지는 브레인크루 AI혁신팀 김그루 사원이 회의록 요약 도우미에 회의록 두 개를 올려 비교 요약을 받는 과정을 예로 들어, 파일을 붙이는 방법과 업로드 상태, 붙일 수 있는 형식과 크기, 에이전트에 늘 붙여 두는 파일을 설명합니다."><meta data-rh="true" property="og:description" content="질문에 파일을 붙이면 에이전트가 그 파일을 읽고 답합니다. 회의록을 올려 요약을 받거나, 판매 실적 엑셀을 올려 분석을 맡기거나, 계약서 초안을 올려 검토 포인트를 받을 수 있습니다. 이 페이지는 브레인크루 AI혁신팀 김그루 사원이 회의록 요약 도우미에 회의록 두 개를 올려 비교 요약을 받는 과정을 예로 들어, 파일을 붙이는 방법과 업로드 상태, 붙일 수 있는 형식과 크기, 에이전트에 늘 붙여 두는 파일을 설명합니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/attachments/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/attachments/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/attachments/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"첨부파일 지원","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/attachments"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
-<script src="/deep-agent-platform/assets/js/runtime~main.0da81299.js" defer="defer"></script>
-<script src="/deep-agent-platform/assets/js/main.836f1a7b.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/runtime~main.3cbeb1c1.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.781f3454.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -18,12 +18,49 @@
 <li class="">입력란 아래 오른쪽의 <strong>파일 업로드</strong> 버튼이나 끌어다 놓기로 .pdf, .jpg, .jpeg, .png, .gif, .webp, .md, .markdown, .txt, .xlsx, .xls, .xlsb, .xlsm, .csv, .docx, .pptx, .ppt, .hwp, .hwpx, .html, .htm 파일을 붙입니다.</li>
 <li class="">형식별 크기 한도와 한 번에 10개라는 개수 한도를 알고, 한도를 넘었을 때 나오는 안내를 읽고 다시 붙입니다.</li>
 <li class=""><strong>업로드 중...</strong>, <strong>파일 처리 중...</strong> 표시를 보고 파일이 준비된 뒤에 질문을 보냅니다.</li>
-<li class="">보낸 질문의 첨부파일을 눌러 <strong>문서 보기</strong> 창에서 원본을 다시 봅니다.</li>
+<li class="">보낸 질문의 첨부파일을 눌러 문서 보기 창에서 원본을 다시 봅니다.</li>
 <li class="">에이전트 편집 화면의 <strong>파일</strong> 탭에 자료를 올려 두고 모든 채팅에서 쓰게 합니다.</li>
 </ul>
 <p>파일이 거부되는 경우의 전체 규칙은 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/file-policy/">파일 첨부 정책과 가드레일</a>에 모아 두었습니다.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="파일을-붙이는-곳">파일을 붙이는 곳<a href="#파일을-붙이는-곳" class="hash-link" aria-label="파일을 붙이는 곳에 대한 직접 링크" title="파일을 붙이는 곳에 대한 직접 링크" translate="no">​</a></h2>
-<p>에이전트 대화 화면의 입력창에서 파일을 붙입니다. 입력란 아래 오른쪽의 <strong>파일 업로드</strong>를 누르면 내 PC에서 파일을 고르는 창이 열리고, 한 번에 여러 파일을 고를 수 있습니다. 고른 파일은 입력란 위에 이름과 종류가 적힌 파일 칩으로 붙고, 이미지는 이름 대신 작은 사진으로 보입니다. 잘못 붙인 파일은 칩의 <strong>파일 제거</strong>(종류에 따라 <strong>PDF 제거</strong>, <strong>이미지 제거</strong>)로 뺍니다. 질문을 적고 <strong>전송</strong>을 누르면 질문과 파일이 함께 보내지며, 업로드와 처리가 끝나야 <strong>전송</strong>을 누를 수 있습니다.</p>
+<p>에이전트 대화 화면의 입력창에서 파일을 붙입니다. 입력란 아래 오른쪽의 <strong>파일 업로드</strong>를 누르면 내 PC에서 파일을 고르는 창이 열리고, 한 번에 여러 파일을 고를 수 있습니다. 고른 파일은 입력란 위에 이름과 종류(TXT, DOCX, PDF 같은 표시)가 적힌 파일 칩으로 붙고, 이미지는 이름 대신 작은 사진으로 보입니다. 잘못 붙인 파일은 칩 오른쪽의 X 버튼으로 뺍니다. 질문을 적고 <strong>전송</strong>을 누르면 질문과 파일이 함께 보내지며, 업로드와 처리가 끝나야 <strong>전송</strong>을 누를 수 있습니다. 그림은 회의록 요약 도우미와 새 대화를 열고 파일 두 개를 붙인 화면입니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="파일을 붙이는 곳"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/attachments-entry-a6d78a996f0875e59d8819af0c5f424a.png" target="_blank" rel="noopener"><img width="1680" height="560" src="/deep-agent-platform/assets/images/attachments-entry-a6d78a996f0875e59d8819af0c5f424a.png" alt="회의록 요약 도우미 새 대화 입력창에 회의록 파일 두 개를 붙이고 질문을 적은 모습. 파일 업로드 버튼, 파일 칩, 제거 버튼, 전송에 번호가 붙어 있다" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">파일을 붙이는 곳</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>파일 업로드</strong></td><td>내 PC에서 파일을 고르는 창을 엽니다. 한 번에 여러 파일을 고를 수 있습니다. 파일을 올리는 동안에는 누를 수 없습니다.</td><td>회의록 파일을 올릴 때</td></tr><tr><td>2</td><td>파일 칩</td><td>붙인 파일의 이름과 종류입니다. 이미지는 이름 대신 작은 사진으로 보입니다.</td><td>올바른 파일을 골랐는지 이름으로 확인할 때</td></tr><tr><td>3</td><td>제거(X) 버튼</td><td>이 파일을 첨부에서 뺍니다. Word 파일은 <strong>파일 제거</strong>, PDF는 <strong>PDF 제거</strong>처럼 종류에 따라 이름이 붙어 있습니다.</td><td>다른 주의 회의록을 잘못 붙였을 때</td></tr><tr><td>4</td><td><strong>전송</strong></td><td>입력란에 적은 질문과 첨부파일을 함께 보냅니다. 업로드와 처리가 끝나야 누를 수 있습니다.</td><td>파일 준비가 끝나고 &quot;두 회의록의 결정 사항을 비교해 주세요&quot;처럼 파일로 무엇을 할지 적었을 때</td></tr></tbody></table>
 <p>파일 탐색기에서 파일을 끌어 입력창 위에 놓아도 붙습니다. 끌고 들어오면 입력창 테두리가 바뀌고 &quot;여기에 파일을 놓으세요&quot;가 표시됩니다.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="붙일-수-있는-파일-형식과-크기">붙일 수 있는 파일 형식과 크기<a href="#붙일-수-있는-파일-형식과-크기" class="hash-link" aria-label="붙일 수 있는 파일 형식과 크기에 대한 직접 링크" title="붙일 수 있는 파일 형식과 크기에 대한 직접 링크" translate="no">​</a></h2>
 <p>채팅에서 붙일 수 있는 형식과 파일 한 개의 크기 한도는 다음과 같습니다. 이 목록에 없는 형식은 고르는 즉시 &quot;지원하지 않는 파일 형식입니다&quot;라는 알림과 함께 빠집니다.</p>
@@ -92,11 +129,11 @@
 <li class="">옛 Word 형식(.doc)은 받지 않습니다. Word에서 .docx로 다시 저장해 붙입니다.</li>
 <li class="">.tiff, .bmp 이미지는 받지 않습니다. .png나 .jpg로 바꿔 붙입니다.</li>
 <li class="">한글 파일은 HWP 5.x 이상과 .hwpx를 받습니다. 옛 HWP 3.0 문서는 한글에서 다시 저장해 붙입니다.</li>
-<li class="">크기 한도를 넘는 파일은 붙지 않고 &quot;Excel 파일 크기가 제한(50MB)을 초과합니다. 현재 크기: 52.4 MB&quot;처럼 종류, 한도, 현재 크기가 알림에 나옵니다.</li>
+<li class="">크기 한도를 넘는 파일은 붙지 않고 &quot;보고서-3분기-AI활용현황-원본스캔.pdf: PDF 파일 크기가 제한(20MB)을 초과합니다. 현재 크기: 27.35 MB&quot;처럼 파일 이름, 종류, 한도, 현재 크기가 알림에 나옵니다.</li>
 <li class="">어느 형식이든 파일 한 개의 업로드 제한은 50MB입니다.</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="한-번에-붙이는-파일-수">한 번에 붙이는 파일 수<a href="#한-번에-붙이는-파일-수" class="hash-link" aria-label="한 번에 붙이는 파일 수에 대한 직접 링크" title="한 번에 붙이는 파일 수에 대한 직접 링크" translate="no">​</a></h3>
-<p>메시지 한 번에 붙일 수 있는 파일은 10개까지입니다. 한 번에 10개를 넘게 고르면 앞의 10개만 붙고 &quot;1개 파일이 제한으로 인해 추가되지 않았습니다.&quot;처럼 빠진 개수가 알림에 나옵니다. 이미 10개가 붙어 있는데 더 고르면 &quot;최대 10개 파일만 업로드할 수 있습니다.&quot;가 나옵니다.</p>
+<p>메시지 한 번에 붙일 수 있는 파일은 10개까지입니다. 한도를 넘게 고르면 남은 자리만큼만 붙고 빠진 개수가 알림에 나옵니다. 예를 들어 이미 1개가 붙어 있는데 11개를 더 고르면 9개만 붙고 &quot;2개 파일이 제한으로 인해 추가되지 않았습니다.&quot;가 나옵니다. 이미 10개가 붙어 있는데 더 고르면 &quot;최대 10개 파일만 업로드할 수 있습니다.&quot;가 나옵니다.</p>
 <blockquote>
 <p>팁: 파일이 10개를 넘으면 한 질문에 몰아넣지 말고, 같은 채팅에서 질문을 나눠 차례로 올리세요. 큰 엑셀은 필요한 시트만 따로 저장해 50MB 아래로 줄입니다.</p>
 </blockquote>
@@ -106,9 +143,59 @@
 <li class="">이미 대화가 있는 채팅: 파일을 고르는 즉시 올라가고 처리가 시작됩니다. 질문을 적는 동안 처리가 함께 진행됩니다.</li>
 <li class=""><strong>이 에이전트와 새 대화</strong>로 연 빈 채팅: 고른 파일은 칩으로만 붙어 있다가, <strong>전송</strong>을 누르면 채팅이 만들어지면서 올라갑니다. 질문은 처리가 끝난 뒤 에이전트에게 전달됩니다.</li>
 </ul>
-<p>처리가 끝나면 칩만 남습니다. 이 상태에서 질문을 적고 <strong>전송</strong>을 누릅니다. 업로드나 처리가 끝나지 않은 동안에는 <strong>전송</strong>을 누를 수 없고, 마우스를 올리면 &quot;파일 업로드가 끝나면 전송할 수 있어요&quot;가 보입니다. 처리가 아주 오래 걸려 화면이 기다리는 한도를 넘으면 &quot;문서를 처리하고 있어요. 잠시 후 다시 시도해 주세요.&quot;가 나오고 질문은 보내지지 않습니다. 칩은 그대로 남아 상태를 계속 확인하므로, 표시가 사라진 뒤 다시 보냅니다. 붙인 파일이 모두 거부되면 &quot;첨부한 파일을 모두 올리지 못해 전송하지 않았습니다. 파일을 확인한 뒤 다시 보내 주세요.&quot;가 파일별 사유와 함께 나옵니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="업로드 중"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/attachments-uploading-538700052128823a55e4c419f788a591.png" target="_blank" rel="noopener"><img width="1440" height="410" src="/deep-agent-platform/assets/images/attachments-uploading-538700052128823a55e4c419f788a591.png" alt="회의록 파일을 올리는 중인 입력창. 파일 칩, 업로드 중 표시, 누를 수 없는 전송 버튼에 번호가 붙어 있다" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">업로드 중</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>표시</th><th>뜻</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>파일 칩</td><td>올리고 있는 파일입니다.</td><td>올바른 파일을 골랐는지 확인할 때</td></tr><tr><td>2</td><td><strong>업로드 중...</strong></td><td>파일을 올리는 중입니다. 이 표시가 끝나면 **파일 처리 중...**으로 바뀝니다. 올리는 동안에는 <strong>파일 업로드</strong>도 누를 수 없습니다.</td><td>큰 파일을 올린 뒤 끝날 때까지 기다릴 때</td></tr><tr><td>3</td><td><strong>전송</strong></td><td>업로드나 처리가 끝나지 않으면 흐리게 보이고 누를 수 없습니다.</td><td>상태 표시가 사라졌는지 확인할 때</td></tr></tbody></table>
+<p><span class="manual-shot" role="figure" aria-label="파일 처리 중"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/attachments-processing-5e88cacf305887a19b7b3825b442711d.png" target="_blank" rel="noopener"><img width="1440" height="410" src="/deep-agent-platform/assets/images/attachments-processing-5e88cacf305887a19b7b3825b442711d.png" alt="업로드한 회의록을 처리하는 중인 입력창. 파일 처리 중 표시에 번호가 붙어 있다" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">파일 처리 중</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>표시</th><th>뜻</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>파일 처리 중...</strong></td><td>에이전트가 읽을 수 있도록 문서를 바꾸는 중입니다. 쪽 수가 많은 문서는 시간이 더 걸립니다.</td><td>수십 쪽짜리 보고서를 올린 뒤 기다릴 때</td></tr></tbody></table>
+<p>처리가 끝나면 칩만 남습니다. 이 상태에서 질문을 적고 <strong>전송</strong>을 누릅니다. 업로드나 처리가 끝나지 않은 동안에는 <strong>전송</strong>을 누를 수 없습니다. 처리가 아주 오래 걸려 화면이 기다리는 한도를 넘으면 &quot;문서를 처리하고 있어요. 잠시 후 다시 시도해 주세요.&quot;가 나오고 질문은 보내지지 않습니다. 칩은 그대로 남아 상태를 계속 확인하므로, 표시가 사라진 뒤 다시 보냅니다. 붙인 파일이 모두 거부되면 &quot;첨부한 파일을 모두 올리지 못해 전송하지 않았습니다. 파일을 확인한 뒤 다시 보내 주세요.&quot;가 파일별 사유와 함께 나오고, 적어 둔 질문은 입력란에 그대로 남습니다.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="처리에-실패한-파일">처리에 실패한 파일<a href="#처리에-실패한-파일" class="hash-link" aria-label="처리에 실패한 파일에 대한 직접 링크" title="처리에 실패한 파일에 대한 직접 링크" translate="no">​</a></h3>
-<p>처리에 실패한 파일은 칩 테두리가 빨갛게 바뀌고 칩 아래에 이유가 표시됩니다. 실패한 파일이 남아 있으면 &quot;문서 처리에 실패한 파일이 있어 전송하지 않았어요. 실패한 파일을 삭제한 뒤 다시 보내 주세요.&quot;가 나오므로, 칩의 <strong>파일 제거</strong>로 그 파일을 뺀 뒤 다시 보냅니다.</p>
+<p>처리에 실패한 파일은 칩 테두리가 빨갛게 바뀌고 칩 아래에 이유가 표시됩니다. 실패한 파일이 남아 있으면 &quot;문서 처리에 실패한 파일이 있어 전송하지 않았어요. 실패한 파일을 삭제한 뒤 다시 보내 주세요.&quot;가 나오므로, 칩의 X 버튼으로 그 파일을 뺀 뒤 다시 보냅니다.</p>
 
 
 
@@ -144,12 +231,49 @@
 
 <table><thead><tr><th>칩 아래 표시</th><th>할 일</th></tr></thead><tbody><tr><td>&quot;문서의 크기, 쪽 수 또는 추출할 내용이 처리 한도를 초과했습니다. 파일을 나누어 다시 올려 주세요.&quot;</td><td>문서를 장이나 시트 단위로 나눠 올립니다.</td></tr><tr><td>&quot;암호로 보호된 문서는 읽을 수 없습니다. 암호를 해제한 파일을 올려 주세요.&quot;</td><td>원본 프로그램에서 암호를 풀고 다시 저장합니다.</td></tr><tr><td>&quot;이 파일 형식은 문서 읽기를 지원하지 않습니다. 지원되는 형식으로 변환해 올려 주세요.&quot;</td><td>.pdf나 .docx처럼 위 표의 형식으로 바꿔 올립니다.</td></tr><tr><td>&quot;문서 처리 시간이 초과되었습니다. 문서를 나누어 다시 시도해 주세요.&quot;</td><td>문서를 나눠 다시 올립니다.</td></tr><tr><td>&quot;문서 내용을 변환하지 못했습니다. 원본 프로그램에서 다시 저장하거나 PDF로 변환해 올려 주세요.&quot;</td><td>원본 프로그램에서 다시 저장하거나 PDF로 바꿉니다.</td></tr><tr><td>&quot;문서를 처리하지 못했습니다. 다시 시도하고 문제가 계속되면 관리자에게 문의해 주세요.&quot;</td><td>다시 올려 보고, 계속되면 관리자에게 문의합니다.</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="보낸-첨부파일-다시-보기">보낸 첨부파일 다시 보기<a href="#보낸-첨부파일-다시-보기" class="hash-link" aria-label="보낸 첨부파일 다시 보기에 대한 직접 링크" title="보낸 첨부파일 다시 보기에 대한 직접 링크" translate="no">​</a></h2>
-<p>보낸 질문 말풍선에는 첨부파일 칩이 함께 남습니다. 칩을 누르면 <strong>문서 보기</strong> 창이 열려 원본을 다시 볼 수 있습니다. 창 위쪽 도구모음으로 쪽 이동, 확대·축소, 인쇄를 하고, <strong>크게 보기</strong>로 창을 넓히거나 <strong>원래 크기로</strong> 되돌립니다. 닫기 버튼이나 Esc 키로 창을 닫습니다.</p>
+<p>보낸 질문 말풍선에는 첨부파일 칩이 함께 남습니다. 칩을 누르면 파일 이름이 제목인 문서 보기 창이 열려 원본을 다시 볼 수 있습니다. 창 위쪽 도구모음으로 <strong>축소</strong>, <strong>확대</strong>, <strong>원래 비율로</strong>, <strong>너비 맞춤</strong>, <strong>왼쪽으로 돌리기</strong>, <strong>다운로드</strong>, <strong>인쇄</strong>를 하고, <strong>크게 보기</strong>로 창을 넓힙니다. 창 네 모서리를 끌어 크기를 바꿀 수 있어, 그림처럼 창을 줄여 뒤의 답변과 함께 볼 수도 있습니다. 닫기 버튼이나 Esc 키로 창을 닫습니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="첨부파일 다시 보기"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/attachments-preview-6d13ad49eccfb8129514ebd28d7c86a0.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/attachments-preview-6d13ad49eccfb8129514ebd28d7c86a0.png" alt="회의록 두 개를 붙여 보낸 질문과 비교 요약 답변, 첨부파일 칩을 눌러 연 문서 보기 창. 첨부파일 칩, 크게 보기, 닫기, 도구모음에 번호가 붙어 있다" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">첨부파일 다시 보기</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>첨부파일 칩</td><td>이 질문과 함께 보낸 파일입니다. 누르면 문서 보기 창이 열립니다.</td><td>답변을 읽다가 원본 회의록을 다시 확인할 때</td></tr><tr><td>2</td><td><strong>크게 보기</strong></td><td>창을 크게 펼칩니다.</td><td>작은 글씨의 표를 읽을 때</td></tr><tr><td>3</td><td>닫기</td><td>창을 닫습니다. Esc 키로도 닫힙니다.</td><td>확인을 마치고 대화로 돌아갈 때</td></tr><tr><td>4</td><td>도구모음</td><td><strong>축소</strong>, <strong>확대</strong>, <strong>원래 비율로</strong>, <strong>너비 맞춤</strong>, <strong>왼쪽으로 돌리기</strong> 버튼입니다. 오른쪽 끝의 <strong>다운로드</strong>, <strong>인쇄</strong>로 원본을 내려받거나 인쇄합니다.</td><td>원본을 크게 보거나 내려받아 보관할 때</td></tr></tbody></table>
 <p>알아 둘 점은 다음과 같습니다.</p>
 <ul>
 <li class="">채팅에 붙인 파일은 그 채팅 안에서만 쓰입니다. 새 채팅을 열면 앞 채팅에 올린 파일은 보이지 않으므로, 같은 일의 자료는 한 채팅에 이어서 올립니다.</li>
 <li class="">채팅에 붙인 파일은 올린 지 7일이 지나면 만료됩니다. 만료된 칩에는 <strong>만료됨</strong>이 붙고 &quot;업로드가 만료되어 파일을 더 이상 열 수 없습니다. 다시 업로드해 주세요.&quot;가 안내됩니다. 그 파일이 다시 필요하면 새로 올립니다.</li>
-<li class="">옛 엑셀 형식(.xls)은 에이전트가 읽을 수는 있지만 <strong>문서 보기</strong> 창에는 그려지지 않습니다. 내려받아 확인하거나 .xlsx로 저장해 올립니다.</li>
+<li class="">옛 엑셀 형식(.xls)은 에이전트가 읽을 수는 있지만 문서 보기 창에는 그려지지 않습니다. 내려받아 확인하거나 .xlsx로 저장해 올립니다.</li>
 </ul>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="따라-해-보기">따라 해 보기<a href="#따라-해-보기" class="hash-link" aria-label="따라 해 보기에 대한 직접 링크" title="따라 해 보기에 대한 직접 링크" translate="no">​</a></h3>
 <p>김그루 사원이 두 팀의 회의록을 한 번에 올려 비교 요약을 받는 순서입니다.</p>
@@ -164,21 +288,58 @@
 <p>입력란 위에 두 파일의 칩이 붙었는지 확인합니다. 새 채팅이므로 파일은 아직 올라가지 않은 상태입니다.</p>
 </li>
 <li class="">
-<p>아래 프롬프트를 입력란에 붙여 넣고 <strong>전송</strong>을 누릅니다. 칩 옆에 <strong>업로드 중...</strong>, **파일 처리 중...**이 차례로 표시된 뒤 질문이 전달됩니다.</p>
+<p>아래 프롬프트를 입력란에 붙여 넣고 <strong>전송</strong>을 누릅니다. 입력창에 <strong>업로드 중...</strong>, **파일 처리 중...**이 차례로 표시된 뒤 질문이 전달됩니다.</p>
 <blockquote>
 <p>프롬프트: 첨부한 두 회의록에서 결정 사항과 액션 아이템(담당·기한)을 팀별로 정리하고, 두 팀이 함께 챙겨야 할 일을 따로 뽑아 주세요.</p>
 </blockquote>
 </li>
 <li class="">
-<p>답변에서 팀별 표와 공통 할 일을 확인합니다.</p>
+<p>답변에서 팀별 결정 사항과 액션 아이템 표, 두 팀이 함께 챙겨야 할 일을 확인합니다. 김그루 사원이 받은 답변은 AI혁신팀, 영업본부, &quot;두 팀이 함께 챙겨야 할 일&quot; 세 부분으로 나뉘었고, 공통 할 일로 &quot;제안서 템플릿 정비(11월 말)&quot;를 뽑았습니다. 회의록에 담당이나 기한이 없는 항목은 &quot;확인 필요&quot;로 표시됐습니다.</p>
 </li>
 <li class="">
-<p>질문 말풍선의 회의록 칩을 눌러 <strong>문서 보기</strong> 창을 열고, 답변에 적힌 담당자와 기한이 원본과 같은지 대조합니다.</p>
+<p>질문 말풍선의 회의록 칩을 눌러 문서 보기 창을 열고, 답변에 적힌 담당자와 기한이 원본과 같은지 대조합니다.</p>
 </li>
 </ol>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="에이전트에-늘-붙여-두는-파일">에이전트에 늘 붙여 두는 파일<a href="#에이전트에-늘-붙여-두는-파일" class="hash-link" aria-label="에이전트에 늘 붙여 두는 파일에 대한 직접 링크" title="에이전트에 늘 붙여 두는 파일에 대한 직접 링크" translate="no">​</a></h2>
-<p>채팅마다 같은 자료를 다시 올리기 번거롭다면 에이전트 편집 화면 오른쪽의 <strong>파일</strong> 탭에 올려 둡니다. 이 탭에 올린 파일은 채팅이 바뀌어도 에이전트가 계속 쓸 수 있습니다. 회의록 요약 도우미라면 회의록 표준양식처럼 매번 참고할 자료가 알맞습니다. 탭의 &quot;파일을 드래그하거나 클릭하여 업로드&quot; 영역에 파일을 끌어 놓거나 <strong>파일 선택</strong>으로 고르면 올라가고, 아래 목록에 파일 개수(<strong>N개 파일</strong>)와 파일마다 처리 상태(<strong>문서 처리중</strong>, <strong>완료</strong>, <strong>파일 처리 실패</strong>)가 보입니다. 파일 이름을 누르면 <strong>문서 보기</strong> 창으로 열립니다. 파일 하나는 그 파일의 <strong>삭제</strong>로 지우고, 전부 지우려면 <strong>모두 지우기</strong>를 누른 뒤 <strong>모든 파일 삭제</strong> 확인 창에서 <strong>모두 삭제</strong>를 누릅니다. 지운 파일은 되돌릴 수 없습니다.</p>
-<p><strong>파일</strong> 탭은 채팅과 같은 형식과 크기 한도를 따르며, 에이전트 하나에 50개까지 올릴 수 있습니다. 에이전트 편집 화면은 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/agent-editing/">에이전트 수정</a>에서 설명합니다.</p>
+<p>채팅마다 같은 자료를 다시 올리기 번거롭다면 에이전트 편집 화면 오른쪽의 <strong>파일</strong> 탭에 올려 둡니다. 이 탭에 올린 파일은 채팅이 바뀌어도 에이전트가 계속 쓸 수 있습니다. 회의록 요약 도우미라면 회의록 표준양식처럼 매번 참고할 자료가 알맞습니다. 탭의 &quot;파일을 드래그하거나 클릭하여 업로드&quot; 영역에 파일을 끌어 놓거나 영역을 눌러 고르면 올라가고, 아래 목록에 파일 개수(<strong>N개 파일</strong>)와 파일마다 크기, 올린 날짜, 처리 상태(<strong>문서 처리중</strong>, <strong>완료</strong>, <strong>파일 처리 실패</strong>)가 보입니다. 파일 이름을 누르면 문서 보기 창으로 열립니다. 파일 하나는 그 파일 오른쪽의 삭제 버튼으로 지우고, 전부 지우려면 <strong>모두 지우기</strong>를 누른 뒤 <strong>모든 파일 삭제</strong> 확인 창에서 <strong>모두 삭제</strong>를 누릅니다. 지운 파일은 되돌릴 수 없습니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="에이전트 파일 탭"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/attachments-agent-files-4d158c871da627f41ed9009508e4ae6c.png" target="_blank" rel="noopener"><img width="1212" height="996" src="/deep-agent-platform/assets/images/attachments-agent-files-4d158c871da627f41ed9009508e4ae6c.png" alt="회의록 요약 도우미 에이전트 편집 화면 오른쪽 파일 탭. 파일 탭, 업로드 영역, 파일 목록, 모두 지우기에 번호가 붙어 있다" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">에이전트 파일 탭</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>파일</strong> 탭</td><td>이 에이전트에 늘 붙여 두는 파일을 관리합니다.</td><td>모든 채팅에서 같은 양식을 참고하게 할 때</td></tr><tr><td>2</td><td>업로드 영역</td><td>&quot;파일을 드래그하거나 클릭하여 업로드&quot; 영역에 파일을 끌어 놓거나, 영역을 눌러 고릅니다. 영역 안에 지원 형식 안내가 보입니다.</td><td>회의록 표준양식을 올릴 때</td></tr><tr><td>3</td><td>파일 목록</td><td>올린 파일과 개수(<strong>N개 파일</strong>), 크기, 올린 날짜, 처리 상태(<strong>문서 처리중</strong>, <strong>완료</strong>, <strong>파일 처리 실패</strong>)입니다. 파일 이름을 누르면 문서 보기 창으로 열립니다.</td><td>올린 양식이 처리됐는지 확인할 때</td></tr><tr><td>4</td><td><strong>모두 지우기</strong></td><td>올린 파일을 모두 지웁니다. <strong>모든 파일 삭제</strong> 확인 창에서 <strong>모두 삭제</strong>를 눌러야 지워지며, 되돌릴 수 없습니다. 파일 하나만 지울 때는 그 파일 오른쪽의 삭제 버튼을 씁니다.</td><td>자료를 새로 정리할 때</td></tr></tbody></table>
+<p><strong>파일</strong> 탭은 채팅과 같은 형식과 크기 한도를 따르며, 에이전트 하나에 50개까지 올릴 수 있습니다. 업로드 영역의 &quot;지원 형식&quot; 안내에는 .markdown, .ppt, .html, .htm이 빠져 있지만 이 형식도 고를 수 있고, .doc처럼 목록에 없는 형식은 &quot;지원하지 않는 파일 형식입니다&quot;와 함께 빠집니다. 에이전트 편집 화면은 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/agent-editing/">에이전트 수정</a>에서 설명합니다.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="에이전트를-만들-때-붙이는-파일">에이전트를 만들 때 붙이는 파일<a href="#에이전트를-만들-때-붙이는-파일" class="hash-link" aria-label="에이전트를 만들 때 붙이는 파일에 대한 직접 링크" title="에이전트를 만들 때 붙이는 파일에 대한 직접 링크" translate="no">​</a></h2>
 <p><strong>새 에이전트</strong> 화면에서 만들고 싶은 에이전트를 설명할 때도 참고 자료를 붙일 수 있습니다. 이때는 채팅과 받는 형식이 조금 다릅니다.</p>
 <ul>
@@ -249,7 +410,12 @@
 
 
 
-<table><thead><tr><th>화면 안내</th><th>뜻</th><th>할 일</th></tr></thead><tbody><tr><td>&quot;지원하지 않는 파일 형식입니다&quot;</td><td>위 표에 없는 확장자입니다.</td><td>받는 형식으로 다시 저장해 붙입니다.</td></tr><tr><td>&quot;PDF 파일 크기가 제한(20MB)을 초과합니다. 현재 크기: …&quot;</td><td>종류별 크기 한도를 넘었습니다.</td><td>필요한 쪽만 나눠 저장합니다.</td></tr><tr><td>&quot;파일 크기가 업로드 제한(50MB)을 초과합니다.&quot;</td><td>파일 한 개의 업로드 제한을 넘었습니다.</td><td>파일을 나누거나 줄입니다.</td></tr><tr><td>&quot;빈 파일은 업로드할 수 없습니다.&quot;</td><td>내용이 없는 파일입니다.</td><td>원본을 다시 저장해 붙입니다.</td></tr><tr><td>&quot;파일 확장자와 실제 파일 형식이 일치하지 않습니다.&quot;</td><td>확장자만 바꾼 파일처럼 이름과 내용이 다릅니다.</td><td>원본 프로그램에서 해당 형식으로 다시 저장합니다.</td></tr><tr><td>&quot;암호나 권한 보호(DRM)가 걸린 문서는 업로드할 수 없습니다. 보호를 해제한 뒤 다시 올려 주세요.&quot;</td><td>암호나 DRM이 걸린 문서입니다.</td><td>보호를 해제한 사본을 올립니다.</td></tr><tr><td>&quot;최대 10개 파일만 업로드할 수 있습니다&quot;</td><td>한 번에 붙일 수 있는 개수를 넘었습니다.</td><td>나머지는 다음 질문에 붙입니다.</td></tr><tr><td>&quot;문서를 처리하고 있어요. 잠시 후 다시 시도해 주세요.&quot;</td><td>처리가 오래 걸려 화면이 기다리는 한도를 넘었습니다. 질문은 보내지지 않았습니다.</td><td>칩의 처리 표시가 사라진 뒤 다시 보냅니다.</td></tr><tr><td>&quot;첨부한 파일을 모두 올리지 못해 전송하지 않았습니다. 파일을 확인한 뒤 다시 보내 주세요.&quot;</td><td>붙인 파일이 모두 거부됐습니다.</td><td>함께 나온 파일별 사유를 보고 고쳐 다시 붙입니다.</td></tr><tr><td><strong>만료됨</strong></td><td>올린 지 7일이 지나 파일을 열 수 없습니다.</td><td>필요하면 다시 올립니다.</td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>화면 안내</th><th>뜻</th><th>할 일</th></tr></thead><tbody><tr><td>&quot;지원하지 않는 파일 형식입니다&quot;</td><td>위 표에 없는 확장자입니다.</td><td>받는 형식으로 다시 저장해 붙입니다.</td></tr><tr><td>&quot;PDF 파일 크기가 제한(20MB)을 초과합니다. 현재 크기: …&quot;</td><td>종류별 크기 한도를 넘었습니다.</td><td>필요한 쪽만 나눠 저장합니다.</td></tr><tr><td>&quot;파일 크기가 업로드 제한(50MB)을 초과합니다.&quot;</td><td>파일 한 개의 업로드 제한을 넘었습니다.</td><td>파일을 나누거나 줄입니다.</td></tr><tr><td>&quot;빈 파일은 업로드할 수 없습니다.&quot;</td><td>내용이 없는 파일입니다.</td><td>입력창에 남은 칩을 X 버튼으로 빼고, 원본을 다시 저장해 붙입니다.</td></tr><tr><td>&quot;파일 확장자와 실제 파일 형식이 일치하지 않습니다.&quot;</td><td>확장자만 바꾼 파일처럼 이름과 내용이 다릅니다.</td><td>원본 프로그램에서 해당 형식으로 다시 저장합니다.</td></tr><tr><td>&quot;암호나 권한 보호(DRM)가 걸린 문서는 업로드할 수 없습니다. 보호를 해제한 뒤 다시 올려 주세요.&quot;</td><td>암호나 DRM이 걸린 문서입니다.</td><td>보호를 해제한 사본을 올립니다.</td></tr><tr><td>&quot;최대 10개 파일만 업로드할 수 있습니다.&quot;</td><td>이미 10개가 붙어 있는데 더 골랐습니다.</td><td>나머지는 다음 질문에 붙입니다.</td></tr><tr><td>&quot;2개 파일이 제한으로 인해 추가되지 않았습니다.&quot;</td><td>10개 한도를 넘은 만큼 빠졌습니다.</td><td>빠진 파일은 다음 질문에 붙입니다.</td></tr><tr><td>&quot;문서를 처리하고 있어요. 잠시 후 다시 시도해 주세요.&quot;</td><td>처리가 오래 걸려 화면이 기다리는 한도를 넘었습니다. 질문은 보내지지 않았습니다.</td><td>칩의 처리 표시가 사라진 뒤 다시 보냅니다.</td></tr><tr><td>&quot;첨부한 파일을 모두 올리지 못해 전송하지 않았습니다. 파일을 확인한 뒤 다시 보내 주세요.&quot;</td><td>붙인 파일이 모두 거부됐습니다.</td><td>함께 나온 파일별 사유를 보고 고쳐 다시 붙입니다.</td></tr><tr><td><strong>만료됨</strong></td><td>올린 지 7일이 지나 파일을 열 수 없습니다.</td><td>필요하면 다시 올립니다.</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="정리">정리<a href="#정리" class="hash-link" aria-label="정리에 대한 직접 링크" title="정리에 대한 직접 링크" translate="no">​</a></h2>
 <ul>
 <li class="">채팅에는 .pdf, .jpg, .jpeg, .png, .gif, .webp, .md, .markdown, .txt, .xlsx, .xls, .xlsb, .xlsm, .csv, .docx, .pptx, .ppt, .hwp, .hwpx, .html, .htm을 붙일 수 있습니다.</li>

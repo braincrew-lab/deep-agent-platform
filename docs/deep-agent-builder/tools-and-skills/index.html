@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
-<title data-rh="true">도구와 스킬 구성 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/tools-and-skills/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="도구와 스킬 구성 | Deep Platform"><meta data-rh="true" name="description" content="에이전트가 일을 하려면 실제로 손을 움직이는 도구와, 어떤 순서와 기준으로 일할지 적어 둔 스킬이 필요합니다. 이 페이지는 에셋 화면에서 도구를 등록·시험·관리하고, 유틸리티에서 제공 도구를 설치한 뒤, 에이전트 편집 화면의 도구함에 붙이는 과정을 브레인크루 AI혁신팀 김그루 사원의 시장 조사 리서처 예시로 설명합니다."><meta data-rh="true" property="og:description" content="에이전트가 일을 하려면 실제로 손을 움직이는 도구와, 어떤 순서와 기준으로 일할지 적어 둔 스킬이 필요합니다. 이 페이지는 에셋 화면에서 도구를 등록·시험·관리하고, 유틸리티에서 제공 도구를 설치한 뒤, 에이전트 편집 화면의 도구함에 붙이는 과정을 브레인크루 AI혁신팀 김그루 사원의 시장 조사 리서처 예시로 설명합니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/tools-and-skills/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/tools-and-skills/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/tools-and-skills/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"도구와 스킬 구성","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/tools-and-skills"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
-<script src="/deep-agent-platform/assets/js/runtime~main.0da81299.js" defer="defer"></script>
-<script src="/deep-agent-platform/assets/js/main.836f1a7b.js" defer="defer"></script>
+<title data-rh="true">도구와 스킬 구성 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/tools-and-skills/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="도구와 스킬 구성 | Deep Platform"><meta data-rh="true" name="description" content="에이전트가 일을 하려면 실제로 손을 움직이는 도구와, 어떤 순서와 기준으로 일할지 적어 둔 스킬이 필요합니다. 이 페이지는 에셋 화면에서 도구를 등록·시험·관리하고, 유틸리티에서 제공 도구를 찾아 설치한 뒤, 에이전트 편집 화면의 도구함에 붙이는 과정을 브레인크루 AI혁신팀 김그루 사원의 예시로 설명합니다. 예시 화면의 도구는 김그루가 등록해 둔 사내 문서 검색 MCP 도구 deep\connector\kb입니다."><meta data-rh="true" property="og:description" content="에이전트가 일을 하려면 실제로 손을 움직이는 도구와, 어떤 순서와 기준으로 일할지 적어 둔 스킬이 필요합니다. 이 페이지는 에셋 화면에서 도구를 등록·시험·관리하고, 유틸리티에서 제공 도구를 찾아 설치한 뒤, 에이전트 편집 화면의 도구함에 붙이는 과정을 브레인크루 AI혁신팀 김그루 사원의 예시로 설명합니다. 예시 화면의 도구는 김그루가 등록해 둔 사내 문서 검색 MCP 도구 deep\connector\kb입니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/tools-and-skills/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/tools-and-skills/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/tools-and-skills/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"도구와 스킬 구성","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/tools-and-skills"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
+<script src="/deep-agent-platform/assets/js/runtime~main.3cbeb1c1.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.781f3454.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
 <symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
 </defs></svg>
 <script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/deep-agent-platform/img/manual-mark.svg"><div role="region" aria-label="본문으로 건너뛰기"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">본문으로 건너뛰기</a></div><nav aria-label="메인" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="사이드바 펼치거나 접기" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/deep-agent-platform/"><div class="navbar__logo"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Deep Platform</b></a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">솔루션</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-flow/">Deep Flow</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/deep-agent-platform/docs/deep-agent-builder/">Deep Agent Builder</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-connector/">Deep Connector</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-docurator/">Deep Docurator</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/brain-parser/">Brain Parser</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work/">Deep Work</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work-gateway/">Deep Work Gateway</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-admin/">Deep Admin</a></li></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="어두운 모드와 밝은 모드 전환하기 (현재 system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="searchBar_fdyA"><input type="search" class="searchInput_JE4R" placeholder="매뉴얼 검색" aria-label="매뉴얼 검색" role="combobox" aria-autocomplete="list" aria-expanded="false" value=""><div role="status" aria-live="polite"></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="맨 위로 스크롤하기" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="문서 사이드바" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/"><span class="categoryLinkLabel_W154">소개</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/core-concepts/"><span class="categoryLinkLabel_W154">처음 사용하기</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/first-agent-design/"><span class="categoryLinkLabel_W154">에이전트 만들기</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/threads/"><span class="categoryLinkLabel_W154">업무에 활용하기</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/deep-agent-platform/docs/deep-agent-builder/rag-agent/"><span class="categoryLinkLabel_W154">지식·도구 연결</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/rag-agent/"><span class="linkLabel_WmDU">지식으로 근거 있는 답변 받기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/tools-and-skills/"><span class="linkLabel_WmDU">도구와 스킬 구성</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/custom-skills/"><span class="linkLabel_WmDU">스킬 만들기와 업로드</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/mcp-agent/"><span class="linkLabel_WmDU">MCP와 에이전트의 MCP화</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/code-snippets/"><span class="linkLabel_WmDU">코드 스니펫과 외부 API</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/models/"><span class="linkLabel_WmDU">모델 구성</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/environment-settings/"><span class="linkLabel_WmDU">세부 설정과 메모리</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/middleware/"><span class="categoryLinkLabel_W154">보안과 권한</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/community/"><span class="categoryLinkLabel_W154">커뮤니티</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/multi-agent-concepts/"><span class="categoryLinkLabel_W154">멀티에이전트</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/evaluation-overview/"><span class="categoryLinkLabel_W154">평가</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/evaluations/"><span class="categoryLinkLabel_W154">개선과 모니터링</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/use-cases/"><span class="categoryLinkLabel_W154">활용 사례</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/troubleshooting/"><span class="categoryLinkLabel_W154">문제 해결</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="탐색 경로"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="홈" class="breadcrumbs__link" href="/deep-agent-platform/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">지식·도구 연결</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">도구와 스킬 구성</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">이 페이지에서</button></div><div class="theme-doc-markdown markdown"><header><h1>도구와 스킬 구성</h1></header>
-<p>에이전트가 일을 하려면 실제로 손을 움직이는 <strong>도구</strong>와, 어떤 순서와 기준으로 일할지 적어 둔 <strong>스킬</strong>이 필요합니다. 이 페이지는 <strong>에셋</strong> 화면에서 도구를 등록·시험·관리하고, <strong>유틸리티</strong>에서 제공 도구를 설치한 뒤, 에이전트 편집 화면의 <strong>도구함</strong>에 붙이는 과정을 브레인크루 AI혁신팀 김그루 사원의 <strong>시장 조사 리서처</strong> 예시로 설명합니다.</p>
+<p>에이전트가 일을 하려면 실제로 손을 움직이는 <strong>도구</strong>와, 어떤 순서와 기준으로 일할지 적어 둔 <strong>스킬</strong>이 필요합니다. 이 페이지는 <strong>에셋</strong> 화면에서 도구를 등록·시험·관리하고, <strong>유틸리티</strong>에서 제공 도구를 찾아 설치한 뒤, 에이전트 편집 화면의 <strong>도구함</strong>에 붙이는 과정을 브레인크루 AI혁신팀 김그루 사원의 예시로 설명합니다. 예시 화면의 도구는 김그루가 등록해 둔 사내 문서 검색 MCP 도구 deep_connector_kb입니다.</p>
 <p><strong>이 페이지에서 할 수 있는 일</strong></p>
 <ul>
 <li class="">도구, 스킬, 지식의 차이를 업무 예시로 구분합니다.</li>
 <li class=""><strong>에셋</strong> 화면의 탭 구성(<strong>도구</strong>, <strong>모델</strong>, <strong>스킬</strong>, <strong>메모리</strong>, <strong>시크릿</strong>, <strong>API 키</strong>, <strong>커맨드</strong>)을 알고 필요한 탭으로 이동합니다.</li>
-<li class=""><strong>도구 추가</strong> 메뉴로 HTTP 도구와 MCP 서버 도구를 등록하고, 도구 이름 규칙을 지킵니다.</li>
+<li class=""><strong>도구 추가</strong> 메뉴로 MCP 서버 도구를 등록하고, 도구 이름 규칙을 지킵니다.</li>
 <li class=""><strong>테스트 실행</strong>으로 도구를 미리 호출해 보고, <strong>기본값 설정</strong>에서 시크릿 키를 참조하게 합니다.</li>
 <li class="">쓰지 않는 도구를 선택 모드로 여러 개 골라 한 번에 지웁니다.</li>
 <li class=""><strong>유틸리티</strong>에서 제공 도구를 설치하고, 에이전트 <strong>도구함</strong>에 붙인 뒤 <strong>도구 설정</strong>에서 에이전트별 값을 바꿉니다.</li>
@@ -48,77 +48,414 @@
 
 
 
-<table><thead><tr><th>구분</th><th>하는 일</th><th>브레인크루 예시</th></tr></thead><tbody><tr><td>도구</td><td>실제 동작을 합니다. 예를 들어 외부 시스템을 호출하거나 파일을 읽습니다.</td><td>시장 조사 리서처가 쓰는 웹 검색 도구</td></tr><tr><td>스킬</td><td>어떤 순서와 기준으로 일할지 적은 업무 매뉴얼입니다. 에이전트가 필요할 때 불러와 읽습니다.</td><td>&quot;브레인크루 보고서 작성 규칙&quot; 스킬</td></tr><tr><td>지식</td><td>답변 근거가 되는 사내 문서 묶음입니다. Deep Connector 컬렉션을 연결합니다.</td><td>사내 규정 Q&amp;A 도우미의 &quot;브레인크루 사내 규정&quot;</td></tr></tbody></table>
+<table><thead><tr><th>구분</th><th>하는 일</th><th>브레인크루 예시</th></tr></thead><tbody><tr><td>도구</td><td>실제 동작을 합니다. 예를 들어 외부 시스템을 호출하거나 사내 문서를 검색합니다.</td><td>사내 문서를 검색하는 deep_connector_kb 도구</td></tr><tr><td>스킬</td><td>어떤 순서와 기준으로 일할지 적은 업무 매뉴얼입니다. 에이전트가 필요할 때 불러와 읽습니다.</td><td>&quot;브레인크루 보고서 작성 규칙&quot; 스킬</td></tr><tr><td>지식</td><td>답변 근거가 되는 사내 문서 묶음입니다. Deep Connector 컬렉션을 연결합니다.</td><td>사내 규정 Q&amp;A 도우미의 &quot;브레인크루 사내 규정&quot;</td></tr></tbody></table>
 <p>도구만 있으면 자료는 모으지만 보고서 형식이 들쭉날쭉할 수 있고, 스킬만 있으면 기준은 알지만 새 자료를 가져오지 못합니다. 시장 조사처럼 자료를 모아 정해진 형식으로 정리하는 업무는 두 가지를 함께 붙입니다. 지식 연결은 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/rag-agent/">지식으로 근거 있는 답변 받기</a>에서 설명합니다.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="에셋-화면과-도구-탭">에셋 화면과 도구 탭<a href="#에셋-화면과-도구-탭" class="hash-link" aria-label="에셋 화면과 도구 탭에 대한 직접 링크" title="에셋 화면과 도구 탭에 대한 직접 링크" translate="no">​</a></h2>
 <p>사이드바 아래쪽 <strong>에셋설정</strong>을 누르면 <strong>에셋</strong> 화면이 열립니다. 화면 설명은 &quot;도구, 모델, 미들웨어, 스킬을 관리합니다&quot;입니다. 위쪽 탭 줄에는 <strong>도구</strong>, <strong>모델</strong>, <strong>스킬</strong>, <strong>메모리</strong>, <strong>시크릿</strong>, <strong>API 키</strong>, <strong>커맨드</strong> 탭이 있고, 처음에는 <strong>도구</strong> 탭이 열립니다.</p>
-<p><strong>도구</strong> 탭에서는 **도구 검색...**으로 이름을 찾고, 유형 필터(처음에는 <strong>전체</strong>)로 목록을 거릅니다. 목록의 도구를 고르면 오른쪽 도구 상세에 설명, 파라미터, 필수 환경변수와 <strong>테스트</strong>, <strong>기본값 설정</strong>, <strong>수정</strong>, <strong>삭제</strong> 버튼이 보입니다. 새 도구는 <strong>도구 추가</strong>로 등록하고, 여러 도구를 한꺼번에 지울 때는 <strong>선택</strong>을 누릅니다.</p>
-<p>도구 상세의 필수 환경변수 옆에 <strong>미등록</strong>이 보이면, 그 도구가 쓰는 키가 아직 시크릿에 없다는 뜻입니다. 옆의 <strong>등록</strong>을 누르면 시크릿 입력 창이 열립니다. 시크릿은 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/secrets-permissions/">시크릿과 권한</a>에서 설명합니다.</p>
+<p><strong>도구</strong> 탭에서는 **도구 검색...**으로 이름을 찾고, 유형 필터(<strong>전체</strong>와 내가 가진 도구 유형, 예: <strong>MCP</strong>)로 목록을 거릅니다. 목록의 도구를 고르면 오른쪽 도구 상세에 설명, 세부 도구 목록(MCP 도구일 때), 필수 환경변수와 <strong>테스트</strong>, <strong>기본값 설정</strong>, <strong>수정</strong>, <strong>삭제</strong> 아이콘 버튼이 보입니다. 새 도구는 <strong>도구 추가</strong>로 등록하고, 여러 도구를 한꺼번에 지울 때는 <strong>선택</strong>을 누릅니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="에셋 화면의 도구 탭: 메뉴와 목록 거르기"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/tools-and-skills-asset-tools-a79bcde71f43e7ef44e6c0c1b88d41c9.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/tools-and-skills-asset-tools-a79bcde71f43e7ef44e6c0c1b88d41c9.png" alt="에셋 화면 도구 탭에서 에셋설정 메뉴, 탭 줄, 도구 검색, 유형별 필터에 번호를 붙인 그림" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">에셋 화면의 도구 탭: 메뉴와 목록 거르기</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>에셋설정</strong></td><td>사이드바 아래쪽에서 <strong>에셋</strong> 화면을 엽니다.</td><td>도구, 모델, 스킬을 한곳에서 관리할 때</td></tr><tr><td>2</td><td>탭 줄</td><td><strong>도구</strong>, <strong>모델</strong>, <strong>스킬</strong>, <strong>메모리</strong>, <strong>시크릿</strong>, <strong>API 키</strong>, <strong>커맨드</strong> 탭으로 바꿉니다.</td><td>관리할 자원 종류를 고를 때</td></tr><tr><td>3</td><td><strong>도구 검색...</strong></td><td>도구 이름으로 목록을 좁힙니다.</td><td>등록된 도구가 많을 때</td></tr><tr><td>4</td><td>유형 필터</td><td><strong>전체</strong> 또는 도구 유형(예: <strong>MCP</strong>)별로 목록을 거릅니다. 처음에는 <strong>전체</strong>가 선택되어 있습니다.</td><td>한 유형만 골라 볼 때</td></tr></tbody></table>
+<p>같은 화면에서 목록과 상세를 다루는 버튼은 다음과 같습니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="에셋 화면의 도구 탭: 도구 목록과 도구 상세"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/tools-and-skills-asset-tools-2-c711d574b721143c51839ccaa193b17e.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/tools-and-skills-asset-tools-2-c711d574b721143c51839ccaa193b17e.png" alt="에셋 화면 도구 탭에서 선택, 도구 추가, 도구 목록의 deep_connector_kb, 도구 상세의 아이콘 버튼에 번호를 붙인 그림" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">에셋 화면의 도구 탭: 도구 목록과 도구 상세</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>선택</strong></td><td>여러 도구를 골라 한 번에 지우는 선택 모드로 바꿉니다.</td><td>쓰지 않는 시험용 도구를 정리할 때</td></tr><tr><td>2</td><td><strong>도구 추가</strong></td><td>새 도구를 등록하는 메뉴를 엽니다.</td><td>사내 API나 MCP 서버를 도구로 쓰고 싶을 때</td></tr><tr><td>3</td><td>도구 목록의 도구</td><td>내가 쓸 수 있는 도구입니다. 도구 이름 아래에 출처(예: <strong>사용자 등록</strong>)와 유형(예: <strong>MCP</strong>), 설명이 함께 보입니다. 누르면 오른쪽에 도구 상세가 열립니다.</td><td>내가 만든 도구와 제공 도구를 구분할 때</td></tr><tr><td>4</td><td>도구 상세 버튼</td><td>고른 도구의 오른쪽 위 <strong>테스트</strong>, <strong>기본값 설정</strong>, <strong>수정</strong>, <strong>삭제</strong> 아이콘입니다. 아래에는 설명, 세부 도구, 필수 환경변수가 보이고, 도구를 고르지 않으면 &quot;선택된 도구가 없습니다&quot;가 보입니다.</td><td>에이전트에 붙이기 전에 도구를 시험하거나 고칠 때</td></tr></tbody></table>
+<p>도구 상세 아래 <strong>필수 환경변수</strong>에는 도구가 쓰는 키 이름과 <strong>등록됨</strong> 또는 <strong>미등록</strong> 상태가 보입니다. <strong>미등록</strong>이면 그 키가 아직 시크릿에 없다는 뜻이므로 시크릿에 먼저 등록합니다. 시크릿은 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/secrets-permissions/">시크릿과 권한</a>에서 설명합니다.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="도구-추가-메뉴">도구 추가 메뉴<a href="#도구-추가-메뉴" class="hash-link" aria-label="도구 추가 메뉴에 대한 직접 링크" title="도구 추가 메뉴에 대한 직접 링크" translate="no">​</a></h2>
-<p><strong>도구 추가</strong>를 누르면 등록할 도구 종류를 고르는 메뉴가 열립니다. 메뉴에는 <strong>HTTP 요청 Server</strong>, <strong>MCP Remote</strong>, <strong>Zapier MCP Server</strong>, <strong>Dify MCP Server</strong>, <strong>n8n MCP Server</strong>, <strong>Connect MCP Server</strong> 여섯 가지가 있습니다.</p>
-<p>어떤 종류든 <strong>새 도구 추가</strong> 창에서 <strong>도구 이름</strong>과 <strong>설명</strong>을 먼저 넣습니다.</p>
+<p><strong>도구 추가</strong>를 누르면 등록할 도구 종류를 고르는 메뉴가 열립니다. 이 환경의 메뉴에는 <strong>Dify MCP Server</strong>, <strong>n8n MCP Server</strong>, <strong>Connect MCP Server</strong> 세 가지가 있고, 항목마다 한 줄 설명이 붙어 있습니다. 회사 설정에 따라 HTTP 요청 도구나 MCP Remote 같은 항목이 더 보일 수 있습니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="도구 추가 메뉴"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/tools-and-skills-add-menu-a127341d11c62c87b28c3a49de9efffb.png" target="_blank" rel="noopener"><img width="1200" height="520" src="/deep-agent-platform/assets/images/tools-and-skills-add-menu-a127341d11c62c87b28c3a49de9efffb.png" alt="도구 추가 메뉴를 펼쳐 Dify MCP Server, n8n MCP Server, Connect MCP Server 세 항목에 번호를 붙인 그림" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">도구 추가 메뉴</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>Dify MCP Server</strong></td><td>Dify 워크플로우를 MCP로 연결합니다. <strong>URL</strong>은 /mcp로 끝나야 합니다.</td><td>Dify에서 만든 워크플로우를 도구로 쓸 때</td></tr><tr><td>2</td><td><strong>n8n MCP Server</strong></td><td>n8n 워크플로우를 MCP로 연결합니다. <strong>URL</strong>과 <strong>인증 토큰</strong>을 넣으며, 토큰은 <strong>환경변수로 추가</strong>로 시크릿에 넣을 수 있습니다.</td><td>n8n 자동화를 에이전트에서 부를 때</td></tr><tr><td>3</td><td><strong>Connect MCP Server</strong></td><td>Connect MCP 서버를 <strong>URL</strong>과 <strong>Token</strong>으로 연결합니다. Token에는 받은 토큰 값만 넣고 앞에 인증 방식 이름을 붙이지 않습니다.</td><td>Connect MCP 서버 주소와 토큰을 받았을 때</td></tr></tbody></table>
+<p>어떤 종류든 <strong>새 도구 추가</strong> 창(&quot;새 도구 설정을 생성합니다. 도구 유형에 따라 필요한 필드를 입력하세요.&quot;)에서 <strong>도구 이름</strong>과 <strong>설명</strong>을 먼저 넣습니다.</p>
 <ul>
 <li class=""><strong>도구 이름</strong>은 영문 소문자로 시작하고 소문자, 숫자, 밑줄(_)만 쓸 수 있습니다. 만든 뒤에는 바꿀 수 없으니 신중히 정합니다. 예: braincrew_sales_lookup</li>
 <li class=""><strong>표시 이름</strong>은 목록과 상세에 보일 이름으로, 한글과 공백을 쓸 수 있습니다. 비우면 도구 이름이 그대로 보입니다.</li>
 <li class=""><strong>설명</strong>은 에이전트가 이 도구를 언제 쓸지 판단하는 근거가 되므로 하는 일을 구체적으로 적습니다.</li>
 </ul>
-<p>URL에 키가 들어가는 도구(예: Zapier의 Connect URL)는 비밀번호처럼 다룹니다. MCP 서버 도구는 창 아래 <strong>연결 테스트</strong>로 연결을 확인한 뒤 <strong>생성</strong>합니다. MCP 도구를 등록하고 에이전트를 MCP 서버로 공개하는 방법은 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/mcp-agent/">MCP와 에이전트의 MCP화</a>에서 더 자세히 설명합니다.</p>
+<p>토큰이 들어가는 칸은 비밀번호처럼 다룹니다. 창 아래 <strong>연결 테스트</strong>로 연결을 확인한 뒤 <strong>생성</strong>을 누르고, 그만두려면 <strong>취소</strong>를 누릅니다. MCP 도구를 등록하고 에이전트를 MCP 서버로 공개하는 방법은 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/mcp-agent/">MCP와 에이전트의 MCP화</a>에서 더 자세히 설명합니다.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="도구-테스트">도구 테스트<a href="#도구-테스트" class="hash-link" aria-label="도구 테스트에 대한 직접 링크" title="도구 테스트에 대한 직접 링크" translate="no">​</a></h2>
-<p>에이전트에 붙이기 전에 도구 상세의 <strong>테스트</strong>를 눌러 도구를 직접 불러 볼 수 있습니다. &quot;도구 테스트 - 도구 이름&quot; 창이 열립니다. <strong>파라미터</strong>에 값을 넣거나(필수 값에는 <strong>필수</strong> 표시가 붙습니다) <strong>AI 자동채우기</strong>로 예시 값을 채운 뒤 <strong>테스트 실행</strong>을 누르면, <strong>실행 결과</strong>에 <strong>성공</strong> 또는 <strong>실패</strong>, <strong>응답 시간</strong>, 응답 본문이 보입니다. 응답이 느린 사내 API라면 **타임아웃 (초)**을 늘립니다. 1초부터 60초까지 넣을 수 있고 기본값은 10초입니다.</p>
-<p>MCP 도구 가운데 아직 하위 도구 정보가 없는 것은 &quot;이 MCP 도구는 아직 서브 도구 정보가 없습니다. 먼저 서브 도구를 조회하세요.&quot; 안내와 함께 <strong>서브 도구 조회</strong> 버튼이 보입니다. 누르면 서버가 제공하는 하위 도구 목록을 가져옵니다. <strong>AI 자동채우기</strong>의 모델 목록이 비어 있으면 모델 API 키가 시크릿에 등록되어 있는지 확인하세요.</p>
+<p>에이전트에 붙이기 전에 도구 상세의 <strong>테스트</strong>를 눌러 도구를 직접 불러 볼 수 있습니다. &quot;도구 테스트 - 도구 이름&quot; 창이 열립니다. MCP 도구는 <strong>Arguments (JSON)</strong> 아래 **세부 도구 (sub-tool)**에서 부를 하위 도구를 고르고, 그 아래 칸에 값을 넣은 뒤 <strong>테스트 실행</strong>을 누릅니다. 실행이 끝나면 버튼 아래에 <strong>성공</strong> 또는 <strong>실패</strong>와 걸린 시간, 응답 본문(실패하면 오류 내용)이 보입니다. 응답이 느린 사내 API라면 **타임아웃 (초)**을 늘립니다. 1초부터 60초까지 넣을 수 있고 기본값은 10초입니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="도구 테스트 창"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/tools-and-skills-tool-test-7f94c3f1875c388264fcbd187d4b223b.png" target="_blank" rel="noopener"><img width="1984" height="1333" src="/deep-agent-platform/assets/images/tools-and-skills-tool-test-7f94c3f1875c388264fcbd187d4b223b.png" alt="도구 테스트 창에서 타임아웃, 세부 도구 선택, 자동채우기, 테스트 실행에 번호를 붙인 그림" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">도구 테스트 창</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>타임아웃 (초)</strong></td><td>요청 제한 시간입니다. 1초부터 60초까지 넣을 수 있고 기본값은 10초입니다.</td><td>응답이 느린 사내 API를 시험할 때 시간을 늘립니다</td></tr><tr><td>2</td><td><strong>세부 도구 (sub-tool)</strong></td><td><strong>Arguments (JSON)</strong> 아래에서 부를 하위 도구를 고릅니다. 고르면 그 아래에 하위 도구 설명과 파라미터 칸(예: path, pattern)이 나옵니다. 파라미터가 없는 하위 도구는 &quot;이 도구는 파라미터가 없습니다&quot;가 보입니다.</td><td>검색어나 조회 조건을 직접 넣어 볼 때</td></tr><tr><td>3</td><td><strong>자동채우기</strong></td><td><strong>AI 자동채우기</strong>에서 고른 모델이 파라미터 예시 값을 채웁니다. 쓸 수 있는 모델이 없으면 &quot;사용 가능한 모델이 없습니다. 개인 또는 워크스페이스 시크릿에 모델 API 키를 등록해 주세요&quot;가 보입니다.</td><td>파라미터가 많아 예시 값을 직접 만들기 번거로울 때</td></tr><tr><td>4</td><td><strong>테스트 실행</strong></td><td>입력한 값으로 도구를 호출합니다. 끝나면 버튼 아래에 <strong>성공</strong> 또는 <strong>실패</strong>, 걸린 시간, 응답 본문이 보입니다.</td><td>값을 다 넣었을 때</td></tr></tbody></table>
+<p>테스트가 <strong>실패</strong>로 끝나고 &quot;오류: fetch failed&quot;처럼 연결 오류가 보이면, 이 창에서 도구 서버에 닿지 못했다는 뜻입니다. 도구 주소와 키를 확인하고, 그래도 같으면 에이전트 대화에서 도구가 실제로 불리는지 먼저 확인한 뒤 관리자에게 문의합니다. <strong>AI 자동채우기</strong>를 쓰려면 모델 API 키가 개인 또는 워크스페이스 시크릿에 등록되어 있어야 합니다.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="기본값-설정">기본값 설정<a href="#기본값-설정" class="hash-link" aria-label="기본값 설정에 대한 직접 링크" title="기본값 설정에 대한 직접 링크" translate="no">​</a></h2>
-<p>도구 상세의 <strong>기본값 설정</strong>은 이 도구를 쓰는 내 에이전트 전체에 적용할 파라미터 기본값을 정합니다. 에이전트에 따로 정한 값이 있으면 그 값이 우선하며, 저장한 뒤 시작한 실행부터 반영됩니다.</p>
-<p><strong>기본값 설정</strong> 창에서는 파라미터마다 <strong>설정 방식</strong>을 <strong>직접 입력</strong>, <strong>기본값 해제 (상속)</strong>, <strong>빈 값 (null)</strong>, <strong>시크릿 키 참조</strong> 중에서 고르고 <strong>저장</strong>을 누릅니다. 하위 도구가 있는 MCP 도구는 여러 하위 도구에 함께 쓸 값을 <strong>공통 설정</strong>에서, 하위 도구마다 다른 값을 <strong>하위 도구별 설정</strong>에서 정합니다. API 키 같은 값은 <strong>직접 입력</strong> 대신 <strong>시크릿 키 참조</strong>를 고르고 <strong>시크릿 키</strong>에서 저장된 키를 고릅니다(없으면 <strong>시크릿 등록</strong>으로 새로 만듭니다). 이렇게 연결해 두면 화면과 에이전트 설정 어디에도 실제 값이 남지 않습니다.</p>
+<p>도구 상세의 <strong>기본값 설정</strong>을 누르면 &quot;기본값 설정 · 도구 이름&quot; 창이 열립니다. 이 도구를 쓰는 내 에이전트 전체에 적용할 파라미터 기본값을 정합니다. 에이전트에 따로 정한 값이 우선하며, 저장한 뒤 시작한 실행부터 반영됩니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="기본값 설정 창"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/tools-and-skills-tool-defaults-c80e855f72f49243a43758006df2775a.png" target="_blank" rel="noopener"><img width="1324" height="1522" src="/deep-agent-platform/assets/images/tools-and-skills-tool-defaults-c80e855f72f49243a43758006df2775a.png" alt="기본값 설정 창에서 공통 설정, 하위 도구별 설정, 설정 방식, 시크릿 키 선택에 번호를 붙인 그림" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">기본값 설정 창</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>공통 설정</strong></td><td>여러 하위 도구가 함께 쓰는 파라미터를 한 번에 정합니다. 수정한 공통 설정만 저장되고, 개별 설정이 있으면 개별 설정이 우선합니다. 파라미터마다 <strong>적용 대상 하위 도구</strong>가 함께 보입니다.</td><td>MCP 도구의 하위 도구들이 같은 값을 쓸 때</td></tr><tr><td>2</td><td><strong>하위 도구별 설정</strong></td><td>하위 도구마다 기본값을 따로 정합니다.</td><td>하위 도구 하나만 다른 값을 써야 할 때</td></tr><tr><td>3</td><td>설정 방식</td><td>파라미터마다 <strong>기본값 해제 (상속)</strong>, <strong>직접 입력</strong>, <strong>빈 값 (null)</strong>, <strong>시크릿 키 참조</strong> 중에서 고릅니다. 파라미터 형식에 따라 고를 수 있는 항목이 다릅니다.</td><td>값을 화면에 직접 적지 않고 시크릿에서 가져오게 할 때</td></tr><tr><td>4</td><td>시크릿 키</td><td><strong>시크릿 키 참조</strong>를 고르면 옆에 나타납니다. &quot;시크릿 키를 선택하세요&quot;를 눌러 저장된 시크릿 키 이름을 고릅니다. 값은 보이지 않습니다.</td><td>API 키처럼 노출되면 안 되는 값을 쓸 때</td></tr></tbody></table>
+<p>처음에는 모든 파라미터가 <strong>기본값 해제 (상속)</strong>(&quot;기본값을 저장하지 않습니다&quot;)입니다. API 키 같은 값은 <strong>직접 입력</strong> 대신 <strong>시크릿 키 참조</strong>를 고르고 시크릿 키를 고릅니다. 필요한 키가 목록에 없으면 창 왼쪽 아래 <strong>시크릿 등록</strong>으로 새로 만듭니다. 설정을 마치면 창 아래 <strong>저장</strong>을 누르고, 그만두려면 <strong>취소</strong>를 누릅니다. 이렇게 연결해 두면 화면과 에이전트 설정 어디에도 실제 값이 남지 않습니다.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="여러-도구-한-번에-지우기">여러 도구 한 번에 지우기<a href="#여러-도구-한-번에-지우기" class="hash-link" aria-label="여러 도구 한 번에 지우기에 대한 직접 링크" title="여러 도구 한 번에 지우기에 대한 직접 링크" translate="no">​</a></h2>
-<p>도구 목록 위 <strong>선택</strong>을 누르면 선택 모드로 바뀝니다. 지울 도구를 체크하거나 <strong>전체 선택</strong>으로 지금 보이는 도구를 모두 고르면 &quot;3개 선택됨&quot;처럼 고른 개수가 보입니다. <strong>선택 항목 삭제</strong>를 누르면 &quot;선택 항목 삭제&quot; 확인 창이 열리며, 지운 도구는 되돌릴 수 없습니다. 지우지 않고 돌아가려면 <strong>취소</strong>를 누릅니다.</p>
-<p>고른 도구 중 에이전트가 쓰는 것이 있으면 확인 창에 사용 중인 에이전트 이름과 함께 경고가 나오고, <strong>무시하고 삭제</strong>를 고를 수 있습니다. 이때 그 도구를 쓰던 에이전트는 오동작할 수 있으므로, 먼저 에이전트의 <strong>도구함</strong>에서 빼는 편이 안전합니다.</p>
+<p>도구 목록 위 <strong>선택</strong>을 누르면 선택 모드로 바뀝니다. 지울 도구를 체크하거나 <strong>전체 선택</strong>으로 지금 보이는 도구를 모두 고르면 &quot;1개 선택됨&quot;처럼 고른 개수가 보입니다. <strong>선택 항목 삭제</strong>를 누르면 &quot;선택 항목 삭제&quot; 확인 창에 &quot;1개 항목을 삭제합니다. 이 작업은 되돌릴 수 없습니다.&quot;가 나오고, <strong>삭제</strong>를 눌러야 지워집니다. 지우지 않고 돌아가려면 <strong>취소</strong>를 누릅니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="도구 여러 개 선택"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/tools-and-skills-bulk-delete-2731d0206604892eead5d6d1a33a8b9e.png" target="_blank" rel="noopener"><img width="1240" height="660" src="/deep-agent-platform/assets/images/tools-and-skills-bulk-delete-2731d0206604892eead5d6d1a33a8b9e.png" alt="도구 목록을 선택 모드로 바꿔 취소, 전체 선택, 선택된 개수, 선택 항목 삭제에 번호를 붙인 그림" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">도구 여러 개 선택</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>취소</strong></td><td>선택 모드를 끝냅니다.</td><td>지우지 않고 돌아갈 때</td></tr><tr><td>2</td><td><strong>전체 선택</strong></td><td>지금 보이는 도구를 모두 고릅니다.</td><td>검색으로 좁힌 시험용 도구를 한꺼번에 고를 때</td></tr><tr><td>3</td><td>선택된 개수</td><td>&quot;1개 선택됨&quot;처럼 고른 도구 수입니다.</td><td>지우기 전에 개수를 확인할 때</td></tr><tr><td>4</td><td><strong>선택 항목 삭제</strong></td><td>확인 창을 거쳐 고른 도구를 지웁니다. 되돌릴 수 없습니다.</td><td>고르기를 마쳤을 때</td></tr></tbody></table>
+<p>에이전트가 쓰는 도구를 지우면 그 에이전트가 오동작할 수 있습니다. 먼저 에이전트의 <strong>도구함</strong>에서 빼는 편이 안전합니다.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="유틸리티에서-제공-도구-설치하기">유틸리티에서 제공 도구 설치하기<a href="#유틸리티에서-제공-도구-설치하기" class="hash-link" aria-label="유틸리티에서 제공 도구 설치하기에 대한 직접 링크" title="유틸리티에서 제공 도구 설치하기에 대한 직접 링크" translate="no">​</a></h2>
-<p>직접 등록하지 않아도 회사가 제공하는 도구, 모델, 미들웨어, 스킬을 <strong>유틸리티</strong>에서 골라 설치할 수 있습니다. 사이드바 위쪽 <strong>더 보기</strong>를 누르고 <strong>유틸리티</strong>를 고릅니다. 화면 설명은 &quot;사용 가능한 도구, 모델, 미들웨어를 찾아보고 추가하세요&quot;입니다.</p>
-<p><strong>전체</strong> 탭과 <strong>워크스페이스</strong> 탭으로 전체 제공 항목과 내 워크스페이스에 등록된 항목을 나눠 보고, <strong>유형:</strong> 필터에서 <strong>도구</strong>, <strong>모델</strong>, <strong>미들웨어</strong>, <strong>스킬</strong> 중 하나로 거르며, **검색...**으로 이름을 찾습니다. 항목 카드에는 이름, 설명, 유형과 <strong>설치됨</strong> 또는 <strong>미설치</strong> 상태가 보입니다. <strong>설치</strong>를 누르면 내 에셋에 추가되며, 스킬은 <strong>스킬 설치</strong>로 표시됩니다.</p>
-<p>설치 권한이 없으면 &quot;설치 권한이 없습니다. 관리자에게 문의하세요.&quot;가 보입니다. 설치한 도구는 <strong>에셋</strong> 화면의 <strong>도구</strong> 탭과 에이전트의 <strong>도구 추가</strong> 창에 나타납니다.</p>
+<p>직접 등록하지 않아도 회사가 제공하는 도구, 모델, 스킬을 <strong>유틸리티</strong>에서 찾아 설치할 수 있습니다. 사이드바 위쪽 <strong>더 보기</strong>를 누르고 <strong>유틸리티</strong>를 고릅니다. 화면 설명은 &quot;사용 가능한 도구, 모델, 미들웨어를 찾아보고 추가하세요&quot;입니다.</p>
+<p>위쪽 탭에서 회사 전체 항목(예: <strong>브레인크루</strong>)과 <strong>워크스페이스</strong> 항목을 나눠 봅니다. <strong>워크스페이스</strong> 탭에서는 워크스페이스 선택 칸(예: <strong>AI혁신팀</strong>)과 전체 항목 수(예: &quot;총 75개&quot;)가 보입니다. 그 아래 <strong>도구</strong>, <strong>모델</strong>, <strong>스킬</strong> 탭으로 종류를 고르고, **검색...**으로 이름을 찾고, <strong>유형:</strong> 필터에서 <strong>전체</strong>, <strong>설치됨</strong>, <strong>미설치</strong> 또는 분야(<strong>커머스</strong>, <strong>커뮤니케이션</strong>, <strong>이미지</strong>, <strong>지식</strong>, <strong>법률</strong>, <strong>생산성</strong>, <strong>리서치</strong>, <strong>안전</strong>)로 거릅니다. 항목 카드에는 이름, 설명, 분야, 버전과 <strong>설치됨</strong> 또는 <strong>미설치</strong> 상태가 보입니다. 조회 권한이 없는 탭에서는 &quot;접근 권한이 없습니다&quot;가 보입니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="유틸리티 화면: 볼 범위와 종류 고르기"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/tools-and-skills-utilities-9cb08ec6de305b751a83056c7dc0906a.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/tools-and-skills-utilities-9cb08ec6de305b751a83056c7dc0906a.png" alt="유틸리티 화면에서 워크스페이스 탭, 워크스페이스 선택, 종류 탭에 번호를 붙인 그림" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">유틸리티 화면: 볼 범위와 종류 고르기</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>회사, <strong>워크스페이스</strong> 탭</td><td>회사 전체 항목과 워크스페이스에 등록된 항목을 나눠 봅니다.</td><td>팀이 쓸 수 있는 항목을 볼 때</td></tr><tr><td>2</td><td>워크스페이스 선택</td><td>항목을 볼 워크스페이스를 고릅니다. 옆에 전체 항목 수가 보입니다.</td><td>내가 속한 다른 팀의 항목을 볼 때</td></tr><tr><td>3</td><td><strong>도구</strong>, <strong>모델</strong>, <strong>스킬</strong> 탭</td><td>항목 종류를 바꿉니다.</td><td>도구만 찾을 때</td></tr></tbody></table>
+<p>같은 화면 아래쪽에서 항목을 찾고 거릅니다. 아래는 **검색...**에 &quot;search&quot;를 넣은 모습입니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="유틸리티 화면: 검색과 항목 카드"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/tools-and-skills-utilities-2-696fbefde2d8c06189e8fef3f0c92435.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/tools-and-skills-utilities-2-696fbefde2d8c06189e8fef3f0c92435.png" alt="유틸리티 화면에서 검색란, 유형 필터, 항목 카드에 번호를 붙인 그림" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">유틸리티 화면: 검색과 항목 카드</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>검색...</strong></td><td>이름과 설명으로 항목을 찾습니다.</td><td>&quot;search&quot;처럼 이름 일부로 찾을 때</td></tr><tr><td>2</td><td><strong>유형:</strong> 필터</td><td><strong>전체</strong>, <strong>설치됨</strong>, <strong>미설치</strong>와 분야별로 거릅니다.</td><td>아직 설치하지 않은 리서치 도구만 볼 때</td></tr><tr><td>3</td><td>항목 카드</td><td>이름, 설명, 분야, 버전과 설치 상태가 보입니다. 누르면 상세 창이 열립니다.</td><td>도구가 하는 일을 확인할 때</td></tr></tbody></table>
+<p>카드를 누르면 상세 창에 <strong>도구 설명</strong>과 <strong>기본 정보</strong>(유형, 버전, 등록자, 등록일), 아래에 <strong>닫기</strong>와 <strong>설치</strong> 버튼이 보입니다. <strong>설치</strong>를 누르면 내 에셋에 추가되고, 설치한 도구는 <strong>에셋</strong> 화면의 <strong>도구</strong> 탭과 에이전트의 <strong>도구 추가</strong> 창에 나타납니다. 설치 권한이 없으면 <strong>설치</strong> 버튼이 흐리게 보이고, 버튼에 마우스를 올리면 &quot;설치 권한이 없습니다. 관리자에게 문의하세요.&quot;가 보입니다. 이때는 워크스페이스 관리자에게 설치를 요청합니다.</p>
+<blockquote>
+<p>팁: 웹 검색 도구(예: 카드 이름에 SEARCH가 들어간 리서치 도구)는 대부분 외부 서비스 키가 있어야 동작합니다. 회사에 키가 등록되어 있지 않으면 설치해도 실행되지 않으므로, 관리자에게 먼저 확인합니다.</p>
+</blockquote>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="에이전트-도구함에-도구-붙이기">에이전트 도구함에 도구 붙이기<a href="#에이전트-도구함에-도구-붙이기" class="hash-link" aria-label="에이전트 도구함에 도구 붙이기에 대한 직접 링크" title="에이전트 도구함에 도구 붙이기에 대한 직접 링크" translate="no">​</a></h2>
-<p>도구는 에이전트 편집 화면 가운데 편집 영역의 <strong>폼</strong> 보기 아래쪽 <strong>도구함</strong>에서 붙입니다. <strong>도구함</strong> 제목을 누르면 칸을 접거나 펼칩니다. 붙은 도구가 없으면 &quot;추가된 도구가 없습니다&quot;가 보입니다. <strong>+ 도구</strong>를 누르면 <strong>도구 추가</strong> 창이 열리고, 왼쪽 목록에서 도구를 고른 뒤 오른쪽 <strong>도구 추가</strong>를 누르면 이 에이전트에 붙습니다.</p>
+<p>도구는 에이전트 편집 화면 가운데 편집 영역의 <strong>폼</strong> 보기 아래쪽 <strong>도구함</strong>에서 붙입니다. <strong>도구함</strong> 제목을 누르면 칸을 접거나 펼치므로, 지침 칸을 넓게 볼 때 접어 둡니다. 붙은 도구가 없으면 &quot;추가된 도구가 없습니다&quot;가 보입니다. <strong>+ 도구</strong>를 누르면 <strong>도구 추가</strong> 창이 열리고, 왼쪽 목록에서 도구를 고른 뒤 오른쪽 <strong>도구 추가</strong>를 누르면 이 에이전트에 붙습니다.</p>
+<p>아래는 deep_connector_kb 도구가 붙은 시장 조사 리서처의 에이전트 편집 화면입니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="에이전트 편집 화면의 도구함"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/tools-and-skills-agent-toolbox-f609faac794aefcf6fc7f5609046256b.png" target="_blank" rel="noopener"><img width="1400" height="740" src="/deep-agent-platform/assets/images/tools-and-skills-agent-toolbox-f609faac794aefcf6fc7f5609046256b.png" alt="시장 조사 리서처 에이전트 편집 화면의 도구함에서 도구 추가 버튼, 연결된 도구, 도구 설정, 삭제 버튼에 번호를 붙인 그림" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">에이전트 편집 화면의 도구함</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>+ 도구</strong></td><td><strong>도구 추가</strong> 창을 엽니다. 왼쪽 목록에서 도구를 고르고 오른쪽 <strong>도구 추가</strong>를 누릅니다.</td><td>에셋에 있는 도구를 이 에이전트에 붙일 때</td></tr><tr><td>2</td><td>연결된 도구</td><td>이 에이전트가 쓰는 도구입니다. 칸이 좁으면 이름이 줄여서 보입니다. 없으면 &quot;추가된 도구가 없습니다&quot;가 보입니다.</td><td>어떤 도구가 붙어 있는지 확인할 때</td></tr><tr><td>3</td><td><strong>도구 설정</strong>(톱니바퀴)</td><td>&quot;도구 설정: 도구 이름&quot; 창을 엽니다.</td><td>이 에이전트에서만 다른 값을 쓰게 할 때</td></tr><tr><td>4</td><td><strong>삭제</strong>(휴지통)</td><td>이 에이전트에서 도구를 뺍니다. <strong>에셋</strong> 화면의 도구는 지워지지 않습니다.</td><td>더는 쓰지 않는 도구를 뺄 때</td></tr></tbody></table>
 <p>도구를 붙이거나 빼면 바로 반영되어 대화와 <strong>테스트</strong> 탭에서 곧바로 쓰입니다. 붙이면 도구 이름과 함께 &quot;도구가 추가되었습니다&quot; 알림이, 빼면 &quot;도구가 제거되었습니다&quot; 알림이 뜹니다. 이때 헤더 <strong>저장</strong> 옆에 &quot;저장되지 않은 변경이 있습니다&quot;가 보이면 <strong>저장</strong>을 눌러 현재 버전에도 기록해 둡니다. 워크스페이스 등록은 저장된 버전을 쓰기 때문입니다. <strong>도구 추가</strong> 창에는 지식이 나오지 않습니다. 지식은 바로 옆 <strong>지식함</strong>에서 붙입니다.</p>
-<p>붙은 도구 이름 옆 노란 방패는 그 도구를 쓸 권한이 없다는 표시입니다. 도구를 빼려면 이름 옆 <strong>삭제</strong>(휴지통)를 누릅니다. <strong>에셋</strong> 화면의 도구는 지워지지 않습니다.</p>
+<p>도구 이름이 줄여 보이면 칸 사이 경계를 끌어 도구함을 넓힙니다. 도구를 빼려면 이름 옆 <strong>삭제</strong>(휴지통)를 누릅니다. <strong>에셋</strong> 화면의 도구는 지워지지 않습니다.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="도구-설정-창">도구 설정 창<a href="#도구-설정-창" class="hash-link" aria-label="도구 설정 창에 대한 직접 링크" title="도구 설정 창에 대한 직접 링크" translate="no">​</a></h3>
 <p>도구함에서 도구 이름 옆 <strong>도구 설정</strong>(톱니바퀴)을 누르면 &quot;도구 설정: 도구 이름&quot; 창이 열립니다. 이 창에서 정한 값은 이 에이전트에만 적용되고, <strong>에셋</strong> 화면의 <strong>기본값 설정</strong>보다 우선합니다.</p>
 <ul>
-<li class=""><strong>파라미터 (개수)</strong> 목록에서 값마다 어디에서 온 값인지(이 에이전트, 도구 기본값, 공통 설정, 기본값 없음)를 확인하고 값을 바꿉니다.</li>
-<li class="">폼에 없는 값을 넣어야 하면 <strong>폼</strong>을 <strong>JSON</strong>으로 바꿔 재정의 값을 직접 적습니다.</li>
-<li class="">MCP 도구라면 <strong>서브 도구</strong>에서 하위 도구를 골라 하위 도구별 파라미터를 봅니다.</li>
-<li class=""><strong>고급 설정</strong>을 펼치면 전역 기본값과 에이전트 재정의 값을 나란히 볼 수 있습니다. 기본값과 같은 값은 저장되지 않습니다.</li>
-<li class="">다 바꾼 뒤 <strong>저장</strong>을 누르면 &quot;도구 설정이 저장되었습니다&quot; 알림이 뜹니다.</li>
+<li class="">위쪽에 도구 설명과 연결된 서버가 보이고, MCP 도구라면 <strong>서브 도구</strong> 목록과 하위 도구 개수가 보입니다.</li>
+<li class="">왼쪽 목록에서 하위 도구를 고르면 오른쪽에 그 하위 도구의 설명과 파라미터 카드가 나옵니다. 카드마다 형식, 기본값 유무(예: <strong>기본값 없음</strong>), 필수 여부(예: <strong>선택</strong>)와 <strong>기본값</strong> 칸, **기본값 해제 (상속)**이 있습니다.</li>
+<li class=""><strong>고급 설정</strong>을 펼치면 **기본 설정(전역 기본값)**과 <strong>에이전트 재정의</strong>가 보입니다. 재정의 값은 <strong>폼</strong> 또는 <strong>JSON</strong>으로 넣습니다. 재정의 값은 기본 설정과 병합되고, 비워 두면 기본값을 쓰며, 기본값과 같은 값은 저장되지 않습니다.</li>
+<li class="">다 바꾼 뒤 <strong>저장</strong>을 누릅니다. 바꾸지 않고 닫으려면 <strong>취소</strong>를 누릅니다.</li>
 </ul>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="따라-해-보기-시장-조사-리서처에-웹-검색-도구-붙이기">따라 해 보기: 시장 조사 리서처에 웹 검색 도구 붙이기<a href="#따라-해-보기-시장-조사-리서처에-웹-검색-도구-붙이기" class="hash-link" aria-label="따라 해 보기: 시장 조사 리서처에 웹 검색 도구 붙이기에 대한 직접 링크" title="따라 해 보기: 시장 조사 리서처에 웹 검색 도구 붙이기에 대한 직접 링크" translate="no">​</a></h3>
-<p>카탈로그에 웹 검색 도구가 있으면 아래 순서로 시장 조사 리서처에 붙입니다. 웹 검색 도구가 없는 환경이면 3단계까지만 확인하고, 첨부한 시장 메모만으로 조사하도록 쓰면 됩니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="도구 설정 창"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/tools-and-skills-tool-settings-4adb11dcf1df10c79449c16c7f770d45.png" target="_blank" rel="noopener"><img width="1504" height="1575" src="/deep-agent-platform/assets/images/tools-and-skills-tool-settings-4adb11dcf1df10c79449c16c7f770d45.png" alt="도구 설정 창에서 서브 도구 목록, 파라미터 카드, 고급 설정, 저장 버튼에 번호를 붙인 그림" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">도구 설정 창</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>서브 도구</strong></td><td>MCP 도구의 하위 도구 목록입니다. 하나를 고르면 오른쪽에 그 하위 도구의 파라미터가 나옵니다.</td><td>MCP 서버의 특정 하위 도구 값만 바꿀 때</td></tr><tr><td>2</td><td>파라미터 카드</td><td>파라미터마다 형식, 기본값 유무, 필수 여부와 <strong>기본값</strong> 칸이 보입니다. **기본값 해제 (상속)**을 누르면 값을 비웁니다.</td><td>이 에이전트에서 검색 범위나 결과 수를 바꾸고 싶을 때</td></tr><tr><td>3</td><td><strong>고급 설정</strong></td><td>펼치면 **기본 설정(전역 기본값)**과 <strong>에이전트 재정의</strong>를 나란히 보고, 재정의 값을 <strong>폼</strong> 또는 <strong>JSON</strong>으로 넣습니다. 폼에 칸이 없으면 &quot;설정 가능한 파라미터가 없습니다. JSON 모드에서 사용자 정의 재정의를 추가하세요.&quot;가 보입니다.</td><td>어떤 값이 실제로 적용되는지 확인하거나 폼에 없는 값을 넣을 때</td></tr><tr><td>4</td><td><strong>저장</strong></td><td>에이전트별 도구 설정을 저장합니다.</td><td>값을 다 바꿨을 때</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="따라-해-보기-시장-조사-리서처의-도구-확인하기">따라 해 보기: 시장 조사 리서처의 도구 확인하기<a href="#따라-해-보기-시장-조사-리서처의-도구-확인하기" class="hash-link" aria-label="따라 해 보기: 시장 조사 리서처의 도구 확인하기에 대한 직접 링크" title="따라 해 보기: 시장 조사 리서처의 도구 확인하기에 대한 직접 링크" translate="no">​</a></h3>
 <ol>
-<li class="">
-<p>사이드바 <strong>더 보기</strong> &gt; <strong>유틸리티</strong>에서 **유형:**을 <strong>도구</strong>로 바꾸고 **검색...**에 &quot;검색&quot;을 입력합니다.</p>
-</li>
-<li class="">
-<p>웹 검색 도구 카드가 <strong>미설치</strong>이면 <strong>설치</strong>를 누릅니다. 이미 <strong>설치됨</strong>이면 다음 단계로 넘어갑니다.</p>
-</li>
-<li class="">
-<p>사이드바의 <strong>에셋설정</strong>을 눌러 여는 <strong>에셋</strong> 화면의 <strong>도구</strong> 탭에서 방금 설치한 도구를 고르고, 필수 환경변수가 <strong>미등록</strong>이면 <strong>등록</strong>으로 키를 시크릿에 넣습니다.</p>
-</li>
-<li class="">
-<p>도구 상세의 <strong>테스트</strong>를 누르고 <strong>AI 자동채우기</strong>로 파라미터를 채운 뒤 <strong>테스트 실행</strong>을 누릅니다. <strong>실행 결과</strong>가 <strong>성공</strong>인지 봅니다.</p>
-</li>
-<li class="">
-<p>사이드바에서 <strong>시장 조사 리서처</strong>를 누르고 <strong>에이전트 설정</strong>을 누릅니다.</p>
-</li>
-<li class="">
-<p><strong>도구함</strong>의 <strong>+ 도구</strong>를 누르고, 웹 검색 도구를 고른 뒤 <strong>도구 추가</strong>를 누릅니다.</p>
-</li>
-<li class="">
-<p><strong>이 에이전트와 새 대화</strong>에서 아래 프롬프트를 보내고, 답변 위 실행 기록에 웹 검색 도구 줄이 나오는지 확인합니다.</p>
-<blockquote>
-<p>프롬프트: 국내 업무용 AI 에이전트 도구 시장의 최근 동향을 웹에서 찾아 세 줄로 요약하고, 각 줄 끝에 참고한 출처를 적어 주세요.</p>
-</blockquote>
-</li>
+<li class="">사이드바의 <strong>에셋설정</strong>을 눌러 <strong>에셋</strong> 화면의 <strong>도구</strong> 탭을 열고, 쓸 도구(예: deep_connector_kb)를 눌러 <strong>필수 환경변수</strong>가 <strong>등록됨</strong>인지 확인합니다.</li>
+<li class="">도구 상세의 <strong>테스트</strong>를 누르고 **세부 도구 (sub-tool)**를 고른 뒤 <strong>테스트 실행</strong>을 눌러 결과를 봅니다.</li>
+<li class="">사이드바에서 <strong>시장 조사 리서처</strong>를 누르고 <strong>에이전트 설정</strong>을 누릅니다.</li>
+<li class=""><strong>도구함</strong>에 도구가 없으면 <strong>+ 도구</strong>를 누르고, 도구를 고른 뒤 <strong>도구 추가</strong>를 누릅니다. 헤더에 &quot;저장되지 않은 변경이 있습니다&quot;가 보이면 <strong>저장</strong>을 누릅니다.</li>
+<li class="">도구 이름 옆 톱니바퀴를 눌러 <strong>도구 설정</strong> 창에서 하위 도구별 값을 확인하고, 바꾼 것이 없으면 <strong>취소</strong>를 누릅니다.</li>
 </ol>
 <blockquote>
-<p>팁: 결과가 예상과 다르면 먼저 실행 기록에 도구 줄이 있는지 봅니다. 줄이 없다면 <strong>도구함</strong>에 붙었는지, 지침에 &quot;자료를 찾을 때는 웹 검색 도구를 먼저 쓴다&quot;는 문장이 있는지 확인합니다. 시장 조사 전체 흐름은 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/case-market-research/">사례: 시장 조사 리포트</a>에 있습니다.</p>
+<p>팁: 결과가 예상과 다르면 먼저 대화의 실행 기록에 도구 줄이 있는지 봅니다. 줄이 없다면 <strong>도구함</strong>에 붙었는지, 지침에 그 도구를 언제 쓰는지 적혀 있는지 확인합니다. 시장 조사 전체 흐름은 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/case-market-research/">사례: 시장 조사 리포트</a>에 있습니다.</p>
 </blockquote>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="스킬-한눈에-보기">스킬 한눈에 보기<a href="#스킬-한눈에-보기" class="hash-link" aria-label="스킬 한눈에 보기에 대한 직접 링크" title="스킬 한눈에 보기에 대한 직접 링크" translate="no">​</a></h2>
 <p>스킬은 <strong>에셋</strong> 화면의 <strong>스킬</strong> 탭에서 올리거나 만들고, 에이전트 편집 화면 오른쪽 <strong>스킬</strong> 탭에서 켭니다. 스킬은 <strong>문서 작성 스킬</strong>과 <strong>일반 스킬</strong> 두 종류로 나뉘며, 켠 스킬은 대화 화면 입력란 아래 왼쪽의 <strong>스킬</strong> 버튼으로 골라 바로 쓸 수 있습니다. 대화 중 에이전트가 스킬을 읽으면 실행 기록에 <strong>스킬 불러오기</strong> 줄이 나옵니다.</p>
@@ -136,6 +473,6 @@
 <li class=""><a class="" href="/deep-agent-platform/docs/deep-agent-builder/mcp-agent/">MCP와 에이전트의 MCP화</a> — MCP 서버를 도구로 등록하고 에이전트를 MCP 서버로 공개하는 방법</li>
 <li class=""><a class="" href="/deep-agent-platform/docs/deep-agent-builder/secrets-permissions/">시크릿과 권한</a> — 도구가 쓰는 키를 시크릿으로 관리하는 방법</li>
 <li class=""><a class="" href="/deep-agent-platform/docs/deep-agent-builder/case-market-research/">사례: 시장 조사 리포트</a> — 시장 조사 리서처로 비교표와 시사점 보고서를 만드는 과정</li>
-</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/deep-agent-platform/docs/deep-agent-builder/rag-agent/"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">지식으로 근거 있는 답변 받기</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/deep-agent-platform/docs/deep-agent-builder/custom-skills/"><div class="pagination-nav__sublabel">다음</div><div class="pagination-nav__label">스킬 만들기와 업로드</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#도구-스킬-지식은-무엇이-다른가" class="table-of-contents__link toc-highlight">도구, 스킬, 지식은 무엇이 다른가</a></li><li><a href="#에셋-화면과-도구-탭" class="table-of-contents__link toc-highlight">에셋 화면과 도구 탭</a></li><li><a href="#도구-추가-메뉴" class="table-of-contents__link toc-highlight">도구 추가 메뉴</a></li><li><a href="#도구-테스트" class="table-of-contents__link toc-highlight">도구 테스트</a></li><li><a href="#기본값-설정" class="table-of-contents__link toc-highlight">기본값 설정</a></li><li><a href="#여러-도구-한-번에-지우기" class="table-of-contents__link toc-highlight">여러 도구 한 번에 지우기</a></li><li><a href="#유틸리티에서-제공-도구-설치하기" class="table-of-contents__link toc-highlight">유틸리티에서 제공 도구 설치하기</a></li><li><a href="#에이전트-도구함에-도구-붙이기" class="table-of-contents__link toc-highlight">에이전트 도구함에 도구 붙이기</a><ul><li><a href="#도구-설정-창" class="table-of-contents__link toc-highlight">도구 설정 창</a></li><li><a href="#따라-해-보기-시장-조사-리서처에-웹-검색-도구-붙이기" class="table-of-contents__link toc-highlight">따라 해 보기: 시장 조사 리서처에 웹 검색 도구 붙이기</a></li></ul></li><li><a href="#스킬-한눈에-보기" class="table-of-contents__link toc-highlight">스킬 한눈에 보기</a></li><li><a href="#바꾼-뒤-확인할-것" class="table-of-contents__link toc-highlight">바꾼 뒤 확인할 것</a></li><li><a href="#다음-문서" class="table-of-contents__link toc-highlight">다음 문서</a></li></ul></div></div></div></div></main></div></div></div></div>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/deep-agent-platform/docs/deep-agent-builder/rag-agent/"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">지식으로 근거 있는 답변 받기</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/deep-agent-platform/docs/deep-agent-builder/custom-skills/"><div class="pagination-nav__sublabel">다음</div><div class="pagination-nav__label">스킬 만들기와 업로드</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#도구-스킬-지식은-무엇이-다른가" class="table-of-contents__link toc-highlight">도구, 스킬, 지식은 무엇이 다른가</a></li><li><a href="#에셋-화면과-도구-탭" class="table-of-contents__link toc-highlight">에셋 화면과 도구 탭</a></li><li><a href="#도구-추가-메뉴" class="table-of-contents__link toc-highlight">도구 추가 메뉴</a></li><li><a href="#도구-테스트" class="table-of-contents__link toc-highlight">도구 테스트</a></li><li><a href="#기본값-설정" class="table-of-contents__link toc-highlight">기본값 설정</a></li><li><a href="#여러-도구-한-번에-지우기" class="table-of-contents__link toc-highlight">여러 도구 한 번에 지우기</a></li><li><a href="#유틸리티에서-제공-도구-설치하기" class="table-of-contents__link toc-highlight">유틸리티에서 제공 도구 설치하기</a></li><li><a href="#에이전트-도구함에-도구-붙이기" class="table-of-contents__link toc-highlight">에이전트 도구함에 도구 붙이기</a><ul><li><a href="#도구-설정-창" class="table-of-contents__link toc-highlight">도구 설정 창</a></li><li><a href="#따라-해-보기-시장-조사-리서처의-도구-확인하기" class="table-of-contents__link toc-highlight">따라 해 보기: 시장 조사 리서처의 도구 확인하기</a></li></ul></li><li><a href="#스킬-한눈에-보기" class="table-of-contents__link toc-highlight">스킬 한눈에 보기</a></li><li><a href="#바꾼-뒤-확인할-것" class="table-of-contents__link toc-highlight">바꾼 뒤 확인할 것</a></li><li><a href="#다음-문서" class="table-of-contents__link toc-highlight">다음 문서</a></li></ul></div></div></div></div></main></div></div></div></div>
 </body>
 </html>

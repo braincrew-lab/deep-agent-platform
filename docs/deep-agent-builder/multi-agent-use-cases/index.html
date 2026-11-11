@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">멀티에이전트 활용 사례 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/multi-agent-use-cases/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="멀티에이전트 활용 사례 | Deep Platform"><meta data-rh="true" name="description" content="이 페이지는 브레인크루에서 자주 하는 사무 업무 네 가지를 총괄 에이전트와 서브에이전트로 나눠 맡긴 사례를 소개합니다. 세 사례는 서브에이전트를 직접 붙인 총괄 에이전트를, 마지막 사례는 담당을 정하지 않고 맡기는 SUPER AI 에이전트를 씁니다. 서브에이전트를 붙이는 방법은 서브에이전트 할당하기, 실행 중 화면을 읽는 방법은 멀티에이전트 실행 흐름을 참고하세요."><meta data-rh="true" property="og:description" content="이 페이지는 브레인크루에서 자주 하는 사무 업무 네 가지를 총괄 에이전트와 서브에이전트로 나눠 맡긴 사례를 소개합니다. 세 사례는 서브에이전트를 직접 붙인 총괄 에이전트를, 마지막 사례는 담당을 정하지 않고 맡기는 SUPER AI 에이전트를 씁니다. 서브에이전트를 붙이는 방법은 서브에이전트 할당하기, 실행 중 화면을 읽는 방법은 멀티에이전트 실행 흐름을 참고하세요."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/multi-agent-use-cases/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/multi-agent-use-cases/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/multi-agent-use-cases/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"멀티에이전트 활용 사례","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/multi-agent-use-cases"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
-<script src="/deep-agent-platform/assets/js/runtime~main.0da81299.js" defer="defer"></script>
-<script src="/deep-agent-platform/assets/js/main.836f1a7b.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/runtime~main.3cbeb1c1.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.781f3454.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -59,7 +59,8 @@
 <table><thead><tr><th>사례</th><th>총괄 에이전트</th><th>서브에이전트</th><th>결과물</th></tr></thead><tbody><tr><td>1. 월간 영업 보고 패키지</td><td>월간 영업 보고 총괄</td><td>판매 데이터 분석가, 제안서 PPT 작성기, 이메일 초안 도우미</td><td>지역별 실적 표와 차트, 보고용 PPT, 영업 조직 공유 메일 초안</td></tr><tr><td>2. 신규 입사자 교육 키트</td><td>신규 입사자 교육 키트 총괄</td><td>사내 규정 Q&amp;A 도우미, 교육 자료 제작 도우미, 이메일 초안 도우미</td><td>첫 주 규정 요약, 교육 자료 문서, 환영 메일 초안</td></tr><tr><td>3. 제안서 패키지</td><td>제안서 패키지 총괄</td><td>시장 조사 리서처, 제안서 PPT 작성기, 이메일 초안 도우미</td><td>시장 조사 요약, 제안서 PPT, 고객 발송 메일 초안</td></tr><tr><td>4. 담당을 정하지 않고 맡기기</td><td>SUPER AI 에이전트</td><td>미리 붙이지 않음(설문 결과 분석가를 골라 맡김)</td><td>설문 결과 요약</td></tr></tbody></table>
 <p>서브에이전트로 쓴 담당 에이전트는 모두 김그루 사원이 이미 만들어 쓰던 에이전트입니다. 이메일 초안 도우미 하나가 세 총괄 에이전트에 함께 붙어 있고, 제안서 PPT 작성기는 두 총괄 에이전트에 붙어 있습니다. 담당 에이전트 하나를 여러 총괄 에이전트가 나눠 쓰므로, 이메일 초안 도우미의 지침을 고치면 세 업무에 한 번에 반영됩니다.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="문서작성-에이전트를-서브에이전트로-쓸-때">문서작성 에이전트를 서브에이전트로 쓸 때<a href="#문서작성-에이전트를-서브에이전트로-쓸-때" class="hash-link" aria-label="문서작성 에이전트를 서브에이전트로 쓸 때에 대한 직접 링크" title="문서작성 에이전트를 서브에이전트로 쓸 때에 대한 직접 링크" translate="no">​</a></h2>
-<p>제안서 PPT 작성기와 교육 자료 제작 도우미는 <strong>문서작성 에이전트</strong> 모드의 에이전트입니다. 혼자 대화할 때는 결과물이 대화 화면 오른쪽 캔버스에 열리지만, 서브에이전트로 일할 때는 캔버스를 쓰지 않습니다. 대신 완성한 파일을 <strong>문서 내보내기</strong>로 다운로드 링크로 등록하고, 총괄 에이전트가 그 링크를 답변에 전달합니다. 내려받을 파일은 입력란 아래 오른쪽의 <strong>아티팩트</strong>에서도 확인할 수 있습니다. 문서작성 에이전트 자체는 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/document-agent/">PPT·문서 만들기</a>와 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/canvas/">캔버스로 문서·PPT·표 만들기</a>를 참고하세요.</p>
+<p>제안서 PPT 작성기와 교육 자료 제작 도우미는 <strong>문서작성 에이전트</strong> 모드의 에이전트입니다. 서브에이전트로 일할 때도 혼자 대화할 때처럼 파일을 만들어 <strong>문서를 캔버스에 게시</strong>하고, <strong>문서 내보내기</strong>로 다운로드 링크를 만듭니다. 총괄 에이전트는 그 링크를 마지막 답변에 옮겨 적고, 답변 아래에는 만들어진 파일이 &quot;프레젠테이션 · 캔버스에서 열기&quot; 카드로 붙습니다. 링크를 놓쳤다면 입력란 아래 오른쪽의 <strong>아티팩트</strong>를 눌러 이 대화에서 만들어진 파일 목록에서 다시 찾습니다. 문서작성 에이전트 자체는 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/document-agent/">PPT·문서 만들기</a>와 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/canvas/">캔버스로 문서·PPT·표 만들기</a>를 참고하세요.</p>
+<p>문서작성 에이전트는 받은 요청에 자료가 모자라거나 정할 것이 남으면 파일을 만들지 않고 되묻는 답을 돌려줄 수 있습니다. 그러면 총괄 에이전트가 같은 담당을 다시 부르거나, 링크 없이 &quot;완성되면 다시 안내하겠다&quot;는 답을 쓰기도 합니다. 마지막 답변에 다운로드 링크가 없으면 담당의 호출 상자를 펼쳐 담당이 무엇을 되물었는지 확인하고, 같은 대화에 그 담당에게 다시 맡겨 달라고 보냅니다.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="사례-1-월간-영업-보고-패키지">사례 1. 월간 영업 보고 패키지<a href="#사례-1-월간-영업-보고-패키지" class="hash-link" aria-label="사례 1. 월간 영업 보고 패키지에 대한 직접 링크" title="사례 1. 월간 영업 보고 패키지에 대한 직접 링크" translate="no">​</a></h2>
 <p><strong>목표</strong>: 매달 초 영업1팀 최하늘 책임에게 보내는 월간 영업 보고를 한 번에 준비합니다. 판매 엑셀 집계, 보고용 PPT, 공유 메일 초안을 담당별로 맡깁니다.</p>
 <p><strong>준비물</strong>: 브레인크루_2026_판매실적.xlsx(시트 &quot;판매내역&quot;과 &quot;목표&quot;). 엑셀 파일은 .xlsx, .xls, .xlsb, .xlsm, .csv를 올릴 수 있고 파일 하나는 50MB를 넘을 수 없습니다.</p>
@@ -72,17 +73,92 @@
 </blockquote>
 <p>총괄 에이전트에게 보내는 요청은 다음과 같습니다.</p>
 <blockquote>
-<p>프롬프트: 첨부한 판매 실적으로 2026년 10월 월간 영업 보고 패키지를 만들어 주세요. 지역별 10월 매출과 연간 목표 대비 누적 달성률, 제품별 매출 순위를 집계하고, 그 결과로 보고용 PPT와 영업1팀 최하늘 책임에게 보낼 공유 메일 초안까지 준비해 주세요.</p>
+<p>프롬프트: 첨부한 판매 실적으로 2026년 10월 월간 영업 보고 패키지를 만들어 주세요. 지역별 10월 매출과 연간 목표 대비 누적 달성률, 제품별 매출 순위를 집계하고, 그 결과로 보고용 PPT와 2026년 11월 3일(화) 영업1팀 최하늘 책임에게 보낼 공유 메일 초안까지 준비해 주세요.</p>
 </blockquote>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="진행-중-화면">진행 중 화면<a href="#진행-중-화면" class="hash-link" aria-label="진행 중 화면에 대한 직접 링크" title="진행 중 화면에 대한 직접 링크" translate="no">​</a></h3>
-<p>판매 데이터 분석가의 집계가 끝나고 제안서 PPT 작성기가 일하는 동안, 대화 화면의 <strong>진행 상황</strong> 패널에는 집계가 <strong>완료</strong>, PPT가 <strong>진행중</strong>, 메일과 정리가 <strong>대기중</strong>으로 표시됩니다. 그 아래 <strong>판매 데이터 분석가</strong> 호출 상자에는 일을 마쳤다는 초록 체크가 붙고, 펼치면 **출력 (판매 데이터 분석가)**에서 PPT에 들어갈 지역별 매출과 달성률을 미리 볼 수 있습니다. <strong>제안서 PPT 작성기</strong> 호출 상자는 아이콘이 돌고 있어 아직 일하는 중임을 알려 줍니다. 이메일 초안 도우미 단계는 PPT를 기다리며 <strong>대기중</strong>으로 남아 있습니다.</p>
+<p>요청을 보내면 총괄 에이전트가 지침 순서대로 담당을 부르고, 담당마다 이름이 붙은 호출 상자가 요청 말풍선 아래에 하나씩 생깁니다. 이 예시에서는 판매 데이터 분석가가 51.2초 동안 집계를 마친 뒤 제안서 PPT 작성기가 불렸습니다. 첫 번째 제안서 PPT 작성기는 수치를 받지 못했다며 데이터를 되물었고, 총괄 에이전트가 분석가의 수치를 넣어 같은 담당을 한 번 더 불렀습니다. 그래서 <strong>제안서 PPT 작성기</strong> 상자가 두 개 보입니다. 이메일 초안 도우미는 PPT가 끝난 뒤에 불립니다.</p>
+<p>그림은 판매 데이터 분석가와 첫 번째 제안서 PPT 작성기가 일을 마치고, 두 번째 제안서 PPT 작성기가 일하는 중인 화면입니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="월간 영업 보고 패키지 진행 중 화면"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/multi-agent-use-cases-sales-progress-9723a0e691c76f7fa1c1aebb9001da88.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/multi-agent-use-cases-sales-progress-9723a0e691c76f7fa1c1aebb9001da88.png" alt="월간 영업 보고 총괄 대화 화면. 완료된 판매 데이터 분석가와 제안서 PPT 작성기 호출 상자, 일하는 중인 두 번째 제안서 PPT 작성기 호출 상자, 취소 버튼에 번호가 붙어 있다" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">월간 영업 보고 패키지 진행 중 화면</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>판매 데이터 분석가</strong> 호출 상자</td><td>엑셀 집계를 맡긴 기록입니다. 초록 체크는 일을 마쳤다는 뜻이고, 오른쪽 숫자는 일한 시간(초)입니다.</td><td>집계 기준과 결과 수치를 펼쳐 볼 때</td></tr><tr><td>2</td><td>첫 번째 <strong>제안서 PPT 작성기</strong> 호출 상자</td><td>PPT를 처음 맡긴 기록입니다. 펼치면 담당이 수치를 되물은 답이 보입니다.</td><td>담당이 왜 다시 불렸는지 확인할 때</td></tr><tr><td>3</td><td>두 번째 <strong>제안서 PPT 작성기</strong> 호출 상자</td><td>분석가의 수치를 넣어 다시 맡긴 기록입니다. 이름 앞 아이콘이 돌고 있으면 아직 일하는 중입니다.</td><td>PPT에 어떤 수치를 넘겼는지 확인할 때</td></tr><tr><td>4</td><td><strong>취소</strong></td><td>응답이 만들어지는 동안 전송 버튼 자리에 나타납니다. 누르면 진행 중인 응답을 멈춥니다.</td><td>요청을 잘못 보내 처음부터 다시 하고 싶을 때</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="결과-화면">결과 화면<a href="#결과-화면" class="hash-link" aria-label="결과 화면에 대한 직접 링크" title="결과 화면에 대한 직접 링크" translate="no">​</a></h3>
-<p>모든 담당이 일을 마치면 총괄 에이전트가 지침 4번대로 마지막 답변을 씁니다. 맨 위에 10월 핵심 수치 3줄이 나오고, 그 아래에 제안서 PPT 작성기가 <strong>문서 내보내기</strong>로 등록한 PPT 다운로드 링크가 있습니다. 마지막은 이메일 초안 도우미가 쓴 공유 메일 초안으로, 제목, 인사, 핵심 수치, 첨부 안내 순서로 되어 있습니다.</p>
+<p>모든 담당이 일을 마치면 총괄 에이전트가 지침 4번대로 마지막 답변을 씁니다. 이 예시에서는 요청을 보내고 약 2분 뒤에 답변이 나왔습니다. <strong>■ 핵심 수치</strong> 아래에 10월 지역별 매출, 연간 목표 대비 누적 달성률, 10월 제품별 매출 순위가 한 줄씩 나오고, <strong>■ 보고용 PPT 다운로드</strong> 아래에 제안서 PPT 작성기가 <strong>문서 내보내기</strong>로 만든 다운로드 링크(presentation.pptx)가 있습니다. <strong>■ 메일 초안</strong>은 이메일 초안 도우미가 쓴 공유 메일로, 제목, 받는 사람(최하늘 책임님께), 인사, 실적 요약, 첨부 안내, 맺음말 순서입니다. 답변 아래에는 PPT 파일 카드가 붙고, 입력란 아래 <strong>아티팩트</strong> 버튼에는 만들어진 파일 수가 표시됩니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="월간 영업 보고 패키지 결과"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/multi-agent-use-cases-sales-result-6e53b38f21be051b6a835a6abe8523b1.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/multi-agent-use-cases-sales-result-6e53b38f21be051b6a835a6abe8523b1.png" alt="월간 영업 보고 총괄의 마지막 답변. 핵심 수치, PPT 다운로드 링크, 메일 초안 제목, 아티팩트 버튼에 번호가 붙어 있다" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">월간 영업 보고 패키지 결과</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>핵심 수치</td><td>지침대로 맨 위에 쓴 10월 핵심 수치 3줄입니다. 지역별 매출(서울 134,560,000원 등), 누적 달성률(서울 68.8% 등), 제품별 매출 순위(1위 교육 컨설팅 115,500,000원)가 한 줄씩 나옵니다.</td><td>보고 메일 첫머리에 옮겨 쓸 때</td></tr><tr><td>2</td><td>PPT 다운로드 링크</td><td>제안서 PPT 작성기가 <strong>문서 내보내기</strong>로 만든 PPT 파일입니다. 누르면 파일을 내려받습니다.</td><td>보고용 PPT를 내려받아 검토할 때</td></tr><tr><td>3</td><td>메일 초안</td><td>이메일 초안 도우미가 쓴 공유 메일입니다. 제목 아래에 받는 사람, 인사, 실적 요약, 첨부 안내가 이어집니다.</td><td>메일 프로그램에 옮겨 보낼 때</td></tr><tr><td>4</td><td><strong>아티팩트</strong></td><td>이 대화에서 만들어진 파일 목록을 엽니다. 숫자는 파일 수입니다.</td><td>링크를 놓쳤을 때 PPT 파일을 다시 찾을 때</td></tr></tbody></table>
 <p><strong>확인 포인트</strong></p>
 <ul>
-<li class="">핵심 수치가 **출력 (판매 데이터 분석가)**의 값과 같은지 맞춰 봅니다.</li>
-<li class="">PPT의 수치가 분석가의 결과와 같은지 슬라이드마다 확인합니다.</li>
-<li class="">메일 초안의 받는 사람과 첨부 파일 이름이 맞는지 확인합니다.</li>
+<li class="">핵심 수치가 <strong>판매 데이터 분석가</strong> 호출 상자 안 담당의 결과와 같은지 맞춰 봅니다.</li>
+<li class="">PPT의 장 수와 수치를 확인합니다. 이 예시에서는 지침에 &quot;표지 1장과 본문 3장&quot;이라고 적었지만 제안서 PPT 작성기가 표지, 요약, 지역별 매출, 누적 달성률, 제품별 순위, 요약 메시지의 6장으로 만들었습니다. 장 수가 꼭 맞아야 한다면 결과를 받은 뒤 같은 대화에 고칠 내용을 보냅니다.</li>
+<li class="">메일 초안의 받는 사람, 보내는 사람, 첨부 파일 이름이 맞는지 확인합니다.</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="사례-2-신규-입사자-교육-키트">사례 2. 신규 입사자 교육 키트<a href="#사례-2-신규-입사자-교육-키트" class="hash-link" aria-label="사례 2. 신규 입사자 교육 키트에 대한 직접 링크" title="사례 2. 신규 입사자 교육 키트에 대한 직접 링크" translate="no">​</a></h2>
 <p><strong>목표</strong>: AI혁신팀에 새로 들어온 동료를 위해 첫 주에 알아야 할 사내 규정 요약, 교육 자료, 환영 메일을 한 번에 만듭니다.</p>
@@ -97,16 +173,89 @@
 </blockquote>
 <p>총괄 에이전트에게 보내는 요청은 다음과 같습니다.</p>
 <blockquote>
-<p>프롬프트: 다음 주 월요일 AI혁신팀에 입사하는 신규 입사자를 위한 교육 키트를 만들어 주세요. 첫 주 규정 요약, 3일 일정의 교육 자료 문서, 박지원 팀장 명의의 환영 메일 초안이 필요합니다.</p>
+<p>프롬프트: 2026년 11월 16일(월) AI혁신팀에 입사하는 신규 입사자를 위한 교육 키트를 만들어 주세요. 첫 주 규정 요약, 11월 16일(월)부터 18일(수)까지 3일 일정의 교육 자료 문서, 박지원 팀장 명의의 환영 메일 초안이 필요합니다.</p>
 </blockquote>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="총괄-에이전트-설정">총괄 에이전트 설정<a href="#총괄-에이전트-설정" class="hash-link" aria-label="총괄 에이전트 설정에 대한 직접 링크" title="총괄 에이전트 설정에 대한 직접 링크" translate="no">​</a></h3>
 <p>신규 입사자 교육 키트 총괄의 에이전트 편집 화면에서 <strong>지침</strong> 입력란에 위 다섯 가지 규칙을 적고 헤더의 <strong>저장</strong>을 누릅니다. 네 번째 규칙은 총괄 에이전트가 근거 없는 규정을 지어내지 않게 막는 장치입니다. 이어서 <strong>서브에이전트</strong> 칸 오른쪽의 <strong>서브에이전트 관리</strong>를 눌러 사내 규정 Q&amp;A 도우미, 교육 자료 제작 도우미, 이메일 초안 도우미를 <strong>추가</strong>합니다. 세 담당이 모두 연결되면 <strong>서브에이전트</strong> 칸에 &quot;사내 규정 Q&amp;A 도우미, 교육 자료 제작 도우미 +1&quot;로 표시됩니다. 헤더 <strong>저장</strong> 옆에 &quot;저장되지 않은 변경이 있습니다&quot;가 보이면 <strong>저장</strong>을 한 번 더 눌러 서브에이전트 연결을 현재 버전에 기록합니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="신규 입사자 교육 키트 총괄 설정"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/multi-agent-use-cases-onboarding-settings-745821a311f932cf51359feb36c811e7.png" target="_blank" rel="noopener"><img width="1400" height="1040" src="/deep-agent-platform/assets/images/multi-agent-use-cases-onboarding-settings-745821a311f932cf51359feb36c811e7.png" alt="신규 입사자 교육 키트 총괄의 에이전트 편집 화면. 지침 입력란, 서브에이전트 칸, 서브에이전트 관리 버튼에 번호가 붙어 있다" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">신규 입사자 교육 키트 총괄 설정</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>지침</strong> 입력란</td><td>분담 규칙 다섯 가지가 적혀 있습니다. 네 번째 규칙이 근거 없는 내용을 막습니다.</td><td>총괄 에이전트가 규정을 지어내지 않도록 할 때</td></tr><tr><td>2</td><td><strong>서브에이전트</strong> 칸</td><td>&quot;사내 규정 Q&amp;A 도우미, 교육 자료 제작 도우미 +1&quot;로 표시됩니다.</td><td>세 담당이 모두 연결됐는지 확인할 때</td></tr><tr><td>3</td><td><strong>서브에이전트 관리</strong></td><td>서브에이전트 관리 창을 엽니다.</td><td>담당을 바꾸거나 더 붙일 때</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="결과-화면-1">결과 화면<a href="#결과-화면-1" class="hash-link" aria-label="결과 화면에 대한 직접 링크" title="결과 화면에 대한 직접 링크" translate="no">​</a></h3>
-<p>마지막 답변은 지침 5번대로 세 부분으로 나옵니다. 먼저 사내 규정 Q&amp;A 도우미가 정리한 첫 주 규정 요약과 근거 규정 이름이 나오고, 근거를 찾지 못한 항목은 &quot;규정 확인 필요&quot;로 표시됩니다. 이어서 교육 자료 제작 도우미가 만든 교육 자료 문서의 다운로드 링크가 있고, 마지막에 이메일 초안 도우미가 쓴 박지원 팀장 명의의 환영 메일 초안이 나옵니다.</p>
+<p>이 예시에서는 한 번에 끝나지 않았습니다. 사내 규정 Q&amp;A 도우미가 지식함에서 근무 시간, 출장비, 보안 수칙 규정을 찾지 못했고, 총괄 에이전트는 지침 4번대로 규정을 지어내지 않고 &quot;이 상태로도 계속 교육 자료와 환영 메일을 제작할까요?&quot;라고 되물었습니다. 같은 대화에 다음과 같이 보내 이어서 진행했습니다.</p>
+<blockquote>
+<p>프롬프트: 규정 항목은 &quot;규정 확인 필요&quot;로 두고 계속 진행해 주세요. 교육 자료 제작 도우미에게는 목차를 직접 정해 질문 없이 파일을 끝까지 만들고 다운로드 링크를 돌려 달라고 맡겨 주세요.</p>
+</blockquote>
+<p>그러자 교육 자료 제작 도우미(88.8초)와 이메일 초안 도우미(5.2초)가 차례로 불리고, 마지막 답변이 지침 5번대로 세 부분으로 나왔습니다. <strong>첫 주 규정 요약</strong>에는 세 항목이 모두 &quot;규정 확인 필요&quot;로 남고, <strong>교육 자료 다운로드</strong>에는 교육 자료 제작 도우미가 만든 슬라이드(.pptx), 실습 워크시트(.docx), 퀴즈(.xlsx) 파일 이름이 나옵니다. 마지막은 박지원 팀장 명의의 환영 메일 초안으로, 11월 16일(월)부터 18일(수)까지의 교육 일정과 첨부할 교육 자료 파일 이름이 들어 있습니다. 세 파일은 답변 아래에 &quot;캔버스에서 열기&quot; 카드로 붙고, <strong>아티팩트</strong> 버튼에 파일 수 3이 표시됩니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="신규 입사자 교육 키트 결과"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/multi-agent-use-cases-onboarding-result-ea0488023851c5debd709e53f73cf1d7.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/multi-agent-use-cases-onboarding-result-ea0488023851c5debd709e53f73cf1d7.png" alt="신규 입사자 교육 키트 총괄의 마지막 답변. 규정 요약, 교육 자료 파일 목록, 환영 메일 제목, 아티팩트 버튼에 번호가 붙어 있다" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">신규 입사자 교육 키트 결과</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>규정 요약</td><td>사내 규정 Q&amp;A 도우미가 정리한 첫 주 규정입니다. 근거 규정을 찾으면 규정 이름이 함께 나오고, 찾지 못한 항목은 그림처럼 &quot;규정 확인 필요&quot;로 남습니다.</td><td>입사자에게 안내하기 전에 근거를 확인할 때</td></tr><tr><td>2</td><td>교육 자료 파일 목록</td><td>교육 자료 제작 도우미가 만든 슬라이드, 워크시트, 퀴즈 파일 이름입니다. 파일은 답변 아래 카드나 <strong>아티팩트</strong>에서 열고 내려받습니다.</td><td>교육 자료를 내려받아 일정과 내용을 검토할 때</td></tr><tr><td>3</td><td>환영 메일 초안</td><td>이메일 초안 도우미가 쓴 환영 메일의 제목입니다. 아래에 인사, 교육 일정, 첨부 파일 안내가 이어집니다.</td><td>박지원 팀장에게 검토를 받을 때</td></tr><tr><td>4</td><td><strong>아티팩트</strong></td><td>이 대화에서 만들어진 파일 목록을 엽니다. 숫자는 파일 수입니다.</td><td>교육 자료 파일을 내려받을 때</td></tr></tbody></table>
 <p><strong>확인 포인트</strong></p>
 <ul>
 <li class="">규정 요약에 &quot;규정 확인 필요&quot;가 있으면 그 항목은 추정으로 채우지 않았다는 뜻입니다. 입사자에게 보내기 전에 원문을 확인하거나 사내 규정 Q&amp;A 도우미의 지식함 연결을 점검합니다.</li>
 <li class="">교육 자료의 일정이 환영 메일의 일정과 같은지 확인합니다.</li>
+<li class="">총괄 에이전트가 되묻는 답을 하면 대화가 거기서 멈춥니다. 같은 대화에 어떻게 진행할지 답하면 이미 끝난 담당의 결과는 그대로 두고 이어서 진행합니다.</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="사례-3-제안서-패키지">사례 3. 제안서 패키지<a href="#사례-3-제안서-패키지" class="hash-link" aria-label="사례 3. 제안서 패키지에 대한 직접 링크" title="사례 3. 제안서 패키지에 대한 직접 링크" translate="no">​</a></h2>
 <p><strong>목표</strong>: AI혁신팀 정다은 대리가 고객사에 보낼 제안서 패키지를 만듭니다. 시장 조사, 제안서 PPT, 발송 메일을 담당별로 맡깁니다.</p>
@@ -120,35 +269,154 @@
 </blockquote>
 <p>총괄 에이전트에게 보내는 요청은 다음과 같습니다.</p>
 <blockquote>
-<p>프롬프트: 첨부한 시장 메모를 바탕으로 가상 고객사 새봄제조(중견 제조사)에 보낼 &quot;문서 자동화 패키지&quot; 제안서 패키지를 만들어 주세요. 시장 조사 요약, 제안서 PPT 6장, 담당자에게 보낼 발송 메일 초안이 필요합니다.</p>
+<p>프롬프트: 첨부한 시장 메모를 바탕으로 가상 고객사 새봄제조(중견 제조사)에 2026년 11월 20일(금) 보낼 &quot;문서 자동화 패키지&quot; 제안서 패키지를 만들어 주세요. 시장 조사 요약, 제안서 PPT 6장, 담당자에게 보낼 발송 메일 초안이 필요합니다. 도입 일정은 2026년 12월 착수 기준으로 잡아 주세요.</p>
 </blockquote>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="총괄-에이전트의-위임-화면">총괄 에이전트의 위임 화면<a href="#총괄-에이전트의-위임-화면" class="hash-link" aria-label="총괄 에이전트의 위임 화면에 대한 직접 링크" title="총괄 에이전트의 위임 화면에 대한 직접 링크" translate="no">​</a></h3>
-<p>요청을 보내면 대화 화면에 담당별 호출 상자가 차례로 나타납니다. <strong>시장 조사 리서처</strong> 호출 상자를 펼치면 맨 위에 총괄 에이전트가 넘긴 요청이 보이고, 그 아래 **출력 (시장 조사 리서처)**에 리서처가 돌려준 시장 현황과 경쟁 도구 비교가 나옵니다. 이어지는 <strong>제안서 PPT 작성기</strong> 호출 상자 안에 <strong>문서 내보내기</strong> 기록이 보이면 PPT 6장 파일이 만들어진 것입니다. 마지막 <strong>이메일 초안 도우미</strong> 호출 상자에서는 발송 메일을 맡기며 넘긴 제안 요지를 확인할 수 있습니다.</p>
+<p>요청을 보내면 대화 화면에 담당별 호출 상자가 차례로 나타나고, 상자마다 그 담당이 돌려준 답을 담은 <strong>출력</strong> 상자가 이어집니다. <strong>시장 조사 리서처</strong> 호출 상자를 펼치면 총괄 에이전트가 넘긴 요청이 보이는데, 지침 1번대로 시장 메모 파일 이름과 &quot;자료 출처(시장 메모/기타 외부 자료)를 명기해 주세요&quot;라는 조건이 들어 있습니다. 그 아래 **출력 (시장 조사 리서처)**를 펼치면 리서처가 돌려준 시장 현황과 경쟁 도구 비교가 나옵니다.</p>
+<p>이 예시에서 첫 번째 <strong>제안서 PPT 작성기</strong>는 9.0초 만에 &quot;곧 6장으로 제작하겠다&quot;는 진행 안내만 돌려주고 파일을 만들지 않았습니다. 그래서 첫 마지막 답변의 PPT 자리에는 다운로드 링크 대신 &quot;완성되면 표시됨&quot;이라는 안내가 들어갔습니다. 호출 상자를 펼쳤을 때 안에 <strong>문서 내보내기</strong> 기록이 없으면 파일이 만들어지지 않은 것입니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="제안서 패키지 위임 화면"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/multi-agent-use-cases-proposal-delegation-4b148f04f04c5341d433b1d21c635d39.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/multi-agent-use-cases-proposal-delegation-4b148f04f04c5341d433b1d21c635d39.png" alt="제안서 패키지 총괄 대화 화면. 시장 조사 리서처 호출 상자를 펼쳐 넘긴 요청이 보이고, 출력 상자, 제안서 PPT 작성기와 이메일 초안 도우미 호출 상자가 이어지는 모습" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">제안서 패키지 위임 화면</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>시장 조사 리서처</strong> 호출 상자(펼침)</td><td>시장 조사를 맡긴 기록입니다. 펼치면 총괄 에이전트가 넘긴 요청이 보입니다.</td><td>리서처에게 어떤 범위를 조사하게 했는지 볼 때</td></tr><tr><td>2</td><td><strong>출력 (시장 조사 리서처)</strong></td><td>리서처가 돌려준 시장 현황과 경쟁 도구 비교입니다. 누르면 펼쳐집니다.</td><td>제안서에 들어갈 시장 내용을 먼저 검토할 때</td></tr><tr><td>3</td><td><strong>제안서 PPT 작성기</strong> 호출 상자</td><td>PPT를 맡긴 기록입니다. 안에 <strong>문서 내보내기</strong> 기록이 있어야 파일이 만들어진 것입니다.</td><td>PPT가 만들어졌는지 확인할 때</td></tr><tr><td>4</td><td><strong>이메일 초안 도우미</strong> 호출 상자</td><td>발송 메일을 맡긴 기록입니다.</td><td>메일에 넘긴 제안 요지를 확인할 때</td></tr></tbody></table>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="결과-화면-2">결과 화면<a href="#결과-화면-2" class="hash-link" aria-label="결과 화면에 대한 직접 링크" title="결과 화면에 대한 직접 링크" translate="no">​</a></h3>
-<p>마지막 답변은 지침 4번대로 제안 요지 3줄, 제안서 PPT 작성기가 만든 PPT 다운로드 링크, 이메일 초안 도우미가 쓴 발송 메일 초안 순서로 나옵니다. 링크를 놓쳤다면 입력란 아래 오른쪽의 <strong>아티팩트</strong>를 눌러 이 대화에서 만들어진 파일 목록에서 다시 찾습니다.</p>
+<p>PPT 링크가 없어서 같은 대화에 다음과 같이 보냈습니다.</p>
+<blockquote>
+<p>프롬프트: PPT 다운로드 링크가 아직 없습니다. 제안서 PPT 작성기에게 6장 슬라이드별 제목과 본문을 모두 적어 다시 맡기고, 진행 안내나 확인 질문 없이 파일을 만들어 문서 내보내기까지 마친 뒤 다운로드 링크를 돌려 달라고 요청해 주세요. 받은 링크로 마지막 답변을 다시 정리해 주세요.</p>
+</blockquote>
+<p>총괄 에이전트가 제안서 PPT 작성기를 다시 불렀고, 이번에는 77.8초 동안 파일을 만들어 다운로드 링크를 돌려주었습니다. 다시 정리한 마지막 답변은 지침 4번대로 제안 요지, PPT 다운로드, 발송 메일 초안 순서입니다. 앞서 받은 시장 조사와 메일 초안은 다시 맡기지 않고 그대로 썼습니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="제안서 패키지 결과"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/multi-agent-use-cases-proposal-result-9f1296a9f943d9960b1a17be56268f4d.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/multi-agent-use-cases-proposal-result-9f1296a9f943d9960b1a17be56268f4d.png" alt="제안서 패키지 총괄의 다시 정리한 마지막 답변. 제안 요지, PPT 다운로드 링크, 발송 메일 초안, 아티팩트 버튼에 번호가 붙어 있다" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">제안서 패키지 결과</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>제안 요지</td><td>총괄 에이전트가 정리한 제안 요지 3줄입니다. 고객 니즈, 강점, 2026년 12월 착수 제안이 한 줄씩 나옵니다.</td><td>팀장 보고나 메일 첫머리에 쓸 때</td></tr><tr><td>2</td><td>PPT 다운로드 링크</td><td>제안서 PPT 작성기가 만든 PPT 파일입니다. 누르면 파일을 내려받습니다.</td><td>제안서를 내려받아 고칠 곳을 찾을 때</td></tr><tr><td>3</td><td>발송 메일 초안</td><td>이메일 초안 도우미가 쓴 발송 메일입니다. 제목 아래에 받는 사람, 인사, 제안 내용, 맺음말이 이어집니다.</td><td>메일 프로그램에 옮겨 보낼 때</td></tr><tr><td>4</td><td><strong>아티팩트</strong></td><td>이 대화에서 만들어진 파일 목록을 엽니다. 숫자는 파일 수입니다.</td><td>링크를 놓쳤을 때 파일을 다시 찾을 때</td></tr></tbody></table>
 <p><strong>확인 포인트</strong></p>
 <ul>
 <li class="">시장 조사 요약에서 메모에서 온 내용과 외부 출처에서 온 내용이 구분되어 있는지 봅니다. 가상 자료인 시장 메모의 수치를 실제 시장 수치처럼 쓰지 않습니다.</li>
-<li class="">PPT의 고객사 이름과 제안 상품 이름이 요청과 같은지 확인합니다.</li>
+<li class="">PPT의 고객사 이름, 제안 상품 이름, 장 수를 확인합니다. 이 예시의 PPT는 지침의 여섯 주제(표지, 고객 과제, 시장 현황, 제안 내용, 기대 효과, 일정)를 담았지만, 주제마다 구분 슬라이드가 붙어 모두 13장이었습니다.</li>
+<li class="">파일 이름이 영문(seboom_doc_automation_proposal.pptx)으로 나올 수 있습니다. 원하는 파일 이름이 있으면 요청에 적습니다.</li>
 </ul>
 <blockquote>
 <p>팁: PPT를 고치고 싶다면 내려받은 파일을 제안서 PPT 작성기와의 대화에 첨부해 &quot;3번 슬라이드의 기대 효과를 표로 바꿔 주세요&quot;처럼 요청하세요. 혼자 대화할 때는 캔버스에서 결과를 바로 볼 수 있습니다.</p>
 </blockquote>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="사례-4-담당을-정하지-않고-맡기기">사례 4. 담당을 정하지 않고 맡기기<a href="#사례-4-담당을-정하지-않고-맡기기" class="hash-link" aria-label="사례 4. 담당을 정하지 않고 맡기기에 대한 직접 링크" title="사례 4. 담당을 정하지 않고 맡기기에 대한 직접 링크" translate="no">​</a></h2>
 <p><strong>목표</strong>: 사내교육 만족도 설문 결과를 어느 에이전트에 맡겨야 할지 고민하지 않고 SUPER AI 에이전트에 바로 맡깁니다.</p>
-<p><strong>준비물</strong>: 브레인크루_사내교육_만족도설문.csv(120명 응답, 과정 3개). 김그루 사원의 내 에이전트에 설문 결과 분석가가 있어야 합니다.</p>
+<p><strong>준비물</strong>: 브레인크루_사내교육_만족도설문.csv(2026년 11월 2일~6일 응답, 120명, 과정 3개). 김그루 사원의 내 에이전트에 설문 결과 분석가가 있어야 합니다.</p>
 <ol>
 <li class="">사이드바 위쪽의 <strong>더 보기</strong>를 누르고 <strong>SUPER AI 에이전트</strong>를 누릅니다.</li>
 <li class="">입력란 아래 오른쪽의 <strong>파일 업로드</strong>(클립)로 설문 CSV를 올립니다.</li>
 <li class="">다음 요청을 보냅니다.</li>
 </ol>
 <blockquote>
-<p>프롬프트: 첨부한 사내교육 만족도 설문을 과정별로 분석해 주세요. 문항별 평균, 추천의향 점수, 자유의견에서 많이 나온 개선 요청 3가지를 정리해 주세요.</p>
+<p>프롬프트: 설문 결과 분석가에게 맡겨서, 첨부한 사내교육 만족도 설문(2026년 11월 2일~6일 응답)을 과정별로 분석해 주세요. 문항별 평균, 추천의향 점수, 자유의견에서 많이 나온 개선 요청 3가지를 정리해 주세요.</p>
 </blockquote>
-<p>SUPER AI 에이전트는 먼저 설문 결과 분석가를 고른 이유를 한 문장으로 밝힌 뒤 일을 넘깁니다. 그 아래 위임 기록 상자를 펼치면 분석가가 어떤 계산을 했는지 작업 기록이 보이고, 답변 끝에는 과정별 문항 평균, 추천의향 점수, 개선 요청 3가지가 정리됩니다.</p>
+<p>요청 앞에 &quot;설문 결과 분석가에게 맡겨서&quot;를 넣은 이유가 있습니다. 같은 요청을 담당 이름 없이 보냈을 때는 SUPER AI 에이전트가 다른 에이전트에게 맡기지 않고 <strong>데이터 분석</strong> 도구로 직접 계산해 과정별 평균 표를 답했습니다. 결과는 나왔지만 설문 결과 분석가의 지침대로 분석한 결과는 아닙니다. 정해 둔 담당의 방식대로 분석하게 하려면 요청에 담당 이름을 적습니다.</p>
+<p>담당 이름을 넣어 보내면 <strong>에이전트에 위임</strong> 상자가 생기고 설문 결과 분석가가 일을 맡습니다. 이 예시에서 분석가가 일한 시간은 47.7초였습니다. 상자를 펼치면 SUPER AI 에이전트가 분석가에게 넘긴 요청이 보이는데, 사용자가 쓴 세 가지 항목에 &quot;모든 표에 응답 수(n) 표시&quot;, &quot;원인 분석은 단정하지 않고 가설 형태로 작성&quot; 같은 조건이 덧붙어 있습니다. 답변 첫머리에서는 어느 에이전트에게 맡겼는지 밝히고, 그 아래에 과정별 문항 평균과 응답 수, 추천의향 점수(NPS), 자유의견 개선 요청 상위 3가지를 차례로 정리합니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="SUPER AI 에이전트에 설문 분석 맡기기"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/multi-agent-use-cases-super-survey-f1e6b132bd461c7361adfe5a738daece.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/multi-agent-use-cases-super-survey-f1e6b132bd461c7361adfe5a738daece.png" alt="SUPER AI 에이전트가 설문 결과 분석가에게 설문 분석을 맡긴 화면. 에이전트에 위임 상자, 넘긴 요청, 맡긴 에이전트를 밝힌 문장, 분석 결과 첫 항목에 번호가 붙어 있다" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">SUPER AI 에이전트에 설문 분석 맡기기</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>에이전트에 위임</strong></td><td>고른 에이전트에게 일을 넘긴 기록입니다. 오른쪽에 걸린 시간이 나오고, 누르면 접히거나 펼쳐집니다.</td><td>실제로 다른 에이전트에게 일이 넘어갔는지 확인할 때</td></tr><tr><td>2</td><td>넘긴 요청</td><td>SUPER AI 에이전트가 설문 결과 분석가에게 보낸 요청입니다. 파일 이름, 응답 기간, 분석 항목과 분석 규칙이 들어 있습니다.</td><td>요청이 빠짐없이 전달됐는지 볼 때</td></tr><tr><td>3</td><td>맡긴 에이전트</td><td>&quot;설문 결과 분석가에게 맡겨 다음과 같이 과정별로 분석했습니다.&quot;처럼 어느 에이전트에게 맡겼는지 밝힌 문장입니다.</td><td>알맞은 에이전트에게 맡겼는지 확인할 때</td></tr><tr><td>4</td><td>분석 결과</td><td>과정별 문항 평균과 응답 수(n)부터 시작해 추천의향 점수(NPS), 개선 요청 상위 3가지가 이어집니다.</td><td>교육 담당자에게 결과를 공유할 때</td></tr></tbody></table>
 <p><strong>확인 포인트</strong></p>
 <ul>
-<li class="">고른 이유에 나온 에이전트 이름이 설문 결과 분석가인지 봅니다. 다른 에이전트를 골랐다면 요청에 &quot;설문 결과 분석가에게 맡겨서&quot;를 넣어 다시 보냅니다.</li>
+<li class="">답변 첫머리에 나온 에이전트 이름이 설문 결과 분석가인지 봅니다. <strong>에이전트에 위임</strong> 상자 없이 <strong>데이터 분석</strong> 기록만 있다면 SUPER AI 에이전트가 직접 처리한 것입니다.</li>
+<li class="">이 예시의 답변은 표 대신 &quot;표로 정리되었습니다&quot;처럼 분석가의 결과를 요약해 전했습니다. 과정별 수치 표가 필요하면 같은 대화에 &quot;과정별 표를 그대로 보여 주세요&quot;라고 보내거나, 설문 결과 분석가와 직접 대화합니다.</li>
 <li class="">매달 같은 분석을 한다면 SUPER AI 에이전트보다 설문 결과 분석가와 직접 대화하거나, 분석가를 서브에이전트로 붙인 총괄 에이전트를 쓰는 편이 결과가 일정합니다.</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="따라-해-보기">따라 해 보기<a href="#따라-해-보기" class="hash-link" aria-label="따라 해 보기에 대한 직접 링크" title="따라 해 보기에 대한 직접 링크" translate="no">​</a></h2>
@@ -158,7 +426,8 @@
 <li class=""><strong>지침</strong> 입력란에 위 &quot;사례 3&quot;의 지침을 적고 <strong>저장</strong>을 누릅니다.</li>
 <li class=""><strong>서브에이전트 관리</strong>를 눌러 세 담당 에이전트를 <strong>추가</strong>한 뒤 창을 닫고, &quot;저장되지 않은 변경이 있습니다&quot;가 보이면 <strong>저장</strong>을 누릅니다.</li>
 <li class="">사이드바의 <strong>이 에이전트와 새 대화</strong>를 누르고, <strong>파일 업로드</strong>로 시장 메모를 올린 뒤 위 &quot;사례 3&quot;의 요청을 보냅니다.</li>
-<li class=""><strong>진행 상황</strong> 패널에서 시장 조사가 먼저 끝나고 PPT와 메일 단계가 이어지는지 봅니다.</li>
+<li class="">요청 말풍선 아래에 &quot;시장 조사 리서처&quot;, &quot;제안서 PPT 작성기&quot;, &quot;이메일 초안 도우미&quot; 호출 상자가 차례로 생기는지 봅니다.</li>
+<li class=""><strong>제안서 PPT 작성기</strong> 호출 상자를 펼쳐 <strong>문서 내보내기</strong> 기록이 있는지 확인합니다. 없으면 위 &quot;사례 3&quot;의 결과 화면처럼 같은 대화에 다시 맡겨 달라고 보냅니다.</li>
 <li class="">마지막 답변의 PPT 다운로드 링크로 파일을 받아 검토합니다.</li>
 </ol>
 <blockquote>
@@ -168,6 +437,7 @@
 <ul>
 <li class="">총괄 에이전트 지침에 담당 이름, 맡길 일, 넘길 자료, 마지막 답변 형식을 모두 적습니다. 세 사례의 지침에는 모두 이 네 가지가 들어 있습니다.</li>
 <li class="">앞 담당의 결과가 필요한 일(PPT, 메일)은 지침에 &quot;1번 결과를 함께 넘긴다&quot;처럼 순서를 적습니다.</li>
+<li class="">문서작성 에이전트(PPT, 교육 자료)를 담당으로 쓸 때는 되묻거나 진행 안내만 돌려주고 끝나는지 확인합니다. 이 페이지의 사례 2와 3에서는 &quot;질문 없이 파일을 끝까지 만들고 다운로드 링크를 돌려 달라&quot;고 다시 맡기자 파일이 만들어졌습니다. 같은 조건을 처음부터 지침에 적어 둘 수도 있습니다.</li>
 <li class="">근거가 필요한 업무(규정 안내, 시장 수치)는 근거를 찾지 못하면 &quot;확인 필요&quot;로 남기도록 지침에 적고, 결과를 사람이 확인합니다.</li>
 <li class="">담당이 늘수록 응답 시간과 토큰 사용량이 늘어납니다. 한 번에 다 맡기기보다 자주 쓰는 조합부터 시작하세요.</li>
 <li class="">총괄 에이전트를 동료와 함께 쓰려면 담당 에이전트를 먼저 워크스페이스에 배포해야 합니다. 자세한 순서는 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/subagent-assignment/">서브에이전트 할당하기</a>의 &quot;워크스페이스에 등록할 때&quot;를 참고하세요.</li>
