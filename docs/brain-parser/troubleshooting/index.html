@@ -3,22 +3,47 @@
 <head>
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
-<title data-rh="true">Brain Parser 문제 해결 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/brain-parser/troubleshooting/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Brain Parser 문제 해결 | Deep Platform"><meta data-rh="true" name="description" content="먼저 구분할 것"><meta data-rh="true" property="og:description" content="먼저 구분할 것"><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/brain-parser/troubleshooting/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/brain-parser/troubleshooting/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/brain-parser/troubleshooting/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"문제 해결","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/brain-parser/troubleshooting"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
-<script src="/deep-agent-platform/assets/js/runtime~main.1282f550.js" defer="defer"></script>
-<script src="/deep-agent-platform/assets/js/main.5f3e00f6.js" defer="defer"></script>
+<title data-rh="true">Brain Parser 문제 해결 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/brain-parser/troubleshooting/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Brain Parser 문제 해결 | Deep Platform"><meta data-rh="true" name="description" content="결과가 나오지 않거나 원본과 다를 때 먼저 확인할 내용을 증상별로 정리합니다. Deep Docurator나 Deep Connector에서 쓰는 경우 화면의 오류 문구를, 사내 시스템에서 직접 쓰는 경우 오류 코드를 함께 봅니다."><meta data-rh="true" property="og:description" content="결과가 나오지 않거나 원본과 다를 때 먼저 확인할 내용을 증상별로 정리합니다. Deep Docurator나 Deep Connector에서 쓰는 경우 화면의 오류 문구를, 사내 시스템에서 직접 쓰는 경우 오류 코드를 함께 봅니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/brain-parser/troubleshooting/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/brain-parser/troubleshooting/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/brain-parser/troubleshooting/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"문제 해결","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/brain-parser/troubleshooting"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
+<script src="/deep-agent-platform/assets/js/runtime~main.de59c61c.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.6b596a46.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
 <symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
 </defs></svg>
-<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/deep-agent-platform/img/manual-mark.svg"><div role="region" aria-label="본문으로 건너뛰기"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">본문으로 건너뛰기</a></div><nav aria-label="메인" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="사이드바 펼치거나 접기" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/deep-agent-platform/"><div class="navbar__logo"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Deep Platform</b></a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">솔루션</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-flow/">Deep Flow</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-agent-builder/">Deep Agent Builder</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-connector/">Deep Connector</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-docurator/">Deep Docurator</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/deep-agent-platform/docs/brain-parser/">Brain Parser</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work/">Deep Work</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work-gateway/">Deep Work Gateway</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-admin/">Deep Admin</a></li></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="어두운 모드와 밝은 모드 전환하기 (현재 system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="searchBar_fdyA"><input type="search" class="searchInput_JE4R" placeholder="매뉴얼 검색" aria-label="매뉴얼 검색" role="combobox" aria-autocomplete="list" aria-expanded="false" value=""><div role="status" aria-live="polite"></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="맨 위로 스크롤하기" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="문서 사이드바" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/deep-agent-platform/docs/brain-parser/"><span class="categoryLinkLabel_W154">기타</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/brain-parser/"><span class="linkLabel_WmDU">소개</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/brain-parser/getting-started/"><span class="linkLabel_WmDU">시작하기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/brain-parser/core-features/"><span class="linkLabel_WmDU">검토 항목</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/brain-parser/workflows/"><span class="linkLabel_WmDU">반복 업무</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/brain-parser/use-cases/"><span class="linkLabel_WmDU">활용사례</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/deep-agent-platform/docs/brain-parser/troubleshooting/"><span class="linkLabel_WmDU">문제 해결</span></a></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="탐색 경로"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="홈" class="breadcrumbs__link" href="/deep-agent-platform/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">기타</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">문제 해결</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">이 페이지에서</button></div><div class="theme-doc-markdown markdown"><header><h1>Brain Parser 문제 해결</h1></header>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/deep-agent-platform/img/manual-mark.svg"><div role="region" aria-label="본문으로 건너뛰기"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">본문으로 건너뛰기</a></div><nav aria-label="메인" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="사이드바 펼치거나 접기" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/deep-agent-platform/"><div class="navbar__logo"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Deep Platform</b></a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">솔루션</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-flow/">Deep Flow</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-agent-builder/">Deep Agent Builder</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-connector/">Deep Connector</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-docurator/">Deep Docurator</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/deep-agent-platform/docs/brain-parser/">Brain Parser</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work/">Deep Work</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work-gateway/">Deep Work Gateway</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-admin/">Deep Admin</a></li></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="어두운 모드와 밝은 모드 전환하기 (현재 system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="searchBar_fdyA"><input type="search" class="searchInput_JE4R" placeholder="매뉴얼 검색" aria-label="매뉴얼 검색" role="combobox" aria-autocomplete="list" aria-expanded="false" value=""><div role="status" aria-live="polite"></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="맨 위로 스크롤하기" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="문서 사이드바" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/brain-parser/"><span class="categoryLinkLabel_W154">소개</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/brain-parser/getting-started/"><span class="categoryLinkLabel_W154">시작하기</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/brain-parser/core-features/"><span class="categoryLinkLabel_W154">기능 안내</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/brain-parser/workflows/"><span class="categoryLinkLabel_W154">반복 업무</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/brain-parser/use-cases/"><span class="categoryLinkLabel_W154">활용사례</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/deep-agent-platform/docs/brain-parser/troubleshooting/"><span class="categoryLinkLabel_W154">문제 해결</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/deep-agent-platform/docs/brain-parser/troubleshooting/"><span class="linkLabel_WmDU">문제 해결</span></a></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="탐색 경로"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="홈" class="breadcrumbs__link" href="/deep-agent-platform/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">문제 해결</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">문제 해결</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">이 페이지에서</button></div><div class="theme-doc-markdown markdown"><header><h1>Brain Parser 문제 해결</h1></header>
+<p>결과가 나오지 않거나 원본과 다를 때 먼저 확인할 내용을 증상별로 정리합니다. Deep Docurator나 Deep Connector에서 쓰는 경우 화면의 오류 문구를, 사내 시스템에서 직접 쓰는 경우 오류 코드를 함께 봅니다.</p>
+<p><strong>이 페이지에서 할 수 있는 일</strong></p>
+<ul>
+<li class="">파일이 거부되는 이유를 찾습니다.</li>
+<li class="">처리가 실패하거나 끝나지 않을 때 확인할 곳을 압니다.</li>
+<li class="">결과가 비거나 원본과 다를 때 원인을 좁힙니다.</li>
+<li class="">도움을 요청할 때 전달할 내용을 정리합니다.</li>
+</ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="먼저-구분할-것">먼저 구분할 것<a href="#먼저-구분할-것" class="hash-link" aria-label="먼저 구분할 것에 대한 직접 링크" title="먼저 구분할 것에 대한 직접 링크" translate="no">​</a></h2>
-<p>파일을 전달하지 못한 상태, 처리가 끝나지 않은 상태, 결과는 있지만 내용이 다른 상태를 구분하세요. 각각 확인할 위치가 다릅니다. 아래는 사용자 검토 방법이며 증상만으로 원인을 확정하는 진단 기능이 아닙니다.</p>
-<p>입력 화면과 처리 상태는 Brain Parser를 제공받은 제품에서 확인합니다. 위치를 모르면 제품 이름과 수행하려는 작업을 서비스 관리자에게 알려 확인하세요. 독립된 공통 버튼을 찾아야 하는 것은 아닙니다.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="파일이나-결과를-열-수-없어요">파일이나 결과를 열 수 없어요<a href="#파일이나-결과를-열-수-없어요" class="hash-link" aria-label="파일이나 결과를 열 수 없어요에 대한 직접 링크" title="파일이나 결과를 열 수 없어요에 대한 직접 링크" translate="no">​</a></h2>
-<p>원본 파일이 열리는지 확인합니다. 정상이라면 실제 화면의 허용 형식과 용량을 확인하고 선택한 파일과 비교하세요. 파일 이름의 확장자만 바꾸는 것으로 내용까지 변환했다고 판단하지 않습니다.</p>
-<p>전달한 파일의 결과를 열 수 없다면 해당 제품의 처리 상태와 안내를 확인합니다. 진행 중인지 오류가 표시됐는지 모르는 상태에서 같은 파일을 반복 등록하지 마세요. 결과 위치를 확인해도 접근하지 못하면 제품 이름, 수행 단계, 안내 문구를 전달합니다.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="결과가-비거나-일부-내용이-없어요">결과가 비거나 일부 내용이 없어요<a href="#결과가-비거나-일부-내용이-없어요" class="hash-link" aria-label="결과가 비거나 일부 내용이 없어요에 대한 직접 링크" title="결과가 비거나 일부 내용이 없어요에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>상태</th><th>확인할 곳</th></tr></thead><tbody><tr><td>파일이 들어가지 않음</td><td>형식, 크기, 문서 보안</td></tr><tr><td>처리가 실패하거나 끝나지 않음</td><td>오류 문구 또는 오류 코드, 쪽수</td></tr><tr><td>결과는 있지만 내용이 다름</td><td>원본 품질, 형식, 설정</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="파일이-거부돼요">파일이 거부돼요<a href="#파일이-거부돼요" class="hash-link" aria-label="파일이 거부돼요에 대한 직접 링크" title="파일이 거부돼요에 대한 직접 링크" translate="no">​</a></h2>
 
 
 
@@ -49,13 +74,171 @@
 
 
 
-<table><thead><tr><th>관찰</th><th>확인</th><th>조치와 재확인</th></tr></thead><tbody><tr><td>전체가 비어 있음</td><td>원본 내용과 선택한 파일</td><td>정상 완료로 안내됐는데도 비면 원본의 짧은 제목과 함께 문의합니다</td></tr><tr><td>특정 문단만 없음</td><td>원본에 그 부분이 보이는지</td><td>원본 위치와 빠진 내용을 기록해 검토를 요청합니다</td></tr><tr><td>페이지 수가 다름</td><td>실제 본문이 빠졌는지</td><td>개수 대신 제목·문장·표를 찾아 대조합니다</td></tr><tr><td>표 셀이 비어 있음</td><td>원본 빈칸 또는 합쳐진 셀인지</td><td>앞뒤 값과 열 제목을 함께 비교합니다</td></tr></tbody></table>
-<p>빈 페이지가 생략될 수 있으므로 개수 차이 자체를 누락의 증거로 삼지 않습니다. 개수가 같다는 이유로 내용 확인을 건너뛰지도 마세요.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="글자나-표의-의미가-달라졌어요">글자나 표의 의미가 달라졌어요<a href="#글자나-표의-의미가-달라졌어요" class="hash-link" aria-label="글자나 표의 의미가 달라졌어요에 대한 직접 링크" title="글자나 표의 의미가 달라졌어요에 대한 직접 링크" translate="no">​</a></h2>
-<p>문장이 섞여 보이면 원본의 읽는 순서를 확인하고 결과의 어느 문장이 끼어들었는지 기록합니다. 숫자가 다르면 행의 항목, 열 제목, 단위도 함께 적으세요.</p>
-<p>원본 글자가 흐리거나 잘렸다면 더 선명한 원본을 확보할 수 있는지 확인합니다. 이 조치가 해결을 보장하지는 않습니다. 새 결과를 받은 뒤 문제 부분을 다시 대조해야 합니다.</p>
+
+
+
+
+
+<table><thead><tr><th>오류</th><th>원인</th><th>조치</th></tr></thead><tbody><tr><td>지원하지 않는 형식(UNSUPPORTED_FORMAT)</td><td>20가지 확장자에 없는 파일입니다. 확장자가 없는 파일도 같습니다.</td><td><a class="" href="/deep-agent-platform/docs/brain-parser/input-formats/">지원 파일 형식</a>을 보고 바꿔 저장합니다. txt와 csv는 Deep Docurator에서만 그대로 넣을 수 있습니다.</td></tr><tr><td>파일이 너무 큼(FILE_TOO_LARGE)</td><td>파일 크기 한도(기본 150MB)를 넘었습니다.</td><td>필요한 장만 따로 저장하거나 이미지 해상도를 낮춥니다.</td></tr><tr><td>쪽수 초과(PAGE_LIMIT_EXCEEDED)</td><td>PDF 쪽수 한도(기본 5,000쪽)를 넘었습니다.</td><td>PDF를 나눠서 넣습니다.</td></tr><tr><td>암호화 문서(ENCRYPTED_DOCUMENT)</td><td>문서 보안(DRM)이 걸린 파일입니다.</td><td>보안을 해제한 파일을 넣습니다.</td></tr><tr><td>손상된 문서(CORRUPTED_DOCUMENT)</td><td>파일이 깨졌거나, 문서 보안이 걸린 PDF이거나, 확장자와 실제 내용이 다릅니다(예: 이름만 바꾼 파일).</td><td>원래 프로그램에서 열리는지 보고, 그 프로그램에서 올바른 형식으로 다시 저장합니다. 확장자만 바꾸면 안 됩니다.</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="처리가-실패하거나-끝나지-않아요">처리가 실패하거나 끝나지 않아요<a href="#처리가-실패하거나-끝나지-않아요" class="hash-link" aria-label="처리가 실패하거나 끝나지 않아요에 대한 직접 링크" title="처리가 실패하거나 끝나지 않아요에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>증상</th><th>확인</th><th>조치</th></tr></thead><tbody><tr><td>PDF와 이미지만 실패하고 워드·한글은 됨</td><td>문자 인식 모델 서버 연결</td><td>운영 담당자에게 문자 인식 모델 서버 상태를 확인해 달라고 요청합니다. 오류 코드는 OCR_ERROR입니다.</td></tr><tr><td>처리 시간 초과(DOCUMENT_TIMEOUT, JOB_TIMEOUT)</td><td>쪽수, 스캔 쪽 비율</td><td>문서를 나눠서 넣습니다. 기본 한도는 PDF가 300초에 쪽마다 10초를 더한 값(최대 4시간), 그 밖의 형식은 최대 4시간입니다.</td></tr><tr><td>대기열이 가득 참(QUEUE_FULL)</td><td>동시에 보낸 문서 수</td><td>1분쯤 뒤 다시 보냅니다.</td></tr><tr><td>서버가 잠시 받을 수 없음(503 오류)</td><td>서버 재시작, 저장소 상태</td><td>잠시 뒤 다시 보냅니다. 반복되면 운영 담당자에게 알립니다.</td></tr><tr><td>결과를 다시 받을 수 없음(RESULT_UNAVAILABLE)</td><td>처리한 지 오래됨</td><td>결과 보관 기간(기본 30일)이 지났습니다. 다시 처리합니다.</td></tr></tbody></table>
+<p>같은 파일을 여러 번 연달아 보내지 마세요. 진행 중인지 실패했는지 먼저 확인합니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="결과가-비거나-일부가-없어요">결과가 비거나 일부가 없어요<a href="#결과가-비거나-일부가-없어요" class="hash-link" aria-label="결과가 비거나 일부가 없어요에 대한 직접 링크" title="결과가 비거나 일부가 없어요에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>관찰</th><th>확인</th><th>조치</th></tr></thead><tbody><tr><td>스캔 문서 결과가 거의 비어 있음</td><td>스캔이 흐리거나 기울었는지</td><td>다시 스캔합니다. 운영 담당자에게 페이지 방향 바로잡기 설정을 물어봅니다.</td></tr><tr><td>그림 자리만 있고 설명이 없음</td><td>그림 설명이 켜져 있는지</td><td>운영 담당자에게 그림 설명 설정을 확인해 달라고 요청합니다.</td></tr><tr><td>머리말·꼬리말이 사라짐</td><td>머리말·꼬리말 빼기 설정</td><td>필요하면 운영 담당자에게 설정을 바꿔 달라고 요청합니다.</td></tr><tr><td>한자로만 된 문장이 빠짐</td><td>한자만 있는 줄 버리기 설정</td><td>한자 문장이 중요한 문서라면 운영 담당자에게 알립니다.</td></tr><tr><td>쪽 수가 원본과 다름</td><td>실제 본문이 빠졌는지</td><td>쪽 수 대신 제목과 문장으로 찾습니다. 엑셀은 시트, 파워포인트는 슬라이드 단위로 셉니다.</td></tr><tr><td>JSON 결과에 빠진 쪽, 경고 항목이 있음</td><td>해당 쪽 번호</td><td>그 쪽을 원본과 대조하고, 필요하면 그 쪽만 따로 저장해 다시 넣습니다.</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="글자나-표의-뜻이-달라졌어요">글자나 표의 뜻이 달라졌어요<a href="#글자나-표의-뜻이-달라졌어요" class="hash-link" aria-label="글자나 표의 뜻이 달라졌어요에 대한 직접 링크" title="글자나 표의 뜻이 달라졌어요에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>관찰</th><th>확인</th><th>조치</th></tr></thead><tbody><tr><td>숫자 자리나 소수점이 다름</td><td>원본 해상도</td><td>더 선명한 원본이나 원본 형식(엑셀, 한글) 파일로 다시 넣습니다.</td></tr><tr><td>표 값이 옆 칸으로 밀림</td><td>합친 칸이 있는 표인지</td><td>합친 칸 표는 마크다운 결과에서 HTML 표로 나옵니다. JSON 결과의 표 블록이나 원본으로 대조합니다.</td></tr><tr><td>엑셀 날짜에 시각이 붙음</td><td>날짜 칸</td><td>정상 동작입니다. 다음 작업에서 날짜만 남깁니다.</td></tr><tr><td>두 단 문서의 문장이 섞임</td><td>원본의 읽는 순서</td><td>섞인 위치를 적어 운영 담당자에게 전달합니다.</td></tr><tr><td>PDF 결과에서 단어가 줄 끝에서 끊김</td><td>원본의 줄바꿈 위치</td><td>뜻이 같으면 넘어가고, 검색에 쓰는 핵심 단어라면 원본 형식(워드, 한글)으로 다시 넣어 봅니다.</td></tr><tr><td>그림 설명의 숫자가 원본과 다름</td><td>그림 속 숫자</td><td>그림 설명은 모델이 쓴 글입니다. 숫자는 원본 그림에서 직접 확인합니다.</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="도움을-요청할-때">도움을 요청할 때<a href="#도움을-요청할-때" class="hash-link" aria-label="도움을 요청할 때에 대한 직접 링크" title="도움을 요청할 때에 대한 직접 링크" translate="no">​</a></h2>
-<p>문서 이름, 원본 페이지나 제목, 기대한 내용, 실제 차이, 이용 제품과 처리 시점을 정리하세요. “비용 표의 안내 책자 금액이 원본 18,000원과 다르게 보임”처럼 대상을 특정합니다. 민감한 원문 전체를 공개 대화에 붙이지 말고 조직의 전달 기준을 따르세요.</p>
-<p>중요한 값이 확인되지 않았다면 그 값을 근거로 업무를 확정하지 않습니다. 새 결과는 <a class="" href="/deep-agent-platform/docs/brain-parser/getting-started/">시작하기</a>에서 다시 대조하고 긴 문서는 <a class="" href="/deep-agent-platform/docs/brain-parser/workflows/">반복 업무</a>의 검토 범위를 함께 확인하세요.</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/deep-agent-platform/docs/brain-parser/use-cases/"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">활용사례</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#먼저-구분할-것" class="table-of-contents__link toc-highlight">먼저 구분할 것</a></li><li><a href="#파일이나-결과를-열-수-없어요" class="table-of-contents__link toc-highlight">파일이나 결과를 열 수 없어요</a></li><li><a href="#결과가-비거나-일부-내용이-없어요" class="table-of-contents__link toc-highlight">결과가 비거나 일부 내용이 없어요</a></li><li><a href="#글자나-표의-의미가-달라졌어요" class="table-of-contents__link toc-highlight">글자나 표의 의미가 달라졌어요</a></li><li><a href="#도움을-요청할-때" class="table-of-contents__link toc-highlight">도움을 요청할 때</a></li></ul></div></div></div></div></main></div></div></div></div>
+<p>다음을 정리해 운영 담당자에게 전달합니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>전달할 것</th><th>예시</th></tr></thead><tbody><tr><td>이용한 곳</td><td>Deep Docurator &quot;계약서 스캔본 읽기&quot; 플로우</td></tr><tr><td>문서 이름과 형식, 크기</td><td>계약서_스캔본.png, 100 KB</td></tr><tr><td>원본 위치</td><td>제3조 둘째 문장</td></tr><tr><td>기대한 내용과 실제 결과</td><td>원본 &quot;연 12%&quot;, 결과 &quot;연 1.2%&quot;</td></tr><tr><td>오류 문구나 코드</td><td>화면 문구 그대로, 또는 OCR_ERROR</td></tr></tbody></table>
+<p>민감한 원문 전체를 대화에 붙이지 말고 조직의 전달 기준을 따릅니다. 중요한 값이 확인되지 않았다면 그 값을 근거로 업무를 확정하지 않습니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="다음-문서">다음 문서<a href="#다음-문서" class="hash-link" aria-label="다음 문서에 대한 직접 링크" title="다음 문서에 대한 직접 링크" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/deep-agent-platform/docs/brain-parser/settings/">운영 설정</a> — 운영 담당자가 볼 설정</li>
+<li class=""><a class="" href="/deep-agent-platform/docs/brain-parser/input-formats/">지원 파일 형식과 한도</a> — 확장자와 기본 한도</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/deep-agent-platform/docs/brain-parser/use-cases/"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">활용 사례</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#먼저-구분할-것" class="table-of-contents__link toc-highlight">먼저 구분할 것</a></li><li><a href="#파일이-거부돼요" class="table-of-contents__link toc-highlight">파일이 거부돼요</a></li><li><a href="#처리가-실패하거나-끝나지-않아요" class="table-of-contents__link toc-highlight">처리가 실패하거나 끝나지 않아요</a></li><li><a href="#결과가-비거나-일부가-없어요" class="table-of-contents__link toc-highlight">결과가 비거나 일부가 없어요</a></li><li><a href="#글자나-표의-뜻이-달라졌어요" class="table-of-contents__link toc-highlight">글자나 표의 뜻이 달라졌어요</a></li><li><a href="#도움을-요청할-때" class="table-of-contents__link toc-highlight">도움을 요청할 때</a></li><li><a href="#다음-문서" class="table-of-contents__link toc-highlight">다음 문서</a></li></ul></div></div></div></div></main></div></div></div></div>
 </body>
 </html>
