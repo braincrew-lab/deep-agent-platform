@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">Deep Docurator 실습 5: 프리셋 저장·불러오기와 YAML 내보내기/가져오기 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/practice-presets-yaml/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Deep Docurator 실습 5: 프리셋 저장·불러오기와 YAML 내보내기/가져오기 | Deep Platform"><meta data-rh="true" name="description" content="검토를 마친 흐름은 프리셋으로 저장해 두면 다음 문서에서 노드를 다시 놓지 않고 같은 기준으로 시작할 수 있습니다. 이 실습은 실습 3에서 만든 영수증 필드 추출 흐름을 프리셋으로 저장하고, 새 플로우에서 불러오고, YAML 파일로 내보내 동료에게 전달하고, 받은 YAML을 가져오는 과정을 차례로 해 봅니다."><meta data-rh="true" property="og:description" content="검토를 마친 흐름은 프리셋으로 저장해 두면 다음 문서에서 노드를 다시 놓지 않고 같은 기준으로 시작할 수 있습니다. 이 실습은 실습 3에서 만든 영수증 필드 추출 흐름을 프리셋으로 저장하고, 새 플로우에서 불러오고, YAML 파일로 내보내 동료에게 전달하고, 받은 YAML을 가져오는 과정을 차례로 해 봅니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/practice-presets-yaml/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/practice-presets-yaml/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/practice-presets-yaml/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"실습 5: 프리셋과 YAML","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/practice-presets-yaml"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
-<script src="/deep-agent-platform/assets/js/runtime~main.d168cd72.js" defer="defer"></script>
-<script src="/deep-agent-platform/assets/js/main.0a7d59c5.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/runtime~main.1282f550.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.5f3e00f6.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -175,12 +175,36 @@
 </ol>
 <p>편집 중인 플로우에 적용하려면 <strong>노드 추가</strong> 패널 아래 프리셋 선택 상자의 커스텀에서 고르고 <strong>캔버스에 적용</strong>을 누릅니다. &quot;현재 캔버스의 내용이 대체됩니다. 계속하시겠습니까?&quot;가 나오면 지금 노드와 결과가 사라진다는 뜻이므로, 남기고 싶으면 새 플로우에서 적용합니다.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4단계-yaml-가져오기">4단계. YAML 가져오기<a href="#4단계-yaml-가져오기" class="hash-link" aria-label="4단계. YAML 가져오기에 대한 직접 링크" title="4단계. YAML 가져오기에 대한 직접 링크" translate="no">​</a></h2>
+<p>이 실습에서는 2단계에서 내보낸 &quot;보고서 기본 청킹 v1.yaml&quot;을 동료가 받은 파일이라고 생각하고, 메모장에서 맨 위 id 줄 값을 preset_team_share_report_v1로, name 줄을 &quot;보고서 기본 청킹 v1 (팀 공유본)&quot;으로 고친 뒤 가져왔습니다.</p>
 <ol>
 <li class="">설정 화면에서 <strong>YAML 가져오기</strong>를 누릅니다.</li>
 <li class="">받은 yaml 또는 yml 파일을 고릅니다.</li>
-<li class="">&quot;프리셋을 불러왔습니다. API 키는 포함되지 않으므로 Providers 탭에서 별도로 설정해주세요.&quot;가 보이면 성공입니다. 이 화면에는 키를 넣는 곳이 없으며, 모델 연결은 운영 담당자가 서버에 설정한 값을 씁니다.</li>
-<li class="">프리셋 카드에 가져온 이름이 추가됐는지 확인합니다. 같은 이름이 이미 있으면 헷갈리지 않도록 원래 프리셋의 이름을 바꾸거나 지웁니다.</li>
+<li class="">&quot;프리셋을 불러왔습니다. API 키는 포함되지 않으므로 Providers 탭에서 별도로 설정해주세요.&quot; 알림이 뜨면 <strong>확인</strong>을 누릅니다. 이 화면에는 키를 넣는 곳이 없으며, 모델 연결은 운영 담당자가 서버에 설정한 값을 씁니다.</li>
+<li class="">프리셋 카드 맨 아래에 가져온 프리셋이 추가됐는지 확인합니다.</li>
 </ol>
+<p><span class="manual-shot" role="figure" aria-label="YAML로 가져온 프리셋"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-presets-yaml-import-bf3afdccb5b3a7016b25d2696ea1e40b.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/practice-presets-yaml-import-bf3afdccb5b3a7016b25d2696ea1e40b.png" alt="YAML 가져오기 버튼과 가져온 프리셋 카드에 번호를 붙인 설정 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">YAML로 가져온 프리셋</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>화면에 보이는 내용</th></tr></thead><tbody><tr><td>1</td><td><strong>YAML 가져오기</strong></td><td>yaml, yml 파일만 고를 수 있는 선택 창을 엽니다.</td></tr><tr><td>2</td><td>가져온 프리셋 카드</td><td>보고서 기본 청킹 v1 (팀 공유본), pipeline, input → parse → chunk</td></tr></tbody></table>
+<p>가져오기는 파일 맨 위 id로 프리셋을 구분합니다. 이 실습 환경에서 내보낸 파일을 id를 바꾸지 않고 이름만 고쳐 가져왔더니, 새 카드가 생기지 않고 원래 &quot;보고서 기본 청킹 v1&quot; 카드의 이름이 바뀌었습니다(원래 파일을 다시 가져와 되돌렸습니다). 내가 내보낸 파일을 고쳐 다시 가져올 때에는 id를 바꿔야 원래 프리셋이 그대로 남습니다. id는 프리셋을 저장할 때마다 새로 만들어지므로, 다른 사람이 저장해 내보낸 파일은 보통 새 카드로 추가됩니다.</p>
 <p>실패하면 &quot;가져오기 실패:&quot; 뒤에 이유가 표시됩니다. 대부분 YAML 형식이 깨졌거나 Deep Docurator에서 내보낸 파일이 아닐 때입니다.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="흔한-실수와-해결">흔한 실수와 해결<a href="#흔한-실수와-해결" class="hash-link" aria-label="흔한 실수와 해결에 대한 직접 링크" title="흔한 실수와 해결에 대한 직접 링크" translate="no">​</a></h2>
 
@@ -213,12 +237,17 @@
 
 
 
-<table><thead><tr><th>증상</th><th>원인</th><th>해결</th></tr></thead><tbody><tr><td>내보내기를 눌렀더니 파일이 여러 개 내려받아집니다.</td><td>지금 분류에 보이는 프리셋마다 파일 하나씩 만들어집니다.</td><td>필요한 이름의 파일만 골라 보냅니다.</td></tr><tr><td>파이프라인 프리셋 카드에 <strong>편집</strong>이 없습니다.</td><td>흐름에서 저장한 파이프라인 프리셋은 화면에서 편집할 수 없습니다.</td><td>플로우에서 고친 뒤 새 이름(예: v2)으로 다시 저장합니다.</td></tr><tr><td>프리셋으로 만든 플로우를 실행하면 입력 파일이 없다고 실패합니다.</td><td>프리셋은 파일을 담지 않습니다.</td><td>입력 노드에 파일을 넣고 실행합니다.</td></tr><tr><td>캔버스에 적용했더니 기존 결과가 사라졌습니다.</td><td><strong>캔버스에 적용</strong>은 지금 캔버스를 대체합니다.</td><td>새 플로우를 만들어 적용합니다.</td></tr></tbody></table>
+
+
+
+
+
+<table><thead><tr><th>증상</th><th>원인</th><th>해결</th></tr></thead><tbody><tr><td>내보내기를 눌렀더니 파일이 여러 개 내려받아집니다.</td><td>지금 분류에 보이는 프리셋마다 파일 하나씩 만들어집니다.</td><td>필요한 이름의 파일만 골라 보냅니다.</td></tr><tr><td>파이프라인 프리셋 카드에 <strong>편집</strong>이 없습니다.</td><td>흐름에서 저장한 파이프라인 프리셋은 화면에서 편집할 수 없습니다.</td><td>플로우에서 고친 뒤 새 이름(예: v2)으로 다시 저장합니다.</td></tr><tr><td>프리셋으로 만든 플로우를 실행하면 입력 파일이 없다고 실패합니다.</td><td>프리셋은 파일을 담지 않습니다.</td><td>입력 노드에 파일을 넣고 실행합니다.</td></tr><tr><td>가져왔는데 새 카드가 없고 기존 프리셋 이름이 바뀌었습니다.</td><td>파일의 id가 기존 프리셋과 같아 덮어썼습니다.</td><td>원래 파일을 다시 가져와 되돌리고, id를 바꾼 파일을 가져옵니다.</td></tr><tr><td>캔버스에 적용했더니 기존 결과가 사라졌습니다.</td><td><strong>캔버스에 적용</strong>은 지금 캔버스를 대체합니다.</td><td>새 플로우를 만들어 적용합니다.</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="응용-과제">응용 과제<a href="#응용-과제" class="hash-link" aria-label="응용 과제에 대한 직접 링크" title="응용 과제에 대한 직접 링크" translate="no">​</a></h2>
 <ol>
 <li class="">설정 화면의 <strong>새 프리셋</strong>에서 컴포넌트 타입 <strong>청킹</strong>을 고르고, 라벨 행 (권장)·최대 데이터 행 수 1 옵션만 담은 노드 프리셋을 만들어 보세요. 노드 하나의 옵션만 재사용할 때 씁니다.</li>
 <li class="">실습 2의 전략 비교 흐름을 프리셋으로 저장해 부서 표준 비교 도구로 공유해 보세요.</li>
-<li class="">내보낸 YAML의 청크 크기 값을 메모장으로 바꾼 뒤 가져와, 새 프리셋에 바뀐 값이 들어갔는지 확인해 보세요.</li>
+<li class="">내보낸 YAML의 청크 크기 값과 id를 메모장으로 바꾼 뒤 가져와, 새 프리셋에 바뀐 값이 들어갔는지 확인해 보세요.</li>
 </ol>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="다음-문서">다음 문서<a href="#다음-문서" class="hash-link" aria-label="다음 문서에 대한 직접 링크" title="다음 문서에 대한 직접 링크" translate="no">​</a></h2>
 <ul>

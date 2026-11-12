@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">Deep Docurator 실습 7: 조건 분기 흐름 만들기 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/practice-router/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Deep Docurator 실습 7: 조건 분기 흐름 만들기 | Deep Platform"><meta data-rh="true" name="description" content="부서 공유 폴더에는 규정 문서와 엑셀 표가 섞여 있습니다. 표는 행 하나씩, 문서는 글자 수 단위로 나눠야 검색이 잘 됩니다. 이 실습은 라우터 노드로 파일 확장자를 보고 경로를 갈라, 표 파일은 라벨 행 전략으로, 그 밖의 문서는 재귀 전략으로 나누는 흐름을 만듭니다. 이렇게 만든 흐름 하나를 실습 4처럼 배포하면 섞인 파일을 한 번에 올려도 종류별로 알맞게 처리됩니다."><meta data-rh="true" property="og:description" content="부서 공유 폴더에는 규정 문서와 엑셀 표가 섞여 있습니다. 표는 행 하나씩, 문서는 글자 수 단위로 나눠야 검색이 잘 됩니다. 이 실습은 라우터 노드로 파일 확장자를 보고 경로를 갈라, 표 파일은 라벨 행 전략으로, 그 밖의 문서는 재귀 전략으로 나누는 흐름을 만듭니다. 이렇게 만든 흐름 하나를 실습 4처럼 배포하면 섞인 파일을 한 번에 올려도 종류별로 알맞게 처리됩니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/practice-router/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/practice-router/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/practice-router/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"실습 7: 조건 분기","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/practice-router"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
-<script src="/deep-agent-platform/assets/js/runtime~main.d168cd72.js" defer="defer"></script>
-<script src="/deep-agent-platform/assets/js/main.0a7d59c5.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/runtime~main.1282f550.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.5f3e00f6.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -192,8 +192,33 @@
 <ol>
 <li class="">입력 노드에 영수증_견적_모음.csv를 넣고 실행합니다.</li>
 <li class="">라우터 노드를 누르면 분기 설정 위에 &quot;선택된 경로: 표 자료&quot;가 보입니다. 위 청킹 노드에 20 청크가 생기고, 아래 청킹 노드는 실행되지 않습니다.</li>
-<li class="">입력 파일을 출장비규정-2026.pdf로 바꿔 다시 실행하고, 이번에는 &quot;선택된 경로: 일반 문서&quot;와 아래 청킹 노드의 청크가 보이는지 확인합니다.</li>
+<li class="">입력 파일을 출장비규정-2026.pdf로 바꿔 다시 실행합니다. 예시는 20초 안팎에 끝났고, 일반 문서 경로가 골라져 아래 청킹 노드에 1 청크가 생겼습니다. 위 청킹 노드는 실행되지 않고 &quot;준비됨&quot;으로 남습니다.</li>
 </ol>
+<p><span class="manual-shot" role="figure" aria-label="pdf를 넣었을 때 고른 경로"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-router-pdf-9d13d021536845762b6a8094517d4cf0.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/practice-router-pdf-9d13d021536845762b6a8094517d4cf0.png" alt="선택된 경로 일반 문서와 no_match 사유, 일반 문서 경로에 번호를 붙인 라우터 분기 설정" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">pdf를 넣었을 때 고른 경로</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>화면에 보이는 내용</th><th>확인할 것</th></tr></thead><tbody><tr><td>1</td><td>선택된 경로</td><td>선택된 경로: 일반 문서, no_match</td><td>표 자료 조건(csv, xlsx)에 맞지 않아 기본 경로로 갔다는 뜻입니다. csv를 넣었을 때는 rule_match가 보입니다.</td></tr><tr><td>2</td><td>일반 문서 경로</td><td>기본 경로 표시와 후속 노드(청킹)</td><td>이 경로의 청킹 노드에만 청크가 생겼는지</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="흔한-실수와-해결">흔한 실수와 해결<a href="#흔한-실수와-해결" class="hash-link" aria-label="흔한 실수와 해결에 대한 직접 링크" title="흔한 실수와 해결에 대한 직접 링크" translate="no">​</a></h2>
 
 
