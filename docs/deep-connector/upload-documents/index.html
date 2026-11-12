@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">Deep Connector 문서 올리기 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/upload-documents/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Deep Connector 문서 올리기 | Deep Platform"><meta data-rh="true" name="description" content="이 페이지는 컬렉션에 문서를 올리는 방법을 자세히 설명합니다. 지원하는 확장자 18가지와 형식별 처리 방식, 파이프라인 선택, 파일별·공통 메타데이터, 중복 확인, 업로드만 하기 옵션을 다룹니다. 첫 업로드를 따라 해 보려면 시작하기를 먼저 보세요."><meta data-rh="true" property="og:description" content="이 페이지는 컬렉션에 문서를 올리는 방법을 자세히 설명합니다. 지원하는 확장자 18가지와 형식별 처리 방식, 파이프라인 선택, 파일별·공통 메타데이터, 중복 확인, 업로드만 하기 옵션을 다룹니다. 첫 업로드를 따라 해 보려면 시작하기를 먼저 보세요."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/upload-documents/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/upload-documents/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/upload-documents/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"문서 올리기","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/upload-documents"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
-<script src="/deep-agent-platform/assets/js/runtime~main.cd2262e2.js" defer="defer"></script>
-<script src="/deep-agent-platform/assets/js/main.152a5411.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/runtime~main.983a3a84.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.62a05769.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -66,7 +66,7 @@
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="파일을-고른-뒤의-화면">파일을 고른 뒤의 화면<a href="#파일을-고른-뒤의-화면" class="hash-link" aria-label="파일을 고른 뒤의 화면에 대한 직접 링크" title="파일을 고른 뒤의 화면에 대한 직접 링크" translate="no">​</a></h2>
 <p>파일을 고르면 왼쪽에 파일 목록이 생기고, 파일마다 내용 확인과 중복 확인이 진행됩니다.</p>
-<p><span class="manual-shot" role="figure" aria-label="파일을 고른 뒤의 업로드 화면"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/upload-documents-files-2a4fa4b8d22244a72d3869c29d6301a5.png" target="_blank" rel="noopener"><img width="1478" height="756" src="/deep-agent-platform/assets/images/upload-documents-files-2a4fa4b8d22244a72d3869c29d6301a5.png" alt="파일 네 개를 고르고 한 파일의 메타데이터를 펼친 업로드 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">파일을 고른 뒤의 업로드 화면</span></span></p>
+<p><span class="manual-shot" role="figure" aria-label="파일을 고른 뒤의 업로드 화면"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/upload-documents-files-0c38b25fba947cbe3e4a2723309a14d2.png" target="_blank" rel="noopener"><img width="2591" height="752" src="/deep-agent-platform/assets/images/upload-documents-files-0c38b25fba947cbe3e4a2723309a14d2.png" alt="확인 결과, 폴더 묶음, 파일 행, 파일 제거 버튼에 번호를 붙인 업로드 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">파일을 고른 뒤의 업로드 화면</span></span></p>
 
 
 
@@ -102,6 +102,8 @@
 
 
 
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>확인 결과</td><td>&quot;확인이 끝났습니다. 업로드할 수 있습니다.&quot;가 나오면 올릴 준비가 된 것입니다. 같은 내용의 문서가 컬렉션에 이미 있으면 여기서 알려 줍니다.</td><td>같은 문서를 두 번 올리지 않는지 볼 때</td></tr><tr><td>2</td><td>폴더 묶음</td><td>폴더째 올리면 폴더별로 묶여 보입니다. 앞의 체크 상자로 폴더 단위로 넣고 뺍니다. 파일만 고르면 &quot;(폴더 없음)&quot;으로 묶입니다.</td><td>폴더 안 일부 파일만 올릴 때</td></tr><tr><td>3</td><td>파일 행</td><td>파일 이름, 용량, 상태(&quot;확인됨&quot;)입니다. 왼쪽 화살표로 그 파일의 메타데이터를 펼칩니다.</td><td>파일마다 다른 정보를 붙일 때</td></tr><tr><td>4</td><td>파일 제거</td><td>이 파일을 업로드 목록에서 뺍니다.</td><td>잘못 고른 파일을 뺄 때</td></tr></tbody></table>
+<p><span class="manual-shot" role="figure" aria-label="파일별 메타데이터"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/upload-documents-files-2-9efd6224e9ad7774a77c74a86b0d78cf.png" target="_blank" rel="noopener"><img width="2591" height="779" src="/deep-agent-platform/assets/images/upload-documents-files-2-9efd6224e9ad7774a77c74a86b0d78cf.png" alt="파일별 메타데이터, 필드 추가, 파일에서 가져오기에 번호를 붙인 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">파일별 메타데이터</span></span></p>
 
 
 
@@ -131,6 +133,8 @@
 
 
 
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>파일별 메타데이터</td><td>그 파일에만 붙는 정보입니다. 처음에는 파일 이름(source)과 시각(timestamp)이 채워져 있습니다.</td><td>문서번호, 시행일 같은 정보를 적을 때</td></tr><tr><td>2</td><td><strong>필드 추가</strong></td><td>메타데이터 항목을 하나 더 만듭니다.</td><td>&quot;시행일: 2026-01-01&quot;을 붙일 때</td></tr><tr><td>3</td><td><strong>파일에서 가져오기</strong></td><td>JSON 파일에서 메타데이터를 불러옵니다(1 MB까지). <strong>가져올 때 기존 값 비우기</strong>를 체크하면 기존 값을 지우고 채웁니다.</td><td>메타데이터를 미리 정리해 둔 파일이 있을 때</td></tr></tbody></table>
+<p><span class="manual-shot" role="figure" aria-label="업로드 설정과 실행"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/upload-documents-files-3-6872a1c91d71e100fce269b25b7a638e.png" target="_blank" rel="noopener"><img width="2614" height="1620" src="/deep-agent-platform/assets/images/upload-documents-files-3-6872a1c91d71e100fce269b25b7a638e.png" alt="파이프라인, 공통 메타데이터, 문서 업로드 버튼에 번호를 붙인 업로드 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">업로드 설정과 실행</span></span></p>
 
 
 
@@ -138,7 +142,29 @@
 
 
 
-<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>확인 결과</td><td>&quot;확인이 끝났습니다. 업로드할 수 있습니다.&quot;가 나오면 올릴 준비가 된 것입니다. 같은 내용의 문서가 컬렉션에 이미 있으면 여기서 알려 줍니다.</td><td>같은 문서를 두 번 올리지 않는지 볼 때</td></tr><tr><td>2</td><td>폴더 묶음</td><td>폴더째 올리면 폴더별로 묶여 보입니다. 앞의 체크 상자로 폴더 단위로 넣고 뺍니다. 파일만 고르면 &quot;(폴더 없음)&quot;으로 묶입니다.</td><td>폴더 안 일부 파일만 올릴 때</td></tr><tr><td>3</td><td>파일 행</td><td>파일 이름, 용량, 상태(&quot;확인됨&quot;)입니다. 왼쪽 화살표로 그 파일의 메타데이터를 펼칩니다.</td><td>파일마다 다른 정보를 붙일 때</td></tr><tr><td>4</td><td>파일별 메타데이터</td><td>그 파일에만 붙는 정보입니다. 처음에는 파일 이름(source)과 시각(timestamp)이 채워져 있습니다.</td><td>문서번호, 시행일 같은 정보를 적을 때</td></tr><tr><td>5</td><td><strong>필드 추가</strong></td><td>메타데이터 항목을 하나 더 만듭니다.</td><td>&quot;시행일: 2026-01-01&quot;을 붙일 때</td></tr><tr><td>6</td><td><strong>파일에서 가져오기</strong></td><td>JSON 파일에서 메타데이터를 불러옵니다(1 MB까지). <strong>가져올 때 기존 값 비우기</strong>를 체크하면 기존 값을 지우고 채웁니다.</td><td>메타데이터를 미리 정리해 둔 파일이 있을 때</td></tr><tr><td>7</td><td>파일 제거</td><td>이 파일을 업로드 목록에서 뺍니다.</td><td>잘못 고른 파일을 뺄 때</td></tr><tr><td>8</td><td><strong>파이프라인</strong></td><td>처리 방식입니다. 컬렉션 기본값에 &quot;(기본)&quot;이 붙어 미리 골라져 있습니다.</td><td>다른 처리 방식으로 결과를 비교할 때</td></tr><tr><td>9</td><td><strong>공통 메타데이터</strong></td><td>이번에 올리는 모든 파일에 붙는 정보입니다. 파일에서 따로 고친 값이 우선합니다.</td><td>여러 파일에 &quot;분류: 사내규정&quot;을 함께 붙일 때</td></tr><tr><td>10</td><td><strong>문서 업로드 (4)</strong></td><td>고른 파일을 올리고 처리를 시작합니다.</td><td>확인 결과와 설정을 확인했을 때</td></tr></tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>파이프라인</strong></td><td>처리 방식입니다. 컬렉션 기본값에 &quot;(기본)&quot;이 붙어 미리 골라져 있습니다.</td><td>다른 처리 방식으로 결과를 비교할 때</td></tr><tr><td>2</td><td><strong>공통 메타데이터</strong></td><td>이번에 올리는 모든 파일에 붙는 정보입니다. 파일에서 따로 고친 값이 우선합니다.</td><td>여러 파일에 &quot;분류: 사내규정&quot;을 함께 붙일 때</td></tr><tr><td>3</td><td><strong>문서 업로드 (4)</strong></td><td>고른 파일을 올리고 처리를 시작합니다.</td><td>확인 결과와 설정을 확인했을 때</td></tr></tbody></table>
 <p>메타데이터 편집 영역에서 <strong>JSON으로 전환</strong>을 누르면 항목별 입력 대신 JSON 형식으로 직접 적을 수 있고, <strong>JSON 미리보기</strong>로 저장될 모양을 확인할 수 있습니다. 붙인 메타데이터는 검색 화면의 <strong>메타데이터 필터</strong>와 <strong>자유 필터</strong>에서 검색 범위를 좁히는 데 씁니다.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="따라-해-보기-공통-메타데이터-붙이기">따라 해 보기: 공통 메타데이터 붙이기<a href="#따라-해-보기-공통-메타데이터-붙이기" class="hash-link" aria-label="따라 해 보기: 공통 메타데이터 붙이기에 대한 직접 링크" title="따라 해 보기: 공통 메타데이터 붙이기에 대한 직접 링크" translate="no">​</a></h3>
 <ol>

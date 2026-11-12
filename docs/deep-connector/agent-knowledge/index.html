@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">Deep Connector 에이전트에서 지식 쓰기 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/agent-knowledge/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Deep Connector 에이전트에서 지식 쓰기 | Deep Platform"><meta data-rh="true" name="description" content="Deep Connector의 컬렉션은 Deep Agent Builder 에이전트가 근거로 쓰는 지식이 됩니다. 에이전트는 질문을 받으면 연결된 컬렉션을 검색하고 문서를 읽은 뒤, 찾은 문장으로 답하고 근거 문서를 밝힙니다. 이 페이지는 김그루 사원이 &quot;사내 규정 Q\&amp;A 비서&quot; 에이전트에 Deep Connector 컬렉션을 연결하고 질문하는 순서를 설명합니다."><meta data-rh="true" property="og:description" content="Deep Connector의 컬렉션은 Deep Agent Builder 에이전트가 근거로 쓰는 지식이 됩니다. 에이전트는 질문을 받으면 연결된 컬렉션을 검색하고 문서를 읽은 뒤, 찾은 문장으로 답하고 근거 문서를 밝힙니다. 이 페이지는 김그루 사원이 &quot;사내 규정 Q\&amp;A 비서&quot; 에이전트에 Deep Connector 컬렉션을 연결하고 질문하는 순서를 설명합니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/agent-knowledge/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/agent-knowledge/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/agent-knowledge/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"에이전트에서 지식 쓰기","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/agent-knowledge"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
-<script src="/deep-agent-platform/assets/js/runtime~main.cd2262e2.js" defer="defer"></script>
-<script src="/deep-agent-platform/assets/js/main.152a5411.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/runtime~main.983a3a84.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.62a05769.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -66,7 +66,7 @@
 <p>2단계는 <a class="" href="/deep-agent-platform/docs/deep-connector/external-integration/">외부 연동</a>의 토큰 만들기, 3단계는 Deep Agent Builder 매뉴얼의 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/mcp-agent/">MCP와 에이전트의 MCP화</a>에서 자세히 설명합니다. 토큰의 접근 컬렉션을 바꾸면 에이전트가 검색할 수 있는 범위도 함께 바뀝니다. 예를 들어 <a class="" href="/deep-agent-platform/docs/deep-connector/getting-started/">시작하기</a>에서 만든 &quot;규정 Q&amp;A&quot;도 에이전트가 검색하게 하려면 Deep Connector <strong>MCP 토큰</strong>의 <strong>접근 컬렉션 수정</strong>에서 체크하면 됩니다.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="에이전트-설정-확인">에이전트 설정 확인<a href="#에이전트-설정-확인" class="hash-link" aria-label="에이전트 설정 확인에 대한 직접 링크" title="에이전트 설정 확인에 대한 직접 링크" translate="no">​</a></h2>
 <p>Deep Agent Builder에서 에이전트를 열고 <strong>에이전트 설정</strong>을 누르면 연결된 도구를 볼 수 있습니다.</p>
-<p><span class="manual-shot" role="figure" aria-label="에이전트 설정"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/agent-knowledge-agent-settings-3ca2bb7f1d5633d6595d1c1908042e97.png" target="_blank" rel="noopener"><img width="1330" height="680" src="/deep-agent-platform/assets/images/agent-knowledge-agent-settings-3ca2bb7f1d5633d6595d1c1908042e97.png" alt="지침, 도구함의 Deep Connector 도구, 지식함, 저장 버튼에 번호를 붙인 에이전트 설정 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">에이전트 설정</span></span></p>
+<p><span class="manual-shot" role="figure" aria-label="에이전트 설정"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/agent-knowledge-agent-settings-bbb0c32c5d7859e1190def4037d4737a.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/agent-knowledge-agent-settings-bbb0c32c5d7859e1190def4037d4737a.png" alt="지침, 도구함의 연결 도구, + 도구, + 지식에 번호를 붙인 에이전트 설정 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">에이전트 설정</span></span></p>
 
 
 
@@ -102,16 +102,11 @@
 
 
 
-
-
-
-
-
-
-<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>지침</td><td>에이전트가 답하는 방식입니다. 이 예에서는 질문을 받으면 deep_connector_kb 도구로 사내 규정 컬렉션을 검색하고, 근거 문서 이름을 함께 밝히도록 적었습니다.</td><td>출처를 꼭 밝히게 할 때</td></tr><tr><td>2</td><td>도구함의 연결 도구</td><td>Deep Connector 연결 도구(deep_connector_kb)입니다. 톱니바퀴로 설정을, 휴지통으로 연결 해제를 합니다.</td><td>Deep Connector 연결이 되어 있는지 볼 때</td></tr><tr><td>3</td><td><strong>+ 도구</strong></td><td>도구함에 도구를 추가합니다.</td><td>등록해 둔 Deep Connector 연결 도구를 에이전트에 넣을 때</td></tr><tr><td>4</td><td><strong>지식함</strong></td><td>Deep Agent Builder 자체 지식 연결 칸입니다. Deep Connector 컬렉션은 도구함으로 연결하므로 이 칸이 비어 있어도 됩니다.</td><td>–</td></tr><tr><td>5</td><td><strong>저장</strong></td><td>설정 변경을 저장합니다.</td><td>도구를 더하거나 지침을 고친 뒤</td></tr></tbody></table>
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>지침</td><td>에이전트가 답하는 방식입니다. 이 예에서는 질문을 받으면 deep_connector_kb 도구로 사내 규정 컬렉션을 검색하고, 근거 문서 이름을 함께 밝히도록 적었습니다.</td><td>출처를 꼭 밝히게 할 때</td></tr><tr><td>2</td><td>도구함의 연결 도구</td><td>Deep Connector 연결 도구(deep_connector_kb)입니다. 톱니바퀴로 설정을, 휴지통으로 연결 해제를 합니다.</td><td>Deep Connector 연결이 되어 있는지 볼 때</td></tr><tr><td>3</td><td><strong>+ 도구</strong></td><td>도구함에 도구를 추가합니다.</td><td>등록해 둔 Deep Connector 연결 도구를 에이전트에 넣을 때</td></tr><tr><td>4</td><td><strong>+ 지식</strong>(지식함)</td><td>Deep Agent Builder 자체 지식 연결 칸입니다. Deep Connector 컬렉션은 도구함으로 연결하므로 이 칸이 비어 있어도 됩니다.</td><td>–</td></tr></tbody></table>
+<p>도구를 더하거나 지침을 고친 뒤에는 오른쪽 위 <strong>저장</strong>을 눌러야 반영됩니다.</p>
 <p>지침에 &quot;Deep Connector에서 찾은 문서만 근거로 답하고, 근거 문서 이름을 함께 적는다. 찾지 못하면 모른다고 답한다.&quot;처럼 적어 두면 출처가 빠진 답을 줄일 수 있습니다.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="질문하고-근거-확인하기">질문하고 근거 확인하기<a href="#질문하고-근거-확인하기" class="hash-link" aria-label="질문하고 근거 확인하기에 대한 직접 링크" title="질문하고 근거 확인하기에 대한 직접 링크" translate="no">​</a></h2>
-<p><span class="manual-shot" role="figure" aria-label="에이전트 답변과 도구 실행 기록"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/agent-knowledge-answer-df116bc9b15ebdb463f6fa9eb498c9fc.png" target="_blank" rel="noopener"><img width="1330" height="680" src="/deep-agent-platform/assets/images/agent-knowledge-answer-df116bc9b15ebdb463f6fa9eb498c9fc.png" alt="숙박비 질문에 Deep Connector 검색 도구를 여러 번 실행하고 근거 문서를 밝힌 답변" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">에이전트 답변과 도구 실행 기록</span></span></p>
+<p><span class="manual-shot" role="figure" aria-label="에이전트 답변과 도구 실행 기록"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/agent-knowledge-answer-ee126f7536ae991349c6fd15bac6cab3.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/agent-knowledge-answer-ee126f7536ae991349c6fd15bac6cab3.png" alt="에이전트 이름, search_documents 실행 기록, 출력, 답변에 번호를 붙인 대화 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">에이전트 답변과 도구 실행 기록</span></span></p>
 
 
 
@@ -147,13 +142,8 @@
 
 
 
-
-
-
-
-
-
-<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>에이전트 이름</td><td>지금 대화 중인 에이전트입니다.</td><td>맞는 에이전트에게 묻는지 확인할 때</td></tr><tr><td>2</td><td>search_documents 실행 기록</td><td>에이전트가 Deep Connector에서 질문으로 검색한 기록입니다. 위쪽에는 glob_paths(경로 찾기), list_collections(컬렉션 목록)처럼 검색 범위를 정하려고 실행한 도구도 보입니다.</td><td>어떤 컬렉션을 뒤졌는지 볼 때</td></tr><tr><td>3</td><td>출력</td><td>펼치면 도구가 돌려준 결과(찾은 청크와 문서 이름)를 볼 수 있습니다.</td><td>어떤 문장을 근거로 삼았는지 볼 때</td></tr><tr><td>4</td><td>답변과 근거 문서</td><td>답과 근거 문서 이름입니다.</td><td>원문과 대조할 문서를 정할 때</td></tr><tr><td>5</td><td><strong>에이전트 설정</strong></td><td>에이전트의 지침과 도구를 보는 화면을 엽니다.</td><td>연결 도구를 확인하거나 바꿀 때</td></tr></tbody></table>
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>에이전트 이름</td><td>지금 대화 중인 에이전트입니다.</td><td>맞는 에이전트에게 묻는지 확인할 때</td></tr><tr><td>2</td><td>search_documents 실행 기록</td><td>에이전트가 Deep Connector에서 질문으로 검색한 기록입니다. 위쪽에는 glob_paths(경로 찾기), list_collections(컬렉션 목록)처럼 검색 범위를 정하려고 실행한 도구도 보입니다.</td><td>어떤 컬렉션을 뒤졌는지 볼 때</td></tr><tr><td>3</td><td>출력</td><td>펼치면 도구가 돌려준 결과(찾은 청크와 문서 이름)를 볼 수 있습니다.</td><td>어떤 문장을 근거로 삼았는지 볼 때</td></tr><tr><td>4</td><td>답변과 근거 문서</td><td>답과 근거 문서 이름입니다.</td><td>원문과 대조할 문서를 정할 때</td></tr></tbody></table>
+<p>왼쪽 사이드바의 <strong>에이전트 설정</strong>을 누르면 에이전트의 지침과 도구를 보는 화면이 열립니다. 연결 도구를 확인하거나 바꿀 때 씁니다.</p>
 <p>이 예의 질문은 &quot;서울로 출장 가면 숙박비는 1박에 얼마까지 나오나요? 근거 문서 이름도 알려 주세요.&quot;였습니다. 시연 환경에서 이 에이전트는 미리 준비된 &quot;사내 규정&quot; 컬렉션(규정 Q&amp;A와는 다른 컬렉션)에 연결되어 있어, 그 컬렉션의 &quot;브레인크루_출장비_규정&quot; 문서를 근거로 답했습니다. 도구 이름 앞의 deep_connector_kb는 3단계에서 등록한 도구 이름입니다.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="근거를-못-찾을-때">근거를 못 찾을 때<a href="#근거를-못-찾을-때" class="hash-link" aria-label="근거를 못 찾을 때에 대한 직접 링크" title="근거를 못 찾을 때에 대한 직접 링크" translate="no">​</a></h2>
 

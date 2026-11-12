@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">Deep Connector 검색과 RAG 점검 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/search-and-rag/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Deep Connector 검색과 RAG 점검 | Deep Platform"><meta data-rh="true" name="description" content="사이드바 실험 메뉴는 문서가 질문에 맞게 검색되는지, 에이전트가 어떤 근거로 답할지를 미리 확인하는 화면입니다. 이 페이지는 검색, RAG 진단, RAG 평가를 설명합니다. MCP 도구 테스트는 외부 연동에 있습니다."><meta data-rh="true" property="og:description" content="사이드바 실험 메뉴는 문서가 질문에 맞게 검색되는지, 에이전트가 어떤 근거로 답할지를 미리 확인하는 화면입니다. 이 페이지는 검색, RAG 진단, RAG 평가를 설명합니다. MCP 도구 테스트는 외부 연동에 있습니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/search-and-rag/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/search-and-rag/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/search-and-rag/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"검색과 RAG 점검","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/search-and-rag"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
-<script src="/deep-agent-platform/assets/js/runtime~main.cd2262e2.js" defer="defer"></script>
-<script src="/deep-agent-platform/assets/js/main.152a5411.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/runtime~main.983a3a84.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.62a05769.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -22,7 +22,31 @@
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="실험-공간-안내">실험 공간 안내<a href="#실험-공간-안내" class="hash-link" aria-label="실험 공간 안내에 대한 직접 링크" title="실험 공간 안내에 대한 직접 링크" translate="no">​</a></h2>
 <p>실험 메뉴를 처음 열면 안내 화면이 나옵니다. 세 항목을 하나씩 확인해야 들어갈 수 있습니다.</p>
-<p><span class="manual-shot" role="figure" aria-label="실험 공간 안내"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/search-and-rag-terms-77d96028d7235ea8cdd7eb2896aa8f01.png" target="_blank" rel="noopener"><img width="1478" height="756" src="/deep-agent-platform/assets/images/search-and-rag-terms-77d96028d7235ea8cdd7eb2896aa8f01.png" alt="세 가지 확인 항목과 확인하고 시작하기 버튼이 있는 실험 공간 안내" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">실험 공간 안내</span></span></p>
+<p><span class="manual-shot" role="figure" aria-label="실험 공간 안내"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/search-and-rag-terms-8e0da87cfa602264127981df6060c628.png" target="_blank" rel="noopener"><img width="2591" height="1290" src="/deep-agent-platform/assets/images/search-and-rag-terms-8e0da87cfa602264127981df6060c628.png" alt="세 가지 확인 항목과 확인하고 시작하기 버튼에 번호를 붙인 실험 공간 안내" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">실험 공간 안내</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>확인 항목</td><td>세 항목을 차례로 눌러 확인합니다. 내용은 아래 표와 같습니다.</td><td>실험 공간을 처음 열 때</td></tr><tr><td>2</td><td><strong>확인하고 시작하기</strong></td><td>세 항목을 모두 확인하면 누를 수 있습니다.</td><td>내용을 읽고 동의했을 때</td></tr></tbody></table>
 
 
 
@@ -48,21 +72,29 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>확인 항목 1</td><td>이 공간은 문서 검색 서비스가 아니라 검색기 성능을 실험하고 평가하는 도구라는 내용입니다.</td><td>일상 업무 질문은 에이전트에게 한다는 점을 확인할 때</td></tr><tr><td>2</td><td>확인 항목 2</td><td>진단과 평가를 실행하면 데이터셋 항목 수만큼 검색과 LLM 호출이 생긴다는 내용입니다.</td><td>질문이 많은 평가를 돌리기 전에 호출량을 가늠할 때</td></tr><tr><td>3</td><td>확인 항목 3</td><td>내가 만든 평가 데이터셋과 실행 결과는 검색된 문서 원문을 포함해 모든 사용자에게 공개된다는 내용입니다.</td><td>평가 질문에 개인정보를 넣지 않도록 확인할 때</td></tr><tr><td>4</td><td><strong>확인하고 시작하기</strong></td><td>세 항목을 모두 확인하면 누를 수 있습니다.</td><td>내용을 읽고 동의했을 때</td></tr></tbody></table>
+<table><thead><tr><th>확인 항목</th><th>내용</th><th>이런 때 확인하세요</th></tr></thead><tbody><tr><td>확인 항목 1</td><td>이 공간은 문서 검색 서비스가 아니라 검색기 성능을 실험하고 평가하는 도구라는 내용입니다.</td><td>일상 업무 질문은 에이전트에게 한다는 점을 확인할 때</td></tr><tr><td>확인 항목 2</td><td>진단과 평가를 실행하면 데이터셋 항목 수만큼 검색과 LLM 호출이 생긴다는 내용입니다.</td><td>질문이 많은 평가를 돌리기 전에 호출량을 가늠할 때</td></tr><tr><td>확인 항목 3</td><td>내가 만든 평가 데이터셋과 실행 결과는 검색된 문서 원문을 포함해 모든 사용자에게 공개된다는 내용입니다.</td><td>평가 질문에 개인정보를 넣지 않도록 확인할 때</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="검색">검색<a href="#검색" class="hash-link" aria-label="검색에 대한 직접 링크" title="검색에 대한 직접 링크" translate="no">​</a></h2>
 <p><strong>실험</strong> &gt; <strong>검색</strong>은 컬렉션을 골라 질문이나 낱말로 청크를 찾는 화면입니다. 화면 구성은 <a class="" href="/deep-agent-platform/docs/deep-connector/getting-started/">시작하기</a>의 첫 검색에서 번호와 함께 설명했습니다.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="검색-방식-고르기">검색 방식 고르기<a href="#검색-방식-고르기" class="hash-link" aria-label="검색 방식 고르기에 대한 직접 링크" title="검색 방식 고르기에 대한 직접 링크" translate="no">​</a></h3>
-<p><span class="manual-shot" role="figure" aria-label="검색 방식"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/search-and-rag-modes-aa1f1578e566bc57f54b6db06bf7b77f.png" target="_blank" rel="noopener"><img width="1478" height="756" src="/deep-agent-platform/assets/images/search-and-rag-modes-aa1f1578e566bc57f54b6db06bf7b77f.png" alt="검색 방식 목록을 펼친 검색 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">검색 방식</span></span></p>
+<p><span class="manual-shot" role="figure" aria-label="검색 방식"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/search-and-rag-modes-a602485107fc088714ed1bb24527eebf.png" target="_blank" rel="noopener"><img width="2591" height="1034" src="/deep-agent-platform/assets/images/search-and-rag-modes-a602485107fc088714ed1bb24527eebf.png" alt="검색 방식 목록을 펼친 검색 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">검색 방식</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>검색 방식 목록</td><td><strong>검색 방식</strong>을 누르면 열리는 네 가지 방식입니다. 아래 표에서 고릅니다.</td><td>질문 성격에 맞는 방식을 고를 때</td></tr></tbody></table>
 
 
 
@@ -93,13 +125,8 @@
 
 
 
-
-
-
-
-
-<table><thead><tr><th>번호</th><th>검색 방식</th><th>이렇게 찾습니다</th><th>이런 때 고르세요</th></tr></thead><tbody><tr><td>1</td><td><strong>시맨틱 검색</strong></td><td>뜻이 비슷한 문장을 찾습니다. 실제 적용된 설정에는 &quot;벡터 검색&quot;으로 표시됩니다.</td><td>&quot;서울 출장 가면 숙박비 얼마 나와요?&quot;처럼 문장으로 물을 때</td></tr><tr><td>2</td><td><strong>키워드 검색</strong></td><td>검색어 낱말이 들어간 청크를 찾습니다. 한국어 분석기로 낱말을 나눕니다. 실제 적용된 설정에는 &quot;BM25 키워드&quot;로 표시됩니다.</td><td>&quot;숙박비 상한&quot;처럼 문서에 쓰인 용어로 찾을 때</td></tr><tr><td>3</td><td><strong>하이브리드 검색</strong></td><td>두 방식을 함께 써서 순위를 합칩니다.</td><td>어느 쪽이 나을지 모를 때</td></tr><tr><td>4</td><td><strong>문자열 검색</strong></td><td>입력한 문구를 문서 본문에서 대소문자 구분 없이 그대로 찾습니다.</td><td>&quot;E103&quot;처럼 정확한 코드나 숫자가 들어 있는지 볼 때</td></tr></tbody></table>
-<p><span class="manual-shot" role="figure" aria-label="키워드 검색 결과"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/search-and-rag-keyword-9fb0b32b7042c60cbbdad15a7cfa83a2.png" target="_blank" rel="noopener"><img width="1478" height="756" src="/deep-agent-platform/assets/images/search-and-rag-keyword-9fb0b32b7042c60cbbdad15a7cfa83a2.png" alt="키워드 검색으로 숙박비 상한을 찾은 결과" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">키워드 검색 결과</span></span></p>
+<table><thead><tr><th>검색 방식</th><th>이렇게 찾습니다</th><th>이런 때 고르세요</th></tr></thead><tbody><tr><td><strong>시맨틱 검색</strong></td><td>뜻이 비슷한 문장을 찾습니다. 실제 적용된 설정에는 &quot;벡터 검색&quot;으로 표시됩니다.</td><td>&quot;서울 출장 가면 숙박비 얼마 나와요?&quot;처럼 문장으로 물을 때</td></tr><tr><td><strong>키워드 검색</strong></td><td>검색어 낱말이 들어간 청크를 찾습니다. 한국어 분석기로 낱말을 나눕니다. 실제 적용된 설정에는 &quot;BM25 키워드&quot;로 표시됩니다.</td><td>&quot;숙박비 상한&quot;처럼 문서에 쓰인 용어로 찾을 때</td></tr><tr><td><strong>하이브리드 검색</strong></td><td>두 방식을 함께 써서 순위를 합칩니다.</td><td>어느 쪽이 나을지 모를 때</td></tr><tr><td><strong>문자열 검색</strong></td><td>입력한 문구를 문서 본문에서 대소문자 구분 없이 그대로 찾습니다.</td><td>&quot;E103&quot;처럼 정확한 코드나 숫자가 들어 있는지 볼 때</td></tr></tbody></table>
+<p><span class="manual-shot" role="figure" aria-label="키워드 검색 결과"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/search-and-rag-keyword-020d8d842ca532d2016f75e875d6aeb8.png" target="_blank" rel="noopener"><img width="2591" height="1192" src="/deep-agent-platform/assets/images/search-and-rag-keyword-020d8d842ca532d2016f75e875d6aeb8.png" alt="키워드 검색으로 숙박비 상한을 찾은 결과" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">키워드 검색 결과</span></span></p>
 
 
 
@@ -139,7 +166,7 @@
 <p>같은 질문도 방식에 따라 순위가 달라집니다. 점수가 높다고 정답은 아니므로 결과 카드를 펼쳐 본문까지 읽으세요. 키워드 검색에서 &quot;법카&quot;처럼 줄임말로 찾아야 한다면 컬렉션에 용어 사전을 연결하고 <strong>사전 확장</strong>을 켭니다. 사전 확장은 시맨틱 검색에는 적용되지 않습니다.</p>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="고급-옵션">고급 옵션<a href="#고급-옵션" class="hash-link" aria-label="고급 옵션에 대한 직접 링크" title="고급 옵션에 대한 직접 링크" translate="no">​</a></h3>
 <p>검색 화면 왼쪽 아래 <strong>고급 옵션</strong>을 누르면 이번 검색에만 쓸 세부 설정이 열립니다. 컬렉션 설정은 바뀌지 않습니다.</p>
-<p><span class="manual-shot" role="figure" aria-label="고급 옵션"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/search-and-rag-advanced-2aa570511057f8e9cac28f6b11cecaff.png" target="_blank" rel="noopener"><img width="1478" height="756" src="/deep-agent-platform/assets/images/search-and-rag-advanced-2aa570511057f8e9cac28f6b11cecaff.png" alt="분석기, 하이브리드 전략, 리랭커 설정이 보이는 고급 옵션 창" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">고급 옵션</span></span></p>
+<p><span class="manual-shot" role="figure" aria-label="고급 옵션"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/search-and-rag-advanced-0b9830b1186477c894f76e6323f8da30.png" target="_blank" rel="noopener"><img width="1732" height="895" src="/deep-agent-platform/assets/images/search-and-rag-advanced-0b9830b1186477c894f76e6323f8da30.png" alt="분석기, 하이브리드 전략, 리랭커 설정이 보이는 고급 옵션 창" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">고급 옵션</span></span></p>
 
 
 
@@ -185,7 +212,7 @@
 <p>두 필터의 조건은 함께 적용됩니다. 비교 검색을 하기 전에 남은 조건이 없는지 확인하세요.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="rag-진단">RAG 진단<a href="#rag-진단" class="hash-link" aria-label="RAG 진단에 대한 직접 링크" title="RAG 진단에 대한 직접 링크" translate="no">​</a></h2>
 <p><strong>실험</strong> &gt; <strong>RAG 진단</strong>은 질문 하나로 질문 재작성, 검색, 답변에 쓸 청크 고르기, 답변 생성까지 단계별로 보여 주는 화면입니다. 에이전트가 이 컬렉션으로 어떻게 답할지 미리 볼 수 있습니다. 답변 생성은 컬렉션 설정에 LLM 커넥션이 연결되어 있어야 동작합니다(<a class="" href="/deep-agent-platform/docs/deep-connector/collections/">컬렉션과 폴더</a> 참고).</p>
-<p><span class="manual-shot" role="figure" aria-label="RAG 진단 화면"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/search-and-rag-lab-8ef24385fa03426c429b9ab81ddca16e.png" target="_blank" rel="noopener"><img width="1478" height="756" src="/deep-agent-platform/assets/images/search-and-rag-lab-8ef24385fa03426c429b9ab81ddca16e.png" alt="규정 Q&amp;amp;A 컬렉션에 연차 질문을 넣어 출처가 붙은 답변을 받은 RAG 진단 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">RAG 진단 화면</span></span></p>
+<p><span class="manual-shot" role="figure" aria-label="RAG 진단 화면"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/search-and-rag-lab-f2617b0a6ebc75b9f853e28f0fbabd7f.png" target="_blank" rel="noopener"><img width="2591" height="872" src="/deep-agent-platform/assets/images/search-and-rag-lab-f2617b0a6ebc75b9f853e28f0fbabd7f.png" alt="컬렉션, 질의, max_context_chunks, 질의 재작성·답변 생성에 번호를 붙인 RAG 진단 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">RAG 진단 화면</span></span></p>
 
 
 
@@ -221,6 +248,8 @@
 
 
 
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>컬렉션</strong></td><td>진단할 컬렉션을 고릅니다. 고르면 그 컬렉션의 검색 설정이 아래 검색 파라미터에 채워집니다.</td><td>점검할 컬렉션을 정할 때</td></tr><tr><td>2</td><td><strong>질의</strong></td><td>질문을 적습니다.</td><td>직원이 자주 묻는 질문을 넣어 볼 때</td></tr><tr><td>3</td><td><strong>max_context_chunks</strong></td><td>답변에 넘길 청크 수입니다.</td><td>근거를 더 넓게 줄 때</td></tr><tr><td>4</td><td><strong>질의 재작성</strong>·<strong>답변 생성</strong></td><td>왼쪽은 검색 전에 질문을 검색하기 좋은 문장으로 바꾸고, 오른쪽은 검색 결과로 답변을 만듭니다.</td><td>재작성 효과를 비교하거나 답변 문장까지 볼 때</td></tr></tbody></table>
+<p><span class="manual-shot" role="figure" aria-label="실행과 검색 파라미터"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/search-and-rag-lab-2-f8aae62dce6dd44b34751644e103649f.png" target="_blank" rel="noopener"><img width="2591" height="872" src="/deep-agent-platform/assets/images/search-and-rag-lab-2-f8aae62dce6dd44b34751644e103649f.png" alt="실행 버튼과 검색 파라미터 펼치기에 번호를 붙인 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">실행과 검색 파라미터</span></span></p>
 
 
 
@@ -244,6 +273,8 @@
 
 
 
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>실행</strong></td><td>진단을 실행합니다. 실행 중에는 <strong>중지</strong>로 바뀝니다.</td><td>조건을 다 정했을 때</td></tr><tr><td>2</td><td><strong>검색 파라미터</strong></td><td>아래 검색 설정을 펼치거나 접습니다.</td><td>검색 설정을 바꿔 볼 때</td></tr></tbody></table>
+<p><span class="manual-shot" role="figure" aria-label="검색 파라미터"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/search-and-rag-lab-3-56225eb645c038393eb93580a0ac2528.png" target="_blank" rel="noopener"><img width="2591" height="770" src="/deep-agent-platform/assets/images/search-and-rag-lab-3-56225eb645c038393eb93580a0ac2528.png" alt="검색 방식, 결과 수·점수 컷, 리랭킹에 번호를 붙인 검색 파라미터" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">검색 파라미터</span></span></p>
 
 
 
@@ -273,13 +304,73 @@
 
 
 
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>검색 방식</strong></td><td>semantic(의미), keyword, hybrid 중에서 고릅니다.</td><td>방식별 답변을 비교할 때</td></tr><tr><td>2</td><td><strong>결과 수</strong>·<strong>점수 컷</strong></td><td>가져올 결과 수와, 이 점수보다 낮은 결과를 뺄 기준입니다.</td><td>관련 없는 결과를 걸러 낼 때</td></tr><tr><td>3</td><td><strong>리랭킹</strong></td><td>결과 순서를 다시 매길지 정합니다.</td><td>순위가 어색할 때</td></tr></tbody></table>
+<p><span class="manual-shot" role="figure" aria-label="진단 결과"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/search-and-rag-lab-4-5ce5c3a0295d7d4d76f27103cac0c25e.png" target="_blank" rel="noopener"><img width="2591" height="928" src="/deep-agent-platform/assets/images/search-and-rag-lab-4-5ce5c3a0295d7d4d76f27103cac0c25e.png" alt="답변, 재작성·소요시간·토큰, 근거 문서에 번호를 붙인 진단 결과" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">진단 결과</span></span></p>
 
 
-<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>컬렉션</strong></td><td>진단할 컬렉션을 고릅니다. 고르면 그 컬렉션의 검색 설정이 아래 검색 파라미터에 채워집니다.</td><td>점검할 컬렉션을 정할 때</td></tr><tr><td>2</td><td><strong>질의</strong></td><td>질문을 적습니다.</td><td>직원이 자주 묻는 질문을 넣어 볼 때</td></tr><tr><td>3</td><td><strong>max_context_chunks</strong></td><td>답변에 넘길 청크 수입니다.</td><td>근거를 더 넓게 줄 때</td></tr><tr><td>4</td><td><strong>질의 재작성</strong></td><td>검색 전에 질문을 검색하기 좋은 문장으로 바꿉니다.</td><td>재작성 효과를 비교할 때</td></tr><tr><td>5</td><td><strong>답변 생성</strong></td><td>검색 결과로 답변을 만듭니다.</td><td>답변 문장까지 볼 때</td></tr><tr><td>6</td><td><strong>실행</strong></td><td>진단을 실행합니다. 실행 중에는 <strong>중지</strong>로 바뀝니다.</td><td>조건을 다 정했을 때</td></tr><tr><td>7</td><td><strong>검색 파라미터</strong></td><td>아래 검색 설정을 펼치거나 접습니다.</td><td>검색 설정을 바꿔 볼 때</td></tr><tr><td>8</td><td><strong>검색 방식</strong></td><td>semantic(의미), keyword, hybrid 중에서 고릅니다.</td><td>방식별 답변을 비교할 때</td></tr><tr><td>9</td><td><strong>결과 수</strong>·<strong>점수 컷</strong></td><td>가져올 결과 수와, 이 점수보다 낮은 결과를 뺄 기준입니다.</td><td>관련 없는 결과를 걸러 낼 때</td></tr><tr><td>10</td><td><strong>리랭킹</strong></td><td>결과 순서를 다시 매길지 정합니다.</td><td>순위가 어색할 때</td></tr><tr><td>11</td><td><strong>답변</strong></td><td>만들어진 답변입니다. 문장 끝 [1] 같은 번호가 근거 청크입니다.</td><td>답이 문서와 맞는지 볼 때</td></tr><tr><td>12</td><td>재작성·소요시간·토큰</td><td>재작성된 질문, 단계별 걸린 시간, 입력·출력 토큰 수입니다.</td><td>느린 단계를 찾을 때</td></tr><tr><td>13</td><td>근거 문서</td><td>답변에 쓰인 청크의 문서 이름입니다. 아래로 <strong>최종 프롬프트</strong>, <strong>선택된 컨텍스트 청크</strong>, <strong>검색 결과</strong>가 이어집니다.</td><td>어떤 문서가 답에 쓰였는지 볼 때</td></tr></tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>답변</strong></td><td>만들어진 답변입니다. 문장 끝 [1] 같은 번호가 근거 청크입니다.</td><td>답이 문서와 맞는지 볼 때</td></tr><tr><td>2</td><td>재작성·소요시간·토큰</td><td>재작성된 질문, 단계별 걸린 시간, 입력·출력 토큰 수입니다.</td><td>느린 단계를 찾을 때</td></tr><tr><td>3</td><td>근거 문서</td><td>답변에 쓰인 청크의 문서 이름입니다. 아래로 <strong>최종 프롬프트</strong>, <strong>선택된 컨텍스트 청크</strong>, <strong>검색 결과</strong>가 이어집니다.</td><td>어떤 문서가 답에 쓰였는지 볼 때</td></tr></tbody></table>
 <p>이 예에서는 &quot;연차는 며칠 전까지 신청해야 하나요?&quot;에 &quot;사용일 3영업일 전까지 그룹웨어 근태 메뉴에서 신청&quot;이라고 답하고 근거로 &quot;연차-사용-안내.md&quot;를 들었습니다. 커넥션이 연결되지 않은 컬렉션에서는 검색 결과까지만 나오고, 답변과 최종 프롬프트에는 &quot;아직 없습니다(답변 생성이 꺼져 있거나 LLM이 구성되지 않았을 수 있습니다).&quot;가 표시됩니다.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="rag-평가">RAG 평가<a href="#rag-평가" class="hash-link" aria-label="RAG 평가에 대한 직접 링크" title="RAG 평가에 대한 직접 링크" translate="no">​</a></h2>
 <p><strong>실험</strong> &gt; <strong>RAG 평가</strong>는 질문과 기대 답을 모은 데이터셋(CSV)을 컬렉션에 한꺼번에 돌려 결과를 Excel·CSV로 받는 화면입니다. 규정이 바뀔 때마다 같은 질문 묶음으로 점검하면 품질이 떨어졌는지 바로 알 수 있습니다.</p>
-<p><span class="manual-shot" role="figure" aria-label="RAG 평가 화면"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/search-and-rag-eval-a902648c3970800a381a3afee1dac78d.png" target="_blank" rel="noopener"><img width="1478" height="756" src="/deep-agent-platform/assets/images/search-and-rag-eval-a902648c3970800a381a3afee1dac78d.png" alt="데이터셋 목록, 실행 대상 컬렉션, 검색 파라미터, 실행 이력에 번호를 붙인 RAG 평가 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">RAG 평가 화면</span></span></p>
+<p><span class="manual-shot" role="figure" aria-label="RAG 평가 화면"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/search-and-rag-eval-ef386355ed5ae4564c2594874f6294fc.png" target="_blank" rel="noopener"><img width="2591" height="1037" src="/deep-agent-platform/assets/images/search-and-rag-eval-ef386355ed5ae4564c2594874f6294fc.png" alt="새로 만들기, 데이터셋 목록, 템플릿 받기에 번호를 붙인 RAG 평가 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">RAG 평가 화면</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>새로 만들기</strong></td><td>새 평가 데이터셋을 만듭니다. 이름과 설명을 적습니다.</td><td>자주 묻는 질문 묶음을 만들 때</td></tr><tr><td>2</td><td>데이터셋 목록</td><td>만든 데이터셋이 쌓입니다. 다른 사람의 데이터셋은 <strong>내 데이터셋으로 복사</strong>로 가져옵니다.</td><td>지난 데이터셋을 고를 때</td></tr><tr><td>3</td><td>데이터셋 내용</td><td>데이터셋을 고르면 항목과 CSV 업로드가 나옵니다. <strong>템플릿 받기</strong>로 CSV 양식을 받습니다.</td><td>질문 목록을 올릴 때</td></tr></tbody></table>
+<p><span class="manual-shot" role="figure" aria-label="평가 실행 설정"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/search-and-rag-eval-2-8797828279abe862b49129084dbab263.png" target="_blank" rel="noopener"><img width="2591" height="1001" src="/deep-agent-platform/assets/images/search-and-rag-eval-2-8797828279abe862b49129084dbab263.png" alt="실행 대상 컬렉션, 검색 파라미터, 실행 버튼에 번호를 붙인 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">평가 실행 설정</span></span></p>
 
 
 
@@ -315,6 +406,8 @@
 
 
 
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>실행 대상 컬렉션</strong></td><td>평가를 돌릴 컬렉션입니다.</td><td>개정 전·후 컬렉션을 같은 질문으로 비교할 때</td></tr><tr><td>2</td><td><strong>검색 파라미터</strong></td><td>누르면 아래 설정을 펼치거나 접습니다. 옆에 지금 고른 검색 방식이 요약으로 보입니다.</td><td>평가 조건을 확인할 때</td></tr><tr><td>3</td><td>검색 방식·결과 수·점수 컷·리랭킹</td><td>검색 방식, 결과 수, 점수 컷, 리랭킹을 정합니다.</td><td>조건별로 결과를 비교할 때</td></tr><tr><td>4</td><td><strong>실행</strong></td><td>평가를 실행합니다. 데이터셋을 고르기 전에는 누를 수 없습니다.</td><td>데이터셋과 컬렉션을 정했을 때</td></tr></tbody></table>
+<p><span class="manual-shot" role="figure" aria-label="실행 이력"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/search-and-rag-eval-3-83fc7bc1564026613c0bdba2d2c8c5d1.png" target="_blank" rel="noopener"><img width="2591" height="815" src="/deep-agent-platform/assets/images/search-and-rag-eval-3-83fc7bc1564026613c0bdba2d2c8c5d1.png" alt="성공 5건이 기록된 실행 이력 표" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">실행 이력</span></span></p>
 
 
 
@@ -332,14 +425,7 @@
 
 
 
-
-
-
-
-
-
-
-<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>새로 만들기</strong></td><td>새 평가 데이터셋을 만듭니다. 이름과 설명을 적습니다.</td><td>자주 묻는 질문 묶음을 만들 때</td></tr><tr><td>2</td><td>데이터셋 목록</td><td>만든 데이터셋이 쌓입니다. 다른 사람의 데이터셋은 <strong>내 데이터셋으로 복사</strong>로 가져옵니다.</td><td>지난 데이터셋을 고를 때</td></tr><tr><td>3</td><td>데이터셋 내용</td><td>데이터셋을 고르면 항목과 CSV 업로드가 나옵니다. <strong>템플릿 받기</strong>로 CSV 양식을 받습니다.</td><td>질문 목록을 올릴 때</td></tr><tr><td>4</td><td><strong>실행 대상 컬렉션</strong></td><td>평가를 돌릴 컬렉션입니다.</td><td>개정 전·후 컬렉션을 같은 질문으로 비교할 때</td></tr><tr><td>5</td><td>검색 파라미터 요약</td><td>지금 고른 검색 방식과 결과 수입니다.</td><td>평가 조건을 확인할 때</td></tr><tr><td>6</td><td>검색 파라미터</td><td>검색 방식, 결과 수, 점수 컷, 리랭킹을 정합니다.</td><td>조건별로 결과를 비교할 때</td></tr><tr><td>7</td><td><strong>실행</strong></td><td>평가를 실행합니다. 데이터셋을 고르기 전에는 누를 수 없습니다.</td><td>데이터셋과 컬렉션을 정했을 때</td></tr><tr><td>8</td><td><strong>실행 이력</strong></td><td>지난 실행이 쌓입니다. 상태, 성공·실패 건수, 점수를 보고 결과를 xlsx·csv로 내려받습니다.</td><td>지난달 결과와 비교할 때</td></tr></tbody></table>
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>실행 이력</strong></td><td>지난 실행이 쌓입니다. 상태, 성공·실패 건수, 점수를 보고 결과를 xlsx·csv로 내려받습니다.</td><td>지난달 결과와 비교할 때</td></tr></tbody></table>
 <p>데이터셋 CSV는 question 열이 필수이고, expected_answer(기대 답), expected_source(기대 근거 문서) 같은 열을 함께 적을 수 있습니다. 예시는 다음과 같습니다.</p>
 
 
