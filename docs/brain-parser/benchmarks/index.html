@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">Brain Parser 성능 지표 (벤치마크 기준) | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/brain-parser/benchmarks/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Brain Parser 성능 지표 (벤치마크 기준) | Deep Platform"><meta data-rh="true" name="description" content="공개 문서 파싱 벤치마크 DP-Bench로 측정한 Brain Parser의 성능입니다. 수치는 측정한 문서와 조건에서의 결과이며, 다른 문서나 다른 운영 환경에서도 같은 결과가 나온다는 뜻은 아닙니다."><meta data-rh="true" property="og:description" content="공개 문서 파싱 벤치마크 DP-Bench로 측정한 Brain Parser의 성능입니다. 수치는 측정한 문서와 조건에서의 결과이며, 다른 문서나 다른 운영 환경에서도 같은 결과가 나온다는 뜻은 아닙니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/brain-parser/benchmarks/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/brain-parser/benchmarks/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/brain-parser/benchmarks/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"성능 지표","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/brain-parser/benchmarks"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.c896a0c1.css">
-<script src="/deep-agent-platform/assets/js/runtime~main.28a296b4.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/runtime~main.93d0ba1f.js" defer="defer"></script>
 <script src="/deep-agent-platform/assets/js/main.de737954.js" defer="defer"></script>
 </head>
 <body>
@@ -21,6 +21,7 @@
 </ul>
 <p><strong>결과 요약</strong></p>
 <ul>
+<li class="">대표 수치는 DP-Bench TEDS_S 0.9557입니다. 표 구조를 얼마나 정확히 지켰는지 보는 지표로, 표에서 가장 높은 값이며 Brain v1 측정값입니다.</li>
 <li class="">글자를 얼마나 정확히 옮기는지 보는 NID는 Brain v2가 더 높았습니다.</li>
 <li class="">표 점수(TEDS, TEDS_S)는 Brain v1이 더 높았습니다.</li>
 <li class="">한 쪽을 처리하는 평균 시간은 Brain v2가 0.2초 더 짧았습니다.</li>
@@ -52,7 +53,7 @@
 
 
 
-<table><thead><tr><th>Parser</th><th>NID ↑</th><th>TEDS ↑</th><th>TEDS_S ↑</th><th>Time per page</th></tr></thead><tbody><tr><td><strong>Brain v2</strong></td><td><strong>0.8988 (best)</strong></td><td><strong>0.8929</strong></td><td><strong>0.9225</strong></td><td><strong>2.0s</strong></td></tr><tr><td>Brain v1</td><td>0.8873</td><td>0.9222</td><td>0.9557</td><td>2.2s</td></tr></tbody></table>
+<table><thead><tr><th>Parser</th><th>NID ↑</th><th>TEDS ↑</th><th>TEDS_S ↑</th><th>Time per page</th></tr></thead><tbody><tr><td><strong>Brain v2</strong></td><td><strong>0.8988</strong></td><td><strong>0.8929</strong></td><td><strong>0.9225</strong></td><td><strong>2.0s</strong></td></tr><tr><td>Brain v1</td><td>0.8873</td><td>0.9222</td><td><strong>0.9557 (best)</strong></td><td>2.2s</td></tr></tbody></table>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="지표-정의">지표 정의<a href="#지표-정의" class="hash-link" aria-label="지표 정의에 대한 직접 링크" title="지표 정의에 대한 직접 링크" translate="no">​</a></h2>
 
 
