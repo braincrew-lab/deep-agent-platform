@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="ko" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-deep-connector/practice-rag-eval" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.2">
+<title data-rh="true">Deep Connector 실습 4: RAG 평가로 한꺼번에 점검하기 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/practice-rag-eval/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Deep Connector 실습 4: RAG 평가로 한꺼번에 점검하기 | Deep Platform"><meta data-rh="true" name="description" content="검색 화면에서 질문을 하나씩 넣어 보는 것만으로는 컬렉션이 자주 묻는 질문에 모두 잘 답하는지 알기 어렵습니다. 이 실습은 &quot;AI혁신팀 업무 자료&quot; 컬렉션에서 자주 찾는 사실 6개를 CSV 파일 하나로 묶어 평가 데이터셋을 만들고, 한 번에 실행해 채점한 뒤 결과 파일을 내려받습니다. RAG 평가 화면의 모든 버튼과 CSV 열 설명은 실험: RAG 평가에 있습니다."><meta data-rh="true" property="og:description" content="검색 화면에서 질문을 하나씩 넣어 보는 것만으로는 컬렉션이 자주 묻는 질문에 모두 잘 답하는지 알기 어렵습니다. 이 실습은 &quot;AI혁신팀 업무 자료&quot; 컬렉션에서 자주 찾는 사실 6개를 CSV 파일 하나로 묶어 평가 데이터셋을 만들고, 한 번에 실행해 채점한 뒤 결과 파일을 내려받습니다. RAG 평가 화면의 모든 버튼과 CSV 열 설명은 실험: RAG 평가에 있습니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/practice-rag-eval/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/practice-rag-eval/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/practice-rag-eval/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"실습 4: RAG 평가","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/practice-rag-eval"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
+<script src="/deep-agent-platform/assets/js/runtime~main.8ad1df54.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.7160b4cf.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/deep-agent-platform/img/manual-mark.svg"><div role="region" aria-label="본문으로 건너뛰기"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">본문으로 건너뛰기</a></div><nav aria-label="메인" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="사이드바 펼치거나 접기" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/deep-agent-platform/"><div class="navbar__logo"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Deep Platform</b></a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">솔루션</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-flow/">Deep Flow</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-agent-builder/">Deep Agent Builder</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/deep-agent-platform/docs/deep-connector/">Deep Connector</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-docurator/">Deep Docurator</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/brain-parser/">Brain Parser</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work/">Deep Work</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work-gateway/">Deep Work Gateway</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-admin/">Deep Admin</a></li></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="어두운 모드와 밝은 모드 전환하기 (현재 system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="searchBar_fdyA"><input type="search" class="searchInput_JE4R" placeholder="매뉴얼 검색" aria-label="매뉴얼 검색" role="combobox" aria-autocomplete="list" aria-expanded="false" value=""><div role="status" aria-live="polite"></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="맨 위로 스크롤하기" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="문서 사이드바" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/"><span class="categoryLinkLabel_W154">소개</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/getting-started/"><span class="categoryLinkLabel_W154">시작하기</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/workspaces/"><span class="categoryLinkLabel_W154">메뉴: 워크스페이스</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/collections/"><span class="categoryLinkLabel_W154">메뉴: 컬렉션</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/search-and-rag/"><span class="categoryLinkLabel_W154">메뉴: 실험</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/permissions/"><span class="categoryLinkLabel_W154">메뉴: 권한</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/agent-knowledge/"><span class="categoryLinkLabel_W154">에이전트 연결</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/admin/"><span class="categoryLinkLabel_W154">관리자 메뉴</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/workflows/"><span class="categoryLinkLabel_W154">반복 업무</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/deep-agent-platform/docs/deep-connector/practice/"><span class="categoryLinkLabel_W154">실습</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/practice/"><span class="linkLabel_WmDU">실습 묶음 안내</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/practice-collection-upload/"><span class="linkLabel_WmDU">실습 1: 컬렉션 만들고 여러 형식 문서 올리기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/practice-chunks/"><span class="linkLabel_WmDU">실습 2: 청크 확인</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/practice-search-rag/"><span class="linkLabel_WmDU">실습 3: 검색과 AI 답변</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/deep-agent-platform/docs/deep-connector/practice-rag-eval/"><span class="linkLabel_WmDU">실습 4: RAG 평가</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/practice-mcp-token/"><span class="linkLabel_WmDU">실습 5: MCP 토큰과 도구 테스트</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/practice-builder-agent/"><span class="linkLabel_WmDU">실습 6: Builder 에이전트 연결</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/use-cases/"><span class="categoryLinkLabel_W154">활용사례</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/troubleshooting/"><span class="categoryLinkLabel_W154">문제 해결</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="탐색 경로"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="홈" class="breadcrumbs__link" href="/deep-agent-platform/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">실습</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">실습 4: RAG 평가</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">이 페이지에서</button></div><div class="theme-doc-markdown markdown"><header><h1>Deep Connector 실습 4: RAG 평가로 한꺼번에 점검하기</h1></header>
+<p>검색 화면에서 질문을 하나씩 넣어 보는 것만으로는 컬렉션이 자주 묻는 질문에 모두 잘 답하는지 알기 어렵습니다. 이 실습은 &quot;AI혁신팀 업무 자료&quot; 컬렉션에서 자주 찾는 사실 6개를 CSV 파일 하나로 묶어 평가 데이터셋을 만들고, 한 번에 실행해 채점한 뒤 결과 파일을 내려받습니다. RAG 평가 화면의 모든 버튼과 CSV 열 설명은 <a class="" href="/deep-agent-platform/docs/deep-connector/rag-eval/">실험: RAG 평가</a>에 있습니다.</p>
+<p><strong>이 페이지에서 할 수 있는 일</strong></p>
+<ul>
+<li class="">평가 데이터셋을 만들고 질문 CSV를 올립니다.</li>
+<li class="">데이터셋을 컬렉션에 실행하고 채점합니다.</li>
+<li class="">점수를 읽고 결과를 xlsx나 csv로 받습니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="목표">목표<a href="#목표" class="hash-link" aria-label="목표에 대한 직접 링크" title="목표에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>항목</th><th>내용</th></tr></thead><tbody><tr><td>만들 것</td><td>데이터셋 &quot;AI혁신팀 업무 자료 점검&quot;(6문항)</td></tr><tr><td>결과물</td><td>실행 1건(성공 6, 실패 0), 점수 &quot;정답 100% · hit@5 100%&quot;, 결과 파일</td></tr><tr><td>걸리는 시간</td><td>준비 10분, 실행과 채점 1분</td></tr><tr><td>난이도</td><td>★★★☆☆</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="준비물">준비물<a href="#준비물" class="hash-link" aria-label="준비물에 대한 직접 링크" title="준비물에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>파일</th><th>내용</th><th>형식</th></tr></thead><tbody><tr><td>AI혁신팀_업무자료_점검질문</td><td>question(질문), expected_answer(기대 답), expected_source(기대 근거 문서) 세 열과 질문 6행</td><td>.csv</td></tr></tbody></table>
+<p>데이터셋으로 올릴 수 있는 형식은 .csv 하나입니다. 엑셀에서 작성했다면 &quot;CSV UTF-8(쉼표로 분리)&quot;로 저장합니다. 첫 줄의 열 이름은 영문으로 적습니다. 한 데이터셋은 2,000행, 파일 5 MiB까지입니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>question</th><th>expected_answer</th><th>expected_source</th></tr></thead><tbody><tr><td>11월 10일 회의에서 정한 결정 사항은 무엇인가요?</td><td>판매 리포트 에이전트에 지역별 목표 대비 실적 표 추가·설문 분석 에이전트를 마케팅팀과 함께 만들어 커뮤니티 공유·복리후생 규정 최신본을 사내 규정 컬렉션에 올림</td><td>회의록_AI업무혁신_20261110.html</td></tr><tr><td>다음 주간 회의는 언제인가요?</td><td>2026년 11월 17일(화) 14시</td><td>회의록_AI업무혁신_20261110.html</td></tr><tr><td>3분기에 목표 대비 부진했던 지역은 어디인가요?</td><td>대전</td><td>3분기_영업실적_보고서_초안.docx</td></tr><tr><td>크루 커넥트 서비스 월 이용료는 얼마인가요?</td><td>사용자 100명 기준 월 990만 원(부가세 별도)</td><td>서비스이용계약서_샘플.pdf</td></tr><tr><td>서비스 가용률이 기준에 못 미치면 어떻게 되나요?</td><td>월 가용률 99.5% 미달 시 해당 월 이용료의 10% 감액</td><td>서비스이용계약서_샘플.pdf</td></tr><tr><td>기업용 AI 비서 시장의 연평균 성장률은 얼마로 보나요?</td><td>35%</td><td>시장조사_메모.md</td></tr></tbody></table>
+<p>expected_source에는 문서 목록에 보이는 파일 이름을 확장자까지 그대로 적습니다. 질문을 만들기 어려우면 <a class="" href="/deep-agent-platform/docs/deep-connector/practice-chunks/">실습 2</a>에서 본 청크의 예상 질문(hypothetical_questions)을 참고합니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1단계-데이터셋-만들기">1단계. 데이터셋 만들기<a href="#1단계-데이터셋-만들기" class="hash-link" aria-label="1단계. 데이터셋 만들기에 대한 직접 링크" title="1단계. 데이터셋 만들기에 대한 직접 링크" translate="no">​</a></h2>
+<p>사이드바 <strong>실험</strong> &gt; <strong>RAG 평가</strong>를 열고 왼쪽 <strong>새로 만들기</strong>를 누릅니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="새 데이터셋 창"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-eval-new-f86797a48cfd3542972bde8eb50f1885.png" target="_blank" rel="noopener"><img width="1728" height="830" src="/deep-agent-platform/assets/images/practice-eval-new-f86797a48cfd3542972bde8eb50f1885.png" alt="이름, 설명, 만들기 버튼에 번호를 붙인 새 데이터셋 창" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">새 데이터셋 창</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>입력하거나 고를 값</th></tr></thead><tbody><tr><td>1</td><td><strong>이름</strong></td><td>AI혁신팀 업무 자료 점검</td></tr><tr><td>2</td><td><strong>설명 (선택)</strong></td><td>회의록·보고서·계약서·시장 메모에서 자주 찾는 사실 6문항 (가상 자료)</td></tr><tr><td>3</td><td><strong>만들기</strong></td><td>입력을 마치면 누릅니다.</td></tr></tbody></table>
+<ol>
+<li class=""><strong>이름</strong>과 <strong>설명</strong>을 적고 <strong>만들기</strong>를 누릅니다.</li>
+<li class="">왼쪽 데이터셋 목록에 &quot;AI혁신팀 업무 자료 점검 — 0개 항목&quot;이 생기고, 가운데에 CSV 형식 안내와 &quot;항목이 없습니다. CSV를 올려 주세요.&quot;가 나옵니다.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2단계-질문-csv-올리기">2단계. 질문 CSV 올리기<a href="#2단계-질문-csv-올리기" class="hash-link" aria-label="2단계. 질문 CSV 올리기에 대한 직접 링크" title="2단계. 질문 CSV 올리기에 대한 직접 링크" translate="no">​</a></h2>
+<p>가운데 <strong>CSV 파일</strong> 칸에서 준비한 파일을 고르면 읽은 내용이 미리 보입니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="CSV 미리보기"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-eval-csv-4daf26369b71e1fad70c94a13558f9b6.png" target="_blank" rel="noopener"><img width="2880" height="1800" src="/deep-agent-platform/assets/images/practice-eval-csv-4daf26369b71e1fad70c94a13558f9b6.png" alt="CSV 파일 칸, 6개 행을 읽었습니다, expected_source 열, 업로드 버튼에 번호를 붙인 미리보기" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">CSV 미리보기</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>확인할 것</th></tr></thead><tbody><tr><td>1</td><td><strong>CSV 파일</strong></td><td>고른 파일 이름이 보입니다.</td></tr><tr><td>2</td><td>읽은 결과</td><td>&quot;6개 행을 읽었습니다.&quot; 행 수가 파일과 같은지 봅니다.</td></tr><tr><td>3</td><td>expected_source 열</td><td>기대 근거 문서 이름이 제 열에 들어갔는지 봅니다. 한글이 깨졌다면 CSV UTF-8로 다시 저장합니다.</td></tr><tr><td>4</td><td><strong>업로드</strong></td><td>미리보기를 확인했으면 누릅니다. 이미 항목이 있는 데이터셋이면 <strong>전량 교체</strong>로 바뀝니다.</td></tr></tbody></table>
+<ol>
+<li class=""><strong>CSV 파일</strong> 칸을 눌러 파일을 고릅니다.</li>
+<li class="">미리보기 표에서 질문, 기대 답, 기대 근거 문서가 각자 열에 들어갔는지 봅니다. 쓰지 않은 열(expected_chunk, evidence_mode, note)은 &quot;—&quot;로 보입니다.</li>
+<li class=""><strong>업로드</strong>를 누릅니다. &quot;6개 항목으로 교체했습니다.&quot;가 나오고 목록의 항목 수가 6으로 바뀝니다.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3단계-컬렉션에-실행하기">3단계. 컬렉션에 실행하기<a href="#3단계-컬렉션에-실행하기" class="hash-link" aria-label="3단계. 컬렉션에 실행하기에 대한 직접 링크" title="3단계. 컬렉션에 실행하기에 대한 직접 링크" translate="no">​</a></h2>
+<p>화면 아래 <strong>실행</strong> 구역에서 컬렉션을 고르고 실행합니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="평가 실행"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-eval-run-71f117b3b28299ff65bd84d1ac7fc538.png" target="_blank" rel="noopener"><img width="2880" height="1800" src="/deep-agent-platform/assets/images/practice-eval-run-71f117b3b28299ff65bd84d1ac7fc538.png" alt="실행 대상 컬렉션, 검색 파라미터, 6건 실행 버튼에 번호를 붙인 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">평가 실행</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>입력하거나 고를 값</th></tr></thead><tbody><tr><td>1</td><td><strong>실행 대상 컬렉션</strong></td><td>AI혁신팀 업무 자료</td></tr><tr><td>2</td><td><strong>검색 파라미터</strong></td><td>펼쳐서 검색 방식과 결과 수를 확인합니다. 이 실습은 그대로 둡니다.</td></tr><tr><td>3</td><td><strong>6건 실행</strong></td><td>데이터셋 항목 수가 버튼에 붙습니다.</td></tr></tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>설정 항목</th><th>이 실습의 값</th><th>기본값</th></tr></thead><tbody><tr><td>검색 방식</td><td>semantic (의미)</td><td>semantic (의미)</td></tr><tr><td>결과 수</td><td>5</td><td>5</td></tr><tr><td>점수 컷</td><td>0</td><td>0</td></tr><tr><td>리랭킹</td><td>꺼짐</td><td>꺼짐</td></tr></tbody></table>
+<ol>
+<li class=""><strong>실행 대상 컬렉션</strong>에서 &quot;AI혁신팀 업무 자료&quot;를 고릅니다.</li>
+<li class=""><strong>6건 실행</strong>을 누릅니다.</li>
+<li class="">아래 <strong>실행 이력</strong>에 새 행이 생기고 상태가 &quot;성공&quot;, 성공/실패가 &quot;6/0&quot;이 될 때까지 기다립니다. 이 매뉴얼에서는 13.8초 걸렸습니다.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4단계-채점하고-결과-내려받기">4단계. 채점하고 결과 내려받기<a href="#4단계-채점하고-결과-내려받기" class="hash-link" aria-label="4단계. 채점하고 결과 내려받기에 대한 직접 링크" title="4단계. 채점하고 결과 내려받기에 대한 직접 링크" translate="no">​</a></h2>
+<p>실행이 끝난 행의 <strong>점수</strong> 칸에는 <strong>채점</strong>과 <strong>검색만 채점</strong> 버튼이 있습니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>버튼</th><th>하는 일</th><th>필요한 것</th></tr></thead><tbody><tr><td><strong>채점</strong></td><td>기대 근거 문서가 검색 상위 5개 안에 있는지(hit@5)와, 만들어진 답이 기대 답과 맞는지(LLM 판정)를 함께 매깁니다.</td><td>컬렉션에 연결된 LLM 커넥션(실습 3)</td></tr><tr><td><strong>검색만 채점</strong></td><td>검색 점수(hit@k, MRR, 어휘 점수)만 매깁니다.</td><td>없음</td></tr></tbody></table>
+<p><span class="manual-shot" role="figure" aria-label="채점 결과"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-eval-score-086896d0bbf08d6fc5c0693d47181d20.png" target="_blank" rel="noopener"><img width="2880" height="1800" src="/deep-agent-platform/assets/images/practice-eval-score-086896d0bbf08d6fc5c0693d47181d20.png" alt="실행 상태, 점수, xlsx·csv 내려받기에 번호를 붙인 실행 이력" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">채점 결과</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>확인할 것</th></tr></thead><tbody><tr><td>1</td><td>상태</td><td>성공입니다. 옆에 성공/실패 6/0과 걸린 시간 13.8초가 있습니다.</td></tr><tr><td>2</td><td>점수</td><td>&quot;정답 100% · hit@5 100%&quot;입니다. 6문항 모두 기대 근거 문서가 상위 5개 안에 들었고, 답도 기대 답과 맞았습니다.</td></tr><tr><td>3</td><td><strong>xlsx</strong>·<strong>csv</strong></td><td>질문별 답변, 근거, 걸린 시간을 파일로 받습니다.</td></tr></tbody></table>
+<ol>
+<li class="">새 행의 <strong>채점</strong>을 누릅니다. 몇 초 뒤 점수 칸이 바뀝니다.</li>
+<li class=""><strong>xlsx</strong>를 눌러 결과를 받고, 질문별로 근거 문서와 답을 확인합니다.</li>
+<li class="">점수가 떨어진 질문이 있으면 그 질문을 <strong>RAG 진단</strong>에 넣어 어느 단계에서 어긋났는지 봅니다.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="결과">결과<a href="#결과" class="hash-link" aria-label="결과에 대한 직접 링크" title="결과에 대한 직접 링크" translate="no">​</a></h2>
+<ul>
+<li class="">데이터셋 &quot;AI혁신팀 업무 자료 점검&quot;(6문항)이 만들어졌고, 첫 실행에서 정답 100%, hit@5 100%가 나왔습니다.</li>
+<li class="">다음에 문서를 바꾸거나 파이프라인을 바꾸면 같은 데이터셋을 다시 실행해 점수를 비교합니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="흔한-실수">흔한 실수<a href="#흔한-실수" class="hash-link" aria-label="흔한 실수에 대한 직접 링크" title="흔한 실수에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>증상</th><th>원인</th><th>해결</th></tr></thead><tbody><tr><td>미리보기의 한글이 깨짐</td><td>CSV가 UTF-8이 아닙니다.</td><td>엑셀에서 &quot;CSV UTF-8(쉼표로 분리)&quot;로 다시 저장합니다.</td></tr><tr><td>실행 버튼이 눌리지 않고 &quot;먼저 데이터셋을 고르세요.&quot;</td><td>왼쪽 목록에서 데이터셋을 고르지 않았습니다.</td><td>데이터셋 이름을 누른 뒤 실행합니다.</td></tr><tr><td>&quot;항목이 없습니다. CSV를 먼저 올리세요.&quot;</td><td>파일만 고르고 <strong>업로드</strong>를 누르지 않았습니다.</td><td>2단계의 <strong>업로드</strong>를 누릅니다.</td></tr><tr><td>hit@5가 낮음</td><td>expected_source의 파일 이름이 문서 목록과 다르거나, 같은 내용이 다른 문서에도 있습니다.</td><td>파일 이름을 확장자까지 맞추고, 겹치는 문서(.doc와 .docx 등)를 정리합니다.</td></tr><tr><td><strong>채점</strong>을 눌러도 정답 점수가 없음</td><td>컬렉션에 LLM 커넥션이 없습니다.</td><td><strong>검색만 채점</strong>을 쓰거나 실습 3의 1단계를 합니다.</td></tr></tbody></table>
+<p>데이터셋과 실행 결과는 실험 공간의 다른 사용자에게도 공개됩니다. 실제 고객 문의나 개인정보를 질문에 넣지 마세요.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="응용-과제">응용 과제<a href="#응용-과제" class="hash-link" aria-label="응용 과제에 대한 직접 링크" title="응용 과제에 대한 직접 링크" translate="no">​</a></h2>
+<ol>
+<li class=""><strong>검색 파라미터</strong>에서 검색 방식을 keyword로 바꿔 한 번 더 실행하고, 두 실행의 점수를 비교합니다.</li>
+<li class="">데이터셋에 &quot;제품소개서 사진에 나온 주요 기능은 무엇인가요?&quot;를 추가한 CSV로 <strong>전량 교체</strong>하고 다시 실행해, 사진에서 읽은 글자도 근거로 잡히는지 봅니다.</li>
+<li class="">동료의 데이터셋 옆 복사 버튼으로 내 데이터셋을 만들고 내 컬렉션에 실행해 봅니다.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="다음-문서">다음 문서<a href="#다음-문서" class="hash-link" aria-label="다음 문서에 대한 직접 링크" title="다음 문서에 대한 직접 링크" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-connector/practice-mcp-token/">실습 5: MCP 토큰을 만들고 도구로 시험하기</a></li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-connector/rag-eval/">실험: RAG 평가</a> — CSV 열 전체와 실행 이력의 버튼</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/deep-agent-platform/docs/deep-connector/practice-search-rag/"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">실습 3: 검색과 AI 답변</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/deep-agent-platform/docs/deep-connector/practice-mcp-token/"><div class="pagination-nav__sublabel">다음</div><div class="pagination-nav__label">실습 5: MCP 토큰과 도구 테스트</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#목표" class="table-of-contents__link toc-highlight">목표</a></li><li><a href="#준비물" class="table-of-contents__link toc-highlight">준비물</a></li><li><a href="#1단계-데이터셋-만들기" class="table-of-contents__link toc-highlight">1단계. 데이터셋 만들기</a></li><li><a href="#2단계-질문-csv-올리기" class="table-of-contents__link toc-highlight">2단계. 질문 CSV 올리기</a></li><li><a href="#3단계-컬렉션에-실행하기" class="table-of-contents__link toc-highlight">3단계. 컬렉션에 실행하기</a></li><li><a href="#4단계-채점하고-결과-내려받기" class="table-of-contents__link toc-highlight">4단계. 채점하고 결과 내려받기</a></li><li><a href="#결과" class="table-of-contents__link toc-highlight">결과</a></li><li><a href="#흔한-실수" class="table-of-contents__link toc-highlight">흔한 실수</a></li><li><a href="#응용-과제" class="table-of-contents__link toc-highlight">응용 과제</a></li><li><a href="#다음-문서" class="table-of-contents__link toc-highlight">다음 문서</a></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>
