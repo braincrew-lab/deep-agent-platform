@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="ko" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-deep-docurator/practice-pii-cleanup" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.2">
+<title data-rh="true">Deep Docurator 실습 8: 개인정보 가리기와 텍스트 치환 연쇄 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/practice-pii-cleanup/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Deep Docurator 실습 8: 개인정보 가리기와 텍스트 치환 연쇄 | Deep Platform"><meta data-rh="true" name="description" content="가공 노드는 여러 개를 이어 붙이면 앞에서부터 순서대로 적용됩니다. 이 실습은 고객 문의 기록을 규칙 기반으로 가리고, 텍스트 치환 노드 두 개로 날짜 표기와 용어를 바꾼 뒤, 필터로 환불·견적 문의만 남기는 다섯 단계 연쇄 흐름을 만듭니다. 고객 문의 기록 개인정보 가리기 사례가 내장 프리셋과 모델(LLM) 탐지를 쓴다면, 이 실습은 모델을 부르지 않는 규칙 기반 탐지와 커스텀 정규표현식, 텍스트 치환 연쇄를 직접 구성합니다."><meta data-rh="true" property="og:description" content="가공 노드는 여러 개를 이어 붙이면 앞에서부터 순서대로 적용됩니다. 이 실습은 고객 문의 기록을 규칙 기반으로 가리고, 텍스트 치환 노드 두 개로 날짜 표기와 용어를 바꾼 뒤, 필터로 환불·견적 문의만 남기는 다섯 단계 연쇄 흐름을 만듭니다. 고객 문의 기록 개인정보 가리기 사례가 내장 프리셋과 모델(LLM) 탐지를 쓴다면, 이 실습은 모델을 부르지 않는 규칙 기반 탐지와 커스텀 정규표현식, 텍스트 치환 연쇄를 직접 구성합니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/practice-pii-cleanup/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/practice-pii-cleanup/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/practice-pii-cleanup/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"실습 8: 개인정보 가리기와 치환 연쇄","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/practice-pii-cleanup"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
+<script src="/deep-agent-platform/assets/js/runtime~main.ff7e4d93.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.c5b60178.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/deep-agent-platform/img/manual-mark.svg"><div role="region" aria-label="본문으로 건너뛰기"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">본문으로 건너뛰기</a></div><nav aria-label="메인" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="사이드바 펼치거나 접기" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/deep-agent-platform/"><div class="navbar__logo"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Deep Platform</b></a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">솔루션</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-flow/">Deep Flow</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-agent-builder/">Deep Agent Builder</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-connector/">Deep Connector</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/deep-agent-platform/docs/deep-docurator/">Deep Docurator</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/brain-parser/">Brain Parser</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work/">Deep Work</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work-gateway/">Deep Work Gateway</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-admin/">Deep Admin</a></li></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="어두운 모드와 밝은 모드 전환하기 (현재 system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="searchBar_fdyA"><input type="search" class="searchInput_JE4R" placeholder="매뉴얼 검색" aria-label="매뉴얼 검색" role="combobox" aria-autocomplete="list" aria-expanded="false" value=""><div role="status" aria-live="polite"></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="맨 위로 스크롤하기" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="문서 사이드바" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/"><span class="categoryLinkLabel_W154">소개</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/getting-started/"><span class="categoryLinkLabel_W154">시작하기</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/core-features/"><span class="categoryLinkLabel_W154">기능 안내</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/deep-agent-platform/docs/deep-docurator/practice/"><span class="categoryLinkLabel_W154">실습</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice/"><span class="linkLabel_WmDU">흐름 만들기 실습</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-first-flow/"><span class="linkLabel_WmDU">실습 1: 가장 단순한 흐름</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-chunk-compare/"><span class="linkLabel_WmDU">실습 2: 청킹 전략 비교</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-field-extract/"><span class="linkLabel_WmDU">실습 3: 표와 필드 추출</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-batch/"><span class="linkLabel_WmDU">실습 4: 여러 문서 일괄 처리</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-presets-yaml/"><span class="linkLabel_WmDU">실습 5: 프리셋과 YAML</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-connect-builder/"><span class="linkLabel_WmDU">실습 6: 에이전트·지식과 연결</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-router/"><span class="linkLabel_WmDU">실습 7: 조건 분기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-pii-cleanup/"><span class="linkLabel_WmDU">실습 8: 개인정보 가리기와 치환 연쇄</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/workflows/"><span class="categoryLinkLabel_W154">반복 업무</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/use-cases/"><span class="categoryLinkLabel_W154">활용사례</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/troubleshooting/"><span class="categoryLinkLabel_W154">문제 해결</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="탐색 경로"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="홈" class="breadcrumbs__link" href="/deep-agent-platform/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">실습</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">실습 8: 개인정보 가리기와 치환 연쇄</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">이 페이지에서</button></div><div class="theme-doc-markdown markdown"><header><h1>Deep Docurator 실습 8: 개인정보 가리기와 텍스트 치환 연쇄</h1></header>
+<p>가공 노드는 여러 개를 이어 붙이면 앞에서부터 순서대로 적용됩니다. 이 실습은 고객 문의 기록을 규칙 기반으로 가리고, 텍스트 치환 노드 두 개로 날짜 표기와 용어를 바꾼 뒤, 필터로 환불·견적 문의만 남기는 다섯 단계 연쇄 흐름을 만듭니다. <a class="" href="/deep-agent-platform/docs/deep-docurator/case-privacy-masking/">고객 문의 기록 개인정보 가리기 사례</a>가 내장 프리셋과 모델(LLM) 탐지를 쓴다면, 이 실습은 모델을 부르지 않는 규칙 기반 탐지와 커스텀 정규표현식, 텍스트 치환 연쇄를 직접 구성합니다.</p>
+<p><strong>이 페이지에서 할 수 있는 일</strong></p>
+<ul>
+<li class="">PII 노드를 규칙 기반으로 바꾸고 커스텀 정규표현식으로 빠진 항목을 더 가립니다.</li>
+<li class="">텍스트 치환 노드를 두 개 이어 정규식 치환과 일반 문자열 치환을 순서대로 적용합니다.</li>
+<li class="">필터 노드의 정규식으로 남길 청크를 고릅니다.</li>
+<li class="">노드마다 결과 요약 숫자로 연쇄가 제대로 돌았는지 확인합니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="목표">목표<a href="#목표" class="hash-link" aria-label="목표에 대한 직접 링크" title="목표에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>항목</th><th>내용</th></tr></thead><tbody><tr><td>만들 흐름</td><td>입력 → 파싱 → 청킹(라벨 행) → PII(규칙 기반) → 텍스트 치환(날짜) → 텍스트 치환(용어) → 필터(정규식)</td></tr><tr><td>결과물</td><td>이름·연락처·이메일이 ▓▓▓로 가려지고, 날짜가 &quot;2026년 11월 03일&quot;, &quot;처리 결과&quot;가 &quot;답변&quot;으로 바뀐 환불·견적 문의 2건</td></tr><tr><td>걸리는 시간</td><td>구성 15분, 실행 20초 안팎</td></tr><tr><td>난이도</td><td>★★★★☆</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="준비물">준비물<a href="#준비물" class="hash-link" aria-label="준비물에 대한 직접 링크" title="준비물에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>파일</th><th>내용</th><th>형식</th></tr></thead><tbody><tr><td>고객문의기록-2026-11.csv</td><td>접수일, 고객명, 연락처, 이메일, 문의 유형, 문의 내용, 처리 결과 열과 가상 기록 5건</td><td>csv</td></tr></tbody></table>
+<p>상담 기록이 문서 형태라면 pdf, doc, docx, hwp, hwpx, txt, md, html, htm으로도 넣을 수 있습니다. 이때는 청킹 전략을 문장이나 재귀로 바꿉니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1단계-노드-일곱-개를-한-줄로-잇기">1단계. 노드 일곱 개를 한 줄로 잇기<a href="#1단계-노드-일곱-개를-한-줄로-잇기" class="hash-link" aria-label="1단계. 노드 일곱 개를 한 줄로 잇기에 대한 직접 링크" title="1단계. 노드 일곱 개를 한 줄로 잇기에 대한 직접 링크" translate="no">​</a></h2>
+<ol>
+<li class=""><strong>빈 캔버스</strong>로 새 플로우를 만듭니다. 이름: 문의 기록 정리 연쇄.</li>
+<li class=""><strong>입력</strong>, <strong>파싱</strong>, <strong>청킹</strong>, <strong>PII</strong>, <strong>텍스트 치환</strong>, <strong>텍스트 치환</strong>, <strong>필터</strong>를 차례로 놓고 왼쪽에서 오른쪽으로 잇습니다. 상태 표시줄에 노드: 7, 연결: 6이 보입니다.</li>
+<li class="">입력 노드에 고객문의기록-2026-11.csv를 넣습니다.</li>
+</ol>
+<p><span class="manual-shot" role="figure" aria-label="가공 노드 연쇄"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-pii-cleanup-canvas-ef3d76954477858f640b6f3b10800894.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/practice-pii-cleanup-canvas-ef3d76954477858f640b6f3b10800894.png" alt="PII 노드, 텍스트 치환 노드 두 개, 필터 노드에 번호를 붙인 연쇄 흐름 캔버스" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">가공 노드 연쇄</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>노드</th><th>실행 뒤 보이는 내용</th></tr></thead><tbody><tr><td>1</td><td>PII</td><td>5 청크 · 5 마스킹</td></tr><tr><td>2</td><td>텍스트 치환 두 개</td><td>각각 전체 5개 · 변경 5개 · 치환 5회 · 빈 청크 0개</td></tr><tr><td>3</td><td>필터</td><td>2 유지 (3 제외됨)</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2단계-노드별-설정값-넣기">2단계. 노드별 설정값 넣기<a href="#2단계-노드별-설정값-넣기" class="hash-link" aria-label="2단계. 노드별 설정값 넣기에 대한 직접 링크" title="2단계. 노드별 설정값 넣기에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>노드</th><th>설정</th><th>값</th></tr></thead><tbody><tr><td>청킹</td><td><strong>전략</strong> / <strong>최대 데이터 행 수</strong></td><td>라벨 행 (권장) / 1(기록 한 건이 청크 하나)</td></tr><tr><td>PII</td><td><strong>전략</strong></td><td>규칙 기반</td></tr><tr><td>PII</td><td><strong>마스킹 방식</strong></td><td>가림 (▓▓▓)</td></tr><tr><td>PII</td><td><strong>PII 카테고리</strong>(고급 설정)</td><td>name, email, phone</td></tr><tr><td>PII</td><td><strong>커스텀 정규표현식</strong>(고급 설정)</td><td>(?&lt;=고객명: )[가-힣]{2,4}</td></tr><tr><td>텍스트 치환 1</td><td><strong>찾기 방식</strong> / <strong>찾을 문자열 또는 패턴</strong> / <strong>바꿀 문자열</strong></td><td>정규식 / (\d{4})-(\d{2})-(\d{2}) / \g&lt;1&gt;년 \g&lt;2&gt;월 \g&lt;3&gt;일</td></tr><tr><td>텍스트 치환 2</td><td><strong>찾기 방식</strong> / <strong>찾을 문자열 또는 패턴</strong> / <strong>바꿀 문자열</strong></td><td>일반 문자열 / 처리 결과 / 답변</td></tr><tr><td>필터</td><td><strong>전략</strong> / <strong>정규식 패턴</strong> / <strong>매칭 정책</strong></td><td>정규식 / 환불|견적 / 일치 청크 유지</td></tr></tbody></table>
+<p>필터의 정규식 패턴은 환불, 세로 막대, 견적을 붙여 적습니다. 세로 막대는 &quot;또는&quot;이라는 뜻입니다.</p>
+<p>규칙 기반 탐지는 모델을 부르지 않고 정해진 형식(전화번호, 이메일 등)만 찾습니다. 이 실습 환경에서는 커스텀 정규표현식 없이 실행했을 때 연락처와 이메일은 가려졌지만 &quot;고객명: 이가상&quot;의 이름은 그대로 남았습니다. 그래서 &quot;고객명: &quot; 바로 뒤의 한글 두~네 글자를 가리는 정규식을 더했습니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3단계-실행하고-결과-읽기">3단계. 실행하고 결과 읽기<a href="#3단계-실행하고-결과-읽기" class="hash-link" aria-label="3단계. 실행하고 결과 읽기에 대한 직접 링크" title="3단계. 실행하고 결과 읽기에 대한 직접 링크" translate="no">​</a></h2>
+<ol>
+<li class="">▶(<strong>파이프라인 실행</strong>)을 누릅니다. 예시는 20초 안팎에 일곱 노드가 모두 완료되었습니다.</li>
+<li class="">PII 노드의 <strong>옵션 &amp; 미리보기</strong>에서 &quot;5 청크 · 5 마스킹 · 15 치환&quot;을 확인합니다. 기록마다 이름, 연락처, 이메일 세 곳이 바뀌었다는 뜻입니다.</li>
+<li class="">두 번째 텍스트 치환 노드를 누르고 <strong>옵션 &amp; 미리보기</strong>에서 청크 칸을 눌러 본문을 읽습니다.</li>
+</ol>
+<p><span class="manual-shot" role="figure" aria-label="연쇄 처리 뒤 청크 본문"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-pii-cleanup-result-e255f77e9b0d6b0e6f1373add0319e57.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/practice-pii-cleanup-result-e255f77e9b0d6b0e6f1373add0319e57.png" alt="텍스트 치환 결과 요약, 두 번째 청크 칸, 가리고 바꾼 본문에 번호를 붙인 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">연쇄 처리 뒤 청크 본문</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>화면에 보이는 내용</th><th>확인할 것</th></tr></thead><tbody><tr><td>1</td><td>치환 요약</td><td>전체 5개 · 변경 5개 · 치환 5회 · 빈 청크 0개</td><td>모든 기록에서 한 번씩 바뀌었는지</td></tr><tr><td>2</td><td>청크 칸</td><td>다섯 칸 가운데 2번째</td><td>견적 문의 기록을 골랐는지</td></tr><tr><td>3</td><td>청크 본문</td><td>접수일: 2026년 11월 03일 | 고객명: ▓▓▓ | 연락처: ▓▓▓ | 이메일: ▓▓▓ | 문의 유형: 견적 | … | 답변: 견적서 재발행 후 메일 발송</td><td>날짜와 용어가 바뀌고 개인정보가 가려졌는지</td></tr></tbody></table>
+<p>마지막 필터 노드는 &quot;5 → 2 유지 / 3 제외됨&quot;으로, 환불 문의와 견적 문의 두 건만 다음 단계(예: Deep Connector)로 넘깁니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="흔한-실수와-해결">흔한 실수와 해결<a href="#흔한-실수와-해결" class="hash-link" aria-label="흔한 실수와 해결에 대한 직접 링크" title="흔한 실수와 해결에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>증상</th><th>원인</th><th>해결</th></tr></thead><tbody><tr><td>이름이 가려지지 않습니다.</td><td>규칙 기반은 이름처럼 형식이 일정하지 않은 값을 놓칠 수 있습니다.</td><td>커스텀 정규표현식을 더하거나 전략을 규칙 + LLM으로 바꿉니다.</td></tr><tr><td>정규식 치환 결과에 \g&lt;1&gt;이 그대로 나옵니다.</td><td><strong>찾기 방식</strong>이 일반 문자열입니다.</td><td>정규식으로 바꿉니다.</td></tr><tr><td>두 번째 치환이 아무것도 바꾸지 않습니다.</td><td>앞 노드가 이미 글자를 바꿔 찾을 문자열이 없어졌습니다.</td><td>연쇄 순서를 바꾸거나 찾을 문자열을 앞 노드의 결과에 맞춥니다.</td></tr><tr><td>정규식 오류로 실행이 멈춥니다.</td><td>정규식을 /로 감쌌거나 괄호 짝이 맞지 않습니다.</td><td>/ 없이 적고 괄호를 확인합니다.</td></tr><tr><td>필터 뒤 청크가 0개입니다.</td><td><strong>매칭 정책</strong>이 일치 청크 제거입니다.</td><td>일치 청크 유지로 바꿉니다.</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="응용-과제">응용 과제<a href="#응용-과제" class="hash-link" aria-label="응용 과제에 대한 직접 링크" title="응용 과제에 대한 직접 링크" translate="no">​</a></h2>
+<ol>
+<li class=""><strong>마스킹 방식</strong>을 토큰으로 바꿔 ▓▓▓ 대신 [EMAIL], [PHONE], [CUSTOM]이 들어가는지 보세요.</li>
+<li class="">필터를 LLM (고급, 모델 호출)으로 바꾸고 <strong>필터 기준</strong>에 &quot;고객이 금전 처리를 요청한 문의만&quot;을 적어 결과를 비교하세요.</li>
+<li class="">이 흐름을 배포해 고객지원 컬렉션에 올리고, <a class="" href="/deep-agent-platform/docs/deep-docurator/practice-connect-builder/">실습 6</a>처럼 에이전트 답변에 개인정보가 나오지 않는지 확인하세요.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="다음-문서">다음 문서<a href="#다음-문서" class="hash-link" aria-label="다음 문서에 대한 직접 링크" title="다음 문서에 대한 직접 링크" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-docurator/practice/">흐름 만들기 실습</a> — 실습 전체 목록으로 돌아가기</li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-docurator/node-settings/">노드별 설정 항목</a> — PII, 필터, 텍스트 치환 설정 전체</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/deep-agent-platform/docs/deep-docurator/practice-router/"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">실습 7: 조건 분기</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/deep-agent-platform/docs/deep-docurator/workflows/"><div class="pagination-nav__sublabel">다음</div><div class="pagination-nav__label">반복 업무</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#목표" class="table-of-contents__link toc-highlight">목표</a></li><li><a href="#준비물" class="table-of-contents__link toc-highlight">준비물</a></li><li><a href="#1단계-노드-일곱-개를-한-줄로-잇기" class="table-of-contents__link toc-highlight">1단계. 노드 일곱 개를 한 줄로 잇기</a></li><li><a href="#2단계-노드별-설정값-넣기" class="table-of-contents__link toc-highlight">2단계. 노드별 설정값 넣기</a></li><li><a href="#3단계-실행하고-결과-읽기" class="table-of-contents__link toc-highlight">3단계. 실행하고 결과 읽기</a></li><li><a href="#흔한-실수와-해결" class="table-of-contents__link toc-highlight">흔한 실수와 해결</a></li><li><a href="#응용-과제" class="table-of-contents__link toc-highlight">응용 과제</a></li><li><a href="#다음-문서" class="table-of-contents__link toc-highlight">다음 문서</a></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>

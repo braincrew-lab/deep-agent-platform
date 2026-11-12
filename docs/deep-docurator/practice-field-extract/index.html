@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="ko" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-deep-docurator/practice-field-extract" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.2">
+<title data-rh="true">Deep Docurator 실습 3: 표와 필드 추출 흐름 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/practice-field-extract/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Deep Docurator 실습 3: 표와 필드 추출 흐름 | Deep Platform"><meta data-rh="true" name="description" content="이 실습은 10월 영수증·견적 모음 표를 행 하나씩 나누고, 행마다 일자·구분·거래처·품목·금액 다섯 필드를 뽑은 뒤, 메타데이터 평가 노드로 뽑은 값이 맞는지 점검합니다. 마지막으로 결과를 표 형태로 확인하고 엑셀로 옮기는 방법까지 다룹니다. 영수증·견적서 표 정리 사례가 업무 결과물에 초점을 둔다면, 이 실습은 필드 정의와 검증 노드를 직접 구성하는 데 초점을 둡니다."><meta data-rh="true" property="og:description" content="이 실습은 10월 영수증·견적 모음 표를 행 하나씩 나누고, 행마다 일자·구분·거래처·품목·금액 다섯 필드를 뽑은 뒤, 메타데이터 평가 노드로 뽑은 값이 맞는지 점검합니다. 마지막으로 결과를 표 형태로 확인하고 엑셀로 옮기는 방법까지 다룹니다. 영수증·견적서 표 정리 사례가 업무 결과물에 초점을 둔다면, 이 실습은 필드 정의와 검증 노드를 직접 구성하는 데 초점을 둡니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/practice-field-extract/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/practice-field-extract/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/practice-field-extract/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"실습 3: 표와 필드 추출","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/practice-field-extract"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
+<script src="/deep-agent-platform/assets/js/runtime~main.ff7e4d93.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.c5b60178.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/deep-agent-platform/img/manual-mark.svg"><div role="region" aria-label="본문으로 건너뛰기"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">본문으로 건너뛰기</a></div><nav aria-label="메인" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="사이드바 펼치거나 접기" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/deep-agent-platform/"><div class="navbar__logo"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Deep Platform</b></a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">솔루션</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-flow/">Deep Flow</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-agent-builder/">Deep Agent Builder</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-connector/">Deep Connector</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/deep-agent-platform/docs/deep-docurator/">Deep Docurator</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/brain-parser/">Brain Parser</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work/">Deep Work</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work-gateway/">Deep Work Gateway</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-admin/">Deep Admin</a></li></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="어두운 모드와 밝은 모드 전환하기 (현재 system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="searchBar_fdyA"><input type="search" class="searchInput_JE4R" placeholder="매뉴얼 검색" aria-label="매뉴얼 검색" role="combobox" aria-autocomplete="list" aria-expanded="false" value=""><div role="status" aria-live="polite"></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="맨 위로 스크롤하기" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="문서 사이드바" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/"><span class="categoryLinkLabel_W154">소개</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/getting-started/"><span class="categoryLinkLabel_W154">시작하기</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/core-features/"><span class="categoryLinkLabel_W154">기능 안내</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/deep-agent-platform/docs/deep-docurator/practice/"><span class="categoryLinkLabel_W154">실습</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice/"><span class="linkLabel_WmDU">흐름 만들기 실습</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-first-flow/"><span class="linkLabel_WmDU">실습 1: 가장 단순한 흐름</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-chunk-compare/"><span class="linkLabel_WmDU">실습 2: 청킹 전략 비교</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-field-extract/"><span class="linkLabel_WmDU">실습 3: 표와 필드 추출</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-batch/"><span class="linkLabel_WmDU">실습 4: 여러 문서 일괄 처리</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-presets-yaml/"><span class="linkLabel_WmDU">실습 5: 프리셋과 YAML</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-connect-builder/"><span class="linkLabel_WmDU">실습 6: 에이전트·지식과 연결</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-router/"><span class="linkLabel_WmDU">실습 7: 조건 분기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-pii-cleanup/"><span class="linkLabel_WmDU">실습 8: 개인정보 가리기와 치환 연쇄</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/workflows/"><span class="categoryLinkLabel_W154">반복 업무</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/use-cases/"><span class="categoryLinkLabel_W154">활용사례</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/troubleshooting/"><span class="categoryLinkLabel_W154">문제 해결</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="탐색 경로"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="홈" class="breadcrumbs__link" href="/deep-agent-platform/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">실습</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">실습 3: 표와 필드 추출</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">이 페이지에서</button></div><div class="theme-doc-markdown markdown"><header><h1>Deep Docurator 실습 3: 표와 필드 추출 흐름</h1></header>
+<p>이 실습은 10월 영수증·견적 모음 표를 행 하나씩 나누고, 행마다 일자·구분·거래처·품목·금액 다섯 필드를 뽑은 뒤, 메타데이터 평가 노드로 뽑은 값이 맞는지 점검합니다. 마지막으로 결과를 표 형태로 확인하고 엑셀로 옮기는 방법까지 다룹니다. <a class="" href="/deep-agent-platform/docs/deep-docurator/case-receipts-quotes/">영수증·견적서 표 정리 사례</a>가 업무 결과물에 초점을 둔다면, 이 실습은 필드 정의와 검증 노드를 직접 구성하는 데 초점을 둡니다.</p>
+<p><strong>이 페이지에서 할 수 있는 일</strong></p>
+<ul>
+<li class="">표용 청킹 전략으로 행 하나를 청크 하나로 만듭니다.</li>
+<li class="">메타데이터 노드에 필드 다섯 개를 타입과 허용 값까지 정의합니다.</li>
+<li class="">메타데이터 평가 노드로 필드별 정확도와 채움률을 확인합니다.</li>
+<li class="">출력 스레드 탭의 표로 결과를 읽고 엑셀로 옮깁니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="목표">목표<a href="#목표" class="hash-link" aria-label="목표에 대한 직접 링크" title="목표에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>항목</th><th>내용</th></tr></thead><tbody><tr><td>만들 흐름</td><td>입력 → 파싱 → 청킹(라벨 행 (권장)) → 메타데이터 → 메타데이터 평가</td></tr><tr><td>결과물</td><td>20행 × 5필드 표, 필드별 정확도와 채움률</td></tr><tr><td>걸리는 시간</td><td>구성 10분, 실행 20초 안팎, 확인 10분</td></tr><tr><td>난이도</td><td>★★☆☆☆</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="준비물">준비물<a href="#준비물" class="hash-link" aria-label="준비물에 대한 직접 링크" title="준비물에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>파일</th><th>내용</th><th>형식</th></tr></thead><tbody><tr><td>영수증_견적_모음.csv</td><td>일자, 구분(영수증·견적서), 거래처(가상), 품목, 금액 다섯 열과 10월 거래 20행</td><td>csv</td></tr></tbody></table>
+<p>엑셀 원본(xlsx)도 같은 방법으로 처리합니다. xls는 파싱 단계에서 처리되지 않으므로 xlsx로 다시 저장합니다. 영수증 사진(png, jpg, jpeg, tiff, tif, bmp, webp)은 표 대신 <a class="" href="/deep-agent-platform/docs/deep-docurator/case-receipts-quotes/">사례</a>의 2단계처럼 파싱 결과에서 읽습니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1단계-노드-다섯-개-놓고-잇기">1단계. 노드 다섯 개 놓고 잇기<a href="#1단계-노드-다섯-개-놓고-잇기" class="hash-link" aria-label="1단계. 노드 다섯 개 놓고 잇기에 대한 직접 링크" title="1단계. 노드 다섯 개 놓고 잇기에 대한 직접 링크" translate="no">​</a></h2>
+<ol>
+<li class=""><strong>빈 캔버스</strong>로 새 플로우를 만듭니다. 이름 예: 10월 영수증·견적 품목 표 만들기.</li>
+<li class=""><strong>노드 추가</strong>에서 <strong>입력</strong>, <strong>파싱</strong>, <strong>청킹</strong>, <strong>메타데이터</strong>, <strong>메타데이터 평가</strong>를 차례로 누르고 왼쪽에서 오른쪽으로 한 줄로 놓습니다.</li>
+<li class="">앞 노드 오른쪽 연결점에서 다음 노드 왼쪽 연결점으로 네 번 끌어 잇습니다. 상태 표시줄에 노드: 5, 연결: 4가 보입니다.</li>
+<li class="">입력 노드에 영수증_견적_모음.csv를 넣습니다.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2단계-노드별-설정값-넣기">2단계. 노드별 설정값 넣기<a href="#2단계-노드별-설정값-넣기" class="hash-link" aria-label="2단계. 노드별 설정값 넣기에 대한 직접 링크" title="2단계. 노드별 설정값 넣기에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>노드</th><th>설정</th><th>값</th></tr></thead><tbody><tr><td>청킹</td><td><strong>전략</strong></td><td>라벨 행 (권장)</td></tr><tr><td>청킹</td><td><strong>최대 데이터 행 수</strong></td><td>1(행 하나가 청크 하나)</td></tr><tr><td>청킹</td><td><strong>빈 셀 이름 표시</strong>, <strong>표 설명 메타데이터 생성</strong></td><td>사용, 꺼짐(처음 값)</td></tr><tr><td>메타데이터</td><td><strong>배치 모드</strong> / <strong>배치당 최대 항목 수</strong></td><td>수동 / 30(처음 값)</td></tr><tr><td>메타데이터</td><td><strong>필드</strong></td><td>아래 표 다섯 개(처음 필드 title, summary, keywords, category는 <strong>제거</strong>)</td></tr><tr><td>메타데이터 평가</td><td><strong>원문 위치 표본 수</strong></td><td>20(처음 값)</td></tr></tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>필드 이름</th><th>타입</th><th>설명</th><th>허용 값</th></tr></thead><tbody><tr><td>일자</td><td>문자열</td><td>행의 일자를 YYYY-MM-DD 형식 그대로</td><td>비움</td></tr><tr><td>구분</td><td>문자열</td><td>행의 구분 열 값</td><td>영수증=실제 결제한 내역, 견적서=결제 전 받은 견적</td></tr><tr><td>거래처</td><td>문자열</td><td>행의 거래처(가상) 값을 원문 그대로</td><td>비움</td></tr><tr><td>품목</td><td>문자열</td><td>행의 품목 값을 원문 그대로</td><td>비움</td></tr><tr><td>금액</td><td>정수</td><td>행의 금액 숫자만, 원 단위</td><td>비움(정수 필드에는 허용 값을 넣지 않습니다)</td></tr></tbody></table>
+<p><span class="manual-shot" role="figure" aria-label="메타데이터 노드의 추출 필드 정의"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-field-extract-fields-ba81a7bb1a17f7a2b6ea7779913b99d9.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/practice-field-extract-fields-ba81a7bb1a17f7a2b6ea7779913b99d9.png" alt="메타데이터 노드 추출 필드의 필드 이름, 타입, 허용 값, 필드 추가에 번호를 붙인 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">메타데이터 노드의 추출 필드 정의</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>하는 일</th></tr></thead><tbody><tr><td>1</td><td>필드 이름 입력란</td><td>결과 표의 열 이름이 됩니다. 예: 구분</td></tr><tr><td>2</td><td>타입</td><td>문자열, 숫자, 정수, 불리언, 배열 중에서 고릅니다. 금액은 정수로 고릅니다.</td></tr><tr><td>3</td><td>허용 값</td><td>고를 수 있는 값 목록입니다. 2개처럼 개수가 보이고, 누르면 값과 설명을 적는 칸이 열립니다. 비어 있으면 자유값입니다.</td></tr><tr><td>4</td><td><strong>필드 추가</strong></td><td>필드 줄을 하나 더합니다.</td></tr></tbody></table>
+<p>메타데이터 노드를 누르고 <strong>설정</strong> 탭의 <strong>고급 설정</strong>을 펼치면 추출 필드가 보입니다. 각 필드 줄의 위 칸이 필드 이름과 타입, 아래 칸이 설명과 허용 값입니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3단계-실행하고-정확도-보기">3단계. 실행하고 정확도 보기<a href="#3단계-실행하고-정확도-보기" class="hash-link" aria-label="3단계. 실행하고 정확도 보기에 대한 직접 링크" title="3단계. 실행하고 정확도 보기에 대한 직접 링크" translate="no">​</a></h2>
+<ol>
+<li class="">▶(<strong>파이프라인 실행</strong>)을 누릅니다. 예시는 20초 안팎에 끝났습니다.</li>
+<li class="">청킹 노드에 20 청크가 보이는지 확인합니다. 경고 (20)은 csv에 원본 위치 정보가 없다는 안내이며 결과에는 영향이 없습니다.</li>
+<li class="">메타데이터 노드에 20/20 보강, 메타데이터 평가 노드에 정확도 100%, 채움률 100%가 보이는지 봅니다. 메타데이터 평가 노드의 <strong>옵션 &amp; 미리보기</strong> 탭에는 필드마다 정확도·채움률(예: 금액 100% · 100%)이 나옵니다.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4단계-결과를-표로-읽고-옮기기">4단계. 결과를 표로 읽고 옮기기<a href="#4단계-결과를-표로-읽고-옮기기" class="hash-link" aria-label="4단계. 결과를 표로 읽고 옮기기에 대한 직접 링크" title="4단계. 결과를 표로 읽고 옮기기에 대한 직접 링크" translate="no">​</a></h2>
+<p>메타데이터 노드를 누르고 <strong>출력 스레드</strong> 탭을 열면, 다음 노드로 넘어가는 값이 이름별 탭으로 나뉜 표로 보입니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="출력 스레드의 필드별 결과 표"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-field-extract-table-22b5209d881db8792cecc1aa4aa90ea6.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/practice-field-extract-table-22b5209d881db8792cecc1aa4aa90ea6.png" alt="메타데이터 노드 출력 스레드의 metadata 탭과 금액 칸에 번호를 붙인 결과 표" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">출력 스레드의 필드별 결과 표</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>화면에 보이는 내용</th><th>확인할 것</th></tr></thead><tbody><tr><td>1</td><td><strong>출력 스레드</strong> 탭</td><td>content, doc.extension, metadata 같은 이름 탭</td><td>메타데이터 노드를 고른 상태인지</td></tr><tr><td>2</td><td>metadata 탭</td><td>20 / 20, 열 metadata.거래처, metadata.구분, metadata.금액, metadata.일자, metadata.품목</td><td>행 수가 원본 20행과 같은지</td></tr><tr><td>3</td><td>첫 행 금액</td><td>880000</td><td>원본 첫 행(2026-10-01, 마바사케이터링, 노트북 거치대)의 금액과 같은지</td></tr></tbody></table>
+<p>예시 결과의 앞 다섯 행은 다음과 같습니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>일자</th><th>구분</th><th>거래처</th><th>품목</th><th>금액</th></tr></thead><tbody><tr><td>2026-10-01</td><td>영수증</td><td>마바사케이터링</td><td>노트북 거치대</td><td>880000</td></tr><tr><td>2026-10-02</td><td>영수증</td><td>가나다문구</td><td>노트북 거치대</td><td>280000</td></tr><tr><td>2026-10-03</td><td>견적서</td><td>가나다문구</td><td>외부 교육</td><td>430000</td></tr><tr><td>2026-10-04</td><td>견적서</td><td>아자차IT</td><td>프린터 토너</td><td>170000</td></tr><tr><td>2026-10-05</td><td>견적서</td><td>아자차IT</td><td>노트북 거치대</td><td>130000</td></tr></tbody></table>
+<p>Deep Docurator에는 결과를 엑셀 파일로 내려받는 버튼이 없습니다. 표가 필요하면 metadata 탭의 표를 마우스로 끌어 선택해 복사한 뒤 엑셀에 붙여 넣고, 열 이름이 metadata.금액처럼 붙은 열만 남깁니다. 결과를 지식 검색에 쓰려면 <a class="" href="/deep-agent-platform/docs/deep-docurator/practice-connect-builder/">실습 6</a>처럼 Deep Connector로 보내면 필드 값이 검색 필터가 됩니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="흔한-실수와-해결">흔한 실수와 해결<a href="#흔한-실수와-해결" class="hash-link" aria-label="흔한 실수와 해결에 대한 직접 링크" title="흔한 실수와 해결에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>증상</th><th>원인</th><th>해결</th></tr></thead><tbody><tr><td>청크가 1개만 나오고 행이 한데 묶입니다.</td><td><strong>최대 데이터 행 수</strong>가 처음 값 50입니다.</td><td>1로 바꿉니다.</td></tr><tr><td>금액이 &quot;880,000원&quot;처럼 글자로 나옵니다.</td><td>타입이 문자열입니다.</td><td>금액 필드 타입을 정수로 바꾸고 설명에 &quot;숫자만&quot;을 적습니다.</td></tr><tr><td>실행하자마자 메타데이터 노드가 실패합니다.</td><td>정수·불리언 필드에 허용 값을 넣었습니다. 화면에 &quot;이 타입엔 안 씀&quot;이 보입니다.</td><td>그 표시를 눌러 허용 값을 비웁니다.</td></tr><tr><td>구분 값이 &quot;결제&quot;처럼 목록 밖 값으로 나옵니다.</td><td>허용 값이 없어 자유값입니다.</td><td>허용 값에 영수증, 견적서를 넣습니다. 목록 밖 값은 비게 됩니다.</td></tr><tr><td>요약·키워드 열이 영어로 나옵니다.</td><td>처음 필드 summary, keywords를 그대로 두었습니다.</td><td>쓰지 않는 처음 필드는 <strong>제거</strong>합니다.</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="응용-과제">응용 과제<a href="#응용-과제" class="hash-link" aria-label="응용 과제에 대한 직접 링크" title="응용 과제에 대한 직접 링크" translate="no">​</a></h2>
+<ol>
+<li class="">구분 필드처럼 거래처에도 허용 값(가나다문구, 아자차IT, 마바사케이터링)을 넣고, 메타데이터 평가의 정확도가 그대로인지 보세요.</li>
+<li class="">견적서-사무환경개선.xlsx처럼 표 위에 제목 줄이 있는 서식을 넣어 col1, col2 열 이름이 생기는지 확인하고, <a class="" href="/deep-agent-platform/docs/deep-docurator/case-receipts-quotes/">사례</a>의 해결법을 적용해 보세요.</li>
+<li class="">금액이 50만 원을 넘는 행만 남기려면 메타데이터 다음에 <strong>커스텀</strong> 노드(역할: 청크 선별)를 붙여 보세요. 만드는 법은 <a class="" href="/deep-agent-platform/docs/deep-docurator/node-settings/">노드별 설정 항목</a>의 커스텀에 있습니다.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="다음-문서">다음 문서<a href="#다음-문서" class="hash-link" aria-label="다음 문서에 대한 직접 링크" title="다음 문서에 대한 직접 링크" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-docurator/practice-batch/">실습 4: 여러 문서 일괄 처리 흐름</a> — 같은 흐름으로 문서 여러 개를 한 번에 처리하기</li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-docurator/node-settings/">노드별 설정 항목</a> — 메타데이터·메타데이터 평가 노드의 설정 전체</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/deep-agent-platform/docs/deep-docurator/practice-chunk-compare/"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">실습 2: 청킹 전략 비교</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/deep-agent-platform/docs/deep-docurator/practice-batch/"><div class="pagination-nav__sublabel">다음</div><div class="pagination-nav__label">실습 4: 여러 문서 일괄 처리</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#목표" class="table-of-contents__link toc-highlight">목표</a></li><li><a href="#준비물" class="table-of-contents__link toc-highlight">준비물</a></li><li><a href="#1단계-노드-다섯-개-놓고-잇기" class="table-of-contents__link toc-highlight">1단계. 노드 다섯 개 놓고 잇기</a></li><li><a href="#2단계-노드별-설정값-넣기" class="table-of-contents__link toc-highlight">2단계. 노드별 설정값 넣기</a></li><li><a href="#3단계-실행하고-정확도-보기" class="table-of-contents__link toc-highlight">3단계. 실행하고 정확도 보기</a></li><li><a href="#4단계-결과를-표로-읽고-옮기기" class="table-of-contents__link toc-highlight">4단계. 결과를 표로 읽고 옮기기</a></li><li><a href="#흔한-실수와-해결" class="table-of-contents__link toc-highlight">흔한 실수와 해결</a></li><li><a href="#응용-과제" class="table-of-contents__link toc-highlight">응용 과제</a></li><li><a href="#다음-문서" class="table-of-contents__link toc-highlight">다음 문서</a></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>
