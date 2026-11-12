@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="ko" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-deep-docurator/practice-scan-ocr" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.2">
+<title data-rh="true">Deep Docurator 실습 11: 스캔·사진 문서 글자 읽기 흐름 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/practice-scan-ocr/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Deep Docurator 실습 11: 스캔·사진 문서 글자 읽기 흐름 | Deep Platform"><meta data-rh="true" name="description" content="경영지원팀에는 거래처가 종이로 보낸 거래명세서를 복합기로 스캔한 파일과, 출장 중에 휴대폰으로 찍은 사진이 함께 쌓입니다. 이 실습은 이미지 파일의 글자를 파싱 노드가 읽게 한 뒤, 글자 인식에서 생긴 잘못된 쉼표를 텍스트 치환 노드로 고치고, 메타데이터 노드로 거래일, 명세서 번호, 품목, 금액을 뽑는 흐름을 만듭니다. 스캔본과 사진의 인식 차이도 함께 비교합니다."><meta data-rh="true" property="og:description" content="경영지원팀에는 거래처가 종이로 보낸 거래명세서를 복합기로 스캔한 파일과, 출장 중에 휴대폰으로 찍은 사진이 함께 쌓입니다. 이 실습은 이미지 파일의 글자를 파싱 노드가 읽게 한 뒤, 글자 인식에서 생긴 잘못된 쉼표를 텍스트 치환 노드로 고치고, 메타데이터 노드로 거래일, 명세서 번호, 품목, 금액을 뽑는 흐름을 만듭니다. 스캔본과 사진의 인식 차이도 함께 비교합니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/practice-scan-ocr/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/practice-scan-ocr/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/practice-scan-ocr/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"실습 11: 스캔·사진 문서 글자 읽기","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/practice-scan-ocr"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.781e4ee1.css">
+<script src="/deep-agent-platform/assets/js/runtime~main.2d4144f7.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.de737954.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/deep-agent-platform/img/manual-mark.svg"><div role="region" aria-label="본문으로 건너뛰기"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">본문으로 건너뛰기</a></div><nav aria-label="메인" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="사이드바 펼치거나 접기" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/deep-agent-platform/"><div class="navbar__logo"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Deep Platform</b></a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">솔루션</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-flow/">Deep Flow</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-agent-builder/">Deep Agent Builder</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-connector/">Deep Connector</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/deep-agent-platform/docs/deep-docurator/">Deep Docurator</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/brain-parser/">Brain Parser</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work/">Deep Work</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work-gateway/">Deep Work Gateway</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-admin/">Deep Admin</a></li></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="어두운 모드와 밝은 모드 전환하기 (현재 system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="searchBar_fdyA"><input type="search" class="searchInput_JE4R" placeholder="매뉴얼 검색" aria-label="매뉴얼 검색" role="combobox" aria-autocomplete="list" aria-expanded="false" value=""><div role="status" aria-live="polite"></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="맨 위로 스크롤하기" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="문서 사이드바" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/"><span class="categoryLinkLabel_W154">소개</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/getting-started/"><span class="categoryLinkLabel_W154">시작하기</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/input-formats/"><span class="categoryLinkLabel_W154">메뉴: 플로우 편집기</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/presets/"><span class="categoryLinkLabel_W154">메뉴: 설정</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/deep-agent-platform/docs/deep-docurator/practice/"><span class="categoryLinkLabel_W154">실습</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice/"><span class="linkLabel_WmDU">흐름 만들기 실습</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-first-flow/"><span class="linkLabel_WmDU">실습 1: 가장 단순한 흐름</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-chunk-compare/"><span class="linkLabel_WmDU">실습 2: 청킹 전략 비교</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-field-extract/"><span class="linkLabel_WmDU">실습 3: 표와 필드 추출</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-batch/"><span class="linkLabel_WmDU">실습 4: 여러 문서 일괄 처리</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-presets-yaml/"><span class="linkLabel_WmDU">실습 5: 프리셋과 YAML</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-connect-builder/"><span class="linkLabel_WmDU">실습 6: 에이전트·지식과 연결</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-router/"><span class="linkLabel_WmDU">실습 7: 조건 분기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-pii-cleanup/"><span class="linkLabel_WmDU">실습 8: 개인정보 가리기와 치환 연쇄</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-long-summary/"><span class="linkLabel_WmDU">실습 9: 긴 문서 장별 요약</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-table-report/"><span class="linkLabel_WmDU">실습 10: 표가 많은 보고서 구조화</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-scan-ocr/"><span class="linkLabel_WmDU">실습 11: 스캔·사진 문서 글자 읽기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-multilingual/"><span class="linkLabel_WmDU">실습 12: 영어·일본어 문서를 한국어로 찾기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-quality-loop/"><span class="linkLabel_WmDU">실습 13: 평가 점수로 반복 개선</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/workflows/"><span class="categoryLinkLabel_W154">반복 업무</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/use-cases/"><span class="categoryLinkLabel_W154">활용사례</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/troubleshooting/"><span class="categoryLinkLabel_W154">문제 해결</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="탐색 경로"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="홈" class="breadcrumbs__link" href="/deep-agent-platform/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">실습</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">실습 11: 스캔·사진 문서 글자 읽기</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">이 페이지에서</button></div><div class="theme-doc-markdown markdown"><header><h1>Deep Docurator 실습 11: 스캔·사진 문서 글자 읽기 흐름</h1></header>
+<p>경영지원팀에는 거래처가 종이로 보낸 거래명세서를 복합기로 스캔한 파일과, 출장 중에 휴대폰으로 찍은 사진이 함께 쌓입니다. 이 실습은 이미지 파일의 글자를 파싱 노드가 읽게 한 뒤, 글자 인식에서 생긴 잘못된 쉼표를 텍스트 치환 노드로 고치고, 메타데이터 노드로 거래일, 명세서 번호, 품목, 금액을 뽑는 흐름을 만듭니다. 스캔본과 사진의 인식 차이도 함께 비교합니다.</p>
+<p><strong>이 페이지에서 할 수 있는 일</strong></p>
+<ul>
+<li class="">이미지 파일(png, jpg)을 입력 노드에 넣고 파싱 결과를 원본과 대조합니다.</li>
+<li class="">글자 인식에서 자주 생기는 오류를 텍스트 치환 노드로 일괄 고칩니다.</li>
+<li class="">메타데이터 노드로 금액을 숫자 필드로 뽑습니다.</li>
+<li class="">스캔본과 사진의 인식 결과 차이를 확인합니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="목표">목표<a href="#목표" class="hash-link" aria-label="목표에 대한 직접 링크" title="목표에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>항목</th><th>내용</th></tr></thead><tbody><tr><td>만들 흐름</td><td>입력 → 파싱 → 청킹 → 텍스트 치환 → 메타데이터</td></tr><tr><td>결과물</td><td>거래명세서 한 장에서 거래일 2026-11-10, 명세서 번호, 품목 4개, 공급가액 8090000, 합계 8899000을 뽑은 결과</td></tr><tr><td>걸리는 시간</td><td>구성 10분, 실행 30~40초, 확인 10분</td></tr><tr><td>난이도</td><td>★★★☆☆</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="준비물">준비물<a href="#준비물" class="hash-link" aria-label="준비물에 대한 직접 링크" title="준비물에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>파일</th><th>내용</th><th>형식</th></tr></thead><tbody><tr><td>거래명세서-스캔.png</td><td>브레인크루가 가나다물산(가상)에 보낸 거래명세서를 스캔한 이미지. 회색 바탕, 약간 기울어지고 잡음이 있음</td><td>png</td></tr><tr><td>거래명세서-사진.jpg</td><td>같은 명세서를 휴대폰으로 찍은 사진. 한쪽이 어둡고 반대로 기울어짐</td><td>jpg</td></tr></tbody></table>
+<p>이미지로는 png, jpg, jpeg, tiff, tif, bmp, webp를 넣을 수 있고, 글자가 이미지로만 든 스캔 pdf도 같은 방식으로 읽힙니다. 한 파일은 500MB까지입니다. 실습에는 실제 거래처 정보와 계좌번호가 없는 가상 자료를 쓰세요.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1단계-노드-놓고-잇기">1단계. 노드 놓고 잇기<a href="#1단계-노드-놓고-잇기" class="hash-link" aria-label="1단계. 노드 놓고 잇기에 대한 직접 링크" title="1단계. 노드 놓고 잇기에 대한 직접 링크" translate="no">​</a></h2>
+<ol>
+<li class=""><strong>빈 캔버스</strong>로 새 플로우를 만듭니다. 이름: 거래명세서 스캔본 읽기.</li>
+<li class=""><strong>입력</strong>, <strong>파싱</strong>, <strong>청킹</strong>, <strong>텍스트 치환</strong>, <strong>메타데이터</strong>를 놓고 이 순서로 잇습니다.</li>
+</ol>
+<p>텍스트 치환 노드는 청크를 고치는 노드이므로 반드시 청킹 뒤에 둡니다. 파싱 바로 뒤에 이으면 실행할 때 &quot;연결 호환 불가: … → … (text_replace)&quot;로 실패합니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2단계-파싱-결과를-원본과-대조하기">2단계. 파싱 결과를 원본과 대조하기<a href="#2단계-파싱-결과를-원본과-대조하기" class="hash-link" aria-label="2단계. 파싱 결과를 원본과 대조하기에 대한 직접 링크" title="2단계. 파싱 결과를 원본과 대조하기에 대한 직접 링크" translate="no">​</a></h2>
+<ol>
+<li class="">입력 노드에 거래명세서-스캔.png를 넣고 실행합니다. 예시는 40초 안팎에 끝났습니다.</li>
+<li class="">파싱 노드를 누르고 <strong>옵션 &amp; 미리보기</strong> 탭의 <strong>Parse 결과</strong>를 엽니다.</li>
+</ol>
+<p><span class="manual-shot" role="figure" aria-label="스캔본 파싱 결과"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-scan-ocr-parse-02c8a36bbe10588cd7b63b15ea02d00f.png" target="_blank" rel="noopener"><img width="2615" height="1620" src="/deep-agent-platform/assets/images/practice-scan-ocr-parse-02c8a36bbe10588cd7b63b15ea02d00f.png" alt="파싱 노드, 블록 수, 원본 문서 버튼에 번호를 붙인 스캔본 파싱 결과" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">스캔본 파싱 결과</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>화면에 보이는 내용</th><th>확인할 것</th></tr></thead><tbody><tr><td>1</td><td>파싱 노드</td><td>4 블록 / 1 페이지</td><td>제목, 표, 아래 문장 두 줄이 블록으로 나왔는지</td></tr><tr><td>2</td><td>블록 요약</td><td>4 블록 · bbox 4개</td><td>블록마다 원본 위치가 붙었는지</td></tr><tr><td>3</td><td><strong>원본 문서</strong></td><td>원본 이미지를 보는 화면으로 바뀝니다.</td><td>표 숫자를 원본 이미지와 나란히 볼 때</td></tr></tbody></table>
+<p>표는 표 블록 하나로 읽히고 <strong>펼치기</strong>를 누르면 칸마다 값이 보입니다. 예시 스캔본에서 확인한 차이는 다음과 같습니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>원본</th><th>스캔본(png) 인식</th><th>사진(jpg) 인식</th></tr></thead><tbody><tr><td>5,900,000</td><td>5，900，000(넓은 쉼표)</td><td>5，900，000(넓은 쉼표)</td></tr><tr><td>크루봇 Pro 연간 구독</td><td>크루봇Pro연간구독(띄어쓰기 빠짐)</td><td>크루봇 Pro 연간 구독</td></tr><tr><td>위 금액을 영수(청구)합니다.</td><td>위 금액을 명수(청구)합니다.</td><td>위 금액을 영수(청구)합니다.</td></tr></tbody></table>
+<p>숫자 쉼표가 넓은 쉼표(전각 쉼표)로 읽히면 엑셀에 붙이거나 검색할 때 숫자로 인식되지 않습니다. 다음 단계에서 일괄로 고칩니다. 글자가 다른 글자로 읽힌 곳(영수 → 명수)은 규칙으로 고치기 어려우므로 원본을 다시 스캔하거나 사람이 확인합니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3단계-텍스트-치환과-메타데이터-설정값">3단계. 텍스트 치환과 메타데이터 설정값<a href="#3단계-텍스트-치환과-메타데이터-설정값" class="hash-link" aria-label="3단계. 텍스트 치환과 메타데이터 설정값에 대한 직접 링크" title="3단계. 텍스트 치환과 메타데이터 설정값에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>노드</th><th>설정</th><th>값</th></tr></thead><tbody><tr><td>청킹</td><td><strong>전략</strong> / <strong>최대 청크 크기 (글자 수)</strong> / <strong>최대 목표 겹침 (글자 수)</strong></td><td>재귀 (마크다운 인식) / 2000 / 0. 명세서 한 장이 한 청크가 되게 크게 잡습니다.</td></tr><tr><td>텍스트 치환</td><td><strong>찾기 방식</strong></td><td>일반 문자열</td></tr><tr><td>텍스트 치환</td><td><strong>찾을 문자열 또는 패턴</strong></td><td>，(넓은 쉼표. 파싱 결과에서 복사해 붙입니다)</td></tr><tr><td>텍스트 치환</td><td><strong>바꿀 문자열</strong></td><td>,(보통 쉼표)</td></tr><tr><td>메타데이터</td><td>필드</td><td>거래일(문자열, &quot;거래일을 YYYY-MM-DD 형식으로&quot;), 명세서_번호(문자열, &quot;명세서 번호를 원문 그대로&quot;), 품목(배열(문자열), &quot;품목 이름 목록&quot;), 공급가액(정수, &quot;공급가액 숫자만, 원 단위&quot;), 합계(정수, &quot;합계 금액 숫자만, 원 단위&quot;)</td></tr></tbody></table>
+<p><span class="manual-shot" role="figure" aria-label="넓은 쉼표를 보통 쉼표로 바꾸는 설정"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-scan-ocr-replace-351f1ac83e1815586566203d7e737c0d.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/practice-scan-ocr-replace-351f1ac83e1815586566203d7e737c0d.png" alt="텍스트 치환 노드, 찾기 방식, 찾을 문자열, 바꿀 문자열에 번호를 붙인 설정" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">넓은 쉼표를 보통 쉼표로 바꾸는 설정</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>화면에 보이는 내용</th></tr></thead><tbody><tr><td>1</td><td>텍스트 치환 노드</td><td>실행 뒤 &quot;전체 1개 · 변경 1개 · 치환 16회 · 빈 청크 0개&quot;</td></tr><tr><td>2</td><td><strong>찾기 방식</strong></td><td>일반 문자열</td></tr><tr><td>3</td><td><strong>찾을 문자열 또는 패턴</strong></td><td>넓은 쉼표 한 글자</td></tr><tr><td>4</td><td><strong>바꿀 문자열</strong></td><td>보통 쉼표 한 글자</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4단계-다시-실행하고-결과-읽기">4단계. 다시 실행하고 결과 읽기<a href="#4단계-다시-실행하고-결과-읽기" class="hash-link" aria-label="4단계. 다시 실행하고 결과 읽기에 대한 직접 링크" title="4단계. 다시 실행하고 결과 읽기에 대한 직접 링크" translate="no">​</a></h2>
+<ol>
+<li class="">설정을 마치면 다시 실행합니다.</li>
+<li class="">텍스트 치환 노드에 치환 16회가 보이면 표 숫자 속 넓은 쉼표 16개가 모두 보통 쉼표로 바뀐 것입니다.</li>
+<li class="">메타데이터 노드를 누르고 <strong>옵션 &amp; 미리보기</strong> 탭을 엽니다.</li>
+</ol>
+<p><span class="manual-shot" role="figure" aria-label="거래명세서에서 뽑은 값"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-scan-ocr-result-f1d0e1d6d33eb820870ee0c548a40788.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/practice-scan-ocr-result-f1d0e1d6d33eb820870ee0c548a40788.png" alt="텍스트 치환 노드, 필드별 채움 수, 뽑은 값에 번호를 붙인 메타데이터 결과" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">거래명세서에서 뽑은 값</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>화면에 보이는 내용</th><th>확인할 것</th></tr></thead><tbody><tr><td>1</td><td>텍스트 치환 노드</td><td>변경 1개, 치환 16회</td><td>바꾼 횟수가 원본 숫자에 든 쉼표 개수와 같은지</td></tr><tr><td>2</td><td>필드별 채움 수</td><td>거래일 1/1, 명세서_번호 1/1, 품목 1/1, 공급가액 1/1, 합계 1/1</td><td>빈 필드가 없는지</td></tr><tr><td>3</td><td>뽑은 값</td><td>2026-11-10, BC-2611-0042, 품목 4개, 8090000, 8899000</td><td>공급가액 + 세액 = 합계(8,090,000 + 809,000 = 8,899,000)인지</td></tr></tbody></table>
+<p>입력 파일을 거래명세서-사진.jpg로 바꿔 다시 실행하면 같은 값이 나오고, 품목 이름의 띄어쓰기는 원본과 같았습니다. 예시에서는 기울어지고 어두운 사진보다 잡음이 낀 스캔본에서 띄어쓰기와 글자 오류가 더 많았습니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="흔한-실수와-해결">흔한 실수와 해결<a href="#흔한-실수와-해결" class="hash-link" aria-label="흔한 실수와 해결에 대한 직접 링크" title="흔한 실수와 해결에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>증상</th><th>원인</th><th>해결</th></tr></thead><tbody><tr><td>&quot;연결 호환 불가&quot;로 실행이 실패합니다.</td><td>텍스트 치환을 파싱 바로 뒤에 이었습니다.</td><td>파싱 → 청킹 → 텍스트 치환 순서로 다시 잇습니다.</td></tr><tr><td>치환 0회입니다.</td><td>찾을 문자열에 보통 쉼표를 적었습니다.</td><td>파싱 결과의 넓은 쉼표를 복사해 붙입니다.</td></tr><tr><td>공급가액이 비어 있습니다.</td><td>숫자에 넓은 쉼표가 남아 정수로 읽히지 않았거나 타입이 문자열입니다.</td><td>치환 횟수를 확인하고 타입을 정수로 둡니다.</td></tr><tr><td>표가 표 블록이 아니라 글 줄로 나옵니다.</td><td>이미지 해상도가 낮거나 많이 기울었습니다.</td><td>300dpi 이상으로 다시 스캔하고, 사진은 정면에서 찍습니다.</td></tr><tr><td>품목 이름이 붙어서 나옵니다.</td><td>스캔 잡음으로 띄어쓰기를 놓쳤습니다.</td><td>검색에는 큰 문제가 없지만 보고서에 옮길 때는 원본을 보고 고칩니다.</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="응용-과제">응용 과제<a href="#응용-과제" class="hash-link" aria-label="응용 과제에 대한 직접 링크" title="응용 과제에 대한 직접 링크" translate="no">​</a></h2>
+<ol>
+<li class="">텍스트 치환 노드를 하나 더 이어 찾기 방식을 일반 문자열로 두고 &quot;명수(청구)&quot;를 &quot;영수(청구)&quot;로 바꿔, 자주 틀리는 글자를 규칙으로 고쳐 보세요.</li>
+<li class="">메타데이터 필드에 세액(정수)을 더하고, 공급가액 + 세액과 합계가 같은지 직접 계산해 보세요.</li>
+<li class="">영수증 사진 여러 장을 <a class="" href="/deep-agent-platform/docs/deep-docurator/practice-batch/">실습 4</a>처럼 Deep Connector에 한 번에 올리고 금액 검색이 되는지 확인해 보세요.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="다음-문서">다음 문서<a href="#다음-문서" class="hash-link" aria-label="다음 문서에 대한 직접 링크" title="다음 문서에 대한 직접 링크" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-docurator/practice-multilingual/">실습 12: 영어·일본어 문서를 한국어로 찾게 하기</a> — 다국어 문서에 한국어 분류와 요약 붙이기</li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-docurator/input-formats/">입력 노드와 지원 파일 형식</a> — 이미지 형식과 용량</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/deep-agent-platform/docs/deep-docurator/practice-table-report/"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">실습 10: 표가 많은 보고서 구조화</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/deep-agent-platform/docs/deep-docurator/practice-multilingual/"><div class="pagination-nav__sublabel">다음</div><div class="pagination-nav__label">실습 12: 영어·일본어 문서를 한국어로 찾기</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#목표" class="table-of-contents__link toc-highlight">목표</a></li><li><a href="#준비물" class="table-of-contents__link toc-highlight">준비물</a></li><li><a href="#1단계-노드-놓고-잇기" class="table-of-contents__link toc-highlight">1단계. 노드 놓고 잇기</a></li><li><a href="#2단계-파싱-결과를-원본과-대조하기" class="table-of-contents__link toc-highlight">2단계. 파싱 결과를 원본과 대조하기</a></li><li><a href="#3단계-텍스트-치환과-메타데이터-설정값" class="table-of-contents__link toc-highlight">3단계. 텍스트 치환과 메타데이터 설정값</a></li><li><a href="#4단계-다시-실행하고-결과-읽기" class="table-of-contents__link toc-highlight">4단계. 다시 실행하고 결과 읽기</a></li><li><a href="#흔한-실수와-해결" class="table-of-contents__link toc-highlight">흔한 실수와 해결</a></li><li><a href="#응용-과제" class="table-of-contents__link toc-highlight">응용 과제</a></li><li><a href="#다음-문서" class="table-of-contents__link toc-highlight">다음 문서</a></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>

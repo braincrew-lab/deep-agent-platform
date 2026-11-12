@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="ko" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-deep-docurator/practice-quality-loop" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.2">
+<title data-rh="true">Deep Docurator 실습 13: 평가 점수로 반복 개선하는 흐름 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/practice-quality-loop/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Deep Docurator 실습 13: 평가 점수로 반복 개선하는 흐름 | Deep Platform"><meta data-rh="true" name="description" content="고객지원팀이 크루 인사이트 FAQ를 고객 문의 에이전트의 지식으로 쓰겠다고 합니다. &quot;대충 나눠서 올리면 되지 않나요?&quot;라는 질문에 답하려면 숫자가 필요합니다. 이 실습은 일부러 거칠게 만든 1회차 설정으로 평가 노드와 메타데이터 평가 노드의 점수를 받아 본 뒤, 점수가 낮은 이유를 읽고 청킹 전략과 필드 설명을 고쳐 2회차 점수와 비교합니다. 설정을 한 번에 하나씩 바꾸고 점수로 확인하는 반복 개선의 기본 순서를 익힙니다."><meta data-rh="true" property="og:description" content="고객지원팀이 크루 인사이트 FAQ를 고객 문의 에이전트의 지식으로 쓰겠다고 합니다. &quot;대충 나눠서 올리면 되지 않나요?&quot;라는 질문에 답하려면 숫자가 필요합니다. 이 실습은 일부러 거칠게 만든 1회차 설정으로 평가 노드와 메타데이터 평가 노드의 점수를 받아 본 뒤, 점수가 낮은 이유를 읽고 청킹 전략과 필드 설명을 고쳐 2회차 점수와 비교합니다. 설정을 한 번에 하나씩 바꾸고 점수로 확인하는 반복 개선의 기본 순서를 익힙니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/practice-quality-loop/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/practice-quality-loop/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/practice-quality-loop/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"실습 13: 평가 점수로 반복 개선","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/practice-quality-loop"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.781e4ee1.css">
+<script src="/deep-agent-platform/assets/js/runtime~main.2d4144f7.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.de737954.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/deep-agent-platform/img/manual-mark.svg"><div role="region" aria-label="본문으로 건너뛰기"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">본문으로 건너뛰기</a></div><nav aria-label="메인" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="사이드바 펼치거나 접기" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/deep-agent-platform/"><div class="navbar__logo"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Deep Platform</b></a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">솔루션</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-flow/">Deep Flow</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-agent-builder/">Deep Agent Builder</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-connector/">Deep Connector</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/deep-agent-platform/docs/deep-docurator/">Deep Docurator</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/brain-parser/">Brain Parser</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work/">Deep Work</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work-gateway/">Deep Work Gateway</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-admin/">Deep Admin</a></li></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="어두운 모드와 밝은 모드 전환하기 (현재 system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="searchBar_fdyA"><input type="search" class="searchInput_JE4R" placeholder="매뉴얼 검색" aria-label="매뉴얼 검색" role="combobox" aria-autocomplete="list" aria-expanded="false" value=""><div role="status" aria-live="polite"></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="맨 위로 스크롤하기" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="문서 사이드바" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/"><span class="categoryLinkLabel_W154">소개</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/getting-started/"><span class="categoryLinkLabel_W154">시작하기</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/input-formats/"><span class="categoryLinkLabel_W154">메뉴: 플로우 편집기</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/presets/"><span class="categoryLinkLabel_W154">메뉴: 설정</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/deep-agent-platform/docs/deep-docurator/practice/"><span class="categoryLinkLabel_W154">실습</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice/"><span class="linkLabel_WmDU">흐름 만들기 실습</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-first-flow/"><span class="linkLabel_WmDU">실습 1: 가장 단순한 흐름</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-chunk-compare/"><span class="linkLabel_WmDU">실습 2: 청킹 전략 비교</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-field-extract/"><span class="linkLabel_WmDU">실습 3: 표와 필드 추출</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-batch/"><span class="linkLabel_WmDU">실습 4: 여러 문서 일괄 처리</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-presets-yaml/"><span class="linkLabel_WmDU">실습 5: 프리셋과 YAML</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-connect-builder/"><span class="linkLabel_WmDU">실습 6: 에이전트·지식과 연결</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-router/"><span class="linkLabel_WmDU">실습 7: 조건 분기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-pii-cleanup/"><span class="linkLabel_WmDU">실습 8: 개인정보 가리기와 치환 연쇄</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-long-summary/"><span class="linkLabel_WmDU">실습 9: 긴 문서 장별 요약</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-table-report/"><span class="linkLabel_WmDU">실습 10: 표가 많은 보고서 구조화</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-scan-ocr/"><span class="linkLabel_WmDU">실습 11: 스캔·사진 문서 글자 읽기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-multilingual/"><span class="linkLabel_WmDU">실습 12: 영어·일본어 문서를 한국어로 찾기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-quality-loop/"><span class="linkLabel_WmDU">실습 13: 평가 점수로 반복 개선</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/workflows/"><span class="categoryLinkLabel_W154">반복 업무</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/use-cases/"><span class="categoryLinkLabel_W154">활용사례</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/troubleshooting/"><span class="categoryLinkLabel_W154">문제 해결</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="탐색 경로"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="홈" class="breadcrumbs__link" href="/deep-agent-platform/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">실습</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">실습 13: 평가 점수로 반복 개선</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">이 페이지에서</button></div><div class="theme-doc-markdown markdown"><header><h1>Deep Docurator 실습 13: 평가 점수로 반복 개선하는 흐름</h1></header>
+<p>고객지원팀이 크루 인사이트 FAQ를 고객 문의 에이전트의 지식으로 쓰겠다고 합니다. &quot;대충 나눠서 올리면 되지 않나요?&quot;라는 질문에 답하려면 숫자가 필요합니다. 이 실습은 일부러 거칠게 만든 1회차 설정으로 평가 노드와 메타데이터 평가 노드의 점수를 받아 본 뒤, 점수가 낮은 이유를 읽고 청킹 전략과 필드 설명을 고쳐 2회차 점수와 비교합니다. 설정을 한 번에 하나씩 바꾸고 점수로 확인하는 반복 개선의 기본 순서를 익힙니다.</p>
+<p><strong>이 페이지에서 할 수 있는 일</strong></p>
+<ul>
+<li class="">청킹 결과를 평가 노드로, 메타데이터 결과를 메타데이터 평가 노드로 동시에 점검합니다.</li>
+<li class="">점수가 낮은 지표를 보고 고칠 곳을 고릅니다.</li>
+<li class="">고친 뒤 다시 실행해 1회차와 2회차 점수를 표로 비교합니다.</li>
+<li class="">고친 설정을 프리셋으로 남깁니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="목표">목표<a href="#목표" class="hash-link" aria-label="목표에 대한 직접 링크" title="목표에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>항목</th><th>내용</th></tr></thead><tbody><tr><td>만들 흐름</td><td>입력 → 파싱 → 청킹 → 평가, 청킹 → 메타데이터 → 메타데이터 평가</td></tr><tr><td>결과물</td><td>1회차와 2회차의 평가 점수표, 질문과 답이 한 청크에 든 FAQ 청크 11개</td></tr><tr><td>걸리는 시간</td><td>구성 15분, 실행 1회 20초 안팎, 비교 15분</td></tr><tr><td>난이도</td><td>★★★★☆</td></tr></tbody></table>
+<p><a class="" href="/deep-agent-platform/docs/deep-docurator/practice-chunk-compare/">실습 2</a>는 세 전략을 한 번에 돌려 점수가 가장 높은 것을 자동으로 골랐습니다. 이 실습은 사람이 점수를 읽고 원인을 찾아 고치는 순서를 다루며, 메타데이터 평가까지 함께 봅니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="준비물">준비물<a href="#준비물" class="hash-link" aria-label="준비물에 대한 직접 링크" title="준비물에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>파일</th><th>내용</th><th>형식</th></tr></thead><tbody><tr><td>크루인사이트-FAQ-2026.docx</td><td>크루 인사이트 자주 묻는 질문 10개(가상). 질문마다 &quot;Q.&quot; 제목과 두세 문장 답</td><td>docx</td></tr></tbody></table>
+<p>질문 제목과 답 문단이 번갈아 나오는 문서면 됩니다. 입력 노드는 pdf, doc, docx, hwp, hwpx, pptx, xlsx, xls, txt, csv, md, html, htm, png, jpg, jpeg, tiff, tif, bmp, webp를 받습니다. 표 형식 FAQ(xlsx, xls, csv)는 <a class="" href="/deep-agent-platform/docs/deep-docurator/practice-field-extract/">실습 3</a>의 표용 전략으로 나눕니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1단계-노드-여섯-개-놓고-잇기">1단계. 노드 여섯 개 놓고 잇기<a href="#1단계-노드-여섯-개-놓고-잇기" class="hash-link" aria-label="1단계. 노드 여섯 개 놓고 잇기에 대한 직접 링크" title="1단계. 노드 여섯 개 놓고 잇기에 대한 직접 링크" translate="no">​</a></h2>
+<ol>
+<li class=""><strong>빈 캔버스</strong>로 새 플로우를 만듭니다. 이름: FAQ 청킹 품질 점검.</li>
+<li class=""><strong>입력</strong>, <strong>파싱</strong>, <strong>청킹</strong>, <strong>평가</strong>, <strong>메타데이터</strong>, <strong>메타데이터 평가</strong>를 놓습니다.</li>
+<li class="">입력 → 파싱 → 청킹으로 잇고, 청킹 오른쪽 연결점에서 평가와 메타데이터로 두 번 끕니다. 마지막으로 메타데이터 → 메타데이터 평가를 잇습니다. 상태 표시줄에 노드: 6, 연결: 5가 보입니다.</li>
+</ol>
+<p><span class="manual-shot" role="figure" aria-label="점검 노드 두 개를 단 흐름"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-quality-loop-canvas-f5a90c075669633fe3d691135044b88d.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/practice-quality-loop-canvas-f5a90c075669633fe3d691135044b88d.png" alt="청킹, 평가, 메타데이터, 메타데이터 평가 노드에 번호를 붙인 캔버스" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">점검 노드 두 개를 단 흐름</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>노드</th><th>하는 일</th></tr></thead><tbody><tr><td>1</td><td>청킹</td><td>점검할 대상입니다. 1회차에는 일부러 거친 설정을 씁니다.</td></tr><tr><td>2</td><td>평가</td><td>원문 보존, 제목 위치에서 잘렸는지, 의미 분할, 정보 보존을 점수로 매깁니다.</td></tr><tr><td>3</td><td>메타데이터</td><td>청크마다 질문, 답변 요약, 주제를 뽑습니다.</td></tr><tr><td>4</td><td>메타데이터 평가</td><td>필드마다 정확도와 채움률을 표본으로 판정합니다. 청크는 그대로 통과시킵니다.</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2단계-1회차-설정으로-실행하기">2단계. 1회차 설정으로 실행하기<a href="#2단계-1회차-설정으로-실행하기" class="hash-link" aria-label="2단계. 1회차 설정으로 실행하기에 대한 직접 링크" title="2단계. 1회차 설정으로 실행하기에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>노드</th><th>설정</th><th>1회차 값</th></tr></thead><tbody><tr><td>청킹</td><td><strong>전략</strong> / <strong>최대 청크 크기 (글자 수)</strong> / <strong>겹침 (글자 수)</strong></td><td>고정 크기 (문자 기준) / 120 / 0</td></tr><tr><td>평가</td><td><strong>평가 메트릭</strong></td><td>처음 값(원문 보존, Structure, 의미 기반, Statistics, Preservation)</td></tr><tr><td>평가</td><td><strong>원문 위치 표본 수</strong> / <strong>의미 판정 최대 호출 수</strong> / <strong>의미 판정 입력·출력 추정 토큰</strong></td><td>20 / 20 / 60000</td></tr><tr><td>메타데이터</td><td>필드</td><td>질문(문자열, 설명 &quot;질문&quot;), 답변_요약(문자열, 설명 &quot;답&quot;), 주제(문자열, 설명 &quot;주제&quot;)</td></tr><tr><td>메타데이터 평가</td><td><strong>원문 위치 표본 수</strong></td><td>20(처음 값)</td></tr></tbody></table>
+<p>입력 노드에 크루인사이트-FAQ-2026.docx를 넣고 실행합니다. 예시는 20초 안팎에 끝났습니다. 평가 노드를 누르고 <strong>옵션 &amp; 미리보기</strong> 탭을 엽니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="1회차 평가 점수"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-quality-loop-round1-0fe50e5202fbe6d9d53871f5f309a69c.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/practice-quality-loop-round1-0fe50e5202fbe6d9d53871f5f309a69c.png" alt="청킹 노드와 Structure, 의미 기반 점수에 번호를 붙인 1회차 평가 결과" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">1회차 평가 점수</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>화면에 보이는 내용</th><th>뜻</th></tr></thead><tbody><tr><td>1</td><td>청킹 노드</td><td>고정 크기 (문자 기준), 11 청크, 경고 (11)</td><td>글자 수만 보고 120자마다 잘랐습니다.</td></tr><tr><td>2</td><td>Structure</td><td>0</td><td>청크 경계가 하나도 질문 제목 위치와 맞지 않았습니다. 질문과 답이 서로 다른 청크로 갈라졌다는 뜻입니다.</td></tr><tr><td>3</td><td>의미 기반</td><td>54</td><td>표본 청크 중 절반 가까이가 의미가 끊긴 채 잘렸습니다.</td></tr></tbody></table>
+<p>원문 보존은 100이므로 글자가 빠지지는 않았습니다. 같은 실행에서 메타데이터 평가 노드는 정확도 42%, 채움률 91%였고, 답변_요약과 주제의 정확도가 15% 안팎으로 가장 낮았습니다. 청크가 질문 중간에서 잘리면 모델이 어느 질문의 답인지 알 수 없기 때문입니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3단계-원인-하나씩-고치기">3단계. 원인 하나씩 고치기<a href="#3단계-원인-하나씩-고치기" class="hash-link" aria-label="3단계. 원인 하나씩 고치기에 대한 직접 링크" title="3단계. 원인 하나씩 고치기에 대한 직접 링크" translate="no">​</a></h2>
+<p>점수가 낮은 순서대로 원인과 고칠 곳을 정합니다. 한 번에 다 바꾸면 무엇이 효과였는지 알 수 없으므로, 실제 업무에서는 청킹을 먼저 고쳐 실행하고 메타데이터 설명을 그다음에 고칩니다. 아래는 두 가지를 모두 고친 2회차 값입니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>낮은 점수</th><th>원인</th><th>노드</th><th>2회차 값</th></tr></thead><tbody><tr><td>Structure 0, 의미 기반 54</td><td>제목을 보지 않는 고정 크기 전략</td><td>청킹</td><td><strong>전략</strong> 마크다운, <strong>헤더 깊이</strong> 3, <strong>헤더 제거</strong> 꺼짐. 질문 제목마다 한 청크가 됩니다.</td></tr><tr><td>답변_요약 정확도 낮음</td><td>설명이 &quot;답&quot; 한 글자라 무엇을 뽑을지 모호함</td><td>메타데이터</td><td>답변_요약 설명 &quot;질문 바로 아래 답변을 한 문장으로 줄인 것. 숫자와 기간은 원문 그대로 쓴다&quot;</td></tr><tr><td>주제 정확도 낮음</td><td>주제가 자유값이라 매번 다른 말로 나옴</td><td>메타데이터</td><td>주제에 허용 값 &quot;요금=요금제와 청구, 데이터=데이터 갱신·업로드·보관, 공유=공유와 권한, 화면=화면 꾸미기와 알림, 지원=문의와 장애&quot;</td></tr><tr><td>질문 정확도</td><td>질문 위치를 알려 주지 않음</td><td>메타데이터</td><td>질문 설명 &quot;청크 맨 앞 &#x27;Q.&#x27; 뒤의 질문 문장을 원문 그대로. 질문이 없으면 비워 둔다&quot;</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4단계-2회차-실행하고-비교하기">4단계. 2회차 실행하고 비교하기<a href="#4단계-2회차-실행하고-비교하기" class="hash-link" aria-label="4단계. 2회차 실행하고 비교하기에 대한 직접 링크" title="4단계. 2회차 실행하고 비교하기에 대한 직접 링크" translate="no">​</a></h2>
+<p>설정을 바꾼 뒤 다시 <strong>파이프라인 실행</strong>을 누릅니다. 입력 파일은 그대로 둡니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="2회차 평가 점수"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-quality-loop-round2-f0b82e206650a91818b5eee05e07f9fd.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/practice-quality-loop-round2-f0b82e206650a91818b5eee05e07f9fd.png" alt="청킹 노드와 Structure, 의미 기반 점수에 번호를 붙인 2회차 평가 결과" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">2회차 평가 점수</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>화면에 보이는 내용</th></tr></thead><tbody><tr><td>1</td><td>청킹 노드</td><td>마크다운, 11 청크. 질문 10개와 문서 제목이 각각 한 청크</td></tr><tr><td>2</td><td>Structure</td><td>100</td></tr><tr><td>3</td><td>의미 기반</td><td>96</td></tr></tbody></table>
+<p>메타데이터 평가 노드를 누르면 필드별 점수가 보입니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="2회차 메타데이터 평가"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-quality-loop-meta-10707f29cde3ac00543218bf020f3f30.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/practice-quality-loop-meta-10707f29cde3ac00543218bf020f3f30.png" alt="메타데이터 평가 노드와 필드별 정확도·채움률에 번호를 붙인 2회차 결과" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">2회차 메타데이터 평가</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>화면에 보이는 내용</th></tr></thead><tbody><tr><td>1</td><td>메타데이터 평가 노드</td><td>정확도와 채움률 요약</td></tr><tr><td>2</td><td>필드별 점수</td><td>정확도 66%, 채움률 100%. 질문 100% · 91%, 답변_요약 60% · 91%, 주제 41% · 100%(앞 숫자가 정확도, 뒤 숫자가 채움률)</td></tr></tbody></table>
+<p>예시의 두 회차를 비교한 표입니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>지표</th><th>1회차</th><th>2회차</th></tr></thead><tbody><tr><td>Structure(제목 위치)</td><td>0</td><td>100</td></tr><tr><td>의미 기반</td><td>54</td><td>96</td></tr><tr><td>Preservation(정보 보존)</td><td>90</td><td>100</td></tr><tr><td>원문 보존</td><td>100</td><td>100</td></tr><tr><td>메타데이터 정확도</td><td>42%</td><td>66%</td></tr><tr><td>메타데이터 채움률</td><td>91%</td><td>100%</td></tr></tbody></table>
+<p>의미 기반과 메타데이터 평가는 모델이 표본을 판정하므로 같은 설정으로 다시 실행해도 몇 점씩 달라집니다. 예시에서도 1회차 정확도는 35%에서 42%, 2회차는 66%에서 68% 사이였습니다. 차이가 10점 이상일 때만 개선으로 보고, 비교할 때는 같은 파일과 같은 표본 수를 씁니다.</p>
+<p>2회차에도 주제 정확도가 41%로 낮은 것은 문서 제목 청크(질문이 없는 청크)에도 주제를 붙였기 때문입니다. 이런 청크는 <a class="" href="/deep-agent-platform/docs/deep-docurator/node-settings/">필터</a> 노드로 빼거나 설명에 &quot;질문이 없으면 비워 둔다&quot;를 넣어 다음 회차에서 고칩니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="5단계-고친-설정을-남기기">5단계. 고친 설정을 남기기<a href="#5단계-고친-설정을-남기기" class="hash-link" aria-label="5단계. 고친 설정을 남기기에 대한 직접 링크" title="5단계. 고친 설정을 남기기에 대한 직접 링크" translate="no">​</a></h2>
+<ol>
+<li class="">편집기 위쪽 <strong>프리셋으로 저장</strong>을 누르고 이름을 &quot;FAQ 청킹 v2(마크다운)&quot;처럼 회차를 붙여 저장합니다.</li>
+<li class="">비교표를 팀 문서에 붙여 두면, 다음 FAQ 개정판에서 같은 기준으로 다시 점검할 수 있습니다.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="흔한-실수와-해결">흔한 실수와 해결<a href="#흔한-실수와-해결" class="hash-link" aria-label="흔한 실수와 해결에 대한 직접 링크" title="흔한 실수와 해결에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>증상</th><th>원인</th><th>해결</th></tr></thead><tbody><tr><td>평가 노드가 &quot;Input should be a valid integer&quot;로 실패합니다.</td><td>의미 판정 최대 호출 수와 추정 토큰이 비어 있습니다.</td><td>두 칸에 20과 60000을 넣습니다.</td></tr><tr><td>메타데이터 평가 노드에 결과가 없습니다.</td><td>메타데이터 평가를 청킹 뒤에 바로 이었습니다.</td><td>메타데이터 노드 다음에 잇습니다.</td></tr><tr><td>청킹 노드에 경고 (11)가 보입니다.</td><td>docx는 원본 위치 좌표가 없어 청크마다 안내가 붙습니다.</td><td>점수에는 영향이 없습니다. pdf로 저장해 넣으면 경고가 사라집니다.</td></tr><tr><td>같은 설정인데 점수가 조금씩 다릅니다.</td><td>의미 판정은 표본과 모델 판정에 따라 달라집니다.</td><td>원문 위치 표본 수를 늘리고, 작은 차이는 개선으로 보지 않습니다.</td></tr><tr><td>마크다운 전략인데 청크가 한 개만 나옵니다.</td><td>질문이 제목 서식이 아니라 굵은 본문으로 되어 있습니다.</td><td>원본에서 질문 줄을 제목 스타일로 바꾸거나 재귀 전략으로 비교합니다.</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="응용-과제">응용 과제<a href="#응용-과제" class="hash-link" aria-label="응용 과제에 대한 직접 링크" title="응용 과제에 대한 직접 링크" translate="no">​</a></h2>
+<ol>
+<li class="">2회차 설정에서 평가 메트릭의 Boundary와 Independence(진단용)를 함께 체크해 청크 경계와 독립성 점수도 보세요.</li>
+<li class="">마크다운 대신 재귀 (마크다운 인식) 전략에 최대 청크 크기 300을 넣은 3회차를 만들어 비교표에 한 줄을 더해 보세요.</li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-docurator/practice-chunk-compare/">실습 2</a>의 전략 선택 노드를 붙여 1·2·3회차 설정을 한 번에 돌리고, 자동으로 고른 결과가 사람이 고른 것과 같은지 확인해 보세요.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="다음-문서">다음 문서<a href="#다음-문서" class="hash-link" aria-label="다음 문서에 대한 직접 링크" title="다음 문서에 대한 직접 링크" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-docurator/practice/">흐름 만들기 실습</a> — 실습 13가지 한눈에 보기</li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-docurator/node-settings/">노드별 설정 항목</a> — 평가, 메타데이터 평가 설정 전체</li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-docurator/workflows/">반복 업무</a> — 설정을 하나씩 바꿔 비교하는 반복 업무</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/deep-agent-platform/docs/deep-docurator/practice-multilingual/"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">실습 12: 영어·일본어 문서를 한국어로 찾기</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/deep-agent-platform/docs/deep-docurator/workflows/"><div class="pagination-nav__sublabel">다음</div><div class="pagination-nav__label">반복 업무</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#목표" class="table-of-contents__link toc-highlight">목표</a></li><li><a href="#준비물" class="table-of-contents__link toc-highlight">준비물</a></li><li><a href="#1단계-노드-여섯-개-놓고-잇기" class="table-of-contents__link toc-highlight">1단계. 노드 여섯 개 놓고 잇기</a></li><li><a href="#2단계-1회차-설정으로-실행하기" class="table-of-contents__link toc-highlight">2단계. 1회차 설정으로 실행하기</a></li><li><a href="#3단계-원인-하나씩-고치기" class="table-of-contents__link toc-highlight">3단계. 원인 하나씩 고치기</a></li><li><a href="#4단계-2회차-실행하고-비교하기" class="table-of-contents__link toc-highlight">4단계. 2회차 실행하고 비교하기</a></li><li><a href="#5단계-고친-설정을-남기기" class="table-of-contents__link toc-highlight">5단계. 고친 설정을 남기기</a></li><li><a href="#흔한-실수와-해결" class="table-of-contents__link toc-highlight">흔한 실수와 해결</a></li><li><a href="#응용-과제" class="table-of-contents__link toc-highlight">응용 과제</a></li><li><a href="#다음-문서" class="table-of-contents__link toc-highlight">다음 문서</a></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>

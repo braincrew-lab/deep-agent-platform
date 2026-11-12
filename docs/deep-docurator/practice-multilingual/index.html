@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="ko" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-deep-docurator/practice-multilingual" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.2">
+<title data-rh="true">Deep Docurator 실습 12: 영어·일본어 문서를 한국어로 찾게 하는 흐름 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/practice-multilingual/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Deep Docurator 실습 12: 영어·일본어 문서를 한국어로 찾게 하는 흐름 | Deep Platform"><meta data-rh="true" name="description" content="해외 파트너가 보낸 제품 소개서는 영어로, 도입 안내서는 일본어로 되어 있습니다. 영업본부 동료들은 &quot;크루봇 요금&quot;처럼 한국어로 찾고 싶어 합니다. 이 실습은 영어·일본어 문서를 그대로 읽은 뒤, 시맨틱 태그 노드로 한국어 분류(대분류·중분류)를 붙이고, 메타데이터 노드로 언어 표시와 한국어 요약, 한국어 검색어를 붙이는 흐름을 만듭니다. 원문은 바꾸지 않고 한국어 정보만 더하므로 근거를 인용할 때는 원문이 그대로 보입니다."><meta data-rh="true" property="og:description" content="해외 파트너가 보낸 제품 소개서는 영어로, 도입 안내서는 일본어로 되어 있습니다. 영업본부 동료들은 &quot;크루봇 요금&quot;처럼 한국어로 찾고 싶어 합니다. 이 실습은 영어·일본어 문서를 그대로 읽은 뒤, 시맨틱 태그 노드로 한국어 분류(대분류·중분류)를 붙이고, 메타데이터 노드로 언어 표시와 한국어 요약, 한국어 검색어를 붙이는 흐름을 만듭니다. 원문은 바꾸지 않고 한국어 정보만 더하므로 근거를 인용할 때는 원문이 그대로 보입니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/practice-multilingual/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/practice-multilingual/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/practice-multilingual/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"실습 12: 영어·일본어 문서를 한국어로 찾기","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-docurator/practice-multilingual"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.781e4ee1.css">
+<script src="/deep-agent-platform/assets/js/runtime~main.2d4144f7.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.de737954.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/deep-agent-platform/img/manual-mark.svg"><div role="region" aria-label="본문으로 건너뛰기"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">본문으로 건너뛰기</a></div><nav aria-label="메인" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="사이드바 펼치거나 접기" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/deep-agent-platform/"><div class="navbar__logo"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Deep Platform</b></a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">솔루션</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-flow/">Deep Flow</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-agent-builder/">Deep Agent Builder</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-connector/">Deep Connector</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/deep-agent-platform/docs/deep-docurator/">Deep Docurator</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/brain-parser/">Brain Parser</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work/">Deep Work</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work-gateway/">Deep Work Gateway</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-admin/">Deep Admin</a></li></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="어두운 모드와 밝은 모드 전환하기 (현재 system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="searchBar_fdyA"><input type="search" class="searchInput_JE4R" placeholder="매뉴얼 검색" aria-label="매뉴얼 검색" role="combobox" aria-autocomplete="list" aria-expanded="false" value=""><div role="status" aria-live="polite"></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="맨 위로 스크롤하기" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="문서 사이드바" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/"><span class="categoryLinkLabel_W154">소개</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/getting-started/"><span class="categoryLinkLabel_W154">시작하기</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/input-formats/"><span class="categoryLinkLabel_W154">메뉴: 플로우 편집기</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/presets/"><span class="categoryLinkLabel_W154">메뉴: 설정</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/deep-agent-platform/docs/deep-docurator/practice/"><span class="categoryLinkLabel_W154">실습</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice/"><span class="linkLabel_WmDU">흐름 만들기 실습</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-first-flow/"><span class="linkLabel_WmDU">실습 1: 가장 단순한 흐름</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-chunk-compare/"><span class="linkLabel_WmDU">실습 2: 청킹 전략 비교</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-field-extract/"><span class="linkLabel_WmDU">실습 3: 표와 필드 추출</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-batch/"><span class="linkLabel_WmDU">실습 4: 여러 문서 일괄 처리</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-presets-yaml/"><span class="linkLabel_WmDU">실습 5: 프리셋과 YAML</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-connect-builder/"><span class="linkLabel_WmDU">실습 6: 에이전트·지식과 연결</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-router/"><span class="linkLabel_WmDU">실습 7: 조건 분기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-pii-cleanup/"><span class="linkLabel_WmDU">실습 8: 개인정보 가리기와 치환 연쇄</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-long-summary/"><span class="linkLabel_WmDU">실습 9: 긴 문서 장별 요약</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-table-report/"><span class="linkLabel_WmDU">실습 10: 표가 많은 보고서 구조화</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-scan-ocr/"><span class="linkLabel_WmDU">실습 11: 스캔·사진 문서 글자 읽기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-multilingual/"><span class="linkLabel_WmDU">실습 12: 영어·일본어 문서를 한국어로 찾기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-docurator/practice-quality-loop/"><span class="linkLabel_WmDU">실습 13: 평가 점수로 반복 개선</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/workflows/"><span class="categoryLinkLabel_W154">반복 업무</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/use-cases/"><span class="categoryLinkLabel_W154">활용사례</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-docurator/troubleshooting/"><span class="categoryLinkLabel_W154">문제 해결</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="탐색 경로"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="홈" class="breadcrumbs__link" href="/deep-agent-platform/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">실습</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">실습 12: 영어·일본어 문서를 한국어로 찾기</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">이 페이지에서</button></div><div class="theme-doc-markdown markdown"><header><h1>Deep Docurator 실습 12: 영어·일본어 문서를 한국어로 찾게 하는 흐름</h1></header>
+<p>해외 파트너가 보낸 제품 소개서는 영어로, 도입 안내서는 일본어로 되어 있습니다. 영업본부 동료들은 &quot;크루봇 요금&quot;처럼 한국어로 찾고 싶어 합니다. 이 실습은 영어·일본어 문서를 그대로 읽은 뒤, 시맨틱 태그 노드로 한국어 분류(대분류·중분류)를 붙이고, 메타데이터 노드로 언어 표시와 한국어 요약, 한국어 검색어를 붙이는 흐름을 만듭니다. 원문은 바꾸지 않고 한국어 정보만 더하므로 근거를 인용할 때는 원문이 그대로 보입니다.</p>
+<p><strong>이 페이지에서 할 수 있는 일</strong></p>
+<ul>
+<li class="">시맨틱 태그 노드의 대분류·중분류 목록을 한국어로 정합니다.</li>
+<li class="">메타데이터 노드의 허용 값으로 언어를 ko, en, ja 중 하나로 받습니다.</li>
+<li class="">영어 pdf와 일본어 docx를 같은 흐름에 넣어 결과를 비교합니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="목표">목표<a href="#목표" class="hash-link" aria-label="목표에 대한 직접 링크" title="목표에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>항목</th><th>내용</th></tr></thead><tbody><tr><td>만들 흐름</td><td>입력 → 파싱 → 시맨틱 태그 → 청킹 → 메타데이터</td></tr><tr><td>결과물</td><td>블록마다 한국어 분류 태그, 청크마다 언어(en, ja), 한국어 요약, 한국어 검색어</td></tr><tr><td>걸리는 시간</td><td>구성 15분, 실행 30초~1분, 확인 10분</td></tr><tr><td>난이도</td><td>★★★★☆</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="준비물">준비물<a href="#준비물" class="hash-link" aria-label="준비물에 대한 직접 링크" title="준비물에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>파일</th><th>내용</th><th>형식</th></tr></thead><tbody><tr><td>CrewBot-Overview-EN.pdf</td><td>크루봇 영문 제품 소개(가상). 기능, 요금 표, 보안, 도입 절차 다섯 절 1쪽</td><td>pdf</td></tr><tr><td>クルーボット導入ガイド-JA.docx</td><td>크루봇 일본어 도입 안내(가상). 개요, 도입 흐름, 요금, 자주 묻는 질문 네 절</td><td>docx</td></tr></tbody></table>
+<p>언어와 상관없이 입력 노드가 받는 형식(pdf, doc, docx, hwp, hwpx, pptx, xlsx, xls, txt, csv, md, html, htm, png, jpg, jpeg, tiff, tif, bmp, webp)은 같습니다. 중국어 등 다른 언어 문서도 같은 방법으로 처리하되, 언어 필드의 허용 값에 그 언어를 더합니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1단계-노드-놓고-잇기">1단계. 노드 놓고 잇기<a href="#1단계-노드-놓고-잇기" class="hash-link" aria-label="1단계. 노드 놓고 잇기에 대한 직접 링크" title="1단계. 노드 놓고 잇기에 대한 직접 링크" translate="no">​</a></h2>
+<ol>
+<li class=""><strong>빈 캔버스</strong>로 새 플로우를 만듭니다. 이름: 해외 파트너 자료 한국어 정리.</li>
+<li class=""><strong>입력</strong>, <strong>파싱</strong>, <strong>시맨틱 태그</strong>, <strong>청킹</strong>, <strong>메타데이터</strong>를 놓고 이 순서로 잇습니다. 시맨틱 태그는 파싱 결과의 블록에 태그를 붙이므로 청킹보다 앞에 둡니다.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2단계-시맨틱-태그에-한국어-분류-정하기">2단계. 시맨틱 태그에 한국어 분류 정하기<a href="#2단계-시맨틱-태그에-한국어-분류-정하기" class="hash-link" aria-label="2단계. 시맨틱 태그에 한국어 분류 정하기에 대한 직접 링크" title="2단계. 시맨틱 태그에 한국어 분류 정하기에 대한 직접 링크" translate="no">​</a></h2>
+<p>시맨틱 태그 노드를 누르고 <strong>설정</strong> 탭의 어휘 영역에서 <strong>필드 추가</strong>로 값과 설명을 한 줄씩 넣습니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>목록</th><th>값</th><th>설명(모델이 고르는 기준)</th></tr></thead><tbody><tr><td><strong>대분류 목록 (domain)</strong></td><td>제품소개</td><td>제품이 하는 일과 주요 기능</td></tr><tr><td></td><td>요금</td><td>요금제와 가격</td></tr><tr><td></td><td>보안</td><td>데이터 보관, 권한, 개인정보</td></tr><tr><td></td><td>도입절차</td><td>도입 일정과 단계, 문의</td></tr><tr><td><strong>중분류 목록 (aspect)</strong></td><td>기능설명</td><td>무엇을 할 수 있는지 설명</td></tr><tr><td></td><td>가격조건</td><td>금액, 요금, 계약 조건</td></tr><tr><td></td><td>절차</td><td>순서와 일정이 있는 진행 방법</td></tr><tr><td></td><td>제한사항</td><td>할 수 없거나 조건이 붙는 내용</td></tr></tbody></table>
+<p><strong>소분류 목록 (topic) — 비우면 자동</strong>은 비워 둡니다. 비우면 본문의 명사구를 그대로 뽑습니다. 나머지 고급 설정은 처음 값을 씁니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="한국어 대분류와 중분류"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-multilingual-vocab-8df7a8186b15f7d654b64cd101f90985.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/practice-multilingual-vocab-8df7a8186b15f7d654b64cd101f90985.png" alt="시맨틱 태그 노드, 대분류 목록, 중분류 목록에 번호를 붙인 설정" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">한국어 대분류와 중분류</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>화면에 보이는 내용</th></tr></thead><tbody><tr><td>1</td><td>시맨틱 태그 노드</td><td>실행 뒤 태그 12/12 블록</td></tr><tr><td>2</td><td><strong>대분류 목록 (domain)</strong></td><td>제품소개, 요금, 보안, 도입절차와 설명</td></tr><tr><td>3</td><td><strong>중분류 목록 (aspect)</strong></td><td>기능설명, 가격조건, 절차, 제한사항과 설명</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3단계-청킹과-메타데이터-설정값">3단계. 청킹과 메타데이터 설정값<a href="#3단계-청킹과-메타데이터-설정값" class="hash-link" aria-label="3단계. 청킹과 메타데이터 설정값에 대한 직접 링크" title="3단계. 청킹과 메타데이터 설정값에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>노드</th><th>설정</th><th>값</th></tr></thead><tbody><tr><td>청킹</td><td><strong>전략</strong> / <strong>최대 청크 크기 (글자 수)</strong> / <strong>최대 목표 겹침 (글자 수)</strong></td><td>재귀 (마크다운 인식) / 800 / 100</td></tr><tr><td>메타데이터</td><td>필드 언어</td><td>문자열, 허용 값 &quot;ko=한국어, en=영어, ja=일본어&quot;, 설명 &quot;청크 본문의 언어&quot;</td></tr><tr><td>메타데이터</td><td>필드 한국어_요약</td><td>문자열, &quot;청크 내용을 한국어 두 문장으로 요약. 제품명과 금액은 원문 그대로&quot;</td></tr><tr><td>메타데이터</td><td>필드 한국어_키워드</td><td>배열(문자열), &quot;한국어로 검색할 때 쓸 핵심 단어 3~5개&quot;</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4단계-영어-문서로-실행하고-결과-읽기">4단계. 영어 문서로 실행하고 결과 읽기<a href="#4단계-영어-문서로-실행하고-결과-읽기" class="hash-link" aria-label="4단계. 영어 문서로 실행하고 결과 읽기에 대한 직접 링크" title="4단계. 영어 문서로 실행하고 결과 읽기에 대한 직접 링크" translate="no">​</a></h2>
+<ol>
+<li class="">입력 노드에 CrewBot-Overview-EN.pdf를 넣고 실행합니다. 예시는 첫 실행이 1분, 다시 실행하면 15~35초였습니다.</li>
+<li class="">시맨틱 태그 노드를 누르고 <strong>옵션 &amp; 미리보기</strong> 탭을 엽니다.</li>
+</ol>
+<p><span class="manual-shot" role="figure" aria-label="영어 블록에 붙은 한국어 태그"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-multilingual-tags-416098e7c88e5382005c55440b59e7a0.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/practice-multilingual-tags-416098e7c88e5382005c55440b59e7a0.png" alt="시맨틱 태그 노드와 3. Pricing 블록의 한국어 태그에 번호를 붙인 결과" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">영어 블록에 붙은 한국어 태그</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>화면에 보이는 내용</th><th>확인할 것</th></tr></thead><tbody><tr><td>1</td><td>시맨틱 태그 노드</td><td>태그 12/12 블록</td><td>모든 블록에 태그가 붙었는지</td></tr><tr><td>2</td><td>블록 태그</td><td>위치: 3. Pricing, 대분류 요금, 중분류 가격조건, 아래에 Plan, Standard 같은 원문 단어</td><td>절 제목과 한국어 분류가 맞는지</td></tr></tbody></table>
+<ol start="3">
+<li class="">메타데이터 노드를 누르고 <strong>옵션 &amp; 미리보기</strong> 탭을 엽니다.</li>
+</ol>
+<p><span class="manual-shot" role="figure" aria-label="영어 청크에 붙은 한국어 요약"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-multilingual-result-cf04aedd3a75e3def2d7fb29796e09df.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/practice-multilingual-result-cf04aedd3a75e3def2d7fb29796e09df.png" alt="필드별 채움 수와 2번 청크의 언어, 한국어 요약, 한국어 키워드에 번호를 붙인 결과" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">영어 청크에 붙은 한국어 요약</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>화면에 보이는 내용</th><th>확인할 것</th></tr></thead><tbody><tr><td>1</td><td>필드별 채움 수</td><td>언어 2/2, 한국어_요약 2/2, 한국어_키워드 2/2</td><td>빈 값이 없는지</td></tr><tr><td>2</td><td>청크 결과</td><td>#2 언어 en, 요금제 두 가지(월 KRW 29,000, KRW 59,000)와 보안 내용을 한국어로 요약, 키워드 가격 정책 등</td><td>요약 속 금액이 원문과 같은지</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="5단계-일본어-문서로-다시-실행하기">5단계. 일본어 문서로 다시 실행하기<a href="#5단계-일본어-문서로-다시-실행하기" class="hash-link" aria-label="5단계. 일본어 문서로 다시 실행하기에 대한 직접 링크" title="5단계. 일본어 문서로 다시 실행하기에 대한 직접 링크" translate="no">​</a></h2>
+<p>입력 파일을 クルーボット導入ガイド-JA.docx로 바꿔 다시 실행합니다. 설정은 그대로 둡니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="일본어 문서 결과"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-multilingual-ja-dc8b22b096b2d28c3fa77ca0355a1e12.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/practice-multilingual-ja-dc8b22b096b2d28c3fa77ca0355a1e12.png" alt="입력 노드, 언어 필드, 일본어 청크 결과에 번호를 붙인 결과" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">일본어 문서 결과</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>화면에 보이는 내용</th></tr></thead><tbody><tr><td>1</td><td>입력 노드</td><td>일본어 파일 이름</td></tr><tr><td>2</td><td>언어 필드</td><td>언어 1/1</td></tr><tr><td>3</td><td>청크 결과</td><td>언어 ja, 요금(월 29,000원, 59,000원)이 든 한국어 요약, 한국어 키워드</td></tr></tbody></table>
+<p>예시에서는 일본어 문서의 &quot;料金&quot; 절이 대분류 요금·중분류 가격조건으로, &quot;導入の流れ&quot; 절이 도입절차·절차로 분류됐습니다. 이 흐름을 <a class="" href="/deep-agent-platform/docs/deep-docurator/practice-batch/">실습 4</a>처럼 배포해 Deep Connector에 올리면 한국어 질문으로 원문 근거를 찾을 수 있습니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="흔한-실수와-해결">흔한 실수와 해결<a href="#흔한-실수와-해결" class="hash-link" aria-label="흔한 실수와 해결에 대한 직접 링크" title="흔한 실수와 해결에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>증상</th><th>원인</th><th>해결</th></tr></thead><tbody><tr><td>시맨틱 태그 노드에 &quot;태그 0/12 블록&quot;과 &quot;LLM 슬롯 미수행: vocab_missing:aspect&quot;가 보입니다.</td><td>중분류 목록이 비어 있습니다.</td><td>중분류 목록에 값을 한 개 이상 넣습니다. 대분류와 중분류 목록이 모두 있어야 태그가 붙습니다.</td></tr><tr><td>메타데이터 노드를 시맨틱 태그 바로 뒤에 이었더니 결과가 비었습니다.</td><td>메타데이터는 청크를 받는 노드입니다.</td><td>시맨틱 태그 → 청킹 → 메타데이터 순서로 잇습니다.</td></tr><tr><td>언어에 &quot;English&quot;, &quot;영어&quot;처럼 다른 값이 섞입니다.</td><td>허용 값을 넣지 않았습니다.</td><td>&quot;ko=한국어, en=영어, ja=일본어&quot;처럼 허용 값을 정합니다.</td></tr><tr><td>한국어 요약에 오타나 어색한 번역이 있습니다.</td><td>모델이 번역하며 생긴 오류입니다(예시에서 &quot;이메일&quot;이 &quot;이메라&quot;로 나온 적이 있습니다).</td><td>요약은 검색용으로만 쓰고, 인용과 보고에는 원문을 씁니다.</td></tr><tr><td>청킹 노드에 경고가 하나 보입니다.</td><td>docx는 원본 위치 좌표가 없어 생기는 안내입니다.</td><td>결과에는 영향이 없습니다.</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="응용-과제">응용 과제<a href="#응용-과제" class="hash-link" aria-label="응용 과제에 대한 직접 링크" title="응용 과제에 대한 직접 링크" translate="no">​</a></h2>
+<ol>
+<li class="">메타데이터에 &quot;원문_제목&quot;(문자열, 청크가 속한 절의 원문 제목) 필드를 더해 한국어 요약과 원문 절을 짝지어 보세요.</li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-docurator/practice-router/">라우터</a> 노드를 메타데이터 다음에 두고 언어가 ja인 문서만 다른 경로로 보내 보세요.</li>
+<li class="">한국어 문서(예: <a class="" href="/deep-agent-platform/docs/deep-docurator/practice-chunk-compare/">실습 2</a>의 출장비 규정)를 넣어 언어가 ko로 나오고 분류가 어떻게 붙는지 비교해 보세요.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="다음-문서">다음 문서<a href="#다음-문서" class="hash-link" aria-label="다음 문서에 대한 직접 링크" title="다음 문서에 대한 직접 링크" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-docurator/practice-quality-loop/">실습 13: 평가 점수로 반복 개선하기</a> — 설정을 바꿔 점수 비교하기</li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-docurator/node-settings/">노드별 설정 항목</a> — 시맨틱 태그 설정 전체</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/deep-agent-platform/docs/deep-docurator/practice-scan-ocr/"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">실습 11: 스캔·사진 문서 글자 읽기</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/deep-agent-platform/docs/deep-docurator/practice-quality-loop/"><div class="pagination-nav__sublabel">다음</div><div class="pagination-nav__label">실습 13: 평가 점수로 반복 개선</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#목표" class="table-of-contents__link toc-highlight">목표</a></li><li><a href="#준비물" class="table-of-contents__link toc-highlight">준비물</a></li><li><a href="#1단계-노드-놓고-잇기" class="table-of-contents__link toc-highlight">1단계. 노드 놓고 잇기</a></li><li><a href="#2단계-시맨틱-태그에-한국어-분류-정하기" class="table-of-contents__link toc-highlight">2단계. 시맨틱 태그에 한국어 분류 정하기</a></li><li><a href="#3단계-청킹과-메타데이터-설정값" class="table-of-contents__link toc-highlight">3단계. 청킹과 메타데이터 설정값</a></li><li><a href="#4단계-영어-문서로-실행하고-결과-읽기" class="table-of-contents__link toc-highlight">4단계. 영어 문서로 실행하고 결과 읽기</a></li><li><a href="#5단계-일본어-문서로-다시-실행하기" class="table-of-contents__link toc-highlight">5단계. 일본어 문서로 다시 실행하기</a></li><li><a href="#흔한-실수와-해결" class="table-of-contents__link toc-highlight">흔한 실수와 해결</a></li><li><a href="#응용-과제" class="table-of-contents__link toc-highlight">응용 과제</a></li><li><a href="#다음-문서" class="table-of-contents__link toc-highlight">다음 문서</a></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>
