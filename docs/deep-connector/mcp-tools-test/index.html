@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="ko" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-deep-connector/mcp-tools-test" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.2">
+<title data-rh="true">Deep Connector 실험: MCP 도구 테스트 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/mcp-tools-test/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Deep Connector 실험: MCP 도구 테스트 | Deep Platform"><meta data-rh="true" name="description" content="사이드바 실험 &gt; MCP 도구 테스트는 에이전트가 Deep Connector를 검색할 때 쓰는 도구를 직접 실행해 보는 화면입니다. 에이전트가 근거를 못 찾을 때 같은 도구를 여기서 실행해 보면 문서 쪽 문제인지 질문 쪽 문제인지 가를 수 있습니다."><meta data-rh="true" property="og:description" content="사이드바 실험 &gt; MCP 도구 테스트는 에이전트가 Deep Connector를 검색할 때 쓰는 도구를 직접 실행해 보는 화면입니다. 에이전트가 근거를 못 찾을 때 같은 도구를 여기서 실행해 보면 문서 쪽 문제인지 질문 쪽 문제인지 가를 수 있습니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/mcp-tools-test/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/mcp-tools-test/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/mcp-tools-test/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"실험: MCP 도구 테스트","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/mcp-tools-test"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
+<script src="/deep-agent-platform/assets/js/runtime~main.d168cd72.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.0a7d59c5.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/deep-agent-platform/img/manual-mark.svg"><div role="region" aria-label="본문으로 건너뛰기"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">본문으로 건너뛰기</a></div><nav aria-label="메인" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="사이드바 펼치거나 접기" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/deep-agent-platform/"><div class="navbar__logo"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Deep Platform</b></a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">솔루션</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-flow/">Deep Flow</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-agent-builder/">Deep Agent Builder</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/deep-agent-platform/docs/deep-connector/">Deep Connector</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-docurator/">Deep Docurator</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/brain-parser/">Brain Parser</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work/">Deep Work</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work-gateway/">Deep Work Gateway</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-admin/">Deep Admin</a></li></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="어두운 모드와 밝은 모드 전환하기 (현재 system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="searchBar_fdyA"><input type="search" class="searchInput_JE4R" placeholder="매뉴얼 검색" aria-label="매뉴얼 검색" role="combobox" aria-autocomplete="list" aria-expanded="false" value=""><div role="status" aria-live="polite"></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="맨 위로 스크롤하기" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="문서 사이드바" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/"><span class="categoryLinkLabel_W154">소개</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/getting-started/"><span class="categoryLinkLabel_W154">시작하기</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/workspaces/"><span class="categoryLinkLabel_W154">메뉴: 워크스페이스</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/collections/"><span class="categoryLinkLabel_W154">메뉴: 컬렉션</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/deep-agent-platform/docs/deep-connector/search-and-rag/"><span class="categoryLinkLabel_W154">메뉴: 실험</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/search-and-rag/"><span class="linkLabel_WmDU">실험: 검색</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/rag-lab/"><span class="linkLabel_WmDU">실험: RAG 진단</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/rag-eval/"><span class="linkLabel_WmDU">실험: RAG 평가</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/deep-agent-platform/docs/deep-connector/mcp-tools-test/"><span class="linkLabel_WmDU">실험: MCP 도구 테스트</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/permissions/"><span class="categoryLinkLabel_W154">메뉴: 권한</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/agent-knowledge/"><span class="categoryLinkLabel_W154">에이전트 연결</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/admin/"><span class="categoryLinkLabel_W154">관리자 메뉴</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/workflows/"><span class="categoryLinkLabel_W154">반복 업무</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/use-cases/"><span class="categoryLinkLabel_W154">활용사례</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/troubleshooting/"><span class="categoryLinkLabel_W154">문제 해결</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="탐색 경로"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="홈" class="breadcrumbs__link" href="/deep-agent-platform/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">메뉴: 실험</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">실험: MCP 도구 테스트</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">이 페이지에서</button></div><div class="theme-doc-markdown markdown"><header><h1>Deep Connector 실험: MCP 도구 테스트</h1></header>
+<p>사이드바 <strong>실험</strong> &gt; <strong>MCP 도구 테스트</strong>는 에이전트가 Deep Connector를 검색할 때 쓰는 도구를 직접 실행해 보는 화면입니다. 에이전트가 근거를 못 찾을 때 같은 도구를 여기서 실행해 보면 문서 쪽 문제인지 질문 쪽 문제인지 가를 수 있습니다.</p>
+<p><strong>이 페이지에서 할 수 있는 일</strong></p>
+<ul>
+<li class="">도구 목록에서 도구를 골라 설명과 입력 규칙을 읽습니다.</li>
+<li class="">파라미터를 넣어 도구를 실행하고 결과를 봅니다.</li>
+<li class="">도구 17개가 각각 무엇을 하는지 압니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="화면-구성">화면 구성<a href="#화면-구성" class="hash-link" aria-label="화면 구성에 대한 직접 링크" title="화면 구성에 대한 직접 링크" translate="no">​</a></h2>
+<p><span class="manual-shot" role="figure" aria-label="MCP 도구 테스트 화면"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/external-integration-mcp-tools-2c0174c189e615105d3ff98867150423.png" target="_blank" rel="noopener"><img width="2591" height="1620" src="/deep-agent-platform/assets/images/external-integration-mcp-tools-2c0174c189e615105d3ff98867150423.png" alt="도구 검색, 실행 범위, search_documents, 쓰기 도구에 번호를 붙인 MCP 도구 테스트 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">MCP 도구 테스트 화면</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>도구 검색</strong></td><td>도구 이름으로 목록을 좁힙니다.</td><td>쓰려는 도구를 빨리 찾을 때</td></tr><tr><td>2</td><td>실행 범위</td><td>도구를 실행할 컬렉션을 고르는 창을 엽니다. 고르지 않으면 접근할 수 있는 전체 컬렉션이 대상입니다.</td><td>한 컬렉션 안에서만 시험할 때</td></tr><tr><td>3</td><td>도구 목록의 search_documents</td><td>누르면 가운데에 그 도구의 이름, 종류(읽기), 설명과 입력 규칙이 나옵니다.</td><td>어떤 값을 넣어야 하는지 볼 때</td></tr><tr><td>4</td><td>쓰기 도구</td><td>문서·컬렉션을 만들거나 지우는 도구 5개입니다. 잠금 표시가 붙어 있고, 실행 전에 확인 창이 나옵니다.</td><td>일반 점검에는 쓰지 않습니다</td></tr></tbody></table>
+<p><span class="manual-shot" role="figure" aria-label="파라미터와 실행"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/external-integration-mcp-tools-2-f2552903772385edf3524e1c9b45a2a7.png" target="_blank" rel="noopener"><img width="2591" height="1643" src="/deep-agent-platform/assets/images/external-integration-mcp-tools-2-f2552903772385edf3524e1c9b45a2a7.png" alt="파라미터, 고급 파라미터, 실행·초기화에 번호를 붙인 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">파라미터와 실행</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>파라미터</td><td>도구에 넘길 값입니다. 별표(*)는 필수입니다.</td><td>질문을 적을 때</td></tr><tr><td>2</td><td><strong>고급 파라미터</strong></td><td>결과 수, 검색 방식, 검색 범위(path, document_ids) 같은 선택값입니다.</td><td>검색 범위를 정할 때</td></tr><tr><td>3</td><td><strong>실행</strong>·<strong>초기화</strong></td><td>왼쪽은 도구를 실행하고, 오른쪽은 입력값을 비웁니다.</td><td>값을 다 넣었거나 다른 조건으로 다시 할 때</td></tr></tbody></table>
+<p><span class="manual-shot" role="figure" aria-label="실행 결과"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/external-integration-mcp-tools-3-62aa2d345bbe7cf783d224f071dbfc3d.png" target="_blank" rel="noopener"><img width="2591" height="1620" src="/deep-agent-platform/assets/images/external-integration-mcp-tools-3-62aa2d345bbe7cf783d224f071dbfc3d.png" alt="실행 결과 요약, 보기·Raw JSON, 결과에 번호를 붙인 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">실행 결과</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>실행 결과 요약</td><td>성공·실패, 도구 이름, 걸린 시간입니다.</td><td>실행이 끝났는지 볼 때</td></tr><tr><td>2</td><td><strong>보기</strong>·<strong>Raw JSON</strong></td><td>결과를 읽기 쉬운 화면이나 원문으로 봅니다.</td><td>결과를 담당자에게 그대로 전달할 때</td></tr><tr><td>3</td><td>결과</td><td>찾은 청크와 점수입니다. 맨 위에는 실제 적용된 검색 설정이 나옵니다.</td><td>에이전트가 볼 근거를 미리 읽을 때</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="도구-목록">도구 목록<a href="#도구-목록" class="hash-link" aria-label="도구 목록에 대한 직접 링크" title="도구 목록에 대한 직접 링크" translate="no">​</a></h2>
+<p>도구 목록에는 읽기 도구 12개와 쓰기 도구 5개가 있습니다. 쓰기 도구는 문서나 컬렉션을 실제로 바꾸므로 점검에는 읽기 도구만 쓰세요.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>도구</th><th>종류</th><th>하는 일</th><th>이런 때 실행해 보세요</th></tr></thead><tbody><tr><td>search_documents</td><td>읽기</td><td>질문으로 청크를 찾습니다. 고급 파라미터의 path(예: &quot;/규정 Q&amp;A&quot;)나 document_ids로 범위를 정해야 실행됩니다.</td><td>에이전트가 근거를 못 찾을 때 같은 질문으로</td></tr><tr><td>grep_documents</td><td>읽기</td><td>정확한 문구나 패턴이 들어 있는 곳을 찾습니다.</td><td>&quot;E103&quot; 같은 코드가 어느 문서에 있는지 볼 때</td></tr><tr><td>glob_paths</td><td>읽기</td><td>폴더와 컬렉션 경로를 이름으로 찾습니다.</td><td>search_documents에 넣을 path 값을 모를 때</td></tr><tr><td>list_collections</td><td>읽기</td><td>접근할 수 있는 컬렉션 목록을 봅니다.</td><td>토큰이 어떤 컬렉션을 볼 수 있는지 확인할 때</td></tr><tr><td>list_documents</td><td>읽기</td><td>컬렉션의 문서 목록을 봅니다. 처리에 실패한 문서도 나옵니다.</td><td>문서가 실제로 들어 있는지 볼 때</td></tr><tr><td>list_chunks</td><td>읽기</td><td>컬렉션의 청크를 쪽 단위로 차례로 봅니다.</td><td>문서가 어떻게 나뉘었는지 볼 때</td></tr><tr><td>read_document</td><td>읽기</td><td>문서 하나를 쪽 묶음이나 순서대로 읽습니다.</td><td>검색으로 찾은 문서의 앞뒤 내용을 볼 때</td></tr><tr><td>explore_metadata</td><td>읽기</td><td>제품명, 기간, 코드처럼 정확한 조건으로 거를 수 있는 메타데이터 후보를 찾습니다.</td><td>메타데이터 필터에 쓸 값을 정확히 알고 싶을 때</td></tr><tr><td>get_collection_metadata_schema</td><td>읽기</td><td>컬렉션에서 뽑힌 메타데이터 항목 구성을 봅니다.</td><td>어떤 항목으로 거를 수 있는지 볼 때</td></tr><tr><td>get_collection_search_profile</td><td>읽기</td><td>컬렉션에 저장된 검색 설정과 실제 적용되는 설정을 봅니다.</td><td>분석기·리랭커가 켜져 있는지 확인할 때</td></tr><tr><td>lookup_glossary_terms</td><td>읽기</td><td>전사 용어사전에서 용어의 정의, 약어, 유의어를 찾습니다.</td><td>용어 사전이 검색에 반영되는지 볼 때</td></tr><tr><td>get_user_info</td><td>읽기</td><td>토큰이나 로그인한 사용자의 정보를 봅니다.</td><td>누구 권한으로 실행되는지 확인할 때</td></tr><tr><td>add_document_text</td><td>쓰기</td><td>글 내용을 문서로 만들어 컬렉션에 넣고 처리를 시작합니다.</td><td>점검에는 쓰지 않습니다</td></tr><tr><td>add_document_base64</td><td>쓰기</td><td>파일을 컬렉션에 올립니다. 받는 형식은 <a class="" href="/deep-agent-platform/docs/deep-connector/upload-documents/">문서 올리기</a>의 지원 형식과 같습니다.</td><td>점검에는 쓰지 않습니다</td></tr><tr><td>create_collection</td><td>쓰기</td><td>새 컬렉션을 만듭니다.</td><td>점검에는 쓰지 않습니다</td></tr><tr><td>delete_collection</td><td>쓰기</td><td>컬렉션과 안의 문서를 모두 지웁니다. 되돌릴 수 없습니다.</td><td>점검에는 쓰지 않습니다</td></tr><tr><td>delete_document</td><td>쓰기</td><td>문서 하나를 지웁니다.</td><td>점검에는 쓰지 않습니다</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="따라-해-보기">따라 해 보기<a href="#따라-해-보기" class="hash-link" aria-label="따라 해 보기에 대한 직접 링크" title="따라 해 보기에 대한 직접 링크" translate="no">​</a></h2>
+<ol>
+<li class=""><strong>MCP 도구 테스트</strong>에서 search_documents를 고릅니다.</li>
+<li class="">query에 &quot;재택근무 신청 마감&quot;을 적습니다.</li>
+<li class=""><strong>고급 파라미터</strong>를 펼치고 path에 &quot;/규정 Q&amp;A&quot;를 적습니다.</li>
+<li class=""><strong>실행</strong>을 누릅니다. 결과에 재택근무-운영-지침.docx 청크가 나오고 &quot;전주 금요일 18시까지&quot;가 보이면 됩니다.</li>
+</ol>
+<p>검색 범위를 넣지 않으면 실행 결과에 검증 실패(ValidationError)가 나옵니다. 리랭커를 쓰는 환경에서는 결과가 나오기까지 시간이 걸릴 수 있습니다.</p>
+<p><strong>이럴 때 쓰세요</strong>: Builder의 &quot;사내 규정 Q&amp;A 비서&quot;가 &quot;재택근무 신청 마감&quot;에 엉뚱한 답을 했다면, 김그루 사원은 이 화면에서 같은 질문으로 search_documents를 실행해 봅니다. 여기서도 재택근무 지침 청크가 안 나오면 문서 쪽(처리 결과, 검색 설정)을, 잘 나오면 에이전트 지침 쪽을 고칩니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="다음-문서">다음 문서<a href="#다음-문서" class="hash-link" aria-label="다음 문서에 대한 직접 링크" title="다음 문서에 대한 직접 링크" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-connector/external-integration/">MCP 토큰과 외부 연동</a> — 도구를 외부 AI 도구에 연결하는 토큰 만들기</li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-connector/agent-knowledge/">에이전트에서 지식 쓰기</a> — Builder 에이전트에서 도구 결과 확인하기</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/deep-agent-platform/docs/deep-connector/rag-eval/"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">실험: RAG 평가</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/deep-agent-platform/docs/deep-connector/permissions/"><div class="pagination-nav__sublabel">다음</div><div class="pagination-nav__label">권한·공유·접근 요청</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#화면-구성" class="table-of-contents__link toc-highlight">화면 구성</a></li><li><a href="#도구-목록" class="table-of-contents__link toc-highlight">도구 목록</a></li><li><a href="#따라-해-보기" class="table-of-contents__link toc-highlight">따라 해 보기</a></li><li><a href="#다음-문서" class="table-of-contents__link toc-highlight">다음 문서</a></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="ko" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-deep-connector/admin-system" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.2">
+<title data-rh="true">Deep Connector 관리자: 시스템 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/admin-system/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Deep Connector 관리자: 시스템 | Deep Platform"><meta data-rh="true" name="description" content="관리자 사이드바 시스템 묶음은 Deep Connector 전체에 걸리는 운영 화면입니다. 저장공간, 감사 로그, 브랜드 설정, 시스템 설정 네 메뉴가 있습니다. 이 페이지는 AI혁신팀 강혁신 팀장(Deep Connector 관리자)이 각 화면에서 무엇을 확인하고 바꾸는지 설명합니다."><meta data-rh="true" property="og:description" content="관리자 사이드바 시스템 묶음은 Deep Connector 전체에 걸리는 운영 화면입니다. 저장공간, 감사 로그, 브랜드 설정, 시스템 설정 네 메뉴가 있습니다. 이 페이지는 AI혁신팀 강혁신 팀장(Deep Connector 관리자)이 각 화면에서 무엇을 확인하고 바꾸는지 설명합니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/admin-system/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/admin-system/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/admin-system/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"관리자: 시스템","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/admin-system"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
+<script src="/deep-agent-platform/assets/js/runtime~main.d168cd72.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.0a7d59c5.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/deep-agent-platform/img/manual-mark.svg"><div role="region" aria-label="본문으로 건너뛰기"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">본문으로 건너뛰기</a></div><nav aria-label="메인" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="사이드바 펼치거나 접기" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/deep-agent-platform/"><div class="navbar__logo"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Deep Platform</b></a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">솔루션</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-flow/">Deep Flow</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-agent-builder/">Deep Agent Builder</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/deep-agent-platform/docs/deep-connector/">Deep Connector</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-docurator/">Deep Docurator</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/brain-parser/">Brain Parser</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work/">Deep Work</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work-gateway/">Deep Work Gateway</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-admin/">Deep Admin</a></li></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="어두운 모드와 밝은 모드 전환하기 (현재 system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="searchBar_fdyA"><input type="search" class="searchInput_JE4R" placeholder="매뉴얼 검색" aria-label="매뉴얼 검색" role="combobox" aria-autocomplete="list" aria-expanded="false" value=""><div role="status" aria-live="polite"></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="맨 위로 스크롤하기" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="문서 사이드바" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/"><span class="categoryLinkLabel_W154">소개</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/getting-started/"><span class="categoryLinkLabel_W154">시작하기</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/workspaces/"><span class="categoryLinkLabel_W154">메뉴: 워크스페이스</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/collections/"><span class="categoryLinkLabel_W154">메뉴: 컬렉션</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/search-and-rag/"><span class="categoryLinkLabel_W154">메뉴: 실험</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/permissions/"><span class="categoryLinkLabel_W154">메뉴: 권한</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/agent-knowledge/"><span class="categoryLinkLabel_W154">에이전트 연결</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/deep-agent-platform/docs/deep-connector/admin/"><span class="categoryLinkLabel_W154">관리자 메뉴</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/admin/"><span class="linkLabel_WmDU">관리자: 대시보드와 적재 현황</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/admin-users/"><span class="linkLabel_WmDU">관리자: 사용자와 팀스페이스</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/admin-search-ai/"><span class="linkLabel_WmDU">관리자: 검색과 AI</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/deep-agent-platform/docs/deep-connector/admin-system/"><span class="linkLabel_WmDU">관리자: 시스템</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/workflows/"><span class="categoryLinkLabel_W154">반복 업무</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/use-cases/"><span class="categoryLinkLabel_W154">활용사례</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/troubleshooting/"><span class="categoryLinkLabel_W154">문제 해결</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="탐색 경로"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="홈" class="breadcrumbs__link" href="/deep-agent-platform/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">관리자 메뉴</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">관리자: 시스템</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">이 페이지에서</button></div><div class="theme-doc-markdown markdown"><header><h1>Deep Connector 관리자: 시스템</h1></header>
+<p>관리자 사이드바 <strong>시스템</strong> 묶음은 Deep Connector 전체에 걸리는 운영 화면입니다. <strong>저장공간</strong>, <strong>감사 로그</strong>, <strong>브랜드 설정</strong>, <strong>시스템 설정</strong> 네 메뉴가 있습니다. 이 페이지는 AI혁신팀 강혁신 팀장(Deep Connector 관리자)이 각 화면에서 무엇을 확인하고 바꾸는지 설명합니다.</p>
+<p><strong>이 페이지에서 할 수 있는 일</strong></p>
+<ul>
+<li class="">팀스페이스와 사용자별 저장 용량을 확인합니다.</li>
+<li class="">누가 언제 무엇을 했는지 감사 로그에서 찾습니다.</li>
+<li class="">제품명, 회사명, 색상 같은 화면 브랜드를 바꿉니다.</li>
+<li class="">로그인 없이 원본을 여는 문서 링크의 유효시간을 정합니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="시스템-메뉴-구성">시스템 메뉴 구성<a href="#시스템-메뉴-구성" class="hash-link" aria-label="시스템 메뉴 구성에 대한 직접 링크" title="시스템 메뉴 구성에 대한 직접 링크" translate="no">​</a></h2>
+<p><span class="manual-shot" role="figure" aria-label="시스템 묶음"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/admin-system-menu-2b130845f147c63202f86e83767625a3.png" target="_blank" rel="noopener"><img width="1872" height="1620" src="/deep-agent-platform/assets/images/admin-system-menu-2b130845f147c63202f86e83767625a3.png" alt="저장공간·감사 로그, 브랜드 설정·시스템 설정에 번호를 붙인 관리자 사이드바의 시스템 묶음" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">시스템 묶음</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>저장공간</strong>·<strong>감사 로그</strong></td><td>저장 용량 현황과 작업 기록 화면입니다.</td><td>용량을 점검하거나 작업 이력을 추적할 때</td></tr><tr><td>2</td><td><strong>브랜드 설정</strong>·<strong>시스템 설정</strong></td><td>화면 브랜드와 배포 전체 설정 화면입니다.</td><td>회사 로고·이름을 바꾸거나 링크 유효시간을 정할 때</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="저장공간">저장공간<a href="#저장공간" class="hash-link" aria-label="저장공간에 대한 직접 링크" title="저장공간에 대한 직접 링크" translate="no">​</a></h2>
+<p><strong>시스템</strong> &gt; <strong>저장공간</strong>은 문서가 차지하는 용량을 팀스페이스별, 사용자별로 보여 줍니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="저장공간"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/admin-storage-ed227acebce0402e10042b15c9c81670.png" target="_blank" rel="noopener"><img width="2079" height="1508" src="/deep-agent-platform/assets/images/admin-storage-ed227acebce0402e10042b15c9c81670.png" alt="총 사용량, 팀스페이스별 사용량, 저장공간 상위 사용자 표에 번호를 붙인 저장공간 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">저장공간</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>총 사용량</td><td>모든 문서 원본이 차지하는 용량입니다.</td><td>저장소 증설 시기를 가늠할 때</td></tr><tr><td>2</td><td>팀스페이스별</td><td>팀스페이스마다 쓴 용량과 한도, 사용률 막대입니다.</td><td>한도에 가까운 부서를 찾을 때</td></tr><tr><td>3</td><td>저장공간 상위 사용자</td><td>용량을 많이 쓰는 사용자 순서로 이메일, 사용량, 한도, 사용률을 보여 줍니다.</td><td>대용량 파일을 많이 올린 사용자를 찾을 때</td></tr></tbody></table>
+<p>한도를 바꾸는 곳은 이 화면이 아니라 <a class="" href="/deep-agent-platform/docs/deep-connector/admin-users/">사용자와 팀스페이스</a>입니다.</p>
+<p><strong>이럴 때 쓰세요</strong>: 김그루 사원이 &quot;AI혁신팀 업로드가 막혔다&quot;고 알려 오면, 강혁신 팀장은 먼저 저장공간에서 AI혁신팀 막대가 찼는지 보고, 찼다면 팀스페이스 상세에서 한도를 올립니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="감사-로그">감사 로그<a href="#감사-로그" class="hash-link" aria-label="감사 로그에 대한 직접 링크" title="감사 로그에 대한 직접 링크" translate="no">​</a></h2>
+<p><strong>시스템</strong> &gt; <strong>감사 로그</strong>는 Deep Connector에서 일어난 조회·변경 작업을 시간순으로 기록합니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="감사 로그"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/admin-audit-logs-0063718584dcb6bb467bee4192354b57.png" target="_blank" rel="noopener"><img width="2591" height="1620" src="/deep-agent-platform/assets/images/admin-audit-logs-0063718584dcb6bb467bee4192354b57.png" alt="카테고리 선택, 이메일 검색, 기록 표 머리글에 번호를 붙인 감사 로그 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">감사 로그</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>전체 카테고리</strong></td><td>기록 종류로 목록을 좁힙니다.</td><td>컬렉션 변경이나 LLM 호출 기록만 볼 때</td></tr><tr><td>2</td><td><strong>이메일로 검색</strong></td><td>행위자 이메일로 좁힙니다.</td><td>특정 사용자의 작업을 추적할 때</td></tr><tr><td>3</td><td>기록 표</td><td>시간, 행위자(관리자 여부 표시), 활동, 결과(성공·실패와 상태 코드), 소요시간입니다. 아래 <strong>이전</strong>·<strong>다음</strong>으로 쪽을 넘깁니다.</td><td>실패한 작업이 언제 있었는지 찾을 때</td></tr></tbody></table>
+<p>감사 로그는 읽기 전용입니다. 기록을 지우거나 고칠 수 없습니다.</p>
+<p><strong>이럴 때 쓰세요</strong>: &quot;어제 오후에 사내 규정 컬렉션 설정이 바뀌었는데 누가 바꿨는지 모르겠다&quot;는 문의가 오면, 카테고리를 좁히고 시간대를 따라 내려가며 변경 기록과 행위자를 확인합니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="브랜드-설정">브랜드 설정<a href="#브랜드-설정" class="hash-link" aria-label="브랜드 설정에 대한 직접 링크" title="브랜드 설정에 대한 직접 링크" translate="no">​</a></h2>
+<p><strong>시스템</strong> &gt; <strong>브랜드 설정</strong>은 사용자 화면에 보이는 제품명, 회사명, 로고, 색상을 바꾸는 화면입니다. 바꾼 내용은 먼저 초안으로 저장되고, <strong>게시</strong>를 눌러야 모든 사용자에게 적용됩니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="브랜드 설정"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/admin-brand-88f72484bc814984742858524e44580b.png" target="_blank" rel="noopener"><img width="2591" height="1620" src="/deep-agent-platform/assets/images/admin-brand-88f72484bc814984742858524e44580b.png" alt="초안 초기화·초안 저장·게시 버튼, 브랜드 정보, 실시간 미리보기에 번호를 붙인 브랜드 설정 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">브랜드 설정</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>초안 초기화</strong>·<strong>초안 저장</strong>·<strong>게시</strong></td><td>초안을 게시된 값으로 되돌리기, 초안만 저장하기, 초안을 모든 사용자에게 적용하기입니다. 제목 옆 배지가 게시 상태를 보여 줍니다.</td><td>바꾼 브랜드를 검토 후 한 번에 적용할 때</td></tr><tr><td>2</td><td>브랜드 정보</td><td><strong>제품명</strong>, <strong>회사명</strong>, <strong>서비스 설명</strong>입니다. 로그인 화면과 사이드바 로고 옆에 보입니다.</td><td>사내 서비스 이름으로 바꿀 때</td></tr><tr><td>3</td><td>실시간 미리보기</td><td>저장하기 전에 바꾼 모습을 밝은 화면·어두운 화면, 데스크톱·모바일로 미리 봅니다.</td><td>색상 대비가 괜찮은지 볼 때</td></tr></tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>설정 묶음</th><th>항목</th><th>뜻</th><th>기본값</th></tr></thead><tbody><tr><td>브랜드 정보</td><td>제품명, 회사명, 서비스 설명</td><td>화면에 표시할 이름과 소개 문구</td><td>빌드 기본값(DeepConnector)</td></tr><tr><td>브랜드 에셋</td><td>기본 로고, 다크 모드 로고, 파비콘</td><td>PNG 또는 SVG, 2 MiB까지</td><td>빌드 기본값 사용</td></tr><tr><td>색상과 모서리</td><td>primary, primary-foreground, background, card, foreground, muted-foreground, border, accent, 모서리 반경</td><td>버튼, 배경, 카드, 글자, 테두리 색과 모서리 둥글기</td><td>빌드 기본값</td></tr></tbody></table>
+<p>이 시연 환경은 에셋 저장소가 꺼져 있어 로고 업로드 대신 &quot;에셋 저장소가 비활성화되어 이미지 업로드를 사용할 수 없습니다.&quot;가 보입니다. 이때도 글자와 색상은 바꿀 수 있습니다.</p>
+<p><strong>이럴 때 쓰세요</strong>: 브레인크루가 사내 서비스 이름을 &quot;브레인크루 지식창고&quot;로 정했다면, 제품명을 바꾸고 미리보기로 확인한 뒤 <strong>초안 저장</strong>, 팀장 검토 후 <strong>게시</strong>를 누릅니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="시스템-설정">시스템 설정<a href="#시스템-설정" class="hash-link" aria-label="시스템 설정에 대한 직접 링크" title="시스템 설정에 대한 직접 링크" translate="no">​</a></h2>
+<p><strong>시스템</strong> &gt; <strong>시스템 설정</strong>은 문서 처리와 무관한 배포 전체 설정입니다. 지금은 <strong>문서 링크</strong>의 유효시간이 있습니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="시스템 설정"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/admin-system-settings-78d7749c8903fe3cc304d6ec56ca547d.png" target="_blank" rel="noopener"><img width="2079" height="1508" src="/deep-agent-platform/assets/images/admin-system-settings-78d7749c8903fe3cc304d6ec56ca547d.png" alt="링크 유효시간 입력칸, 자세히 버튼, 저장 버튼에 번호를 붙인 시스템 설정 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">시스템 설정</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>링크 유효시간</strong></td><td>로그인 없이 문서 원본을 여는 링크를 몇 초 동안 쓸 수 있는지 정합니다. 아래에 사람이 읽기 쉬운 값(예: 8시간)이 함께 보입니다.</td><td>외부에 전달한 링크를 짧게 끊고 싶을 때</td></tr><tr><td>2</td><td><strong>자세히</strong></td><td>설정 설명을 펼칩니다.</td><td>이 값이 어디에 쓰이는지 볼 때</td></tr><tr><td>3</td><td><strong>저장</strong></td><td>바꾼 값을 저장합니다. 새로 발급하는 링크부터 적용됩니다.</td><td>값을 바꿨을 때</td></tr></tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>항목</th><th>뜻</th><th>기본값</th><th>범위</th></tr></thead><tbody><tr><td>링크 유효시간</td><td>검색 결과, 팝업 뷰어, 다운로드 주소가 주는 원본 링크를 여러 번 열 수 있는 시간</td><td>28800초(8시간)</td><td>60초~604800초(7일)</td></tr></tbody></table>
+<p><strong>이럴 때 쓰세요</strong>: 보안 점검에서 &quot;원본 링크가 하루 종일 열린다&quot;는 지적을 받았다면 링크 유효시간을 3600초(1시간)로 줄입니다. 이미 발급된 링크는 원래 시간까지 열리므로 바꾼 뒤 새 링크로 다시 공유합니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="다음-문서">다음 문서<a href="#다음-문서" class="hash-link" aria-label="다음 문서에 대한 직접 링크" title="다음 문서에 대한 직접 링크" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-connector/admin-users/">관리자: 사용자와 팀스페이스</a> — 저장 용량 한도를 바꾸는 곳</li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-connector/troubleshooting/">문제 해결</a> — 업로드 차단, 처리 실패 문의를 받았을 때</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/deep-agent-platform/docs/deep-connector/admin-search-ai/"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">관리자: 검색과 AI</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/deep-agent-platform/docs/deep-connector/workflows/"><div class="pagination-nav__sublabel">다음</div><div class="pagination-nav__label">반복 업무</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#시스템-메뉴-구성" class="table-of-contents__link toc-highlight">시스템 메뉴 구성</a></li><li><a href="#저장공간" class="table-of-contents__link toc-highlight">저장공간</a></li><li><a href="#감사-로그" class="table-of-contents__link toc-highlight">감사 로그</a></li><li><a href="#브랜드-설정" class="table-of-contents__link toc-highlight">브랜드 설정</a></li><li><a href="#시스템-설정" class="table-of-contents__link toc-highlight">시스템 설정</a></li><li><a href="#다음-문서" class="table-of-contents__link toc-highlight">다음 문서</a></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>

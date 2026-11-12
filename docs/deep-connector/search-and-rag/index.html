@@ -3,22 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
-<title data-rh="true">Deep Connector 검색과 RAG 점검 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/search-and-rag/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Deep Connector 검색과 RAG 점검 | Deep Platform"><meta data-rh="true" name="description" content="사이드바 실험 메뉴는 문서가 질문에 맞게 검색되는지, 에이전트가 어떤 근거로 답할지를 미리 확인하는 화면입니다. 이 페이지는 검색, RAG 진단, RAG 평가를 설명합니다. MCP 도구 테스트는 외부 연동에 있습니다."><meta data-rh="true" property="og:description" content="사이드바 실험 메뉴는 문서가 질문에 맞게 검색되는지, 에이전트가 어떤 근거로 답할지를 미리 확인하는 화면입니다. 이 페이지는 검색, RAG 진단, RAG 평가를 설명합니다. MCP 도구 테스트는 외부 연동에 있습니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/search-and-rag/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/search-and-rag/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/search-and-rag/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"검색과 RAG 점검","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/search-and-rag"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
-<script src="/deep-agent-platform/assets/js/runtime~main.ff7e4d93.js" defer="defer"></script>
-<script src="/deep-agent-platform/assets/js/main.c5b60178.js" defer="defer"></script>
+<title data-rh="true">Deep Connector 실험: 검색 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/search-and-rag/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Deep Connector 실험: 검색 | Deep Platform"><meta data-rh="true" name="description" content="사이드바 실험 메뉴는 문서가 질문에 맞게 검색되는지, 에이전트가 어떤 근거로 답할지를 미리 확인하는 공간입니다. 누르면 검색, RAG 진단, RAG 평가, MCP 도구 테스트가 펼쳐집니다. 이 페이지는 실험 공간 안내와 검색을 설명합니다. 나머지는 RAG 진단, RAG 평가, MCP 도구 테스트에 있습니다."><meta data-rh="true" property="og:description" content="사이드바 실험 메뉴는 문서가 질문에 맞게 검색되는지, 에이전트가 어떤 근거로 답할지를 미리 확인하는 공간입니다. 누르면 검색, RAG 진단, RAG 평가, MCP 도구 테스트가 펼쳐집니다. 이 페이지는 실험 공간 안내와 검색을 설명합니다. 나머지는 RAG 진단, RAG 평가, MCP 도구 테스트에 있습니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/search-and-rag/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/search-and-rag/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/search-and-rag/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"실험: 검색","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-connector/search-and-rag"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
+<script src="/deep-agent-platform/assets/js/runtime~main.d168cd72.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.0a7d59c5.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
 <symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
 </defs></svg>
-<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/deep-agent-platform/img/manual-mark.svg"><div role="region" aria-label="본문으로 건너뛰기"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">본문으로 건너뛰기</a></div><nav aria-label="메인" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="사이드바 펼치거나 접기" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/deep-agent-platform/"><div class="navbar__logo"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Deep Platform</b></a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">솔루션</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-flow/">Deep Flow</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-agent-builder/">Deep Agent Builder</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/deep-agent-platform/docs/deep-connector/">Deep Connector</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-docurator/">Deep Docurator</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/brain-parser/">Brain Parser</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work/">Deep Work</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work-gateway/">Deep Work Gateway</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-admin/">Deep Admin</a></li></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="어두운 모드와 밝은 모드 전환하기 (현재 system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="searchBar_fdyA"><input type="search" class="searchInput_JE4R" placeholder="매뉴얼 검색" aria-label="매뉴얼 검색" role="combobox" aria-autocomplete="list" aria-expanded="false" value=""><div role="status" aria-live="polite"></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="맨 위로 스크롤하기" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="문서 사이드바" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/deep-agent-platform/docs/deep-connector/"><span class="categoryLinkLabel_W154">기타</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/"><span class="linkLabel_WmDU">소개</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/getting-started/"><span class="linkLabel_WmDU">시작하기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/core-features/"><span class="linkLabel_WmDU">메뉴 안내</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/collections/"><span class="linkLabel_WmDU">컬렉션과 폴더</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/upload-documents/"><span class="linkLabel_WmDU">문서 올리기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/documents-and-chunks/"><span class="linkLabel_WmDU">문서와 청크 확인</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/deep-agent-platform/docs/deep-connector/search-and-rag/"><span class="linkLabel_WmDU">검색과 RAG 점검</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/permissions/"><span class="linkLabel_WmDU">권한·공유·접근 요청</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/external-integration/"><span class="linkLabel_WmDU">외부 연동</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/agent-knowledge/"><span class="linkLabel_WmDU">에이전트에서 지식 쓰기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/admin/"><span class="linkLabel_WmDU">관리자 메뉴</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/workflows/"><span class="linkLabel_WmDU">반복 업무</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/use-cases/"><span class="linkLabel_WmDU">활용사례</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/use-case-policy-qa/"><span class="linkLabel_WmDU">사례: 사내 규정 Q&amp;A</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/use-case-product-manual/"><span class="linkLabel_WmDU">사례: 제품 매뉴얼 검색</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/use-case-sales-reference/"><span class="linkLabel_WmDU">사례: 영업 제안서 레퍼런스 찾기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/use-case-customer-support/"><span class="linkLabel_WmDU">사례: 고객 문의 답변 근거 찾기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/use-case-hr-benefits/"><span class="linkLabel_WmDU">사례: 인사·복리후생 안내 봇</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/troubleshooting/"><span class="linkLabel_WmDU">문제 해결</span></a></li></ul></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="탐색 경로"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="홈" class="breadcrumbs__link" href="/deep-agent-platform/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">기타</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">검색과 RAG 점검</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">이 페이지에서</button></div><div class="theme-doc-markdown markdown"><header><h1>Deep Connector 검색과 RAG 점검</h1></header>
-<p>사이드바 <strong>실험</strong> 메뉴는 문서가 질문에 맞게 검색되는지, 에이전트가 어떤 근거로 답할지를 미리 확인하는 화면입니다. 이 페이지는 <strong>검색</strong>, <strong>RAG 진단</strong>, <strong>RAG 평가</strong>를 설명합니다. <strong>MCP 도구 테스트</strong>는 <a class="" href="/deep-agent-platform/docs/deep-connector/external-integration/">외부 연동</a>에 있습니다.</p>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/deep-agent-platform/img/manual-mark.svg"><div role="region" aria-label="본문으로 건너뛰기"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">본문으로 건너뛰기</a></div><nav aria-label="메인" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="사이드바 펼치거나 접기" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/deep-agent-platform/"><div class="navbar__logo"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Deep Platform</b></a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">솔루션</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-flow/">Deep Flow</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-agent-builder/">Deep Agent Builder</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/deep-agent-platform/docs/deep-connector/">Deep Connector</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-docurator/">Deep Docurator</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/brain-parser/">Brain Parser</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work/">Deep Work</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work-gateway/">Deep Work Gateway</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-admin/">Deep Admin</a></li></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="어두운 모드와 밝은 모드 전환하기 (현재 system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="searchBar_fdyA"><input type="search" class="searchInput_JE4R" placeholder="매뉴얼 검색" aria-label="매뉴얼 검색" role="combobox" aria-autocomplete="list" aria-expanded="false" value=""><div role="status" aria-live="polite"></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="맨 위로 스크롤하기" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="문서 사이드바" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/"><span class="categoryLinkLabel_W154">소개</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/getting-started/"><span class="categoryLinkLabel_W154">시작하기</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/workspaces/"><span class="categoryLinkLabel_W154">메뉴: 워크스페이스</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/collections/"><span class="categoryLinkLabel_W154">메뉴: 컬렉션</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/deep-agent-platform/docs/deep-connector/search-and-rag/"><span class="categoryLinkLabel_W154">메뉴: 실험</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/deep-agent-platform/docs/deep-connector/search-and-rag/"><span class="linkLabel_WmDU">실험: 검색</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/rag-lab/"><span class="linkLabel_WmDU">실험: RAG 진단</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/rag-eval/"><span class="linkLabel_WmDU">실험: RAG 평가</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-connector/mcp-tools-test/"><span class="linkLabel_WmDU">실험: MCP 도구 테스트</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/permissions/"><span class="categoryLinkLabel_W154">메뉴: 권한</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/agent-knowledge/"><span class="categoryLinkLabel_W154">에이전트 연결</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/admin/"><span class="categoryLinkLabel_W154">관리자 메뉴</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/workflows/"><span class="categoryLinkLabel_W154">반복 업무</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/use-cases/"><span class="categoryLinkLabel_W154">활용사례</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-connector/troubleshooting/"><span class="categoryLinkLabel_W154">문제 해결</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="탐색 경로"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="홈" class="breadcrumbs__link" href="/deep-agent-platform/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">메뉴: 실험</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">실험: 검색</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">이 페이지에서</button></div><div class="theme-doc-markdown markdown"><header><h1>Deep Connector 실험: 검색</h1></header>
+<p>사이드바 <strong>실험</strong> 메뉴는 문서가 질문에 맞게 검색되는지, 에이전트가 어떤 근거로 답할지를 미리 확인하는 공간입니다. 누르면 <strong>검색</strong>, <strong>RAG 진단</strong>, <strong>RAG 평가</strong>, <strong>MCP 도구 테스트</strong>가 펼쳐집니다. 이 페이지는 실험 공간 안내와 <strong>검색</strong>을 설명합니다. 나머지는 <a class="" href="/deep-agent-platform/docs/deep-connector/rag-lab/">RAG 진단</a>, <a class="" href="/deep-agent-platform/docs/deep-connector/rag-eval/">RAG 평가</a>, <a class="" href="/deep-agent-platform/docs/deep-connector/mcp-tools-test/">MCP 도구 테스트</a>에 있습니다.</p>
 <p><strong>이 페이지에서 할 수 있는 일</strong></p>
 <ul>
 <li class="">네 가지 검색 방식의 차이를 알고 질문에 맞게 고릅니다.</li>
 <li class="">고급 옵션으로 리랭커와 하이브리드 전략을 바꿔 결과를 비교합니다.</li>
-<li class="">RAG 진단으로 질문 재작성, 검색, 답변 생성까지 단계별로 확인합니다.</li>
-<li class="">RAG 평가로 자주 묻는 질문 묶음을 한꺼번에 점검합니다.</li>
+<li class="">AI 답변을 켜서 검색 결과로 만든 답변 초안을 봅니다.</li>
+<li class="">최근 검색 기록으로 같은 질문을 다시 실행합니다.</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="실험-공간-안내">실험 공간 안내<a href="#실험-공간-안내" class="hash-link" aria-label="실험 공간 안내에 대한 직접 링크" title="실험 공간 안내에 대한 직접 링크" translate="no">​</a></h2>
 <p>실험 메뉴를 처음 열면 안내 화면이 나옵니다. 세 항목을 하나씩 확인해야 들어갈 수 있습니다.</p>
@@ -210,9 +210,8 @@
 <li class=""><strong>자유 필터</strong>: Key-Value나 JSON으로 조건을 직접 적습니다. <strong>소스 로드</strong>를 누르면 컬렉션의 실제 문서 이름(source) 값이 나옵니다. 예를 들어 Key에 source, Value에 &quot;출장비-지급-규정.pdf&quot;를 적으면 그 파일 안에서만 찾습니다.</li>
 </ul>
 <p>두 필터의 조건은 함께 적용됩니다. 비교 검색을 하기 전에 남은 조건이 없는지 확인하세요.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="rag-진단">RAG 진단<a href="#rag-진단" class="hash-link" aria-label="RAG 진단에 대한 직접 링크" title="RAG 진단에 대한 직접 링크" translate="no">​</a></h2>
-<p><strong>실험</strong> &gt; <strong>RAG 진단</strong>은 질문 하나로 질문 재작성, 검색, 답변에 쓸 청크 고르기, 답변 생성까지 단계별로 보여 주는 화면입니다. 에이전트가 이 컬렉션으로 어떻게 답할지 미리 볼 수 있습니다. 답변 생성은 컬렉션 설정에 LLM 커넥션이 연결되어 있어야 동작합니다(<a class="" href="/deep-agent-platform/docs/deep-connector/collections/">컬렉션과 폴더</a> 참고).</p>
-<p><span class="manual-shot" role="figure" aria-label="RAG 진단 화면"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/search-and-rag-lab-f2617b0a6ebc75b9f853e28f0fbabd7f.png" target="_blank" rel="noopener"><img width="2591" height="872" src="/deep-agent-platform/assets/images/search-and-rag-lab-f2617b0a6ebc75b9f853e28f0fbabd7f.png" alt="컬렉션, 질의, max_context_chunks, 질의 재작성·답변 생성에 번호를 붙인 RAG 진단 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">RAG 진단 화면</span></span></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ai-답변과-최근-검색">AI 답변과 최근 검색<a href="#ai-답변과-최근-검색" class="hash-link" aria-label="AI 답변과 최근 검색에 대한 직접 링크" title="AI 답변과 최근 검색에 대한 직접 링크" translate="no">​</a></h3>
+<p><span class="manual-shot" role="figure" aria-label="AI 답변과 최근 검색"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/search-and-rag-history-eef6e755144f710933e8f3fdfb0a50a9.png" target="_blank" rel="noopener"><img width="2591" height="1620" src="/deep-agent-platform/assets/images/search-and-rag-history-eef6e755144f710933e8f3fdfb0a50a9.png" alt="AI 답변 버튼, 기록 삭제, 최근 검색 항목에 번호를 붙인 검색 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">AI 답변과 최근 검색</span></span></p>
 
 
 
@@ -242,14 +241,15 @@
 
 
 
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>AI 답변</strong></td><td>켜면 검색 결과를 바탕으로 답변 문장이 결과 위에 함께 만들어집니다. 컬렉션 설정에 LLM 커넥션이 연결되어 있어야 켤 수 있고, 처음에는 꺼져 있습니다.</td><td>검색 결과를 읽기 전에 답변 초안부터 보고 싶을 때</td></tr><tr><td>2</td><td><strong>기록 삭제</strong></td><td>최근 검색 목록을 비웁니다.</td><td>연습 검색을 정리할 때</td></tr><tr><td>3</td><td>최근 검색 항목</td><td>지난 검색어와 컬렉션 이름, 시각입니다. 누르면 같은 컬렉션과 검색어로 다시 검색합니다.</td><td>어제 했던 점검 질문을 다시 돌릴 때</td></tr></tbody></table>
+<p>검색 화면의 주소에는 고른 컬렉션, 검색 방식, 결과 수, 검색어가 담깁니다. 주소를 동료에게 보내면 같은 조건의 검색 화면이 열립니다. 검색어 아래 띠에는 실제 적용된 분석기, 검색 방식, 리랭커가 표시됩니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="검색-설정-항목과-기본값">검색 설정 항목과 기본값<a href="#검색-설정-항목과-기본값" class="hash-link" aria-label="검색 설정 항목과 기본값에 대한 직접 링크" title="검색 설정 항목과 기본값에 대한 직접 링크" translate="no">​</a></h2>
 
 
 
 
 
 
-<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>컬렉션</strong></td><td>진단할 컬렉션을 고릅니다. 고르면 그 컬렉션의 검색 설정이 아래 검색 파라미터에 채워집니다.</td><td>점검할 컬렉션을 정할 때</td></tr><tr><td>2</td><td><strong>질의</strong></td><td>질문을 적습니다.</td><td>직원이 자주 묻는 질문을 넣어 볼 때</td></tr><tr><td>3</td><td><strong>max_context_chunks</strong></td><td>답변에 넘길 청크 수입니다.</td><td>근거를 더 넓게 줄 때</td></tr><tr><td>4</td><td><strong>질의 재작성</strong>·<strong>답변 생성</strong></td><td>왼쪽은 검색 전에 질문을 검색하기 좋은 문장으로 바꾸고, 오른쪽은 검색 결과로 답변을 만듭니다.</td><td>재작성 효과를 비교하거나 답변 문장까지 볼 때</td></tr></tbody></table>
-<p><span class="manual-shot" role="figure" aria-label="실행과 검색 파라미터"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/search-and-rag-lab-2-f8aae62dce6dd44b34751644e103649f.png" target="_blank" rel="noopener"><img width="2591" height="872" src="/deep-agent-platform/assets/images/search-and-rag-lab-2-f8aae62dce6dd44b34751644e103649f.png" alt="실행 버튼과 검색 파라미터 펼치기에 번호를 붙인 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">실행과 검색 파라미터</span></span></p>
 
 
 
@@ -273,8 +273,6 @@
 
 
 
-<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>실행</strong></td><td>진단을 실행합니다. 실행 중에는 <strong>중지</strong>로 바뀝니다.</td><td>조건을 다 정했을 때</td></tr><tr><td>2</td><td><strong>검색 파라미터</strong></td><td>아래 검색 설정을 펼치거나 접습니다.</td><td>검색 설정을 바꿔 볼 때</td></tr></tbody></table>
-<p><span class="manual-shot" role="figure" aria-label="검색 파라미터"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/search-and-rag-lab-3-56225eb645c038393eb93580a0ac2528.png" target="_blank" rel="noopener"><img width="2591" height="770" src="/deep-agent-platform/assets/images/search-and-rag-lab-3-56225eb645c038393eb93580a0ac2528.png" alt="검색 방식, 결과 수·점수 컷, 리랭킹에 번호를 붙인 검색 파라미터" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">검색 파라미터</span></span></p>
 
 
 
@@ -296,168 +294,12 @@
 
 
 
-
-
-
-
-
-
-
-
-<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>검색 방식</strong></td><td>semantic(의미), keyword, hybrid 중에서 고릅니다.</td><td>방식별 답변을 비교할 때</td></tr><tr><td>2</td><td><strong>결과 수</strong>·<strong>점수 컷</strong></td><td>가져올 결과 수와, 이 점수보다 낮은 결과를 뺄 기준입니다.</td><td>관련 없는 결과를 걸러 낼 때</td></tr><tr><td>3</td><td><strong>리랭킹</strong></td><td>결과 순서를 다시 매길지 정합니다.</td><td>순위가 어색할 때</td></tr></tbody></table>
-<p><span class="manual-shot" role="figure" aria-label="진단 결과"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/search-and-rag-lab-4-5ce5c3a0295d7d4d76f27103cac0c25e.png" target="_blank" rel="noopener"><img width="2591" height="928" src="/deep-agent-platform/assets/images/search-and-rag-lab-4-5ce5c3a0295d7d4d76f27103cac0c25e.png" alt="답변, 재작성·소요시간·토큰, 근거 문서에 번호를 붙인 진단 결과" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">진단 결과</span></span></p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>답변</strong></td><td>만들어진 답변입니다. 문장 끝 [1] 같은 번호가 근거 청크입니다.</td><td>답이 문서와 맞는지 볼 때</td></tr><tr><td>2</td><td>재작성·소요시간·토큰</td><td>재작성된 질문, 단계별 걸린 시간, 입력·출력 토큰 수입니다.</td><td>느린 단계를 찾을 때</td></tr><tr><td>3</td><td>근거 문서</td><td>답변에 쓰인 청크의 문서 이름입니다. 아래로 <strong>최종 프롬프트</strong>, <strong>선택된 컨텍스트 청크</strong>, <strong>검색 결과</strong>가 이어집니다.</td><td>어떤 문서가 답에 쓰였는지 볼 때</td></tr></tbody></table>
-<p>이 예에서는 &quot;연차는 며칠 전까지 신청해야 하나요?&quot;에 &quot;사용일 3영업일 전까지 그룹웨어 근태 메뉴에서 신청&quot;이라고 답하고 근거로 &quot;연차-사용-안내.md&quot;를 들었습니다. 커넥션이 연결되지 않은 컬렉션에서는 검색 결과까지만 나오고, 답변과 최종 프롬프트에는 &quot;아직 없습니다(답변 생성이 꺼져 있거나 LLM이 구성되지 않았을 수 있습니다).&quot;가 표시됩니다.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="rag-평가">RAG 평가<a href="#rag-평가" class="hash-link" aria-label="RAG 평가에 대한 직접 링크" title="RAG 평가에 대한 직접 링크" translate="no">​</a></h2>
-<p><strong>실험</strong> &gt; <strong>RAG 평가</strong>는 질문과 기대 답을 모은 데이터셋(CSV)을 컬렉션에 한꺼번에 돌려 결과를 Excel·CSV로 받는 화면입니다. 규정이 바뀔 때마다 같은 질문 묶음으로 점검하면 품질이 떨어졌는지 바로 알 수 있습니다.</p>
-<p><span class="manual-shot" role="figure" aria-label="RAG 평가 화면"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/search-and-rag-eval-ef386355ed5ae4564c2594874f6294fc.png" target="_blank" rel="noopener"><img width="2591" height="1037" src="/deep-agent-platform/assets/images/search-and-rag-eval-ef386355ed5ae4564c2594874f6294fc.png" alt="새로 만들기, 데이터셋 목록, 템플릿 받기에 번호를 붙인 RAG 평가 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">RAG 평가 화면</span></span></p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>새로 만들기</strong></td><td>새 평가 데이터셋을 만듭니다. 이름과 설명을 적습니다.</td><td>자주 묻는 질문 묶음을 만들 때</td></tr><tr><td>2</td><td>데이터셋 목록</td><td>만든 데이터셋이 쌓입니다. 다른 사람의 데이터셋은 <strong>내 데이터셋으로 복사</strong>로 가져옵니다.</td><td>지난 데이터셋을 고를 때</td></tr><tr><td>3</td><td>데이터셋 내용</td><td>데이터셋을 고르면 항목과 CSV 업로드가 나옵니다. <strong>템플릿 받기</strong>로 CSV 양식을 받습니다.</td><td>질문 목록을 올릴 때</td></tr></tbody></table>
-<p><span class="manual-shot" role="figure" aria-label="평가 실행 설정"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/search-and-rag-eval-2-8797828279abe862b49129084dbab263.png" target="_blank" rel="noopener"><img width="2591" height="1001" src="/deep-agent-platform/assets/images/search-and-rag-eval-2-8797828279abe862b49129084dbab263.png" alt="실행 대상 컬렉션, 검색 파라미터, 실행 버튼에 번호를 붙인 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">평가 실행 설정</span></span></p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>실행 대상 컬렉션</strong></td><td>평가를 돌릴 컬렉션입니다.</td><td>개정 전·후 컬렉션을 같은 질문으로 비교할 때</td></tr><tr><td>2</td><td><strong>검색 파라미터</strong></td><td>누르면 아래 설정을 펼치거나 접습니다. 옆에 지금 고른 검색 방식이 요약으로 보입니다.</td><td>평가 조건을 확인할 때</td></tr><tr><td>3</td><td>검색 방식·결과 수·점수 컷·리랭킹</td><td>검색 방식, 결과 수, 점수 컷, 리랭킹을 정합니다.</td><td>조건별로 결과를 비교할 때</td></tr><tr><td>4</td><td><strong>실행</strong></td><td>평가를 실행합니다. 데이터셋을 고르기 전에는 누를 수 없습니다.</td><td>데이터셋과 컬렉션을 정했을 때</td></tr></tbody></table>
-<p><span class="manual-shot" role="figure" aria-label="실행 이력"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/search-and-rag-eval-3-83fc7bc1564026613c0bdba2d2c8c5d1.png" target="_blank" rel="noopener"><img width="2591" height="815" src="/deep-agent-platform/assets/images/search-and-rag-eval-3-83fc7bc1564026613c0bdba2d2c8c5d1.png" alt="성공 5건이 기록된 실행 이력 표" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">실행 이력</span></span></p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>실행 이력</strong></td><td>지난 실행이 쌓입니다. 상태, 성공·실패 건수, 점수를 보고 결과를 xlsx·csv로 내려받습니다.</td><td>지난달 결과와 비교할 때</td></tr></tbody></table>
-<p>데이터셋 CSV는 question 열이 필수이고, expected_answer(기대 답), expected_source(기대 근거 문서) 같은 열을 함께 적을 수 있습니다. 예시는 다음과 같습니다.</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>question</th><th>expected_answer</th><th>expected_source</th></tr></thead><tbody><tr><td>국내 당일 출장 일비는 얼마인가요?</td><td>15,000원(일비의 50%)</td><td>출장비-지급-규정.pdf</td></tr><tr><td>재택근무는 언제까지 신청해야 하나요?</td><td>전주 금요일 18시까지</td><td>재택근무-운영-지침.docx</td></tr><tr><td>업무 식대는 1인 얼마까지 인정되나요?</td><td>25,000원</td><td>경비-처리-기준.hwp</td></tr></tbody></table>
-<p>실험 공간 안내대로 데이터셋과 결과는 모든 사용자에게 공개됩니다. 실제 고객 문의나 개인정보를 넣지 마세요.</p>
+<table><thead><tr><th>항목</th><th>뜻</th><th>기본값</th></tr></thead><tbody><tr><td>컬렉션 선택</td><td>검색할 컬렉션</td><td>처음에는 목록의 첫 컬렉션</td></tr><tr><td>검색 방식</td><td>시맨틱, 키워드, 하이브리드, 문자열</td><td>컬렉션 검색 설정, 없으면 시맨틱</td></tr><tr><td>결과 제한</td><td>보여 줄 결과 수</td><td>5개</td></tr><tr><td>사전 확장</td><td>연결된 용어 사전으로 검색어를 넓힐지(시맨틱 검색에는 적용 안 됨)</td><td>켜짐(연결된 사전이 있을 때)</td></tr><tr><td>AI 답변</td><td>검색 결과로 답변 문장을 만들지</td><td>꺼짐</td></tr><tr><td>하이브리드 전략</td><td>두 결과를 합치는 방식</td><td>RRF(RRF K 60, SRRF β 10, 시맨틱 가중치 0.5)</td></tr><tr><td>리랭커</td><td>후보를 다시 순위 매기기</td><td>꺼짐(켜면 리랭크 후보 30개, 최종 결과 5개)</td></tr><tr><td>점수 컷</td><td>이보다 낮은 결과를 뺌</td><td>0</td></tr></tbody></table>
+<p><strong>이럴 때 쓰세요</strong>: 김그루 사원은 출장비 규정이 개정된 날, 사내 규정 컬렉션에서 &quot;서울 출장 숙박비 상한&quot;을 시맨틱 검색과 키워드 검색으로 각각 찾아봅니다. 두 방식 모두 개정된 조항이 첫 결과로 나오면 에이전트도 새 규정으로 답할 준비가 된 것입니다.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="다음-문서">다음 문서<a href="#다음-문서" class="hash-link" aria-label="다음 문서에 대한 직접 링크" title="다음 문서에 대한 직접 링크" translate="no">​</a></h2>
 <ul>
-<li class=""><a class="" href="/deep-agent-platform/docs/deep-connector/external-integration/">외부 연동</a> — MCP 도구 테스트로 에이전트가 쓰는 검색을 직접 실행하기</li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-connector/rag-lab/">RAG 진단</a> — 질문 하나로 재작성·검색·답변 단계를 확인하기</li>
 <li class=""><a class="" href="/deep-agent-platform/docs/deep-connector/workflows/">반복 업무</a> — 검색 방식 비교와 정기 점검 순서</li>
-</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/deep-agent-platform/docs/deep-connector/documents-and-chunks/"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">문서와 청크 확인</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/deep-agent-platform/docs/deep-connector/permissions/"><div class="pagination-nav__sublabel">다음</div><div class="pagination-nav__label">권한·공유·접근 요청</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#실험-공간-안내" class="table-of-contents__link toc-highlight">실험 공간 안내</a></li><li><a href="#검색" class="table-of-contents__link toc-highlight">검색</a><ul><li><a href="#검색-방식-고르기" class="table-of-contents__link toc-highlight">검색 방식 고르기</a></li><li><a href="#고급-옵션" class="table-of-contents__link toc-highlight">고급 옵션</a></li><li><a href="#필터로-범위-좁히기" class="table-of-contents__link toc-highlight">필터로 범위 좁히기</a></li></ul></li><li><a href="#rag-진단" class="table-of-contents__link toc-highlight">RAG 진단</a></li><li><a href="#rag-평가" class="table-of-contents__link toc-highlight">RAG 평가</a></li><li><a href="#다음-문서" class="table-of-contents__link toc-highlight">다음 문서</a></li></ul></div></div></div></div></main></div></div></div></div>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/deep-agent-platform/docs/deep-connector/documents-and-chunks/"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">문서와 청크 확인</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/deep-agent-platform/docs/deep-connector/rag-lab/"><div class="pagination-nav__sublabel">다음</div><div class="pagination-nav__label">실험: RAG 진단</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#실험-공간-안내" class="table-of-contents__link toc-highlight">실험 공간 안내</a></li><li><a href="#검색" class="table-of-contents__link toc-highlight">검색</a><ul><li><a href="#검색-방식-고르기" class="table-of-contents__link toc-highlight">검색 방식 고르기</a></li><li><a href="#고급-옵션" class="table-of-contents__link toc-highlight">고급 옵션</a></li><li><a href="#필터로-범위-좁히기" class="table-of-contents__link toc-highlight">필터로 범위 좁히기</a></li><li><a href="#ai-답변과-최근-검색" class="table-of-contents__link toc-highlight">AI 답변과 최근 검색</a></li></ul></li><li><a href="#검색-설정-항목과-기본값" class="table-of-contents__link toc-highlight">검색 설정 항목과 기본값</a></li><li><a href="#다음-문서" class="table-of-contents__link toc-highlight">다음 문서</a></li></ul></div></div></div></div></main></div></div></div></div>
 </body>
 </html>
