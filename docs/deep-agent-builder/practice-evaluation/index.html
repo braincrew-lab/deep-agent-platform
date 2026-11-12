@@ -1,0 +1,1194 @@
+<!doctype html>
+<html lang="ko" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-deep-agent-builder/practice-evaluation" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.2">
+<title data-rh="true">Deep Agent Builder 실습 6: 평가 데이터셋으로 에이전트를 채점하고 고친 뒤 다시 비교하기 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/practice-evaluation/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Deep Agent Builder 실습 6: 평가 데이터셋으로 에이전트를 채점하고 고친 뒤 다시 비교하기 | Deep Platform"><meta data-rh="true" name="description" content="이 실습은 실습 1에서 만든 &quot;고객 문의 답장 도우미&quot;를 고객 문의 질문 묶음으로 채점하고, 떨어진 이유를 읽어 지침을 고친 뒤, 같은 조건으로 다시 채점해 두 결과를 비교합니다. 평가 화면 각 탭의 설명은 에이전트 평가 개요부터 이어지는 평가 장에 있으므로, 이 페이지는 처음부터 끝까지 한 번에 돌리는 손동작과 결과를 읽는 법에 집중합니다."><meta data-rh="true" property="og:description" content="이 실습은 실습 1에서 만든 &quot;고객 문의 답장 도우미&quot;를 고객 문의 질문 묶음으로 채점하고, 떨어진 이유를 읽어 지침을 고친 뒤, 같은 조건으로 다시 채점해 두 결과를 비교합니다. 평가 화면 각 탭의 설명은 에이전트 평가 개요부터 이어지는 평가 장에 있으므로, 이 페이지는 처음부터 끝까지 한 번에 돌리는 손동작과 결과를 읽는 법에 집중합니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/practice-evaluation/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/practice-evaluation/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/practice-evaluation/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"실습 6: 평가하고 고쳐서 다시 비교하기","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-agent-builder/practice-evaluation"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.460bc1a9.css">
+<script src="/deep-agent-platform/assets/js/runtime~main.67b813c9.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.c0255037.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/deep-agent-platform/img/manual-mark.svg"><div role="region" aria-label="본문으로 건너뛰기"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">본문으로 건너뛰기</a></div><nav aria-label="메인" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="사이드바 펼치거나 접기" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/deep-agent-platform/"><div class="navbar__logo"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Deep Platform</b></a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">솔루션</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-flow/">Deep Flow</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/deep-agent-platform/docs/deep-agent-builder/">Deep Agent Builder</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-connector/">Deep Connector</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-docurator/">Deep Docurator</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/brain-parser/">Brain Parser</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work/">Deep Work</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work-gateway/">Deep Work Gateway</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-admin/">Deep Admin</a></li></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="어두운 모드와 밝은 모드 전환하기 (현재 system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="searchBar_fdyA"><input type="search" class="searchInput_JE4R" placeholder="매뉴얼 검색" aria-label="매뉴얼 검색" role="combobox" aria-autocomplete="list" aria-expanded="false" value=""><div role="status" aria-live="polite"></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="맨 위로 스크롤하기" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="문서 사이드바" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/"><span class="categoryLinkLabel_W154">소개</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/core-concepts/"><span class="categoryLinkLabel_W154">처음 사용하기</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/first-agent-design/"><span class="categoryLinkLabel_W154">에이전트 만들기</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/threads/"><span class="categoryLinkLabel_W154">업무에 활용하기</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/rag-agent/"><span class="categoryLinkLabel_W154">지식·도구 연결</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/middleware/"><span class="categoryLinkLabel_W154">보안과 권한</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/community/"><span class="categoryLinkLabel_W154">커뮤니티</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/multi-agent-concepts/"><span class="categoryLinkLabel_W154">멀티에이전트</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/evaluation-overview/"><span class="categoryLinkLabel_W154">평가</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/evaluations/"><span class="categoryLinkLabel_W154">개선과 모니터링</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/deep-agent-platform/docs/deep-agent-builder/practice/"><span class="categoryLinkLabel_W154">실습</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/practice/"><span class="linkLabel_WmDU">실습 묶음 안내</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/practice-first-agent/"><span class="linkLabel_WmDU">실습 1: 대화로 첫 에이전트 만들기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/practice-manual-agent/"><span class="linkLabel_WmDU">실습 2: 직접 만들고 다듬기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/practice-tools-skills/"><span class="linkLabel_WmDU">실습 3: 도구와 스킬 붙이기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/practice-canvas/"><span class="linkLabel_WmDU">실습 4: 캔버스로 PPT·Word·표 받기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/practice-multi-agent/"><span class="linkLabel_WmDU">실습 5: 멀티에이전트 만들기</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/deep-agent-platform/docs/deep-agent-builder/practice-evaluation/"><span class="linkLabel_WmDU">실습 6: 평가하고 고쳐서 다시 비교하기</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/use-cases/"><span class="categoryLinkLabel_W154">활용 사례</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-agent-builder/troubleshooting/"><span class="categoryLinkLabel_W154">문제 해결</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="탐색 경로"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="홈" class="breadcrumbs__link" href="/deep-agent-platform/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">실습</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">실습 6: 평가하고 고쳐서 다시 비교하기</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">이 페이지에서</button></div><div class="theme-doc-markdown markdown"><header><h1>Deep Agent Builder 실습 6: 평가 데이터셋으로 에이전트를 채점하고 고친 뒤 다시 비교하기</h1></header>
+<p>이 실습은 실습 1에서 만든 &quot;고객 문의 답장 도우미&quot;를 고객 문의 질문 묶음으로 채점하고, 떨어진 이유를 읽어 지침을 고친 뒤, 같은 조건으로 다시 채점해 두 결과를 비교합니다. 평가 화면 각 탭의 설명은 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/evaluation-overview/">에이전트 평가 개요</a>부터 이어지는 평가 장에 있으므로, 이 페이지는 처음부터 끝까지 한 번에 돌리는 손동작과 결과를 읽는 법에 집중합니다.</p>
+<p><strong>이 페이지에서 할 수 있는 일</strong></p>
+<ul>
+<li class="">CSV 파일 하나로 평가 데이터셋을 만들고, 문항을 고치거나 더합니다.</li>
+<li class="">기본 평가기를 복사해 우리 회사 응대 기준을 채점하는 평가기 &quot;응대 기준 준수&quot;를 만듭니다.</li>
+<li class="">평가를 실행하고 요약 카드, 결과 표, 결과 상세에서 떨어진 이유를 찾습니다.</li>
+<li class="">지침을 고쳐 새 버전으로 저장한 뒤 같은 조건으로 다시 실행하고, 실행 비교와 대시보드로 전후를 확인합니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="목표">목표<a href="#목표" class="hash-link" aria-label="목표에 대한 직접 링크" title="목표에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>항목</th><th>내용</th></tr></thead><tbody><tr><td>만들 것</td><td>데이터셋 &quot;고객 문의 답장 기본 문항&quot;(9문항), 사용자 평가기 &quot;응대 기준 준수&quot;, 고친 지침 버전(V2 &quot;평가 반영 수정&quot;)</td></tr><tr><td>결과물</td><td>고치기 전 실행과 고친 뒤 실행 두 개, 그리고 두 실행의 비교 결과</td></tr><tr><td>걸리는 시간</td><td>준비 15분, 실행 한 번에 1~2분, 결과 읽기와 수정 15분</td></tr><tr><td>난이도</td><td>★★★★☆</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="준비물">준비물<a href="#준비물" class="hash-link" aria-label="준비물에 대한 직접 링크" title="준비물에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>파일</th><th>내용</th><th>형식</th></tr></thead><tbody><tr><td>고객문의_평가문항_8건.csv</td><td>브레인크루로 들어온 고객 문의 8개(question 열)와, 각 문의를 어떻게 응대해야 하는지 적은 기대 응대(answer 열)</td><td>csv</td></tr><tr><td>브레인크루_고객문의_응대기준.md</td><td>평가기 프롬프트에 옮겨 적을 응대 원칙(첫 문장 되짚기와 감사 인사, 결론→근거→다음 안내, [담당자 확인 필요] 표시, 해요체, 마무리 문장). 파일은 올리지 않고 내용만 참고합니다.</td><td>md</td></tr><tr><td>고객 문의 답장 도우미</td><td>실습 1에서 만든 에이전트. 김그루 사원의 사이드바 <strong>내 에이전트</strong>에 있습니다.</td><td>에이전트</td></tr></tbody></table>
+<p>데이터셋을 파일로 만들 때 올릴 수 있는 확장자는 .csv 하나입니다. 엑셀에서 작성했다면 &quot;CSV UTF-8(쉼표로 분리)&quot;로 저장해 올립니다. 첫 줄의 열 이름은 영문 question, answer로 적습니다.</p>
+<p>CSV의 첫 두 행은 다음과 같습니다.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>question</th><th>answer</th></tr></thead><tbody><tr><td>보고서 자동 작성 기능이 엑셀 파일도 지원하나요?</td><td>제품 기능 문의로 분류하고, 결론-근거-다음 안내 순서로 엑셀 지원 여부를 안내하며, 확인되지 않은 세부 사항은 [담당자 확인 필요]로 표시한다.</td></tr><tr><td>연간 계약하면 할인율이 얼마인가요?</td><td>계약·견적 문의로 분류하고, 할인율을 확정하지 않고 [담당자 확인 필요]로 표시하며 영업팀 안내로 마무리한다.</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1단계-평가-화면-열기">1단계. 평가 화면 열기<a href="#1단계-평가-화면-열기" class="hash-link" aria-label="1단계. 평가 화면 열기에 대한 직접 링크" title="1단계. 평가 화면 열기에 대한 직접 링크" translate="no">​</a></h2>
+<p><span class="manual-shot" role="figure" aria-label="더 보기 &amp;gt; 평가"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-evaluation-menu-71dc45db991edba2fd98a582fa6f82cd.png" target="_blank" rel="noopener"><img width="2592" height="1620" src="/deep-agent-platform/assets/images/practice-evaluation-menu-71dc45db991edba2fd98a582fa6f82cd.png" alt="사이드바 더 보기 메뉴에서 평가를 고르는 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">더 보기 &amp;gt; 평가</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>입력하거나 고를 값</th></tr></thead><tbody><tr><td>1</td><td><strong>더 보기</strong></td><td>사이드바에서 누릅니다. 오른쪽에 유틸리티, 작업, 평가 메뉴가 펼쳐집니다.</td></tr><tr><td>2</td><td><strong>평가</strong></td><td>&quot;평가 데이터셋, 실행, 평가기를 관리합니다.&quot; 항목을 누릅니다.</td></tr></tbody></table>
+<ol>
+<li class="">사이드바의 <strong>더 보기</strong>를 누릅니다.</li>
+<li class="">펼쳐진 메뉴에서 <strong>평가</strong>를 누릅니다. 평가 화면이 열리고 <strong>데이터셋</strong> 탭이 먼저 보입니다.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2단계-템플릿과-작성-가이드-확인하기">2단계. 템플릿과 작성 가이드 확인하기<a href="#2단계-템플릿과-작성-가이드-확인하기" class="hash-link" aria-label="2단계. 템플릿과 작성 가이드 확인하기에 대한 직접 링크" title="2단계. 템플릿과 작성 가이드 확인하기에 대한 직접 링크" translate="no">​</a></h2>
+<p><span class="manual-shot" role="figure" aria-label="템플릿 내려받기"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-evaluation-template-2c1663d6285ae0aad08462d53a421e6c.png" target="_blank" rel="noopener"><img width="1472" height="840" src="/deep-agent-platform/assets/images/practice-evaluation-template-2c1663d6285ae0aad08462d53a421e6c.png" alt="데이터셋 탭의 작성 가이드, 템플릿 메뉴, 데이터셋 생성 버튼" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">템플릿 내려받기</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>작성 가이드</strong></td><td>&quot;평가 데이터셋 작성 가이드&quot; 창을 엽니다.</td><td>CSV를 쓰기 전에 열마다 무엇을 적을지 확인할 때</td></tr><tr><td>2</td><td><strong>템플릿</strong></td><td>빈 CSV 양식을 내려받는 메뉴를 펼칩니다.</td><td>열 이름을 직접 타이핑하지 않고 양식에서 시작할 때</td></tr><tr><td>3</td><td><strong>템플릿 (영문 열)</strong></td><td>question, answer와 근거 열이 영문 이름으로 들어 있는 CSV 양식을 내려받습니다. 옆에 **템플릿 (한글 열)**도 있습니다.</td><td>이 실습처럼 영문 열 이름으로 맞출 때</td></tr><tr><td>4</td><td><strong>데이터셋 생성</strong></td><td>3단계에서 쓸 데이터셋 생성 창을 엽니다.</td><td>파일이 준비되었을 때</td></tr></tbody></table>
+<p><span class="manual-shot" role="figure" aria-label="평가 데이터셋 작성 가이드"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-evaluation-guide-2da04731cd99ab685fdf83d0efc9fc4b.png" target="_blank" rel="noopener"><img width="1280" height="1040" src="/deep-agent-platform/assets/images/practice-evaluation-guide-2da04731cd99ab685fdf83d0efc9fc4b.png" alt="작성 가이드 창의 템플릿 링크와 한 장 요약 표" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">평가 데이터셋 작성 가이드</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>템플릿 (영문 열)</strong></td><td>가이드 창 안에서도 같은 양식을 내려받을 수 있습니다.</td><td>가이드를 읽다가 바로 양식을 받을 때</td></tr><tr><td>2</td><td>질문 행</td><td>&quot;실제 사용자 말투로 쓰고, 답이 하나로 정해지게 합니다.&quot;</td><td>고객이 실제로 보낸 문장을 그대로 question에 적을 때</td></tr><tr><td>3</td><td>답변 행</td><td>&quot;확인 가능한 사실(수치, 명칭, 예/아니오와 조건)을 간결하게 적습니다.&quot;</td><td>기대 응대를 한두 문장으로 줄여 answer에 적을 때</td></tr></tbody></table>
+<ol>
+<li class=""><strong>템플릿</strong>을 누르고 **템플릿 (영문 열)**을 골라 양식을 내려받습니다. 이 실습은 준비물의 CSV를 그대로 쓰므로 양식은 열 이름을 확인하는 용도입니다.</li>
+<li class=""><strong>작성 가이드</strong>를 눌러 <strong>한 장 요약</strong>의 질문 행과 답변 행을 읽습니다. 근거문서, 청크, 답변가능 열은 지식을 찾아 답하는 에이전트용이라 이 실습에서는 비워 둡니다. 가이드 전체 설명은 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/evaluation-datasets/">평가 데이터셋 만들기</a>에 있습니다.</li>
+<li class="">오른쪽 위 X로 가이드 창을 닫습니다.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3단계-csv-파일로-데이터셋-만들기">3단계. CSV 파일로 데이터셋 만들기<a href="#3단계-csv-파일로-데이터셋-만들기" class="hash-link" aria-label="3단계. CSV 파일로 데이터셋 만들기에 대한 직접 링크" title="3단계. CSV 파일로 데이터셋 만들기에 대한 직접 링크" translate="no">​</a></h2>
+<p><span class="manual-shot" role="figure" aria-label="데이터셋 생성 창 위쪽"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-evaluation-dataset-create-ded9185c493221065d663fdbcf8d7d67.png" target="_blank" rel="noopener"><img width="1320" height="1040" src="/deep-agent-platform/assets/images/practice-evaluation-dataset-create-ded9185c493221065d663fdbcf8d7d67.png" alt="이름, 설명, CSV 파일, 올린 파일이 보이는 데이터셋 생성 창" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">데이터셋 생성 창 위쪽</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>입력하거나 고를 값</th></tr></thead><tbody><tr><td>1</td><td><strong>이름</strong></td><td>고객 문의 답장 기본 문항</td></tr><tr><td>2</td><td><strong>설명</strong></td><td>고객 문의 답장 도우미의 분류·응대 기준 준수를 점검하는 기본 문항</td></tr><tr><td>3</td><td><strong>CSV 파일</strong></td><td>시작 방법에서 고른 채로 둡니다(처음 값).</td></tr><tr><td>4</td><td><strong>파일</strong></td><td>고객문의_평가문항_8건.csv. 올리면 파일 이름과 1.7 KB가 보입니다.</td></tr></tbody></table>
+<p><span class="manual-shot" role="figure" aria-label="CSV 미리보기"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-evaluation-dataset-preview-1eefb324a70b81807a32811e73888e4a.png" target="_blank" rel="noopener"><img width="1320" height="1160" src="/deep-agent-platform/assets/images/practice-evaluation-dataset-preview-1eefb324a70b81807a32811e73888e4a.png" alt="미리보기 표와 생성 버튼이 보이는 데이터셋 생성 창 아래쪽" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">CSV 미리보기</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>확인할 것</th></tr></thead><tbody><tr><td>1</td><td><strong>미리보기</strong></td><td>question, answer 두 열로 나뉘어 앞 다섯 행이 보이는지, 한글이 깨지지 않았는지</td></tr><tr><td>2</td><td>남은 행 안내</td><td>&quot;그 외 3행이 더 있습니다.&quot;로 모두 8행인지</td></tr><tr><td>3</td><td><strong>생성</strong></td><td>확인을 마치면 누릅니다.</td></tr></tbody></table>
+<ol>
+<li class=""><strong>데이터셋 생성</strong>을 누릅니다.</li>
+<li class=""><strong>이름</strong>과 <strong>설명</strong>을 위 표대로 입력합니다.</li>
+<li class=""><strong>시작 방법</strong>은 <strong>CSV 파일</strong> 그대로 두고, <strong>파일</strong> 칸에 CSV를 끌어 놓거나 눌러서 고릅니다.</li>
+<li class="">창을 아래로 내려 <strong>미리보기</strong>를 확인하고 <strong>생성</strong>을 누릅니다. 목록에 &quot;고객 문의 답장 기본 문항&quot;이 문항 8로 나타납니다.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4단계-문항-확인하고-하나-고치기-하나-더하기">4단계. 문항 확인하고 하나 고치기, 하나 더하기<a href="#4단계-문항-확인하고-하나-고치기-하나-더하기" class="hash-link" aria-label="4단계. 문항 확인하고 하나 고치기, 하나 더하기에 대한 직접 링크" title="4단계. 문항 확인하고 하나 고치기, 하나 더하기에 대한 직접 링크" translate="no">​</a></h2>
+<p><span class="manual-shot" role="figure" aria-label="데이터셋 상세"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-evaluation-dataset-detail-00defa61bfbc561d7897fbd2580f3b58.png" target="_blank" rel="noopener"><img width="2012" height="1200" src="/deep-agent-platform/assets/images/practice-evaluation-dataset-detail-00defa61bfbc561d7897fbd2580f3b58.png" alt="데이터셋 상세의 문항 수, 평가 설정, 문항 편집, 문항 추가 버튼" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">데이터셋 상세</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>문항 수</td><td>&quot;총 8개&quot;처럼 들어 있는 문항 수입니다. 옆에 생성일과 수정일이 있습니다.</td><td>CSV의 행이 모두 들어갔는지 볼 때</td></tr><tr><td>2</td><td><strong>평가 설정</strong></td><td>이 데이터셋의 채점 설정을 펼칩니다(5단계). 옆의 &quot;없음 · 자동&quot;은 지금 문서 버전과 언어 값입니다.</td><td>주 지표를 정할 때</td></tr><tr><td>3</td><td><strong>문항 6 편집</strong>(연필)</td><td>그 문항의 &quot;문항 수정&quot; 창을 엽니다. 옆 휴지통은 문항을 지웁니다.</td><td>기대 응대를 더 분명하게 고칠 때</td></tr><tr><td>4</td><td><strong>문항 추가</strong></td><td>빈 &quot;문항 추가&quot; 창을 엽니다.</td><td>빠진 유형의 문의를 더할 때</td></tr></tbody></table>
+<p><span class="manual-shot" role="figure" aria-label="문항 수정 창"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-evaluation-case-edit-9f6ddbedd1101da7c4e12ce72b56c59d.png" target="_blank" rel="noopener"><img width="1568" height="1473" src="/deep-agent-platform/assets/images/practice-evaluation-case-edit-9f6ddbedd1101da7c4e12ce72b56c59d.png" alt="문항 수정 창의 질문, 참조 답변, 재질의 평가, 저장" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">문항 수정 창</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>입력하거나 고를 값</th></tr></thead><tbody><tr><td>1</td><td><strong>질문</strong></td><td>회의록 요약 기능을 시험해 볼 수 있는 방법이 있나요?(그대로 둡니다)</td></tr><tr><td>2</td><td><strong>참조 답변</strong></td><td>교육·도입 문의로 분류하고, 체험 방법을 안내하며 체험 기간 같은 조건은 확정하지 않고 [담당자 확인 필요]로 표시한 뒤 AI혁신팀 안내로 마무리한다.</td></tr><tr><td>3</td><td><strong>사용 안 함</strong></td><td>재질의 평가는 쓰지 않으므로 처음 값 그대로 둡니다.</td></tr><tr><td>4</td><td><strong>저장</strong></td><td>누르면 창이 닫히고 표의 6번 문항이 바뀝니다.</td></tr></tbody></table>
+<ol>
+<li class="">데이터셋 목록에서 &quot;고객 문의 답장 기본 문항&quot;을 누릅니다.</li>
+<li class="">6번 문항의 연필(<strong>문항 6 편집</strong>)을 누릅니다. CSV에서는 이 문항의 유형이 &quot;제품 기능 또는 교육·도입&quot;으로 두 갈래여서, 채점이 흔들리지 않게 한 유형으로 좁힙니다.</li>
+<li class=""><strong>참조 답변</strong>을 위 표대로 고치고 <strong>저장</strong>을 누릅니다.</li>
+<li class=""><strong>문항 추가</strong>를 누르고 아래 값을 넣어 <strong>저장</strong>합니다. 문항 수가 &quot;총 9개&quot;로 바뀝니다.
+<ul>
+<li class=""><strong>질문</strong>: 제안서 PPT 작성기를 우리 회사 서식으로 바꿀 수 있나요? 비용이 따로 드나요?</li>
+<li class=""><strong>참조 답변</strong>: 제품 기능 문의와 계약·견적 문의가 섞인 것으로 분류하고, 서식 변경 가능 여부를 결론-근거-다음 안내 순서로 안내하되 추가 비용은 확정하지 않고 [담당자 확인 필요]로 표시하며 영업팀 안내로 마무리한다.</li>
+</ul>
+</li>
+</ol>
+<p>문항을 고르는 기준은 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/evaluation-cases/">평가 문항 설계</a>에 있습니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="5단계-데이터셋-평가-설정-정하기">5단계. 데이터셋 평가 설정 정하기<a href="#5단계-데이터셋-평가-설정-정하기" class="hash-link" aria-label="5단계. 데이터셋 평가 설정 정하기에 대한 직접 링크" title="5단계. 데이터셋 평가 설정 정하기에 대한 직접 링크" translate="no">​</a></h2>
+<p><span class="manual-shot" role="figure" aria-label="데이터셋 평가 설정"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-evaluation-dataset-settings-2786f79fc8db16e75a265abfca21a422.png" target="_blank" rel="noopener"><img width="1986" height="680" src="/deep-agent-platform/assets/images/practice-evaluation-dataset-settings-2786f79fc8db16e75a265abfca21a422.png" alt="펼친 평가 설정의 언어, 주 지표, 설정 저장" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">데이터셋 평가 설정</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>입력하거나 고를 값</th></tr></thead><tbody><tr><td>1</td><td><strong>평가 설정</strong></td><td>눌러서 펼칩니다.</td></tr><tr><td>2</td><td><strong>언어</strong></td><td><strong>자동</strong> 그대로 둡니다.</td></tr><tr><td>3</td><td><strong>주 지표</strong></td><td><strong>전체 정답</strong>을 고릅니다.</td></tr><tr><td>4</td><td><strong>설정 저장</strong></td><td>누르면 &quot;설정을 저장했습니다.&quot;가 뜹니다.</td></tr></tbody></table>
+<ol>
+<li class="">데이터셋 상세에서 <strong>평가 설정</strong>을 누릅니다.</li>
+<li class=""><strong>주 지표</strong>에서 <strong>전체 정답</strong>을 고릅니다. 고치기 전과 뒤를 무엇으로 비교할지 실행 전에 정해 두는 것입니다.</li>
+<li class="">나머지 칸은 아래 기본값 그대로 두고 <strong>설정 저장</strong>을 누릅니다. 진행 중인 평가 실행이 있으면 바꿀 수 없으므로 실행 전에 정합니다.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>설정</th><th>의미</th><th>기본값</th><th>이 실습</th></tr></thead><tbody><tr><td><strong>문서 버전</strong></td><td>같은 문서의 여러 판을 구분할지</td><td>없음</td><td>없음</td></tr><tr><td><strong>버전 표시 패턴</strong></td><td>질문과 근거설명에서 버전 표기를 찾는 규칙(기간별 버전일 때만)</td><td>비움(연·월 날짜 2024.03, 2024-03을 찾음)</td><td>비움</td></tr><tr><td><strong>언어</strong></td><td>근거 추출에 쓰는 언어. 자동이면 질문에 한글이 있을 때 한국어</td><td>자동</td><td>자동</td></tr><tr><td><strong>과제 성공 판정 평가기</strong></td><td>모든 실행의 과제 성공을 한 평가기(통과/실패형)로 고정</td><td>실행마다 고른 평가기</td><td>실행마다 고른 평가기</td></tr><tr><td><strong>주 지표</strong></td><td>실행끼리 비교할 때 기준이 되는 지표</td><td>정하지 않음</td><td>전체 정답</td></tr><tr><td><strong>도구 호출 단가 (USD)</strong></td><td>통합 비용 계산에 쓰는 도구 호출 1회 단가</td><td>비우면 0.001</td><td>비움</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="6단계-사용자-평가기-응대-기준-준수-만들기">6단계. 사용자 평가기 &quot;응대 기준 준수&quot; 만들기<a href="#6단계-사용자-평가기-응대-기준-준수-만들기" class="hash-link" aria-label="6단계. 사용자 평가기 &quot;응대 기준 준수&quot; 만들기에 대한 직접 링크" title="6단계. 사용자 평가기 &quot;응대 기준 준수&quot; 만들기에 대한 직접 링크" translate="no">​</a></h2>
+<p><span class="manual-shot" role="figure" aria-label="평가기 탭"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-evaluation-evaluators-b9e4495345545ac356ab6c9cba572415.png" target="_blank" rel="noopener"><img width="2012" height="1240" src="/deep-agent-platform/assets/images/practice-evaluation-evaluators-b9e4495345545ac356ab6c9cba572415.png" alt="평가기 탭의 기본 평가기와 새로 만든 사용자 평가기" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">평가기 탭</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>정확성 (Accuracy)</strong> 카드</td><td>기본 평가기입니다. 카드를 누르면 이 평가기를 복사하는 창이 열립니다.</td><td>통과/실패 평가기를 바탕으로 우리 기준을 만들 때</td></tr><tr><td>2</td><td><strong>응대 기준 준수</strong> 카드</td><td>저장하면 <strong>사용자 평가기</strong>에 생기는 카드입니다. <strong>통과/실패</strong> 배지가 붙습니다.</td><td>만든 평가기를 확인하거나 고칠 때</td></tr></tbody></table>
+<p><span class="manual-shot" role="figure" aria-label="복사해서 새 평가기 만들기"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-evaluation-evaluator-copy-c988779149f6f27c41698ffc83c7d247.png" target="_blank" rel="noopener"><img width="2112" height="1560" src="/deep-agent-platform/assets/images/practice-evaluation-evaluator-copy-c988779149f6f27c41698ffc83c7d247.png" alt="정확성 평가기를 복사해 응대 기준 준수로 고친 창" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">복사해서 새 평가기 만들기</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>입력하거나 고를 값</th></tr></thead><tbody><tr><td>1</td><td><strong>이름</strong></td><td>응대 기준 준수(&quot;정확성 (Accuracy) (복사본)&quot;을 지우고 입력)</td></tr><tr><td>2</td><td><strong>평가 유형</strong></td><td><strong>통과/실패</strong> 그대로 둡니다. 통과/실패에서는 점수 범위 칸이 나오지 않고 통과(1)와 실패(0)로 채점합니다.</td></tr><tr><td>3</td><td><strong>프롬프트 템플릿</strong></td><td>아래 프롬프트로 바꿉니다.</td></tr><tr><td>4</td><td><strong>저장</strong></td><td>누르면 &quot;평가기를 만들었습니다.&quot;가 뜹니다.</td></tr></tbody></table>
+<ol>
+<li class="">
+<p><strong>평가기</strong> 탭을 엽니다.</p>
+</li>
+<li class="">
+<p><strong>기본 평가기</strong>의 <strong>정확성 (Accuracy)</strong> 카드를 누릅니다. &quot;복사해서 새 평가기 만들기&quot; 창이 열립니다.</p>
+</li>
+<li class="">
+<p><strong>이름</strong>을 &quot;응대 기준 준수&quot;로, <strong>설명</strong>을 &quot;첫 문장 되짚기·감사, 유형 분류, 확정 금지 표시, 해요체, 마무리 문장 다섯 가지를 모두 지켰는지 봅니다.&quot;로 바꿉니다.</p>
+</li>
+<li class="">
+<p><strong>프롬프트 템플릿</strong>의 영어 프롬프트를 지우고 아래 내용을 넣습니다. {question}에는 데이터셋의 질문, {reference_answer}에는 참조 답변, {agent_answer}에는 에이전트 답변이 들어갑니다. {agent_answer}는 꼭 있어야 합니다.</p>
+<blockquote>
+<p>프롬프트: 너는 브레인크루 고객 문의 답장 초안을 검토하는 채점자다.</p>
+<p>고객 문의: {question}</p>
+<p>기대 응대: {reference_answer}</p>
+<p>에이전트 답장: {agent_answer}</p>
+<p>아래 다섯 가지를 모두 지키면 1, 하나라도 어기면 0을 준다.</p>
+<ol>
+<li class="">첫 문장에서 문의 내용을 되짚고 감사 인사를 한다.</li>
+<li class="">기대 응대에 적힌 문의 유형에 맞게 답한다.</li>
+<li class="">가격, 할인율, 계약 조건, 일정은 확정하지 않고 [담당자 확인 필요]로 표시한다(해당하는 문의일 때만).</li>
+<li class="">해요체로 쓰고 하십시오체를 섞지 않는다.</li>
+<li class="">마지막 줄이 &quot;브레인크루 AI혁신팀 드림&quot;으로 끝난다.</li>
+</ol>
+<p>reasoning에는 어긴 항목 번호와 이유를 한국어로 적는다.
+JSON으로만 응답: {&quot;score&quot;: 0 또는 1, &quot;reasoning&quot;: &quot;설명&quot;}</p>
+</blockquote>
+</li>
+<li class="">
+<p><strong>저장</strong>을 누릅니다. <strong>사용자 평가기</strong>에 &quot;응대 기준 준수&quot; 카드가 생깁니다.</p>
+</li>
+</ol>
+<p>평가기 창의 다른 칸은 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/evaluation-evaluators/">평가기 구성</a>에 있습니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="7단계-평가-실행-만들기">7단계. 평가 실행 만들기<a href="#7단계-평가-실행-만들기" class="hash-link" aria-label="7단계. 평가 실행 만들기에 대한 직접 링크" title="7단계. 평가 실행 만들기에 대한 직접 링크" translate="no">​</a></h2>
+<p><span class="manual-shot" role="figure" aria-label="에이전트 고르기"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-evaluation-run-agent-7adbf1756a0bf62f9790e0d006c8518a.png" target="_blank" rel="noopener"><img width="1352" height="220" src="/deep-agent-platform/assets/images/practice-evaluation-run-agent-7adbf1756a0bf62f9790e0d006c8518a.png" alt="평가 실행 탭에서 에이전트를 고르고 평가 시작을 누르는 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">에이전트 고르기</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>입력하거나 고를 값</th></tr></thead><tbody><tr><td>1</td><td><strong>에이전트</strong></td><td>고객 문의 답장 도우미</td></tr><tr><td>2</td><td><strong>평가 시작</strong></td><td>누르면 &quot;평가 실행 생성&quot; 창이 열립니다.</td></tr></tbody></table>
+<p><span class="manual-shot" role="figure" aria-label="평가 실행 생성 창: 무엇으로 채점할지"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-evaluation-run-dialog-e96f85c09d7be9d1d342a13f8b2bf817.png" target="_blank" rel="noopener"><img width="1280" height="760" src="/deep-agent-platform/assets/images/practice-evaluation-run-dialog-e96f85c09d7be9d1d342a13f8b2bf817.png" alt="평가 실행 생성 창의 데이터셋, 평가기, 모델" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">평가 실행 생성 창: 무엇으로 채점할지</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>입력하거나 고를 값</th></tr></thead><tbody><tr><td>1</td><td><strong>데이터셋</strong></td><td>고객 문의 답장 기본 문항 (9). 괄호 안은 문항 수입니다.</td></tr><tr><td>2</td><td><strong>평가기</strong></td><td>응대 기준 준수 (워크스페이스)</td></tr><tr><td>3</td><td><strong>모델 (선택 사항)</strong></td><td>처음 값 그대로 둡니다. 그림에서는 사용자 기본값인 OpenAI/GPT-4.1이 보입니다.</td></tr></tbody></table>
+<p><span class="manual-shot" role="figure" aria-label="평가 실행 생성 창: 어떻게 실행할지"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-evaluation-run-dialog-2-f357b42739dad88ac99f4c968594b445.png" target="_blank" rel="noopener"><img width="1280" height="600" src="/deep-agent-platform/assets/images/practice-evaluation-run-dialog-2-f357b42739dad88ac99f4c968594b445.png" alt="평가 실행 생성 창의 근거 추출, 반복 횟수, 도구 점검, 실행 시작" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">평가 실행 생성 창: 어떻게 실행할지</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>입력하거나 고를 값</th></tr></thead><tbody><tr><td>1</td><td><strong>근거 추출 실행</strong></td><td>끈 채로 둡니다(처음 값). 켜면 채점 대신 근거 문장을 찾아 저장하는 실행이 됩니다.</td></tr><tr><td>2</td><td><strong>반복 횟수</strong></td><td>1(처음 값). 1~10회까지 넣을 수 있습니다.</td></tr><tr><td>3</td><td><strong>실행 전 도구 점검</strong></td><td>&quot;에이전트에 지식 도구가 없어 점검하지 않았습니다.&quot;가 보이는지 확인합니다.</td></tr><tr><td>4</td><td><strong>실행 시작</strong></td><td>누르면 창이 닫히고 새 실행이 목록 맨 위에 생깁니다.</td></tr></tbody></table>
+<ol>
+<li class=""><strong>평가 실행</strong> 탭을 엽니다.</li>
+<li class=""><strong>에이전트</strong>를 누르고 &quot;고객 문의&quot;를 입력해 &quot;고객 문의 답장 도우미&quot;를 고릅니다.</li>
+<li class=""><strong>평가 시작</strong>을 누릅니다.</li>
+<li class=""><strong>데이터셋</strong>과 <strong>평가기</strong>를 위 표대로 고르고, 나머지는 처음 값 그대로 둡니다.</li>
+<li class=""><strong>실행 시작</strong>을 누릅니다. 예시에서는 실행 #5가 <strong>대기 중</strong>으로 생겼다가 <strong>실행 중</strong>을 거쳐 약 1분 뒤 <strong>완료</strong>가 되었습니다.</li>
+</ol>
+<p>고객 문의 답장 도우미는 사내 지식을 찾는 도구를 지식함이 아니라 도구함에 두었기 때문에, 도구 점검은 건너뛰었다고 나옵니다. 창의 다른 안내는 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/evaluation-runs/">평가 실행</a>에 있습니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="8단계-고치기-전-결과-읽기">8단계. 고치기 전 결과 읽기<a href="#8단계-고치기-전-결과-읽기" class="hash-link" aria-label="8단계. 고치기 전 결과 읽기에 대한 직접 링크" title="8단계. 고치기 전 결과 읽기에 대한 직접 링크" translate="no">​</a></h2>
+<p><span class="manual-shot" role="figure" aria-label="고치기 전 실행 요약"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-evaluation-result-summary-01c3346088e0de4b8089379cc9a6a3ee.png" target="_blank" rel="noopener"><img width="2058" height="1120" src="/deep-agent-platform/assets/images/practice-evaluation-result-summary-01c3346088e0de4b8089379cc9a6a3ee.png" alt="실행 #5의 실행 목록, 전체 정답률, 평가 방식, 평균 토큰 카드" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">고치기 전 실행 요약</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>화면에 보이는 내용</th><th>읽는 법</th></tr></thead><tbody><tr><td>1</td><td>실행 목록의 #5</td><td><strong>완료</strong>, 고객 문의 답장 기본 문항, 0.0% (0/9)</td><td>끝까지 처리된 실행인지 먼저 봅니다.</td></tr><tr><td>2</td><td><strong>전체 정답률</strong></td><td>0.0% (0/9)</td><td>9문항 모두 응대 기준을 하나 이상 어겼습니다.</td></tr><tr><td>3</td><td><strong>평가 방식</strong></td><td>통과/실패, 응대 기준 준수 · 0 / 1</td><td>고른 평가기로 채점되었는지 확인합니다.</td></tr><tr><td>4</td><td><strong>평균 토큰</strong></td><td>51.4K / 194</td><td>문항 하나에 쓴 입력/출력 토큰 평균입니다. 고친 뒤 실행과 견줘 봅니다.</td></tr></tbody></table>
+<p><strong>실행 유효성</strong>은 <strong>정상</strong>(&quot;문서 도구 3번 호출, 환경 실패 없음&quot;)이었으므로 0%는 실행 환경이 아니라 답장 내용 때문입니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="결과 표"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-evaluation-result-table-cefa10b36dd5c3302fa2d8a0a068ab07.png" target="_blank" rel="noopener"><img width="1532" height="1120" src="/deep-agent-platform/assets/images/practice-evaluation-result-table-cefa10b36dd5c3302fa2d8a0a068ab07.png" alt="실행 #5의 결과 표에서 결과 열과 실패 문항" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">결과 표</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>Excel 내보내기</strong></td><td>이 실행의 결과를 Excel 파일로 내려받습니다.</td><td>팀에 결과를 공유할 때</td></tr><tr><td>2</td><td><strong>결과</strong> 열</td><td>제목 옆 필터를 누를 때마다 전체, 통과만, 실패만으로 바뀝니다.</td><td>실패한 문항만 모을 때</td></tr><tr><td>3</td><td>결과 칸</td><td>&quot;0/1 · 실패&quot;처럼 점수와 판정이 보입니다.</td><td>어느 문항이 떨어졌는지 볼 때</td></tr><tr><td>4</td><td>문항 행</td><td>누르면 오른쪽에 결과 상세가 열립니다.</td><td>떨어진 이유를 읽을 때</td></tr></tbody></table>
+<p><span class="manual-shot" role="figure" aria-label="결과 상세"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-evaluation-result-detail-a686cbd821213d3307ab81d3f973134d.png" target="_blank" rel="noopener"><img width="1312" height="1540" src="/deep-agent-platform/assets/images/practice-evaluation-result-detail-a686cbd821213d3307ab81d3f973134d.png" alt="연간 계약 할인율 문항의 결과 상세" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">결과 상세</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>화면에 보이는 내용</th><th>읽는 법</th></tr></thead><tbody><tr><td>1</td><td><strong>병목 단계</strong></td><td>도구 미사용</td><td>이 문항에서 에이전트가 도구를 부르지 않고 답했다는 뜻입니다. 이 평가기는 말투와 형식을 보므로 고칠 대상이 아닙니다.</td></tr><tr><td>2</td><td><strong>에이전트 답변</strong></td><td>&quot;연간 계약 시 할인율 및 관련 가격 정보는 … 담당자 확인이 필요합니다. [담당자 확인 필요]&quot;</td><td>할인율은 확정하지 않았지만 첫 문장 감사 인사와 마무리 문장이 없고, &quot;바랍니다&quot;, &quot;안내드리겠습니다&quot; 같은 하십시오체가 섞였습니다.</td></tr><tr><td>3</td><td><strong>채점 사유</strong></td><td>&quot;1번(문의 내용을 되짚고 감사 인사가 없음), 4번(해요체와 하십시오체 섞여 있음), 5번(마지막 라인이 &#x27;브레인크루 AI혁신팀 드림&#x27;이 아님)를 어김.&quot;</td><td>어긴 항목 번호를 모읍니다.</td></tr></tbody></table>
+<p>결과 상세를 아래로 내리면 <strong>결과</strong>, 토큰과 소요 시간, <strong>채점 모델 사용량</strong>, <strong>실행 기록</strong>에 이어 이 문항의 <strong>도구 호출</strong>(궤적)과 <strong>검색 근거</strong>가 나옵니다. 도구를 부른 문항을 누르면 아래처럼 호출 순서가 보입니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="도구 호출과 검색 근거"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-evaluation-result-trajectory-a2373bf8e9e8fbb7e4885b3a573e11ba.png" target="_blank" rel="noopener"><img width="1280" height="1120" src="/deep-agent-platform/assets/images/practice-evaluation-result-trajectory-a2373bf8e9e8fbb7e4885b3a573e11ba.png" alt="로그인 오류 문항의 도구 호출 순서와 검색 근거" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">도구 호출과 검색 근거</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>화면에 보이는 내용</th><th>읽는 법</th></tr></thead><tbody><tr><td>1</td><td>호출 요약</td><td>호출 6회 · 낭비 1회 (17%) · 첫 도구 list_skills</td><td>도구를 몇 번 불렀고 그중 결과에 쓰이지 않은 호출이 몇 번인지 봅니다.</td></tr><tr><td>2</td><td><strong>호출 순서</strong></td><td>list_skills → search_documents(오류) → search_documents → load_skill 세 번</td><td>어느 도구가 실패했고 다시 불렀는지 봅니다.</td></tr><tr><td>3</td><td>검색 근거 요약</td><td>도구 결과 6건 · 채점 모델 입력 6건</td><td>도구가 가져온 결과가 채점 모델에 몇 건 전달됐는지 봅니다.</td></tr></tbody></table>
+<p>이 실습에서 결과 상세에 <strong>사람 검토</strong> 표시는 보이지 않았습니다. 사람 검토 표시는 사람이 정답 여부를 직접 정한 문항에만 붙습니다.</p>
+<ol>
+<li class="">실행이 <strong>완료</strong>되면 <strong>전체 정답률</strong>과 <strong>실행 유효성</strong>을 확인합니다.</li>
+<li class="">결과 표에서 문항 행을 하나씩 눌러 <strong>채점 사유</strong>를 읽습니다.</li>
+<li class="">여러 문항에서 되풀이되는 항목 번호를 적습니다. 실행 #5에서는 9문항 모두 1번(첫 문장 되짚기와 감사 인사), 5번(마무리 문장)을 어겼고, 8문항이 4번(하십시오체 섞임)을 어겼습니다. [담당자 확인 필요] 표시(3번)는 대부분 지켰습니다.</li>
+<li class="">고칠 점을 한 문장으로 정리합니다: &quot;첫 문장 감사 인사, 해요체만 쓰기, 정해진 마무리 문장을 지침에 넣는다.&quot;</li>
+</ol>
+<p>결과 화면 각 부분의 자세한 설명은 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/evaluation-results/">평가 결과 읽기와 비교</a>에 있습니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="9단계-지침-고치고-새-버전으로-저장하기">9단계. 지침 고치고 새 버전으로 저장하기<a href="#9단계-지침-고치고-새-버전으로-저장하기" class="hash-link" aria-label="9단계. 지침 고치고 새 버전으로 저장하기에 대한 직접 링크" title="9단계. 지침 고치고 새 버전으로 저장하기에 대한 직접 링크" translate="no">​</a></h2>
+<p><span class="manual-shot" role="figure" aria-label="새 버전으로 저장"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-evaluation-save-version-c6c064170de7b5b3f4e18d0ccbb508ac.png" target="_blank" rel="noopener"><img width="1392" height="740" src="/deep-agent-platform/assets/images/practice-evaluation-save-version-c6c064170de7b5b3f4e18d0ccbb508ac.png" alt="저장 옵션 더 보기에서 새 버전으로 저장을 고르는 메뉴" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">새 버전으로 저장</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>입력하거나 고를 값</th></tr></thead><tbody><tr><td>1</td><td><strong>저장 옵션 더 보기</strong></td><td>에이전트 편집 화면 헤더의 <strong>저장</strong> 오른쪽 ▼를 누릅니다.</td></tr><tr><td>2</td><td><strong>새 버전으로 저장</strong></td><td>누르면 &quot;새 버전 생성&quot; 창이 열립니다. 버전 설명에 &quot;평가 반영 수정&quot;을 적고 <strong>저장</strong>합니다.</td></tr></tbody></table>
+<p><span class="manual-shot" role="figure" aria-label="Fix 에이전트로 지침 고치기"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-evaluation-fix-37a8ab770549fcc1299dd74d780662a3.png" target="_blank" rel="noopener"><img width="2068" height="1320" src="/deep-agent-platform/assets/images/practice-evaluation-fix-37a8ab770549fcc1299dd74d780662a3.png" alt="Fix 에이전트로 소통 스타일에 세 줄을 더한 에이전트 편집 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">Fix 에이전트로 지침 고치기</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>입력하거나 고를 값</th></tr></thead><tbody><tr><td>1</td><td><strong>현재 버전</strong></td><td>V2로 바뀌었는지 확인합니다. 원래 지침은 V1에 남습니다.</td></tr><tr><td>2</td><td>보낸 요청</td><td>아래 프롬프트를 <strong>Fix 에이전트</strong> 탭에 보냅니다. 그림은 첫 요청에 &quot;이미 반영되어 있다&quot;는 답을 받은 뒤 &quot;지금 지침에는 위 규칙이 아직 없습니다.&quot;를 앞에 붙여 다시 보낸 요청입니다.</td></tr><tr><td>3</td><td><strong>지침</strong></td><td><strong>소통 스타일</strong> 맨 아래에 세 줄이 더해졌는지 확인합니다.</td></tr><tr><td>4</td><td><strong>저장</strong></td><td>&quot;저장되지 않은 변경이 있습니다&quot;가 보이면 눌러 V2에 기록합니다.</td></tr></tbody></table>
+<ol>
+<li class="">
+<p>사이드바에서 &quot;고객 문의 답장 도우미&quot;를 누르고 <strong>에이전트 설정</strong>을 누릅니다.</p>
+</li>
+<li class="">
+<p><strong>저장 옵션 더 보기</strong>에서 <strong>새 버전으로 저장</strong>을 고르고, &quot;버전 설명 (선택사항)&quot;에 &quot;평가 반영 수정&quot;을 적어 <strong>저장</strong>합니다. 헤더가 <strong>현재 버전: V2</strong>로 바뀝니다.</p>
+</li>
+<li class="">
+<p>오른쪽 <strong>Fix 에이전트</strong> 탭에서 아래 요청을 보냅니다.</p>
+<blockquote>
+<p>프롬프트: 지침의 &#x27;## 소통 스타일&#x27; 섹션 맨 아래에 다음 세 줄을 그대로 추가해 주세요.</p>
+<ul>
+<li class="">첫 문장은 문의 내용을 한 줄로 되짚고 감사 인사를 한다(예: &quot;연간 계약 할인율을 문의해 주셔서 감사해요.&quot;).</li>
+<li class="">본문은 해요체로만 쓰고 &#x27;드립니다&#x27;, &#x27;바랍니다&#x27;, &#x27;있습니다&#x27;, &#x27;하겠습니다&#x27; 같은 하십시오체를 쓰지 않는다.</li>
+<li class="">마지막 줄은 항상 &quot;추가로 궁금하신 점이 있으면 언제든 회신 주세요. 브레인크루 AI혁신팀 드림&quot;으로 끝낸다.</li>
+</ul>
+</blockquote>
+</li>
+<li class="">
+<p>가운데 <strong>지침</strong>에서 세 줄이 실제로 들어갔는지 확인합니다. Fix 에이전트가 &quot;이미 반영되어 있다&quot;고 답하고 지침은 그대로인 경우가 있으므로 답변만 믿지 말고 지침을 직접 봅니다.</p>
+</li>
+<li class="">
+<p>헤더의 <strong>저장</strong>을 누릅니다.</p>
+</li>
+</ol>
+<p>지침을 손으로 고쳐도 됩니다. 이때도 먼저 <strong>새 버전으로 저장</strong>으로 새 버전을 만든 뒤 <strong>지침</strong> 칸을 고치고 <strong>저장</strong>합니다. Fix 에이전트와 버전 관리는 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/regression-evaluation/">회귀 평가와 개선</a>과 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/fix-agent/">Fix 에이전트</a>에 있습니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="10단계-같은-조건으로-다시-실행하기">10단계. 같은 조건으로 다시 실행하기<a href="#10단계-같은-조건으로-다시-실행하기" class="hash-link" aria-label="10단계. 같은 조건으로 다시 실행하기에 대한 직접 링크" title="10단계. 같은 조건으로 다시 실행하기에 대한 직접 링크" translate="no">​</a></h2>
+<p><span class="manual-shot" role="figure" aria-label="다시 실행 중"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-evaluation-run-progress-3dbb6410e8ace84e30518dd0659212a0.png" target="_blank" rel="noopener"><img width="2068" height="840" src="/deep-agent-platform/assets/images/practice-evaluation-run-progress-3dbb6410e8ace84e30518dd0659212a0.png" alt="두 번째 실행 #6이 진행 중인 평가 실행 탭" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">다시 실행 중</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>화면에 보이는 내용</th><th>확인할 것</th></tr></thead><tbody><tr><td>1</td><td>실행 목록의 #6</td><td><strong>실행 중</strong>, 고객 문의 답장 기본 문항</td><td>고치기 전 실행 #5 위에 새 실행이 생겼는지</td></tr><tr><td>2</td><td><strong>실행 취소</strong></td><td>실행을 시작한 사람에게만 보입니다.</td><td>데이터셋이나 평가기를 잘못 골랐을 때만 누릅니다.</td></tr><tr><td>3</td><td><strong>전체 정답률</strong> (진행 중)</td><td>지금까지 채점된 문항만으로 계산한 값</td><td>최종 판단은 끝난 뒤에 합니다.</td></tr></tbody></table>
+<ol>
+<li class=""><strong>평가 실행</strong> 탭에서 &quot;고객 문의 답장 도우미&quot;를 고르고 <strong>평가 시작</strong>을 누릅니다.</li>
+<li class="">7단계와 똑같이 <strong>데이터셋</strong>은 &quot;고객 문의 답장 기본 문항&quot;, <strong>평가기</strong>는 &quot;응대 기준 준수&quot;, **모델 (선택 사항)**은 처음 값, <strong>반복 횟수</strong>는 1로 두고 <strong>실행 시작</strong>을 누릅니다.</li>
+<li class=""><strong>완료</strong>가 될 때까지 기다립니다. 다른 화면에 다녀와도 실행은 계속됩니다.</li>
+</ol>
+<p><span class="manual-shot" role="figure" aria-label="고친 뒤 실행 요약"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-evaluation-result-summary-2-ac0b36eb7b8f2648f4427f12f24b9eee.png" target="_blank" rel="noopener"><img width="2068" height="880" src="/deep-agent-platform/assets/images/practice-evaluation-result-summary-2-ac0b36eb7b8f2648f4427f12f24b9eee.png" alt="고친 뒤 실행 #6의 전체 정답률과 실행 유효성" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">고친 뒤 실행 요약</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>화면에 보이는 내용</th><th>읽는 법</th></tr></thead><tbody><tr><td>1</td><td>실행 목록의 #6</td><td><strong>완료</strong>, 88.9% (8/9). 번호 앞 노란 점은 실행 유효성 <strong>주의</strong> 표시입니다.</td><td>끝까지 처리됐는지 봅니다.</td></tr><tr><td>2</td><td><strong>전체 정답률</strong></td><td>88.9% (8/9)</td><td>0.0%에서 8문항이 새로 통과했습니다.</td></tr><tr><td>3</td><td><strong>실행 유효성</strong></td><td>주의. &quot;문서 검색 6번 중 1번 도구 시간 초과 (무효 기준 아님, 호출 범위 확인)&quot;</td><td>무효는 아니므로 비교에 씁니다. 다만 사내 지식 검색이 한 번 시간 초과됐다는 뜻이라, 검색 결과가 답에 중요한 에이전트라면 다시 실행해 확인합니다.</td></tr></tbody></table>
+<p>남은 실패 1건은 &quot;사용 인원이 50명으로 늘면 요금이 바뀌나요?&quot;였습니다. 채점 사유는 &quot;3번 항목을 어겼습니다. … &#x27;전체 월 요금도 사용자 수에 맞춰 변경돼요.&#x27;라고 … 단정적으로 안내하여&quot;였습니다. 이번 수정은 말투와 형식만 고쳤으므로, 요금 문의에서 금액 계산을 단정하지 않게 하는 규칙은 다음 수정 거리로 남습니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="11단계-두-실행-비교하기">11단계. 두 실행 비교하기<a href="#11단계-두-실행-비교하기" class="hash-link" aria-label="11단계. 두 실행 비교하기에 대한 직접 링크" title="11단계. 두 실행 비교하기에 대한 직접 링크" translate="no">​</a></h2>
+<p><span class="manual-shot" role="figure" aria-label="실행 비교: 지표"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-evaluation-compare-99d9c16396038e95e292faddbbfb04bd.png" target="_blank" rel="noopener"><img width="1532" height="1240" src="/deep-agent-platform/assets/images/practice-evaluation-compare-99d9c16396038e95e292faddbbfb04bd.png" alt="실행 비교 창에서 기준 #5와 비교 #6을 고르고 전체 정답을 보는 화면" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">실행 비교: 지표</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>입력하거나 고를 값</th></tr></thead><tbody><tr><td>1</td><td><strong>기준</strong></td><td>#5(고치기 전 실행)를 체크합니다. #5를 열고 <strong>실행 비교</strong>를 누르면 미리 체크되어 있습니다.</td></tr><tr><td>2</td><td><strong>비교</strong></td><td>#6(고친 뒤 실행)을 체크합니다.</td></tr><tr><td>3</td><td><strong>전체 정답</strong></td><td>대표 지표 표 맨 아래 행입니다. 기준 0.0% (0/9) → 비교 88.9% (8/9)</td></tr></tbody></table>
+<p><span class="manual-shot" role="figure" aria-label="실행 비교: 문항별 변화"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-evaluation-compare-2-959b90216da16fbee2cf8f575cc07f6d.png" target="_blank" rel="noopener"><img width="1532" height="1000" src="/deep-agent-platform/assets/images/practice-evaluation-compare-2-959b90216da16fbee2cf8f575cc07f6d.png" alt="문항별 과반 정답 전이와 상승·하락한 문항" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">실행 비교: 문항별 변화</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>화면에 보이는 내용</th><th>읽는 법</th></tr></thead><tbody><tr><td>1</td><td><strong>문항별 과반 정답 전이</strong></td><td>기준에서 틀리고 비교에서 맞은 문항 8, 양쪽 모두 틀린 문항 1</td><td>새로 맞은 문항과 새로 틀린 문항 수를 셉니다.</td></tr><tr><td>2</td><td><strong>상승한 문항 (8)</strong></td><td>#1, #2, #3, #4, #5, #6, #7, #9가 &quot;기준 0/1 → 비교 1/1&quot;</td><td>고칠 점으로 정한 말투·형식 문제가 고쳐졌는지 봅니다.</td></tr><tr><td>3</td><td><strong>하락한 문항 (0)</strong></td><td>&quot;—&quot;</td><td>수정이 다른 문항을 망가뜨리지 않았는지 봅니다.</td></tr></tbody></table>
+<ol>
+<li class=""><strong>평가 실행</strong> 목록에서 #5를 누릅니다.</li>
+<li class=""><strong>진단 요약</strong> 오른쪽 <strong>실행 비교</strong>를 누릅니다.</li>
+<li class=""><strong>기준</strong>에 #5가 체크되어 있는지 보고, #6의 <strong>비교</strong> 칸을 체크합니다.</li>
+<li class="">대표 지표 표의 <strong>전체 정답</strong>, 그 아래 진단 지표 표의 <strong>채점 통과율</strong>, <strong>문항 토큰</strong>, <strong>소요 시간</strong>을 차례로 봅니다.</li>
+<li class=""><strong>하락한 문항</strong>부터 확인하고, 이어서 <strong>상승한 문항</strong>을 봅니다.</li>
+</ol>
+<p>비교 화면 읽는 법의 자세한 설명은 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/regression-evaluation/">회귀 평가와 개선</a>에 있습니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="12단계-대시보드에서-이력-확인하기">12단계. 대시보드에서 이력 확인하기<a href="#12단계-대시보드에서-이력-확인하기" class="hash-link" aria-label="12단계. 대시보드에서 이력 확인하기에 대한 직접 링크" title="12단계. 대시보드에서 이력 확인하기에 대한 직접 링크" translate="no">​</a></h2>
+<p><span class="manual-shot" role="figure" aria-label="대시보드"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-evaluation-dashboard-11cd82764031e224f7f88b0a7fcb2965.png" target="_blank" rel="noopener"><img width="2013" height="1120" src="/deep-agent-platform/assets/images/practice-evaluation-dashboard-11cd82764031e224f7f88b0a7fcb2965.png" alt="대시보드 탭에서 고객 문의 답장 도우미의 데이터셋별 성적과 전체 실행" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">대시보드</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>화면에 보이는 내용</th><th>읽는 법</th></tr></thead><tbody><tr><td>1</td><td><strong>에이전트</strong></td><td>고객 문의 답장 도우미</td><td>기본값 <strong>전체</strong>에서 이 에이전트만 고릅니다.</td></tr><tr><td>2</td><td>데이터셋별 성적의 에이전트 줄</td><td>최근 정답률 88.9%, 평균 (범위) · 횟수 44.4% (0%–89%) · 2회</td><td>최근 실행이 지난 실행보다 나아졌는지 봅니다. 평균은 고치기 전 실행까지 섞인 값입니다.</td></tr><tr><td>3</td><td><strong>전체 실행</strong>의 #6</td><td>88.9% (8/9), 응대 기준 준수, 평균 응답 시간 16.82s</td><td>고친 뒤 실행의 점수와 평가기를 확인합니다.</td></tr><tr><td>4</td><td><strong>전체 실행</strong>의 #5</td><td>0.0% (0/9), 응대 기준 준수, 평균 응답 시간 11.63s</td><td>같은 평가기로 채점한 실행끼리 비교하는지 확인합니다.</td></tr></tbody></table>
+<ol>
+<li class=""><strong>대시보드</strong> 탭을 엽니다.</li>
+<li class=""><strong>에이전트</strong>에서 &quot;고객 문의 답장 도우미&quot;를 고릅니다. 위쪽 카드에 <strong>총 실행 횟수</strong> 2, <strong>평균 점수</strong> 44%가 나옵니다.</li>
+<li class=""><strong>데이터셋별 성적</strong>과 <strong>전체 실행</strong> 표에서 두 실행의 정답률과 평가기를 확인하고, &quot;#5 0.0% → #6 88.9%&quot;처럼 보고서에 옮깁니다.</li>
+</ol>
+<p>대시보드의 다른 칸은 <a class="" href="/deep-agent-platform/docs/deep-agent-builder/evaluations/">에이전트 평가 요약</a>에 있습니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="설정값-표">설정값 표<a href="#설정값-표" class="hash-link" aria-label="설정값 표에 대한 직접 링크" title="설정값 표에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>화면</th><th>설정</th><th>의미</th><th>기본값</th><th>이 실습에서 쓴 값</th></tr></thead><tbody><tr><td>데이터셋 생성</td><td><strong>시작 방법</strong></td><td>데이터셋을 무엇으로 만들지</td><td>CSV 파일</td><td>CSV 파일</td></tr><tr><td>데이터셋 평가 설정</td><td><strong>주 지표</strong></td><td>실행 비교의 기준 지표</td><td>정하지 않음</td><td>전체 정답</td></tr><tr><td>데이터셋 평가 설정</td><td><strong>언어</strong></td><td>근거 추출 언어</td><td>자동</td><td>자동</td></tr><tr><td>데이터셋 평가 설정</td><td><strong>도구 호출 단가 (USD)</strong></td><td>비용 계산용 도구 호출 1회 단가</td><td>비우면 0.001</td><td>비움</td></tr><tr><td>평가기 복사</td><td><strong>평가 유형</strong></td><td>통과/실패 또는 점수 (범위)</td><td>원래 평가기 값(정확성은 통과/실패, 0–1)</td><td>통과/실패</td></tr><tr><td>평가기 복사</td><td><strong>프롬프트 템플릿</strong></td><td>채점 모델에 보내는 프롬프트. {agent_answer} 필수</td><td>원래 평가기의 영어 프롬프트</td><td>응대 기준 다섯 항목 프롬프트</td></tr><tr><td>평가 실행 생성</td><td><strong>모델 (선택 사항)</strong></td><td>채점 모델</td><td>사용자 기본값 사용(예시에서는 OpenAI/GPT-4.1)</td><td>처음 값</td></tr><tr><td>평가 실행 생성</td><td><strong>근거 추출 실행</strong></td><td>채점 대신 근거 문장을 찾아 저장</td><td>끔</td><td>끔</td></tr><tr><td>평가 실행 생성</td><td><strong>반복 횟수</strong></td><td>같은 설정으로 연속 실행할 횟수(1~10)</td><td>1</td><td>1</td></tr><tr><td>에이전트 편집 화면</td><td><strong>새 버전으로 저장</strong></td><td>지금 설정을 복사한 새 버전을 만들어 현재 버전으로 삼음. 버전 설명 30자 이내</td><td>해당 없음</td><td>&quot;평가 반영 수정&quot;(V2)</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="결과">결과<a href="#결과" class="hash-link" aria-label="결과에 대한 직접 링크" title="결과에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>실행</th><th>지침</th><th>전체 정답률</th><th>실행 유효성</th><th>평균 토큰(입력 / 출력)</th><th>소요 시간 p50 / p95</th></tr></thead><tbody><tr><td>#5 (고치기 전)</td><td>V1</td><td>0.0% (0/9)</td><td>정상</td><td>51.4K / 194</td><td>5.9초 / 39.1초</td></tr><tr><td>#6 (고친 뒤)</td><td>V2 &quot;평가 반영 수정&quot;</td><td>88.9% (8/9)</td><td>주의(검색 6번 중 1번 시간 초과)</td><td>45K / 191</td><td>6.3초 / 51.9초</td></tr></tbody></table>
+<p>고친 뒤 실행의 첫 문항 답장은 &quot;엑셀 파일 지원 여부에 대해 문의해 주셔서 감사해요.&quot;로 시작해 &quot;추가로 궁금하신 점이 있으면 언제든 회신 주세요. 브레인크루 AI혁신팀 드림&quot;으로 끝났고, <strong>응대 기준 준수</strong>에서 &quot;1/1 · 통과&quot;를 받았습니다. 실행 비교에서는 상승한 문항 8개, 하락한 문항 0개였습니다. 문항 토큰 p50은 24,557에서 24,646으로 거의 그대로였습니다.</p>
+<p>모델 답과 채점 결과는 실행할 때마다 조금씩 다를 수 있습니다.</p>
+<p><strong>이럴 때 쓰세요</strong>: 김그루 사원은 고객 문의 답장 도우미를 팀에 공유하기 전에 &quot;응대 기준을 정말 지키는지&quot; 숫자로 보여 달라는 요청을 받았습니다. 지난주 실제로 들어온 문의 여덟 개를 CSV로 정리해 데이터셋을 만들고, 응대 기준 문서를 그대로 옮긴 평가기로 채점했더니 0%가 나왔습니다. 채점 사유를 읽어 보니 내용은 맞는데 감사 인사, 해요체, 마무리 문장이 빠져 있었습니다. 지침 세 줄을 더해 다시 돌린 결과 88.9%가 되었고, 남은 한 문항(요금 계산을 단정한 답)은 다음 수정 거리로 팀장에게 함께 보고했습니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="흔한-실수와-해결">흔한 실수와 해결<a href="#흔한-실수와-해결" class="hash-link" aria-label="흔한 실수와 해결에 대한 직접 링크" title="흔한 실수와 해결에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>증상</th><th>원인</th><th>해결</th></tr></thead><tbody><tr><td>CSV를 골랐는데 &quot;CSV 헤더에 question, answer 열이 있어야 합니다.&quot;가 뜹니다.</td><td>첫 줄 열 이름을 &quot;질문&quot;, &quot;답변&quot;처럼 적었거나 다른 이름을 썼습니다.</td><td>첫 줄을 영문 question, answer로 고치거나 **템플릿 (영문 열)**에서 시작합니다.</td></tr><tr><td>정답률이 0%인데 이유를 모르겠습니다.</td><td>평가기 프롬프트가 어긴 항목을 적게 하지 않았습니다.</td><td>프롬프트에 &quot;reasoning에는 어긴 항목 번호와 이유를 적는다&quot;를 넣어, 채점 사유에서 번호를 모아 볼 수 있게 합니다.</td></tr><tr><td>Fix 에이전트가 &quot;이미 반영되어 있다&quot;고 답했는데 다시 돌려도 점수가 같습니다.</td><td>Fix 에이전트가 지침을 실제로 바꾸지 않았습니다. 예시의 첫 요청에서 이런 일이 있었습니다.</td><td>가운데 <strong>지침</strong>에서 바뀐 줄을 직접 확인하고, 없으면 &quot;어느 섹션 맨 아래에 다음 줄을 그대로 추가해 주세요&quot;처럼 위치와 문장을 정확히 적어 다시 요청합니다.</td></tr><tr><td>두 실행의 점수 차이를 믿기 어렵습니다.</td><td>다시 실행할 때 평가기, 데이터셋 문항, 채점 모델 가운데 하나가 바뀌었습니다.</td><td>비교가 끝날 때까지 평가기와 문항을 고치지 않고, 실행 생성 창의 세 칸을 같은 값으로 둡니다.</td></tr><tr><td><strong>실행 유효성</strong>이 <strong>주의</strong>로 나옵니다.</td><td>실행 중 사내 지식 검색 도구가 시간 초과되었습니다.</td><td>무효가 아니면 비교에 쓸 수 있습니다. 검색 결과가 중요한 에이전트라면 같은 조건으로 다시 실행해 확인합니다.</td></tr><tr><td>평가 설정을 바꾸려는데 저장이 안 됩니다.</td><td>이 데이터셋으로 진행 중인 평가 실행이 있습니다.</td><td>실행이 끝난 뒤 바꿉니다. 주 지표는 첫 실행 전에 정해 둡니다.</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="응용-과제">응용 과제<a href="#응용-과제" class="hash-link" aria-label="응용 과제에 대한 직접 링크" title="응용 과제에 대한 직접 링크" translate="no">​</a></h2>
+<ol>
+<li class="">10단계에서 남은 실패 문항을 고치도록 &quot;요금 문의에는 1인당 금액이나 총액을 계산해 단정하지 말고 [담당자 확인 필요]로 표시한다&quot;를 지침에 더한 뒤, 같은 조건으로 세 번째 실행을 돌려 #6과 비교해 보세요.</li>
+<li class="">같은 데이터셋을 기본 평가기 **전문성 (Professional)**으로도 실행해, 형식 기준과 어조 점수가 함께 나아졌는지 대시보드의 <strong>평가기 성능</strong>에서 비교해 보세요.</li>
+<li class=""><strong>반복 횟수</strong>를 3으로 두고 다시 실행해, 같은 지침에서도 문항별 결과가 흔들리는지 실행 비교의 문항별 다수결로 확인해 보세요.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="다음-문서">다음 문서<a href="#다음-문서" class="hash-link" aria-label="다음 문서에 대한 직접 링크" title="다음 문서에 대한 직접 링크" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-agent-builder/regression-evaluation/">회귀 평가와 개선</a> — 실행 비교 화면과 이전 버전으로 되돌리는 방법</li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-agent-builder/evaluation-results/">평가 결과 읽기와 비교</a> — 요약 카드, 결과 표, 진단 요약을 읽는 방법</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/deep-agent-platform/docs/deep-agent-builder/practice-multi-agent/"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">실습 5: 멀티에이전트 만들기</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/deep-agent-platform/docs/deep-agent-builder/use-cases/"><div class="pagination-nav__sublabel">다음</div><div class="pagination-nav__label">활용 사례 모음</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#목표" class="table-of-contents__link toc-highlight">목표</a></li><li><a href="#준비물" class="table-of-contents__link toc-highlight">준비물</a></li><li><a href="#1단계-평가-화면-열기" class="table-of-contents__link toc-highlight">1단계. 평가 화면 열기</a></li><li><a href="#2단계-템플릿과-작성-가이드-확인하기" class="table-of-contents__link toc-highlight">2단계. 템플릿과 작성 가이드 확인하기</a></li><li><a href="#3단계-csv-파일로-데이터셋-만들기" class="table-of-contents__link toc-highlight">3단계. CSV 파일로 데이터셋 만들기</a></li><li><a href="#4단계-문항-확인하고-하나-고치기-하나-더하기" class="table-of-contents__link toc-highlight">4단계. 문항 확인하고 하나 고치기, 하나 더하기</a></li><li><a href="#5단계-데이터셋-평가-설정-정하기" class="table-of-contents__link toc-highlight">5단계. 데이터셋 평가 설정 정하기</a></li><li><a href="#6단계-사용자-평가기-응대-기준-준수-만들기" class="table-of-contents__link toc-highlight">6단계. 사용자 평가기 &quot;응대 기준 준수&quot; 만들기</a></li><li><a href="#7단계-평가-실행-만들기" class="table-of-contents__link toc-highlight">7단계. 평가 실행 만들기</a></li><li><a href="#8단계-고치기-전-결과-읽기" class="table-of-contents__link toc-highlight">8단계. 고치기 전 결과 읽기</a></li><li><a href="#9단계-지침-고치고-새-버전으로-저장하기" class="table-of-contents__link toc-highlight">9단계. 지침 고치고 새 버전으로 저장하기</a></li><li><a href="#10단계-같은-조건으로-다시-실행하기" class="table-of-contents__link toc-highlight">10단계. 같은 조건으로 다시 실행하기</a></li><li><a href="#11단계-두-실행-비교하기" class="table-of-contents__link toc-highlight">11단계. 두 실행 비교하기</a></li><li><a href="#12단계-대시보드에서-이력-확인하기" class="table-of-contents__link toc-highlight">12단계. 대시보드에서 이력 확인하기</a></li><li><a href="#설정값-표" class="table-of-contents__link toc-highlight">설정값 표</a></li><li><a href="#결과" class="table-of-contents__link toc-highlight">결과</a></li><li><a href="#흔한-실수와-해결" class="table-of-contents__link toc-highlight">흔한 실수와 해결</a></li><li><a href="#응용-과제" class="table-of-contents__link toc-highlight">응용 과제</a></li><li><a href="#다음-문서" class="table-of-contents__link toc-highlight">다음 문서</a></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>
