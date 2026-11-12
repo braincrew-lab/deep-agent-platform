@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="ko" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-deep-admin/connector-admin" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.2">
+<title data-rh="true">Deep Admin에서 Deep Connector 관리하기 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-admin/connector-admin/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Deep Admin에서 Deep Connector 관리하기 | Deep Platform"><meta data-rh="true" name="description" content="Deep Admin 사이드바 맨 위 관리 화면 선택에서 DeepConnector를 고르면 사이드바가 Deep Connector 관리 메뉴로 바뀝니다. 문서 적재 상태, 검색 사전과 전사 용어사전, 메타데이터, LLM 커넥션과 MCP 도구, 감사 로그, 브랜드, 개인정보(PII) 볼트를 통합 어드민 안에서 관리합니다. Deep Connector 화면 자체의 관리자 메뉴는 Deep Connector 매뉴얼의 관리자 장에 있고, 이 페이지는 통합 어드민 쪽 메뉴를 설명합니다."><meta data-rh="true" property="og:description" content="Deep Admin 사이드바 맨 위 관리 화면 선택에서 DeepConnector를 고르면 사이드바가 Deep Connector 관리 메뉴로 바뀝니다. 문서 적재 상태, 검색 사전과 전사 용어사전, 메타데이터, LLM 커넥션과 MCP 도구, 감사 로그, 브랜드, 개인정보(PII) 볼트를 통합 어드민 안에서 관리합니다. Deep Connector 화면 자체의 관리자 메뉴는 Deep Connector 매뉴얼의 관리자 장에 있고, 이 페이지는 통합 어드민 쪽 메뉴를 설명합니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-admin/connector-admin/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-admin/connector-admin/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-admin/connector-admin/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Deep Admin에서 Deep Connector 관리하기","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-admin/connector-admin"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.23d33638.css">
+<script src="/deep-agent-platform/assets/js/runtime~main.77c70581.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.c8f57531.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/deep-agent-platform/img/manual-mark.svg"><div role="region" aria-label="본문으로 건너뛰기"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">본문으로 건너뛰기</a></div><nav aria-label="메인" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="사이드바 펼치거나 접기" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/deep-agent-platform/"><div class="navbar__logo"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Deep Platform</b></a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">솔루션</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-flow/">Deep Flow</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-agent-builder/">Deep Agent Builder</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-connector/">Deep Connector</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-docurator/">Deep Docurator</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/brain-parser/">Brain Parser</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work/">Deep Work</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work-gateway/">Deep Work Gateway</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/deep-agent-platform/docs/deep-admin/">Deep Admin</a></li></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="어두운 모드와 밝은 모드 전환하기 (현재 system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="searchBar_fdyA"><input type="search" class="searchInput_JE4R" placeholder="매뉴얼 검색" aria-label="매뉴얼 검색" role="combobox" aria-autocomplete="list" aria-expanded="false" value=""><div role="status" aria-live="polite"></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="맨 위로 스크롤하기" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="문서 사이드바" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-admin/"><span class="categoryLinkLabel_W154">소개</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-admin/getting-started/"><span class="categoryLinkLabel_W154">시작하기</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-admin/monitoring-audit/"><span class="categoryLinkLabel_W154">메뉴: 운영 현황</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-admin/users-workspaces/"><span class="categoryLinkLabel_W154">메뉴: 사용자·승인</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-admin/permissions/"><span class="categoryLinkLabel_W154">메뉴: 접근 권한</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-admin/community-agents/"><span class="categoryLinkLabel_W154">메뉴: 에이전트</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-admin/resources/"><span class="categoryLinkLabel_W154">메뉴: 리소스</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-admin/toolbox/"><span class="categoryLinkLabel_W154">메뉴: 툴박스 레지스트리</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-admin/keys-secrets/"><span class="categoryLinkLabel_W154">메뉴: 시크릿·키</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/deep-agent-platform/docs/deep-admin/connector-admin/"><span class="categoryLinkLabel_W154">메뉴: 제품별 관리</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/deep-agent-platform/docs/deep-admin/connector-admin/"><span class="linkLabel_WmDU">Deep Admin에서 Deep Connector 관리하기</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-admin/workflows/"><span class="categoryLinkLabel_W154">반복 업무</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-admin/practice/"><span class="categoryLinkLabel_W154">실습</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-admin/use-cases/"><span class="categoryLinkLabel_W154">활용사례</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-admin/troubleshooting/"><span class="categoryLinkLabel_W154">문제 해결</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="탐색 경로"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="홈" class="breadcrumbs__link" href="/deep-agent-platform/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">메뉴: 제품별 관리</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Deep Admin에서 Deep Connector 관리하기</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">이 페이지에서</button></div><div class="theme-doc-markdown markdown"><header><h1>Deep Admin에서 Deep Connector 관리하기</h1></header>
+<p>Deep Admin 사이드바 맨 위 관리 화면 선택에서 <strong>DeepConnector</strong>를 고르면 사이드바가 Deep Connector 관리 메뉴로 바뀝니다. 문서 적재 상태, 검색 사전과 전사 용어사전, 메타데이터, LLM 커넥션과 MCP 도구, 감사 로그, 브랜드, 개인정보(PII) 볼트를 통합 어드민 안에서 관리합니다. Deep Connector 화면 자체의 관리자 메뉴는 Deep Connector 매뉴얼의 관리자 장에 있고, 이 페이지는 통합 어드민 쪽 메뉴를 설명합니다.</p>
+<p><strong>이 페이지에서 할 수 있는 일</strong></p>
+<ul>
+<li class="">Deep Connector 관리 메뉴 네 묶음의 쓰임을 확인합니다.</li>
+<li class="">문서 적재 실패를 기간·사유별로 찾습니다.</li>
+<li class="">검색 사전, 전사 용어사전, 메타데이터 값을 고치거나 파일로 한꺼번에 올립니다.</li>
+<li class="">감사 로그와 PII 볼트로 관리 작업과 개인정보 복원 기록을 확인합니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="메뉴-구성">메뉴 구성<a href="#메뉴-구성" class="hash-link" aria-label="메뉴 구성에 대한 직접 링크" title="메뉴 구성에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>묶음</th><th>메뉴</th><th>하는 일</th></tr></thead><tbody><tr><td>관리자</td><td><strong>적재 현황</strong></td><td>문서 적재 성공·실패·진행 상태와 실패 사유</td></tr><tr><td>사용자와 팀스페이스</td><td><strong>사용자</strong></td><td>Deep Connector에 로그인한 사용자를 보고 계정을 켜거나 끕니다. 이메일로는 찾을 수 없고 이름이나 사용자 ID로 찾습니다.</td></tr><tr><td>검색과 AI</td><td><strong>사전</strong></td><td>검색이 대표어와 별칭을 맞춰 보는 사전</td></tr><tr><td>검색과 AI</td><td><strong>전사 용어사전</strong></td><td>포털과 함께 쓰는 회사 용어(용어명·약어·유의어·정의·분류)</td></tr><tr><td>검색과 AI</td><td><strong>메타데이터 관리</strong></td><td>문서·청크 메타데이터 필드와 값, 필드끼리의 관계</td></tr><tr><td>검색과 AI</td><td><strong>LLM 커넥션</strong></td><td>Deep Connector가 쓰는 LLM 연결과 연결 상태</td></tr><tr><td>검색과 AI</td><td><strong>MCP 도구</strong></td><td>MCP 클라이언트에 보이는 도구 설명과 Deep Agent Builder(DAB) 등록 여부</td></tr><tr><td>시스템</td><td><strong>감사 로그</strong></td><td>관리 기능 호출 기록과 문서 변경 이력</td></tr><tr><td>시스템</td><td><strong>브랜드 설정</strong></td><td>Deep Connector 화면의 제품명·회사명·설명 문구·색</td></tr><tr><td>시스템</td><td><strong>PII 볼트</strong></td><td>문서에서 가려 둔 개인정보 원문의 복원·파기와 그 기록</td></tr></tbody></table>
+<p>권한이 없는 메뉴는 흐리게 보이고, 마우스를 올리면 &quot;접근 권한이 없습니다&quot;가 나옵니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="적재-현황">적재 현황<a href="#적재-현황" class="hash-link" aria-label="적재 현황에 대한 직접 링크" title="적재 현황에 대한 직접 링크" translate="no">​</a></h2>
+<p><span class="manual-shot" role="figure" aria-label="적재 현황"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/connector-admin-ingestion-9a81fc7ea772dee3b3b844db2e847a87.png" target="_blank" rel="noopener"><img width="2074" height="1620" src="/deep-agent-platform/assets/images/connector-admin-ingestion-9a81fc7ea772dee3b3b844db2e847a87.png" alt="적재 현황. 24시간 기간 버튼, 적재 실패 카드, 실패 사유별 탭, 목록의 상태 열에 번호가 붙어 있다" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">적재 현황</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>기간 버튼(예: <strong>24시간</strong>)</td><td><strong>1시간</strong>, <strong>6시간</strong>, <strong>24시간</strong>, <strong>7일</strong>, <strong>30일</strong>, <strong>직접 지정</strong>, <strong>기간 무관</strong> 중에서 고릅니다. 옆 기준 시각과 <strong>새로고침</strong>으로 다시 셉니다.</td><td>오늘 아침 올린 문서만 볼 때</td></tr><tr><td>2</td><td><strong>적재 실패</strong></td><td>실패 건수와 실패율입니다. 옆 카드에 적재 중(그중 멈춤), 완료(완료율), 전체(시도 횟수)가 있습니다.</td><td>실패가 늘었는지 볼 때</td></tr><tr><td>3</td><td><strong>실패 사유별</strong></td><td>통계 구역의 탭입니다. 시작 시각별 추이, 실패 사유별, 컬렉션별 실패 상위 10을 봅니다. 출처(예: 파서), 로그 텍스트, 건수가 나옵니다. 예시의 2건은 파서가 엑셀 97-2003 파일(.xls)을 지원하지 않아 실패한 것입니다.</td><td>같은 원인으로 실패한 문서를 묶어 볼 때</td></tr><tr><td>4</td><td>목록의 상태 열</td><td>문서마다 적재 상태입니다. 위 필터(상태, 컬렉션, 업로더, 파이프라인, 확장자)와 파일명 검색으로 좁히고, <strong>CSV 내보내기</strong>로 목록을 CSV 파일(.csv)로 받습니다.</td><td>실패한 문서를 올린 사람에게 알릴 때</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="사전과-전사-용어사전">사전과 전사 용어사전<a href="#사전과-전사-용어사전" class="hash-link" aria-label="사전과 전사 용어사전에 대한 직접 링크" title="사전과 전사 용어사전에 대한 직접 링크" translate="no">​</a></h2>
+<p><span class="manual-shot" role="figure" aria-label="사전 목록"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/connector-admin-lexicons-abb567f392655e6e3df2b27d85c74362.png" target="_blank" rel="noopener"><img width="2072" height="800" src="/deep-agent-platform/assets/images/connector-admin-lexicons-abb567f392655e6e3df2b27d85c74362.png" alt="사전 목록. 업로드 양식 내려받기, 사전 추가, 검색 사용 열, 편집 버튼에 번호가 붙어 있다" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">사전 목록</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>업로드 양식 내려받기</strong></td><td>파일 적재용 양식을 받습니다.</td><td>항목을 엑셀로 정리해 올리려 할 때</td></tr><tr><td>2</td><td><strong>사전 추가</strong></td><td>새 사전을 만듭니다.</td><td>부서 전용 용어 사전을 만들 때</td></tr><tr><td>3</td><td><strong>검색 사용</strong> 열</td><td>검색에 이 사전을 쓰는지 보여 줍니다. 같은 표에 종류(사용자 정의·표준), 항목 수, 버전, 수정 시각이 있습니다.</td><td>어떤 사전이 검색에 들어가는지 볼 때</td></tr><tr><td>4</td><td><strong>편집</strong></td><td>사전 항목을 고치거나 <strong>파일 적재</strong>로 CSV 파일(.csv)·엑셀 파일(.xlsx) 항목을 한꺼번에 넣습니다.</td><td>별칭을 한꺼번에 더할 때</td></tr></tbody></table>
+<p>파일 적재는 두 방식이 있습니다. 하나는 파일에 없는 기존 항목을 지우고 파일 내용으로 바꾸는 방식, 다른 하나는 파일 항목을 더하거나 고치고 나머지는 그대로 두는 방식입니다. 미리보기로 바뀔 내용을 확인한 뒤 적용합니다. &quot;전사 용어사전&quot; 원장 사전의 항목은 <strong>전사 용어사전</strong> 화면에서만 고칩니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="전사 용어사전"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/connector-admin-glossary-586dd3af132e175cf06f04e674fb365a.png" target="_blank" rel="noopener"><img width="2072" height="1224" src="/deep-agent-platform/assets/images/connector-admin-glossary-586dd3af132e175cf06f04e674fb365a.png" alt="전사 용어사전. 분류 코드표 탭, 용어 등록, 파일 일괄 등록, 약어 열에 번호가 붙어 있다" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">전사 용어사전</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>분류 코드표</strong> 탭</td><td>용어 분류(대·중·소분류) 코드표입니다. 첫 시트에 계층·코드·코드명 열이 있는 엑셀 파일(.xlsx, 20MB까지)로 코드표 전체를 바꿉니다. 미리보기가 없으니 주의합니다.</td><td>분류 체계를 바꿀 때</td></tr><tr><td>2</td><td><strong>용어 등록</strong></td><td>용어 하나를 등록합니다. 용어명·약어·유의어는 검색 키가 됩니다.</td><td>새 용어가 생겼을 때</td></tr><tr><td>3</td><td><strong>파일 일괄 등록</strong></td><td>CSV 파일(.csv)이나 엑셀 파일(.xlsx)로 용어를 한꺼번에 등록하거나 고칩니다. 용어명이 같으면 고치고 없으면 새로 등록합니다.</td><td>부서에서 정리한 용어집을 넣을 때</td></tr><tr><td>4</td><td><strong>약어</strong> 열</td><td>예시: 법인카드 → 법카. 같은 표에 정의, 분류, 사용 여부, 최종 변경이 있습니다.</td><td>약어로 검색해도 찾히는지 볼 때</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="메타데이터-관리">메타데이터 관리<a href="#메타데이터-관리" class="hash-link" aria-label="메타데이터 관리에 대한 직접 링크" title="메타데이터 관리에 대한 직접 링크" translate="no">​</a></h2>
+<p><span class="manual-shot" role="figure" aria-label="메타데이터 관리"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/connector-admin-metadata-c9171cace6e5f4c1cfb6fdcf555f2e8b.png" target="_blank" rel="noopener"><img width="2074" height="1620" src="/deep-agent-platform/assets/images/connector-admin-metadata-c9171cace6e5f4c1cfb6fdcf555f2e8b.png" alt="메타데이터 관리. 필드 검색, 선택한 필드의 경로, JSON 업로드, 내보내기에 번호가 붙어 있다" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">메타데이터 관리</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>필드 검색</td><td>키, 라벨, 경로로 필드를 찾습니다. 위 탭은 <strong>필드</strong>와 <strong>관계</strong>, 아래 필터는 범위(문서·청크)와 컬렉션입니다.</td><td>keywords 같은 필드를 찾을 때</td></tr><tr><td>2</td><td>선택한 필드 정보(경로)</td><td>고른 필드의 키, 경로, 범위·타입, 컬렉션 수, 등록 값 수, 개정 번호입니다. <strong>편집</strong>과 <strong>비활성화</strong>가 옆에 있습니다.</td><td>필드가 어디에 쓰이는지 볼 때</td></tr><tr><td>3</td><td><strong>JSON 업로드</strong></td><td>값 목록을 JSON 파일(.json)로 올립니다. 옆 <strong>값 등록</strong>은 하나씩 넣습니다.</td><td>값 표준을 한꺼번에 맞출 때</td></tr><tr><td>4</td><td><strong>내보내기</strong></td><td>값 목록을 JSON 파일(.json)로 받습니다.</td><td>값 목록을 검토용으로 받을 때</td></tr></tbody></table>
+<p>값 표에는 값, 라벨, 속성, 문서 수, 유닛 수, 상태가 나옵니다. <strong>관계</strong> 탭은 필드끼리의 조합(튜플)을 JSON으로 올려 관리합니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="llm-커넥션과-mcp-도구">LLM 커넥션과 MCP 도구<a href="#llm-커넥션과-mcp-도구" class="hash-link" aria-label="LLM 커넥션과 MCP 도구에 대한 직접 링크" title="LLM 커넥션과 MCP 도구에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>메뉴</th><th>화면에서 하는 일</th><th>알아 둘 점</th></tr></thead><tbody><tr><td><strong>LLM 커넥션</strong></td><td><strong>새 커넥션</strong>으로 Deep Connector가 쓸 LLM 연결을 등록하고 연결 상태를 확인합니다.</td><td>통합 어드민이 Deep Connector에 접속하는 계정에 커넥션 관리 권한이 없으면 &quot;연동 서비스가 요청을 거부했습니다. 관리자에게 문의해 주세요.&quot;가 나옵니다. 이때는 Deep Connector 화면의 관리자 메뉴에서 관리합니다.</td></tr><tr><td><strong>MCP 도구</strong></td><td>도구마다 MCP 클라이언트에 보일 설명을 고치고, Deep Agent Builder 지식 도구로 등록할지(<strong>DAB 등록</strong>) 정합니다. 바꾼 뒤 <strong>수정 반영</strong>을 눌러야 적용됩니다.</td><td>위쪽 <strong>DAB 연동</strong> 상태가 &quot;설정 안 됨&quot;이면 DAB 등록과 DAB 표시 설명을 바꿀 수 없습니다. 쓰기 도구는 DAB 등록 대상이 아닙니다.</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="감사-로그와-브랜드-설정">감사 로그와 브랜드 설정<a href="#감사-로그와-브랜드-설정" class="hash-link" aria-label="감사 로그와 브랜드 설정에 대한 직접 링크" title="감사 로그와 브랜드 설정에 대한 직접 링크" translate="no">​</a></h2>
+<p><span class="manual-shot" role="figure" aria-label="Deep Connector 감사 로그"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/connector-admin-audit-b10a809d6d8e2b7d330156646df7a925.png" target="_blank" rel="noopener"><img width="2074" height="1620" src="/deep-agent-platform/assets/images/connector-admin-audit-b10a809d6d8e2b7d330156646df7a925.png" alt="Deep Connector 감사 로그. 문서 변경 이력 탭, 분류 필터, 작업 내용 열에 번호가 붙어 있고 IP는 흐리게 가려져 있다" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">Deep Connector 감사 로그</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>문서 변경 이력</strong> 탭</td><td>문서 추가·수정·삭제 기록입니다. 옆 <strong>감사 로그</strong> 탭은 관리 API 호출 기록입니다.</td><td>누가 문서를 지웠는지 찾을 때</td></tr><tr><td>2</td><td><strong>모든 분류</strong></td><td>분류로 거릅니다. 옆에 요청 방식 필터와 기간(오늘·7일·30일·전체)이 있습니다.</td><td>특정 작업만 볼 때</td></tr><tr><td>3</td><td><strong>작업 내용</strong> 열</td><td>무엇을 했는지입니다. 같은 표에 시각, 사용자, IP 주소·User-Agent, 요청 방식, 분류, 대상, 경로, 상태, 소요 시간이 있고 <strong>상세</strong>로 자세히 봅니다.</td><td>호출 하나를 자세히 볼 때</td></tr></tbody></table>
+<p><span class="manual-shot" role="figure" aria-label="브랜드 설정"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/connector-admin-brand-50b8744d4a823a3c0f9e25cbb1fafc2b.png" target="_blank" rel="noopener"><img width="2074" height="1620" src="/deep-agent-platform/assets/images/connector-admin-brand-50b8744d4a823a3c0f9e25cbb1fafc2b.png" alt="브랜드 설정. 초안 저장, 발행, 발행된 설정에 번호가 붙어 있다" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">브랜드 설정</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td><strong>초안 저장</strong></td><td>제품명(100자), 회사명(100자), 설명 문구(500자), 주 색상과 글자색을 초안으로 저장합니다. 비운 칸은 기본값을 씁니다.</td><td>화면 문구를 회사에 맞게 바꿀 때</td></tr><tr><td>2</td><td><strong>발행</strong></td><td>저장한 초안을 사용자 화면에 반영합니다. 발행 전에는 바뀌지 않습니다.</td><td>검토가 끝난 뒤</td></tr><tr><td>3</td><td><strong>발행된 설정</strong></td><td>지금 사용자 화면에 적용된 값입니다. 옆에 현재 버전, 마지막 저장, 마지막 발행이 있습니다.</td><td>무엇이 적용 중인지 볼 때</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="pii-볼트">PII 볼트<a href="#pii-볼트" class="hash-link" aria-label="PII 볼트에 대한 직접 링크" title="PII 볼트에 대한 직접 링크" translate="no">​</a></h2>
+<p>문서를 적재할 때 이름, 전화번호 같은 개인정보를 토큰으로 가려 둔 경우, 원문은 PII 볼트에 따로 보관됩니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="PII 볼트"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/connector-admin-pii-756e00e558db77bac1888f2992612721.png" target="_blank" rel="noopener"><img width="2192" height="1259" src="/deep-agent-platform/assets/images/connector-admin-pii-756e00e558db77bac1888f2992612721.png" alt="PII 볼트. 탭 목록, 토큰이 든 문장 입력란, 복원 사유 입력란, 복원 버튼에 번호가 붙어 있다" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">PII 볼트</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>항목</th><th>기능</th><th>이런 때 사용하세요</th></tr></thead><tbody><tr><td>1</td><td>탭(<strong>토큰 복원</strong>, <strong>항목 파기</strong>, <strong>감사 로그</strong>)</td><td>복원, 파기, 기록 보기를 바꿉니다.</td><td>할 일에 맞는 탭을 고를 때</td></tr><tr><td>2</td><td>토큰이 든 문장</td><td>문서나 검색 결과에 남은 PII 토큰이 든 문장만 붙여 넣습니다. 이미 원문 개인정보가 든 문장은 넣지 않습니다.</td><td>가려진 이름을 확인해야 할 때</td></tr><tr><td>3</td><td>복원 사유(필수, 100자)</td><td>왜 원문을 보는지 적습니다. 사유에 개인정보 원문을 적지 않습니다.</td><td>복원 근거를 남길 때</td></tr><tr><td>4</td><td><strong>복원</strong></td><td>원문을 이 화면에서만 잠시 보여 주고 5분 뒤 지웁니다.</td><td>확인이 끝나면 바로 닫습니다.</td></tr></tbody></table>
+<p><strong>항목 파기</strong>는 문서 ID나 값 해시로 볼트 원문을 지웁니다. 파기한 토큰은 복원하면 [파기됨]으로 바뀌고 되돌릴 수 없습니다. 복원과 파기는 모두 <strong>감사 로그</strong> 탭에 최신순으로 남습니다.</p>
+<p><strong>이럴 때 쓰세요</strong>: 영업팀이 올린 판매 데이터 엑셀 97-2003 파일(.xls)이 계속 적재 실패로 남아 있다는 문의가 왔습니다. 강혁신 팀장은 <strong>적재 현황</strong>에서 <strong>24시간</strong>을 고르고 <strong>실패 사유별</strong> 탭에서 파서가 이 형식을 지원하지 않는다는 사유를 확인합니다. 영업팀에 엑셀 파일(.xlsx)로 다시 저장해 올리도록 안내하고, 같은 날 <strong>전사 용어사전</strong>에 &quot;법카(법인카드)&quot; 같은 약어를 <strong>파일 일괄 등록</strong>으로 넣어 영업팀 질문이 약어로도 검색되게 합니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="다음-문서">다음 문서<a href="#다음-문서" class="hash-link" aria-label="다음 문서에 대한 직접 링크" title="다음 문서에 대한 직접 링크" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-admin/core-features/">메뉴 안내</a> — 제품별 관리 메뉴 한눈에 보기</li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-admin/monitoring-audit/">모니터링과 감사 기록</a> — Agent Builder 쪽 기록</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/deep-agent-platform/docs/deep-admin/keys-secrets/"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">시크릿과 키</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/deep-agent-platform/docs/deep-admin/workflows/"><div class="pagination-nav__sublabel">다음</div><div class="pagination-nav__label">반복 업무</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#메뉴-구성" class="table-of-contents__link toc-highlight">메뉴 구성</a></li><li><a href="#적재-현황" class="table-of-contents__link toc-highlight">적재 현황</a></li><li><a href="#사전과-전사-용어사전" class="table-of-contents__link toc-highlight">사전과 전사 용어사전</a></li><li><a href="#메타데이터-관리" class="table-of-contents__link toc-highlight">메타데이터 관리</a></li><li><a href="#llm-커넥션과-mcp-도구" class="table-of-contents__link toc-highlight">LLM 커넥션과 MCP 도구</a></li><li><a href="#감사-로그와-브랜드-설정" class="table-of-contents__link toc-highlight">감사 로그와 브랜드 설정</a></li><li><a href="#pii-볼트" class="table-of-contents__link toc-highlight">PII 볼트</a></li><li><a href="#다음-문서" class="table-of-contents__link toc-highlight">다음 문서</a></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>

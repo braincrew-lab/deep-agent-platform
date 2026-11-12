@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="ko" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-deep-admin/practice-limits" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.2">
+<title data-rh="true">Deep Admin 실습 3: 한도 | Deep Platform</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-admin/practice-limits/"><meta data-rh="true" property="og:locale" content="ko"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Deep Admin 실습 3: 한도 | Deep Platform"><meta data-rh="true" name="description" content="브레인크루는 11월부터 플랫폼을 시범 운영하며, 1인당 월 토큰 한도를 처음 정하기로 했습니다. 이 실습에서는 전 사용자 월 한도를 저장하기 전에 미리보기로 새로 차단될 인원을 확인하고, 변경 이력에 근거를 남기고, 한도를 넘은 직원에게 추가 토큰을 주는 절차를 따라 합니다. 화면 전체 설명은 토큰 사용량과 한도에 있습니다."><meta data-rh="true" property="og:description" content="브레인크루는 11월부터 플랫폼을 시범 운영하며, 1인당 월 토큰 한도를 처음 정하기로 했습니다. 이 실습에서는 전 사용자 월 한도를 저장하기 전에 미리보기로 새로 차단될 인원을 확인하고, 변경 이력에 근거를 남기고, 한도를 넘은 직원에게 추가 토큰을 주는 절차를 따라 합니다. 화면 전체 설명은 토큰 사용량과 한도에 있습니다."><link data-rh="true" rel="icon" href="/deep-agent-platform/img/manual-mark.svg"><link data-rh="true" rel="canonical" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-admin/practice-limits/"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-admin/practice-limits/" hreflang="ko"><link data-rh="true" rel="alternate" href="https://braincrew-lab.github.io/deep-agent-platform/docs/deep-admin/practice-limits/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"실습 3: 한도","item":"https://braincrew-lab.github.io/deep-agent-platform/docs/deep-admin/practice-limits"}]}</script><link rel="stylesheet" href="/deep-agent-platform/assets/css/styles.23d33638.css">
+<script src="/deep-agent-platform/assets/js/runtime~main.77c70581.js" defer="defer"></script>
+<script src="/deep-agent-platform/assets/js/main.c8f57531.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/deep-agent-platform/img/manual-mark.svg"><div role="region" aria-label="본문으로 건너뛰기"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">본문으로 건너뛰기</a></div><nav aria-label="메인" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="사이드바 펼치거나 접기" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/deep-agent-platform/"><div class="navbar__logo"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/deep-agent-platform/img/manual-mark.svg" alt="Deep Platform" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Deep Platform</b></a><div class="navbar__item dropdown dropdown--hoverable"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">솔루션</a><ul class="dropdown__menu"><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-flow/">Deep Flow</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-agent-builder/">Deep Agent Builder</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-connector/">Deep Connector</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-docurator/">Deep Docurator</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/brain-parser/">Brain Parser</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work/">Deep Work</a></li><li><a class="dropdown__link" href="/deep-agent-platform/docs/deep-work-gateway/">Deep Work Gateway</a></li><li><a aria-current="page" class="dropdown__link dropdown__link--active" href="/deep-agent-platform/docs/deep-admin/">Deep Admin</a></li></ul></div></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="어두운 모드와 밝은 모드 전환하기 (현재 system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="searchBar_fdyA"><input type="search" class="searchInput_JE4R" placeholder="매뉴얼 검색" aria-label="매뉴얼 검색" role="combobox" aria-autocomplete="list" aria-expanded="false" value=""><div role="status" aria-live="polite"></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="맨 위로 스크롤하기" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="문서 사이드바" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-admin/"><span class="categoryLinkLabel_W154">소개</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-admin/getting-started/"><span class="categoryLinkLabel_W154">시작하기</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-admin/monitoring-audit/"><span class="categoryLinkLabel_W154">메뉴: 운영 현황</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-admin/users-workspaces/"><span class="categoryLinkLabel_W154">메뉴: 사용자·승인</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-admin/permissions/"><span class="categoryLinkLabel_W154">메뉴: 접근 권한</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-admin/community-agents/"><span class="categoryLinkLabel_W154">메뉴: 에이전트</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-admin/resources/"><span class="categoryLinkLabel_W154">메뉴: 리소스</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-admin/toolbox/"><span class="categoryLinkLabel_W154">메뉴: 툴박스 레지스트리</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-admin/keys-secrets/"><span class="categoryLinkLabel_W154">메뉴: 시크릿·키</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-admin/connector-admin/"><span class="categoryLinkLabel_W154">메뉴: 제품별 관리</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-admin/workflows/"><span class="categoryLinkLabel_W154">반복 업무</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/deep-agent-platform/docs/deep-admin/practice/"><span class="categoryLinkLabel_W154">실습</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-admin/practice/"><span class="linkLabel_WmDU">실습 묶음 안내</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-admin/practice-org-setup/"><span class="linkLabel_WmDU">실습 1: 신규 조직 세팅</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-admin/practice-permissions/"><span class="linkLabel_WmDU">실습 2: 권한</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/deep-agent-platform/docs/deep-admin/practice-limits/"><span class="linkLabel_WmDU">실습 3: 한도</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-admin/practice-monitoring/"><span class="linkLabel_WmDU">실습 4: 모니터링</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/deep-agent-platform/docs/deep-admin/practice-audit/"><span class="linkLabel_WmDU">실습 5: 감사</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-admin/use-cases/"><span class="categoryLinkLabel_W154">활용사례</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/deep-agent-platform/docs/deep-admin/troubleshooting/"><span class="categoryLinkLabel_W154">문제 해결</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="탐색 경로"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="홈" class="breadcrumbs__link" href="/deep-agent-platform/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">실습</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">실습 3: 한도</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">이 페이지에서</button></div><div class="theme-doc-markdown markdown"><header><h1>Deep Admin 실습 3: 한도</h1></header>
+<p>브레인크루는 11월부터 플랫폼을 시범 운영하며, 1인당 월 토큰 한도를 처음 정하기로 했습니다. 이 실습에서는 전 사용자 월 한도를 저장하기 전에 미리보기로 새로 차단될 인원을 확인하고, 변경 이력에 근거를 남기고, 한도를 넘은 직원에게 추가 토큰을 주는 절차를 따라 합니다. 화면 전체 설명은 <a class="" href="/deep-agent-platform/docs/deep-admin/token-usage/">토큰 사용량과 한도</a>에 있습니다.</p>
+<p><strong>이 페이지에서 할 수 있는 일</strong></p>
+<ul>
+<li class="">월 한도를 입력하고 저장 전 미리보기로 영향을 확인합니다.</li>
+<li class="">변경 사유를 남기고 저장한 뒤 변경 이력에서 확인합니다.</li>
+<li class="">한도를 넘은 직원을 사용자별 통계에서 찾고 추가 부여를 준비합니다.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="목표">목표<a href="#목표" class="hash-link" aria-label="목표에 대한 직접 링크" title="목표에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>항목</th><th>내용</th></tr></thead><tbody><tr><td>만들 것</td><td>전 사용자 월 한도 8,000토큰과 그 변경 이력</td></tr><tr><td>결과물</td><td>변경 이력 한 줄, 사용자별 통계의 한도 초과 1명</td></tr><tr><td>걸리는 시간</td><td>10분</td></tr><tr><td>난이도</td><td>★★☆☆☆</td></tr></tbody></table>
+<p>실습 숫자 8,000토큰은 연습 환경의 사용량에 맞춘 값입니다. 실제 운영에서는 직원 한 명이 한 달에 수십만~수백만 토큰을 쓰는 경우가 많으므로, 지난달 사용자별 통계의 사용량 분포를 보고 정합니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="준비물">준비물<a href="#준비물" class="hash-link" aria-label="준비물에 대한 직접 링크" title="준비물에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>준비물</th><th>내용</th></tr></thead><tbody><tr><td>관리자 계정</td><td>토큰 한도 설정 변경 권한이 있는 계정. 권한이 없으면 입력란이 잠겨 보기만 할 수 있습니다.</td></tr><tr><td>사용 기록</td><td>이번 달 사용 기록이 있는 직원. 미리보기의 &quot;판정 인원&quot;은 사용량을 아는 직원 수입니다.</td></tr><tr><td>정할 것</td><td>한도 값과 변경 사유 한 줄</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1단계-월-한도-입력과-미리보기">1단계. 월 한도 입력과 미리보기<a href="#1단계-월-한도-입력과-미리보기" class="hash-link" aria-label="1단계. 월 한도 입력과 미리보기에 대한 직접 링크" title="1단계. 월 한도 입력과 미리보기에 대한 직접 링크" translate="no">​</a></h2>
+<p>사이드바 <strong>사용자·승인</strong> &gt; <strong>토큰 한도 설정</strong>을 누릅니다. 아직 한도를 저장한 적이 없으면 &quot;전사 기본 한도가 아직 설정되지 않았습니다&quot;가 보입니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="월 한도 미리보기"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-limit-preview-6a0086aae0f23f2016b952793ec7ca33.png" target="_blank" rel="noopener"><img width="2072" height="1280" src="/deep-agent-platform/assets/images/practice-limit-preview-6a0086aae0f23f2016b952793ec7ca33.png" alt="기본 한도 카드에 8,000을 넣은 화면. 전 사용자 월 한도, 새로 차단 안내, 변경 사유, 저장에 번호가 붙어 있다" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">월 한도 미리보기</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>입력하거나 확인할 값</th></tr></thead><tbody><tr><td>1</td><td><strong>전 사용자 월 한도</strong></td><td>8000을 적습니다. 입력 토큰과 출력 토큰을 더한 값의 한도입니다.</td></tr><tr><td>2</td><td>미리보기 안내</td><td>&quot;이미 새 한도를 초과한 사용자는 저장 즉시 차단됩니다. 현재 기준 1명이 새로 차단됩니다.&quot;와 판정 인원, 저장 전·후 차단 인원, 경고 인원이 나옵니다.</td></tr><tr><td>3</td><td><strong>변경 사유</strong></td><td>11월 시범 운영 기준 한도 설정(1인 월 8천 토큰)</td></tr><tr><td>4</td><td><strong>저장</strong></td><td>누르면 바로 적용됩니다.</td></tr></tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>설정 항목</th><th>이 실습의 값</th><th>기본값과 범위</th></tr></thead><tbody><tr><td>전 사용자 월 한도</td><td>8,000</td><td>미설정. 0은 &quot;전원 차단&quot;이라는 별도 의미입니다.</td></tr><tr><td>초기화 주기</td><td>바꿀 수 없음</td><td>매월 1일 00:00(한국 시간)</td></tr><tr><td>다음 초기화</td><td>바꿀 수 없음</td><td>다음 달 1일. 개인 추가 부여분도 함께 사라집니다.</td></tr><tr><td>변경 사유</td><td>위와 같음</td><td>필수. 공백만 넣으면 저장할 수 없습니다.</td></tr></tbody></table>
+<p>한도를 너무 낮게 넣으면 미리보기의 &quot;새로 차단&quot; 인원이 늘어납니다. 실제 운영에서는 이 숫자가 0이 되도록 값을 올리거나, 차단될 직원에게 미리 알린 뒤 저장합니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2단계-변경-이력-확인">2단계. 변경 이력 확인<a href="#2단계-변경-이력-확인" class="hash-link" aria-label="2단계. 변경 이력 확인에 대한 직접 링크" title="2단계. 변경 이력 확인에 대한 직접 링크" translate="no">​</a></h2>
+<p>저장하면 오른쪽 <strong>변경 이력</strong> 카드에 한 줄이 쌓입니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="변경 이력"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-limit-history-b692d58961e672c6cfe6bfdbf9a7ed8c.png" target="_blank" rel="noopener"><img width="1200" height="660" src="/deep-agent-platform/assets/images/practice-limit-history-b692d58961e672c6cfe6bfdbf9a7ed8c.png" alt="변경 이력 카드. 저장한 한도 값과 변경 사유에 번호가 붙어 있다" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">변경 이력</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>확인할 것</th><th>기대 값</th></tr></thead><tbody><tr><td>1</td><td>한도 값</td><td>&quot;기본 한도 최초 설정 8,000&quot;</td></tr><tr><td>2</td><td>변경 사유</td><td>1단계에서 적은 문장</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3단계-한도-초과-직원-찾기">3단계. 한도 초과 직원 찾기<a href="#3단계-한도-초과-직원-찾기" class="hash-link" aria-label="3단계. 한도 초과 직원 찾기에 대한 직접 링크" title="3단계. 한도 초과 직원 찾기에 대한 직접 링크" translate="no">​</a></h2>
+<p><strong>사용자·승인</strong> &gt; <strong>사용자별 통계</strong>에서 워크스페이스를 AI혁신팀으로 고르고 <strong>토큰 사용량</strong> 탭을 엽니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="한도 초과 직원 확인"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-monitor-limit-status-0dcd1f4e89efad868ce894fff19d524a.png" target="_blank" rel="noopener"><img width="2074" height="1620" src="/deep-agent-platform/assets/images/practice-monitor-limit-status-0dcd1f4e89efad868ce894fff19d524a.png" alt="AI혁신팀 사용자별 통계의 토큰 사용량 탭. 한도 초과 인원, 토큰 사용량 탭, 사용률 열, 상태 열에 번호가 붙어 있다" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">한도 초과 직원 확인</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>확인할 것</th></tr></thead><tbody><tr><td>1</td><td><strong>한도 초과</strong> 카드</td><td>1명. 이 카드는 화면 위 워크스페이스·기간 필터와 관계없이 이번 달 누적입니다.</td></tr><tr><td>2</td><td><strong>토큰 사용량</strong> 탭</td><td>사용자별 입력·출력·합계 토큰과 한도가 나옵니다.</td></tr><tr><td>3</td><td><strong>사용률</strong> 열</td><td>한도 대비 사용 비율입니다. 100%를 넘으면 한도 초과입니다.</td></tr><tr><td>4</td><td><strong>상태</strong> 열</td><td>정상(90% 미만), 경고(90% 이상), 한도 초과, 판정 불가</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4단계-개인-추가-부여-준비">4단계. 개인 추가 부여 준비<a href="#4단계-개인-추가-부여-준비" class="hash-link" aria-label="4단계. 개인 추가 부여 준비에 대한 직접 링크" title="4단계. 개인 추가 부여 준비에 대한 직접 링크" translate="no">​</a></h2>
+<p>한도 초과 직원이 월말 보고서를 마쳐야 한다면 <strong>토큰 한도 설정</strong>의 <strong>개인 토큰 추가 부여</strong>로 이번 달에만 쓸 토큰을 더 줍니다.</p>
+<p><span class="manual-shot" role="figure" aria-label="개인 토큰 추가 부여"><span class="manual-shot__chrome" aria-hidden="true"><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span><span class="manual-shot__dot"></span></span><a class="manual-shot__link" href="/deep-agent-platform/assets/images/practice-limit-grant-bdc0f31f03cf00c57bb50b2d69eaf9d5.png" target="_blank" rel="noopener"><img width="2074" height="1620" src="/deep-agent-platform/assets/images/practice-limit-grant-bdc0f31f03cf00c57bb50b2d69eaf9d5.png" alt="개인 토큰 추가 부여 카드. 대상 사용자, 부여할 토큰, 부여 사유, 부여 버튼에 번호가 붙어 있다" class="manual-shot__image" decoding="async" loading="lazy"></a><span class="manual-shot__caption">개인 토큰 추가 부여</span></span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>번호</th><th>메뉴</th><th>입력할 값</th></tr></thead><tbody><tr><td>1</td><td><strong>대상 사용자</strong></td><td>사번이나 이름으로 찾아 고릅니다. 목록에 이름·사번·소속과 당월 사용량, 상태가 함께 보입니다.</td></tr><tr><td>2</td><td><strong>부여할 토큰</strong></td><td>5000(1 이상)</td></tr><tr><td>3</td><td><strong>부여 사유</strong></td><td>11월 경영진 보고서 작성 지원(월말 마감)</td></tr><tr><td>4</td><td><strong>부여</strong></td><td>즉시 반영됩니다. 당월 사용량이 새 실효 한도(월 한도 + 부여분)보다 적어지면 차단이 풀립니다.</td></tr></tbody></table>
+<p>부여 대상은 사번으로 확인합니다. 사번 디렉터리(인사 원장)가 연결되지 않은 배포에서는 대상 사용자를 고른 뒤 &quot;대상 사용자를 찾을 수 없습니다.&quot;가 나오고 부여되지 않습니다. 연습 환경이 이 경우이며, 이때는 월 한도 자체를 올려 해결합니다.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="결과">결과<a href="#결과" class="hash-link" aria-label="결과에 대한 직접 링크" title="결과에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>확인 위치</th><th>기대 결과</th></tr></thead><tbody><tr><td><strong>토큰 한도 설정</strong> &gt; <strong>기본 한도</strong></td><td>전 사용자 월 한도 8,000, 다음 초기화 다음 달 1일</td></tr><tr><td><strong>변경 이력</strong></td><td>기본 한도 최초 설정 8,000과 사유</td></tr><tr><td><strong>사용자별 통계</strong> &gt; <strong>토큰 사용량</strong></td><td>한도 열 8,000, 한도 초과 1명</td></tr><tr><td><strong>감사 로그</strong></td><td>한도 정책 변경 1건(성공), 부여를 시도했다면 부여 1건(성공 또는 실패)</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="흔한-실수">흔한 실수<a href="#흔한-실수" class="hash-link" aria-label="흔한 실수에 대한 직접 링크" title="흔한 실수에 대한 직접 링크" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>실수</th><th>증상</th><th>바로잡기</th></tr></thead><tbody><tr><td>0을 넣고 저장</td><td>모든 직원이 바로 차단됨</td><td>0은 &quot;전원 차단&quot;입니다. 바로 원래 값으로 다시 저장합니다.</td></tr><tr><td>미리보기를 보지 않고 저장</td><td>많은 직원이 갑자기 차단됨</td><td>미리보기의 &quot;새로 차단&quot; 인원을 먼저 봅니다.</td></tr><tr><td>사유를 비우거나 공백만 넣음</td><td><strong>저장</strong>이 눌리지 않음</td><td>한 줄이라도 이유를 적습니다.</td></tr><tr><td>부서별 한도를 기대함</td><td>한도가 한 값뿐임</td><td>월 한도는 전 사용자 공통 한 값입니다. 많이 쓰는 직원은 개인 추가 부여로 보완합니다.</td></tr><tr><td>다음 달에도 부여분이 남을 거라 생각</td><td>1일에 다시 차단됨</td><td>부여분은 매월 1일에 사라집니다. 매달 다시 줍니다.</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="응용-과제">응용 과제<a href="#응용-과제" class="hash-link" aria-label="응용 과제에 대한 직접 링크" title="응용 과제에 대한 직접 링크" translate="no">​</a></h2>
+<ol>
+<li class="">월 한도를 12,000으로 바꿔 미리보기의 &quot;새로 차단&quot; 인원이 0이 되는지 보세요(저장하지 않고 <strong>취소</strong>).</li>
+<li class=""><strong>사용자별 통계</strong>의 <strong>토큰 현황</strong> 카드에서 &quot;한도 90% 이상&quot; 인원을 보고, 경고 단계 직원에게 보낼 안내 메일 초안을 써 보세요.</li>
+<li class="">실습을 마쳤다면 한도를 운영 기준 값으로 되돌리고, 변경 이력에 두 줄이 쌓였는지 확인하세요.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="다음-문서">다음 문서<a href="#다음-문서" class="hash-link" aria-label="다음 문서에 대한 직접 링크" title="다음 문서에 대한 직접 링크" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-admin/practice-monitoring/">실습 4: 모니터링</a></li>
+<li class=""><a class="" href="/deep-agent-platform/docs/deep-admin/case-token-limit/">전사 토큰 한도 사례</a></li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="문서 페이지"><a class="pagination-nav__link pagination-nav__link--prev" href="/deep-agent-platform/docs/deep-admin/practice-permissions/"><div class="pagination-nav__sublabel">이전</div><div class="pagination-nav__label">실습 2: 권한</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/deep-agent-platform/docs/deep-admin/practice-monitoring/"><div class="pagination-nav__sublabel">다음</div><div class="pagination-nav__label">실습 4: 모니터링</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#목표" class="table-of-contents__link toc-highlight">목표</a></li><li><a href="#준비물" class="table-of-contents__link toc-highlight">준비물</a></li><li><a href="#1단계-월-한도-입력과-미리보기" class="table-of-contents__link toc-highlight">1단계. 월 한도 입력과 미리보기</a></li><li><a href="#2단계-변경-이력-확인" class="table-of-contents__link toc-highlight">2단계. 변경 이력 확인</a></li><li><a href="#3단계-한도-초과-직원-찾기" class="table-of-contents__link toc-highlight">3단계. 한도 초과 직원 찾기</a></li><li><a href="#4단계-개인-추가-부여-준비" class="table-of-contents__link toc-highlight">4단계. 개인 추가 부여 준비</a></li><li><a href="#결과" class="table-of-contents__link toc-highlight">결과</a></li><li><a href="#흔한-실수" class="table-of-contents__link toc-highlight">흔한 실수</a></li><li><a href="#응용-과제" class="table-of-contents__link toc-highlight">응용 과제</a></li><li><a href="#다음-문서" class="table-of-contents__link toc-highlight">다음 문서</a></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>
